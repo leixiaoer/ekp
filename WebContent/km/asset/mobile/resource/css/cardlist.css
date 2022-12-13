@@ -1,0 +1,109 @@
+@charset "utf-8";
+
+.muiAssetCardItem {
+	position: relative;
+	margin-top: 1.8rem;
+    background-color: #FFFFFF;
+    box-shadow: 0 0 3rem 0 rgba(153,179,210,0.20);
+    border-radius: 1rem;
+    padding: 1rem;
+    min-height: 5.4rem;
+}
+
+.muiAssetCardItem .muiAssetCardItemIcon{
+    position: absolute;
+    top: -1rem;
+    width: 7.2rem;
+    height: 7.4rem;
+    background-size: cover;
+    border-radius: .6rem;
+    background-position: center;
+    background-color: #F5F6FB;
+}
+
+.muiAssetCardItem .muiAssetCardItemInfo{
+	padding-left: 8rem;
+}
+
+.muiAssetCardItem .muiAssetCardItemInfo .muiAssetCardItemTitle{
+	padding-right: 5.8rem;
+	white-space: nowrap;
+	overflow: hidden;
+    text-overflow: ellipsis;
+	font-size: var(--muiFontSizeM);
+    color: var(--muiFontColorInfo);
+}
+
+.muiAssetCardItem .muiAssetCardItemInfo .muiAssetCardItemStatus{
+	position: absolute;
+    top: 1rem;
+    right: 1rem;
+    font-size: var(--muiFontSizeS);
+}
+.muiAssetCardItem .muiAssetCardItemInfo .muiAssetCardItemStatus>span.status{
+	display: block;
+    border-radius: .4rem;
+    height: 2.2rem;
+    line-height: 2.3rem;
+    padding-left: .8rem;
+    padding-right: .8rem;
+}
+
+.muiAssetCardItemStatus>span.status.inuse{ /** 在用   **/
+	color: #4285F4;
+	background-color: #EEF4FF;
+}
+.muiAssetCardItemStatus>span.status.unused{ /** 闲置   **/
+    color: #999999;
+	background-color: #F4F4F4;
+}
+.muiAssetCardItemStatus>span.status.borrow{ /** 借用   **/
+    color: #8790B5;
+	background-color: #E8ECFF;
+}
+.muiAssetCardItemStatus>span.status.repair{ /** 维修   **/
+	color: #FF682B;
+	background-color: #FFF1EC;
+}
+.muiAssetCardItemStatus>span.status.discard{ /** 报废   **/
+    color: #999999;
+	background-color: #F4F4F4;
+}
+
+.muiAssetCardItem .muiAssetCardItemInfo .muiAssetCardItemInfoFooter{
+    margin-top: 1.2rem;
+}
+
+.muiAssetCardItem .muiAssetCardItemInfo .muiAssetCardItemInfoFooter>div{
+	display: inline-block;
+}
+
+.muiAssetCardItem .muiAssetCardItemInfo .muiAssetCardItemInfoFooter>div.muiAssetCardItemPrice{
+    margin-right: 1rem;
+}
+
+.muiAssetCardItem .muiAssetCardItemInfo .muiAssetCardItemInfoFooter .muiAssetCardItemPrice .priceFirstUnit{
+    font-size: var(--muiFontSizeS);
+    color: var(--muiFontColorInfo);
+    margin-right: .4rem;
+}
+.muiAssetCardItem .muiAssetCardItemInfo .muiAssetCardItemInfoFooter .muiAssetCardItemPrice .priceFirstValue{
+    font-size: var(--muiFontSizeM);
+    color: var(--muiFontColorInfo);
+    font-family: "landray-number", fontnumber,-apple-system, SF UI Text, Arial, PingFang SC, Hiragino Sans GB, Microsoft YaHei, WenQuanYi Micro Hei, sans-serif;
+}
+.muiAssetCardItem .muiAssetCardItemInfo .muiAssetCardItemInfoFooter .muiAssetCardItemPrice .priceMeasure{
+    font-size: var(--muiFontSizeS);
+    color: var(--muiFontColorInfo);
+    margin-left: .2rem;
+}
+
+.muiAssetCardItem .muiAssetCardItemInfo .muiAssetCardItemInfoFooter .muiAssetCardItemCode{
+    font-size: var(--muiFontSizeS);
+    color: var(--muiFontColorMuted);	
+}
+
+.muiAssetCardItem .muiAssetCardItemInfo .muiAssetCardItemInfoFooter .muiAssetCardItemCode .assetCodeTitle{
+	margin-right: .2rem;
+}
+

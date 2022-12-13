@@ -1,0 +1,16 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE hibernate-configuration
+    PUBLIC "-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+    "http://hibernate.sourceforge.net/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+	<session-factory>
+		<mapping resource="com/landray/kmss/km/institution/model/KmInstitutionKnowledge.hbm.xml" />
+		<mapping resource="com/landray/kmss/km/institution/model/KmInstitutionTemplate.hbm.xml" />
+		<mapping resource="com/landray/kmss/km/institution/model/KmInstitutionTemplateKeyword.hbm.xml" />
+		<mapping resource="com/landray/kmss/km/institution/model/KmInstitutionKnowledgeKeyword.hbm.xml" />
+		<mapping resource="com/landray/kmss/km/institution/model/KmInstitutionKnowledgeAbolish.hbm.xml" />
+		<mapping resource="com/landray/kmss/km/institution/model/KmInstitutionKnowledgePre.hbm.xml" />
+		<mapping resource="com/landray/kmss/km/institution/model/KmInstitutionOutSign.hbm.xml" />
+		<mapping resource="com/landray/kmss/km/institution/model/KmInstitutionNumberLock.hbm.xml" />
+	</session-factory>
+</hibernate-configuration>

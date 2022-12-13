@@ -1,0 +1,677 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans 
+    xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.0.xsd" 
+    xmlns="http://www.springframework.org/schema/beans" 
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <bean 
+        id="kmSuperviseMainDao" 
+        class="com.landray.kmss.km.supervise.dao.hibernate.KmSuperviseMainDaoImp" 
+        parent="KmssExtendDataDao">
+        <property 
+            name="modelName">
+            <value>com.landray.kmss.km.supervise.model.KmSuperviseMain</value>
+        </property>
+    </bean>
+    <bean 
+        id="kmSuperviseMainTarget" 
+        class="com.landray.kmss.km.supervise.service.spring.KmSuperviseMainServiceImp" 
+        parent="KmssExtendDataTarget">
+        <property name="baseDao">
+            <ref bean="kmSuperviseMainDao"/>
+        </property>
+        <property  name="sysNumberFlowService">
+            <ref  bean="sysNumberFlowService"/>
+        </property>
+        <property name="sysNotifyMainCoreService">
+			<ref bean="sysNotifyMainCoreService" />
+		</property>
+		  <!-- 定时任务 -->
+        <property name="sysQuartzCoreService">
+			<ref bean="sysQuartzCoreService" />
+		</property>
+		<!-- 任务记录 -->
+		 <property name="kmSuperviseTaskService">
+			<ref bean="kmSuperviseTaskService" />
+		</property>
+		<!-- 动态记录 -->
+		 <property name="kmSuperviseDynamicService">
+			<ref bean="kmSuperviseDynamicService" />
+		</property>
+		
+		<property name="sysOrgCoreService">
+            <ref bean="sysOrgCoreService"/>
+        </property>
+        <property name="sysAttMainService">
+            <ref bean="sysAttMainService"/>
+        </property>
+         <property name="sysWfProcessSubService">
+            <ref bean="sysWfProcessSubService"/>
+        </property>
+        <property name="kmSuperviseLevelService">
+            <ref bean="kmSuperviseLevelService"/>
+        </property>
+        <property name="kmSuperviseUrgencyService">
+            <ref bean="kmSuperviseUrgencyService"/>
+        </property>
+        <property name="kmSuperviseConcernService">
+            <ref bean="kmSuperviseConcernService"/>
+        </property>
+        <property name="kmImissiveUnitService">
+            <ref bean="kmImissiveUnitService"/>
+        </property>
+        <property name="sysTimeCountService">
+            <ref bean="sysTimeCountService"/>
+        </property>
+        <property name="kmSuperviseTempletService">
+            <ref bean="kmSuperviseTempletService"/>
+        </property>
+    </bean>
+    <bean 
+        id="kmSuperviseMainService" 
+        parent="KmssBaseService">
+        <property 
+            name="target">
+            <ref 
+                bean="kmSuperviseMainTarget"/>
+        </property>
+    </bean>
+    <bean 
+        id="kmSuperviseMainFinishDao" 
+        class="com.landray.kmss.km.supervise.dao.hibernate.KmSuperviseMainFinishDaoImp" 
+        parent="KmssAuthBaseDao">
+        <property 
+            name="modelName">
+            <value>com.landray.kmss.km.supervise.model.KmSuperviseMainFinish</value>
+        </property>
+    </bean>
+    <bean 
+        id="kmSuperviseMainFinishTarget" 
+        class="com.landray.kmss.km.supervise.service.spring.KmSuperviseMainFinishServiceImp" 
+        parent="KmssBaseTarget">
+        <property name="baseDao">
+            <ref bean="kmSuperviseMainFinishDao"/>
+        </property>
+        <property name="kmSuperviseMainService">
+            <ref bean="kmSuperviseMainService"/>
+        </property>
+        <property name="sysQuartzCoreService">
+			<ref bean="sysQuartzCoreService" />
+		</property>
+		<property name="kmSuperviseDynamicService">
+			<ref bean="kmSuperviseDynamicService" />
+		</property>
+    </bean>
+    <bean 
+        id="kmSuperviseMainFinishService" 
+        parent="KmssBaseService">
+        <property 
+            name="target">
+            <ref 
+                bean="kmSuperviseMainFinishTarget"/>
+        </property>
+    </bean>
+    <bean 
+        id="kmSuperviseMainStopDao" 
+        class="com.landray.kmss.km.supervise.dao.hibernate.KmSuperviseMainStopDaoImp" 
+        parent="KmssAuthBaseDao">
+        <property 
+            name="modelName">
+            <value>com.landray.kmss.km.supervise.model.KmSuperviseMainStop</value>
+        </property>
+    </bean>
+    <bean 
+        id="kmSuperviseMainStopTarget" 
+        class="com.landray.kmss.km.supervise.service.spring.KmSuperviseMainStopServiceImp" 
+        parent="KmssBaseTarget">
+        <property name="baseDao">
+            <ref bean="kmSuperviseMainStopDao"/>
+        </property>
+        <property name="kmSuperviseMainService">
+            <ref bean="kmSuperviseMainService"/>
+        </property>
+        <property name="sysQuartzCoreService">
+			<ref bean="sysQuartzCoreService" />
+		</property>
+		<property name="kmSuperviseDynamicService">
+			<ref bean="kmSuperviseDynamicService" />
+		</property>
+    </bean>
+    <bean 
+        id="kmSuperviseMainStopService" 
+        parent="KmssBaseService">
+        <property 
+            name="target">
+            <ref 
+                bean="kmSuperviseMainStopTarget"/>
+        </property>
+    </bean>
+    <bean 
+        id="kmSuperviseMainPlanDao" 
+        class="com.landray.kmss.km.supervise.dao.hibernate.KmSuperviseMainPlanDaoImp" 
+        parent="KmssBaseDao">
+        <property 
+            name="modelName">
+            <value>com.landray.kmss.km.supervise.model.KmSuperviseMainPlan</value>
+        </property>
+    </bean>
+    <bean 
+        id="kmSuperviseMainPlanTarget" 
+        class="com.landray.kmss.km.supervise.service.spring.KmSuperviseMainPlanServiceImp" 
+        parent="KmssBaseTarget">
+        <property name="baseDao">
+            <ref bean="kmSuperviseMainPlanDao"/>
+        </property>
+        <property name="sysQuartzCoreService">
+			<ref bean="sysQuartzCoreService" />
+		</property>
+		<property name="sysNotifyMainCoreService">
+			<ref bean="sysNotifyMainCoreService" />
+		</property>
+		<property name="sysAttachmentService">
+			<ref bean="sysAttachmentService" />
+		</property>
+		<property name="kmSuperviseDynamicService">
+			<ref bean="kmSuperviseDynamicService" />
+		</property>
+		<property name="sysOrgCoreService">
+			<ref bean="sysOrgCoreService" />
+		</property>
+    </bean>
+    <bean 
+        id="kmSuperviseMainPlanService" 
+        parent="KmssBaseService">
+        <property 
+            name="target">
+            <ref 
+                bean="kmSuperviseMainPlanTarget"/>
+        </property>
+    </bean>
+    <bean 
+        id="kmSuperviseInstructionDao" 
+        class="com.landray.kmss.km.supervise.dao.hibernate.KmSuperviseInstructionDaoImp" 
+        parent="KmssBaseDao">
+        <property 
+            name="modelName">
+            <value>com.landray.kmss.km.supervise.model.KmSuperviseInstruction</value>
+        </property>
+    </bean>
+    <bean 
+        id="kmSuperviseInstructionTarget" 
+        class="com.landray.kmss.km.supervise.service.spring.KmSuperviseInstructionServiceImp" 
+        parent="KmssBaseTarget">
+        <property name="baseDao">
+            <ref bean="kmSuperviseInstructionDao"/>
+        </property>
+        <property name="kmSuperviseMainService">
+            <ref bean="kmSuperviseMainService"/>
+        </property>
+        <property name="kmSuperviseDynamicService">
+            <ref bean="kmSuperviseDynamicService"/>
+        </property>
+    </bean>
+    <bean 
+        id="kmSuperviseInstructionService" 
+        parent="KmssBaseService">
+        <property 
+            name="target">
+            <ref 
+                bean="kmSuperviseInstructionTarget"/>
+        </property>
+    </bean>
+    <bean 
+        id="kmSuperviseLevelDao" 
+        class="com.landray.kmss.km.supervise.dao.hibernate.KmSuperviseLevelDaoImp" 
+        parent="KmssAuthBaseDao">
+        <property 
+            name="modelName">
+            <value>com.landray.kmss.km.supervise.model.KmSuperviseLevel</value>
+        </property>
+    </bean>
+    <bean 
+        id="kmSuperviseLevelTarget" 
+        class="com.landray.kmss.km.supervise.service.spring.KmSuperviseLevelServiceImp" 
+        parent="KmssExtendDataTarget">
+        <property 
+            name="baseDao">
+            <ref 
+                bean="kmSuperviseLevelDao"/>
+        </property>
+    </bean>
+    <bean 
+        id="kmSuperviseLevelService" 
+        parent="KmssBaseService">
+        <property 
+            name="target">
+            <ref 
+                bean="kmSuperviseLevelTarget"/>
+        </property>
+    </bean>
+    <bean 
+        id="kmSuperviseUrgencyDao" 
+        class="com.landray.kmss.km.supervise.dao.hibernate.KmSuperviseUrgencyDaoImp" 
+        parent="KmssAuthBaseDao">
+        <property 
+            name="modelName">
+            <value>com.landray.kmss.km.supervise.model.KmSuperviseUrgency</value>
+        </property>
+    </bean>
+    <bean 
+        id="kmSuperviseUrgencyTarget" 
+        class="com.landray.kmss.km.supervise.service.spring.KmSuperviseUrgencyServiceImp" 
+        parent="KmssExtendDataTarget">
+        <property 
+            name="baseDao">
+            <ref 
+                bean="kmSuperviseUrgencyDao"/>
+        </property>
+    </bean>
+    <bean 
+        id="kmSuperviseUrgencyService" 
+        parent="KmssBaseService">
+        <property 
+            name="target">
+            <ref 
+                bean="kmSuperviseUrgencyTarget"/>
+        </property>
+    </bean>
+    <bean 
+        id="kmSuperviseTempletDao" 
+        class="com.landray.kmss.km.supervise.dao.hibernate.KmSuperviseTempletDaoImp" 
+        parent="KmssAuthBaseDao">
+        <property 
+            name="modelName">
+            <value>com.landray.kmss.km.supervise.model.KmSuperviseTemplet</value>
+        </property>
+    </bean>
+    <bean 
+        id="kmSuperviseTempletTarget" 
+        class="com.landray.kmss.km.supervise.service.spring.KmSuperviseTempletServiceImp" 
+        parent="KmssExtendDataTarget">
+        <property 
+            name="baseDao">
+            <ref 
+                bean="kmSuperviseTempletDao"/>
+        </property>
+        <property
+			name="kmSuperviseMainService">
+			<ref
+				local="kmSuperviseMainService" />
+		</property>
+		<property
+			name="sysCategoryMainService">
+			<ref
+				bean="sysCategoryMainService" />
+		</property>
+    </bean>
+    <bean 
+        id="kmSuperviseTempletService" 
+        parent="KmssBaseService">
+        <property 
+            name="target">
+            <ref 
+                bean="kmSuperviseTempletTarget"/>
+        </property>
+    </bean>
+    <bean 
+        id="kmSuperviseWarnDao" 
+        class="com.landray.kmss.km.supervise.dao.hibernate.KmSuperviseWarnDaoImp" 
+        parent="KmssAuthBaseDao">
+        <property 
+            name="modelName">
+            <value>com.landray.kmss.km.supervise.model.KmSuperviseWarn</value>
+        </property>
+    </bean>
+    <bean 
+        id="kmSuperviseWarnTarget" 
+        class="com.landray.kmss.km.supervise.service.spring.KmSuperviseWarnServiceImp" 
+        parent="KmssExtendDataTarget">
+        <property 
+            name="baseDao">
+            <ref 
+                bean="kmSuperviseWarnDao"/>
+        </property>
+         <!-- 注入sysNotifyMainCoreService -->
+		<property name="sysNotifyMainCoreService">
+			<ref bean="sysNotifyMainCoreService" />
+		</property>
+        <!-- 注入MainService -->
+        <property 
+            name="kmSuperviseMainService">
+            <ref 
+                bean="kmSuperviseMainService"/>
+        </property>
+        <!-- 定时任务 -->
+        <property name="sysQuartzCoreService">
+			<ref bean="sysQuartzCoreService" />
+		</property>
+		<!-- 任务计划service -->
+        <property name="kmSuperviseTaskService">
+			<ref bean="kmSuperviseTaskService" />
+		</property>
+		<property name="kmSuperviseBackService">
+			<ref bean="kmSuperviseBackService" />
+		</property>
+		<property name="sysTimeCountService">
+            <ref bean="sysTimeCountService"/>
+        </property>
+        <property name="sysOrgElementService">
+            <ref bean="sysOrgElementService"/>
+        </property>
+    </bean>
+    <bean 
+        id="kmSuperviseWarnService" 
+        parent="KmssBaseService">
+        <property 
+            name="target">
+            <ref 
+                bean="kmSuperviseWarnTarget"/>
+        </property>
+    </bean>
+    <bean 
+        id="kmSuperviseDynamicDao" 
+        class="com.landray.kmss.km.supervise.dao.hibernate.KmSuperviseDynamicDaoImp" 
+        parent="KmssAuthBaseDao">
+        <property 
+            name="modelName">
+            <value>com.landray.kmss.km.supervise.model.KmSuperviseDynamic</value>
+        </property>
+    </bean>
+    <bean 
+        id="kmSuperviseDynamicTarget" 
+        class="com.landray.kmss.km.supervise.service.spring.KmSuperviseDynamicServiceImp" 
+        parent="KmssExtendDataTarget">
+        <property 
+            name="baseDao">
+            <ref 
+                bean="kmSuperviseDynamicDao"/>
+        </property>
+    </bean>
+    <bean 
+        id="kmSuperviseDynamicService" 
+        parent="KmssBaseService">
+        <property 
+            name="target">
+            <ref 
+                bean="kmSuperviseDynamicTarget"/>
+        </property>
+    </bean>
+    <bean 
+        id="kmSuperviseConcernDao" 
+        class="com.landray.kmss.km.supervise.dao.hibernate.KmSuperviseConcernDaoImp" 
+        parent="KmssAuthBaseDao">
+        <property 
+            name="modelName">
+            <value>com.landray.kmss.km.supervise.model.KmSuperviseConcern</value>
+        </property>
+    </bean>
+    <bean 
+        id="kmSuperviseConcernTarget" 
+        class="com.landray.kmss.km.supervise.service.spring.KmSuperviseConcernServiceImp" 
+        parent="KmssExtendDataTarget">
+        <property 
+            name="baseDao">
+            <ref 
+                bean="kmSuperviseConcernDao"/>
+        </property>
+    </bean>
+    <bean 
+        id="kmSuperviseConcernService" 
+        parent="KmssBaseService">
+        <property 
+            name="target">
+            <ref 
+                bean="kmSuperviseConcernTarget"/>
+        </property>
+    </bean>
+    <bean 
+        id="kmSuperviseBackDao" 
+        class="com.landray.kmss.km.supervise.dao.hibernate.KmSuperviseBackDaoImp" 
+        parent="KmssAuthBaseDao">
+        <property 
+            name="modelName">
+            <value>com.landray.kmss.km.supervise.model.KmSuperviseBack</value>
+        </property>
+    </bean>
+    <bean 
+        id="kmSuperviseBackTarget" 
+        class="com.landray.kmss.km.supervise.service.spring.KmSuperviseBackServiceImp" 
+        parent="KmssExtendDataTarget">
+        <property 
+            name="baseDao">
+            <ref 
+                bean="kmSuperviseBackDao"/>
+        </property>
+        <property name="sysNotifyMainCoreService">
+			<ref bean="sysNotifyMainCoreService" />
+		</property>
+		<property name="kmSuperviseMainService">
+			<ref bean="kmSuperviseMainService" />
+		</property>
+		<property name="sysQuartzCoreService">
+			<ref bean="sysQuartzCoreService" />
+		</property>
+		<property name="kmSuperviseDynamicService">
+			<ref bean="kmSuperviseDynamicService" />
+		</property>
+    </bean>
+    <bean 
+        id="kmSuperviseBackService" 
+        parent="KmssBaseService">
+        <property 
+            name="target">
+            <ref 
+                bean="kmSuperviseBackTarget"/>
+        </property>
+    </bean>
+    <bean 
+        id="kmSuperviseTempletTreeService" 
+        class="com.landray.kmss.sys.category.service.SysCategoryTemplateTreeService">
+        <property 
+            name="serviceImp">
+            <ref 
+                bean="kmSuperviseTempletService"/>
+        </property>
+    </bean>
+    
+     <bean 
+        id="kmSuperviseTaskDao" 
+        class="com.landray.kmss.km.supervise.dao.hibernate.KmSuperviseTaskDaoImp" 
+        parent="KmssAuthBaseDao">
+        <property 
+            name="modelName">
+            <value>com.landray.kmss.km.supervise.model.KmSuperviseTask</value>
+        </property>
+    </bean>
+    <bean 
+        id="kmSuperviseTaskTarget" 
+        class="com.landray.kmss.km.supervise.service.spring.KmSuperviseTaskServiceImp" 
+        parent="KmssExtendDataTarget">
+        <property 
+            name="baseDao">
+            <ref 
+                bean="kmSuperviseTaskDao"/>
+        </property>
+        <property
+			name="sysOrgCoreService">
+			<ref
+				bean="sysOrgCoreService" />
+		</property>
+		<property
+			name="kmImissiveUnitService">
+			<ref
+				bean="kmImissiveUnitService" />
+		</property>
+		<property
+			name="sysNotifyMainCoreService">
+			<ref
+				bean="sysNotifyMainCoreService" />
+		</property>
+    </bean>
+    <bean 
+        id="kmSuperviseTaskService" 
+        parent="KmssBaseService">
+        <property 
+            name="target">
+            <ref 
+                bean="kmSuperviseTaskTarget"/>
+        </property>
+    </bean>
+    <bean
+		id="kmSuperviseTemplateTreeService"
+		class="com.landray.kmss.km.supervise.service.spring.KmSuperviseTemplateTreeService">
+		<property
+			name="kmSuperviseTempletService">
+			<ref
+				local="kmSuperviseTempletService" />
+		</property>
+	</bean>
+	<bean
+		id="kmSuperviseMyConcernTempletService"
+		class="com.landray.kmss.km.supervise.service.spring.KmSuperviseMyConcernTempletServiceImp">
+		<property
+			name="kmSuperviseMainService">
+			<ref
+				local="kmSuperviseMainService" />
+		</property>
+	</bean>
+    <bean
+		id="kmSuperviseUnitService"
+		class="com.landray.kmss.km.supervise.service.spring.KmSuperviseUnitService">
+		<property
+			name="kmImissiveUnitService">
+			<ref
+				bean="kmImissiveUnitService" />
+		</property>
+		<property name="sysOrgCoreService">
+			<ref bean="sysOrgCoreService" />
+		</property>
+	</bean>
+	<bean
+		id="kmSuperviseOtherUnitService"
+		class="com.landray.kmss.km.supervise.service.spring.KmSuperviseOtherUnitService">
+		<property
+			name="kmImissiveUnitService">
+			<ref
+				bean="kmImissiveUnitService" />
+		</property>
+	</bean>
+	<bean
+		id="kmSuperviseBackTaskService"
+		class="com.landray.kmss.km.supervise.service.spring.KmSuperviseBackTaskService">
+		<property name="kmSuperviseMainService">
+            <ref bean="kmSuperviseMainService"/>
+        </property>
+        <property name="kmSuperviseTaskService">
+            <ref bean="kmSuperviseTaskService"/>
+        </property>
+        <property name="kmSuperviseBackService">
+            <ref bean="kmSuperviseBackService"/>
+        </property>
+	</bean>
+    <!-- 效验主办单位责任人、经办人 -->
+    <bean
+		id="kmSuperviseValidator"
+		class="com.landray.kmss.km.supervise.service.spring.KmSuperviseValidator">
+	     <!-- 注入MainService -->
+        <property name="kmSuperviseMainService">
+            <ref bean="kmSuperviseMainService"/>
+        </property>
+	</bean>
+	<!-- 效验变更记录查看 是否有源文档的查看权限 -->
+	<bean
+		id="kmSuperviseOriginValidator"
+		class="com.landray.kmss.km.supervise.service.spring.KmSuperviseOriginValidator">
+	</bean>
+	<!-- 任务反馈，阶段反馈校验 -->
+	<bean
+		id="kmSuperviseBackValidator"
+		class="com.landray.kmss.km.supervise.service.spring.KmSuperviseBackValidator">
+	     <!-- 注入MainService -->
+        <property name="kmSuperviseMainService">
+            <ref bean="kmSuperviseMainService"/>
+        </property>
+	</bean>
+	
+	<!-- 效验督办领导 -->
+    <bean
+		id="kmSuperviseLeadValidator"
+		class="com.landray.kmss.km.supervise.service.spring.KmSuperviseLeadValidator">
+	     <!-- 注入MainService -->
+        <property name="kmSuperviseMainService">
+            <ref bean="kmSuperviseMainService"/>
+        </property>
+	</bean>
+	
+	<!-- 校验督办反馈 -->
+	<bean
+		id="kmSuperviseAuthFieldValidator"
+		class="com.landray.kmss.km.supervise.service.spring.KmSuperviseAuthFieldValidator">
+		<!-- 注入baseDao和hqlBuilder -->
+		<property name="baseDao">
+			<ref bean="KmssBaseDao" />
+		</property>
+		<property name="hqlBuilder">
+			<ref bean="kmssAuthHQLBuilder" />
+		</property>
+	</bean>
+	
+	 <!-- 部件 -->
+   	<bean
+		id="kmSuperviseMainPortlet"
+		class="com.landray.kmss.km.supervise.service.spring.KmSuperviseMainPortlet">
+		  <!-- 注入MainService -->
+        <property 
+            name="kmSuperviseMainService">
+            <ref bean="kmSuperviseMainService"/>
+        </property>
+		<property name="kmSuperviseTempletService">
+            <ref bean="kmSuperviseTempletService"/>
+        </property>
+        <property name="kmImissiveUnitService">
+            <ref bean="kmImissiveUnitService"/>
+        </property>
+        <property name="kmSuperviseTaskService">
+            <ref bean="kmSuperviseTaskService"/>
+        </property>
+	</bean>
+	
+	<bean class="org.springframework.aop.framework.autoproxy.BeanNameAutoProxyCreator">
+		<property name="beanNames">
+			<list>
+				<value>kmSuperviseMainDao</value>
+			</list>
+		</property>
+		<property name="interceptorNames">
+			<list>
+				<value>luceneCreateAdvisor</value>
+				<value>luceneSaveAdvisor</value>
+				<value>docKeyWriteAdvice</value>
+				<value>luceneDeleteAdvisor</value>
+			</list>
+		</property>
+	</bean>
+	<bean id="kmSuperviseDraftValidator" class="com.landray.kmss.km.supervise.service.spring.KmSuperviseDraftValidator">
+		<property name="lbpmAuditNoteService">
+			<ref bean="lbpmAuditNoteService" />
+		</property>
+	</bean>
+	
+	<bean id="kmSuperviseMainPortletController" class="com.landray.kmss.km.supervise.actions.KmSuperviseMainPortletController">
+	</bean>
+	
+	<bean
+		id="superviseChangedListener"
+		class="com.landray.kmss.km.supervise.listener.SuperviseChangedListener">
+		<property name="kmSuperviseDynamicService">
+			<ref bean="kmSuperviseDynamicService" />
+		</property>
+	</bean>
+	<bean
+        id="kmSuperviseSponsorValidator"
+        class="com.landray.kmss.km.supervise.service.spring.KmSuperviseSponsorValidator">
+        <!-- 注入MainService -->
+        <property name="kmSuperviseTaskService">
+            <ref bean="kmSuperviseTaskService"/>
+        </property>
+    </bean>
+</beans>

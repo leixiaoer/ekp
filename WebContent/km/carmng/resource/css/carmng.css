@@ -1,0 +1,105 @@
+
+/*---------- 车辆管理相关 ----------*/
+
+/*----- 行程安排 -----*/
+.lui_carnming_rotue_tb{}
+.lui_carnming_rotue_tb table{ width: 100%; background:#fcfcfc;}
+.lui_carnming_rotue_tb table td{ padding-top:5px; padding-bottom: 5px;}
+.lui_carnming_rotue_tb .td_title{width: 85px;padding-left: 10px;padding-right:10px;color:#888;vertical-align: top;}
+.lui_carnming_rotue_tb .inputselectsgl{ width: 100%;}
+.lui_carnming_rotue_tb .inputselectsgl input{ background-color:transparent;}
+.lui_carnming_rotue_tb .td_operate{ width: 24px; padding-left: 8px; padding-right: 8px;}
+.lui_carnming_rotue_tb .lui_map_icon{left: -20px;background: url(../images/lui_map_icon.png) no-repeat left top; display:inline-block; width:16px; height:16px; position:absolute}
+
+.lui_carmng_route_add,
+.lui_carmng_route_del{ display: inline-block; width: 24px; height: 24px; background-repeat: no-repeat; background-position: center; cursor: pointer;}
+.lui_carmng_route_add{ background-image: url(../images/lui_carmng_route_add.png);}
+.lui_carmng_route_del{ background-image: url(../images/lui_carmng_route_del.png);}
+
+/*----- 用车申请 -----*/
+.lui_carmng_app_wrap{margin:0 auto 10px;}
+.carmng_app_title{ text-align: center; font-weight: normal; font-size: 18px;}
+
+.carmng_app_sheet{border:6px solid #f4f4f4;display:height: 168px; position:relative;}
+.carmng_app_sheet:after{ display: table; content:""; clear: both;}
+.carmng_app_detail{display: inline-block;width:555px;height:168px;vertical-align: top;position: relative;}
+
+.carmng_app_detail_header{ display: table; width: 100%; box-shadow:0 0 5px #f3f3f3;}
+.carmng_app_detail_header .carmng_app_item:first-child{ border-right:1px solid #f0f0f0;}
+.carmng_app_detail_header .carmng_app_item{ display: table-cell; width: 50%; text-align:center; padding:10px 0;border-bottom:1px solid #f3f3f3;}
+.carmng_app_detail_header .carmng_app_item p.carmng_app_item_title{ color:inherit; padding-bottom: 5px;}
+.carmng_app_detail_header .carmng_app_item p{ color:#46a1ff;}
+.carmng_app_detail:before{display: inline-block;width: 7px;height: 180px;content: "";background: url(../images/carmng_route_saw.png) repeat-y left top;position: absolute;right: -2px;top: -6px;bottom: -6px;}
+
+/*--- 乘客 ---*/
+.carmng_app_passenger{
+    margin-top: 25px;
+}
+.carmng_app_passenger div{padding-top:10px;display: table;width: 100%;margin-top: 10px;}
+.carmng_app_passenger div em{display:table-cell;width: 100px;font-style: normal;font-weight: normal;margin-right: 10px;padding-left: 10px;}
+.carmng_app_passenger div span{ display: table-cell;}
+.carmng_app_passenger div em:before{ content:""; margin-right: 10px; display:inline-block; width: 5px; height: 5px; border:2px solid #46a1ff; border-radius: 50%;}
+.carmng_app_passenger div.passenger_out em:before{ border-color:#ff9500;}
+.carmng_app_passenger .btn_show_all{ color:#46a1ff; margin-left: 10px;}
+
+/*--- 用车申请 行程 ---*/
+.carmng_app_route{height:180px;overflow-y: auto;overflow-x:hidden;background:#cbf8bc;position:absolute;left: 556px;top:-6px;right:-6px;bottom:-6px;}
+.carmng_app_route:after{ display:inline-block; content:""; width:126px; height:168px; background:url(../images/app_route_bg.png) no-repeat left top; position:absolute; right:-23px;top:-19px;}
+.carmng_app_route .lui_carnming_rotue_tb table{ background-color:transparent;}
+.carmng_route_title{ text-align: left; padding-left:10px; font-size: 14px; color:#424b3b; font-weight: normal;}
+
+.carmng_app_route .lui_carnming_rotue_tb .inputselectsgl{border-bottom:none;border: none;}
+
+/*------ -----*/
+.tb_normal .lui_carnming_rotue_tb .inputselectsgl{border-bottom:none;border: none;}
+
+/*----- 车辆调度明细 卡片式 -----*/
+ul,li{list-style: none;}
+.lui_carmng_dispatch_wrap{/* width: 980px; */margin:0 auto;}
+.lui_carmng_dispatch_content{ margin-left:-18px; margin-right:-18px;}
+.lui_carmng_dispatch_addCar,
+.lui_carmng_dispatch_carCard{display: inline-block;width: 216px;height: 255px; position: relative; margin:10px 16px; border:1px solid #ededed; background-color:#fcfcfc; vertical-align: top;}
+.lui_carmng_dispatch_info{display: inline-block;position: relative;  margin: 10px 16px; vertical-align: top;}
+.lui_carmng_dispatch_info ul{ margin:0 20px;}
+.lui_carmng_dispatch_info ul li{ padding:10px 0; border-top:1px dashed #ccc; padding-left: 5px;}
+.lui_carmng_dispatch_info ul li:first-child{ border-top:none;}
+.lui_carmng_dispatch_info ul li .driver{ margin-bottom: 5px;}
+
+.lui_carmng_dispatch_addCar{text-align: center;background-image: url(../images/carmng_add_bg.png);background-repeat: no-repeat;background-position:36px 190px;/* margin-left: 0; */}
+.carmng_addBtn{ display: inline-block; cursor: pointer; width: 69px; height: 69px; margin-top:32px; margin-bottom:20px; background:url(../images/carmng_add_btn.png) no-repeat left top;}
+
+.lui_carmng_dispatch_addCar p{ color:#46a1ff; font-size: 18px;}
+
+.lui_carmng_dispatch_carCard .car_plate{ height: 48px; line-height: 48px; background: #46a1ff; color:#fff; font-size: 24px; text-align: center; border-radius: 5px; margin:20px 20px;}
+.lui_carmng_dispatch_carCard ul{ margin:0 20px;}
+.lui_carmng_dispatch_carCard ul li{ padding:10px 0; border-top:1px dashed #ccc; padding-left: 5px;}
+.lui_carmng_dispatch_carCard ul li:first-child{ border-top:none;}
+.lui_carmng_dispatch_carCard ul li .driver{ margin-bottom: 5px;}
+.lui_carmng_dispatch_addCar:hover,
+.lui_carmng_dispatch_carCard:hover{ border-color:#46a1ff;}
+
+.tb_simple .lui_carmng_dispatch_carCard .inputselectsgl{ border-top-color:transparent; border-left-color:transparent; border-right-color:transparent; background:transparent;}
+.tb_simple .lui_carmng_dispatch_carCard .inputselectsgl input{ background-color:transparent;}
+.tb_simple .lui_carmng_dispatch_carCard .inputsgl{  border-top-color:transparent; border-left-color:transparent; border-right-color:transparent;}
+
+.lui_carmng_dispatch_carCard .btn_del{ display: none; background:url(../images/icon_del.png) no-repeat left top; width: 21px; height:21px; cursor: pointer; position: absolute; right:-10px; top:-10px;}
+.lui_carmng_dispatch_carCard:hover .btn_del{ display: inline-block;}
+.lui_carmng_dispatch_carCard .btn_edit{ float: right; display: inline-block; width:16px; height:16px; background:url(../images/btn_edit.png) no-repeat left top; cursor: pointer;}
+.lui_carmng_dispatch_carCard .phone:after{ display: table; content:""; clear: both;}
+
+/*---------- 车辆回车登记 ----------*/
+.checkIn_wrap_td{}
+.checkIn_wrap .lui_carmng_dispatch_carCard{ height:282px;}
+.checkIn_wrap .btn_checkIn{background:#46a1ff;height: 40px;line-height: 40px;color:#fff;font-size: 16px;text-align: center;display: block; position:absolute; bottom:-1px;left:-1px;right:-1px;}
+.checkIn_wrap .btn_checkIned{background:#a8a8a8;height: 40px;line-height: 40px;color:#fff;font-size: 16px;text-align: center;display: block; position:absolute; bottom:-1px;left:-1px;right:-1px;}
+.checkIn_wrap_td .checkIn_wrap ul li{ text-align: left;}
+
+.checkIn_wrap .lui_carmng_dispatch_carCard:hover{ border-color:#ededed;}
+.checkIn_wrap .btn_checkIn:hover{ background-color:#008de2;}
+
+
+
+
+
+
+

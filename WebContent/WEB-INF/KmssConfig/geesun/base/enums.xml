@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<column-enums>
+    <type 
+        name="geesun_base_type">
+        <value-label>
+            <value>threeAccount</value>
+            <label-key>enums.type.threeAccount</label-key>
+            <bundle>geesun-base</bundle>
+        </value-label>
+        <value-label>
+            <value>accountCate</value>
+            <label-key>enums.type.accountCate</label-key>
+            <bundle>geesun-base</bundle>
+        </value-label>
+        <value-label>
+            <value>firstCharger</value>
+            <label-key>enums.type.firstCharger</label-key>
+            <bundle>geesun-base</bundle>
+        </value-label>
+    </type>
+</column-enums>

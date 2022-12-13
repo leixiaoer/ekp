@@ -1,0 +1,274 @@
+@CHARSET "UTF-8";
+/*.mui-vote{padding: 0 0.6rem 0 0;}*/
+.mui-expireTime{padding: 0 1.2rem ;}
+
+#scrollView{background: #f0eff5;}
+.muiFlowInfoW { background: #fff; padding-left:1rem; border-bottom:1px solid #ddd; }
+.muiFlowInfoW .muiFlowHeader {width: 100%; padding: 0.8rem 0; position:relative; }
+.muiFlowInfoW .muiFlowHeader .muiProcessRight{float:right; width: auto; }
+.muiFlowInfoW .muiFlowHeader .muiProcessRight .muiProcessVoteNum{font-size: 2.7rem;color:#52b159; }
+.muiFlowInfoW .muiFlowHeader .muiProcessRight .muiProcessVoteText{font-size: 1.4rem;color:#898989; }
+.muiFlowInfoW .muiFlowHeader .muiProcessIcon {float:left;width: 4.2rem; padding-right: 8px; }
+.muiFlowInfoW .muiFlowHeader .muiProcessIcon img{ width:5.2rem; height:5.2rem;}
+.muiFlowInfoW .muiFlowHeader .muiProcessCenter{padding-left: 10px;position:relative;max-width: 100px;display: inline-block;padding: 6px;}
+.muiFlowInfoW .muiFlowHeader .muiProcessBottom {
+	color: #898989;
+}
+
+.muiFormRadioChecked .muiFormRadio .muiFormRadioOverlay {
+	color: #3fa9f5;
+}
+.vote_tb_w .muiField{min-width:3rem; }
+
+.muiVoteDetail{background: #fff;}
+.muiVoteDetail .muiVoteTitle{padding:1rem 0 1rem 0;padding-left:1rem;}
+.muiVoteDetail .muiVoteText{
+	padding-left: 1.5rem;
+    color: #999;
+    height: 2rem;
+}
+.muiVoteDetail .muiCheckBoxWrap>.muiCheckItem,
+.muiVoteDetail .muiRadioItem {
+    margin: 0;
+    display: inline-block;
+}
+
+.muiVoteStatus{
+	padding: 0;
+	text-align: center;
+	font-size: 1.0rem;
+	padding: 4px 4px 2px;
+	margin-right: 0.5rem;
+	position: relative;
+	top: -2px;
+}
+.muiVoteStatusGreen{
+	border-color: #68CE67;
+	color: #68CE67;
+	background-color: #eefaee;
+}
+.muiVoteStatusGry{
+	border-color: #999;
+	color: #999;
+	background-color: #f5f4f3;
+}
+@media screen and (-webkit-min-device-pixel-ratio: 2) {
+	.muiVoteStatusGreen,
+	.muiVoteStatusGry {
+		position: relative;
+		border: 0;
+	}
+	.muiVoteStatusGry:before,
+	.muiVoteStatusGreen:before {
+		content: "";
+		width: 200%;
+		height: 200%;
+		position: absolute;
+		top: 0;
+		left: 0;
+		-webkit-transform: scale(0.5);
+						transform: scale(0.5);
+		-webkit-transform-origin: 0 0;
+						transform-origin: 0 0;
+		padding: 1px;
+		border-radius: 0.3rem;
+		-webkit-box-sizing: border-box;
+						box-sizing: border-box;
+	}
+	.muiVoteStatusGreen:before {
+		border: 1px solid #68CE67;
+	}
+	.muiVoteStatusGry:before {
+		border: 1px solid #999;
+	}
+}
+
+/** edit.jsp*/
+.lui_vote_tabpanel{ display:inline-block;cursor: pointer;color:#0f4e7a; padding-left: 4px; padding-right: 14px; font-size: 12px; border-radius:12px;height:24px;line-height:24px;}
+.lui_vote_tabpanel_on{color:#fff;background:#15a4fa; padding-left: 14px; padding-right: 14px;}
+.btn_del{cursor: pointer;width:16px;height:16px;}
+.lui_vote_tabpanel:first-child{ padding-left: 14px; padding-right: 4px;}
+.lui_vote_tabpanel.lui_vote_tabpanel_on:first-child{ padding-left: 14px; padding-right: 14px;}
+.lui_vote_tabpanel_switch{ height: 24px; border:1px solid #dfe0e6; display: inline-block; border-radius: 15px; padding:2px;}
+ .muiCheckBlock {
+	width: 1.3rem;
+	height: 1.3rem;
+	border:1px solid #d5d5d5;
+	border-radius:2px;
+	text-align: center;
+	margin-right: 0.6rem;
+	margin-bottom: 0.2rem;
+}
+
+
+.comment-input{
+	height:3.8rem;
+	line-height:3.8rem;
+	padding-left:1.4rem;
+	border-top:1px solid #F0EFF5;
+	border-bottom:1px solid #F0EFF5;
+}
+.comment-input span{
+	color:#999;
+	padding-right:1.2rem;
+}
+
+.comment-item-top{
+	padding-left:.5rem;
+}
+
+
+.comment-item-top span{
+	font-size:1.4rem;
+	padding-left:1.2rem;
+}
+.comment-item-top img{
+	width:3rem;height:3rem;
+}
+.comment-item-info-time{
+	font-size:1.2rem;
+	padding-left:4.6rem;
+	height:2rem;
+	line-height:2rem;
+}
+.comment-item-doc{
+	font-size:1.4rem;
+	padding-left:4.6rem;
+}
+
+.vote_tb_w .muiAccordionPanelTitle span{
+	border:none;
+	left:0;
+}
+.vote_tb_w .muiAccordionPanelTitle{
+	background:#fff;
+	padding-left:.5rem;
+	
+}
+.vote_tb_w .mblEdgeToEdgeList{
+	border-top:none;
+}
+
+/**********新二级页面**********/
+.vote_card{
+	box-shadow: 0 0 30px 0 rgba(153,179,210,0.20);
+	margin-top: 1.2rem;
+	border-radius: 1rem;
+	padding: 1.4rem 1.2rem;
+}
+.vote_card .vote_top{
+	position: relative;
+	padding-bottom: 1.2rem;
+}
+.vote_card .vote_top:after{
+    content: " ";
+    position: absolute;
+    z-index: 2;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    border-top: .1rem solid #EEEEEE;
+    -webkit-transform-origin: 0 0;
+    transform-origin: 0 0;
+    -webkit-transform: scaleY(.5);
+    transform: scaleY(.5);	
+}
+.vote_card .vote_bottom{
+	margin-top: 1.2rem;
+}
+.vote_card .vote_top .vote_title{
+    width: 100%;
+    height: 100%;
+    margin-bottom: 1rem;
+}
+.vote_card .vote_top .vote_title .vote_title_inner{
+	word-break: break-all;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	display: -webkit-box;
+	-webkit-line-clamp: 2;
+	-webkit-box-orient: vertical;
+	line-height: 2rem;
+}
+.vote_card .vote_top .vote_vote{
+    position: absolute;
+    bottom: 2rem;
+    right: 0;
+}
+.vote_card .vote_top .vote_vote .vote_num_text{
+	position: relative;
+	top: 50%;
+	font-family: fontnumber;
+}
+.vote_card .vote_top .vote_vote .vote_num_unit{
+	font-size: 1.2rem !important;
+	margin-left: .2rem;
+	top: -.1rem;
+    position: relative;
+}
+.vote_status{
+	border-radius: 4px;
+	padding: .2rem .4rem;
+	margin-right: .5rem;
+	display: inline-block;
+    vertical-align: middle;
+    height: 2rem;
+    line-height: 2.2rem;    
+}
+.vote_status_gray{
+	background: #F4F4F4;
+	color: #999999;
+}
+.vote_status_blue{
+	background: #EEF4FF;
+	color: #4285F4;
+}
+.vote_exp_time_info{
+	display: inline-block;
+    vertical-align: top;
+}
+.vote_exp_time{
+
+}
+.vote_per_img{
+	display: inline-block;
+    width: 2.4rem;
+    height: 2.4rem;
+    border-radius: 50%;
+    border: 1px solid #c9dfff;
+    background-color: #f8f8f8;
+    overflow: hidden;
+}
+.vote_creator,.vote_category{
+	display: inline-block;
+    vertical-align: top;
+    margin-left: .8rem;
+    margin-top: .5rem;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+.vote_creator{
+	max-width: 8rem;
+}
+.vote_category{
+	max-width: 11.6rem;
+}
+.vote_per_img_box{
+    display: inline-block;
+}
+.vote_book_img {
+	display: -webkit-box;
+    width: 2.4rem;
+    height: 2.4rem;
+    border-radius: 50%;
+    background-color: #3fa9f5;
+    text-align: center;
+    color: #fff;
+    -webkit-box-orient: vertical;
+    box-orient: vertical;
+    -webkit-box-pack: center;
+    box-pack: center;
+    -webkit-box-align: center;
+}
+

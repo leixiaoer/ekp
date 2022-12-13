@@ -1,0 +1,144 @@
+{
+    "global":     {
+        "modelName": "com.landray.kmss.fssc.base.model.FsscBaseCashFlow",
+        "messageKey": "fssc-base:table.fsscBaseCashFlow",
+        "table": "fssc_base_cash_flow",
+        "url": "/fssc/base/fssc_base_cash_flow/fsscBaseCashFlow.do?method=view&fdId=${fdId}",
+        "displayProperty": "fdName",
+        "serviceBean": "fsscBaseCashFlowService",
+        "canLogShow": "1"
+    },
+    "attrs":     {
+        "fdId":         {
+            "propertyType": "id",
+            "generator": {"type": "assigned"}
+        },
+        "fdName":         {
+            "propertyType": "simple",
+            "type": "String",
+            "length": "200",
+            "defaultValue": "",
+            "messageKey": "fssc-base:fsscBaseCashFlow.fdName",
+            "column": "fd_name",
+            "notNull": "true",
+            "validate": "true",
+            "canSearch": "true",
+            "canRelation": "true",
+            "canDisplay": "true",
+            "readOnly": "false"
+        },
+        "fdCode":         {
+            "propertyType": "simple",
+            "type": "String",
+            "length": "50",
+            "defaultValue": "",
+            "messageKey": "fssc-base:fsscBaseCashFlow.fdCode",
+            "column": "fd_code",
+            "notNull": "true",
+            "validate": "true",
+            "canSearch": "true",
+            "canRelation": "true",
+            "canDisplay": "true",
+            "readOnly": "false"
+        },
+        "fdIsAvailable":         {
+            "propertyType": "simple",
+            "type": "Boolean",
+            "defaultValue": "true",
+            "messageKey": "fssc-base:fsscBaseCashFlow.fdIsAvailable",
+            "column": "fd_is_available",
+            "notNull": "false",
+            "validate": "true",
+            "canSearch": "true",
+            "canRelation": "true",
+            "canDisplay": "true",
+            "readOnly": "false"
+        },
+        "docCreateTime":         {
+            "propertyType": "simple",
+            "type": "DateTime",
+            "messageKey": "fssc-base:fsscBaseCashFlow.docCreateTime",
+            "column": "doc_create_time",
+            "notNull": "true",
+            "validate": "false",
+            "canSearch": "true",
+            "canRelation": "true",
+            "canDisplay": "true",
+            "readOnly": "true"
+        },
+        "docAlterTime":         {
+            "propertyType": "simple",
+            "type": "DateTime",
+            "messageKey": "fssc-base:fsscBaseCashFlow.docAlterTime",
+            "column": "doc_alter_time",
+            "notNull": "false",
+            "validate": "false",
+            "canSearch": "true",
+            "canRelation": "true",
+            "canDisplay": "true",
+            "readOnly": "true"
+        },
+        "docCreator":         {
+            "propertyType": "model",
+            "type": "com.landray.kmss.sys.organization.model.SysOrgPerson",
+            "messageKey": "fssc-base:fsscBaseCashFlow.docCreator",
+            "column": "doc_creator_id",
+            "notNull": "true",
+            "validate": "false",
+            "canSearch": "true",
+            "canRelation": "true",
+            "canDisplay": "true",
+            "readOnly": "true",
+            "dialogJS": "Dialog_Address(!{mulSelect}, '!{idField}','!{nameField}', ';',ORG_TYPE_PERSON);"
+        },
+        "docAlteror":         {
+            "propertyType": "model",
+            "type": "com.landray.kmss.sys.organization.model.SysOrgPerson",
+            "messageKey": "fssc-base:fsscBaseCashFlow.docAlteror",
+            "column": "doc_alteror_id",
+            "notNull": "false",
+            "validate": "false",
+            "canSearch": "true",
+            "canRelation": "true",
+            "canDisplay": "true",
+            "readOnly": "true",
+            "dialogJS": "Dialog_Address(!{mulSelect}, '!{idField}','!{nameField}', ';',ORG_TYPE_PERSON);"
+        },
+        "hbmParent":         {
+            "propertyType": "model",
+            "type": "com.landray.kmss.fssc.base.model.FsscBaseCashFlow",
+            "messageKey": "fssc-base:fsscBaseCashFlow.fdParent",
+            "column": "fd_parent_id",
+            "notNull": "false",
+            "validate": "true",
+            "canSearch": "true",
+            "canRelation": "true",
+            "canDisplay": "true",
+            "readOnly": "false"
+        },
+        "fdCompany":         {
+            "propertyType": "model",
+            "type": "com.landray.kmss.fssc.base.model.FsscBaseCompany",
+            "messageKey": "fssc-base:fsscBaseCashFlow.fdCompany",
+            "column": "fd_company_id",
+            "notNull": "false",
+            "validate": "true",
+            "canSearch": "true",
+            "canRelation": "true",
+            "canDisplay": "true",
+            "readOnly": "false"
+        },
+         "fdAccountsCom":         {
+            "propertyType": "model",
+            "type": "com.landray.kmss.fssc.base.model.FsscBaseAccountsCom",
+            "messageKey": "fssc-base:fsscBaseCashFlow.fdAccountsCom",
+            "column": "fd_accounts_com_id",
+            "notNull": "false",
+            "validate": "true",
+            "canSearch": "true",
+            "canRelation": "true",
+            "canDisplay": "true",
+            "readOnly": "false"
+        }
+    }
+}

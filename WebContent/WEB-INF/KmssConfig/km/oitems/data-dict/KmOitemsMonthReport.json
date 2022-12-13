@@ -1,0 +1,91 @@
+{
+    "global":     {
+        "modelName": "com.landray.kmss.km.oitems.model.KmOitemsMonthReport",
+        "messageKey": "km-oitems:table.kmOitemsMonthReport",
+        "displayProperty": "docSubject",
+        "serviceBean": "kmOitemsMonthReportService",
+        "table": "km_oitems_month_report",
+        "url": "/km/oitems/km_oitems_month_report/kmOitemsMonthReport.do?method=view&fdId=${fdId}"
+    },
+    "attrs":     {
+        "fdId":         {
+            "propertyType": "id",
+            "generator": {"type": "assigned"}
+        },
+        "docSubject":         {
+            "propertyType": "simple",
+            "messageKey": "km-oitems:kmOitemsMonthReport.docSubject",
+            "type": "String",
+            "column": "doc_subject",
+            "notNull": "true",
+            "length": "200",
+            "validate": "true"
+        },
+        "docCreateTime":         {
+            "propertyType": "simple",
+            "messageKey": "km-oitems:kmOitemsMonthReport.docCreateTime",
+            "type": "DateTime",
+            "column": "doc_create_time",
+            "notNull": "false",
+            "validate": "false"
+        },
+        "docAlterTime":         {
+            "propertyType": "simple",
+            "messageKey": "km-oitems:kmOitemsMonthReport.docAlterTime",
+            "type": "DateTime",
+            "column": "doc_alter_time",
+            "notNull": "false",
+            "validate": "false"
+        },
+        "fdLastModifiedTime":         {
+            "propertyType": "simple",
+            "messageKey": "km-oitems:kmOitemsMonthReport.fdLastModifiedTime",
+            "type": "DateTime",
+            "column": "fd_last_modified_time",
+            "notNull": "true",
+            "validate": "false",
+            "canDisplay": "false"
+        },
+        "fdType":         {
+            "propertyType": "simple",
+            "messageKey": "km-oitems:kmOitemsMonthReport.fdType",
+            "type": "String",
+            "column": "fd_type",
+            "notNull": "false",
+            "length": "36",
+            "validate": "true"
+        },
+        "fdAmount":         {
+            "propertyType": "simple",
+            "messageKey": "km-oitems:kmOitemsMonthReport.fdAmount",
+            "type": "Double",
+            "column": "fd_amount",
+            "notNull": "false",
+            "length": "36",
+            "validate": "true"
+        },
+        "docDept":         {
+            "propertyType": "model",
+            "messageKey": "km-oitems:kmOitemsMonthReport.docDept",
+            "type": "com.landray.kmss.sys.organization.model.SysOrgElement",
+            "column": "doc_dept_id",
+            "notNull": "false",
+            "validate": "false"
+        },
+        "docCreator":         {
+            "propertyType": "model",
+            "messageKey": "km-oitems:kmOitemsMonthReport.docCreator",
+            "type": "com.landray.kmss.sys.organization.model.SysOrgElement",
+            "column": "doc_creator_id",
+            "notNull": "false",
+            "validate": "false"
+        },
+        "kmOitemsReportListing":         {
+            "propertyType": "list",
+            "type": "com.landray.kmss.km.oitems.model.KmOitemsReportListing",
+            "column": "fd_month_report_id",
+            "cascade": "all-delete-orphan",
+            "table": "km_oitems_report_listing"
+        }
+    }
+}

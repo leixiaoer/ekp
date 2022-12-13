@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<description xmlns="http://www.example.org/description-config" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.example.org/description-config ../../../description.xsd">
+	<module>
+		<module-name>日程机制</module-name>
+		<module-path>sys/agenda</module-path>
+		<baseline>V15.0.4.R.20200410</baseline>
+		<source-md5>320252d5a62bb7a3ede566b5e1f06672</source-md5>
+		<is-custom>否</is-custom>
+		<serial-num>3</serial-num>
+	</module>
+</description>

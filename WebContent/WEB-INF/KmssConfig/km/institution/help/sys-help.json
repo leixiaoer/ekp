@@ -1,0 +1,48 @@
+{
+	"data": [
+		{
+			"fdName" : "规范制度主页面",
+			"fdUrl" : "/km/institution__and__/km/institution/index.jsp"
+		},
+		{
+			"fdName" : "规范制度新建页面",
+			"fdUrl" : "/km/institution/km_institution_knowledge/kmInstitutionKnowledge.do?method=add"
+		},
+		{
+			"fdName" : "规范制度查看页面",
+			"fdUrl" : "/km/institution/km_institution_knowledge/kmInstitutionKnowledge.do?method=view"
+		},
+		{
+			"fdName" : "规范制度编辑页面",
+			"fdUrl" : "/km/institution/km_institution_knowledge/kmInstitutionKnowledge.do?method=edit"
+		},
+		{
+			"fdName" : "类别设置",
+			"fdUrl" : "/sys/simplecategory/sys_simple_category/sysCategoryMain_tree.jsp?modelName=com.landray.kmss.km.institution.model.KmInstitutionTemplate&actionUrl=/km/institution/km_institution_template/kmInstitutionTemplate.do&formName=kmInstitutionTemplateForm&mainModelName=com.landray.kmss.km.institution.model.KmInstitutionKnowledge&docFkName=kmInstitutionTemplate"
+		},
+		{
+			"fdName" : "通用流程模板",
+			"fdUrl" : "/sys/lbpmservice/support/lbpm_template/index.jsp?method=list&fdModelName=com.landray.kmss.km.institution.model.KmInstitutionTemplate&fdKey=mainDoc"
+		},
+		{
+			"fdName" : "文档失效流程模板",
+			"fdUrl" : "/sys/lbpmservice/support/lbpm_template/index.jsp?method=list&fdModelName=com.landray.kmss.km.institution.model.KmInstitutionTemplate"
+		},
+		{
+			"fdName" : "失效流程文档",
+			"fdUrl" : "/km/institution/km_inst_knowledge_abolish/index.jsp"
+		},
+		{
+			"fdName" : "编号规则设置",
+			"fdUrl" : "/sys/number/sys_number_main/index.jsp?modelName=com.landray.kmss.km.institution.model.KmInstitutionKnowledge"
+		},
+		{
+			"fdName" : "列表显示设置",
+			"fdUrl" : "/sys/profile/listShow/sys_listshow_category/index.jsp?modelName=com.landray.kmss.km.institution.model.KmInstitutionKnowledge"
+		},
+		{
+			"fdName" : "文档维护",
+			"fdUrl" : "/km/institution/km_institution_knowledge/kmInstitutionKnowledge.do?method=manageList&status=all&orderBy=fdNumber&nodeType=CATEGORY"
+		}
+	]
+}

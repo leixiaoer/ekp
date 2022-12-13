@@ -1,0 +1,27 @@
+{
+	"id": "kmAssetMainTiny",
+	"title": "资产管理二级页面首页及子列表页",
+	"desc": "资产管理二级页面首页及子列表页个性文件",
+	"jsList": [
+	    "/km/asset/mobile/module/js/",
+	    "/km/asset/mobile/apply_asset/js/",
+	    "/km/asset/mobile/my_asset/js/",
+	    "/km/asset/mobile/buy_asset/js/",
+	    "/km/asset/mobile/get_asset/js/",
+	    "/km/asset/mobile/return_asset/js/",
+	    "/km/asset/mobile/purchase_asset/js/",
+	    "/km/asset/mobile/in_asset/js/",
+	    "/km/asset/mobile/rent_asset/js/",
+	    "/km/asset/mobile/divert_asset/js/",
+	    "/km/asset/mobile/repair_asset/js/",
+	    "/km/asset/mobile/change_asset/js/",
+	    "/km/asset/mobile/deal_asset/js/",
+	    "/km/asset/mobile/card_asset/js/",
+	    "/km/asset/mobile/task_asset/js/",
+	    "/km/asset/mobile/inventory_asset/js/",
+	    "/km/asset/mobile/js/list/item/AssetCardItemMixin.js",
+		"/km/asset/mobile/js/list/AssetCardItemListMixin.js",
+		"/sys/mobile/js/mui/list/item/ProcessItemMixin.js",
+		"/sys/mobile/js/mui/list/ProcessItemListMixin.js"
+	]
+}

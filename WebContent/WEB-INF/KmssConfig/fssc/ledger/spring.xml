@@ -1,0 +1,280 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans 
+    xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.0.xsd" 
+    xmlns="http://www.springframework.org/schema/beans" 
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <bean 
+        id="fsscLedgerInvoiceDao" 
+        class="com.landray.kmss.fssc.ledger.dao.hibernate.FsscLedgerInvoiceDaoImp" 
+        parent="KmssAuthBaseDao">
+        <property 
+            name="modelName">
+            <value>com.landray.kmss.fssc.ledger.model.FsscLedgerInvoice</value>
+        </property>
+    </bean>
+    <bean 
+        id="fsscLedgerInvoiceTarget" 
+        class="com.landray.kmss.fssc.ledger.service.spring.FsscLedgerInvoiceServiceImp" 
+        parent="KmssExtendDataTarget">
+        <property 
+            name="baseDao">
+            <ref 
+                bean="fsscLedgerInvoiceDao"/>
+        </property>
+    </bean>
+    <bean 
+        id="fsscLedgerInvoiceService" 
+        parent="KmssBaseService">
+        <property 
+            name="target">
+            <ref 
+                bean="fsscLedgerInvoiceTarget"/>
+        </property>
+    </bean>
+    <bean 
+        id="fsscLedgerDetailDao" 
+        class="com.landray.kmss.fssc.ledger.dao.hibernate.FsscLedgerDetailDaoImp" 
+        parent="KmssAuthBaseDao">
+        <property 
+            name="modelName">
+            <value>com.landray.kmss.fssc.ledger.model.FsscLedgerDetail</value>
+        </property>
+    </bean>
+    <bean 
+        id="fsscLedgerDetailTarget" 
+        class="com.landray.kmss.fssc.ledger.service.spring.FsscLedgerDetailServiceImp" 
+        parent="KmssExtendDataTarget">
+        <property 
+            name="baseDao">
+            <ref 
+                bean="fsscLedgerDetailDao"/>
+        </property>
+    </bean>
+    <bean 
+        id="fsscLedgerDetailService" 
+        parent="KmssBaseService">
+        <property 
+            name="target">
+            <ref 
+                bean="fsscLedgerDetailTarget"/>
+        </property>
+    </bean>
+    <bean
+        id="fsscCommonLedgerService"
+        class="com.landray.kmss.fssc.ledger.service.spring.FsscCommonLedgerService">
+        <property name="fsscLedgerInvoiceService">
+            <ref local="fsscLedgerInvoiceService"/>
+        </property>
+    </bean>
+    <bean 
+        id="fsscLedgerMaterialDao" 
+        class="com.landray.kmss.fssc.ledger.dao.hibernate.FsscLedgerMaterialDaoImp" 
+        parent="KmssAuthBaseDao">
+        <property 
+            name="modelName">
+            <value>com.landray.kmss.fssc.ledger.model.FsscLedgerMaterial</value>
+        </property>
+    </bean>
+    <bean 
+        id="fsscLedgerMaterialTarget" 
+        class="com.landray.kmss.fssc.ledger.service.spring.FsscLedgerMaterialServiceImp" 
+        parent="KmssExtendDataTarget">
+        <property 
+            name="baseDao">
+            <ref 
+                bean="fsscLedgerMaterialDao"/>
+        </property>
+        <property 
+            name="fsscBaseMaterialInfoService">
+            <ref 
+                bean="fsscBaseMaterialInfoService"/>
+        </property>
+        <property 
+            name="fsscBaseMaterialTypeService">
+            <ref 
+                bean="fsscBaseMaterialTypeService"/>
+        </property>
+        <property 
+            name="sysOrgCoreService">
+            <ref 
+                bean="sysOrgCoreService"/>
+        </property>
+        <property 
+            name="fsscLedgerMaterialStockService">
+            <ref 
+                bean="fsscLedgerMaterialStockService"/>
+        </property>
+    </bean>
+    <bean 
+        id="fsscLedgerMaterialService" 
+        parent="KmssBaseService">
+        <property 
+            name="target">
+            <ref 
+                bean="fsscLedgerMaterialTarget"/>
+        </property>
+    </bean>
+    <bean 
+        id="fsscLedgerMaterialStockDao" 
+        class="com.landray.kmss.fssc.ledger.dao.hibernate.FsscLedgerMaterialStockDaoImp" 
+        parent="KmssAuthBaseDao">
+        <property 
+            name="modelName">
+            <value>com.landray.kmss.fssc.ledger.model.FsscLedgerMaterialStock</value>
+        </property>
+    </bean>
+    <bean 
+        id="fsscLedgerMaterialStockTarget" 
+        class="com.landray.kmss.fssc.ledger.service.spring.FsscLedgerMaterialStockServiceImp" 
+        parent="KmssExtendDataTarget">
+        <property 
+            name="baseDao">
+            <ref 
+                bean="fsscLedgerMaterialStockDao"/>
+        </property>
+    </bean>
+    <bean 
+        id="fsscLedgerMaterialStockService" 
+        parent="KmssBaseService">
+        <property 
+            name="target">
+            <ref 
+                bean="fsscLedgerMaterialStockTarget"/>
+        </property>
+    </bean>
+    <bean 
+        id="fsscLedgerWebserviceService" 
+        class="com.landray.kmss.fssc.ledger.webservice.spring.FsscLedgerWebserviceServiceImp">
+    	<property name="fsscLedgerMaterialOperatService">
+			<ref bean="fsscLedgerMaterialOperatService" />
+		</property>
+    </bean>
+    <bean
+        id="fsscLedgerContractWebserviceService" 
+        class="com.landray.kmss.fssc.ledger.webservice.spring.FsscLedgerContractWebserviceServiceImp">
+        <property name="fsscLedgerContractService">
+			<ref bean="fsscLedgerContractService" />
+		</property>
+		<property name="fsscBaseSupplierService">
+			<ref bean="fsscBaseSupplierService" />
+		</property>
+    </bean>
+    <bean 
+        id="fsscLedgerContractDao" 
+        class="com.landray.kmss.fssc.ledger.dao.hibernate.FsscLedgerContractDaoImp" 
+        parent="KmssAuthBaseDao">
+        <property 
+            name="modelName">
+            <value>com.landray.kmss.fssc.ledger.model.FsscLedgerContract</value>
+        </property>
+    </bean>
+    <bean 
+        id="fsscLedgerContractTarget" 
+        class="com.landray.kmss.fssc.ledger.service.spring.FsscLedgerContractServiceImp" 
+        parent="KmssExtendDataTarget">
+        <property name="baseDao">
+            <ref bean="fsscLedgerContractDao"/>
+        </property>
+        <property name="fsscBaseSupplierService">
+			<ref bean="fsscBaseSupplierService" />
+		</property>
+		<property name="fsscBaseCurrencyService">
+			<ref bean="fsscBaseCurrencyService" />
+		</property>
+		<property name="fsscLedgerContractClauseService">
+			<ref local="fsscLedgerContractClauseService" />
+		</property>
+		<property name="sysOrgPersonService">
+			<ref bean="sysOrgPersonService" />
+		</property>
+		<property name="sysOrgElementService">
+			<ref bean="sysOrgElementService" />
+		</property>
+    </bean>
+    <bean 
+        id="fsscLedgerContractService" 
+        parent="KmssBaseService">
+        <property 
+            name="target">
+            <ref 
+                bean="fsscLedgerContractTarget"/>
+        </property>
+    </bean>
+    <bean 
+        id="fsscLedgerContractClauseDao" 
+        class="com.landray.kmss.fssc.ledger.dao.hibernate.FsscLedgerContractClauseDaoImp" 
+        parent="KmssAuthBaseDao">
+        <property 
+            name="modelName">
+            <value>com.landray.kmss.fssc.ledger.model.FsscLedgerContractClause</value>
+        </property>
+    </bean>
+    <bean 
+        id="fsscLedgerContractClauseTarget" 
+        class="com.landray.kmss.fssc.ledger.service.spring.FsscLedgerContractClauseServiceImp" 
+        parent="KmssExtendDataTarget">
+        <property name="baseDao">
+            <ref bean="fsscLedgerContractClauseDao"/>
+        </property>
+    </bean>
+    <bean 
+        id="fsscLedgerContractClauseService" 
+        parent="KmssBaseService">
+        <property 
+            name="target">
+            <ref 
+                bean="fsscLedgerContractClauseTarget"/>
+        </property>
+    </bean>
+    <bean 
+        id="fsscLedgerMaterialOperatService" 
+        class="com.landray.kmss.fssc.ledger.service.spring.FsscLedgerMaterialOperatServiceImp">
+		<property name="fsscLedgerMaterialStockService">
+			<ref local="fsscLedgerMaterialStockService"/>
+		</property>
+		<property name="fsscLedgerMaterialService">
+			<ref local="fsscLedgerMaterialService"/>
+		</property>
+    </bean>
+    <bean 
+        id="fsscLedgerCreditDao" 
+        class="com.landray.kmss.fssc.ledger.dao.hibernate.FsscLedgerCreditDaoImp" 
+        parent="KmssAuthBaseDao">
+        <property 
+            name="modelName">
+            <value>com.landray.kmss.fssc.ledger.model.FsscLedgerCredit</value>
+        </property>
+    </bean>
+    <bean 
+        id="fsscLedgerCreditTarget" 
+        class="com.landray.kmss.fssc.ledger.service.spring.FsscLedgerCreditServiceImp" 
+        parent="KmssExtendDataTarget">
+        <property 
+            name="baseDao">
+            <ref 
+                bean="fsscLedgerCreditDao"/>
+        </property>
+    </bean>
+    <bean 
+        id="fsscLedgerCreditService" 
+        parent="KmssBaseService">
+        <property 
+            name="target">
+            <ref 
+                bean="fsscLedgerCreditTarget"/>
+        </property>
+    </bean>
+    <bean 
+        id="fsscLedgerContractCommonService" 
+        class="com.landray.kmss.fssc.ledger.service.spring.FsscLedgerContractCommonServiceImp">
+         <property 
+            name="fsscLedgerContractService">
+            <ref 
+                local="fsscLedgerContractService"/>
+        </property>
+    </bean>
+    <bean 
+        id="fsscLedgerContractClauseCommonService" 
+        class="com.landray.kmss.fssc.ledger.service.spring.FsscLedgerContractClauseCommonServiceImp">
+    </bean>
+</beans>

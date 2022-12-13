@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans
+	xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.0.xsd">
+	<bean
+		id="kmPindagateBridgeDao"
+		parent="KmssAuthAreaBaseDao"
+		class="com.landray.kmss.km.pindagate.bridge.dao.hibernate.KmPindagateBridgeDaoImp">
+		<property
+			name="modelName"
+			value="com.landray.kmss.km.pindagate.bridge.model.KmPindagateBridge" />
+	</bean>
+	<bean
+		id="kmPindagateBridgeTarget"
+		parent="KmssBaseTarget"
+		class="com.landray.kmss.km.pindagate.bridge.service.spring.KmPindagateBridgeServiceImp">
+		<property name="baseDao">
+			<ref local="kmPindagateBridgeDao" />
+		</property>
+	</bean>
+	<bean
+		id="kmPindagateBridgeService"
+		parent="KmssBaseService">
+		<property name="target">
+			<ref local="kmPindagateBridgeTarget" />
+		</property>
+	</bean>
+	
+</beans>

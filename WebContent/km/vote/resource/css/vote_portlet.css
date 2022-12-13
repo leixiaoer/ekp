@@ -1,0 +1,290 @@
+﻿@charset "utf-8";
+/**
+**代码制作人：xiex
+**制作时间：2013-11-04
+**文件内容描述：问卷调查
+**修改日期：无
+**修改内容：无
+*************************************/	
+/***************** 样式重置 开始************************/
+
+html,
+body,
+p {
+	padding: 0px;
+	margin: 0px;
+	font-family: "微软雅黑";
+	font-size: 12px;
+	color: #666;
+}
+
+a {
+	color: #666;
+	text-decoration: none;
+}
+
+ul,
+li {
+	margin: 0px;
+	padding: 0px;
+	list-style: none;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	font-size: 100%;
+	font-weight: normal;
+	margin: 0px;
+}
+
+
+/***************** 样式重置 结束************************/
+
+/*-------------------- 投票部件 开始 ----------------------------*/
+.lui_vote_portlet_slideContainer {
+	/* padding: 0 20px; */
+	position: relative;
+}
+
+.lui_vote_portlet_slideContainer .vote_slide_hd {}
+
+.lui_vote_portlet_slideContainer .vote_slide_hd span {
+	display: inline-block;
+	width: 13px;
+	height: 24px;
+	cursor: pointer;
+	position: absolute;
+	top: 50%;
+	margin-top: -12px;
+	background-image: url(../images/vote-sprite.png);
+}
+
+.lui_vote_portlet_slideContainer .vote_slide_hd .vote_slide_prev {
+	left: 0;
+	background-position: left top;
+}
+
+.lui_vote_portlet_slideContainer .vote_slide_hd .vote_slide_next {
+	right: 0;
+	background-position: -15px top;
+}
+
+.lui_vote_portlet_slideContainer .vote_slide_hd .vote_slide_prev:hover {
+	background-position: left -25px;
+}
+
+.lui_vote_portlet_slideContainer .vote_slide_hd .vote_slide_next:hover {
+	background-position: -15px -25px;
+}
+
+.lui_vote_portlet_slideContainer .vote_slide_bd {
+	padding: 0 25px;
+}
+
+.lui_vote_portlet_slideContainer .vote_title {
+	margin-bottom: 15px;
+	color: #333;
+	line-height: 20px;
+	font-size: 16px;
+}
+
+
+/* 投票选项列表 */
+
+.lui_vote_portlet_slideContainer .vote_option_list {
+	margin-top: 25px;
+}
+
+.lui_vote_portlet_slideContainer .vote_option_list span {
+	vertical-align: middle;
+}
+
+.lui_vote_portlet_slideContainer .vote_option_list li {
+	vertical-align: middle;
+	padding: 5px 0;
+}
+
+.lui_vote_portlet_slideContainer .vote_option_list .radiobox {
+	display: inline-block;
+	width: 16px;
+	height: 16px;
+	background-image: url(../images/vote-sprite.png);
+	background-position: -20px -50px;
+	vertical-align: middle;
+	margin-right: 8px;
+}
+
+.lui_vote_portlet_slideContainer .vote_option_list .radiobox.selected {
+	display: inline-block;
+	width: 16px;
+	height: 16px;
+	background-position: 0 -50px;
+}
+
+.lui_vote_portlet_slideContainer .vote_option_list .checkbox {
+	display: inline-block;
+	width: 14px;
+	height: 14px;
+	background-image: url(../images/vote-sprite.png);
+	background-position: -15px -70px;
+	vertical-align: middle;
+	margin-right: 8px;
+}
+
+.lui_vote_portlet_slideContainer .vote_option_list .checkbox.selected {
+	background-position: 0px -70px;
+}
+
+.lui_vote_portlet_slideContainer .vote_btn_bar {
+	text-align: center;
+}
+
+.lui_vote_portlet_slideContainer .vote_btn_bar .vote_btn {
+	display: inline-block;
+	width: 108px;
+	height: 34px;
+	line-height: 34px;
+	text-align: center;
+	border: 1px solid #15a4fa;
+	color: #15a4fa;
+	font-size: 16px;
+	cursor: pointer;
+}
+
+
+/* 投票结果*/
+
+.lui_vote_portlet_slideContainer .vote_result_list {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+
+.lui_vote_portlet_slideContainer .vote_result_list li {
+	margin-bottom: 20px;
+}
+.lui_vote_portlet_slideContainer .vote_result_list .vote_result_title {
+	margin-bottom: 8px;
+	line-height: 20px;
+	font-size: 14px;
+}
+.lui_vote_portlet_slideContainer .vote_result_list .vote_result_title:after {
+	display: table;
+	content: "";
+	clear: both;
+}
+
+.lui_vote_portlet_slideContainer .vote_result_list .vote_result_title .vote_opt_name {
+	max-width: 60%;
+	float: left;
+	overflow: hidden;
+}
+.lui_vote_portlet_slideContainer .vote_result_list .vote_result_title .vote_opt_name .vote_radio {
+	width: 20px;
+	display: inline-block;
+	float: left;
+}
+.lui_vote_portlet_slideContainer .vote_result_list .vote_result_title .vote_opt_name .vote_radio input{
+	display: none;
+	display: inline-block\9;
+}
+.lui_vote_portlet_slideContainer .vote_result_list .vote_result_title .vote_opt_name .vote_radio input+.item_checkbox{
+	display: inline-block;
+	display: none\9;
+	width: 14px;
+	height: 14px;
+	background-image: url(../images/vote-sprite.png);
+	background-position: -15px -70px;
+	vertical-align: middle;
+	margin-right: 8px;
+	/*position: relative;*/
+	/*top:-1px;*/
+	left: 3px;
+}
+.lui_vote_portlet_slideContainer .vote_result_list .vote_result_title .vote_opt_name .vote_radio input[type="checkbox"]:checked+.item_checkbox{
+	background-position: 0px -70px;
+}
+.lui_vote_portlet_slideContainer .vote_result_list .vote_result_title .vote_opt_name .vote_radio input+i.item_radio{
+	display: inline-block;
+	display: none\9;
+	width: 16px;
+	height: 16px;
+	background-image: url(../images/vote-sprite.png);
+	background-position: -20px -50px;
+	vertical-align: middle;
+	margin-right: 8px;
+}
+.lui_vote_portlet_slideContainer .vote_result_list .vote_result_title .vote_opt_name .vote_radio input[type="radio"]:checked+i.item_radio{
+	background-position: 0 -50px;
+}
+
+.lui_vote_portlet_slideContainer .vote_result_list .vote_result_title .vote_opt_name .vote_item{
+   	margin-left: 25px;
+    word-wrap:break-word;
+    word-break:break-all;
+}
+
+.lui_vote_portlet_slideContainer .vote_result_list .vote_result_title .vote_opt_name em {
+	margin-left: 5px;
+	color: #999;
+	font-style: normal;
+	white-space:nowrap;
+}
+.lui_vote_portlet_slideContainer .vote_result_list .own_selected .vote_result_title .vote_opt_name:after{
+	display: inline-block;
+	content:"";
+	width:12px;
+	height: 9px;
+	background:url(../images/vote-sprite.png) -40px -50px;
+	margin-left: 5px;
+} 
+
+.lui_vote_portlet_slideContainer .vote_result_title .vote_opt_num {
+	max-width: 40%;
+	color: #999;
+	font-size: 12px;
+	float: left;
+	margin-left:20px;
+	overflow: hidden;
+}
+
+.lui_vote_portlet_slideContainer .vote_result_list .barline {
+	width: 100%;
+	height: 10px;
+	background: #eaeaea;
+	vertical-align: top;
+}
+
+.lui_vote_portlet_slideContainer .vote_result_list .barline span {
+	display: inline-block;
+	height: 10px;
+	background: #3fc682;
+	vertical-align: top;
+	transition: width 1s ease-in-out;
+}
+
+.lui_vote_portlet_slideContainer .vote_result_list .barline.color_style_1 span{ background:url(../images/barline_color_1.png) repeat-x left top;}
+.lui_vote_portlet_slideContainer .vote_result_list .barline.color_style_2 span{ background:url(../images/barline_color_2.png) repeat-x left top;}
+.lui_vote_portlet_slideContainer .vote_result_list .barline.color_style_3 span{ background:url(../images/barline_color_3.png) repeat-x left top;}
+.lui_vote_portlet_slideContainer .vote_result_list .barline.color_style_4 span{ background:url(../images/barline_color_4.png) repeat-x left top;}
+
+.lui_vote_portlet_slideContainer .vote_result_list.vote_result_voted .vote_result_title .vote_opt_name .vote_item {
+	margin-left: 0;
+	border-left: 2px solid #4fbdff;
+	padding-left: 8px;
+	color: #666;
+}
+.lui_vote_portlet_slideContainer .vote_btn_bar .vote_btn:hover {
+	color: #fff;
+	background-color: #15a4fa;
+}
+
+.lui_vote_portlet_voted_box{margin-top: 0px; text-align: center;}
+.lui_vote_portlet_voted_tip{color:#ef741c;}
+.lui_vote_portlet_voted_tip i{ display: inline-block; width:16px; height:16px; margin-right: 5px; background:url(../images/vote-sprite.png) no-repeat 0 -85px; vertical-align: middle;}
+.lui_vote_portlet_voted_tip span{ vertical-align: middle;}
+/*-------------------- 投票部件 结束 ----------------------------*/

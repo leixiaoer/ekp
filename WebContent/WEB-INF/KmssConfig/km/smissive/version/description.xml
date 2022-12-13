@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<description xmlns="http://www.example.org/description-config" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.example.org/description-config ../../../description.xsd">
+	<module>
+		<module-name>公文管理</module-name>
+		<module-path>km/smissive</module-path>
+		<baseline>V15.0.4.R.20200410</baseline>
+		<source-md5>121b97856475fe8d27a20371ad1c9491</source-md5>
+		<is-custom>否</is-custom>
+		<serial-num>21</serial-num>
+	</module>
+</description>

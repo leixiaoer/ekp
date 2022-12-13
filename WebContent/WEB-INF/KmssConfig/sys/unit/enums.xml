@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<column-enums>
+	kmImissiveUnit.fdNature
+	<type name="kmImissiveUnit.fdNature">
+		<value-label>
+			<value>1</value>
+			<label-key>kmImissiveUnit.fdNature.inner</label-key>
+			<bundle>sys-unit</bundle>
+		</value-label>
+		<value-label>
+			<value>0</value>
+			<label-key>kmImissiveUnit.fdNature.outer</label-key>
+			<bundle>sys-unit</bundle>
+		</value-label>
+	</type>
+	<type name="kmImissiveUnit.fdNature4show">
+		<value-label>
+			<value>1</value>
+			<label-key>kmImissiveUnit.fdNature.inner</label-key>
+			<bundle>sys-unit</bundle>
+		</value-label>
+		<value-label>
+			<value>2</value>
+			<label-key>kmImissiveUnit.fdNature.sync</label-key>
+			<bundle>sys-unit</bundle>
+		</value-label>
+		<value-label>
+			<value>0</value>
+			<label-key>kmImissiveUnit.fdNature.outer</label-key>
+			<bundle>sys-unit</bundle>
+		</value-label>
+	</type>
+	<type name="kmImissiveUnit_fdLevel">
+		<value-label>
+			<value>1</value>
+			<label-key>kmImissiveUnit.fdLevel.superior</label-key>
+			<bundle>sys-unit</bundle>
+		</value-label>
+		<value-label>
+			<value>0</value>
+			<label-key>kmImissiveUnit.fdLevel.equal</label-key>
+			<bundle>sys-unit</bundle>
+		</value-label>
+		<value-label>
+			<value>-1</value>
+			<label-key>kmImissiveUnit.fdLevel.subordinate</label-key>
+			<bundle>sys-unit</bundle>
+		</value-label>
+		<value-label>
+			<value>2</value>
+			<label-key>kmImissiveUnit.fdLevel.all</label-key>
+			<bundle>sys-unit</bundle>
+		</value-label>
+	</type>
+</column-enums>
+

@@ -1,0 +1,51 @@
+{
+    "global":     {
+        "modelName": "com.landray.kmss.km.carmng.model.KmCarmngEvaluation",
+        "messageKey": "km-carmng:table.kmCarmngEvaluation",
+        "displayProperty": "fdEvaluationScore",
+        "serviceBean": "kmCarmngEvaluationService",
+        "table": "km_carmng_evaluation",
+        "url": "/km/carmng/km_carmng_evaluation/kmCarmngEvaluation.do?method=view&fdId=${fdId}"
+    },
+    "attrs":     {
+        "fdId":         {
+            "propertyType": "id",
+            "generator": {"type": "assigned"}
+        },
+        "fdEvaluationScore":         {
+            "propertyType": "simple",
+            "messageKey": "km-carmng:kmCarmngEvaluation.fdEvaluationScore",
+            "type": "Long",
+            "column": "fd_evaluation_score",
+            "notNull": "false",
+            "length": "1"
+        },
+        "fdEvaluationContent":         {
+            "propertyType": "simple",
+            "messageKey": "km-carmng:kmCarmngEvaluation.fdEvaluationContent",
+            "type": "String",
+            "column": "fd_evaluation_content",
+            "notNull": "false",
+            "length": "1500"
+        },
+        "fdEvaluationTime":         {
+            "propertyType": "simple",
+            "messageKey": "km-carmng:kmCarmngEvaluation.fdEvaluationTime",
+            "type": "DateTime",
+            "column": "fd_evaluation_time",
+            "notNull": "false"
+        },
+        "fdEvaluator":         {
+            "propertyType": "model",
+            "messageKey": "km-carmng:kmCarmngEvaluation.fdEvaluator",
+            "type": "com.landray.kmss.sys.organization.model.SysOrgElement",
+            "column": "fd_evaluator_id"
+        },
+        "fdApplication":         {
+            "propertyType": "model",
+            "messageKey": "km-carmng:kmCarmngEvaluation.fdAppNames",
+            "type": "com.landray.kmss.km.carmng.model.KmCarmngApplication",
+            "column": "fd_application_id"
+        }
+    }
+}

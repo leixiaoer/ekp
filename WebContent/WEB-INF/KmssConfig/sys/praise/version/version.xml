@@ -1,0 +1,424 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<version xmlns="http://www.example.org/version-config" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.example.org/version-config ../../../version.xsd">
+	<modifies>
+		<modify>
+			<description>#152250 优化 收藏和点赞日志的ip信息</description>
+			<author>代家宽</author>
+			<revision-time>2021-11-05</revision-time>
+			<relation>
+				<relation-module>sys/praise</relation-module>
+				<relation-module>kms/log</relation-module>
+			</relation>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#145911 修复 集群环境，赞赏开关设置之后，只有一个节点生效，另外一个节点不生效</description>
+			<author>唐有炜</author>
+			<revision-time>2021-08-03</revision-time>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#141848 修复 英文翻译</description>
+			<author>孙佳敏</author>
+			<revision-time>2021-06-15</revision-time>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#135327 修复 赞赏管理后台模块点击前台入口图标，门户为极速模式时，二级页面点击左侧目录，出现双导航条</description>
+			<author>唐有炜</author>
+			<revision-time>2021-03-12</revision-time>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#132486 修复 赞赏管理后台模块添加前台入口图标</description>
+			<author>唐有炜</author>
+			<revision-time>2021-03-01</revision-time>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#97302 修复 无点赞权限用户在PC端点击“点赞”功能按钮时页面显示空白悬浮窗</description>
+			<author>唐有炜</author>
+			<revision-time>2020-03-03</revision-time>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#97226 修复 赞赏管理二级页面，左侧导航点击所有赞赏，积分商城消失</description>
+			<author>唐有炜</author>
+			<revision-time>2020-03-02</revision-time>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#97263 修复 赞赏弹框，用户K币为0，打赏之后提示K币不足，切换成点赞提交</description>
+			<author>何景锋</author>
+			<revision-time>2020-02-27</revision-time>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#92932 新增 积分商城入口</description>
+			<author>刘庞</author>
+			<revision-time>2020-01-08</revision-time>
+			<baseline>V15.0.3.R.20200117</baseline>
+		</modify>
+		<modify>
+			<description>#89589 修复 MKPAAS集成EKP兼容性问题</description>
+			<author>周梓凡</author>
+			<revision-time>2019-12-13</revision-time>
+			<baseline>V15.0.3.R.20200117</baseline>
+		</modify>
+		<modify>
+			<description>#88097 MKPAAS集成EKP兼容性问题解决</description>
+			<author>周梓凡</author>
+			<revision-time>2019-11-28</revision-time>
+			<relation>
+				<relation-module>core</relation-module>
+			</relation>
+			<baseline>V15.0.3.R.20200117</baseline>
+		</modify>
+		<modify>
+			<description>#86922 优化 取消赞赏理由自动获取</description>
+			<author>唐有炜</author>
+			<revision-time>2019-11-27</revision-time>
+			<baseline>V15.0.3.R.20200117</baseline>
+		</modify>
+		<modify>
+			<description>#88978 修复 点赞机制后台，赞赏统计列表，全选的复选框没有显示完整</description>
+			<author>屈高鹏</author>
+			<revision-time>2019-11-22</revision-time>
+			<baseline>V15.0.3.R.20200117</baseline>
+		</modify>
+		<modify>
+			<description>#81866 修复 英文语言下，赞赏弹框中，编辑后不能提交</description>
+			<author>刘庞</author>
+			<revision-time>2019-09-27</revision-time>
+			<baseline>V15.0.2.R.20191108</baseline>
+		</modify>
+		<modify>
+			<description>#81867 修复 赞赏管理后台，目录未翻译成英文</description>
+			<author>刘庞</author>
+			<revision-time>2019-09-19</revision-time>
+			<baseline>V15.0.2.R.20191108</baseline>
+		</modify>
+		<modify>
+			<description>#69805 修复 系统权限漏洞</description>
+			<author>黎凯麟</author>
+			<revision-time>2019-08-27</revision-time>
+			<baseline>V15.0.1.R.20190906</baseline>
+		</modify>
+		<modify>
+			<description>#78621 修复 点赞机制国际化缺失问题</description>
+			<author>张嘉韬</author>
+			<revision-time>2019-07-29</revision-time>
+			<baseline>V15.0.1.R.20190906</baseline>
+		</modify>
+		<modify>
+			<description>#78021 优化 赞赏管理二级页面，左边改成个人头像</description>
+			<author>黎凯麟</author>
+			<revision-time>2019-07-19</revision-time>
+			<baseline>V15.0.1.R.20190906</baseline>
+		</modify>
+		<modify>
+			<description>#74910 修复 赞赏我的与我的赞赏权限优化</description>
+			<author>黎凯麟</author>
+			<revision-time>2019-07-11</revision-time>
+			<baseline>V15.0.0.R.20190712</baseline>
+		</modify>
+		<modify>
+			<description>#72822 修复 赞赏门户打开“更多”时权限不通过的问题 by zhangjt</description>
+			<author>张嘉韬</author>
+			<revision-time>2019-05-13</revision-time>
+			<baseline>V15.0.0.R.20190712</baseline>
+		</modify>
+		<modify>
+			<description>#68712 修复 Safari下对人点赞无效的问题</description>
+			<author>洪泽铨</author>
+			<revision-time>2019-03-19</revision-time>
+			<baseline>V15.0.0.B3.20190412</baseline>
+		</modify>
+		<modify>
+			<description>#68470 优化 标签、赞赏模块跨站脚本防御</description>
+			<author>张嘉韬</author>
+			<revision-time>2019-03-11</revision-time>
+			<baseline>V15.0.0.B3.20190412</baseline>
+		</modify>
+		<modify>
+			<description>#65917 修复 赞赏统计定时任务报错</description>
+			<author>黎凯麟</author>
+			<revision-time>2018-12-26</revision-time>
+			<baseline>V15.0.0.B2.20190118</baseline>
+		</modify>
+		<modify>
+			<description>修复 sys后台，赞赏管理，点击“回复设置”，之后点中间树的任何一节点，都重新打开一个页面</description>
+			<author>黎凯麟</author>
+			<revision-time>2018-11-08</revision-time>
+			<baseline>V15.0.0.B1.20181109</baseline>
+		</modify>
+		<modify>
+			<description>新增 赞赏机制加上通知方式</description>
+			<author>黎凯麟</author>
+			<revision-time>2018-09-18</revision-time>
+			<baseline>V15.0.0.B1.20181109</baseline>
+		</modify>
+		<modify>
+			<description>优化 不具有赞赏维护权限时后台无法看到赞赏机制节点</description>
+			<author>黎凯麟</author>
+			<revision-time>2018-08-27</revision-time>
+			<baseline>V15.0.0.B1.20181109</baseline>
+		</modify>
+		<modify>
+			<description>修复 ie8下赞赏失败</description>
+			<author>黎凯麟</author>
+			<revision-time>2018-08-24</revision-time>
+			<baseline>V15.0.0.B1.20181109</baseline>
+		</modify>
+		<modify>
+			<description>新增 赞赏回复功能</description>
+			<author>黎凯麟</author>
+			<revision-time>2018-08-24</revision-time>
+			<relation>
+				<relation-module>core</relation-module>
+			</relation>
+			<baseline>V15.0.0.B1.20181109</baseline>
+		</modify>
+		<modify>
+			<description>修复 ie8下赞赏失败</description>
+			<author>黎凯麟</author>
+			<revision-time>2018-08-21</revision-time>
+			<baseline>V15.0.0.B1.20181109</baseline>
+		</modify>
+		<modify>
+			<description>修复 生成二维码时造成图标顺序错乱</description>
+			<author>黎凯麟</author>
+			<revision-time>2018-08-21</revision-time>
+			<baseline>V15.0.0.B1.20181109</baseline>
+		</modify>
+		<modify>
+			<description>优化 评估数蓝色显示</description>
+			<author>徐广敏</author>
+			<revision-time>2018-07-13</revision-time>
+			<baseline>V15.0.0.B1.20181109</baseline>
+		</modify>
+		<modify>
+			<description>修复 赞赏统计跨周月年未清除数据的问题</description>
+			<author>徐广敏</author>
+			<revision-time>2018-07-04</revision-time>
+			<baseline>V14.0.1.R.20180706</baseline>
+		</modify>
+		<modify>
+			<description>优化 图标</description>
+			<author>徐广敏</author>
+			<revision-time>2018-07-04</revision-time>
+			<baseline>V14.0.1.R.20180706</baseline>
+		</modify>
+		<modify>
+			<description>优化 赞赏页面功能</description>
+			<author>徐广敏</author>
+			<revision-time>2018-05-21</revision-time>
+			<baseline>V14.0.1.R.20180706</baseline>
+		</modify>
+		<modify>
+			<description>修复 点赞按钮重复的问题</description>
+			<author>洪泽铨</author>
+			<revision-time>2018-04-23</revision-time>
+			<baseline>V14.0.1.R.20180706</baseline>
+		</modify>
+		<modify>
+			<description>修复 赞赏开启关闭判断缺陷</description>
+			<author>徐广敏</author>
+			<revision-time>2018-04-17</revision-time>
+			<baseline>V14.0.1.R.20180706</baseline>
+		</modify>
+		<modify>
+			<description>修复 赞赏统计</description>
+			<author>徐广敏</author>
+			<revision-time>2018-04-11</revision-time>
+			<baseline>V14.0.0.R.20180413</baseline>
+		</modify>
+		<modify>
+			<description>新增 赞赏模块开启设置</description>
+			<author>徐广敏</author>
+			<revision-time>2018-04-09</revision-time>
+			<baseline>V14.0.0.R.20180413</baseline>
+		</modify>
+		<modify>
+			<description>修复 当财富值为负数时打赏成功</description>
+			<author>徐广敏</author>
+			<revision-time>2018-04-09</revision-time>
+			<relation>
+				<relation-module>kms/integral</relation-module>
+			</relation>
+			<baseline>V14.0.0.R.20180413</baseline>
+		</modify>
+		<modify>
+			<description>新增 kms所有模块分类内容添加多语言功能</description>
+			<author>周楠</author>
+			<revision-time>2018-03-12</revision-time>
+			<baseline>V14.0.0.R.20180413</baseline>
+		</modify>
+		<modify>
+			<description>修复 财富值显示错误的问题</description>
+			<author>徐广敏</author>
+			<revision-time>2018-02-24</revision-time>
+			<baseline>V14.0.0.R.20180413</baseline>
+		</modify>
+		<modify>
+			<description>修复 匿名赞赏情况下待阅内容实名的问题</description>
+			<author>徐广敏</author>
+			<revision-time>2018-02-24</revision-time>
+			<baseline>V14.0.0.R.20180413</baseline>
+		</modify>
+		<modify>
+			<description>修复 返回按钮不能找到地址</description>
+			<author>陈平山</author>
+			<revision-time>2018-02-05</revision-time>
+			<relation>
+				<relation-module>sys/simplecategory</relation-module>
+			</relation>
+			<baseline>V14.0.0.R.20180413</baseline>
+		</modify>
+		<modify>
+			<description>新增 赞赏查看列表</description>
+			<author>徐广敏</author>
+			<revision-time>2018-02-05</revision-time>
+			<baseline>V14.0.0.R.20180413</baseline>
+		</modify>
+		<modify>
+			<description>优化 赞赏财富值统计</description>
+			<author>徐广敏</author>
+			<revision-time>2018-02-05</revision-time>
+			<relation>
+				<relation-module>kms/integral</relation-module>
+			</relation>
+			<baseline>V14.0.0.R.20180413</baseline>
+		</modify>
+		<modify>
+			<description>优化 赞赏明细</description>
+			<author>徐广敏</author>
+			<revision-time>2018-02-05</revision-time>
+			<baseline>V14.0.0.R.20180413</baseline>
+		</modify>
+		<modify>
+			<description>优化 赞赏功能</description>
+			<author>徐广敏</author>
+			<revision-time>2018-02-05</revision-time>
+			<baseline>V14.0.0.R.20180413</baseline>
+		</modify>
+		<modify>
+			<description>新增 赞赏功能</description>
+			<author>徐广敏</author>
+			<revision-time>2018-02-05</revision-time>
+			<baseline>V14.0.0.R.20180413</baseline>
+		</modify>
+		<modify>
+			<description>优化 点赞接口</description>
+			<author>洪泽铨</author>
+			<revision-time>2017-08-17</revision-time>
+			<baseline>V13.5.0.R.20170915</baseline>
+		</modify>
+		<modify>
+			<description>修复 郑州银行安全问题</description>
+			<author>陈晓文</author>
+			<revision-time>2017-01-03</revision-time>
+			<baseline>V13.0.0.R.20170310</baseline>
+		</modify>
+		<modify>
+			<description>修复 点赞列表人员头像不显示的问题</description>
+			<author>陈建林</author>
+			<revision-time>2016-04-27</revision-time>
+			<baseline>V13.0.0.B1.20160429</baseline>
+		</modify>
+		<modify>
+			<description>优化 点赞人员列表li样式显示</description>
+			<author>张文辉</author>
+			<revision-time>2015-12-22</revision-time>
+			<baseline>V12.0.8.R.20160114</baseline>
+		</modify>
+		<modify>
+			<description>优化 点赞机制对接收的参数编码</description>
+			<author>张文辉</author>
+			<revision-time>2015-11-05</revision-time>
+			<relation>
+				<relation-module>sys/ui</relation-module>
+				<relation-module>core</relation-module>
+			</relation>
+			<baseline>V12.0.6.R.20151106</baseline>
+		</modify>
+		<modify>
+			<description>优化 点赞机制人员列表初始化</description>
+			<author>张文辉</author>
+			<revision-time>2015-11-04</revision-time>
+			<baseline>V12.0.6.R.20151106</baseline>
+		</modify>
+		<modify>
+			<description>新增 踩的功能、引用页面以及外部调用接口</description>
+			<author>徐广敏</author>
+			<revision-time>2015-08-28</revision-time>
+			<baseline>V12.0.5.R.20150911</baseline>
+		</modify>
+		<modify>
+			<description>优化 点赞人列表在IE下无法显示</description>
+			<author>张文辉</author>
+			<revision-time>2015-08-27</revision-time>
+			<baseline>V12.0.5.R.20150911</baseline>
+		</modify>
+		<modify>
+			<description>优化 点赞人员列表浮动事件监听和点赞人数为空时报错的问题</description>
+			<author>张文辉</author>
+			<revision-time>2015-04-27</revision-time>
+			<baseline>V12.0.1.R.20150508</baseline>
+		</modify>
+		<modify>
+			<description>优化 点赞人员列表在IE8下无法显示</description>
+			<author>张文辉</author>
+			<revision-time>2015-04-13</revision-time>
+			<baseline>V12.0.1.R.20150508</baseline>
+		</modify>
+		<modify>
+			<description>新增 移动端点赞引用页面</description>
+			<author>徐广敏</author>
+			<revision-time>2015-03-25</revision-time>
+			<baseline>V12.0.1.R.20150508</baseline>
+		</modify>
+		<modify>
+			<description>优化 点赞性能问题，以及并发导致的点赞数统计问题</description>
+			<author>张文辉</author>
+			<revision-time>2015-01-14</revision-time>
+			<baseline>V12.0.0.B3.20150116</baseline>
+		</modify>
+		<modify>
+			<description>修复 点赞在IE8下报js脚本错误</description>
+			<author>张文辉</author>
+			<revision-time>2014-09-04</revision-time>
+			<baseline>V12.0.0.B1.20140905</baseline>
+		</modify>
+		<modify>
+			<description>优化 鼠标移动到点赞图标时的提示文字</description>
+			<author>张文辉</author>
+			<revision-time>2014-09-02</revision-time>
+			<baseline>V12.0.0.B1.20140905</baseline>
+		</modify>
+		<modify>
+			<description>优化 点赞人员列表样式</description>
+			<author>张文辉</author>
+			<revision-time>2014-09-01</revision-time>
+			<baseline>V12.0.0.B1.20140905</baseline>
+		</modify>
+		<modify>
+			<description>优化 点赞机制中，如果没有人点赞过，则不弹点赞人员列表框</description>
+			<author>张文辉</author>
+			<revision-time>2014-08-30</revision-time>
+			<baseline>V12.0.0.B1.20140905</baseline>
+		</modify>
+		<modify>
+			<description>优化 点赞人员列表弹出框IE下跑位问题</description>
+			<author>张文辉</author>
+			<revision-time>2014-08-30</revision-time>
+			<baseline>V12.0.0.B1.20140905</baseline>
+		</modify>
+		<modify>
+			<description>新增 点赞机制代码</description>
+			<author>张文辉</author>
+			<revision-time>2014-08-15</revision-time>
+			<baseline>V12.0.0.B1.20140905</baseline>
+		</modify>
+	</modifies>
+</version>

@@ -1,0 +1,84 @@
+{
+    "global":     {
+        "modelName": "com.landray.kmss.km.asset.model.KmAssetCardLife",
+        "messageKey": "km-asset:table.kmAssetCardLife",
+        "serviceBean": "kmAssetCardLifeService",
+        "table": "km_asset_card_life",
+        "url": "/km/asset/km_asset_card_life/kmAssetCardLife.do?method=view&fdId=${fdId}"
+    },
+    "attrs":     {
+        "fdId":         {
+            "propertyType": "id",
+            "generator": {"type": "assigned"}
+        },
+        "fdOperType":         {
+            "propertyType": "simple",
+            "messageKey": "km-asset:kmAssetCardLife.fdOperType",
+            "type": "String",
+            "column": "fd_oper_type",
+            "notNull": "false",
+            "length": "36",
+            "validate": "true"
+        },
+        "fdOperContent":         {
+            "propertyType": "simple",
+            "messageKey": "km-asset:kmAssetCardLife.fdOperContent",
+            "type": "RTF",
+            "column": "fd_oper_content",
+            "notNull": "false",
+            "length": "1000000",
+            "validate": "false"
+        },
+        "fdApplyDate":         {
+            "propertyType": "simple",
+            "messageKey": "km-asset:kmAssetCardLife.fdApplyDate",
+            "type": "DateTime",
+            "column": "fd_apply_date",
+            "notNull": "false",
+            "validate": "false"
+        },
+        "fdApplyModelNo":         {
+            "propertyType": "simple",
+            "messageKey": "km-asset:kmAssetCardLife.fdApplyModelid",
+            "type": "String",
+            "column": "fd_apply_modelNo",
+            "notNull": "false",
+            "length": "200",
+            "validate": "false"
+        },
+        "fdApplyModelid":         {
+            "propertyType": "simple",
+            "messageKey": "km-asset:kmAssetCardLife.fdApplyModelid",
+            "type": "String",
+            "column": "fd_apply_modelId",
+            "notNull": "false",
+            "length": "36",
+            "validate": "true"
+        },
+        "fdApplyModelname":         {
+            "propertyType": "simple",
+            "messageKey": "km-asset:kmAssetCardLife.fdApplyModelname",
+            "type": "String",
+            "column": "fd_apply_modelName",
+            "notNull": "false",
+            "length": "100",
+            "validate": "true"
+        },
+        "fdApplyPerson":         {
+            "propertyType": "model",
+            "messageKey": "km-asset:kmAssetCardLife.fdApplyPerson",
+            "type": "com.landray.kmss.sys.organization.model.SysOrgElement",
+            "column": "fd_apply_person",
+            "notNull": "false",
+            "validate": "false"
+        },
+        "fdAssetCardFdid":         {
+            "propertyType": "model",
+            "messageKey": "km-asset:kmAssetCardLife.fdAssetCardFdid",
+            "type": "com.landray.kmss.km.asset.model.KmAssetCard",
+            "column": "fd_asset_card_fdid",
+            "notNull": "false",
+            "validate": "false"
+        }
+    }
+}

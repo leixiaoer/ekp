@@ -1,0 +1,202 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans
+	xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.0.xsd">
+
+	<bean
+		id="kmInstitutionKnowledgeDao"
+		parent="KmssAuthAreaBaseDao"
+		class="com.landray.kmss.km.institution.dao.hibernate.KmInstitutionKnowledgeDaoImp">
+		<property
+			name="modelName"
+			value="com.landray.kmss.km.institution.model.KmInstitutionKnowledge" />
+	</bean>
+	<bean
+		id="kmInstitutionKnowledgeTarget"
+		parent="KmssBaseTarget"
+		class="com.landray.kmss.km.institution.service.spring.KmInstitutionKnowledgeServiceImp">
+		<property name="baseDao">
+			<ref local="kmInstitutionKnowledgeDao" />
+		</property>
+		<property name="kmInstitutionTemplateService">
+			<ref local="kmInstitutionTemplateService" />
+		</property>
+		<property name="sysNumberFlowService">
+			<ref bean="sysNumberFlowService" />
+		</property>
+		<property name="kmInstitutionKnowledgeAbolishService">
+			<ref bean="kmInstitutionKnowledgeAbolishService" />
+		</property>
+	</bean>
+	<bean
+		id="kmInstitutionKnowledgeService"
+		parent="KmssBaseService">
+		<property name="target">
+			<ref local="kmInstitutionKnowledgeTarget" />
+		</property>
+	</bean>
+	<bean
+		id="kmInstitutionKnowledgePortlet"
+		class="com.landray.kmss.km.institution.service.spring.KmInstitutionKnowledgePortlet">
+		<property name="kmInstitutionKnowledgeService">
+			<ref local="kmInstitutionKnowledgeService" />
+		</property>
+		<property name="kmInstitutionTemplateService">
+			<ref local="kmInstitutionTemplateService" />
+		</property>
+	</bean>
+	<bean class="org.springframework.aop.framework.autoproxy.BeanNameAutoProxyCreator">
+		<property name="beanNames">
+			<value>kmInstitutionKnowledgeDao</value>
+		</property>
+		<property name="interceptorNames">
+			<list>
+				<value>luceneCreateAdvisor</value>
+				<value>luceneSaveAdvisor</value>
+				<value>docKeyWriteAdvice</value>
+				<value>luceneDeleteAdvisor</value>
+			</list>
+		</property>
+	</bean>
+	<bean
+		id="kmInstitutionTemplateDao"
+		parent="KmssAuthAreaBaseDao"
+		class="com.landray.kmss.km.institution.dao.hibernate.KmInstitutionTemplateDaoImp">
+		<property
+			name="modelName"
+			value="com.landray.kmss.km.institution.model.KmInstitutionTemplate" />
+	</bean>
+	<bean
+		id="kmInstitutionTemplateTarget"
+		parent="KmssBaseTarget"
+		class="com.landray.kmss.km.institution.service.spring.KmInstitutionTemplateServiceImp">
+		<property name="baseDao">
+			<ref local="kmInstitutionTemplateDao" />
+		</property>
+	</bean>
+	<bean
+		id="kmInstitutionTemplateService"
+		parent="KmssBaseService">
+		<property name="target">
+			<ref local="kmInstitutionTemplateTarget" />
+		</property>
+	</bean>
+	<bean
+		id="kmInstitutionTemplateTreeService"
+		class="com.landray.kmss.km.institution.service.spring.KmInstitutionTemplateTreeService">
+		<property name="kmInstitutionTemplateService">
+			<ref local="kmInstitutionTemplateService" />
+		</property>
+	</bean>
+	
+	<bean
+		id="kmInstitutionCategoryAbolishTreeService"
+		class="com.landray.kmss.km.institution.service.spring.KmInstitutionCategoryAbolishTreeService">
+		<property name="kmInstitutionTemplateService">
+			<ref local="kmInstitutionTemplateService" />
+		</property>
+		<property name="sysCategoryFilingService">
+			<ref bean="sysCategoryFilingService" />
+		</property>
+	</bean>
+	
+	<bean
+		id="kmInstitutionKnowledgeAbolishDao"
+		parent="KmssAuthBaseDao"
+		class="com.landray.kmss.km.institution.dao.hibernate.KmInstitutionKnowledgeAbolishDaoImp">
+		<property
+			name="modelName"
+			value="com.landray.kmss.km.institution.model.KmInstitutionKnowledgeAbolish" />
+	</bean>
+	<bean
+		id="kmInstitutionKnowledgeAbolishTarget"
+		parent="KmssBaseTarget"
+		class="com.landray.kmss.km.institution.service.spring.KmInstitutionKnowledgeAbolishServiceImp">
+		<property name="baseDao">
+			<ref local="kmInstitutionKnowledgeAbolishDao" />
+		</property>
+		<property name="sysQuartzCoreService">
+			<ref bean="sysQuartzCoreService" />
+		</property>
+	</bean>
+	<bean
+		id="kmInstitutionKnowledgeAbolishService"
+		parent="KmssBaseService">
+		<property name="target">
+			<ref local="kmInstitutionKnowledgeAbolishTarget" />
+		</property>
+	</bean>
+	
+	<bean id="kmInstitutionKnowledgePreTarget"
+	      class="com.landray.kmss.km.institution.service.spring.KmInstitutionKnowledgePreServiceImp"
+	      parent="KmssBaseTarget">
+		<property name="kmInstitutionKnowledgeService">
+			<ref local="kmInstitutionKnowledgeService" />
+		</property>
+		<property name="kmInstitutionTemplateService">
+			<ref local="kmInstitutionTemplateService" />
+		</property>
+		<property name="sysAuthAreaService">
+			<ref bean="sysAuthAreaService" />
+		</property>
+		<property name="baseDao">
+			<ref local="kmInstitutionKnowledgePreDao" />
+		</property>
+	</bean>
+	<bean
+		id="kmInstitutionKnowledgePreService"
+		parent="KmssBaseService">
+		<property name="target">
+			<ref local="kmInstitutionKnowledgePreTarget" />
+		</property>
+	</bean>
+	<bean
+		id="kmInstitutionKnowledgePreDao"
+		parent="KmssAuthAreaBaseDao"
+		class="com.landray.kmss.km.institution.dao.hibernate.KmInstitutionKnowledgePreDaoImp">
+		<property
+			name="modelName"
+			value="com.landray.kmss.km.institution.model.KmInstitutionKnowledgePre" />
+	</bean>
+	
+	<bean
+		id="kmInstitutionAbolishUpdateService"
+		class="com.landray.kmss.km.institution.service.spring.KmInstitutionAbolishUpdateService">
+		<property name="kmInstitutionKnowledgeAbolishService">
+			<ref local="kmInstitutionKnowledgeAbolishTarget" />
+		</property>
+		<property name="kmInstitutionKnowledgeService">
+			<ref local="kmInstitutionKnowledgeTarget" />
+		</property>
+		<property name="dispatchCoreService">
+			<ref bean="dispatchCoreService" />
+		</property>
+	</bean>
+	
+	<bean id="kmInstitutionYqqSignService" class="com.landray.kmss.km.institution.service.spring.KmInstitutionYqqSignServiceImp"></bean>
+	
+	<bean
+		id="kmInstitutionOutSignDao"
+		parent="KmssAuthBaseDao"
+		class="com.landray.kmss.km.institution.dao.hibernate.KmInstitutionOutSignDaoImp">
+		<property
+			name="modelName"
+			value="com.landray.kmss.km.institution.model.KmInstitutionOutSign" />
+	</bean>
+	<bean
+		id="kmInstitutionOutSignTarget"
+		parent="KmssBaseTarget"
+		class="com.landray.kmss.km.institution.service.spring.KmInstitutionOutSignServiceImp">
+		<property name="baseDao">
+			<ref local="kmInstitutionOutSignDao" />
+		</property>
+	</bean>
+	<bean
+		id="kmInstitutionOutSignService"
+		parent="KmssBaseService">
+		<property name="target">
+			<ref local="kmInstitutionOutSignTarget" />
+		</property>
+	</bean>
+</beans>

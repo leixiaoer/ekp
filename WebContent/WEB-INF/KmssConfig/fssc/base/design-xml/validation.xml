@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<validators xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:noNamespaceSchemaLocation="validation.xsd">
+	<validator name="required" bean="fsscBaseImportRequiredValidator" message="fssc-base:message.validation.required"/>
+	<validator name="exists" bean="fsscBaseImportExistsValidator" message="fssc-base:message.validation.exists"/>
+	<validator name="unique" bean="fsscBaseImportUniqueValidator" message="fssc-base:message.validation.unique"/>
+	<validator name="radio" bean="fsscBaseImportRadioValidator" message="fssc-base:message.validation.radio"/>
+	<validator name="companyContained" bean="fsscBaseImportCompanyContainedValidator" message="fssc-base:message.validation.companyContained"/>
+</validators>

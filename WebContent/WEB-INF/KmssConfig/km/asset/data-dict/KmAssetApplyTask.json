@@ -1,0 +1,139 @@
+{
+    "global":     {
+        "modelName": "com.landray.kmss.km.asset.model.KmAssetApplyTask",
+        "messageKey": "km-asset:table.kmAssetApplyTask",
+        "displayProperty": "docSubject",
+        "serviceBean": "kmAssetApplyTaskService",
+        "table": "km_asset_apply_base",
+        "url": "/km/asset/km_asset_apply_task/kmAssetApplyTask.do?method=view&fdId=${fdId}",
+        "extendClass": "com.landray.kmss.km.asset.model.KmAssetApplyBase",
+        "discriminatorValue": "com.landray.kmss.km.asset.model.KmAssetApplyTask"
+    },
+    "attrs":     {
+        "fdId":         {
+            "propertyType": "id",
+            "generator": {"type": "assigned"}
+        },
+        "fdDescription":         {
+            "propertyType": "simple",
+            "messageKey": "km-asset:kmAssetApplyTask.fdDescription",
+            "type": "String",
+            "column": "fd_description",
+            "notNull": "false",
+            "length": "1500",
+            "validate": "true",
+            "canLogShow":"1"
+        },
+        "fdAssignUser":         {
+            "propertyType": "simple",
+            "messageKey": "km-asset:kmAssetApplyTask.fdAssignUser",
+            "type": "String",
+            "column": "fd_assign_user",
+            "notNull": "true",
+            "length": "36",
+            "enumType": "km_asset_apply_task_fd_assign_user",
+            "validate": "true",
+            "canLogShow":"1"
+        },
+        "fdPurchaseTime":         {
+            "propertyType": "simple",
+            "messageKey": "km-asset:kmAssetApplyTask.fdPurchaseTime",
+            "type": "String",
+            "column": "fd_purchase_time",
+            "notNull": "true",
+            "length": "36",
+            "enumType": "km_asset_apply_task_fd_purchase_time",
+            "validate": "true",
+            "canLogShow":"1"
+        },
+        "fdStartDate":         {
+            "propertyType": "simple",
+            "messageKey": "km-asset:kmAssetApplyTask.fdStartDate",
+            "type": "DateTime",
+            "column": "fd_start_date",
+            "notNull": "false",
+            "validate": "false",
+            "canLogShow":"1"
+        },
+        "fdEndDate":         {
+            "propertyType": "simple",
+            "messageKey": "km-asset:kmAssetApplyTask.fdEndDate",
+            "type": "DateTime",
+            "column": "fd_end_date",
+            "notNull": "false",
+            "validate": "false",
+            "canLogShow":"1"
+        },
+        "fdCompleteDate":         {
+            "propertyType": "simple",
+            "messageKey": "km-asset:kmAssetApplyTask.fdCompleteDate",
+            "type": "DateTime",
+            "column": "fd_complete_date",
+            "notNull": "false",
+            "validate": "false",
+            "canDisplay": "false",
+            "canLogShow":"1"
+        },
+        "fdStatus":         {
+            "propertyType": "simple",
+            "messageKey": "km-asset:kmAssetApplyTask.fdStatus",
+            "type": "String",
+            "column": "fd_status",
+            "notNull": "false",
+            "length": "36",
+            "enumType": "km_asset_apply_task_fd_status",
+            "validate": "false",
+            "canLogShow":"1"
+        },
+        "fdNotifyType":         {
+            "propertyType": "simple",
+            "messageKey": "km-asset:kmAssetApplyTask.fdNotifyType",
+            "type": "String",
+            "column": "fd_notify_type",
+            "notNull": "false",
+            "length": "36",
+            "validate": "true",
+            "canLogShow":"1"
+        },
+        "fdAssetCategory":         {
+            "propertyType": "model",
+            "messageKey": "km-asset:kmAssetApplyTask.fdAssetCategory",
+            "type": "com.landray.kmss.km.asset.model.KmAssetCategory",
+            "column": "fd_asset_category",
+            "notNull": "true",
+            "validate": "true",
+            "canLogShow":"1"
+        },
+        "fdAssetAddress":         {
+            "propertyType": "model",
+            "messageKey": "km-asset:kmAssetApplyTask.fdAssetAddress",
+            "type": "com.landray.kmss.km.asset.model.KmAssetAddress",
+            "column": "fd_asset_address",
+            "notNull": "true",
+            "validate": "true",
+            "canLogShow":"1"
+        },
+        "kmAssignPersonnel":         {
+            "propertyType": "list",
+            "messageKey": "km-asset:kmAssetApplyTask.kmAssignPersonnel",
+            "type": "com.landray.kmss.sys.organization.model.SysOrgElement",
+            "table": "km_asset_apply_task_assign",
+            "column": "fd_task_id",
+            "elementColumn": "fd_org_id",
+            "canLogShow":"1"
+        },
+        "fdTaskDetail":         {
+            "propertyType": "list",
+            "messageKey": "km-asset:kmAssetApplyTask.fdTaskDetail",
+            "type": "com.landray.kmss.km.asset.model.KmAssetApplyTaskDetail",
+            "column": "fd_task",
+            "cascade": "all-delete-orphan",
+            "table": "km_asset_apply_task_detail",
+            "canLogShow":"1"
+        }
+    },
+    "attachments": {"attachment":     {
+        "propertyType": "att",
+        "messageKey": "km-asset:kmAssetApplyBase.attachMent"
+    }}
+}

@@ -1,0 +1,1284 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<plugin xmlns="http://www.example.org/plugin-config" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.example.org/plugin-config ../../plugin.xsd ">
+	<extension-point id="com.landray.kmss.km.asset.template">
+		<item name="template">
+			<param name="fdkey" required="true" kind="string">
+				<description>
+					用于唯一标识作用,一般使用主model的className
+				</description>
+			</param>
+			<param name="name" required="true" kind="string">
+				<description>
+					用于显示表单类型，如申请模板、调拨模板。
+				</description>
+			</param>
+			<param name="modelName" required="true" kind="string">
+				<description>
+					模板对应主文档的modelName
+				</description>
+			</param>
+			<description>
+				扩展报销单类型，配置多个子表单
+			</description>
+		</item>
+		<description>
+			申请模板扩展点。
+		</description>
+	</extension-point>
+	<extension
+		point="com.landray.kmss.km.asset.template">
+		<item name="template">
+			<param name="fdkey" value="KmAssetApplyBuyDoc"/>
+			<param name="name" value="{km-asset:kmAssetApplyTemplate.enum.fdType1}"/>
+			<param name="modelName" value="com.landray.kmss.km.asset.model.KmAssetApplyBuy"/>
+		</item>
+	</extension>
+		<extension
+		point="com.landray.kmss.km.asset.template">
+		<item name="template">
+			<param name="fdkey" value="KmAssetApplyStockDoc"/>
+			<param name="name" value="{km-asset:kmAssetApplyTemplate.enum.fdType2}"/>
+			<param name="modelName" value="com.landray.kmss.km.asset.model.KmAssetApplyStock"/>
+		</item>
+	</extension>
+		<extension
+		point="com.landray.kmss.km.asset.template">
+		<item name="template">
+			<param name="fdkey" value="KmAssetApplyInDoc"/>
+			<param name="name" value="{km-asset:kmAssetApplyTemplate.enum.fdType3}"/>
+			<param name="modelName" value="com.landray.kmss.km.asset.model.KmAssetApplyIn"/>
+		</item>
+	</extension>
+		<extension
+		point="com.landray.kmss.km.asset.template">
+		<item name="template">
+			<param name="fdkey" value="KmAssetApplyGetDoc"/>
+			<param name="name" value="{km-asset:kmAssetApplyTemplate.enum.fdType4}"/>
+			<param name="modelName" value="com.landray.kmss.km.asset.model.KmAssetApplyGet"/>
+		</item>
+	</extension>
+		<extension
+		point="com.landray.kmss.km.asset.template">
+		<item name="template">
+			<param name="fdkey" value="KmAssetApplyDivertDoc"/>
+			<param name="name" value="{km-asset:kmAssetApplyTemplate.enum.fdType5}"/>
+			<param name="modelName" value="com.landray.kmss.km.asset.model.KmAssetApplyDivert"/>
+		</item>
+	</extension>
+	<extension
+		point="com.landray.kmss.km.asset.template">
+		<item name="template">
+			<param name="fdkey" value="KmAssetApplyRepairDoc"/>
+			<param name="name" value="{km-asset:kmAssetApplyTemplate.enum.fdType6}"/>
+			<param name="modelName" value="com.landray.kmss.km.asset.model.KmAssetApplyRepair"/>
+		</item>
+	</extension>
+		<extension
+		point="com.landray.kmss.km.asset.template">
+		<item name="template">
+			<param name="fdkey" value="KmAssetApplyDealDoc"/>
+			<param name="name" value="{km-asset:kmAssetApplyTemplate.enum.fdType7}"/>
+			<param name="modelName" value="com.landray.kmss.km.asset.model.KmAssetApplyDeal"/>
+		</item>
+	</extension>
+		<extension
+		point="com.landray.kmss.km.asset.template">
+		<item name="template">
+			<param name="fdkey" value="KmAssetApplyChangeDoc"/>
+			<param name="name" value="{km-asset:kmAssetApplyTemplate.enum.fdType8}"/>
+			<param name="modelName" value="com.landray.kmss.km.asset.model.KmAssetApplyChange"/>
+		</item>
+	</extension>
+		<extension
+		point="com.landray.kmss.km.asset.template">
+		<item name="template">
+			<param name="fdkey" value="KmAssetApplyRentDoc"/>
+			<param name="name" value="{km-asset:kmAssetApplyTemplate.enum.fdType9}"/>
+			<param name="modelName" value="com.landray.kmss.km.asset.model.KmAssetApplyRent"/>
+		</item>
+	</extension>
+	<extension
+		point="com.landray.kmss.km.asset.template">
+		<item name="template">
+			<param name="fdkey" value="KmAssetApplyReturnDoc"/>
+			<param name="name" value="{km-asset:kmAssetApplyTemplate.enum.fdType10}"/>
+			<param name="modelName" value="com.landray.kmss.km.asset.model.KmAssetApplyReturn"/>
+		</item>
+	</extension>
+	<extension
+		point="com.landray.kmss.km.asset.template">
+		<item name="template">
+			<param name="fdkey" value="KmAssetApplyTaskDoc"/>
+			<param name="name" value="{km-asset:kmAssetApplyTemplate.enum.fdType11}"/>
+			<param name="modelName" value="com.landray.kmss.km.asset.model.KmAssetApplyTask"/>
+		</item>
+	</extension>
+	<extension
+		point="com.landray.kmss.km.asset.template">
+		<item name="template">
+			<param name="fdkey" value="KmAssetApplyInventoryDoc"/>
+			<param name="name" value="{km-asset:kmAssetApplyTemplate.enum.fdType12}"/>
+			<param name="modelName" value="com.landray.kmss.km.asset.model.KmAssetApplyInventory"/>
+		</item>
+	</extension>
+		<extension point="com.landray.kmss.sys.number.config" model="*">
+		<item name="extend">
+			<param name="modelName" value="com.landray.kmss.km.asset.model.KmAssetApplyBase" />
+			<param name="templatePropertyName" value="fdApplyTemplate" />
+			<param name="moduleName" value="{km-asset:module.km.asset}" />
+			<param name="isReform" value="false" />
+			<param name="order" value="15" />
+		</item>
+	</extension>
+	<extension point="com.landray.kmss.sys.number.config" model="*">
+		<item name="extend">
+			<param name="modelName" value="com.landray.kmss.km.asset.model.KmAssetCard" />
+			<param name="templatePropertyName" value="fdAssetCategory" />
+			<param name="moduleName" value="{km-asset:module.km.asset}" />
+			<param name="isReform" value="false" />
+			<param name="order" value="16" />
+		</item>
+	</extension>
+	<!-- 调拨子流程 -->
+	<extension
+		point="com.landray.kmss.sys.workflow.support.oa.subprocess"
+		model="*">		
+		<item
+			name="subprocess">
+			<param
+				name="modelName"
+				value="com.landray.kmss.km.asset.model.KmAssetApplyDivert" />
+			<param
+				name="cateBean"
+				value="kmAssetSubWfCateTreeService&amp;fdKey=KmAssetApplyDivertDoc" />
+			<param
+				name="createParam"
+				value="fdTemplateId=!{cateid}" />
+		</item>
+	</extension>
+	<!-- 领用子流程 -->
+	<extension
+		point="com.landray.kmss.sys.workflow.support.oa.subprocess"
+		model="*">		
+		<item
+			name="subprocess">
+			<param
+				name="modelName"
+				value="com.landray.kmss.km.asset.model.KmAssetApplyGet" />
+			<param
+				name="cateBean"
+				value="kmAssetSubWfCateTreeService&amp;fdKey=KmAssetApplyGetDoc" />
+			<param
+				name="createParam"
+				value="fdTemplateId=!{cateid}" />
+		</item>
+	</extension>
+	<!-- 维修保养子流程 -->
+	<extension
+		point="com.landray.kmss.sys.workflow.support.oa.subprocess"
+		model="*">		
+		<item
+			name="subprocess">
+			<param
+				name="modelName"
+				value="com.landray.kmss.km.asset.model.KmAssetApplyRepair" />
+			<param
+				name="cateBean"
+				value="kmAssetSubWfCateTreeService&amp;fdKey=KmAssetApplyRepairDoc" />
+			<param
+				name="createParam"
+				value="fdTemplateId=!{cateid}" />
+		</item>
+	</extension>
+	
+	<!-- 资产申购子流程 -->
+	<extension
+		point="com.landray.kmss.sys.workflow.support.oa.subprocess"
+		model="*">		
+		<item
+			name="subprocess">
+			<param
+				name="modelName"
+				value="com.landray.kmss.km.asset.model.KmAssetApplyBuy" />
+			<param
+				name="cateBean"
+				value="kmAssetSubWfCateTreeService&amp;fdKey=KmAssetApplyBuyDoc" />
+			<param
+				name="createParam"
+				value="fdTemplateId=!{cateid}" />
+		</item>
+	</extension>
+	
+	<!-- 采购子流程 -->
+	<extension
+		point="com.landray.kmss.sys.workflow.support.oa.subprocess"
+		model="*">		
+		<item
+			name="subprocess">
+			<param
+				name="modelName"
+				value="com.landray.kmss.km.asset.model.KmAssetApplyStock" />
+			<param
+				name="cateBean"
+				value="kmAssetSubWfCateTreeService&amp;fdKey=KmAssetApplyStockDoc" />
+			<param
+				name="createParam"
+				value="fdTemplateId=!{cateid}" />
+		</item>
+	</extension>
+	
+	<!-- 入库子流程 -->
+	<extension
+		point="com.landray.kmss.sys.workflow.support.oa.subprocess"
+		model="*">		
+		<item
+			name="subprocess">
+			<param
+				name="modelName"
+				value="com.landray.kmss.km.asset.model.KmAssetApplyIn" />
+			<param
+				name="cateBean"
+				value="kmAssetSubWfCateTreeService&amp;fdKey=KmAssetApplyInDoc" />
+			<param
+				name="createParam"
+				value="fdTemplateId=!{cateid}" />
+		</item>
+	</extension>
+	
+   <!--处置单子流程-->
+	<extension
+		point="com.landray.kmss.sys.workflow.support.oa.subprocess"
+		model="*">		
+		<item
+			name="subprocess">
+			<param
+				name="modelName"
+				value="com.landray.kmss.km.asset.model.KmAssetApplyDeal"/>
+			<param
+				name="cateBean"
+				value="kmAssetSubWfCateTreeService&amp;fdKey=KmAssetApplyDealDoc" />
+			<param
+				name="createParam"
+				value="fdTemplateId=!{cateid}" />
+		</item>
+	</extension>
+	
+	   <!--变更单子流程-->
+	<extension
+		point="com.landray.kmss.sys.workflow.support.oa.subprocess"
+		model="*">		
+		<item
+			name="subprocess">
+			<param
+				name="modelName"
+				value="com.landray.kmss.km.asset.model.KmAssetApplyChange"/>
+			<param
+				name="cateBean"
+				value="kmAssetSubWfCateTreeService&amp;fdKey=KmAssetApplyChangeDoc" />
+			<param
+				name="createParam"
+				value="fdTemplateId=!{cateid}" />
+		</item>
+	</extension>
+	
+	   <!--出租出借单子流程-->
+	<extension
+		point="com.landray.kmss.sys.workflow.support.oa.subprocess"
+		model="*">		
+		<item
+			name="subprocess">
+			<param
+				name="modelName"
+				value="com.landray.kmss.km.asset.model.KmAssetApplyRent"/>
+			<param
+				name="cateBean"
+				value="kmAssetSubWfCateTreeService&amp;fdKey=KmAssetApplyRentDoc" />
+			<param
+				name="createParam"
+				value="fdTemplateId=!{cateid}" />
+		</item>
+	</extension>
+	
+	   <!--归还单子流程-->
+	<extension
+		point="com.landray.kmss.sys.workflow.support.oa.subprocess"
+		model="*">		
+		<item
+			name="subprocess">
+			<param
+				name="modelName"
+				value="com.landray.kmss.km.asset.model.KmAssetApplyReturn"/>
+			<param
+				name="cateBean"
+				value="kmAssetSubWfCateTreeService&amp;fdKey=KmAssetApplyReturnDoc" />
+			<param
+				name="createParam"
+				value="fdTemplateId=!{cateid}" />
+		</item>
+	</extension>
+	<extension
+	      point="com.landray.kmss.sys.workflow.support.oa.robot.support"
+	      model="*">
+	      <item name="robot">
+	      	<param name="unid" value="kmAssetApplyChange"/>
+	      	<param name="category" value="{km-asset:module.km.asset}"/>
+	      	<param name="type" value="{km-asset:robot.change}"/>
+	      	<param name="bean" value="kmAssetApplyChangeRobotService"/>
+	      	<param name="url" value="/km/asset/robot/attribute_robotnode_applyChange.jsp"/>
+	      	<param name="class" value="app"/>
+	      	<param name="description" value="{km-asset:robot.change}"/>
+	      </item>
+	</extension>
+	
+	<extension
+	      point="com.landray.kmss.sys.workflow.support.oa.robot.support"
+	      model="*">
+	      <item name="robot">
+	      	<param name="unid" value="kmAssetApplyGet"/>
+	      	<param name="category" value="{km-asset:module.km.asset}"/>
+	      	<param name="type" value="{km-asset:robot.get}"/>
+	      	<param name="bean" value="kmAssetApplyGetRobotService"/>
+	      	<param name="url" value="/km/asset/robot/attribute_robotnode_applyGet.jsp"/>
+	      	<param name="class" value="app"/>
+	      	<param name="description" value="{km-asset:robot.get}"/>
+	      </item>
+	</extension>
+	
+	<extension
+	      point="com.landray.kmss.sys.workflow.support.oa.robot.support"
+	      model="*">
+	      <item name="robot">
+	      	<param name="unid" value="kmAssetApplyDivert"/>
+	      	<param name="category" value="{km-asset:module.km.asset}"/>
+	      	<param name="type" value="{km-asset:robot.divert}"/>
+	      	<param name="bean" value="kmAssetApplyDivertRobotService"/>
+	      	<param name="url" value="/km/asset/robot/attribute_robotnode_applyDivert.jsp"/>
+	      	<param name="class" value="app"/>
+	      	<param name="description" value="{km-asset:robot.divert}"/>
+	      </item>
+	</extension>
+	<extension point="com.landray.kmss.sys.mobile.compress" model="*">
+		<item name="js-pkg">
+			<param name="name" value="mui-asset-main.js" />
+			<param name="targetFile" value="/km/asset/mobile/js/mui-asset-main.js" />
+			<param name="tinyId" value="kmAssetMainTiny" />
+		</item>
+		<item name="js-pkg">
+			<param name="name" value="mui-asset.js" />
+			<param name="targetFile" value="/km/asset/mobile/js/mui-asset.js" />
+			<param name="srcFold" value="/km/asset/mobile/js" />
+		</item>
+		<item name="css-file">
+			<param name="name" value="index.css" />
+			<param name="targetFile" value="/km/asset/mobile/resource/css/index.css" />
+		</item>
+		<item name="css-file">
+			<param name="name" value="cardlist.css" />
+			<param name="targetFile" value="/km/asset/mobile/resource/css/cardlist.css" />
+		</item>
+		<item name="css-file">
+			<param name="name" value="mui-asset-view-card.css" />
+			<param name="targetFile" value="/km/asset/mobile/resource/css/view_card.css" />
+		</item>		
+		<item name="css-file">
+			<param name="name" value="mui-asset-view-task.css" />
+			<param name="targetFile" value="/km/asset/mobile/resource/css/view_task.css" />
+		</item>
+	</extension>
+	<!-- 表单关联控件可选模块扩展点实现 -->
+	<extension point="com.landray.kmss.sys.xform.base.service.controls.relevance" model="*">
+		<item name="node">
+			<param name="modelName" value="com.landray.kmss.km.asset.model.KmAssetApplyBuy" />
+			<param name="templateModelName" value="" />
+			<param name="key" value="kmAssetApplyBuy" />
+			<param name="templatePropertyName" value="" />
+			<param name="moduleMessageKey" value="km-asset:table.kmAssetApplyBuy" />
+			<param name="base" value="kmAsset" />
+			<param name="baseDisplayMessageKey" value="km-asset:module.km.asset" />
+		</item>
+	</extension>
+	<!-- 表单关联控件可选模块扩展点实现 -->
+	<extension point="com.landray.kmss.sys.xform.base.service.controls.relevance" model="*">
+		<item name="node">
+			<param name="modelName" value="com.landray.kmss.km.asset.model.KmAssetApplyStock" />
+			<param name="templateModelName" value="" />
+			<param name="key" value="kmAssetApplyStock" />
+			<param name="templatePropertyName" value="" />
+			<param name="moduleMessageKey" value="km-asset:table.kmAssetApplyStock" />
+			<param name="base" value="kmAsset" />
+			<param name="baseDisplayMessageKey" value="km-asset:module.km.asset" />
+		</item>
+	</extension>
+	<!-- 表单关联控件可选模块扩展点实现 -->
+	<extension point="com.landray.kmss.sys.xform.base.service.controls.relevance" model="*">
+		<item name="node">
+			<param name="modelName" value="com.landray.kmss.km.asset.model.KmAssetApplyIn" />
+			<param name="templateModelName" value="" />
+			<param name="key" value="kmAssetApplyIn" />
+			<param name="templatePropertyName" value="" />
+			<param name="moduleMessageKey" value="km-asset:table.kmAssetApplyIn" />
+			<param name="base" value="kmAsset" />
+			<param name="baseDisplayMessageKey" value="km-asset:module.km.asset" />
+		</item>
+	</extension>
+	<!-- 表单关联控件可选模块扩展点实现 -->
+	<extension point="com.landray.kmss.sys.xform.base.service.controls.relevance" model="*">
+		<item name="node">
+			<param name="modelName" value="com.landray.kmss.km.asset.model.KmAssetApplyGet" />
+			<param name="templateModelName" value="" />
+			<param name="key" value="kmAssetApplyGet" />
+			<param name="templatePropertyName" value="" />
+			<param name="moduleMessageKey" value="km-asset:table.kmAssetApplyGet" />
+			<param name="base" value="kmAsset" />
+			<param name="baseDisplayMessageKey" value="km-asset:module.km.asset" />
+		</item>
+	</extension>
+	<!-- 表单关联控件可选模块扩展点实现 -->
+	<extension point="com.landray.kmss.sys.xform.base.service.controls.relevance" model="*">
+		<item name="node">
+			<param name="modelName" value="com.landray.kmss.km.asset.model.KmAssetApplyDivert" />
+			<param name="templateModelName" value="" />
+			<param name="key" value="kmAssetApplyDivert" />
+			<param name="templatePropertyName" value="" />
+			<param name="moduleMessageKey" value="km-asset:table.kmAssetApplyDivert" />
+			<param name="base" value="kmAsset" />
+			<param name="baseDisplayMessageKey" value="km-asset:module.km.asset" />
+		</item>
+	</extension>
+	<!-- 表单关联控件可选模块扩展点实现 -->
+	<extension point="com.landray.kmss.sys.xform.base.service.controls.relevance" model="*">
+		<item name="node">
+			<param name="modelName" value="com.landray.kmss.km.asset.model.KmAssetApplyRepair" />
+			<param name="templateModelName" value="" />
+			<param name="key" value="kmAssetApplyRepair" />
+			<param name="templatePropertyName" value="" />
+			<param name="moduleMessageKey" value="km-asset:table.kmAssetApplyRepair" />
+			<param name="base" value="kmAsset" />
+			<param name="baseDisplayMessageKey" value="km-asset:module.km.asset" />
+		</item>
+	</extension>
+	<!-- 表单关联控件可选模块扩展点实现 -->
+	<extension point="com.landray.kmss.sys.xform.base.service.controls.relevance" model="*">
+		<item name="node">
+			<param name="modelName" value="com.landray.kmss.km.asset.model.KmAssetApplyDeal" />
+			<param name="templateModelName" value="" />
+			<param name="key" value="kmAssetApplyDeal" />
+			<param name="templatePropertyName" value="" />
+			<param name="moduleMessageKey" value="km-asset:table.kmAssetApplyDeal" />
+			<param name="base" value="kmAsset" />
+			<param name="baseDisplayMessageKey" value="km-asset:module.km.asset" />
+		</item>
+	</extension>
+	<!-- 表单关联控件可选模块扩展点实现 -->
+	<extension point="com.landray.kmss.sys.xform.base.service.controls.relevance" model="*">
+		<item name="node">
+			<param name="modelName" value="com.landray.kmss.km.asset.model.KmAssetApplyChange" />
+			<param name="templateModelName" value="" />
+			<param name="key" value="kmAssetApplyChange" />
+			<param name="templatePropertyName" value="" />
+			<param name="moduleMessageKey" value="km-asset:table.kmAssetApplyChange" />
+			<param name="base" value="kmAsset" />
+			<param name="baseDisplayMessageKey" value="km-asset:module.km.asset" />
+		</item>
+	</extension>
+	<!-- 表单关联控件可选模块扩展点实现 -->
+	<extension point="com.landray.kmss.sys.xform.base.service.controls.relevance" model="*">
+		<item name="node">
+			<param name="modelName" value="com.landray.kmss.km.asset.model.KmAssetApplyRent" />
+			<param name="templateModelName" value="" />
+			<param name="key" value="kmAssetApplyRent" />
+			<param name="templatePropertyName" value="" />
+			<param name="moduleMessageKey" value="km-asset:table.kmAssetApplyRent" />
+			<param name="base" value="kmAsset" />
+			<param name="baseDisplayMessageKey" value="km-asset:module.km.asset" />
+		</item>
+	</extension>
+	<!-- 表单关联控件可选模块扩展点实现 -->
+	<extension point="com.landray.kmss.sys.xform.base.service.controls.relevance" model="*">
+		<item name="node">
+			<param name="modelName" value="com.landray.kmss.km.asset.model.KmAssetApplyReturn" />
+			<param name="templateModelName" value="" />
+			<param name="key" value="kmAssetApplyReturn" />
+			<param name="templatePropertyName" value="" />
+			<param name="moduleMessageKey" value="km-asset:table.kmAssetApplyReturn" />
+			<param name="base" value="kmAsset" />
+			<param name="baseDisplayMessageKey" value="km-asset:module.km.asset" />
+		</item>
+	</extension>
+	
+	<!--资产后台一键选择分类扩展点实现 -->
+	<extension point="com.landray.kmss.sys.person.categoryUrl" model="com.landray.kmss.km.asset.model.KmAssetApplyBuy" >
+		<item name="categoryUrl">
+			<param name="addUrl" value="/km/asset/km_asset_apply_buy/kmAssetApplyBuy.do?method=add&amp;fdTemplateId={0}" />
+			<param name="templateModel" value="com.landray.kmss.km.asset.model.KmAssetApplyTemplate" />
+		</item>
+	</extension>
+	
+	<!--资产卡片一键选择分类扩展点实现 -->
+	<extension point="com.landray.kmss.sys.person.categoryUrl" model="com.landray.kmss.km.asset.model.KmAssetCard" >
+		<item name="categoryUrl">
+			<param name="addUrl" value="/km/asset/km_asset_card/kmAssetCard.do?method=add&amp;fdTemplateId={0}" />
+			<param name="templateModel" value="com.landray.kmss.km.asset.model.KmAssetCategory" />
+		</item>
+	</extension>
+	<extension
+		point="com.landray.kmss.sys.listshow.listShowConfig"
+		model="com.landray.kmss.km.asset.model.KmAssetCard">
+		<item
+			name="listShowConfig">
+			<param
+				name="name"
+				value="km-asset:kmAssetCard.my" />
+			<param
+				name="model"
+				value="com.landray.kmss.km.asset.model.KmAssetCard" />
+			<param
+				name="page"
+				value="/kmAssetCard_my" />
+			<param
+				name="default"
+				value="fdIsLocked;fdCode;fdName;fdStandard;docDept.fdName;fdResponsiblePerson.fdName;fdAssetAddress.fdAddress;fdAssetCategory.fdName;fdAssetStatus" />
+			<param
+				name="customized"
+				value="" />
+		</item>
+	</extension>
+	<extension
+		point="com.landray.kmss.sys.listshow.listShowConfig"
+		model="com.landray.kmss.km.asset.model.KmAssetApplyBase">
+		<item
+			name="listShowConfig">
+			<param
+				name="name"
+				value="km-asset:kmAsset.sysListShow.MyApplication.create.my" />
+			<param
+				name="model"
+				value="com.landray.kmss.km.asset.model.KmAssetApplyBase" />
+			<param
+				name="page"
+				value="/kmAssetApply_my/create" />
+			<param
+				name="default"
+				value="docSubject;fdNo;fdCreator.fdName;fdCreateDate;docStatus;nodeName;handlerName" />
+			<param
+				name="customized"
+				value="nodeName;km-asset:kmAssetApplyBase.currentLink,handlerName;km-asset:sysWfNode.processingNode.currentProcessor" />
+		</item>
+	</extension>
+	<extension
+		point="com.landray.kmss.sys.listshow.listShowConfig"
+		model="com.landray.kmss.km.asset.model.KmAssetApplyBase">
+		<item
+			name="listShowConfig">
+			<param
+				name="name"
+				value="km-asset:kmAsset.sysListShow.MyApplication.approval.my" />
+			<param
+				name="model"
+				value="com.landray.kmss.km.asset.model.KmAssetApplyBase" />
+			<param
+				name="page"
+				value="/kmAssetApply_my/approval" />
+			<param
+				name="default"
+				value="docSubject;fdNo;fdCreator.fdName;fdCreateDate;docStatus;nodeName;handlerName" />
+			<param
+				name="customized"
+				value="nodeName;km-asset:kmAssetApplyBase.currentLink,handlerName;km-asset:sysWfNode.processingNode.currentProcessor" />
+		</item>
+	</extension>
+	<extension
+		point="com.landray.kmss.sys.listshow.listShowConfig"
+		model="com.landray.kmss.km.asset.model.KmAssetApplyBase">
+		<item
+			name="listShowConfig">
+			<param
+				name="name"
+				value="km-asset:kmAsset.sysListShow.MyApplication.approved.my" />
+			<param
+				name="model"
+				value="com.landray.kmss.km.asset.model.KmAssetApplyBase" />
+			<param
+				name="page"
+				value="/kmAssetApply_my/approved" />
+			<param
+				name="default"
+				value="docSubject;fdNo;fdCreator.fdName;fdCreateDate;docStatus;nodeName;handlerName" />
+			<param
+				name="customized"
+				value="nodeName;km-asset:kmAssetApplyBase.currentLink,handlerName;km-asset:sysWfNode.processingNode.currentProcessor" />
+		</item>
+	</extension>
+	<extension
+		point="com.landray.kmss.sys.listshow.listShowConfig"
+		model="com.landray.kmss.km.asset.model.KmAssetApplyBase">
+		<item
+			name="listShowConfig">
+			<param
+				name="name"
+				value="km-asset:kmAsset.sysListShow.MyApplication.drafts" />
+			<param
+				name="model"
+				value="com.landray.kmss.km.asset.model.KmAssetApplyBase" />
+			<param
+				name="page"
+				value="/kmAssetApply_my/drafts" />
+			<param
+				name="default"
+				value="docSubject;fdNo;fdCreator.fdName;fdCreateDate;docStatus;nodeName;handlerName" />
+			<param
+				name="customized"
+				value="nodeName;km-asset:kmAssetApplyBase.currentLink,handlerName;km-asset:sysWfNode.processingNode.currentProcessor" />
+		</item>
+	</extension>
+	<extension
+		point="com.landray.kmss.sys.listshow.listShowConfig"
+		model="com.landray.kmss.km.asset.model.KmAssetApplyTask">
+		<item
+			name="listShowConfig">
+			<param
+				name="name"
+				value="km-asset:kmAsset.sysListShow.MyTask.create.my" />
+			<param
+				name="model"
+				value="com.landray.kmss.km.asset.model.KmAssetApplyTask" />
+			<param
+				name="page"
+				value="/kmAssetApplyTask_my/create" />
+			<param
+				name="default"
+				value="docSubject;docCreator.fdName;docCreateTime;fdStatus;docStatus;nodeName;handlerName;oper" />
+			<param
+				name="customized"
+				value="nodeName;km-asset:sysWfNode.processingNode.currentProcess,handlerName;km-asset:sysWfNode.processingNode.currentProcessor,oper;list.operation" />
+		</item>
+	</extension>
+	<extension
+		point="com.landray.kmss.sys.listshow.listShowConfig"
+		model="com.landray.kmss.km.asset.model.KmAssetApplyTask">
+		<item
+			name="listShowConfig">
+			<param
+				name="name"
+				value="km-asset:kmAsset.sysListShow.MyTask.approval.my" />
+			<param
+				name="model"
+				value="com.landray.kmss.km.asset.model.KmAssetApplyTask" />
+			<param
+				name="page"
+				value="/kmAssetApplyTask_my/approval" />
+			<param
+				name="default"
+				value="docSubject;docCreator.fdName;docCreateTime;fdStatus;docStatus;nodeName;handlerName;oper" />
+			<param
+				name="customized"
+				value="nodeName;km-asset:sysWfNode.processingNode.currentProcess,handlerName;km-asset:sysWfNode.processingNode.currentProcessor,oper;list.operation" />
+		</item>
+	</extension>
+	<extension
+		point="com.landray.kmss.sys.listshow.listShowConfig"
+		model="com.landray.kmss.km.asset.model.KmAssetApplyTask">
+		<item
+			name="listShowConfig">
+			<param
+				name="name"
+				value="km-asset:kmAsset.sysListShow.MyTask.approved.my" />
+			<param
+				name="model"
+				value="com.landray.kmss.km.asset.model.KmAssetApplyTask" />
+			<param
+				name="page"
+				value="/kmAssetApplyTask_my/approved" />
+			<param
+				name="default"
+				value="docSubject;docCreator.fdName;docCreateTime;fdStatus;docStatus;nodeName;handlerName;oper" />
+			<param
+				name="customized"
+				value="nodeName;km-asset:sysWfNode.processingNode.currentProcess,handlerName;km-asset:sysWfNode.processingNode.currentProcessor,oper;list.operation" />
+		</item>
+	</extension>
+	<extension
+		point="com.landray.kmss.sys.listshow.listShowConfig"
+		model="com.landray.kmss.km.asset.model.KmAssetApplyTask">
+		<item
+			name="listShowConfig">
+			<param
+				name="name"
+				value="km-asset:kmAsset.sysListShow.MyTask.drafts" />
+			<param
+				name="model"
+				value="com.landray.kmss.km.asset.model.KmAssetApplyTask" />
+			<param
+				name="page"
+				value="/kmAssetApplyTask_my/drafts" />
+			<param
+				name="default"
+				value="docSubject;docCreator.fdName;docCreateTime;fdStatus;docStatus;nodeName;handlerName;oper" />
+			<param
+				name="customized"
+				value="nodeName;km-asset:sysWfNode.processingNode.currentProcess,handlerName;km-asset:sysWfNode.processingNode.currentProcessor,oper;list.operation" />
+		</item>
+	</extension>
+	<extension
+		point="com.landray.kmss.sys.listshow.listShowConfig"
+		model="com.landray.kmss.km.asset.model.KmAssetApplyInventory">
+		<item
+			name="listShowConfig">
+			<param
+				name="name"
+				value="km-asset:kmAsset.sysListShow.MyInventory.create.my" />
+			<param
+				name="model"
+				value="com.landray.kmss.km.asset.model.KmAssetApplyInventory" />
+			<param
+				name="page"
+				value="/kmAssetInventory_my/create" />
+			<param
+				name="default"
+				value="docSubject;fdDescription;docStatus;docCreateTime;fdNo;fdAssetStatus;fdText;docCreator.fdName;fdAssetCard.docSubject;fdTask.docSubject;fdApplyTemplate.fdName" />
+			<param
+				name="customized"
+				value="" />
+		</item>
+	</extension>
+	<extension
+		point="com.landray.kmss.sys.listshow.listShowConfig"
+		model="com.landray.kmss.km.asset.model.KmAssetApplyInventory">
+		<item
+			name="listShowConfig">
+			<param
+				name="name"
+				value="km-asset:kmAsset.sysListShow.MyInventory.approval.my" />
+			<param
+				name="model"
+				value="com.landray.kmss.km.asset.model.KmAssetApplyInventory" />
+			<param
+				name="page"
+				value="/kmAssetInventory_my/approval" />
+			<param
+				name="default"
+				value="docSubject;fdDescription;docStatus;docCreateTime;fdNo;fdAssetStatus;fdText;docCreator.fdName;fdAssetCard.docSubject;fdTask.docSubject;fdApplyTemplate.fdName" />
+			<param
+				name="customized"
+				value="" />
+		</item>
+	</extension>
+	<extension
+		point="com.landray.kmss.sys.listshow.listShowConfig"
+		model="com.landray.kmss.km.asset.model.KmAssetApplyInventory">
+		<item
+			name="listShowConfig">
+			<param
+				name="name"
+				value="km-asset:kmAsset.sysListShow.MyInventory.approved.my" />
+			<param
+				name="model"
+				value="com.landray.kmss.km.asset.model.KmAssetApplyInventory" />
+			<param
+				name="page"
+				value="/kmAssetInventory_my/approved" />
+			<param
+				name="default"
+				value="docSubject;fdDescription;docStatus;docCreateTime;fdNo;fdAssetStatus;fdText;docCreator.fdName;fdAssetCard.docSubject;fdTask.docSubject;fdApplyTemplate.fdName" />
+			<param
+				name="customized"
+				value="" />
+		</item>
+	</extension>
+	<extension
+		point="com.landray.kmss.sys.listshow.listShowConfig"
+		model="com.landray.kmss.km.asset.model.KmAssetApplyInventory">
+		<item
+			name="listShowConfig">
+			<param
+				name="name"
+				value="km-asset:kmAsset.sysListShow.MyInventory.drafts" />
+			<param
+				name="model"
+				value="com.landray.kmss.km.asset.model.KmAssetApplyInventory" />
+			<param
+				name="page"
+				value="/kmAssetInventory_my/drafts" />
+			<param
+				name="default"
+				value="docSubject;fdDescription;docStatus;docCreateTime;fdNo;fdAssetStatus;fdText;docCreator.fdName;fdAssetCard.docSubject;fdTask.docSubject;fdApplyTemplate.fdName" />
+			<param
+				name="customized"
+				value="" />
+		</item>
+	</extension>
+	<extension
+		point="com.landray.kmss.sys.listshow.listShowConfig"
+		model="com.landray.kmss.km.asset.model.KmAssetApplyBuy">
+		<item
+			name="listShowConfig">
+			<param
+				name="name"
+				value="km-asset:kmAsset.buy" />
+			<param
+				name="model"
+				value="com.landray.kmss.km.asset.model.KmAssetApplyBuy" />
+			<param
+				name="page"
+				value="/kmAsset_buy" />
+			<param
+				name="default"
+				value="docSubject;fdNo;fdCreator.fdName;fdCreateDate;docStatus;nodeName;handlerName" />
+			<param
+				name="customized"
+				value="nodeName;km-asset:kmAssetApplyBase.currentLink,handlerName;km-asset:sysWfNode.processingNode.currentProcessor" />
+		</item>
+	</extension>
+	<extension
+		point="com.landray.kmss.sys.listshow.listShowConfig"
+		model="com.landray.kmss.km.asset.model.KmAssetApplyGet">
+		<item
+			name="listShowConfig">
+			<param
+				name="name"
+				value="km-asset:kmAsset.nav.getAndreturn.get" />
+			<param
+				name="model"
+				value="com.landray.kmss.km.asset.model.KmAssetApplyGet" />
+			<param
+				name="page"
+				value="/kmAsset_get" />
+			<param
+				name="default"
+				value="docSubject;fdNo;fdCreator.fdName;fdCreateDate;docStatus;nodeName;handlerName" />
+			<param
+				name="customized"
+				value="nodeName;km-asset:kmAssetApplyBase.currentLink,handlerName;km-asset:sysWfNode.processingNode.currentProcessor" />
+		</item>
+	</extension>
+	<extension
+		point="com.landray.kmss.sys.listshow.listShowConfig"
+		model="com.landray.kmss.km.asset.model.KmAssetApplyReturn">
+		<item
+			name="listShowConfig">
+			<param
+				name="name"
+				value="km-asset:kmAsset.nav.getAndreturn.return" />
+			<param
+				name="model"
+				value="com.landray.kmss.km.asset.model.KmAssetApplyReturn" />
+			<param
+				name="page"
+				value="/kmAsset_return" />
+			<param
+				name="default"
+				value="docSubject;fdNo;fdCreator.fdName;fdCreateDate;docStatus;nodeName;handlerName" />
+			<param
+				name="customized"
+				value="nodeName;km-asset:kmAssetApplyBase.currentLink,handlerName;km-asset:sysWfNode.processingNode.currentProcessor" />
+		</item>
+	</extension>
+	<extension
+		point="com.landray.kmss.sys.listshow.listShowConfig"
+		model="com.landray.kmss.km.asset.model.KmAssetApplyStock">
+		<item
+			name="listShowConfig">
+			<param
+				name="name"
+				value="km-asset:kmAsset.nav.stockAndin.stock" />
+			<param
+				name="model"
+				value="com.landray.kmss.km.asset.model.KmAssetApplyStock" />
+			<param
+				name="page"
+				value="/kmAsset_stock" />
+			<param
+				name="default"
+				value="docSubject;fdNo;fdCreator.fdName;fdCreateDate;docStatus;nodeName;handlerName" />
+			<param
+				name="customized"
+				value="nodeName;km-asset:kmAssetApplyBase.currentLink,handlerName;km-asset:sysWfNode.processingNode.currentProcessor" />
+		</item>
+	</extension>
+	<extension
+		point="com.landray.kmss.sys.listshow.listShowConfig"
+		model="com.landray.kmss.km.asset.model.KmAssetApplyIn">
+		<item
+			name="listShowConfig">
+			<param
+				name="name"
+				value="km-asset:kmAsset.nav.stockAndin.in" />
+			<param
+				name="model"
+				value="com.landray.kmss.km.asset.model.KmAssetApplyIn" />
+			<param
+				name="page"
+				value="/kmAsset_in" />
+			<param
+				name="default"
+				value="docSubject;fdNo;fdCreator.fdName;fdCreateDate;docStatus;nodeName;handlerName" />
+			<param
+				name="customized"
+				value="nodeName;km-asset:kmAssetApplyBase.currentLink,handlerName;km-asset:sysWfNode.processingNode.currentProcessor" />
+		</item>
+	</extension>
+	<extension
+		point="com.landray.kmss.sys.listshow.listShowConfig"
+		model="com.landray.kmss.km.asset.model.KmAssetApplyRent">
+		<item
+			name="listShowConfig">
+			<param
+				name="name"
+				value="km-asset:kmAsset.nav.rentAnddivert.rent" />
+			<param
+				name="model"
+				value="com.landray.kmss.km.asset.model.KmAssetApplyRent" />
+			<param
+				name="page"
+				value="/kmAsset_rent" />
+			<param
+				name="default"
+				value="docSubject;fdNo;fdCreator.fdName;fdCreateDate;docStatus;nodeName;handlerName" />
+			<param
+				name="customized"
+				value="nodeName;km-asset:kmAssetApplyBase.currentLink,handlerName;km-asset:sysWfNode.processingNode.currentProcessor" />
+		</item>
+	</extension>
+	<extension
+		point="com.landray.kmss.sys.listshow.listShowConfig"
+		model="com.landray.kmss.km.asset.model.KmAssetApplyDivert">
+		<item
+			name="listShowConfig">
+			<param
+				name="name"
+				value="km-asset:kmAsset.nav.rentAnddivert.divert" />
+			<param
+				name="model"
+				value="com.landray.kmss.km.asset.model.KmAssetApplyDivert" />
+			<param
+				name="page"
+				value="/kmAsset_divert" />
+			<param
+				name="default"
+				value="docSubject;fdNo;fdCreator.fdName;fdCreateDate;docStatus;nodeName;handlerName" />
+			<param
+				name="customized"
+				value="nodeName;km-asset:kmAssetApplyBase.currentLink,handlerName;km-asset:sysWfNode.processingNode.currentProcessor" />
+		</item>
+	</extension>
+	<extension
+		point="com.landray.kmss.sys.listshow.listShowConfig"
+		model="com.landray.kmss.km.asset.model.KmAssetApplyRepair">
+		<item
+			name="listShowConfig">
+			<param
+				name="name"
+				value="km-asset:kmAsset.nav.repair.list" />
+			<param
+				name="model"
+				value="com.landray.kmss.km.asset.model.KmAssetApplyRepair" />
+			<param
+				name="page"
+				value="/kmAsset_repair" />
+			<param
+				name="default"
+				value="docSubject;fdNo;fdCreator.fdName;fdCreateDate;docStatus;nodeName;handlerName" />
+			<param
+				name="customized"
+				value="nodeName;km-asset:kmAssetApplyBase.currentLink,handlerName;km-asset:sysWfNode.processingNode.currentProcessor" />
+		</item>
+	</extension>
+	<extension
+		point="com.landray.kmss.sys.listshow.listShowConfig"
+		model="com.landray.kmss.km.asset.model.KmAssetApplyChange">
+		<item
+			name="listShowConfig">
+			<param
+				name="name"
+				value="km-asset:kmAsset.nav.changeAnddeal.change" />
+			<param
+				name="model"
+				value="com.landray.kmss.km.asset.model.KmAssetApplyChange" />
+			<param
+				name="page"
+				value="/kmAsset_change" />
+			<param
+				name="default"
+				value="docSubject;fdNo;fdCreator.fdName;fdCreateDate;docStatus;nodeName;handlerName" />
+			<param
+				name="customized"
+				value="nodeName;km-asset:kmAssetApplyBase.currentLink,handlerName;km-asset:sysWfNode.processingNode.currentProcessor" />
+		</item>
+	</extension>
+	<extension
+		point="com.landray.kmss.sys.listshow.listShowConfig"
+		model="com.landray.kmss.km.asset.model.KmAssetApplyDeal">
+		<item
+			name="listShowConfig">
+			<param
+				name="name"
+				value="km-asset:kmAsset.nav.changeAnddeal.deal" />
+			<param
+				name="model"
+				value="com.landray.kmss.km.asset.model.KmAssetApplyDeal" />
+			<param
+				name="page"
+				value="/kmAsset_deal" />
+			<param
+				name="default"
+				value="docSubject;fdNo;fdCreator.fdName;fdCreateDate;docStatus;nodeName;handlerName" />
+			<param
+				name="customized"
+				value="nodeName;km-asset:kmAssetApplyBase.currentLink,handlerName;km-asset:sysWfNode.processingNode.currentProcessor" />
+		</item>
+	</extension>
+	<extension
+		point="com.landray.kmss.sys.listshow.listShowConfig"
+		model="com.landray.kmss.km.asset.model.KmAssetCard">
+		<item
+			name="listShowConfig">
+			<param
+				name="name"
+				value="km-asset:kmAssetApplyDivertList.fdAssetCard" />
+			<param
+				name="model"
+				value="com.landray.kmss.km.asset.model.KmAssetCard" />
+			<param
+				name="page"
+				value="/kmAsset_bank" />
+			<param
+				name="default"
+				value="fdIsLocked;fdCode;fdName;fdStandard;docDept.fdName;fdResponsiblePerson.fdName;fdAssetAddress.fdAddress;fdAssetCategory.fdName;fdAssetStatus" />
+			<param
+				name="customized"
+				value="" />
+		</item>
+	</extension>
+	<extension
+		point="com.landray.kmss.sys.listshow.listShowConfig"
+		model="com.landray.kmss.km.asset.model.KmAssetApplyTask">
+		<item
+			name="listShowConfig">
+			<param
+				name="name"
+				value="km-asset:kmAsset.task" />
+			<param
+				name="model"
+				value="com.landray.kmss.km.asset.model.KmAssetApplyTask" />
+			<param
+				name="page"
+				value="/kmAsset_task" />
+			<param
+				name="default"
+				value="docSubject;docCreator.fdName;docCreateTime;fdStatus;docStatus;nodeName;handlerName;oper" />
+			<param
+				name="customized"
+				value="nodeName;km-asset:sysWfNode.processingNode.currentProcess,handlerName;km-asset:sysWfNode.processingNode.currentProcessor,oper;list.operation" />
+		</item>
+	</extension>
+	<extension
+		point="com.landray.kmss.sys.listshow.listShowConfig"
+		model="com.landray.kmss.km.asset.model.KmAssetApplyInventory">
+		<item
+			name="listShowConfig">
+			<param
+				name="name"
+				value="km-asset:table.kmAssetApplyInventory" />
+			<param
+				name="model"
+				value="com.landray.kmss.km.asset.model.KmAssetApplyInventory" />
+			<param
+				name="page"
+				value="/kmAsset_inventory" />
+			<param
+				name="default"
+				value="docSubject;fdDescription;docStatus;docCreateTime;fdNo;fdAssetStatus;fdText;docCreator.fdName;fdAssetCard.docSubject;fdTask.docSubject;fdApplyTemplate.fdName" />
+			<param
+				name="customized"
+				value="" />
+		</item>
+	</extension>
+		<extension
+		point="com.landray.kmss.sys.listshow.listShowConfig"
+		model="com.landray.kmss.km.asset.model.KmAssetCard">
+		<item
+			name="listShowConfig">
+			<param
+				name="name"
+				value="km-asset:kmAsset.sysListShow.abandom.card" />
+			<param
+				name="model"
+				value="com.landray.kmss.km.asset.model.KmAssetCard" />
+			<param
+				name="page"
+				value="/kmAsset_abandom/abandomCard" />
+			<param
+				name="default"
+				value="fdIsLocked;fdCode;fdName;fdStandard;docDept.fdName;fdResponsiblePerson.fdName;fdAssetAddress.fdAddress;fdAssetCategory.fdName;fdAssetStatus" />
+			<param
+				name="customized"
+				value="" />
+		</item>
+	</extension>
+	<extension
+		point="com.landray.kmss.sys.listshow.listShowConfig"
+		model="com.landray.kmss.km.asset.model.KmAssetApplyBase">
+		<item
+			name="listShowConfig">
+			<param
+				name="name"
+				value="km-asset:kmAsset.sysListShow.abandom.apply" />
+			<param
+				name="model"
+				value="com.landray.kmss.km.asset.model.KmAssetApplyBase" />
+			<param
+				name="page"
+				value="/kmAsset_abandom/abandomApply" />
+			<param
+				name="default"
+				value="docSubject;fdNo;fdCreator.fdName;fdCreateDate;docStatus;nodeName;handlerName" />
+			<param
+				name="customized"
+				value="nodeName;km-asset:kmAssetApplyBase.currentLink,handlerName;km-asset:sysWfNode.processingNode.currentProcessor" />
+		</item>
+	</extension>
+	<!-- 表单的模式 -->
+	<extension point="com.landray.kmss.sys.xform.mode" model="*">
+		<item name="baseConfig">
+			<param name="mainModelName" value="com.landray.kmss.km.asset.model.KmAssetCard" />
+			<param name="templateModelName" value="com.landray.kmss.km.asset.model.KmAssetApplyTemplate" />
+			<param name="templatePropertyName" value="fdTemplate" />
+			<param name="fdKey" value="assetMainDoc" />
+			<param name="name" value="sys-xform:sysFormTemplate.fdTemplateType.nouse|sys-xform:sysFormTemplate.fdTemplateType.define" />
+			<param name="value" value="1|3" />
+		</item>
+	</extension>
+	
+			<!-- 数据中台 -RTF -->
+	<extension point="com.landray.kmss.sys.xform.maindata.rtf">
+		<item name="config">
+			<!-- 主文档全名称 -->
+			<param
+				name="modelName"
+				value="com.landray.kmss.km.asset.model.KmAssetApplyBase" />
+			<param
+				name="fields"
+				value="fdExplain;fdReason" />
+		</item>
+		<item name="config">
+			<!-- 主文档全名称 -->
+			<param
+				name="modelName"
+				value="com.landray.kmss.km.asset.model.KmAssetCard" />
+			<param
+				name="fields"
+				value="fdExplanation;fdContent" />
+		</item>
+		<item name="config">
+			<!-- 主文档全名称 -->
+			<param
+				name="modelName"
+				value="com.landray.kmss.km.asset.model.KmAssetCardLife" />
+			<param
+				name="fields"
+				value="fdOperContent" />
+		</item>
+		<item name="config">
+			<!-- 主文档全名称 -->
+			<param
+				name="modelName"
+				value="com.landray.kmss.km.asset.model.KmAssetCategory" />
+			<param
+				name="fields"
+				value="docContent" />
+		</item>
+	</extension>
+	<extension point="com.landray.kmss.sys.admin.transfer">
+		<item
+			name="config">
+			<param
+				name="unid"
+				value="com.landray.kmss.km.asset.transfer.KmAssetApplyInventoryTransferTask" />
+			<param
+				name="name"
+				value="资产盘点明细数据迁移" />
+			<param
+				name="path"
+				value="/km/asset/" />
+			<param
+				name="check"
+				value="com.landray.kmss.km.asset.transfer.KmAssetApplyChecker" />
+			<param
+				name="upgrade"
+				value="com.landray.kmss.km.asset.transfer.KmAssetApplyInventoryTransferTask" />
+			<param
+				name="description"
+				value="资产盘点明细数据迁移"/>
+		</item>
+	</extension>
+	<extension point="com.landray.kmss.sys.admin.transfer">
+		<item
+			name="config">
+			<param
+				name="unid"
+				value="com.landray.kmss.km.asset.transfer.KmAssetApplyDealTransferTask" />
+			<param
+				name="name"
+				value="资产处置明细数据迁移" />
+			<param
+				name="path"
+				value="/km/asset/" />
+			<param
+				name="check"
+				value="com.landray.kmss.km.asset.transfer.KmAssetApplyChecker" />
+			<param
+				name="upgrade"
+				value="com.landray.kmss.km.asset.transfer.KmAssetApplyDealTransferTask" />
+			<param
+				name="description"
+				value="资产处置明细数据迁移"/>
+		</item>
+	</extension>
+	<extension point="com.landray.kmss.sys.admin.transfer">
+		<item
+			name="config">
+			<param
+				name="unid"
+				value="com.landray.kmss.km.asset.transfer.KmAssetInventoryListTransferTask" />
+			<param
+				name="name"
+				value="资产盘点明细表数据删除" />
+			<param
+				name="path"
+				value="/km/asset/" />
+			<param
+				name="check"
+				value="com.landray.kmss.km.asset.transfer.KmAssetApplyChecker" />
+			<param
+				name="upgrade"
+				value="com.landray.kmss.km.asset.transfer.KmAssetInventoryListTransferTask" />
+			<param
+				name="description"
+				value="删除资产盘点明细表脏数据"/>
+		</item>
+	</extension>
+	<extension point="com.landray.kmss.sys.admin.transfer">
+		<item
+			name="config">
+			<param
+				name="unid"
+				value="com.landray.kmss.km.asset.transfer.KmAssetApplyInventoryListDelTransferTask" />
+			<param
+				name="name"
+				value="资产盘点明细表数据删除" />
+			<param
+				name="path"
+				value="/km/asset/" />
+			<param
+				name="check"
+				value="com.landray.kmss.km.asset.transfer.KmAssetApplyChecker" />
+			<param
+				name="upgrade"
+				value="com.landray.kmss.km.asset.transfer.KmAssetInventoryListTransferTask" />
+			<param
+				name="description"
+				value="删除资产盘点明细表所属资产盘点单为空的数据"/>
+		</item>
+	</extension>
+</plugin>

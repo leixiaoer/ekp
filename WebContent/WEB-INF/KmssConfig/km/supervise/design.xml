@@ -1,0 +1,660 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configs 
+    xsi:schemaLocation="http://www.example.org/design-config ../../design.xsd " 
+    xmlns="http://www.example.org/design-config" 
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <module 
+        urlPrefix="/km/supervise/" 
+        messageKey="km-supervise:module.km.supervise" 
+        defaultValidator="roleValidator(role=ROLE_KMSUPERVISE_DEFAULT)">
+        <roles>
+        	ROLE_KMSUPERVISE_DEFAULT;
+        	ROLE_KMSUPERVISE_SETTING;
+        	ROLE_KMSUPERVISE_REPEAL;
+        	ROLE_KMSUPERVISE_CHANGE;
+        	ROLE_KMSUPERVISE_URGE;
+        	ROLE_KMSUPERVISE_READER;
+        	ROLE_KMSUPERVISE_UPDATEDUTY;
+        	ROLE_KMSUPERVISE_BACK;
+        	ROLE_KMSUPERVISE_REMARK;
+        	ROLE_KMSUPERVISE_EDITOR;
+        	ROLE_KMSUPERVISE_DELETE;
+        	ROLE_KMSUPERVISE_CREATE;
+        	ROLE_KMSUPERVISE_COMMONWORKFLOW;
+        	ROLE_KMSUPERVISE_TASK;
+        	ROLE_KMSUPERVISE_UPDATETASK;
+        	ROLE_KMSUPERVISE_FINISH;
+        	ROLE_KMSUPERVISE_OPTALL;
+        	<!-- ROLE_KMSUPERVISE_OVERVIEW; -->
+        	ROLE_KMSUPERVISE_CATEGORY_MAINTAINER;
+        	ROLE_KMSUPERVISE_SUPERVISOR_EXPORT;
+        	ROLE_KMSUPERVISE_IMPORT;
+        	ROLE_KMSUPERVISE_LEADER;
+        	ROLE_KMSUPERVISE_TASK_BACK;
+        	ROLE_KMSUPERVISE_STAGE_BACK;
+        	ROLE_KMSUPERVISE_STOP
+        	</roles>
+        <request 
+            path="tree.jsp*" 
+            defaultValidator="roleValidator(role=ROLE_KMSUPERVISE_SETTING)"/>
+            
+       <!-- 督办概览页面权限控制 -->
+       <!-- <request 
+            path="km_supervise_overview/supervise_overview.jsp*" 
+            defaultValidator="roleValidator(role=ROLE_KMSUPERVISE_OVERVIEW)"/> -->
+       <request
+       		path="km_supervise_main/kmSupervise_upload.jsp*"
+       		defaultValidator="roleValidator(role=ROLE_KMSUPERVISE_IMPORT)" />
+            
+        <request 
+            path="km_supervise_main/kmSuperviseMain.do*" 
+            validatorParameter="recid=fdId,model=com.landray.kmss.km.supervise.model.KmSuperviseMain,templatemodel=com.landray.kmss.km.supervise.model.KmSuperviseTemplet"
+            defaultValidator="roleValidator(role=ROLE_KMSUPERVISE_DEFAULT)">
+            <query 
+                queryString="method=add|save|saveadd&amp;i.docTemplate=*" 
+                validator="roleValidator(role=ROLE_KMSUPERVISE_CREATE)&amp;authCategoryReaderValidator(templateid=i.docTemplate)"/>
+            <query 
+                queryString="method=view" 
+                validator="sysRecycleAuthFieldValidator(type=recycle)|authFieldValidator(type=SYS_READER)|authCategoryEditorValidator(property=docTemplate)|kmSuperviseOriginValidator()"/>
+            <query 
+                queryString="method=edit" 
+                validator="authFieldValidator(type=SYS_EDITOR)|areaRoleValidator(role=ROLE_KMSUPERVISE_EDITOR)"/>
+            <query 
+                queryString="method=delete" 
+                validator="fieldValueValidator(fieldproperty=docStatus,value=10)&amp;authFieldValidator(type=creator)&amp;kmSuperviseDraftValidator()|roleValidator(role=ROLE_KMSUPERVISE_DELETE)&amp;[areaRoleValidator(role=ROLE_KMSUPERVISE_CATEGORY_MAINTAINER)|areaRoleValidator(role=ROLE_KMSUPERVISE_OPTALL)|authCategoryEditorValidator(property=docTemplate)]"/><!--&amp;authCategoryEditorValidator(property=docTemplate) -->
+            <query
+				queryString="draft=true&amp;method=deleteall"
+				validator="roleValidator(role=ROLE_KMSUPERVISE_DEFAULT)" />
+            <query
+				queryString="method=deleteall"
+				validator="roleValidator(role=ROLE_KMSUPERVISE_DELETE)&amp;[areaRoleValidator(role=ROLE_KMSUPERVISE_CATEGORY_MAINTAINER)|areaRoleValidator(role=ROLE_KMSUPERVISE_OPTALL)|authCategoryEditorValidator(cateid=categoryId)]" />	
+            <query 
+                queryString="method=updateallAddConcern" 
+                validator="roleValidator(role=ROLE_KMSUPERVISE_READER)"/>
+            <!-- 督办关注 -->
+            <query 
+                queryString="method=updateAddConcern" 
+                validator="authFieldValidator(type=SYS_READER)|authCategoryEditorValidator(property=docTemplate)"/>
+            <!-- 督办催办 -->
+            <query 
+                queryString="method=urgeSupervise" 
+                validator="roleValidator(role=ROLE_KMSUPERVISE_URGE)&amp;[authFieldValidator(type=SYS_READER)|authCategoryEditorValidator(property=docTemplate)]|kmSuperviseLeadValidator(recid=fdId)"/>
+            <!-- 批量催办 -->
+            <query
+				queryString="method=urgeall"
+				validator="roleValidator(role=ROLE_KMSUPERVISE_URGE)&amp;[areaRoleValidator(role=ROLE_KMSUPERVISE_CATEGORY_MAINTAINER)|areaRoleValidator(role=ROLE_KMSUPERVISE_OPTALL)|authCategoryEditorValidator(cateid=categoryId)]" />
+            <!-- 任务指派 -->
+            <query 
+                queryString="method=addTask" 
+                validator="roleValidator(role=ROLE_KMSUPERVISE_TASK)&amp;[authFieldValidator(type=SYS_READER)|authCategoryEditorValidator(property=docTemplate)]|kmSuperviseValidator(recid=fdId)"/>
+            <!-- 责任人变更 -->
+            <query 
+                queryString="method=updateDuty" 
+                validator="roleValidator(role=ROLE_KMSUPERVISE_UPDATEDUTY)&amp;[authFieldValidator(type=SYS_READER)|authCategoryEditorValidator(property=docTemplate)]|kmSuperviseValidator(recid=fdId)"/>
+            <!-- 任务变更 -->
+            <query 
+                queryString="method=updateTask" 
+                validator="roleValidator(role=ROLE_KMSUPERVISE_UPDATETASK)&amp;[authFieldValidator(type=SYS_READER)|authCategoryEditorValidator(property=docTemplate)]|kmSuperviseValidator(recid=fdId)"/>
+            <!-- 督办反馈_阶段反馈 -->
+            <query 
+                queryString="method=updateAddFeedback&amp;fdType=1&amp;fdMainId=*" 
+                validator="roleValidator(role=ROLE_KMSUPERVISE_STAGE_BACK)&amp;kmSuperviseAuthFieldValidator(type=SYS_READER)|kmSuperviseBackValidator(recid=fdMainId,fdType=fdType)"/>
+            <!-- 督办反馈_任务反馈 -->
+            <query 
+                queryString="method=updateAddFeedback&amp;fdType=0&amp;fdMainId=*&amp;fdTaskId=*" 
+                validator="roleValidator(role=ROLE_KMSUPERVISE_TASK_BACK)&amp;kmSuperviseAuthFieldValidator(type=SYS_READER)|kmSuperviseBackValidator(recid=fdMainId,fdType=fdType,fdTaskId=fdTaskId)"/>
+            <!-- 督办反馈 -->
+            <query 
+                queryString="method=updateAddFeedback" 
+                validator="roleValidator(role=ROLE_KMSUPERVISE_BACK)&amp;[kmSuperviseAuthFieldValidator(type=SYS_READER)|authCategoryEditorValidator(property=docTemplate)]|kmSuperviseValidator(recid=fdMainId,isBack=true)"/>
+            <!-- 督办办结 -->
+            <query 
+                queryString="method=updateAddFinish" 
+                validator="roleValidator(role=ROLE_KMSUPERVISE_FINISH)&amp;[authFieldValidator(type=SYS_READER)|authCategoryEditorValidator(property=docTemplate)]|kmSuperviseValidator(recid=fdId)"/>
+            <!-- 督办撤销 -->
+            <query 
+                queryString="method=updateAddRepeal|updateAddRestart" 
+                validator="roleValidator(role=ROLE_KMSUPERVISE_REPEAL)&amp;[authFieldValidator(type=SYS_READER)|authCategoryEditorValidator(property=docTemplate)]|kmSuperviseValidator(recid=fdId)"/>
+            <!-- 督办终止 -->
+            <query 
+                queryString="method=updateAddStop" 
+                validator="roleValidator(role=ROLE_KMSUPERVISE_STOP)&amp;[authFieldValidator(type=SYS_READER)|authCategoryEditorValidator(property=docTemplate)]|kmSuperviseValidator(recid=fdId)"/>
+            <!-- 督办变更 -->
+            <query 
+                queryString="method=changeSupervise" 
+                validator="roleValidator(role=ROLE_KMSUPERVISE_CHANGE)|kmSuperviseValidator(recid=fdMainId)"/>
+            <!-- 督办考评 -->
+            
+            <query 
+                queryString="method=updateAddRemark|remark" 
+                validator="roleValidator(role=ROLE_KMSUPERVISE_REMARK)&amp;[authFieldValidator(type=SYS_READER)|authCategoryEditorValidator(property=docTemplate)]|kmSuperviseLeadValidator(recid=fdId)|roleValidator(role=ROLE_KMSUPERVISE_LEADER)"/>
+            <!-- 批示 -->
+            <query 
+                queryString="method=updateAddInstruction" 
+                validator="kmSuperviseLeadValidator(recid=fdId)"/>
+        </request>
+        <request 
+            path="km_supervise_level/kmSuperviseLevel.do*" 
+            validatorParameter="recid=fdId,model=com.landray.kmss.km.supervise.model.KmSuperviseLevel" 
+            defaultValidator="roleValidator(role=ROLE_KMSUPERVISE_SETTING)">
+            <query 
+                queryString="method=view" 
+                validator="roleValidator(role=ROLE_KMSUPERVISE_SETTING)"/>
+        </request>
+        <request 
+            path="km_supervise_urgency/kmSuperviseUrgency.do*" 
+            validatorParameter="recid=fdId,model=com.landray.kmss.km.supervise.model.KmSuperviseUrgency" 
+            defaultValidator="roleValidator(role=ROLE_KMSUPERVISE_SETTING)">
+            <query 
+                queryString="method=view" 
+                validator="roleValidator(role=ROLE_KMSUPERVISE_SETTING)"/>
+        </request>
+        <request 
+            path="km_supervise_templet/kmSuperviseTemplet.do*" 
+            validatorParameter="recid=fdId,model=com.landray.kmss.km.supervise.model.KmSuperviseTemplet,role=ROLE_KMSUPERVISE_SETTING" 
+            defaultValidator="roleValidator(role=ROLE_KMSUPERVISE_SETTING)">
+            <query 
+                queryString="method=add|save|saveadd" 
+                validator="authCategoryReaderValidator(cateId=i.docCategory)"/>
+            <query 
+                queryString="method=getAllTree|getMyConcernTree|getCount" 
+                validator="roleValidator(role=ROLE_KMSUPERVISE_DEFAULT)"/>
+            <query 
+                queryString="method=view" 
+                validator="authFieldValidator(type=SYS_READER)|authCategoryEditorValidator(property=docCategory)"/>
+            <query 
+                queryString="method=edit|update" 
+                validator="authFieldValidator(type=SYS_EDITOR)|authCategoryEditorValidator(property=docCategory)"/>
+            <query 
+                queryString="method=delete|deleteall" 
+                validator="roleValidator(role=ROLE_SYSCATEGORY_MAINTAINER;ROLE_KMSUPERVISE_SETTING)|authCategoryEditorValidator(property=docCategory)"/>
+			<query
+				queryString="method=clone"
+				validator="authCategoryReaderValidator(recid=cloneModelId,model=com.landray.kmss.km.supervise.model.KmSuperviseTemplet,property=docCategory)" />
+        </request>
+        <request 
+            path="km_supervise_warn/kmSuperviseWarn.do*" 
+            validatorParameter="recid=fdId,model=com.landray.kmss.km.supervise.model.KmSuperviseWarn" 
+            defaultValidator="roleValidator(role=ROLE_KMSUPERVISE_SETTING)">
+            <query 
+                queryString="method=view" 
+                validator="roleValidator(role=ROLE_KMSUPERVISE_SETTING)"/>
+        </request>
+        <request 
+            path="km_supervise_dynamic/kmSuperviseDynamic.do*" 
+            validatorParameter="recid=fdId,model=com.landray.kmss.km.supervise.model.KmSuperviseDynamic" 
+            defaultValidator="roleValidator(role=ROLE_KMSUPERVISE_DEFAULT)">
+            <query 
+                queryString="method=*" 
+                validator="true"/>
+        </request>
+        <request 
+            path="km_supervise_concern/kmSuperviseConcern.do*" 
+            validatorParameter="recid=fdId,model=com.landray.kmss.km.supervise.model.KmSuperviseConcern" 
+            defaultValidator="roleValidator(role=ROLE_KMSUPERVISE_SETTING)">
+            <query 
+                queryString="method=view" 
+                validator="roleValidator(role=ROLE_KMSUPERVISE_SETTING)"/>
+        </request>
+        <request 
+            path="km_supervise_back/kmSuperviseBack.do*" 
+            validatorParameter="recid=fdId,model=com.landray.kmss.km.supervise.model.KmSuperviseBack,fdType=fdType" 
+            defaultValidator="roleValidator(role=ROLE_KMSUPERVISE_DEFAULT)">
+            <query 
+                queryString="method=add|save|saveadd" 
+                validator="roleValidator(role=ROLE_KMSUPERVISE_BACK)|kmSuperviseValidator(recid=fdId,isBack=true)|roleValidator(role=ROLE_KMSUPERVISE_TASK_BACK)|roleValidator(role=ROLE_KMSUPERVISE_STAGE_BACK)|kmSuperviseBackValidator(recid=fdMainId,fdType=fdType)"/>
+        	 <query 
+                queryString="method=edit" 
+                validator="authFieldValidator(type=SYS_EDITOR)"/>
+        	<query 
+                queryString="method=view" 
+                validator="authFieldValidator(type=SYS_READER)"/>
+        </request>
+        <request 
+            path="km_supervise_main_plan/kmSuperviseMainPlan.do*" 
+            validatorParameter="recid=fdId,model=com.landray.kmss.km.supervise.model.KmSuperviseMainPlan" 
+            defaultValidator="roleValidator(role=ROLE_KMSUPERVISE_DEFAULT)">
+            <query 
+                queryString="method=add|save|saveadd" 
+                validator="roleValidator(role=ROLE_KMSUPERVISE_TASK)|kmSuperviseValidator(recid=fdMainId)"/>
+        </request>
+        <request 
+            path="km_supervise_main_finish/kmSuperviseMainFinish.do*" 
+            validatorParameter="recid=fdId,model=com.landray.kmss.km.supervise.model.KmSuperviseMainFinish" 
+            defaultValidator="roleValidator(role=ROLE_KMSUPERVISE_DEFAULT)">
+            <query 
+                queryString="method=edit" 
+                validator="kmSuperviseValidator(recid=fdMainId)|roleValidator(role=ROLE_KMSUPERVISE_FINISH)"/>
+            <query 
+                queryString="method=view" 
+                validator="authFieldValidator(type=SYS_READER)"/>
+            <query 
+                queryString="method=delete"
+                validator="kmSuperviseValidator(recid=fdMainId)|roleValidator(role=ROLE_KMSUPERVISE_FINISH)"/> 
+            <query 
+                queryString="method=add|save|saveadd" 
+                validator="kmSuperviseValidator(recid=fdMainId)|roleValidator(role=ROLE_KMSUPERVISE_FINISH)"/>
+        </request>
+        <request 
+            path="km_supervise_main_stop/kmSuperviseMainStop.do*" 
+            validatorParameter="recid=fdId,model=com.landray.kmss.km.supervise.model.KmSuperviseMainStop" 
+            defaultValidator="roleValidator(role=ROLE_KMSUPERVISE_DEFAULT)">
+            <query 
+                queryString="method=edit" 
+                validator="kmSuperviseValidator(recid=fdMainId)|roleValidator(role=ROLE_KMSUPERVISE_STOP)"/>
+            <query 
+                queryString="method=view" 
+                validator="authFieldValidator(type=SYS_READER)"/>
+            <query 
+                queryString="method=delete"
+                validator="kmSuperviseValidator(recid=fdMainId)|roleValidator(role=ROLE_KMSUPERVISE_STOP)"/>
+            <query 
+                queryString="method=add|save|saveadd" 
+                validator="kmSuperviseValidator(recid=fdMainId)|roleValidator(role=ROLE_KMSUPERVISE_STOP)"/>
+        </request>
+        <request 
+            path="km_supervise_main_remark/kmSuperviseMainRemark.do*" 
+            validatorParameter="recid=fdId,model=com.landray.kmss.km.supervise.model.KmSuperviseMain" 
+            defaultValidator="roleValidator(role=ROLE_KMSUPERVISE_DEFAULT)">
+            <query 
+                queryString="method=add|save" 
+                validator="kmSuperviseLeadValidator(recid=fdMainId)|roleValidator(role=ROLE_KMSUPERVISE_REMARK)|roleValidator(role=ROLE_KMSUPERVISE_LEADER)"/>
+        </request>
+        <request 
+            path="km_supervise_task/kmSuperviseTask.do*" 
+            validatorParameter="recid=fdId,model=com.landray.kmss.km.supervise.model.KmSuperviseTask" 
+            defaultValidator="roleValidator(role=ROLE_KMSUPERVISE_DEFAULT)">
+            <query 
+                queryString="method=view" 
+                validator="authFieldValidator(type=SYS_READER)|kmSuperviseSponsorValidator(recid=fdId)"/>
+                
+        </request>
+        <filters 
+            modelName="com.landray.kmss.km.supervise.model.KmSuperviseTask">
+            <filter 
+                type="SYS_READER" 
+                expression="roleFilter(role=ROLE_KMSUPERVISE_READER)"/>
+            <filter 
+                type="SYS_READER" 
+                expression="authFieldFilter(field=fdSupervise.authAllReaders.fdId)"/>
+            <filter 
+                type="SYS_READER" 
+                expression="flagFieldFilter(field=fdSupervise.authReaderFlag,value=1)"/>
+            <filter 
+                type="SYS_READER" 
+                expression="authFieldFilter(field=fdPlan.authAllReaders.fdId)"/>
+            <filter 
+                type="SYS_READER" 
+                expression="flagFieldFilter(field=fdPlan.authReaderFlag,value=1)"/>
+        </filters>
+        <filters 
+            modelName="com.landray.kmss.km.supervise.model.KmSuperviseBack">
+            <filter 
+                type="SYS_READER" 
+                expression="roleFilter(role=ROLE_KMSUPERVISE_READER)"/>
+            <filter 
+                type="SYS_READER" 
+                expression="authFieldFilter(field=fdSupervise.authAllReaders.fdId)"/>
+            <filter 
+                type="SYS_READER" 
+                expression="flagFieldFilter(field=fdSupervise.authReaderFlag,value=1)"/>
+            <filter 
+                type="SYS_READER" 
+                expression="authFieldFilter(field=authAllReaders.fdId)"/>
+             <filter
+				type="SYS_EDITOR"
+				expression="authFieldFilter(field=fdPerson.fdId)" />
+			<filter
+				type="SYS_EDITOR"
+				expression="authFieldFilter(field=docCreator.fdId)" />
+        </filters>
+        <filters 
+            modelName="com.landray.kmss.km.supervise.model.KmSuperviseMainFinish">
+            <filter 
+                type="SYS_READER" 
+                expression="roleFilter(role=ROLE_KMSUPERVISE_READER)"/>
+            <filter 
+                type="SYS_READER" 
+                expression="authFieldFilter(field=kmSuperviseMain.authAllReaders.fdId)"/>
+            <filter 
+                type="SYS_READER" 
+                expression="flagFieldFilter(field=kmSuperviseMain.authReaderFlag,value=1)"/>
+            <filter 
+                type="SYS_READER" 
+                expression="authFieldFilter(field=authAllReaders.fdId)"/> 
+        </filters>
+        <filters 
+            modelName="com.landray.kmss.km.supervise.model.KmSuperviseMainStop">
+            <filter 
+                type="SYS_READER" 
+                expression="roleFilter(role=ROLE_KMSUPERVISE_READER)"/>
+            <filter 
+                type="SYS_READER" 
+                expression="authFieldFilter(field=kmSuperviseMain.authAllReaders.fdId)"/>
+            <filter 
+                type="SYS_READER" 
+                expression="flagFieldFilter(field=kmSuperviseMain.authReaderFlag,value=1)"/>
+            <filter 
+                type="SYS_READER" 
+                expression="authFieldFilter(field=authAllReaders.fdId)"/>
+        </filters>
+        <filters 
+            modelName="com.landray.kmss.km.supervise.model.KmSuperviseDynamic">
+            <filter 
+                type="SYS_READER" 
+                expression="roleFilter(role=ROLE_KMSUPERVISE_READER)"/>
+            <filter 
+                type="SYS_READER" 
+                expression="authFieldFilter(field=fdSupervise.authAllReaders.fdId)"/>
+            <filter 
+                type="SYS_READER" 
+                expression="flagFieldFilter(field=fdSupervise.authReaderFlag,value=1)"/>
+            <filter 
+                type="SYS_READER" 
+                expression="authFieldFilter(field=authAllReaders.fdId)"/>
+        </filters>
+        <filters 
+            modelName="com.landray.kmss.km.supervise.model.KmSuperviseMain">
+            <filter
+				type="creator"
+				expression="authFieldFilter(field=docCreator.fdId)" />
+            <filter 
+                type="SYS_READER" 
+                expression="roleFilter(role=ROLE_KMSUPERVISE_READER)"/>
+            <filter 
+                type="SYS_READER" 
+                expression="authFieldFilter(field=authAllReaders.fdId)"/>
+            <filter 
+                type="SYS_READER" 
+                expression="flagFieldFilter(field=authReaderFlag,value=1)"/>
+           <filter 
+                type="SYS_EDITOR" 
+                expression="authFieldFilter(field=authAllEditors.fdId)"/>
+        </filters>
+        <filters 
+            modelName="com.landray.kmss.km.supervise.model.KmSuperviseTemplet">
+			<filter
+				type="SYS_READER"
+				expression="roleFilter(role=ROLE_KMSUPERVISE_CATEGORY_MAINTAINER)" />
+            <filter 
+                type="SYS_READER" 
+                expression="authFieldFilter(field=authAllReaders.fdId)"/>
+            <filter 
+                type="SYS_READER" 
+                expression="flagFieldFilter(field=authReaderFlag,value=1)"/>
+            <filter 
+                type="SYS_EDITOR" 
+                expression="authFieldFilter(field=authAllEditors.fdId)"/>
+        </filters>
+    </module>
+    <module
+		messageKey=""
+		urlPrefix="/sys/appconfig/">
+		<request path="sys_appconfig/sysAppConfig*">
+			<query
+				queryString="modelName=com.landray.kmss.km.supervise.model.KmSuperviseParamConfig"
+				validator="roleValidator(role=ROLE_KMSUPERVISE_SETTING)" />
+		</request>
+	</module>
+    <module urlPrefix="/sys/transport/">
+		<request path="sys_transport_export/SysTransportExport*">
+			<query validator="roleValidator(role=ROLE_KMSUPERVISE_SUPERVISOR_EXPORT)"
+				queryString="fdModelName=com.landray.kmss.km.supervise.model.KmSuperviseMain" />
+		</request>
+	</module>
+    <!-- 软删除权限 -->
+	<module urlPrefix="/sys/recycle/">
+		<request path="sys_recycle_doc/sysRecycle*"
+		   validatorParameter="recid=modelId,model=modelName">
+			<query
+			    queryString="modelName=com.landray.kmss.km.supervise.model.KmSuperviseMain&amp;method=hardDelete|recover" 
+				validator="sysRecycleAuthFieldValidator(type=SYS_EDITOR)|sysRecycleAuthFieldValidator(type=recycle)|areaRoleValidator(role=ROLE_SYS_RECYCLE_BACKSTAGE_MANAGER)"/>
+		</request>
+		<request path="sys_recycle_log/sysRecycleLog*">
+			<query
+			    queryString="modelName=com.landray.kmss.km.supervise.model.KmSuperviseMain" 
+				validator="areaRoleValidator(role=ROLE_SYS_RECYCLE_BACKSTAGE_MANAGER)"/>
+		</request>	
+	</module>
+    <module 
+        urlPrefix="/sys/xform/">
+        <request 
+            path="base/sys_form_db_table/sysFormDbTable*">
+            <query 
+                queryString="method=config|edit|save|delete&amp;fdFormType=common&amp;fdTemplateModel=com.landray.kmss.km.supervise.model.KmSuperviseTemplet" 
+                validator="roleValidator(role=ROLE_KMSUPERVISE_SETTING)"/>
+            <query 
+                queryString="method=config|edit|save|delete&amp;fdFormType=template&amp;fdTemplateModel=com.landray.kmss.km.supervise.model.KmSuperviseTemplet" 
+                validator="roleValidator(role=ROLE_KMSUPERVISE_SETTING)|authFieldValidator(type=SYS_EDITOR,recid=fdModelId,model=com.landray.kmss.km.supervise.model.KmSuperviseTemplet)|authCategoryEditorValidator(property=docCategory,recid=docCategory,model=docCategory)"/>
+            <query 
+                queryString="method=deleteall&amp;fdTemplateModel=com.landray.kmss.km.supervise.model.KmSuperviseTemplet" 
+                validator="roleValidator(role=ROLE_KMSUPERVISE_SETTING)"/>
+        </request>
+        <request 
+            path="sys_form_common_template/sysFormCommonTemplate*">
+            <query 
+                queryString="fdModelName=com.landray.kmss.km.supervise.model.KmSuperviseTemplet" 
+                validator="roleValidator(role=ROLE_KMSUPERVISE_SETTING)"/>
+        </request>
+    </module>
+    <module 
+        urlPrefix="/sys/search/">
+        <request 
+            path="sys_search_main/sysSearchMain*">
+            <query 
+                queryString="fdModelName=com.landray.kmss.km.supervise.model.KmSuperviseMain" 
+                validator="roleValidator(role=ROLE_KMSUPERVISE_SETTING)"/>
+        </request>
+        <request 
+            path="search*">
+            <query 
+                queryString="method=exportResult&amp;fdModelName=com.landray.kmss.km.supervise.model.KmSuperviseMain" 
+                validator="roleValidator(role=ROLE_KMSUPERVISE_DEFAULT)"/>
+        </request>
+    </module>
+    <module urlPrefix="/sys/lbpmservice/">
+		<request 
+			path="support/lbpm_template/lbpmTemplate*">
+			<query 
+                queryString="fdModelName=com.landray.kmss.km.supervise.model.KmSuperviseTemplet" 
+                validator="roleValidator(role=ROLE_KMSUPERVISE_SETTING)"/>
+		</request>
+		<request 
+			path="support/lbpm_template/lbpmPrivileger*">
+			<query 
+                queryString="fdModelName=com.landray.kmss.km.supervise.model.KmSuperviseTemplet" 
+                validator="roleValidator(role=ROLE_KMSUPERVISE_SETTING)"/>
+		</request>
+		<request 
+			path="support/lbpm_template/lbpmNodes2Excel*">
+			<query
+				queryString="method=doExportNodesExcel&amp;fdModelName=com.landray.kmss.km.supervise.model.KmSuperviseTemplet"
+				validator="roleValidator(role=ROLE_KMSUPERVISE_SETTING)" />
+		</request>
+		<request 
+			path="support/lbpm_audit_note/lbpmAuditNote*">
+			<query
+				queryString="method=listNote&amp;fdModelName=com.landray.kmss.km.supervise.model.KmSuperviseMain"
+				validator="roleValidator(role=ROLE_KMSUPERVISE_DEFAULT)" />
+		</request>
+	</module>
+    <module 
+        urlPrefix="/sys/number/">
+        <request 
+            path="sys_number_main/sysNumberMain*">
+            <query 
+                queryString="modelName=com.landray.kmss.km.supervise.model.KmSuperviseMain" 
+                validator="roleValidator(role=ROLE_KMSUPERVISE_SETTING)"/>
+        </request>
+    </module>
+    <!-- 列表自定义权限 -->
+	<module urlPrefix="/sys/profile/">
+		<request 
+			path="listShow/sys_listShow/sysListShow*">
+			<query 
+                queryString="method=getSort" 
+                validator="roleValidator(role=ROLE_KMSUPERVISE_DEFAULT)"/>
+			<query
+				queryString="modelName=com.landray.kmss.km.supervise.model.KmSuperviseMain"
+				validator="roleValidator(role=ROLE_KMSUPERVISE_SETTING)" />
+		</request>
+	</module>
+    <!-- 督办预警 -->
+	<module messageKey="" urlPrefix="/sys/appconfig/">
+		<request path="sys_appconfig/sysAppConfig*">
+			<query
+				queryString="modelName=com.landray.kmss.km.supervise.model.KmSuperviseWarnConfig"
+				validator="roleValidator(role=ROLE_KMSUPERVISE_COMMONWORKFLOW)" />
+		</request>
+	</module>
+	<!-- 督办搜索权限 -->
+	<module
+		messageKey=""
+		urlPrefix="/sys/ftsearch/">
+		<request
+			path="searchBuilder*">
+			<query
+				queryString="modelName=com.landray.kmss.km.supervise.model.KmSuperviseMain"
+				validator="roleValidator(role=ROLE_KMSUPERVISE_DEFAULT)" />
+		</request>
+	</module>
+     <!--定时任务每天1点 督办同步状态的系统任务 -->
+     <quartz
+		messageKey="km-supervise:sys.job.sync.supervise.over.status"
+		jobService="kmSuperviseWarnService"
+		jobMethod="syncOverStatus"
+		enable="true"
+		cronExpression="0 0 1 * * ?"
+		runType="SINGLENODE"
+		description="km-supervise:sys.job.sync.supervise.over.status.desc" />
+	<!-- 定时任务每天4点执行  督办事项完成时间延期预警 -->
+	<!-- <quartz
+		cronExpression="0 0 4 * * ?"
+		jobService="kmSuperviseWarnService"
+		enable="false"
+		messageKey="km-supervise:kmSuperviseWarn.quartz.task"
+		jobMethod="sendSuperviseTimingTask"/> -->
+	
+	<!-- 定时任务每天4点执行  已办结，已终止督办待办移除 -->
+	<quartz
+		cronExpression="0 0 2 * * ?"
+		jobService="kmSuperviseWarnTarget"
+		enable="false"
+		messageKey="km-supervise:kmSuperviseWarn.quartz.remove"
+		jobMethod="removeSuperviseTodo"/>
+		
+	<!-- 定时任务每天3点执行  工作任务完成时间延期预警 -->
+	<!-- <quartz
+		cronExpression="0 0 3 * * ?"
+		jobService="kmSuperviseWarnService"
+		messageKey="km-supervise:kmSuperviseTask.quartz.task"
+		jobMethod="sendTaskTiming"/> -->
+		
+    <search 
+        messageKey="km-supervise:module.km.supervise" 
+        modelName="com.landray.kmss.km.supervise.model.KmSuperviseMain"
+        resultProperties="docSubject;docNumber;fdApprovalTime;fdFinishTime;fdLead.fdName;fdSponsor.fdName;fdStatus;fdSuperviseProgress;fdContent;docStatus;fdRealFinishTime;docCreator;docCreateTime"/>
+    <!-- 全文搜索 -->
+	<ftSearch
+		modelName="com.landray.kmss.km.supervise.model.KmSuperviseMain"
+		boost="2.0"
+		timeField="fdLastModifiedTime">
+		<luceneField
+			name="subject"
+			property="docSubject"
+			type="text" />
+		<luceneField
+			name="creator"
+			property="docCreator.fdName"
+			type="Text" />
+		<luceneField
+			name="createTime"
+			property="docCreateTime"
+			type="keyword" />
+	</ftSearch>
+	<!-- 全文搜索 -->
+	<ftSearch
+		modelName="com.landray.kmss.km.supervise.model.KmSuperviseDynamic"
+		boost="2.0"
+		timeField="docCreateTime">
+		<luceneField
+			name="subject"
+			property="docSubject"
+			type="text" />
+		<luceneField
+			name="creator"
+			property="docCreator.fdName"
+			type="Text" />
+		<luceneField
+			name="createTime"
+			property="docCreateTime"
+			type="keyword" />
+	</ftSearch>
+    <relation 
+        messageKey="km-supervise:module.km.supervise" 
+        modelName="com.landray.kmss.km.supervise.model.KmSuperviseMain"/>
+    <homePage 
+        messageKey="km-supervise:module.km.supervise" 
+        urlPrefix="km/supervise" 
+        url="/km/supervise/index.jsp" 
+        config="/moduleindex_notopic.jsp?nav=/km/supervise/tree.jsp"/>
+    <categoryMng 
+        messageKey="km-supervise:table.kmSuperviseTemplet" 
+        modelName="com.landray.kmss.km.supervise.model.KmSuperviseTemplet" 
+        serviceName="kmSuperviseTemplateTreeService"
+        adminRoleName="ROLE_KMSUPERVISE_CATEGORY_MAINTAINER" />
+    <flowDef 
+        modelName="com.landray.kmss.km.supervise.model.KmSuperviseMain" 
+        key="kmSuperviseMain" 
+        type="oa" 
+        templatePropertyName="docTemplate" 
+        moduleMessageKey="km-supervise:module.km.supervise" 
+        templateModelName="com.landray.kmss.km.supervise.model.KmSuperviseTemplet"/>
+    <flowDef 
+        modelName="com.landray.kmss.km.supervise.model.KmSuperviseMainFinish" 
+        key="kmSuperviseSetup" 
+        type="oa" 
+        templatePropertyName="kmSuperviseMain.docTemplate.fdSetup" 
+        moduleMessageKey="km-supervise:table.kmSuperviseMainFinish" 
+        templateModelName="com.landray.kmss.km.supervise.model.KmSuperviseTemplet"/>
+    <flowDef 
+        modelName="com.landray.kmss.km.supervise.model.KmSuperviseMainStop" 
+        key="kmSuperviseTermination" 
+        type="oa" 
+        templatePropertyName="kmSuperviseMain.docTemplate.fdTermination" 
+        moduleMessageKey="km-supervise:table.kmSuperviseMainStop" 
+        templateModelName="com.landray.kmss.km.supervise.model.KmSuperviseTemplet"/>
+    <!-- 任务反馈 -->
+    <flowDef 
+        modelName="com.landray.kmss.km.supervise.model.KmSuperviseBack" 
+        key="kmSuperviseFeedback" 
+        type="oa" 
+        templatePropertyName="fdSupervise.docTemplate.fdFeedback" 
+        moduleMessageKey="km-supervise:table.kmSuperviseBack" 
+        templateModelName="com.landray.kmss.km.supervise.model.KmSuperviseTemplet"/>
+    <!-- 阶段反馈 -->
+    <flowDef 
+        modelName="com.landray.kmss.km.supervise.model.KmSuperviseBack" 
+        key="kmSuperviseStage" 
+        type="oa" 
+        templatePropertyName="fdSupervise.docTemplate.fdStage" 
+        moduleMessageKey="km-supervise:table.kmSuperviseBack" 
+        templateModelName="com.landray.kmss.km.supervise.model.KmSuperviseTemplet"/>
+    <flowDef 
+        modelName="com.landray.kmss.km.supervise.model.KmSuperviseMainPlan" 
+        key="kmSuperviseMakePlan" 
+        type="oa" 
+        templatePropertyName="kmSuperviseMain.docTemplate.fdMakePlan" 
+        moduleMessageKey="km-supervise:table.kmSuperviseMainPlan" 
+        templateModelName="com.landray.kmss.km.supervise.model.KmSuperviseTemplet"/>
+    <profileConfig 
+        key="km/supervise" 
+        messageKey="{km-supervise:module.km.supervise}" 
+        url="/sys/profile/moduleindex.jsp?nav=/km/supervise/tree.jsp" 
+        icon="km_supervise" 
+        type="ekp" 
+        description="{km-supervise:module.km.supervise.description}"
+        order="205"/>		
+        
+
+</configs>

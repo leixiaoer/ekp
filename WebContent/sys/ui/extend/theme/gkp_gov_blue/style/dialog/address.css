@@ -1,0 +1,227 @@
+.lui_address_centreC {
+  border-top: 0;
+  overflow-y: hidden;
+  position: relative;
+  height: 490px;
+}
+
+.lui_address_tabs_ul {
+  background-color: #f9fbfe;
+}
+
+.lui_address_buttons_settingPersonal a {
+  background-image: url(../images/icons/icon-setting-on.png);
+  background-repeat: no-repeat;
+  background-position: 0 50%;
+  background-size: 16px auto;
+  padding-left: 16px;
+  color: #0C3E6C;
+  font-size: 12px;
+}
+
+.lui_address_buttons_settingPersonal a:hover {
+  color: #0C3E6C !important;
+  text-decoration: underline;
+}
+
+.lui-address-searchbar-ul {
+  margin-top: 4px;
+  padding-right: 80px;
+}
+
+.lui_address_tabs_ul > li:hover > span,
+.lui_address_tabs_ul > li.active > span {
+  color: #0C3E6C;
+}
+
+.lui-address-clearRecent {
+  font-size: 12px;
+  color: #0C3E6C;
+  -webkit-transition-duration: .3s;
+          transition-duration: .3s;
+}
+
+.lui-address-clearRecent:hover {
+  color: #092b4a;
+}
+
+.lui_address_buttons_container .lui_widget_btn {
+  margin: 0px 5px !important;
+}
+
+.lui_address_buttons_container .lui_toolbar_btn_l {
+  padding-left: 5px;
+  padding-right: 5px;
+  min-width: 58px;
+}
+
+.lui-address-search-group {
+  border-bottom: 1px solid #d9d9d9;
+}
+
+.lui-address-searchbar-input {
+  border: 1px solid #d9d9d9;
+  border-top-left-radius: 4px;
+  border-bottom-left-radius: 4px;
+}
+
+.lui-address-searchbar .lui_widget_btn,
+.lui-address-searchbar .lui_toolbar_btn_c {
+  min-width: 62px;
+}
+
+.lui-address-searchbar .lui_widget_btn .lui_toolbar_btn_l {
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+}
+
+.lui_address_tabs_ul > li .icon-recently,
+.lui_address_tabs_ul > li .icon-org,
+.lui_address_tabs_ul > li .icon-group,
+.lui_address_tabs_ul > li .icon-sysRole,
+.lui_address_tabs_ul > li .icon-search,
+.lui_address_tabs_ul > li:hover .icon-recently,
+.lui_address_tabs_ul > li.active .icon-recently,
+.lui_address_tabs_ul > li:hover .icon-org,
+.lui_address_tabs_ul > li.active .icon-org,
+.lui_address_tabs_ul > li:hover .icon-group,
+.lui_address_tabs_ul > li.active .icon-group,
+.lui_address_tabs_ul > li:hover .icon-sysRole,
+.lui_address_tabs_ul > li.active .icon-sysRole,
+.lui_address_tabs_ul > li:hover .icon-search,
+.lui_address_tabs_ul > li.active .icon-search {
+  background-image: none;
+  padding-left: 0;
+}
+
+.lui_address_tabs_ul > li > span:before {
+  display: inline-block;
+  content: '';
+  margin-right: 5px;
+  width: 16px;
+  height: 16px;
+  background: url(../images/icons/address_icon_sprite.png) no-repeat 0 0;
+  vertical-align: middle;
+  position: relative;
+  top: -1px;
+}
+
+.lui_address_tabs_ul > li .icon-recently:before {
+  background-position: 0 0;
+}
+
+.lui_address_tabs_ul > li:hover .icon-recently:before,
+.lui_address_tabs_ul > li.active .icon-recently:before {
+  background-position: 0 -16px;
+}
+
+.lui_address_tabs_ul > li .icon-org:before {
+  background-position: -16px 0;
+}
+
+.lui_address_tabs_ul > li:hover .icon-org:before,
+.lui_address_tabs_ul > li.active .icon-org:before {
+  background-position: -16px -16px;
+}
+
+.lui_address_tabs_ul > li .icon-group:before {
+  background-position: -32px 0;
+}
+
+.lui_address_tabs_ul > li:hover .icon-group:before,
+.lui_address_tabs_ul > li.active .icon-group:before {
+  background-position: -32px -16px;
+}
+
+.lui_address_tabs_ul > li .icon-sysRole:before {
+  background-position: -48px 0;
+}
+
+.lui_address_tabs_ul > li:hover .icon-sysRole:before,
+.lui_address_tabs_ul > li.active .icon-sysRole:before {
+  background-position: -48px -16px;
+}
+
+.lui_address_tabs_ul > li .icon-search:before {
+  background-position: -64px 0;
+}
+
+.lui_address_tabs_ul > li:hover .icon-search:before,
+.lui_address_tabs_ul > li.active .icon-search:before {
+  background-position: -64px -16px;
+}
+
+.lui-address-nav-searchbar {
+  border-radius: 0;
+}
+
+.lui-address-nav-searchbar button {
+  border-top-left-radius: 0px;
+  border-bottom-left-radius: 0px;
+}
+
+.lui-address-nav-searchbar button,
+.lui-address-nav-searchbar button:hover {
+  background-image: none !important;
+}
+
+.lui-address-nav-searchbar button:before {
+  display: inline-block;
+  content: '';
+  width: 16px;
+  height: 16px;
+  vertical-align: text-top;
+  background-image: url(../images/icons/address_icon_sprite.png);
+  background-position: -64px 0;
+}
+
+.lui-address-nav-searchbar button:hover:before {
+  background-position: -64px -16px;
+}
+
+@media screen and (-webkit-min-device-pixel-ratio: 2) {
+  .lui_address_buttons_settingPersonal a {
+    background-image: url(../images/icons/icon-setting-on@2x.png);
+  }
+  .lui_address_tabs_ul > li > span:before,
+  .lui-address-nav-searchbar button:before {
+    background-image: url(../images/icons/address_icon_sprite@2x.png);
+    background-size: auto 32px;
+  }
+}
+
+.lui-address-nav-range-search-query button,
+.lui-address-nav-range-search-cancel button {
+  min-width: 40px;
+  line-height: 22px;
+  padding: 0 10px;
+  color: #fff;
+  border: 1px solid transparent;
+  background-color: transparent;
+  -webkit-transition-duration: .3s;
+          transition-duration: .3s;
+}
+
+.lui-address-nav-range-search-query button {
+  color: #fff;
+  border-color: #0C3E6C;
+  background-color: #0C3E6C;
+}
+
+.lui-address-nav-range-search-query button:hover {
+  color: #fff;
+  border-color: #092b4a;
+  background-color: #092b4a;
+}
+
+.lui-address-nav-range-search-cancel button {
+  color: #666;
+  border-color: #bbb;
+  background-color: #fff;
+}
+
+.lui-address-nav-range-search-cancel button:hover {
+  color: #333;
+  border-color: #bbb;
+  background-color: #fff;
+}

@@ -1,0 +1,249 @@
+{
+    "global":     {
+        "modelName": "com.landray.kmss.geesun.oitems.model.GeesunOitemsBudgerApplication",
+        "messageKey": "geesun-oitems:table.geesunOitemsBudgerApplication",
+        "displayProperty": "docSubject",
+        "serviceBean": "geesunOitemsBudgerApplicationService",
+        "table": "geesun_oitems_budger_application",
+        "url": "/geesun/oitems/geesun_oitems_budger_application/geesunOitemsBudgerApplication.do?method=view&fdId=${fdId}"
+    },
+    "attrs":     {
+        "fdId":         {
+            "propertyType": "id",
+            "generator": {"type": "assigned"}
+        },
+        "docNumber":         {
+            "propertyType": "simple",
+            "type": "String",
+            "length": "100",
+            "defaultValue": "",
+            "messageKey": "geesun-oitems:geesunOitemsBudgerApplication.docNumber",
+            "column": "doc_number",
+            "notNull": "false",
+            "validate": "false",
+            "canSearch": "true",
+            "canRelation": "true",
+            "canDisplay": "true",
+            "readOnly": "true"
+        },
+        "docSubject":         {
+            "propertyType": "simple",
+            "messageKey": "geesun-oitems:geesunOitemsBudgerApplication.docSubject",
+            "type": "String",
+            "column": "doc_subject",
+            "notNull": "true",
+            "length": "200",
+            "canSearch": "true",
+            "validate": "true",
+            "canLogShow":"1"
+        },
+        "fdReason":         {
+            "propertyType": "simple",
+            "messageKey": "geesun-oitems:geesunOitemsBudgerApplication.fdReason",
+            "type": "String",
+            "column": "fd_reason",
+            "notNull": "false",
+            "length": "2000",
+            "canSearch": "true",
+            "validate": "true",
+            "canDisplay": "false",
+            "canLogShow":"1"
+        },
+        "fdDesc":         {
+            "propertyType": "simple",
+            "messageKey": "geesun-oitems:geesunOitemsBudgerApplication.fdDesc",
+            "type": "String",
+            "column": "fd_desc",
+            "notNull": "false",
+            "length": "2000",
+            "canSearch": "true",
+            "validate": "true",
+            "canDisplay": "false",
+            "canLogShow":"1"
+        },
+        "fdTotalAmount":         {
+            "propertyType": "simple",
+            "messageKey": "geesun-oitems:geesunOitemsBudgerApplication.fdTotalAmount",
+            "type": "Double",
+            "column": "fd_total_amount",
+            "notNull": "true",
+            "length": "100",
+            "validate": "true"
+        },
+        "docCreateTime":         {
+            "propertyType": "simple",
+            "messageKey": "geesun-oitems:geesunOitemsBudgerApplication.docCreateTime",
+            "type": "DateTime",
+            "column": "doc_create_time",
+            "notNull": "false",
+            "canSearch": "true",
+            "canLogShow":"1"
+        },
+        "fdType":         {
+            "propertyType": "simple",
+            "messageKey": "geesun-oitems:geesunOitems.tree.application.type",
+            "type": "String",
+            "column": "fd_type",
+            "enumType": "geesunOitemsBudgerApplication_fdType",
+            "notNull": "false",
+            "canSearch": "true",
+            "canDisplay": "false"
+        },
+        "authReaderFlag":         {
+            "propertyType": "simple",
+            "messageKey": "geesun-oitems:geesunOitems.authReaderFlag",
+            "type": "Boolean",
+            "column": "auth_reader_flag",
+            "notNull": "false",
+            "length": "1",
+            "canDisplay": "false"
+        },
+        "authEditorFlag":         {
+            "propertyType": "simple",
+            "messageKey": "geesun-oitems:geesunOitems.authEditorFlag",
+            "type": "Boolean",
+            "column": "auth_editor_flag",
+            "notNull": "false",
+            "length": "1",
+            "canDisplay": "false"
+        },
+        "docStatus":         {
+            "propertyType": "simple",
+            "messageKey": "geesun-oitems:geesunOitems.geesunOitemsBudgerApplication.docStatus",
+            "type": "String",
+            "enumType": "geesunOitems_docStatus",
+            "column": "doc_status",
+            "notNull": "false",
+            "length": "2"
+        },
+        "docCreator":         {
+            "propertyType": "model",
+            "messageKey": "geesun-oitems:geesunOitemsBudgerApplication.docCreatorId",
+            "type": "com.landray.kmss.sys.organization.model.SysOrgPerson",
+            "column": "doc_creator_id",
+            "notNull": "false",
+            "canLogShow":"1"
+        },
+        "fdApplyor":         {
+            "propertyType": "model",
+            "messageKey": "geesun-oitems:geesunOitemsBudgerApplication.fdApplicantsId",
+            "type": "com.landray.kmss.sys.organization.model.SysOrgElement",
+            "column": "fd_applicants_id",
+            "canSearch": "true",
+            "notNull": "false",
+            "dialogJS": "Dialog_Address(!{mulSelect}, '!{idField}', '!{nameField}', null, ORG_TYPE_PERSON);"
+        },
+        "docDept":         {
+            "propertyType": "model",
+            "messageKey": "geesun-oitems:geesunOitemsBudgerApplication.creator.dept",
+            "type": "com.landray.kmss.sys.organization.model.SysOrgElement",
+            "column": "doc_dept_id",
+            "canSearch": "true",
+            "notNull": "false",
+            "dialogJS": "Dialog_Address(!{mulSelect}, '!{idField}', '!{nameField}', null, ORG_TYPE_DEPT);",
+            "canLogShow":"1"
+        },
+        "fdTemplate":         {
+            "propertyType": "model",
+            "messageKey": "geesun-oitems:table.geesunOitemsTemplet",
+            "type": "com.landray.kmss.geesun.oitems.model.GeesunOitemsTemplet",
+            "column": "fd_categroy_id",
+            "notNull": "false",
+            "canLogShow":"1"
+        },
+        "authAllReaders":         {
+            "propertyType": "list",
+            "messageKey": "geesun-oitems:geesunOitems.authAllReaders",
+            "column": "fd_oitems_id",
+            "type": "com.landray.kmss.sys.organization.model.SysOrgElement",
+            "elementColumn": "auth_all_reader_id",
+            "table": "geesun_oitems_apply_areader",
+            "canDisplay": "false"
+        },
+        "authAllEditors":         {
+            "propertyType": "list",
+            "messageKey": "geesun-oitems:geesunOitems.authAllEditors",
+            "column": "fd_oitems_id",
+            "type": "com.landray.kmss.sys.organization.model.SysOrgElement",
+            "elementColumn": "auth_all_editor_id",
+            "table": "geesun_oitems_apply_aeditor",
+            "canDisplay": "false"
+        },
+        "authEditors":         {
+            "propertyType": "list",
+            "messageKey": "geesun-oitems:geesunOitems.authEditors",
+            "column": "fd_oitems_id",
+            "type": "com.landray.kmss.sys.organization.model.SysOrgElement",
+            "elementColumn": "auth_editor_id",
+            "table": "geesun_oitems_apply_editor"
+        },
+        "authOtherEditors":         {
+            "propertyType": "list",
+            "messageKey": "geesun-oitems:geesunOitems.authOtherEditors",
+            "column": "fd_oitems_id",
+            "type": "com.landray.kmss.sys.organization.model.SysOrgElement",
+            "elementColumn": "fd_org_id",
+            "table": "geesun_oitems_apply_oeditor",
+            "canDisplay": "false"
+        },
+        "authReaders":         {
+            "propertyType": "list",
+            "messageKey": "geesun-oitems:geesunOitems.authReaders",
+            "column": "fd_oitems_id",
+            "type": "com.landray.kmss.sys.organization.model.SysOrgElement",
+            "elementColumn": "auth_reader_id",
+            "table": "geesun_oitems_apply_reader",
+            "canLogShow":"1"
+        },
+        "authOtherReaders":         {
+            "propertyType": "list",
+            "messageKey": "geesun-oitems:geesunOitems.authOtherReaders",
+            "column": "fd_oitems_id",
+            "type": "com.landray.kmss.sys.organization.model.SysOrgElement",
+            "elementColumn": "fd_org_id",
+            "table": "geesun_oitems_apply_oreader",
+            "canDisplay": "false"
+        },
+        "geesunOitemsShoppingTrolleyList":         {
+            "propertyType": "list",
+            "messageKey": "1111",
+            "column": "fd_application_id",
+            "type": "com.landray.kmss.geesun.oitems.model.GeesunOitemsShoppingTrolley",
+            "cascade": "all-delete-orphan",
+            "inverse": "true",
+            "table": "geesun_oitems_shopping_trolley",
+            "canLogShow":"1"
+        },
+        "titleRegulation":         {
+            "propertyType": "simple",
+            "type": "String",
+            "column": "fd_title_regulation",
+            "length": "3000"
+        },
+        "fdOutStatus":         {
+            "propertyType": "simple",
+            "messageKey": "geesun-oitems:geesunOitemsBudgerApplication.fdOutStatus",
+            "type": "String",
+            "column": "fd_out_status",
+            "length": "2",
+            "canDisplay": "false"
+        },
+        "fdOutTime":         {
+            "propertyType": "simple",
+            "messageKey": "geesun-oitems:geesunOitemsBudgerApplication.fdOutTime",
+            "type": "DateTime",
+            "column": "fd_out_time"
+        },
+        "fdLastModifiedTime":         {
+            "propertyType": "simple",
+            "canDisplay": "false",
+            "type": "DateTime",
+            "column": "fd_last_modified_time",
+            "notNull": "true"
+        }
+    },
+    "attachments": {"attachment":     {
+        "propertyType": "att",
+        "messageKey": "geesun-oitems:geesunOitemsBudgerApplication.attachment"
+    }}
+}

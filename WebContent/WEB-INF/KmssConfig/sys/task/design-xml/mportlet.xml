@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<root 
+    xmlns:m="http://www.landray.com.cn/schema/mportlet" 
+    xmlns="http://www.landray.com.cn/schema/lui" 
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.landray.com.cn/schema/mportlet 
+	../../../sys/mobile/mportlet.xsd
+		http://www.landray.com.cn/schema/lui
+	../../../sys/ui/lui.xsd">
+	
+	<m:mportlet 
+		id="sys.task.list.mobile"
+		name="{sys-task:sysTaskMain.portlet.list}"
+		module= "{sys-task:module.sys.task}"
+		description="{sys-task:sysTaskMain.portlet.list}"
+		moduleUrl = "/sys/task/mobile/index.jsp"
+		jsUrl="/sys/task/mobile/mportal/sysTask_list.js?rowsize=!{rowsize}&amp;type=!{type}">
+		<m:vars>
+			<var name="{portlet.rowsize}" key="rowsize" kind="rowsize" default="5"/>
+			<var name="任务类型" key="type" kind="enumValue" default="all">
+		    	{"values":
+		    		[{"text":"{sys-task:calendar.complete.all}", "value":"all"},
+		    		{"text":"{sys-task:mui.sysTaskMain.appoint}", "value":"appoint"},
+		    		{"text":"{sys-task:tree.sysTaskMain.status.complete}", "value":"complete"},
+		    		{"text":"{sys-task:mui.sysTaskMain.attention}", "value":"attention"}],
+		    		"showType":"radio"
+		    	}
+		    </var>
+		</m:vars>
+		<m:operations>
+			<m:operation name="添加任务" type="create" href="/sys/task/sys_task_main/sysTaskMain.do?method=add"/>
+			<m:operation name="换一批" type="random" />
+		</m:operations>
+	</m:mportlet>
+	
+</root>	

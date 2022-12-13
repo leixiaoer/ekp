@@ -1,0 +1,1675 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<version xmlns="http://www.example.org/version-config" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.example.org/version-config ../../../version.xsd">
+	<modifies>
+		<modify>
+			<description>#159154 修复 督办变更提交之后还在起草节点，实际应该在待审核节点</description>
+			<author>周文</author>
+			<revision-time>2022-06-02</revision-time>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#166304 修复 督办查看任务指派权限问题</description>
+			<author>周文</author>
+			<revision-time>2022-06-02</revision-time>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#165169 修复 任务指派页面，进入阶段任务详情页面展示的主办部门 、主办单位/部门责任人字段有误</description>
+			<author>万里行</author>
+			<revision-time>2022-05-20</revision-time>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#165118 修复 删除数据一直加载</description>
+			<author>熊翅辉</author>
+			<revision-time>2022-05-17</revision-time>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#159199 修复 普通用户查看“我协办的”中，超期未反馈数据为空，统计显示有但是点击查看更多却什么都没有</description>
+			<author>王文豪</author>
+			<revision-time>2022-02-16</revision-time>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#158893 修复 普通用户查看“我协办的”，移动端和PC端数据对不上</description>
+			<author>王文豪</author>
+			<revision-time>2022-02-11</revision-time>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#159010 修复 SQL参数化，门户获取发起的督办数量出错</description>
+			<author>魏泽钧</author>
+			<revision-time>2022-02-11</revision-time>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#157643 新增 mk数据源接口</description>
+			<author>林宇超</author>
+			<revision-time>2022-02-11</revision-time>
+			<relation>
+				<relation-module>sys/portal</relation-module>
+			</relation>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#159378 修复 【服务单】督办计划被驳回后，起草人没有编辑按钮</description>
+			<author>周文</author>
+			<revision-time>2022-02-10</revision-time>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#158487 修复 督办动态不显示移动端领导批示</description>
+			<author>熊翅辉</author>
+			<revision-time>2022-01-17</revision-time>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#157843 修复 督办计划时间校验判断</description>
+			<author>熊翅辉</author>
+			<revision-time>2022-01-13</revision-time>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#157365 修复 督办变更无法添加阶段计划</description>
+			<author>熊翅辉</author>
+			<revision-time>2022-01-13</revision-time>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#147302 修复 督办工作台没有刷新问题</description>
+			<author>魏泽钧</author>
+			<revision-time>2022-01-12</revision-time>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#157855 修复 移动端督办表单不一致</description>
+			<author>熊翅辉</author>
+			<revision-time>2022-01-07</revision-time>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#149733 修复 督办领导的权限无督办考评按钮权限</description>
+			<author>熊翅辉</author>
+			<revision-time>2021-12-22</revision-time>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#154090 修复 筛选项中主办分管领导只展示第一个勾选</description>
+			<author>熊翅辉</author>
+			<revision-time>2021-12-03</revision-time>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#152074 修复 主办联络员为A并审批发布。A在督办事项中无法查看到该条督办信息</description>
+			<author>王进府</author>
+			<revision-time>2021-12-02</revision-time>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#153313 修复 新建汇总反馈，然后反馈单被驳回 ，主单上的反馈单状态显示空白</description>
+			<author>苏琦</author>
+			<revision-time>2021-11-18</revision-time>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#153803 修复 移动端督办没有督办留言的输入框</description>
+			<author>苏琦</author>
+			<revision-time>2021-11-17</revision-time>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#153734 修复 督办管理-督办办结，移动端可修改办结人</description>
+			<author>苏琦</author>
+			<revision-time>2021-11-17</revision-time>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#153804 修复 督办移动端不显示附件</description>
+			<author>苏琦</author>
+			<revision-time>2021-11-16</revision-time>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#153818 修复 督办我的审批排序</description>
+			<author>苏琦</author>
+			<revision-time>2021-11-15</revision-time>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#149186 修复 被驳回的任务反馈和汇总反馈单，查看页面 督办状态显示为推进滞后缺陷</description>
+			<author>王进府</author>
+			<revision-time>2021-11-08</revision-time>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#149180 修复 新建任务反馈填写好进度，保存然后驳回改任务反馈进度显示不正确</description>
+			<author>王进府</author>
+			<revision-time>2021-11-08</revision-time>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#150885 修复 关联文档控件选择督办管理模块报错操作失败，F12未见报错信息</description>
+			<author>黄海</author>
+			<revision-time>2021-11-08</revision-time>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#149731 修复 后台配置类工作交接支持获取业务模块处理后的URL</description>
+			<author>潘永辉</author>
+			<revision-time>2021-09-23</revision-time>
+			<relation>
+				<relation-module>sys/handover</relation-module>
+			</relation>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#149623 修复 办结或终止在途流程相互校验</description>
+			<author>熊翅辉</author>
+			<revision-time>2021-09-23</revision-time>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#149077 流程重复操作提示用弹出框的形式</description>
+			<author>熊翅辉</author>
+			<revision-time>2021-09-16</revision-time>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#148902 移动端被驳回的反馈页面地址不正确</description>
+			<author>潘永辉</author>
+			<revision-time>2021-09-10</revision-time>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#147492、#147490、#147290 修复 优化、字段验证和页面美化</description>
+			<author>王进府</author>
+			<revision-time>2021-09-03</revision-time>
+			<relation>
+				<relation-module>sys/category</relation-module>
+				<relation-module>sys/unit</relation-module>
+			</relation>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#147307、#147306、#147304、#147287 修复 字段验证和页面美化</description>
+			<author>王进府</author>
+			<revision-time>2021-08-27</revision-time>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#147834 修复 表单使用主办单位后督办反馈无法反馈给承办单位/部门</description>
+			<author>熊翅辉</author>
+			<revision-time>2021-08-27</revision-time>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#147608 修复 显示必填符号，但是没有填内容流程也能往下流转</description>
+			<author>熊翅辉</author>
+			<revision-time>2021-08-26</revision-time>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#146988 修复 移动端无法查看督办文档的相关附件</description>
+			<author>王进府</author>
+			<revision-time>2021-08-16</revision-time>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#145928 修复 领导关注的督办没有做权限过滤</description>
+			<author>潘永辉</author>
+			<revision-time>2021-08-11</revision-time>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#145660 修复 我协办的里面显示了所有的文档</description>
+			<author>潘永辉</author>
+			<revision-time>2021-07-27</revision-time>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#144980 修复 暂存的文件再次进行暂存提示有必填项</description>
+			<author>熊翅辉</author>
+			<revision-time>2021-07-23</revision-time>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#142878 修复 在督办工作台中点击“已超期”页签中的“更多”，跳转的页面没有做数据过滤</description>
+			<author>潘永辉</author>
+			<revision-time>2021-07-15</revision-time>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#143467 修复 督办管理系统的“我承办的”中点击“超期未反馈”数据为空</description>
+			<author>潘永辉</author>
+			<revision-time>2021-07-13</revision-time>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#143460 修复 督办结束事件发起人转换报错</description>
+			<author>潘永辉</author>
+			<revision-time>2021-07-03</revision-time>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#142878 修复 在督办工作台中点击“已超期”页签中的“更多”，跳转的页面没有做数据过滤</description>
+			<author>潘永辉</author>
+			<revision-time>2021-06-29</revision-time>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#140556 修复 已超过结束日期的督办事项，督办状态没有更新为已超期</description>
+			<author>王京</author>
+			<revision-time>2021-06-04</revision-time>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#140271 修复 工作交接中任务指派人员无法进行交接</description>
+			<author>潘永辉</author>
+			<revision-time>2021-05-26</revision-time>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#140195 修复 督办汇总中反馈情况一览表显示顺序问题</description>
+			<author>王京</author>
+			<revision-time>2021-05-25</revision-time>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#140253 修复 督办任务指派显示字段问题</description>
+			<author>王京</author>
+			<revision-time>2021-05-25</revision-time>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#140110 修复 督办管理-“任务指派”中，按条件检索不出数据</description>
+			<author>苏琦</author>
+			<revision-time>2021-05-21</revision-time>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#135478 修复 督办，工作反馈汇报。已经选了已完成，进度不会自动跳成100%-移动端</description>
+			<author>苏琦</author>
+			<revision-time>2021-04-09</revision-time>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#136876 修复 新建督办，制定计划样式存在异常</description>
+			<author>王京</author>
+			<revision-time>2021-04-07</revision-time>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#136364 修复 督办管理多个问题见问题描述</description>
+			<author>苏琦</author>
+			<revision-time>2021-04-01</revision-time>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#135568 修复 督办管理在kk微信中打开不显示图表</description>
+			<author>郜静然</author>
+			<revision-time>2021-03-29</revision-time>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#136159 优化 督办立项时选择协办人，但是在协办人的账号“我协办的”里面没有记录</description>
+			<author>王京</author>
+			<revision-time>2021-03-26</revision-time>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#134679 修复 督办，工作反馈汇报。已经选了已完成，进度不会自动跳成100%</description>
+			<author>苏琦</author>
+			<revision-time>2021-03-10</revision-time>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#134150 修复 督办反馈日预览问题</description>
+			<author>王京</author>
+			<revision-time>2021-03-10</revision-time>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#134063 修复 任务指派列表页中筛选“开始时间和截至时间”过滤条件无效</description>
+			<author>潘永辉</author>
+			<revision-time>2021-03-01</revision-time>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#133319 修复 督办事项中“超时办结”和“正常办结”混合显示</description>
+			<author>潘永辉</author>
+			<revision-time>2021-02-26</revision-time>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#130601 修复 移动端，新建督办，结束时间选择了开始时间之前的日期也能正常提交（pc端做了校验）</description>
+			<author>苏琦</author>
+			<revision-time>2021-02-25</revision-time>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#133316 #133317 修复 终止流程，办结流程筛选条件选择操作人，列表页报600</description>
+			<author>潘永辉</author>
+			<revision-time>2021-02-04</revision-time>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#126524 修复【督办管理】移动端督办信息查看页面，基本信息左侧信息没有留白[iphonexr]</description>
+			<author>郜静然</author>
+			<revision-time>2021-01-28</revision-time>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#130971 修复 任务指派时，承办单位/部门选择后不显示</description>
+			<author>潘永辉</author>
+			<revision-time>2021-01-14</revision-time>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#126520 修复 移动端领导批示不填意见点击提交没有反应</description>
+			<author>潘永辉</author>
+			<revision-time>2020-12-14</revision-time>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#128445 优化 优化督办立项主表主办/协办单位人员关联取值，公式定义器可在各个后续阶段取到对应主办/协办单位人员变量</description>
+			<author>潘永辉</author>
+			<revision-time>2020-12-13</revision-time>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#126222 修复 任务指派后的流程报错</description>
+			<author>潘永辉</author>
+			<revision-time>2020-12-03</revision-time>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#125657 修复 移动端，首页-我的督办，点击&gt;反应迟缓。-华为、三星验证</description>
+			<author>王京</author>
+			<revision-time>2020-11-30</revision-time>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#126466 修复 任务指派协办单位联络员选择岗位时，公式定义器获取流程审批人员报错</description>
+			<author>蒋志广</author>
+			<revision-time>2020-11-20</revision-time>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#123056 修复 立项流程中数据仅显示一页的数据无下一页按钮</description>
+			<author>王京</author>
+			<revision-time>2020-11-20</revision-time>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#123078 修复 移动端，我的，我的立项里面列表Title 显示问题</description>
+			<author>王京</author>
+			<revision-time>2020-11-20</revision-time>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#108209 优化 督办模块制定计划的表单字段增加“主办单位负责人”，“主办单位分管领导”和“协办单位负责人”</description>
+			<author>潘永辉</author>
+			<revision-time>2020-11-19</revision-time>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#124987 修复 督办移动端“我承办的”列表数据为空</description>
+			<author>纪斌杰</author>
+			<revision-time>2020-11-18</revision-time>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#125052 修复 督办查询列表页“阶段反馈周期”、“阶段类型”和“考评状态”显示不正确</description>
+			<author>潘永辉</author>
+			<revision-time>2020-11-18</revision-time>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#125331 修复 督办变更时，无法删除一个未执行的计划</description>
+			<author>潘永辉</author>
+			<revision-time>2020-11-14</revision-time>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#123507 修复 督办计划流程，废弃后，再次指派流程提交后，打开流程仍是之前废弃的流程问题</description>
+			<author>王书强</author>
+			<revision-time>2020-10-27</revision-time>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#121209 修复 督办计划起草人撤回后废弃没有提交按钮（右侧审批模式）问题</description>
+			<author>王书强</author>
+			<revision-time>2020-10-27</revision-time>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#111641修复 输入主办单位后回车，不会带出分管领导和主办单位责任人。但是点击会带出来</description>
+			<author>王京</author>
+			<revision-time>2020-10-16</revision-time>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#122254 修复新建督办立项，提交后显示操作成功，但是督办立项列表页未显示数据</description>
+			<author>徐斌</author>
+			<revision-time>2020-10-15</revision-time>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#120944 修复 督办查询中，督办状态的已办结请屏蔽。正常办结与超期办结数据应显示出来</description>
+			<author>徐斌</author>
+			<revision-time>2020-10-15</revision-time>
+			<relation>
+				<relation-module>sys/search</relation-module>
+			</relation>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#119411 修复 立项流程中，督办被进行办结后，文档状态变为空白</description>
+			<author>潘永辉</author>
+			<revision-time>2020-09-24</revision-time>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#119404 修复 任务指派时，批量导入，阶段名未被导入进来</description>
+			<author>潘永辉</author>
+			<revision-time>2020-09-24</revision-time>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#119412 修复 督办后台中删除模板当有数据关联时，无提示语句</description>
+			<author>潘永辉</author>
+			<revision-time>2020-09-24</revision-time>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#119422 修复 督办查询中，督办状态显示为数字，督办办结时间、办结情况展示不出内容</description>
+			<author>潘永辉</author>
+			<revision-time>2020-09-23</revision-time>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#118276 督办计划起草人撤回后无法提交（右侧审批模式） 样式修改</description>
+			<author>刘水军</author>
+			<revision-time>2020-09-17</revision-time>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#117317 修复 督办考评不能打一星</description>
+			<author>林剑文</author>
+			<revision-time>2020-09-04</revision-time>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#113964 修复 【督办管理】督办工作台中的超时办结数据与列表页中数据对不上，并且每页显示的数据也不对</description>
+			<author>徐斌</author>
+			<revision-time>2020-08-10</revision-time>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#114039 修复 【督办管理】V15.5EKP测试流sonar检测问题20200802</description>
+			<author>徐斌</author>
+			<revision-time>2020-08-10</revision-time>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#108166 新增 【督办管理】督办管理模块督办状态增加“超时办结”状态</description>
+			<author>徐斌</author>
+			<revision-time>2020-08-10</revision-time>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#108815 新增【公文管理】督办管理在督办反馈的时候，可以增加关联机制</description>
+			<author>徐斌</author>
+			<revision-time>2020-08-10</revision-time>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#113989 修复 领导工作台，点击上方数据统计的总数跳转页面没有立项中数据</description>
+			<author>蒋志广</author>
+			<revision-time>2020-08-05</revision-time>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#113945 修复 其它模块相关督办页签的数量统计问题</description>
+			<author>蒋志广</author>
+			<revision-time>2020-08-05</revision-time>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#113921 修复 督办详情页中，督办计划及反馈，阶段状态进行中显示已完成的数据</description>
+			<author>蒋志广</author>
+			<revision-time>2020-08-03</revision-time>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#112057 修复 pc端领导工作台，无数据页面显示一直转圈</description>
+			<author>蒋志广</author>
+			<revision-time>2020-07-14</revision-time>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#110993 修复 督办定时任务偶尔报错</description>
+			<author>蒋志广</author>
+			<revision-time>2020-07-09</revision-time>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#111500 修复 将fdModelId和fdModelName的隐藏域放到督办名称中，防止从其他模块发起督办，没选择督办来源导致找不到督办问题</description>
+			<author>蒋志广</author>
+			<revision-time>2020-07-09</revision-time>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#110063 修复 控件作为属性变更控件的目标控件时，模板提交一直提示不能为空，无法被选中</description>
+			<author>蒋志广</author>
+			<revision-time>2020-07-08</revision-time>
+			<relation>
+				<relation-module>sys/xform</relation-module>
+				<relation-module>core</relation-module>
+			</relation>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#105921 修复 流程附言提交提示操作成功的页面不对</description>
+			<author>蒋志广</author>
+			<revision-time>2020-06-17</revision-time>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#106232 修复 多语言问题</description>
+			<author>蒋志广</author>
+			<revision-time>2020-06-17</revision-time>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#108823 修复 移动端领导首页类别数字显示高度不一致</description>
+			<author>蒋志广</author>
+			<revision-time>2020-06-15</revision-time>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#102114 优化 多语言翻译</description>
+			<author>郑鑫</author>
+			<revision-time>2020-06-12</revision-time>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#108004 修复 分管领导为岗位时，无法进行领导批示</description>
+			<author>蒋志广</author>
+			<revision-time>2020-06-08</revision-time>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#107507 修复 移动端暂存没有校验督办名称</description>
+			<author>蒋志广</author>
+			<revision-time>2020-06-04</revision-time>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#106279 修复 督办工作台我承办的 即将反馈超期未反馈显示的数字统计不正确</description>
+			<author>李芳敏</author>
+			<revision-time>2020-05-27</revision-time>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#103657 修复 EKP督办管理中 制定计划的流程未审批通过时，阶段计划中显示”XXX事项阶段计划（审批中）“</description>
+			<author>蒋志广</author>
+			<revision-time>2020-05-23</revision-time>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#106082 修复 立项后第一个人编辑添加计划，第二个人有编辑权限但是不编辑直接提交，此时发布后还有任务指派无法反馈</description>
+			<author>蒋志广</author>
+			<revision-time>2020-05-20</revision-time>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#77383 修复 在edge浏览器中阶段中有部分字段形成了可点击状的</description>
+			<author>梅瑞鹏</author>
+			<revision-time>2020-05-20</revision-time>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#104637 修复 在立项的审批过程当中指派人，指派的人员不能进行反馈且查看督办还是未指派的页面</description>
+			<author>蒋志广</author>
+			<revision-time>2020-05-13</revision-time>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#105173 修复 反馈过后，在进行督办变更流程结束节点报错</description>
+			<author>蒋志广</author>
+			<revision-time>2020-05-13</revision-time>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#101912 修复 督办反馈流程被驳回后，起草人无法编辑</description>
+			<author>蒋志广</author>
+			<revision-time>2020-04-14</revision-time>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#99396 修复 会议发起督办没有帮助中心按钮</description>
+			<author>蒋志广</author>
+			<revision-time>2020-03-31</revision-time>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>优化 移动端反馈编辑、查看页样式优化</description>
+			<author>蒋志广</author>
+			<revision-time>2020-03-31</revision-time>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>优化 阶段任务反馈周期为不限时，进行任务反馈不需要选择反馈周期</description>
+			<author>蒋志广</author>
+			<revision-time>2020-03-31</revision-time>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>优化 移动端阶段任务查看页面</description>
+			<author>蒋志广</author>
+			<revision-time>2020-03-31</revision-time>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>修复 移动端待我审、我已审全文搜索搜不到数据</description>
+			<author>蒋志广</author>
+			<revision-time>2020-03-31</revision-time>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#92363 新增 帮助中心部署</description>
+			<author>蒋志广</author>
+			<revision-time>2020-03-31</revision-time>
+			<relation>
+				<relation-module>sys/help</relation-module>
+			</relation>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#91198 优化 移动端督办管理二级首页、列表页UI功能优化</description>
+			<author>杨铮</author>
+			<revision-time>2020-03-30</revision-time>
+			<relation>
+				<relation-module>sys/mobile</relation-module>
+				<relation-module>sys/mportal</relation-module>
+			</relation>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#94101 优化 进入模块，点击“后台配置”目录，请求的url需要显示在地址栏中</description>
+			<author>钟清学</author>
+			<revision-time>2020-03-28</revision-time>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>修复 反馈进度到100%未将以前按阶段发送的待办移除</description>
+			<author>蒋志广</author>
+			<revision-time>2020-03-18</revision-time>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>优化 承办人承办多个阶段时，只收到一个待办，所有承办阶段都完成了在将待办置为已办</description>
+			<author>蒋志广</author>
+			<revision-time>2020-03-12</revision-time>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>新增 移动端阶段任务查看页新增发起反馈按钮</description>
+			<author>蒋志广</author>
+			<revision-time>2020-03-12</revision-time>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>修复 多语言问题</description>
+			<author>蒋志广</author>
+			<revision-time>2020-03-12</revision-time>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#93461 优化 督办管理门户部件样例数据优化</description>
+			<author>蒋志广</author>
+			<revision-time>2020-03-10</revision-time>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>优化 pc导航栏优化</description>
+			<author>蒋志广</author>
+			<revision-time>2020-03-10</revision-time>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#97673 修复 流程默认模式下，变更、终止、办结查看页，显示不全</description>
+			<author>蒋志广</author>
+			<revision-time>2020-03-10</revision-time>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>修复 v15督办变更，删除了待办，v13.5的待办未同步删除问题</description>
+			<author>蒋志广</author>
+			<revision-time>2020-03-06</revision-time>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>修复 督办领导工作台我分管的tab包含未审批通过数据</description>
+			<author>蒋志广</author>
+			<revision-time>2020-03-06</revision-time>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>修复 任务指派不添加任何阶段流程报错问题</description>
+			<author>蒋志广</author>
+			<revision-time>2020-03-06</revision-time>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#96990 修复 组织架构模式下，进行督办变更，变更了阶段的协办人，未将协办人回写到主文档中</description>
+			<author>蒋志广</author>
+			<revision-time>2020-03-06</revision-time>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#93879 新增 督办变更新增权限页签</description>
+			<author>蒋志广</author>
+			<revision-time>2020-03-03</revision-time>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#94404 优化 查看页底部页签优化</description>
+			<author>蒋志广</author>
+			<revision-time>2020-03-03</revision-time>
+			<relation>
+				<relation-module>sys/ui</relation-module>
+			</relation>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#94408 优化 流程管理模块文档底部页签展现部署</description>
+			<author>洪健</author>
+			<revision-time>2020-03-02</revision-time>
+			<relation>
+				<relation-module>sys/ui</relation-module>
+			</relation>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#94535 修复 删除督办主文档，待办未删除</description>
+			<author>蒋志广</author>
+			<revision-time>2020-01-21</revision-time>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#92288 修复 变更流程列表页，变更理由不进行转义</description>
+			<author>蒋志广</author>
+			<revision-time>2019-12-26</revision-time>
+			<baseline>V15.0.3.R.20200117</baseline>
+		</modify>
+		<modify>
+			<description>#92023 修复 协办人任务反馈无法选择阶段</description>
+			<author>蒋志广</author>
+			<revision-time>2019-12-24</revision-time>
+			<baseline>V15.0.3.R.20200117</baseline>
+		</modify>
+		<modify>
+			<description>#90686 新增 督办留言功能</description>
+			<author>蒋志广</author>
+			<revision-time>2019-12-23</revision-time>
+			<baseline>V15.0.3.R.20200117</baseline>
+		</modify>
+		<modify>
+			<description>#90684 优化 督办事项详情查看页优化</description>
+			<author>蒋志广</author>
+			<revision-time>2019-12-23</revision-time>
+			<baseline>V15.0.3.R.20200117</baseline>
+		</modify>
+		<modify>
+			<description>#92098 修复 右侧审批模式下，审批督办变更时样式混乱</description>
+			<author>蒋志广</author>
+			<revision-time>2019-12-23</revision-time>
+			<baseline>V15.0.3.R.20200117</baseline>
+		</modify>
+		<modify>
+			<description>#89521 新增 关联控件可以选择该模块</description>
+			<author>蒋志广</author>
+			<revision-time>2019-12-20</revision-time>
+			<baseline>V15.0.3.R.20200117</baseline>
+		</modify>
+		<modify>
+			<description>#91009 修复 IE8下，督办工作台页面显示不出来</description>
+			<author>蒋志广</author>
+			<revision-time>2019-12-20</revision-time>
+			<baseline>V15.0.3.R.20200117</baseline>
+		</modify>
+		<modify>
+			<description>#91357 修复 督办管理微信移动端IOS 界面底部功能按钮显示不全</description>
+			<author>蒋志广</author>
+			<revision-time>2019-12-20</revision-time>
+			<baseline>V15.0.3.R.20200117</baseline>
+		</modify>
+		<modify>
+			<description>#90717 新增 增加督办待审批状态数据统计及数据列表查看</description>
+			<author>蒋志广</author>
+			<revision-time>2019-12-12</revision-time>
+			<baseline>V15.0.3.R.20200117</baseline>
+		</modify>
+		<modify>
+			<description>#90089 新增 督办管理支持选择组织架构作为主办单位和协办人</description>
+			<author>蒋志广</author>
+			<revision-time>2019-12-12</revision-time>
+			<baseline>V15.0.3.R.20200117</baseline>
+		</modify>
+		<modify>
+			<description>#90681 新增 督办反馈支持选择督办主文档的责任人和分管领导为审批人</description>
+			<author>蒋志广</author>
+			<revision-time>2019-12-12</revision-time>
+			<baseline>V15.0.3.R.20200117</baseline>
+		</modify>
+		<modify>
+			<description>#87960 优化 移动性能体验</description>
+			<author>黎凯麟</author>
+			<revision-time>2019-12-09</revision-time>
+			<baseline>V15.0.3.R.20200117</baseline>
+		</modify>
+		<modify>
+			<description>#90529 修复 督办模板编辑保存，点返回时报错</description>
+			<author>蒋志广</author>
+			<revision-time>2019-12-09</revision-time>
+			<baseline>V15.0.3.R.20200117</baseline>
+		</modify>
+		<modify>
+			<description>#77810 优化 发起工作沟通自动带入模块标题</description>
+			<author>谭伟铭</author>
+			<revision-time>2019-12-09</revision-time>
+			<relation>
+				<relation-module>km/collaborate</relation-module>
+			</relation>
+			<baseline>V15.0.3.R.20200117</baseline>
+		</modify>
+		<modify>
+			<description>#88966 修复 单位管理设置单位领导为岗位时，新建督办带出的主办单位责任人保存后报错</description>
+			<author>蒋志广</author>
+			<revision-time>2019-12-03</revision-time>
+			<baseline>V15.0.3.R.20200117</baseline>
+		</modify>
+		<modify>
+			<description>#88373 优化 督办移动端首页优化</description>
+			<author>蒋志广</author>
+			<revision-time>2019-12-03</revision-time>
+			<baseline>V15.0.3.R.20200117</baseline>
+		</modify>
+		<modify>
+			<description>#89136 修复 移动端任务指派无法进行附件上传</description>
+			<author>蒋志广</author>
+			<revision-time>2019-11-28</revision-time>
+			<baseline>V15.0.3.R.20200117</baseline>
+		</modify>
+		<modify>
+			<description>#89132 修复 移动端督办的阶段反馈查看页乱码</description>
+			<author>蒋志广</author>
+			<revision-time>2019-11-27</revision-time>
+			<baseline>V15.0.3.R.20200117</baseline>
+		</modify>
+		<modify>
+			<description>#87966 新增 督办新增工作交接</description>
+			<author>蒋志广</author>
+			<revision-time>2019-11-21</revision-time>
+			<baseline>V15.0.3.R.20200117</baseline>
+		</modify>
+		<modify>
+			<description>#84198 优化 其它模块发起督办，查看相关督办列表页优化</description>
+			<author>蒋志广</author>
+			<revision-time>2019-11-21</revision-time>
+			<baseline>V15.0.3.R.20200117</baseline>
+		</modify>
+		<modify>
+			<description>#88303 修复 督办管理列表页面的筛选器中按分类筛选无效</description>
+			<author>蒋志广</author>
+			<revision-time>2019-11-18</revision-time>
+			<baseline>V15.0.3.R.20200117</baseline>
+		</modify>
+		<modify>
+			<description>#81937 修复 服务器停止时定时任务无法触发导致督办的状态无法修改</description>
+			<author>蒋志广</author>
+			<revision-time>2019-11-14</revision-time>
+			<baseline>V15.0.3.R.20200117</baseline>
+		</modify>
+		<modify>
+			<description>#83829 优化 督办旧门户部件我负责的、我经办的移除，新增我负责的、我承办的、我分管的、我关注的简单列表门户</description>
+			<author>蒋志广</author>
+			<revision-time>2019-11-14</revision-time>
+			<baseline>V15.0.3.R.20200117</baseline>
+		</modify>
+		<modify>
+			<description>#86724 修复 新建督办流程通过时实际处于即将超期状态，但是显示正常推进</description>
+			<author>蒋志广</author>
+			<revision-time>2019-11-13</revision-time>
+			<baseline>V15.0.3.R.20200117</baseline>
+		</modify>
+		<modify>
+			<description>#82630 优化 移动端分类筛选优化为可按分类、可按名称搜索</description>
+			<author>蒋志广</author>
+			<revision-time>2019-11-12</revision-time>
+			<baseline>V15.0.3.R.20200117</baseline>
+		</modify>
+		<modify>
+			<description>#53359 新增 移动门户快捷方式选择系统引入的时候没有任何EKP模块</description>
+			<author>钟清学</author>
+			<revision-time>2019-11-11</revision-time>
+			<baseline>V15.0.3.R.20200117</baseline>
+		</modify>
+		<modify>
+			<description>#82207 修复 关闭协办单位是否需反馈时，我协办的不需要提示反馈日情况</description>
+			<author>蒋志广</author>
+			<revision-time>2019-10-25</revision-time>
+			<baseline>V15.0.2.R.20191108</baseline>
+		</modify>
+		<modify>
+			<description>#82168 修复 即将超期/已超期督办变更后状态变为正常推进</description>
+			<author>蒋志广</author>
+			<revision-time>2019-10-25</revision-time>
+			<baseline>V15.0.2.R.20191108</baseline>
+		</modify>
+		<modify>
+			<description>#82765 优化 督办领导工作台，督办分类统计，仅展示有督办数据的一级分类</description>
+			<author>蒋志广</author>
+			<revision-time>2019-10-25</revision-time>
+			<baseline>V15.0.2.R.20191108</baseline>
+		</modify>
+		<modify>
+			<description>#82193 优化 只要承办单位联络员/承办人其中一个人进行了反馈，两者的阶段任务都从‘未反馈’列表移除</description>
+			<author>蒋志广</author>
+			<revision-time>2019-10-25</revision-time>
+			<baseline>V15.0.2.R.20191108</baseline>
+		</modify>
+		<modify>
+			<description>#83564 新增 后台配置优化，ekp各模块后台配置调整</description>
+			<author>钟清学</author>
+			<revision-time>2019-10-21</revision-time>
+			<relation>
+				<relation-module>sys/ui</relation-module>
+			</relation>
+			<baseline>V15.0.2.R.20191108</baseline>
+		</modify>
+		<modify>
+			<description>#82926 修复 新督办门户点击更多页面跳转错误，新督办门户中点击切换状态不正确</description>
+			<author>蒋志广</author>
+			<revision-time>2019-10-16</revision-time>
+			<baseline>V15.0.2.R.20191108</baseline>
+		</modify>
+		<modify>
+			<description>#83733 修复 门户中配置了数据统计部件，‘我负责的’督办的数目不正确</description>
+			<author>蒋志广</author>
+			<revision-time>2019-10-16</revision-time>
+			<baseline>V15.0.2.R.20191108</baseline>
+		</modify>
+		<modify>
+			<description>#82776 优化 督办的任务指派/终止/办结的流程已提交，不可再重新操作‘任务指派’/‘督办办结’/‘督办终止’，除非流程废弃</description>
+			<author>蒋志广</author>
+			<revision-time>2019-10-14</revision-time>
+			<baseline>V15.0.2.R.20191108</baseline>
+		</modify>
+		<modify>
+			<description>#83481 修复 个人门户中，我负责的督办跳转空白问题</description>
+			<author>朱湖强</author>
+			<revision-time>2019-10-13</revision-time>
+			<baseline>V15.0.2.R.20191108</baseline>
+		</modify>
+		<modify>
+			<description>#82779 修复 督办考评列表 ，待我考评筛选项筛选数据错误</description>
+			<author>蒋志广</author>
+			<revision-time>2019-10-10</revision-time>
+			<baseline>V15.0.2.R.20191108</baseline>
+		</modify>
+		<modify>
+			<description>#82780 移除 废弃箱列表移除督办状态筛选</description>
+			<author>蒋志广</author>
+			<revision-time>2019-10-10</revision-time>
+			<baseline>V15.0.2.R.20191108</baseline>
+		</modify>
+		<modify>
+			<description>#82763 修复 督办工作台，我分管的、我负责的、我承办的、我关注的 点击显示更多，跳转页面空白</description>
+			<author>蒋志广</author>
+			<revision-time>2019-10-10</revision-time>
+			<baseline>V15.0.2.R.20191108</baseline>
+		</modify>
+		<modify>
+			<description>#82629 修复 督办移动端的列表页面底色多层问题</description>
+			<author>蒋志广</author>
+			<revision-time>2019-10-10</revision-time>
+			<baseline>V15.0.2.R.20191108</baseline>
+		</modify>
+		<modify>
+			<description>#82298 新增 定时任务去清除7月26日之前创建的新督办办结后，待办无法消失问题</description>
+			<author>蒋志广</author>
+			<revision-time>2019-10-10</revision-time>
+			<baseline>V15.0.2.R.20191108</baseline>
+		</modify>
+		<modify>
+			<description>#82299 修复 督办反馈发送的待阅显示有问题</description>
+			<author>蒋志广</author>
+			<revision-time>2019-10-10</revision-time>
+			<baseline>V15.0.2.R.20191108</baseline>
+		</modify>
+		<modify>
+			<description>#82143 修复 所有督办无论点击什么督办状态列表再点击分类搜索，未将状态带过去搜索</description>
+			<author>蒋志广</author>
+			<revision-time>2019-10-10</revision-time>
+			<baseline>V15.0.2.R.20191108</baseline>
+		</modify>
+		<modify>
+			<description>#82170 修复 移动端任务反馈查看页面的反馈进度显示为两行</description>
+			<author>蒋志广</author>
+			<revision-time>2019-10-10</revision-time>
+			<baseline>V15.0.2.R.20191108</baseline>
+		</modify>
+		<modify>
+			<description>#79575 修复 列表页全选按钮样式问题</description>
+			<author>蒋志广</author>
+			<revision-time>2019-10-10</revision-time>
+			<baseline>V15.0.2.R.20191108</baseline>
+		</modify>
+		<modify>
+			<description>#79122 新增 督办移动端</description>
+			<author>蒋志广</author>
+			<revision-time>2019-09-17</revision-time>
+			<relation>
+				<relation-module>sys/unit</relation-module>
+			</relation>
+			<baseline>V15.0.2.R.20191108</baseline>
+		</modify>
+		<modify>
+			<description>#74608 修复 起草节点如果是需要进行人工决策，先进行人工决策再暂存文档实际效果是提交文档了的问题</description>
+			<author>郑操辉</author>
+			<revision-time>2019-09-03</revision-time>
+			<baseline>V15.0.1.R.20190906</baseline>
+		</modify>
+		<modify>
+			<description>#80565 修复 领导工作台已办结和已终止点击跳转筛选项错误问题</description>
+			<author>蒋志广</author>
+			<revision-time>2019-09-02</revision-time>
+			<relation>
+				<relation-module>sys/ui</relation-module>
+			</relation>
+			<baseline>V15.0.1.R.20190906</baseline>
+		</modify>
+		<modify>
+			<description>#79898 修复 后台新建立项模版输入标题后不切换至表单页签，表单中必选属性字端校验没了</description>
+			<author>蒋志广</author>
+			<revision-time>2019-08-21</revision-time>
+			<baseline>V15.0.1.R.20190906</baseline>
+		</modify>
+		<modify>
+			<description>#79235 修复 变更/办结/终止 文档查看时，主文档起草人无权限查看问题</description>
+			<author>蒋志广</author>
+			<revision-time>2019-08-19</revision-time>
+			<baseline>V15.0.1.R.20190906</baseline>
+		</modify>
+		<modify>
+			<description>#79735 修复 督办变更不能进行编辑</description>
+			<author>蒋志广</author>
+			<revision-time>2019-08-16</revision-time>
+			<baseline>V15.0.1.R.20190906</baseline>
+		</modify>
+		<modify>
+			<description>修复 督办审批通过后，发送给承办人的待办一直不消失</description>
+			<author>蒋志广</author>
+			<revision-time>2019-08-16</revision-time>
+			<baseline>V15.0.1.R.20190906</baseline>
+		</modify>
+		<modify>
+			<description>#79566 修复 后台的模板页面的新建等按钮的位置下移</description>
+			<author>蒋志广</author>
+			<revision-time>2019-08-15</revision-time>
+			<baseline>V15.0.1.R.20190906</baseline>
+		</modify>
+		<modify>
+			<description>#79881 修复 表名过长，oracle无法创建表</description>
+			<author>蒋志广</author>
+			<revision-time>2019-08-15</revision-time>
+			<baseline>V15.0.1.R.20190906</baseline>
+		</modify>
+		<modify>
+			<description>#78016 修复 如果阶段导入选择的文件是错误的，给出提示</description>
+			<author>蒋志广</author>
+			<revision-time>2019-08-13</revision-time>
+			<baseline>V15.0.1.R.20190906</baseline>
+		</modify>
+		<modify>
+			<description>#79235 修复 变更/办结/终止 文档通过url查看未处理权限问题</description>
+			<author>蒋志广</author>
+			<revision-time>2019-08-13</revision-time>
+			<baseline>V15.0.1.R.20190906</baseline>
+		</modify>
+		<modify>
+			<description>#79113 优化 督办办结草稿状态可删除自己的办结文档</description>
+			<author>蒋志广</author>
+			<revision-time>2019-08-13</revision-time>
+			<baseline>V15.0.1.R.20190906</baseline>
+		</modify>
+		<modify>
+			<description>#79105 优化 办结时间默认定位当前时间，支持用户编辑</description>
+			<author>蒋志广</author>
+			<revision-time>2019-08-13</revision-time>
+			<baseline>V15.0.1.R.20190906</baseline>
+		</modify>
+		<modify>
+			<description>#78550 修复 督办立项新建页面，页面展现样式问题</description>
+			<author>蒋志广</author>
+			<revision-time>2019-08-13</revision-time>
+			<baseline>V15.0.1.R.20190906</baseline>
+		</modify>
+		<modify>
+			<description>#79236 修复 督办反馈流程被废弃后，状态显示为空，且无法再进行反馈</description>
+			<author>蒋志广</author>
+			<revision-time>2019-08-13</revision-time>
+			<baseline>V15.0.1.R.20190906</baseline>
+		</modify>
+		<modify>
+			<description>#79108 修复 办结和终止流程时上传了附件，再次查看办结时报错</description>
+			<author>蒋志广</author>
+			<revision-time>2019-08-13</revision-time>
+			<baseline>V15.0.1.R.20190906</baseline>
+		</modify>
+		<modify>
+			<description>#79237 修复 督办阶段反馈和任务反馈中附件批量下载的文件名为null</description>
+			<author>蒋志广</author>
+			<revision-time>2019-08-06</revision-time>
+			<baseline>V15.0.1.R.20190906</baseline>
+		</modify>
+		<modify>
+			<description>#79203 修复 草稿文件查看页无删除按钮</description>
+			<author>蒋志广</author>
+			<revision-time>2019-08-06</revision-time>
+			<baseline>V15.0.1.R.20190906</baseline>
+		</modify>
+		<modify>
+			<description>#79232 修复 督办立项模板查看页未显示变更流程</description>
+			<author>蒋志广</author>
+			<revision-time>2019-08-06</revision-time>
+			<baseline>V15.0.1.R.20190906</baseline>
+		</modify>
+		<modify>
+			<description>修复 当前时间超过督办结束时间即为已超期</description>
+			<author>蒋志广</author>
+			<revision-time>2019-08-06</revision-time>
+			<baseline>V15.0.1.R.20190906</baseline>
+		</modify>
+		<modify>
+			<description>#79109 修复 督办考评后，主文档数据丢失</description>
+			<author>蒋志广</author>
+			<revision-time>2019-08-06</revision-time>
+			<baseline>V15.0.1.R.20190906</baseline>
+		</modify>
+		<modify>
+			<description>优化 路由由中文拼音改为英文</description>
+			<author>蒋志广</author>
+			<revision-time>2019-08-06</revision-time>
+			<baseline>V15.0.1.R.20190906</baseline>
+		</modify>
+		<modify>
+			<description>修复 反馈情况一览表 并行问题</description>
+			<author>蒋志广</author>
+			<revision-time>2019-08-06</revision-time>
+			<baseline>V15.0.1.R.20190906</baseline>
+		</modify>
+		<modify>
+			<description>#79061 修复 草稿箱页面数目显示有问题</description>
+			<author>蒋志广</author>
+			<revision-time>2019-08-06</revision-time>
+			<baseline>V15.0.1.R.20190906</baseline>
+		</modify>
+		<modify>
+			<description>修复 督办反馈 进展情况必填</description>
+			<author>蒋志广</author>
+			<revision-time>2019-08-06</revision-time>
+			<baseline>V15.0.1.R.20190906</baseline>
+		</modify>
+		<modify>
+			<description>修复 拥有主文档查看权限就可查看所有变更记录</description>
+			<author>蒋志广</author>
+			<revision-time>2019-08-06</revision-time>
+			<baseline>V15.0.1.R.20190906</baseline>
+		</modify>
+		<modify>
+			<description>#79035 修复 督办任务反馈提前预警设置未生效</description>
+			<author>蒋志广</author>
+			<revision-time>2019-08-06</revision-time>
+			<baseline>V15.0.1.R.20190906</baseline>
+		</modify>
+		<modify>
+			<description>#79015 修复 同一个阶段，如果承办单位等已经反馈阶段进度至100%那么协办单位处不需要再显示反馈按钮</description>
+			<author>蒋志广</author>
+			<revision-time>2019-08-01</revision-time>
+			<baseline>V15.0.1.R.20190906</baseline>
+		</modify>
+		<modify>
+			<description>修复 列表页数据未按权限显示</description>
+			<author>蒋志广</author>
+			<revision-time>2019-08-01</revision-time>
+			<baseline>V15.0.1.R.20190906</baseline>
+		</modify>
+		<modify>
+			<description>优化 督办变更</description>
+			<author>蒋志广</author>
+			<revision-time>2019-07-31</revision-time>
+			<baseline>V15.0.1.R.20190906</baseline>
+		</modify>
+		<modify>
+			<description>#78830 修复 待办筛选器督办模块有5个,都显示一样的名字</description>
+			<author>蒋志广</author>
+			<revision-time>2019-07-31</revision-time>
+			<baseline>V15.0.1.R.20190906</baseline>
+		</modify>
+		<modify>
+			<description>#78114 优化 督办立项时间字段默认取当下时间，支持用户编辑</description>
+			<author>郑操辉</author>
+			<revision-time>2019-07-31</revision-time>
+			<baseline>V15.0.1.R.20190906</baseline>
+		</modify>
+		<modify>
+			<description>#77616 修复 sql盲注入</description>
+			<author>叶正平</author>
+			<revision-time>2019-07-30</revision-time>
+			<relation>
+				<relation-module>sys/category</relation-module>
+			</relation>
+			<baseline>V15.0.1.R.20190906</baseline>
+		</modify>
+		<modify>
+			<description>修复 我承办的反馈日显示问题</description>
+			<author>蒋志广</author>
+			<revision-time>2019-07-24</revision-time>
+			<baseline>V15.0.1.R.20190906</baseline>
+		</modify>
+		<modify>
+			<description>修复 我关注的列表显示历史数据问题</description>
+			<author>蒋志广</author>
+			<revision-time>2019-07-23</revision-time>
+			<baseline>V15.0.1.R.20190906</baseline>
+		</modify>
+		<modify>
+			<description>修复 领导工作台跳转问题</description>
+			<author>蒋志广</author>
+			<revision-time>2019-07-23</revision-time>
+			<baseline>V15.0.1.R.20190906</baseline>
+		</modify>
+		<modify>
+			<description>修复 查看页督办反馈日排序不对</description>
+			<author>蒋志广</author>
+			<revision-time>2019-07-23</revision-time>
+			<baseline>V15.0.1.R.20190906</baseline>
+		</modify>
+		<modify>
+			<description>修复 我分管的鼠标放置在图标上没有提示</description>
+			<author>蒋志广</author>
+			<revision-time>2019-07-23</revision-time>
+			<baseline>V15.0.1.R.20190906</baseline>
+		</modify>
+		<modify>
+			<description>修复 督办工作台数量统计错误</description>
+			<author>蒋志广</author>
+			<revision-time>2019-07-23</revision-time>
+			<baseline>V15.0.1.R.20190906</baseline>
+		</modify>
+		<modify>
+			<description>#78121 修复 督办预警默认值不可更改，功能开关未初始化</description>
+			<author>蒋志广</author>
+			<revision-time>2019-07-22</revision-time>
+			<baseline>V15.0.1.R.20190906</baseline>
+		</modify>
+		<modify>
+			<description>#78105 新增 办结和终止新增删除和编辑功能</description>
+			<author>蒋志广</author>
+			<revision-time>2019-07-22</revision-time>
+			<baseline>V15.0.1.R.20190906</baseline>
+		</modify>
+		<modify>
+			<description>#77300 修复 右侧审批模式下，办结等流程结束后右侧不需要再显示流程审批等页签</description>
+			<author>蒋志广</author>
+			<revision-time>2019-07-18</revision-time>
+			<baseline>V15.0.1.R.20190906</baseline>
+		</modify>
+		<modify>
+			<description>#76157 修复 任何状态的督办都可以进行催办</description>
+			<author>蒋志广</author>
+			<revision-time>2019-07-18</revision-time>
+			<baseline>V15.0.1.R.20190906</baseline>
+		</modify>
+		<modify>
+			<description>#77025 优化 督办编辑页阶段的导入窗口样式优化</description>
+			<author>蒋志广</author>
+			<revision-time>2019-07-18</revision-time>
+			<baseline>V15.0.1.R.20190906</baseline>
+		</modify>
+		<modify>
+			<description>#77385 修复 阶段反馈后和任务反馈后未添加通知</description>
+			<author>蒋志广</author>
+			<revision-time>2019-07-18</revision-time>
+			<baseline>V15.0.1.R.20190906</baseline>
+		</modify>
+		<modify>
+			<description>#77424 修复 领导工作台左侧偶发性显示很窄</description>
+			<author>蒋志广</author>
+			<revision-time>2019-07-18</revision-time>
+			<baseline>V15.0.1.R.20190906</baseline>
+		</modify>
+		<modify>
+			<description>#77682 修复 督办文档查看页部分按钮的颜色需要支持按照不同主题包进行变化</description>
+			<author>蒋志广</author>
+			<revision-time>2019-07-18</revision-time>
+			<baseline>V15.0.1.R.20190906</baseline>
+		</modify>
+		<modify>
+			<description>#77829 修复 督办终止后还可以进行阶段反馈</description>
+			<author>蒋志广</author>
+			<revision-time>2019-07-18</revision-time>
+			<baseline>V15.0.1.R.20190906</baseline>
+		</modify>
+		<modify>
+			<description>#77821 修复 我分管的、我承办的加状态筛选</description>
+			<author>蒋志广</author>
+			<revision-time>2019-07-18</revision-time>
+			<baseline>V15.0.1.R.20190906</baseline>
+		</modify>
+		<modify>
+			<description>#77200 修复 督办反馈情况记录页面优化</description>
+			<author>蒋志广</author>
+			<revision-time>2019-07-18</revision-time>
+			<baseline>V15.0.1.R.20190906</baseline>
+		</modify>
+		<modify>
+			<description>#77276 修复 主办单位负责人、督办联络员指派完任务后已办中没显示数据</description>
+			<author>蒋志广</author>
+			<revision-time>2019-07-18</revision-time>
+			<baseline>V15.0.1.R.20190906</baseline>
+		</modify>
+		<modify>
+			<description>#77284 修复 一个阶段中一个周期如果已经反馈到100，不允许再次反馈</description>
+			<author>蒋志广</author>
+			<revision-time>2019-07-18</revision-time>
+			<baseline>V15.0.1.R.20190906</baseline>
+		</modify>
+		<modify>
+			<description>#77376 修复 快捷页面类别字段与后台的设置不一致</description>
+			<author>蒋志广</author>
+			<revision-time>2019-07-18</revision-time>
+			<baseline>V15.0.1.R.20190906</baseline>
+		</modify>
+		<modify>
+			<description>#77310 修复 督办事项加操作一列，根据权限显示批示 催办按钮</description>
+			<author>蒋志广</author>
+			<revision-time>2019-07-18</revision-time>
+			<baseline>V15.0.1.R.20190906</baseline>
+		</modify>
+		<modify>
+			<description>#77569 修复 草稿页右侧显示多个群聊按钮，普通用户对操作应该具备删除权限</description>
+			<author>蒋志广</author>
+			<revision-time>2019-07-18</revision-time>
+			<baseline>V15.0.1.R.20190906</baseline>
+		</modify>
+		<modify>
+			<description>#77729 修复 普通用户查看督办无关注按钮</description>
+			<author>蒋志广</author>
+			<revision-time>2019-07-17</revision-time>
+			<baseline>V15.0.1.R.20190906</baseline>
+		</modify>
+		<modify>
+			<description>#77422 新增 列表页加操作按钮</description>
+			<author>蒋志广</author>
+			<revision-time>2019-07-17</revision-time>
+			<baseline>V15.0.1.R.20190906</baseline>
+		</modify>
+		<modify>
+			<description>#77611 修复 阶段导入中承办单位和协办单位没法导入成功</description>
+			<author>蒋志广</author>
+			<revision-time>2019-07-17</revision-time>
+			<baseline>V15.0.1.R.20190906</baseline>
+		</modify>
+		<modify>
+			<description>#77378 修复 反馈情况一览表在很多阶段的情况下未出现滚动条</description>
+			<author>蒋志广</author>
+			<revision-time>2019-07-17</revision-time>
+			<baseline>V15.0.1.R.20190906</baseline>
+		</modify>
+		<modify>
+			<description>#77332 修复 领导工作台督办分类统计没数据时缺省页超出页面宽度</description>
+			<author>蒋志广</author>
+			<revision-time>2019-07-17</revision-time>
+			<baseline>V15.0.1.R.20190906</baseline>
+		</modify>
+		<modify>
+			<description>#73720 优化 督办系统改版</description>
+			<author>蒋志广</author>
+			<revision-time>2019-07-12</revision-time>
+			<relation>
+				<relation-module>sys/unit</relation-module>
+				<relation-module>core</relation-module>
+				<relation-module>dbcenter/echarts</relation-module>
+			</relation>
+			<baseline>V15.0.0.R.20190712</baseline>
+		</modify>
+		<modify>
+			<description>#74469 修复 起草节点编辑被驳回的流程，进行暂存时实际就是提交的作用了</description>
+			<author>蒋志广</author>
+			<revision-time>2019-07-11</revision-time>
+			<baseline>V15.0.0.R.20190712</baseline>
+		</modify>
+		<modify>
+			<description>#74757 优化 模块新建的url与个人流程中心跳转过去的url保持一致</description>
+			<author>郑操辉</author>
+			<revision-time>2019-07-11</revision-time>
+			<baseline>V15.0.1.R.20190906</baseline>
+		</modify>
+		<modify>
+			<description>#72591 优化 导入数据下载的模板参考的数据只留一条，分类模板用全路径方式</description>
+			<author>蒋志广</author>
+			<revision-time>2019-05-18</revision-time>
+			<baseline>V15.0.0.R.20190712</baseline>
+		</modify>
+		<modify>
+			<description>#72363 优化 从督办模块进行任务分派没有输入任务内容的地方</description>
+			<author>陈尉建</author>
+			<revision-time>2019-05-15</revision-time>
+			<relation>
+				<relation-module>sys/task</relation-module>
+			</relation>
+			<baseline>V15.0.0.R.20190712</baseline>
+		</modify>
+		<modify>
+			<description>#72246 修复 列表页考评状态显示问题</description>
+			<author>蒋志广</author>
+			<revision-time>2019-05-13</revision-time>
+			<baseline>V15.0.0.R.20190712</baseline>
+		</modify>
+		<modify>
+			<description>#72225 修复 督办查看页右侧偶发显示一个蓝色图标</description>
+			<author>蒋志广</author>
+			<revision-time>2019-05-13</revision-time>
+			<baseline>V15.0.0.R.20190712</baseline>
+		</modify>
+		<modify>
+			<description>#72205 修复 列表自定义页面未做权限过滤</description>
+			<author>蒋志广</author>
+			<revision-time>2019-05-13</revision-time>
+			<baseline>V15.0.0.R.20190712</baseline>
+		</modify>
+		<modify>
+			<description>#72240 优化 暂存操作用户可以不输入任何信息进行保存</description>
+			<author>蒋志广</author>
+			<revision-time>2019-05-13</revision-time>
+			<baseline>V15.0.0.R.20190712</baseline>
+		</modify>
+		<modify>
+			<description>#72224 优化 督办重启和撤销优化</description>
+			<author>蒋志广</author>
+			<revision-time>2019-05-13</revision-time>
+			<baseline>V15.0.0.R.20190712</baseline>
+		</modify>
+		<modify>
+			<description>#72239 优化 起草人提交流程后撤回文档应该不允许删除</description>
+			<author>蒋志广</author>
+			<revision-time>2019-05-13</revision-time>
+			<baseline>V15.0.0.R.20190712</baseline>
+		</modify>
+		<modify>
+			<description>#72160 优化 移除该模块回收站的导出按钮</description>
+			<author>蒋志广</author>
+			<revision-time>2019-05-13</revision-time>
+			<baseline>V15.0.0.R.20190712</baseline>
+		</modify>
+		<modify>
+			<description>#67872，67873 修复 督办模块中操作依赖任务管理模块时无权限问题 by蒋志广</description>
+			<author>蒋志广</author>
+			<revision-time>2019-03-26</revision-time>
+			<baseline>V15.0.0.B3.20190412</baseline>
+		</modify>
+		<modify>
+			<description>#63990 修复 督办考评列表页面导出的数据中‘星级’指数与实际不符</description>
+			<author>蒋志广</author>
+			<revision-time>2019-03-25</revision-time>
+			<baseline>V15.0.0.B3.20190412</baseline>
+		</modify>
+		<modify>
+			<description>#65689 新增 已撤销的督办可进行重启</description>
+			<author>蒋志广</author>
+			<revision-time>2019-03-19</revision-time>
+			<baseline>V15.0.0.B3.20190412</baseline>
+		</modify>
+		<modify>
+			<description>#66727 修复 新数据库启动后在管理员工具箱执行兼容性检测，有档案管理模块提示为空异常</description>
+			<author>郑超</author>
+			<revision-time>2019-02-20</revision-time>
+			<baseline>V15.0.0.B3.20190412</baseline>
+		</modify>
+		<modify>
+			<description>#63999 修复 普通用户搜索导出显示无权限</description>
+			<author>陈尉建</author>
+			<revision-time>2018-11-30</revision-time>
+			<baseline>V15.0.0.B2.20190118</baseline>
+		</modify>
+		<modify>
+			<description>#63998 修复 督办草稿箱列表删除报错，草稿查看页无删除按钮</description>
+			<author>陈尉建</author>
+			<revision-time>2018-11-28</revision-time>
+			<baseline>V15.0.0.B2.20190118</baseline>
+		</modify>
+		<modify>
+			<description>#64319 修复 除了超级管理员，其他身份督办反馈都报错</description>
+			<author>陈尉建</author>
+			<revision-time>2018-11-26</revision-time>
+			<baseline>V15.0.0.B2.20190118</baseline>
+		</modify>
+		<modify>
+			<description>修复 后台设置类别保存等操作记录的日志中存在非中文</description>
+			<author>黄泽凯</author>
+			<revision-time>2018-11-14</revision-time>
+			<baseline>V15.0.0.B2.20190118</baseline>
+		</modify>
+		<modify>
+			<description>修复 督办反馈报错</description>
+			<author>陈尉建</author>
+			<revision-time>2018-11-14</revision-time>
+			<baseline>V15.0.0.B2.20190118</baseline>
+		</modify>
+		<modify>
+			<description>修复 督办反馈的进度应该取实际的进度</description>
+			<author>陈尉建</author>
+			<revision-time>2018-11-06</revision-time>
+			<baseline>V15.0.0.B1.20181109</baseline>
+		</modify>
+		<modify>
+			<description>优化 英文包督办进行任务指派时时间校验有误</description>
+			<author>何协殷</author>
+			<revision-time>2018-11-01</revision-time>
+			<baseline>V15.0.0.B1.20181109</baseline>
+		</modify>
+		<modify>
+			<description>修复 PC端编辑反馈数据提交后反馈数据丢失</description>
+			<author>陈尉建</author>
+			<revision-time>2018-11-01</revision-time>
+			<baseline>V15.0.0.B1.20181109</baseline>
+		</modify>
+		<modify>
+			<description>修复 督办进行办结后，文档下方页签处的督办考评中无缘无故多了数据，点击后是文档界面</description>
+			<author>陈尉建</author>
+			<revision-time>2018-10-25</revision-time>
+			<baseline>V15.0.0.B1.20181109</baseline>
+		</modify>
+		<modify>
+			<description>优化 新地址本js重构</description>
+			<author>郑超</author>
+			<revision-time>2018-10-22</revision-time>
+			<relation>
+				<relation-module>core</relation-module>
+			</relation>
+			<baseline>V15.0.0.B1.20181109</baseline>
+		</modify>
+		<modify>
+			<description>优化 督办计划中的页面设计图缺少了任务的完成情况</description>
+			<author>陈尉建</author>
+			<revision-time>2018-09-11</revision-time>
+			<baseline>V15.0.0.B1.20181109</baseline>
+		</modify>
+		<modify>
+			<description>优化 移动端进行任务指派，任务时间改为日期时间格式</description>
+			<author>孙佳</author>
+			<revision-time>2018-08-30</revision-time>
+			<baseline>V15.0.0.B1.20181109</baseline>
+		</modify>
+		<modify>
+			<description>优化 将督办领导加到督办下所有任务的可阅读者里面</description>
+			<author>孙佳</author>
+			<revision-time>2018-08-30</revision-time>
+			<relation>
+				<relation-module>sys/task</relation-module>
+			</relation>
+			<baseline>V15.0.0.B1.20181109</baseline>
+		</modify>
+		<modify>
+			<description>修复 普通员工（只给模块的默认权限）通过通用流程模板url竟可直接打开，且可进行编辑删除操作</description>
+			<author>林彬彬</author>
+			<revision-time>2018-09-05</revision-time>
+			<baseline>V15.0.0.B1.20181109</baseline>
+		</modify>
+		<modify>
+			<description>优化 督办模版新增拷贝模版功能</description>
+			<author>陈尉建</author>
+			<revision-time>2018-08-23</revision-time>
+			<baseline>V15.0.0.B1.20181109</baseline>
+		</modify>
+		<modify>
+			<description>优化 督办级别和紧急程度前端页面排序按排序号排</description>
+			<author>陈尉建</author>
+			<revision-time>2018-08-14</revision-time>
+			<baseline>V15.0.0.B1.20181109</baseline>
+		</modify>
+		<modify>
+			<description>新增 督办批量导入</description>
+			<author>孙佳</author>
+			<revision-time>2018-07-27</revision-time>
+			<baseline>V15.0.0.B1.20181109</baseline>
+		</modify>
+		<modify>
+			<description>新增 督办移动化</description>
+			<author>孙佳</author>
+			<revision-time>2018-07-27</revision-time>
+			<baseline>V15.0.0.B1.20181109</baseline>
+		</modify>
+		<modify>
+			<description>修复 具有反馈权限但不是责任人或经办人时 提交反馈报错</description>
+			<author>陈尉建</author>
+			<revision-time>2018-05-18</revision-time>
+			<baseline>V14.0.1.R.20180706</baseline>
+		</modify>
+		<modify>
+			<description>新增 督办模块</description>
+			<author>孙佳</author>
+			<revision-time>2018-01-27</revision-time>
+			<relation>
+				<relation-module>sys/task</relation-module>
+			</relation>
+			<baseline>V14.0.0.R.20180413</baseline>
+		</modify>
+	</modifies>
+</version>

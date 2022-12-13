@@ -1,0 +1,54 @@
+{
+    "global":     {
+        "modelName": "com.landray.kmss.km.pindagate.model.KmPindagateResponse",
+        "messageKey": "km-pindagate:table.kmPindagateResponse",
+        "serviceBean": "kmPindagateResponseService",
+        "table": "km_pindagate_response",
+        "url": "/km/pindagate/km_pindagate_response/kmPindagateResponse.do?method=redirectTo&fdId=${fdId}"
+    },
+    "attrs":     {
+        "fdId":         {
+            "propertyType": "id",
+            "generator": {"type": "assigned"}
+        },
+        "fdCreateTime":         {
+            "propertyType": "simple",
+            "messageKey": "km-pindagate:kmPindagateResponse.fdCreateTime",
+            "type": "DateTime",
+            "column": "fd_create_time",
+            "notNull": "true",
+            "validate": "true"
+        },
+        "docCreator":         {
+            "propertyType": "model",
+            "messageKey": "km-pindagate:kmPindagateResponse.docCreator",
+            "type": "com.landray.kmss.sys.organization.model.SysOrgElement",
+            "column": "doc_responser_id",
+            "notNull": "false",
+            "validate": "false"
+        },
+        "fdQuetionair":         {
+            "propertyType": "model",
+            "messageKey": "km-pindagate:kmPindagateResponse.fdQuetionair",
+            "type": "com.landray.kmss.km.pindagate.model.KmPindagateMain",
+            "column": "fd_pindatate_id",
+            "notNull": "true",
+            "validate": "false"
+        },
+        "docStatus":         {
+            "propertyType": "simple",
+            "messageKey": "sys-doc:sysDocBaseInfo.docStatus",
+            "type": "String",
+            "column": "doc_status",
+            "length": "2"
+        },
+        "fdItems":         {
+            "propertyType": "list",
+            "type": "com.landray.kmss.km.pindagate.model.KmPindagateQuestionRes",
+            "column": "fd_pindatate_response_id",
+            "orderBy": "fd_order asc",
+            "cascade": "all-delete-orphan",
+            "table": "km_pindagate_question_res"
+        }
+    }
+}

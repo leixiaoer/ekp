@@ -1,0 +1,309 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans
+	xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.0.xsd">
+	<bean
+		name="/km/pindagate/km_pindagate_main/kmPindagateData.do"
+		class="com.landray.kmss.km.pindagate.actions.KmPindagateDataAction"
+		lazy-init="true"
+		parent="KmssBaseAction">
+		<property
+			name="formType"
+			value="com.landray.kmss.km.pindagate.forms.KmPindagateMainForm" />
+		<property name="forwards">
+			<map>
+				<entry
+					key="listChildren"
+					value="/km/pindagate/km_pindagate_ui/kmPindagateMain_data.jsp" />
+				<entry
+					key="listChildren.4m"
+					value="/km/pindagate/mobile/list.jsp" />
+				<entry
+					key="relaBridgeData"
+					value="/km/pindagate/km_pindagate_bridge/kmPindagateBridge_rela_dialog_data.jsp" />
+			</map>
+		</property>
+	</bean>
+	<bean
+		name="/km/pindagate/km_pindagate_template/kmPindagateTemplate.do"
+		class="com.landray.kmss.km.pindagate.actions.KmPindagateTemplateAction"
+		lazy-init="true"
+		parent="KmssBaseAction">
+		<property
+			name="formType"
+			value="com.landray.kmss.km.pindagate.forms.KmPindagateTemplateForm" />
+		<property name="forwards">
+			<map>
+				<entry
+					key="view"
+					value="/km/pindagate/km_pindagate_template/kmPindagateTemplate_view.jsp" />
+				<entry
+					key="edit"
+					value="/km/pindagate/km_pindagate_template/kmPindagateTemplate_edit.jsp" />
+				<entry
+					key="list"
+					value="/km/pindagate/km_pindagate_template/kmPindagateTemplate_list.jsp" />
+				<entry
+					key="listChildren"
+					value="/km/pindagate/km_pindagate_template/kmPindagateTemplate_list.jsp" />
+			</map>
+		</property>
+	</bean>
+	<bean
+		name="/km/pindagate/km_pindagate_config/kmPindagateCacheConfig.do"
+		class="com.landray.kmss.km.pindagate.actions.kmPindagateCacheConfigAction"
+		lazy-init="true"
+		parent="KmssBaseAction">
+		<property
+			name="formType"
+			value="com.landray.kmss.sys.appconfig.forms.SysAppConfigForm" />
+	</bean>
+	<bean
+		name="/km/pindagate/km_pindagate_reject/kmPindagateRejectPerson.do"
+		class="com.landray.kmss.km.pindagate.actions.KmPindagateRejectPersonAction"
+		lazy-init="true"
+		parent="KmssBaseAction">
+		<property
+			name="formType"
+			value="com.landray.kmss.km.pindagate.forms.KmPindagateRejectPersonForm" />
+		<property name="forwards">
+			<map>
+				<entry
+					key="edit"
+					value="/km/pindagate/km_pindagate_reject/kmPindagateRejectPerson_edit.jsp" />
+				<entry
+					key="edit.4m"
+					value="/km/pindagate/mobile/km_pindagate_reject/edit.jsp" />
+				<entry
+					key="viewRejectInfo"
+					value="/km/pindagate/km_pindagate_reject/kmPindagateRejectPerson_viewInfo.jsp" />
+				<entry
+					key="turnback"
+					value="/km/pindagate/index.jsp" />
+			</map>
+			
+		</property>
+	</bean>
+	<bean
+		name="/km/pindagate/km_pindagate_question/kmPindagateQuestion.do"
+		class="com.landray.kmss.km.pindagate.actions.KmPindagateQuestionAction"
+		lazy-init="true"
+		parent="KmssBaseAction">
+		<property
+			name="formType"
+			value="com.landray.kmss.km.pindagate.forms.KmPindagateQuestionForm" />
+		<property name="forwards">
+			<map>
+				<entry
+					key="view"
+					value="/km/pindagate/km_pindagate_question/kmPindagateQuestion_view.jsp" />
+				<entry
+					key="viewAtt"
+					value="/km/pindagate/km_pindagate_question_ui/kmPindagateQuestionAtt_view.jsp" />
+				<entry
+					key="viewAtt.4m"
+					value="/km/pindagate/mobile/resource/tmpl/view_att.jsp" />
+				<entry
+					key="edit"
+					value="/km/pindagate/km_pindagate_question/kmPindagateQuestion_edit.jsp" />
+				<entry
+					key="editAtt"
+					value="/km/pindagate/km_pindagate_question_ui/kmPindagateQuestionAtt_edit.jsp" />
+				<entry
+					key="list"
+					value="/km/pindagate/km_pindagate_question/kmPindagateQuestion_list.jsp" />
+			</map>
+		</property>
+	</bean>
+	<bean
+		name="/km/pindagate/km_pindagate_response/kmPindagateResponse.do"
+		class="com.landray.kmss.km.pindagate.actions.KmPindagateResponseAction"
+		lazy-init="true"
+		parent="KmssBaseAction">
+		<property
+			name="formType"
+			value="com.landray.kmss.km.pindagate.forms.KmPindagateResponseForm" />
+		<property name="forwards">
+			<map>
+				<entry
+					key="view"
+					value="/km/pindagate/km_pindagate_response/kmPindagateResponse_view.jsp" />
+				<entry
+					key="edit"
+					value="/km/pindagate/km_pindagate_response_ui/kmPindagateResponse_edit.jsp" />
+				<entry
+					key="edit.4m"
+					value="/km/pindagate/mobile/km_pindagate_response/edit.jsp" />
+				<entry
+					key="finish"
+					value="/km/pindagate/km_pindagate_response_ui/kmPindagateResponse_edit.jsp" />
+				<entry
+					key="finish.4m"
+					value="/km/pindagate/mobile/km_pindagate_response/finish.jsp" />
+				<entry
+					key="list"
+					value="/km/pindagate/km_pindagate_response_ui/kmPindagateResponse_data.jsp" />
+				<entry
+					key="resultsDetail"
+					value="/km/pindagate/km_pindagate_response_ui/kmPindagateResponse_resultsDetail.jsp" />
+			</map>
+		</property>
+	</bean>
+	<bean
+		name="/km/pindagate/km_pindagate_main/kmPindagateMain.do"
+		class="com.landray.kmss.km.pindagate.actions.KmPindagateMainAction"
+		lazy-init="true"
+		parent="KmssBaseAction">
+		<property
+			name="formType"
+			value="com.landray.kmss.km.pindagate.forms.KmPindagateMainForm" />
+		<property name="forwards">
+			<map>
+				<entry
+					key="listChildren"
+					value="/km/pindagate/km_pindagate_main/kmPindagateMain_list.jsp" />
+				<entry
+					key="manageList"
+					value="/km/pindagate/km_pindagate_main/kmPindagateMain_list.jsp" />
+				<entry
+					key="view"
+					value="/km/pindagate/km_pindagate_ui/kmPindagateMain_view.jsp" />
+				<entry
+					key="view.4m"
+					value="/km/pindagate/mobile/km_pindagate_main/view.jsp" />
+				<entry
+					key="edit"
+					value="/km/pindagate/km_pindagate_ui/kmPindagateMain_edit.jsp" />
+				<entry
+					key="list"
+					value="/km/pindagate/km_pindagate_main/kmPindagateMain_list.jsp" />
+				<entry
+					key="resultsView"
+					value="/km/pindagate/km_pindagate_ui/kmPindagateMain_resultsView.jsp" />
+				<entry
+					key="resultsView.4m"
+					value="/km/pindagate/mobile/km_pindagate_statistic/resultsView.jsp" />
+				<entry
+					key="dataAnalysis"
+					value="/km/pindagate/km_pindagate_ui/kmPindagateMain_dataAnalysis.jsp" />
+				<entry
+					key="person"
+					value="/km/pindagate/km_pindagate_ui/kmPindagateMain_personInfo.jsp" />
+				<entry
+					key="alreadyList"
+					value="/km/pindagate/km_pindagate_ui/kmPindagateMain_personInfo_alreadyList.jsp" />
+				<entry
+					key="absentList"
+					value="/km/pindagate/km_pindagate_ui/kmPindagateMain_personInfo_absentList.jsp" />
+				<entry
+					key="rejectList"
+					value="/km/pindagate/km_pindagate_ui/kmPindagateMain_personInfo_rejectList.jsp" />
+				<entry
+					key="updatePindagater"
+					value="/km/pindagate/km_pindagate_ui/kmPindagateMain_updatePerson.jsp" />
+				<entry
+					key="updatePropert"
+					value="/km/pindagate/km_pindagate_ui/kmPindagateMain_updatePropert.jsp" />
+				<entry
+					key="error"
+					value="/km/pindagate/error.jsp" />
+				
+			</map>
+		</property>
+	</bean>
+	<bean
+		name="/km/pindagate/km_pindagate_main_temp/kmPindagateMainTemp.do"
+		class="com.landray.kmss.km.pindagate.actions.KmPindagateMainTempAction"
+		lazy-init="true"
+		parent="KmssBaseAction">
+		<property
+			name="formType"
+			value="com.landray.kmss.km.pindagate.forms.KmPindagateMainTempForm" />
+		<property name="forwards">
+			<map>
+				<entry
+					key="view"
+					value="/km/pindagate/km_pindagate_main_temp/kmPindagateMainTemp_view.jsp" />
+				<entry
+					key="edit"
+					value="/km/pindagate/km_pindagate_main_temp/kmPindagateMainTemp_edit.jsp" />
+				<entry
+					key="list"
+					value="/km/pindagate/km_pindagate_main_temp/kmPindagateMainTemp_list.jsp" />
+				<entry
+					key="listChildren"
+					value="/km/pindagate/km_pindagate_main_temp/kmPindagateMainTemp_list.jsp" />
+				<entry
+					key="mainEdit"
+					value="/km/pindagate/km_pindagate_main/kmPindagateMain_edit.jsp" />
+				<entry
+					key="selectQuestionList"
+					value="/km/pindagate/km_pindagate_main_temp/kmPindagateMainTemp_select_list.jsp" />
+				<entry
+					key="selectQuestionIds"
+					value="/km/pindagate/km_pindagate_main/kmPindagateMain_edit.jsp" />
+			</map>
+		</property>
+	</bean>
+	<bean
+		name="/km/pindagate/km_pindagate_question_res/kmPindagateQuestionRes.do"
+		class="com.landray.kmss.km.pindagate.actions.KmPindagateQuestionResAction"
+		lazy-init="true"
+		parent="KmssBaseAction">
+		<property
+			name="formType"
+			value="com.landray.kmss.km.pindagate.forms.KmPindagateQuestionResForm" />
+		<property name="forwards">
+			<map>
+				<entry
+					key="view"
+					value="/km/pindagate/km_pindagate_question_res/kmPindagateQuestionRes_view.jsp" />
+				<entry
+					key="edit"
+					value="/km/pindagate/km_pindagate_question_res/kmPindagateQuestionRes_edit.jsp" />
+				<entry
+					key="list"
+					value="/km/pindagate/km_pindagate_question_res_ui/kmPindagateQuestionRes_list.jsp" />
+				<entry
+					key="list.4m"
+					value="/km/pindagate/mobile/km_pindagate_question_res/list.jsp" />
+				<entry
+					key="data"
+					value="/km/pindagate/km_pindagate_question_res_ui/kmPindagateQuestionRes_data.jsp" />
+			</map>
+		</property>
+	</bean>
+	<bean
+		name="/km/pindagate/km_pindagate_config/kmPindagateConfig.do"
+		class="com.landray.kmss.km.pindagate.actions.KmPindagateConfigAction"
+		lazy-init="true"
+		parent="KmssBaseAction">
+		<property
+			name="formType"
+			value="com.landray.kmss.km.pindagate.forms.KmPindagateConfigForm" />
+		<property name="forwards">
+			<map>
+				<entry
+					key="edit"
+					value="/km/pindagate/km_pindagate_config/kmPindagateConfig_edit.jsp" />
+			</map>
+		</property>
+	</bean>
+	<bean
+		name="/km/pindagate/km_pindagate_main/kmPindagateMainPortlet.do"
+		class="com.landray.kmss.km.pindagate.actions.KmPindagateMainPortletAction"
+		lazy-init="true"
+		parent="KmssBaseAction">
+		<property name="forwards">
+			<map>
+				<entry
+					key="listPortlet"
+					value="/km/pindagate/km_pindagate_ui/kmPindagateMainPortlet_list.jsp" />
+			</map>
+		</property>
+	</bean>
+	<bean id="kmPindagateMainPortletController"
+        class="com.landray.kmss.km.pindagate.actions.KmPindagateMainPortletController">
+    </bean>
+</beans>

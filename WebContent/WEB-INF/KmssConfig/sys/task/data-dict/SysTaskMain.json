@@ -1,0 +1,491 @@
+{
+    "global":     {
+        "modelName": "com.landray.kmss.sys.task.model.SysTaskMain",
+        "messageKey": "sys-task:table.sysTaskMain",
+        "serviceBean": "sysTaskMainService",
+        "table": "sys_task_main",
+        "displayProperty": "docSubject",
+        "url": "/sys/task/sys_task_main/sysTaskMain.do?method=view&fdId=${fdId}"
+    },
+    "attrs":     {
+        "fdId":         {
+            "propertyType": "id",
+            "generator": {"type": "assigned"}
+        },
+        "fdWeiXinRelevantPerson":         {
+            "propertyType": "simple",
+            "messageKey": "sys-task:sysTaskMain.fdWeiXinRelevantPerson",
+            "type": "RTF",
+            "column": "fd_wx_relevant_person",
+            "notNull": "false",
+            "length": "1000000",
+            "validate": "false"
+        },
+        "fdWeiXinExecutor":         {
+            "propertyType": "simple",
+            "messageKey": "sys-task:sysTaskMain.fdWeiXinExecutor",
+            "type": "RTF",
+            "column": "fd_wx_executor",
+            "notNull": "false",
+            "length": "1000000",
+            "validate": "false"
+        },
+        "docSubject":         {
+            "propertyType": "simple",
+            "messageKey": "sys-task:sysTaskMain.docSubject",
+            "type": "String",
+            "column": "doc_subject",
+            "notNull": "true",
+            "length": "500",
+            "canSearch": "true",
+            "canDisplay": "true",
+            "validate": "true"
+        },
+        "docCreateTime":         {
+            "propertyType": "simple",
+            "messageKey": "sys-task:sysTaskMain.docCreateTime",
+            "type": "DateTime",
+            "column": "doc_create_time",
+            "notNull": "false",
+            "canSearch": "true",
+            "canDisplay": "true"
+        },
+        "fdKey":         {
+            "propertyType": "simple",
+            "messageKey": "sys-task:sysTaskMain.fdKey",
+            "type": "String",
+            "column": "fd_key",
+            "notNull": "false",
+            "length": "100",
+            "canDisplay": "false"
+        },
+        "fdModelName":         {
+            "propertyType": "simple",
+            "messageKey": "sys-task:sysTaskMain.fdModelName",
+            "type": "String",
+            "column": "fd_model_name",
+            "notNull": "false",
+            "length": "100",
+            "canDisplay": "false",
+            "canLogShow": "1"
+        },
+        "fdModelId":         {
+            "propertyType": "simple",
+            "messageKey": "sys-task:sysTaskMain.fdModelId",
+            "type": "String",
+            "column": "fd_model_id",
+            "notNull": "false",
+            "length": "36",
+            "canDisplay": "false",
+            "canLogShow": "1"
+        },
+        "fdResolveFlag":         {
+            "propertyType": "simple",
+            "messageKey": "sys-task:sysTaskMain.fdResolveFlag",
+            "type": "String",
+            "column": "fd_resolve_flag",
+            "notNull": "false",
+            "canDisplay": "false"
+        },
+        "fdProgressAuto":         {
+            "propertyType": "simple",
+            "messageKey": "sys-task:sysTaskMain.fdProgressAuto",
+            "type": "String",
+            "column": "fd_progress_auto",
+            "notNull": "false",
+            "canDisplay": "false"
+        },
+        "fdWeights":         {
+            "propertyType": "simple",
+            "messageKey": "sys-task:sysTaskMain.fdWeights",
+            "type": "Integer",
+            "column": "fd_weights",
+            "notNull": "false",
+            "length": "10",
+            "validate": "true"
+        },
+        "docStatus":         {
+            "propertyType": "simple",
+            "messageKey": "sys-task:sysTaskMain.docStatus",
+            "type": "String",
+            "column": "doc_status",
+            "notNull": "false",
+            "length": "2",
+            "canDisplay": "false"
+        },
+        "docReadCount":         {
+            "propertyType": "simple",
+            "messageKey": "sys-task:sysTaskMain.docReadCount",
+            "type": "Long",
+            "column": "doc_read_count",
+            "notNull": "false",
+            "length": "19",
+            "canDisplay": "true"
+        },
+        "fdNotifyType":         {
+            "propertyType": "simple",
+            "messageKey": "sys-task:sysTaskMain.fdNotifyType",
+            "type": "String",
+            "column": "fd_notify_type",
+            "notNull": "false",
+            "length": "100",
+            "canDisplay": "true",
+            "enumType": "sysTaskMain_fdNotifyType"
+        },
+        "fdSourceSubject":         {
+            "propertyType": "simple",
+            "messageKey": "sys-task:sysTaskMain.fdSourceSubject",
+            "type": "String",
+            "column": "fd_source_subject",
+            "notNull": "false",
+            "length": "200",
+            "canDisplay": "true"
+        },
+        "fdSourceUrl":         {
+            "propertyType": "simple",
+            "messageKey": "sys-task:sysTaskMain.fdSourceUrl",
+            "type": "String",
+            "column": "fd_source_url",
+            "notNull": "false",
+            "length": "1000",
+            "canDisplay": "false"
+        },
+        "fdPastDue":         {
+            "propertyType": "simple",
+            "messageKey": "sys-task:sysTaskMain.fdPastDue",
+            "type": "String",
+            "column": "fd_past_due",
+            "notNull": "false",
+            "enumType": "common_yesno_number",
+            "length": "1",
+            "canDisplay": "true"
+        },
+        "fdHierarchyId":         {
+            "propertyType": "simple",
+            "messageKey": "sys-task:sysTaskMain.fdHierarchyId",
+            "type": "String",
+            "column": "fd_hierarchy_id",
+            "notNull": "false",
+            "length": "1000",
+            "canDisplay": "false"
+        },
+        "fdPlanCompleteDateTime":         {
+            "propertyType": "simple",
+            "messageKey": "sys-task:sysTaskMain.fdPlanCompleteTime",
+            "type": "DateTime",
+            "column": "fd_plan_complete_date_time",
+            "notNull": "false",
+            "canSearch": "true",
+            "canDisplay": "true"
+        },
+        "fdPlanCompleteTime":         {
+            "propertyType": "complex",
+            "messageKey": "sys-task:sysTaskMain.fdPlanCompleteTime",
+            "type": "String",
+            "notNull": "false",
+            "canSearch": "true",
+            "canDisplay": "false"
+        },
+        "fdPlanCompleteDate":         {
+            "propertyType": "complex",
+            "messageKey": "sys-task:sysTaskMain.fdPlanCompleteDate",
+            "type": "String",
+            "notNull": "false",
+            "canSearch": "true",
+            "canDisplay": "true"
+        },
+        "fdProgress":         {
+            "propertyType": "simple",
+            "messageKey": "sys-task:sysTaskMain.fdProgress",
+            "type": "String",
+            "column": "fd_progress",
+            "notNull": "false",
+            "canDisplay": "true"
+        },
+        "fdProgressNumber":         {
+            "propertyType": "simple",
+            "messageKey": "sys-task:sysTaskMain.fdProgress",
+            "type": "Double",
+            "column": "fd_progress_number",
+            "notNull": "false",
+            "length": "36"
+        },
+        "fdStatus":         {
+            "propertyType": "simple",
+            "messageKey": "sys-task:sysTaskMain.fdStatus",
+            "type": "String",
+            "column": "fd_status",
+            "notNull": "false",
+            "length": "2",
+            "canDisplay": "true",
+            "enumType": "sysTaskMain_fdStatue"
+        },
+        "docContent":         {
+            "propertyType": "simple",
+            "messageKey": "sys-task:sysTaskMain.docContent",
+            "type": "RTF",
+            "column": "doc_content",
+            "notNull": "false",
+            "canSearch": "true",
+            "canDisplay": "true",
+            "length": "1000000"
+        },
+        "fdAttentionCount":         {
+            "propertyType": "simple",
+            "messageKey": "sys-task:sysTaskMain.fdAttentionCount",
+            "type": "Double",
+            "column": "fd_attention_count",
+            "notNull": "false",
+            "length": "10",
+            "canDisplay": "false"
+        },
+        "syncDataToCalendarTime":         {
+            "propertyType": "simple",
+            "messageKey": "sys-task:sysTaskMain.syncDataToCalendarTime",
+            "type": "String",
+            "column": "sync_data_to_calendar_time",
+            "notNull": "false",
+            "unique": "false",
+            "canRelation": "false",
+            "validate": "false",
+            "canDisplay": "false",
+            "canSearch": "false"
+        },
+        "docCreator":         {
+            "propertyType": "model",
+            "messageKey": "sys-task:sysTaskMain.docCreatorId",
+            "type": "com.landray.kmss.sys.organization.model.SysOrgPerson",
+            "column": "doc_creator_id",
+            "notNull": "false",
+            "canSearch": "true",
+            "canDisplay": "true",
+            "where": "sysOrgElement.fdOrgType=8",
+            "dialogJS": "Dialog_Address(!{mulSelect}, '!{idField}', '!{nameField}', null, ORG_TYPE_PERSON);"
+        },
+        "sysTaskFeedback":         {
+            "propertyType": "model",
+            "messageKey": "sys-task:sysTaskMain.sysTaskFeedback",
+            "type": "com.landray.kmss.sys.task.model.SysTaskFeedback",
+            "column": "fd_feedback_id",
+            "notNull": "false",
+            "canDisplay": "false"
+        },
+        "sysTaskEvaluate":         {
+            "propertyType": "model",
+            "messageKey": "sys-task:sysTaskMain.sysTaskEvaluate",
+            "type": "com.landray.kmss.sys.task.model.SysTaskEvaluate",
+            "column": "fd_evaluate_id",
+            "cascade": "all",
+            "notNull": "false",
+            "canDisplay": "false"
+        },
+        "sysTaskCategory":         {
+            "propertyType": "model",
+            "messageKey": "sys-task:sysTaskMain.fdCategoryId",
+            "type": "com.landray.kmss.sys.task.model.SysTaskCategory",
+            "column": "fd_category_id",
+            "notNull": "false",
+            "canDisplay": "true"
+        },
+        "fdAppoint":         {
+            "propertyType": "model",
+            "messageKey": "sys-task:sysTaskMain.fdAppoint",
+            "type": "com.landray.kmss.sys.organization.model.SysOrgElement",
+            "column": "fd_appoint",
+            "notNull": "false",
+            "canSearch": "true",
+            "where": "sysOrgElement.fdOrgType=8",
+            "dialogJS": "Dialog_Address(!{mulSelect}, '!{idField}', '!{nameField}', null, ORG_TYPE_PERSON);",
+            "canDisplay": "true"
+        },
+        "rootSysTaskMain":         {
+            "propertyType": "model",
+            "messageKey": "sys-task:sysTaskMain.fdRootId",
+            "type": "com.landray.kmss.sys.task.model.SysTaskMain",
+            "column": "fd_root_id",
+            "notNull": "false",
+            "canDisplay": "false"
+        },
+        "authReaders":         {
+            "propertyType": "list",
+            "messageKey": "sys-task:sysTaskMainReader.authReader",
+            "column": "fd_task_main_id",
+            "type": "com.landray.kmss.sys.organization.model.SysOrgElement",
+            "elementColumn": "auth_reader_id",
+            "table": "sys_task_main_reader",
+            "canDisplay": "true"
+        },
+        "authAllReaders":         {
+            "propertyType": "list",
+            "messageKey": "sys-task:sysTaskMainReader.authAllReaders",
+            "column": "fd_task_main_id",
+            "type": "com.landray.kmss.sys.organization.model.SysOrgElement",
+            "elementColumn": "auth_all_reader_id",
+            "table": "sys_task_main_areaders",
+            "canDisplay": "false"
+        },
+        "toSysOrgPerform":         {
+            "propertyType": "list",
+            "messageKey": "sys-task:sysTaskMainPerform.fdPerformId",
+            "column": "fd_task_id",
+            "notNull": "true",
+            "type": "com.landray.kmss.sys.organization.model.SysOrgElement",
+            "elementColumn": "fd_perform_id",
+            "table": "sys_task_main_perform",
+            "canSearch": "true",
+            "dialogJS": "Dialog_Address(!{mulSelect}, '!{idField}', '!{nameField}', null, ORG_TYPE_PERSON);"
+        },
+        "toSysOrgCc":         {
+            "propertyType": "list",
+            "messageKey": "sys-task:sysTaskMainPerform.toSysOrgCc",
+            "column": "fd_task_id",
+            "table": "sys_task_main_cc",
+            "type": "com.landray.kmss.sys.organization.model.SysOrgElement",
+            "elementColumn": "fd_cc_id"
+        },
+        "toSysOrgAttention":         {
+            "propertyType": "list",
+            "messageKey": "sys-task:sysTaskMainPerform.toSysOrgAttention",
+            "column": "fd_task_id",
+            "table": "sys_task_attention",
+            "type": "com.landray.kmss.sys.organization.model.SysOrgElement",
+            "elementColumn": "fd_attention_id",
+            "canDisplay": "false"
+        },
+        "authEditors":         {
+            "propertyType": "list",
+            "messageKey": "sys-task:sysTaskMainPerform.authEditors",
+            "column": "fd_task_main_id",
+            "table": "sys_task_main_editor",
+            "type": "com.landray.kmss.sys.organization.model.SysOrgElement",
+            "elementColumn": "auth_editor_id",
+            "canDisplay": "false"
+        },
+        "authAllEditors":         {
+            "propertyType": "list",
+            "messageKey": "sys-task:sysTaskMainPerform.authAllEditors",
+            "column": "fd_task_main_id",
+            "table": "sys_task_main_aeditor",
+            "type": "com.landray.kmss.sys.organization.model.SysOrgElement",
+            "elementColumn": "auth_all_editor_id",
+            "canDisplay": "false"
+        },
+        "authOtherEditors":         {
+            "propertyType": "list",
+            "messageKey": "sys-task:sysTaskMainPerform.authOtherEditors",
+            "column": "fd_task_main_id",
+            "table": "sys_task_main_oeditor",
+            "type": "com.landray.kmss.sys.organization.model.SysOrgElement",
+            "elementColumn": "auth_other_editor_id",
+            "canDisplay": "false"
+        },
+        "authOtherReaders":         {
+            "propertyType": "list",
+            "messageKey": "sys-task:sysTaskMainPerform.authOtherReaders",
+            "column": "fd_task_main_id",
+            "table": "sys_task_main_oreader",
+            "type": "com.landray.kmss.sys.organization.model.SysOrgElement",
+            "elementColumn": "auth_other_reader_id",
+            "canDisplay": "false"
+        },
+        "rootChildList":         {
+            "propertyType": "list",
+            "messageKey": "sys-task:sysTaskMainPerform.rootChildList",
+            "column": "fd_root_id",
+            "type": "com.landray.kmss.sys.task.model.SysTaskMain",
+            "canDisplay": "false",
+            "inverse": "false",
+            "table": "sys_task_main"
+        },
+        "sysTaskMainParent":         {
+            "propertyType": "model",
+            "messageKey": "sys-task:sysTaskMain.fdParentId",
+            "type": "com.landray.kmss.sys.task.model.SysTaskMain",
+            "column": "fd_parent_id"
+        },
+        "fdOrganizer":         {
+            "propertyType": "model",
+            "type": "com.landray.kmss.sys.organization.model.SysOrgElement",
+            "messageKey": "sys-task:sysTaskMain.fdParentId",
+            "column": "fd_organizer_id",
+            "notNull": "false",
+            "validate": "true",
+            "canSearch": "true",
+            "canRelation": "true",
+            "canDisplay": "true",
+            "readOnly": "false",
+            "dialogJS": "Dialog_Address(!{mulSelect}, '!{idField}','!{nameField}', ';',ORG_TYPE_ALL);"
+        },
+        "fdPeriod":         {
+            "propertyType": "simple",
+            "type": "String",
+            "length": "2",
+            "defaultValue": "",
+            "messageKey": "sys-task:sysTaskMain.fdParentId",
+            "column": "fd_period",
+            "notNull": "false",
+            "validate": "true",
+            "canSearch": "true",
+            "canRelation": "true",
+            "canDisplay": "true",
+            "readOnly": "false"
+        },
+        "fdPlanStartTime":         {
+            "propertyType": "simple",
+            "type": "DateTime",
+            "messageKey": "sys-task:sysTaskMain.fdParentId",
+            "column": "fd_plan_start_time",
+            "notNull": "false",
+            "validate": "true",
+            "canSearch": "true",
+            "canRelation": "true",
+            "canDisplay": "true",
+            "readOnly": "false"
+        },
+        "fdWorkId":         {
+            "propertyType": "simple",
+            "messageKey": "sys-task:sysTaskMain.fdWorkId",
+            "type": "String",
+            "column": "fd_work_id",
+            "length": "36"
+        },
+        "fdPhaseId":         {
+            "propertyType": "simple",
+            "messageKey": "sys-task:sysTaskMain.fdPhaseId",
+            "type": "String",
+            "column": "fd_phase_id",
+            "length": "36"
+        },
+        "fdLastProgress":         {
+            "propertyType": "simple",
+            "messageKey": "sys-task:sysTaskMain.fdLastProgress",
+            "type": "String",
+            "column": "fd_last_progress"
+        },
+        "fdIsAccepted":         {
+            "propertyType": "simple",
+            "messageKey": "sys-task:sysTaskMain.fdIsAccepted",
+            "type": "Integer",
+            "column": "fd_is_accepted",
+            "length": "2"
+        },
+        "isDivide":         {
+            "propertyType": "simple",
+            "messageKey": "sys-task:sysTaskMain.isDivide",
+            "type": "Boolean",
+            "column": "is_divide",
+            "length": "1"
+        },
+        "fdLastModifiedTime":         {
+            "propertyType": "simple",
+            "canDisplay": "false",
+            "type": "DateTime",
+            "column": "fd_last_modified_time",
+            "notNull": "true"
+        }
+    },
+    "attachments": {"attachment":     {
+        "propertyType": "att",
+        "messageKey": "sys-task:sysTaskMain.attachment"
+    }}
+}

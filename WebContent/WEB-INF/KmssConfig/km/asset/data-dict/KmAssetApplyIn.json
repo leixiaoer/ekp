@@ -1,0 +1,55 @@
+{
+    "global":     {
+        "modelName": "com.landray.kmss.km.asset.model.KmAssetApplyIn",
+        "messageKey": "km-asset:table.kmAssetApplyIn",
+        "displayProperty": "docSubject",
+        "extendClass": "com.landray.kmss.km.asset.model.KmAssetApplyBase",
+        "discriminatorValue": "com.landray.kmss.km.asset.model.KmAssetApplyIn",
+        "serviceBean": "kmAssetApplyInService",
+        "table": "km_asset_apply_base",
+        "url": "/km/asset/km_asset_apply_in/kmAssetApplyIn.do?method=view&fdId=${fdId}"
+    },
+    "attrs":     {
+        "fdId":         {
+            "propertyType": "id",
+            "generator": {"type": "assigned"}
+        },
+        "fdIsCreateCard":         {
+            "propertyType": "simple",
+            "messageKey": "km-asset:kmAssetApplyIn.fdIsCreateCard",
+            "type": "Boolean",
+            "column": "fd_is_create_card",
+            "notNull": "false",
+            "length": "36",
+            "enumType": "km_asset_apply_in_fd_is_create_card",
+            "validate": "true",
+            "canLogShow":"1"
+        },
+        "fdIsUnpickByNums":         {
+            "propertyType": "simple",
+            "messageKey": "km-asset:kmAssetApplyIn.fdIsUnpickByNums",
+            "type": "Boolean",
+            "column": "fd_is_unpick_by_nums",
+            "notNull": "false",
+            "length": "36",
+            "enumType": "km_asset_apply_in_fd_is_unpick_by_nums",
+            "validate": "true",
+            "canLogShow":"1"
+        },
+        "kmAssetApplyInList":         {
+            "propertyType": "list",
+            "messageKey": "km-asset:table.kmAssetApplyInList",
+            "type": "com.landray.kmss.km.asset.model.KmAssetApplyInList",
+            "column": "fd_asset_apply_in",
+            "cascade": "all-delete-orphan",
+            "canDisplay": "false",
+            "table": "km_asset_apply_in_list",
+            "canLogShow":"1"
+        }
+    },
+    "attachments": {"kmAssetApplyIn":     {
+        "propertyType": "att",
+        "messageKey": "km-asset:kmAssetApplyBase.attachMent",
+        "canDisplay": "true"
+    }}
+}

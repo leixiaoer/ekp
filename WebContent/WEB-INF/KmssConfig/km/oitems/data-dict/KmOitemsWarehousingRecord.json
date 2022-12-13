@@ -1,0 +1,72 @@
+{
+    "global":     {
+        "modelName": "com.landray.kmss.km.oitems.model.KmOitemsWarehousingRecord",
+        "messageKey": "km-oitems:table.kmOitemsWarehousingRecord",
+        "serviceBean": "kmOitemsWarehousingRecordService",
+        "table": "km_oitems_warehousing_record",
+        "url": "/km/oitems/km_oitems_warehousing_record/kmOitemsWarehousingRecord.do?method=view&fdId=${fdId}"
+    },
+    "attrs":     {
+        "fdId":         {
+            "propertyType": "id",
+            "generator": {"type": "assigned"}
+        },
+        "fdNumber":         {
+            "propertyType": "simple",
+            "messageKey": "km-oitems:kmOitemsWarehousingRecord.fdNumber",
+            "type": "Integer",
+            "column": "fd_number",
+            "notNull": "true",
+            "length": "12",
+            "validate": "false",
+            "canLogShow":"1"
+        },
+        "fdPrice":         {
+            "propertyType": "simple",
+            "messageKey": "km-oitems:kmOitemsWarehousingRecord.fdPrice",
+            "type": "Double",
+            "column": "fd_price",
+            "notNull": "true",
+            "length": "12",
+            "validate": "true",
+            "canLogShow":"1"
+        },
+        "fdAccountPrice":         {
+            "propertyType": "simple",
+            "messageKey": "km-oitems:kmOitemsWarehousingRecord.fdAccountPrice",
+            "type": "Double",
+            "column": "fd_account_price",
+            "notNull": "false",
+            "length": "12",
+            "canLogShow":"1"
+        },
+        "kmOitemsListing":         {
+            "propertyType": "model",
+            "messageKey": "",
+            "type": "com.landray.kmss.km.oitems.model.KmOitemsListing",
+            "column": "fd_listing_id",
+            "notNull": "false",
+            "canLogShow":"1"
+        },
+        "docCreator":         {
+            "propertyType": "model",
+            "messageKey": "sys-doc:sysDocBaseInfo.docCreator",
+            "type": "com.landray.kmss.sys.organization.model.SysOrgElement",
+            "column": "doc_creator_id",
+            "notNull": "false"
+        },
+        "fdBrand":         {
+            "propertyType": "simple",
+            "messageKey": "km-oitems:kmOitemsWarehousingRecord.fdBrand",
+            "type": "String",
+            "column": "fd_brand",
+            "length": "200"
+        },
+        "docCreateTime":         {
+            "propertyType": "simple",
+            "messageKey": "sys-doc:sysDocBaseInfo.docCreateTime",
+            "type": "DateTime",
+            "column": "doc_create_time"
+        }
+    }
+}

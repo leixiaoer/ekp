@@ -1,0 +1,361 @@
+<?xml version="1.0"?>
+<beans
+	xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.0.xsd">
+
+	<bean
+		id="geesunOitemsManageDao"
+		parent="KmssAuthBaseDao"
+		class="com.landray.kmss.geesun.oitems.dao.hibernate.GeesunOitemsManageDaoImp">
+		<property
+			name="modelName"
+			value="com.landray.kmss.geesun.oitems.model.GeesunOitemsManage" />
+	</bean>
+	<bean
+		id="geesunOitemsManageTarget"
+		parent="KmssBaseTarget"
+		class="com.landray.kmss.geesun.oitems.service.spring.GeesunOitemsManageServiceImp">
+		<property
+			name="baseDao">
+			<ref
+				local="geesunOitemsManageDao" />
+		</property>
+	</bean>
+	<bean
+		id="geesunOitemsManageService"
+		parent="KmssBaseService">
+		<property
+			name="target">
+			<ref
+				local="geesunOitemsManageTarget" />
+		</property>
+	</bean>
+
+	<bean
+		id="geesunOitemsManageServiceTree"
+		class="com.landray.kmss.geesun.oitems.service.spring.GeesunOitemsManageServiceTreeImp">
+		<property
+			name="geesunOitemsManageService">
+			<ref
+				local="geesunOitemsManageService" />
+		</property>
+	</bean>
+	<bean
+		id="geesunOitemsManageServiceCheckTree"
+		class="com.landray.kmss.geesun.oitems.service.spring.GeesunOitemsManageServiceCheckTreeImp">
+		<property
+			name="geesunOitemsManageService">
+			<ref
+				local="geesunOitemsManageService" />
+		</property>
+	</bean>
+	<bean
+		id="geesunOitemsManageMobileTreeService"
+		class="com.landray.kmss.geesun.oitems.service.spring.GeesunOitemsManageMobileTreeService">
+	</bean>
+
+	<bean
+		id="geesunOitemsListingDao"
+		parent="KmssAuthBaseDao"
+		class="com.landray.kmss.geesun.oitems.dao.hibernate.GeesunOitemsListingDaoImp">
+		<property
+			name="modelName"
+			value="com.landray.kmss.geesun.oitems.model.GeesunOitemsListing" />
+	</bean>
+	<bean
+		id="geesunOitemsListingTarget"
+		parent="KmssBaseTarget"
+		class="com.landray.kmss.geesun.oitems.service.spring.GeesunOitemsListingServiceImp">
+		<property
+			name="baseDao">
+			<ref
+				local="geesunOitemsListingDao" />
+		</property>
+		<property
+			name="geesunOitemsWarehousingRecordJoinListDao">
+			<ref
+				local="geesunOitemsWarehousingRecordJoinListDao" />
+		</property>	
+		<property
+			name="geesunOitemsWarehousingRecordService">
+			<ref
+				local="geesunOitemsWarehousingRecordService" />
+		</property>
+        <property name="sysAttMainService">
+			<ref bean="sysAttMainService"/>
+		</property>
+		<property
+			name="geesunOitemsShoppingTrolleyService">
+			<ref
+				local="geesunOitemsShoppingTrolleyService" />
+		</property>
+	</bean>
+	<bean
+		id="geesunOitemsListingService"
+		parent="KmssBaseService">
+		<property
+			name="target">
+			<ref
+				local="geesunOitemsListingTarget" />
+		</property>
+	</bean>
+
+	<bean
+		id="geesunOitemsWarehousingRecordDao"
+		parent="KmssAuthBaseDao"
+		class="com.landray.kmss.geesun.oitems.dao.hibernate.GeesunOitemsWarehousingRecordDaoImp">
+		<property
+			name="modelName"
+			value="com.landray.kmss.geesun.oitems.model.GeesunOitemsWarehousingRecord" />
+	</bean>
+	<bean
+		id="geesunOitemsWarehousingRecordJoinListDao"
+		parent="KmssAuthBaseDao"
+		class="com.landray.kmss.geesun.oitems.dao.hibernate.GeesunOitemsWarehousingRecordJoinListDaoImp">
+		<property
+			name="modelName"
+			value="com.landray.kmss.geesun.oitems.model.GeesunOitemsWarehousingRecordJoinList" />
+	</bean>
+	<bean
+		id="geesunOitemsWarehousingRecordTarget"
+		parent="KmssBaseTarget"
+		class="com.landray.kmss.geesun.oitems.service.spring.GeesunOitemsWarehousingRecordServiceImp">
+		<property
+			name="baseDao">
+			<ref
+				local="geesunOitemsWarehousingRecordDao" />
+		</property>
+	</bean>
+	<bean
+		id="geesunOitemsWarehousingRecordJoinListTarget"
+		parent="KmssBaseTarget"
+		class="com.landray.kmss.geesun.oitems.service.spring.GeesunOitemsWarehousingRecordJoinListServiceImp">
+		<property
+			name="baseDao">
+			<ref
+				local="geesunOitemsWarehousingRecordJoinListDao" />
+		</property>
+	</bean>
+	<bean
+		id="geesunOitemsWarehousingRecordService"
+		parent="KmssBaseService">
+		<property
+			name="target">
+			<ref
+				local="geesunOitemsWarehousingRecordTarget" />
+		</property>
+	</bean>
+    <bean
+		id="geesunOitemsWarehousingRecordJoinListService"
+		parent="KmssBaseService">
+		<property
+			name="target">
+			<ref
+				local="geesunOitemsWarehousingRecordJoinListTarget" />
+		</property>
+	</bean> 
+
+
+	<bean
+		id="geesunOitemsBudgerApplicationDao"
+		parent="KmssAuthBaseDao"
+		class="com.landray.kmss.geesun.oitems.dao.hibernate.GeesunOitemsBudgerApplicationDaoImp">
+		<property
+			name="modelName"
+			value="com.landray.kmss.geesun.oitems.model.GeesunOitemsBudgerApplication" />
+	</bean>
+	<bean
+		id="geesunOitemsBudgerApplicationTarget"
+		parent="KmssExtendDataTarget"
+		class="com.landray.kmss.geesun.oitems.service.spring.GeesunOitemsBudgerApplicationServiceImp">
+		<property
+			name="baseDao">
+			<ref
+				local="geesunOitemsBudgerApplicationDao" />
+		</property>
+		<property
+			name="sysNumberFlowService">
+			<ref
+				bean="sysNumberFlowService" />
+		</property>
+		<property
+			name="sysNumberMainMappService">
+			<ref
+				bean="sysNumberMainMappService" />
+		</property>
+		<property
+			name="geesunOitemsTempletService">
+			<ref
+				local="geesunOitemsTempletService" />
+		</property>
+	</bean>
+	<bean
+		id="geesunOitemsBudgerApplicationService"
+		parent="KmssBaseService">
+		<property
+			name="target">
+			<ref
+				local="geesunOitemsBudgerApplicationTarget" />
+		</property>
+	</bean>
+
+
+
+	<bean
+		id="geesunOitemsTempletDao"
+		parent="KmssAuthBaseDao"
+		class="com.landray.kmss.geesun.oitems.dao.hibernate.GeesunOitemsTempletDaoImp">
+		<property
+			name="modelName"
+			value="com.landray.kmss.geesun.oitems.model.GeesunOitemsTemplet" />
+	</bean>
+	<bean
+		id="geesunOitemsTempletTarget"
+		parent="KmssBaseTarget"
+		class="com.landray.kmss.geesun.oitems.service.spring.GeesunOitemsTempletServiceImp">
+		<property
+			name="baseDao">
+			<ref
+				local="geesunOitemsTempletDao" />
+		</property>
+	</bean>
+	<bean
+		id="geesunOitemsTempletService"
+		parent="KmssBaseService">
+		<property
+			name="target">
+			<ref
+				local="geesunOitemsTempletTarget" />
+		</property>
+	</bean>
+
+
+	<bean
+		id="geesunOitemsShoppingTrolleyDao"
+		parent="KmssAuthBaseDao"
+		class="com.landray.kmss.geesun.oitems.dao.hibernate.GeesunOitemsShoppingTrolleyDaoImp">
+		<property
+			name="modelName"
+			value="com.landray.kmss.geesun.oitems.model.GeesunOitemsShoppingTrolley" />
+	</bean>
+	<bean
+		id="geesunOitemsShoppingTrolleyTarget"
+		parent="KmssBaseTarget"
+		class="com.landray.kmss.geesun.oitems.service.spring.GeesunOitemsShoppingTrolleyServiceImp">
+		<property
+			name="baseDao">
+			<ref
+				local="geesunOitemsShoppingTrolleyDao" />
+		</property>
+		<property
+			name="geesunOitemsListingService">
+			<ref
+				local="geesunOitemsListingService" />
+		</property>
+		<property
+			name="geesunOitemsWarehousingRecordJoinListService">
+			<ref
+				local="geesunOitemsWarehousingRecordJoinListService" />
+		</property>
+	</bean>
+	<bean
+		id="geesunOitemsShoppingTrolleyService"
+		parent="KmssBaseService">
+		<property
+			name="target">
+			<ref
+				local="geesunOitemsShoppingTrolleyTarget" />
+		</property>
+	</bean>
+
+	<bean
+		id="geesunOitemsTempletTreeService"
+		class="com.landray.kmss.geesun.oitems.service.spring.GeesunOitemsTempletTreeService">
+		<property
+			name="geesunOitemsTempletService">
+			<ref
+				local="geesunOitemsTempletService" />
+		</property>
+	</bean>
+
+	<!--月统计报表 -->
+	<bean
+		id="geesunOitemsMonthReportDao"
+		parent="KmssAuthBaseDao"
+		class="com.landray.kmss.geesun.oitems.dao.hibernate.GeesunOitemsMonthReportDaoImp">
+		<property
+			name="modelName"
+			value="com.landray.kmss.geesun.oitems.model.GeesunOitemsMonthReport" />
+	</bean>
+	<bean
+		id="geesunOitemsMonthReportTarget"
+		parent="KmssBaseTarget"
+		class="com.landray.kmss.geesun.oitems.service.spring.GeesunOitemsMonthReportServiceImp">
+		<property
+			name="baseDao">
+			<ref
+				local="geesunOitemsMonthReportDao" />
+		</property>
+	</bean>
+	<bean
+		id="geesunOitemsMonthReportService"
+		parent="KmssBaseService">
+		<property
+			name="target">
+			<ref
+				local="geesunOitemsMonthReportTarget" />
+		</property>
+	</bean>
+
+	<bean
+		id="geesunOitemsReportListingDao"
+		parent="KmssAuthBaseDao"
+		class="com.landray.kmss.geesun.oitems.dao.hibernate.GeesunOitemsReportListingDaoImp">
+		<property
+			name="modelName"
+			value="com.landray.kmss.geesun.oitems.model.GeesunOitemsReportListing" />
+	</bean>
+	<bean
+		id="geesunOitemsReportListingTarget"
+		parent="KmssBaseTarget"
+		class="com.landray.kmss.geesun.oitems.service.spring.GeesunOitemsReportListingServiceImp">
+		<property
+			name="baseDao">
+			<ref
+				local="geesunOitemsReportListingDao" />
+		</property>
+	</bean>
+	<bean
+		id="geesunOitemsReportListingService"
+		parent="KmssBaseService">
+		<property
+			name="target">
+			<ref
+				local="geesunOitemsReportListingTarget" />
+		</property>
+	</bean>
+	<bean
+		id="GeesunOitemsCountListingService"
+		class="com.landray.kmss.geesun.oitems.service.spring.GeesunOitemsCountListingService">
+		<property
+			name="geesunOitemsBudgerApplicationService">
+			<ref
+				local="geesunOitemsBudgerApplicationService" />
+		</property>
+		<property
+			name="geesunOitemsMonthReportService">
+			<ref
+				local="geesunOitemsMonthReportService" />
+		</property>
+		<property
+			name="sysOrgCoreService">
+			<ref bean="sysOrgCoreService" />
+		</property>
+	</bean>
+	<bean id="geesunOitemsFlagFieldFilter"
+		class="com.landray.kmss.geesun.oitems.filter.OitemsFlagFieldFilter" />
+		
+	<bean id="geesunOitemsBudgerApplicationValidator"
+		class="com.landray.kmss.geesun.oitems.service.spring.GeesunOitemsBudgerApplicationValidator" />
+</beans>

@@ -1,0 +1,20 @@
+[ 
+
+	{
+		url : "/geesun/oitems/geesun_oitems_budger_application/geesunOitemsBudgerApplicationIndex.do?method=list&q.mydoc=create",
+		text: "geesun-oitems:geesunOitems.tree.my.submit"
+	},
+	{
+		url : "/geesun/oitems/geesun_oitems_budger_application/geesunOitemsBudgerApplicationIndex.do?method=list&q.mydoc=approval",
+		text: "geesun-oitems:geesunOitems.tree.my.approval",
+		headerTemplate : "/geesun/oitems/mobile/resource/js/header/WaitToDoPropertyTemplate.js"
+	},
+	{
+		url : "/geesun/oitems/geesun_oitems_budger_application/geesunOitemsBudgerApplicationIndex.do?method=list&q.mydoc=approved",
+		text: "geesun-oitems:geesunOitems.tree.my.approved"
+	},	
+	{ 
+		url : "/geesun/oitems/geesun_oitems_budger_application/geesunOitemsBudgerApplicationIndex.do?method=list", 
+		text : "geesun-oitems:geesunOitems.tree.my.all"
+	}
+]

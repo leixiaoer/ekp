@@ -1,0 +1,70 @@
+{
+    "global":     {
+        "modelName": "com.landray.kmss.km.asset.model.KmAssetApplyGetList",
+        "messageKey": "km-asset:table.kmAssetApplyGetList",
+        "displayProperty": "fdId",
+        "serviceBean": "kmAssetApplyGetListService",
+        "table": "km_asset_apply_get_list",
+        "url": "/km/asset/km_asset_apply_get_list/kmAssetApplyGetList.do?method=view&fdId=${fdId}"
+    },
+    "attrs":     {
+        "fdId":         {
+            "propertyType": "id",
+            "generator": {"type": "assigned"}
+        },
+        "fdGetDate":         {
+            "propertyType": "simple",
+            "messageKey": "km-asset:kmAssetApplyGetList.fdGetDate",
+            "type": "DateTime",
+            "column": "fd_get_date",
+            "notNull": "true",
+            "validate": "true",
+            "canLogShow":"1"
+        },
+        "fdGetDept":         {
+            "propertyType": "model",
+            "messageKey": "km-asset:kmAssetApplyGetList.fdGetDept",
+            "type": "com.landray.kmss.sys.organization.model.SysOrgElement",
+            "column": "fd_get_dept",
+            "notNull": "true",
+            "validate": "true",
+            "canLogShow":"1"
+        },
+        "fdGetPerson":         {
+            "propertyType": "model",
+            "messageKey": "km-asset:kmAssetApplyGetList.fdGetPerson",
+            "type": "com.landray.kmss.sys.organization.model.SysOrgElement",
+            "column": "fd_get_person",
+            "notNull": "true",
+            "validate": "true",
+            "canLogShow":"1"
+        },
+        "fdAssetCard":         {
+            "propertyType": "model",
+            "messageKey": "km-asset:kmAssetApplyGetList.fdAssetCard",
+            "type": "com.landray.kmss.km.asset.model.KmAssetCard",
+            "column": "fd_asset_card_id",
+            "notNull": "false",
+            "validate": "false",
+            "canLogShow":"1"
+        },
+        "fdAssetAddress":         {
+            "propertyType": "model",
+            "messageKey": "km-asset:kmAssetApplyGetList.fdAssetAddress",
+            "type": "com.landray.kmss.km.asset.model.KmAssetAddress",
+            "column": "fd_asset_address_id",
+            "notNull": "true",
+            "validate": "true",
+            "canLogShow":"1"
+        },
+        "name":         {
+            "propertyType": "model",
+            "messageKey": "km-asset:kmAssetApplyGetList.name",
+            "type": "com.landray.kmss.km.asset.model.KmAssetApplyGet",
+            "column": "name",
+            "notNull": "false",
+            "validate": "false",
+            "canLogShow":"1"
+        }
+    }
+}

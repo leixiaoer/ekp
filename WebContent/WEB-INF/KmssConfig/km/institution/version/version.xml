@@ -1,0 +1,1437 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<version xmlns="http://www.example.org/version-config" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.example.org/version-config ../version.xsd">
+	<modifies>
+		<modify>
+			<description>#155276 优化 规范制度失效流程中如果有审批节点，新建流程后无法再审批人的待审列表查到该审批流程</description>
+			<author>苏琦</author>
+			<revision-time>2022-05-27</revision-time>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#165632 修复 统一搜索可以搜出失效文档</description>
+			<author>周文</author>
+			<revision-time>2022-05-24</revision-time>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#159638 优化 规范制度-门户部件数据源增加缓存机制</description>
+			<author>周文</author>
+			<revision-time>2022-05-24</revision-time>
+			<relation>
+				<relation-module>sys/portal</relation-module>
+			</relation>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#161885 修复 MK与EKP集成时，移动门户部件选择分类时，支持点击更多打开的页面可以按分类筛选</description>
+			<author>魏泽钧</author>
+			<revision-time>2022-03-31</revision-time>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#158765 修复 SQL参数化，规范制度列表报错（兼容pgsql）</description>
+			<author>周文</author>
+			<revision-time>2022-02-22</revision-time>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#157643 新增 mk数据源接口</description>
+			<author>林宇超</author>
+			<revision-time>2022-02-18</revision-time>
+			<relation>
+				<relation-module>sys/portal</relation-module>
+			</relation>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#158808 修复 集团分级环境，规范制度分类概览没有过滤场所</description>
+			<author>苏琦</author>
+			<revision-time>2022-01-24</revision-time>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#156125 修复 失效流程，第一个审批节点配置由起草人选择后，发起失效流程，无选择审批人界面，流程报错</description>
+			<author>张颖</author>
+			<revision-time>2021-12-19</revision-time>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#144800 修复 规范制度主页打开报错阿里云polardb for Oracle适配的问题</description>
+			<author>陈进科</author>
+			<revision-time>2021-07-16</revision-time>
+			<relation>
+				<relation-module>core</relation-module>
+			</relation>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#140281 修复 SQL参数化</description>
+			<author>苏琦</author>
+			<revision-time>2021-07-09</revision-time>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#140419 修复 规范制度模块点击左侧导航的分类控制台有报错</description>
+			<author>苏琦</author>
+			<revision-time>2021-06-07</revision-time>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#139565 新增 模块解耦核心逻辑</description>
+			<author>严明镜</author>
+			<revision-time>2021-05-26</revision-time>
+			<relation>
+				<relation-module>core</relation-module>
+			</relation>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#140196 优化 规范制度在门户窗口中没有置顶</description>
+			<author>潘永辉</author>
+			<revision-time>2021-05-26</revision-time>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#129805 修复 ZIP压缩包任意文件上传漏洞</description>
+			<author>潘永辉</author>
+			<revision-time>2021-03-26</revision-time>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#135596 修复 置顶文档参与排序的问题</description>
+			<author>王京</author>
+			<revision-time>2021-03-17</revision-time>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#133936 修复 关于谷歌浏览器最新版本（88）无法自动关闭页面的问题</description>
+			<author>王京</author>
+			<revision-time>2021-03-15</revision-time>
+			<relation>
+				<relation-module>core</relation-module>
+			</relation>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#134434 修复 门户更多跳转页面问题</description>
+			<author>苏琦</author>
+			<revision-time>2021-03-11</revision-time>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#134025 修复 二级列表页排序报错</description>
+			<author>潘永辉</author>
+			<revision-time>2021-02-25</revision-time>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#128581 修复 移动端规范制度列表一直加载中，无法显示数据</description>
+			<author>黄海</author>
+			<revision-time>2021-01-26</revision-time>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#131588 优化 中文枚举</description>
+			<author>余朝丰</author>
+			<revision-time>2021-01-13</revision-time>
+			<relation>
+				<relation-module>elec/device</relation-module>
+			</relation>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#126643 修复 规范制度模块数据字典表缺少字段描述</description>
+			<author>王雄峰</author>
+			<revision-time>2020-12-30</revision-time>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#124566 优化 移动端规范制度模块列表页面，置顶图标样式丢失</description>
+			<author>潘永辉</author>
+			<revision-time>2020-11-30</revision-time>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#122675 修复 移动门户配置了规范制度的分类，展现内容的排序和模块列表展现的不一致</description>
+			<author>潘永辉</author>
+			<revision-time>2020-11-06</revision-time>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#121439 修复 移动门户，卡片配置规范制度选了分类，在移动门户点击更多进入的不是对应的分类列表页面</description>
+			<author>潘永辉</author>
+			<revision-time>2020-10-15</revision-time>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#108169 新增 规范制度支持传阅</description>
+			<author>钟清学</author>
+			<revision-time>2020-08-18</revision-time>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#113721 优化 规范制度新增文档的“可编辑者”可以创建新版本</description>
+			<author>杨建宏</author>
+			<revision-time>2020-07-30</revision-time>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#113160 修复 规范制度直接访问带docStatus为非发布状态的url不生效，默认是获取发布状态的</description>
+			<author>潘永辉</author>
+			<revision-time>2020-07-25</revision-time>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#103425 优化 默认审批模式的新建页面，右下角增加展现二维码的功能，无移动端的默认不展示</description>
+			<author>郑操辉</author>
+			<revision-time>2020-07-07</revision-time>
+			<relation>
+				<relation-module>sys/ui</relation-module>
+			</relation>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#110601 修复 置顶多语言优化</description>
+			<author>郑鑫</author>
+			<revision-time>2020-07-06</revision-time>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#104024 修复 规范制度批量删除问题</description>
+			<author>林剑文</author>
+			<revision-time>2020-06-19</revision-time>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#105734 修复 制度规范导入问题</description>
+			<author>林剑文</author>
+			<revision-time>2020-06-19</revision-time>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#106781 优化 规范制度标题输入超链接，列表页面显示不友好</description>
+			<author>郑鑫</author>
+			<revision-time>2020-06-19</revision-time>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#100318 新增 加入置顶和取消置顶功能</description>
+			<author>郑鑫</author>
+			<revision-time>2020-06-19</revision-time>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#106136 修复 文档的标签删除后在按列表展示时还存在</description>
+			<author>林剑文</author>
+			<revision-time>2020-05-22</revision-time>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#87012 优化 查看页失效状态多语言问题</description>
+			<author>朱湖强</author>
+			<revision-time>2020-05-18</revision-time>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#99236 优化 规范制度正文通过审核后，盖章发布</description>
+			<author>郑鑫</author>
+			<revision-time>2020-05-13</revision-time>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#102018 修复 失效摁钮出现异常</description>
+			<author>郑操辉</author>
+			<revision-time>2020-04-13</revision-time>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#99236 新增 规范制度审批需签署盖章发布功能</description>
+			<author>郑鑫</author>
+			<revision-time>2020-04-08</revision-time>
+			<relation>
+				<relation-module>elec/yqqs</relation-module>
+			</relation>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#95462 新增 集团分级授权下，拥有场所XXXX_阅读文档权限的用户不能通过url访问其他场所的文档</description>
+			<author>叶正平</author>
+			<revision-time>2020-03-18</revision-time>
+			<relation>
+				<relation-module>core</relation-module>
+				<relation-module>sys/authorization</relation-module>
+			</relation>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#96440 优化 规范制度模块部署帮助中心</description>
+			<author>郑操辉</author>
+			<revision-time>2020-03-18</revision-time>
+			<relation>
+				<relation-module>sys/help</relation-module>
+			</relation>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#97857 优化 发布后的文档进行编辑，右侧模式下默认显示基本信息</description>
+			<author>朱湖强</author>
+			<revision-time>2020-03-10</revision-time>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#94378 优化 右侧审批模式，底部页签样式优化</description>
+			<author>蒋志广</author>
+			<revision-time>2020-03-04</revision-time>
+			<relation>
+				<relation-module>sys/ui</relation-module>
+			</relation>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#94101 优化 进入模块，点击“后台配置”目录，请求的url需要显示在地址栏中</description>
+			<author>钟清学</author>
+			<revision-time>2020-03-02</revision-time>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#95420 优化 移动端查看页增加失效标识</description>
+			<author>朱湖强</author>
+			<revision-time>2020-02-28</revision-time>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#95426 修复 规则引擎部分未做多语言支持</description>
+			<author>苏运彬</author>
+			<revision-time>2020-02-28</revision-time>
+			<relation>
+				<relation-module>sys/rule</relation-module>
+			</relation>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#95428 修复 移动端新样式页面部分字段未做多语言支持</description>
+			<author>郑操辉</author>
+			<revision-time>2020-02-26</revision-time>
+			<relation>
+				<relation-module>sys/mobile</relation-module>
+			</relation>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#94737 修复 回到顶部图标与附件重叠</description>
+			<author>蒋志广</author>
+			<revision-time>2020-01-21</revision-time>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#92220 修复 规范制度权限字段显示错误</description>
+			<author>郑操辉</author>
+			<revision-time>2019-12-30</revision-time>
+			<baseline>V15.0.3.R.20200117</baseline>
+		</modify>
+		<modify>
+			<description>#89520 优化 规则引擎部署到重要的应用模块和编写部署手册,多部署优化</description>
+			<author>苏运彬</author>
+			<revision-time>2019-12-27</revision-time>
+			<relation>
+				<relation-module>sys/lbpmservice</relation-module>
+				<relation-module>sys/lbpm</relation-module>
+				<relation-module>sys/rule</relation-module>
+			</relation>
+			<baseline>V15.0.3.R.20200117</baseline>
+		</modify>
+		<modify>
+			<description>#89894 修复 规范制度模块部署右侧审批模式引入了档案管理模块的文件</description>
+			<author>郑操辉</author>
+			<revision-time>2019-12-16</revision-time>
+			<baseline>V15.0.3.R.20200117</baseline>
+		</modify>
+		<modify>
+			<description>#87960 优化 移动性能体验</description>
+			<author>黎凯麟</author>
+			<revision-time>2019-12-09</revision-time>
+			<relation>
+				<relation-module>sys/mobile</relation-module>
+			</relation>
+			<baseline>V15.0.3.R.20200117</baseline>
+		</modify>
+		<modify>
+			<description>#83664 优化 重复失效操作校验逻辑优化</description>
+			<author>郑操辉</author>
+			<revision-time>2019-12-02</revision-time>
+			<baseline>V15.0.3.R.20200117</baseline>
+		</modify>
+		<modify>
+			<description>#53359 新增 移动门户快捷方式选择系统引入的时候没有任何EKP模块</description>
+			<author>钟清学</author>
+			<revision-time>2019-11-11</revision-time>
+			<baseline>V15.0.3.R.20200117</baseline>
+		</modify>
+		<modify>
+			<description>#87496 优化 新增后台基础设置角色</description>
+			<author>朱湖强</author>
+			<revision-time>2019-11-08</revision-time>
+			<baseline>V15.0.2.R.20191108</baseline>
+		</modify>
+		<modify>
+			<description>#83564 新增 后台配置优化，ekp各模块后台配置调整</description>
+			<author>钟清学</author>
+			<revision-time>2019-10-21</revision-time>
+			<relation>
+				<relation-module>sys/ui</relation-module>
+			</relation>
+			<baseline>V15.0.2.R.20191108</baseline>
+		</modify>
+		<modify>
+			<description>#80157 优化 阅读器优化</description>
+			<author>朱湖强</author>
+			<revision-time>2019-08-21</revision-time>
+			<baseline>V15.0.1.R.20190906</baseline>
+		</modify>
+		<modify>
+			<description>#77675 修复 基本信息右侧页签的版本前显示文字错误</description>
+			<author>郑操辉</author>
+			<revision-time>2019-07-16</revision-time>
+			<baseline>V15.0.1.R.20190906</baseline>
+		</modify>
+		<modify>
+			<description>#76767 修复 审批模式为右侧审批时，除新建、结束状态外，其他状态的文档右侧需要增加审批记录页签</description>
+			<author>郑操辉</author>
+			<revision-time>2019-07-11</revision-time>
+			<baseline>V15.0.0.R.20190712</baseline>
+		</modify>
+		<modify>
+			<description>#76766 修复 起草人撤回流程或草稿状态的文档查看页面，隐藏流程操作页签的内容并默认显示基本信息页签的内容</description>
+			<author>郑操辉</author>
+			<revision-time>2019-07-11</revision-time>
+			<baseline>V15.0.0.R.20190712</baseline>
+		</modify>
+		<modify>
+			<description>#76768 优化 起草人撤回后，编辑、生成链接按钮外放，便于用户操作</description>
+			<author>郑操辉</author>
+			<revision-time>2019-07-11</revision-time>
+			<baseline>V15.0.0.R.20190712</baseline>
+		</modify>
+		<modify>
+			<description>#75614 优化 三级页面右侧审批优化计划 左侧页签规划和右侧基本信息字段梳理</description>
+			<author>郑操辉</author>
+			<revision-time>2019-07-11</revision-time>
+			<relation>
+				<relation-module>sys/attachment</relation-module>
+				<relation-module>sys/authorization</relation-module>
+				<relation-module>sys/lbpmext</relation-module>
+				<relation-module>sys/lbpmservice</relation-module>
+				<relation-module>sys/relation</relation-module>
+				<relation-module>sys/ui</relation-module>
+			</relation>
+			<baseline>V15.0.0.R.20190712</baseline>
+		</modify>
+		<modify>
+			<description>#74757 优化 模块新建的url建议与个人流程中心跳转过去的url保持一致</description>
+			<author>郑操辉</author>
+			<revision-time>2019-07-11</revision-time>
+			<baseline>V15.0.0.R.20190712</baseline>
+		</modify>
+		<modify>
+			<description>#74436 修复 新建新版本，编号不限制时无法修改问题</description>
+			<author>朱湖强</author>
+			<revision-time>2019-06-11</revision-time>
+			<baseline>V15.0.0.R.20190712</baseline>
+		</modify>
+		<modify>
+			<description>#72594 优化 移动端对于草稿状态的编辑按钮屏蔽处理</description>
+			<author>蒋志广</author>
+			<revision-time>2019-05-18</revision-time>
+			<baseline>V15.0.0.R.20190712</baseline>
+		</modify>
+		<modify>
+			<description>#72192 修复 失效文档未发布的无删除按钮，可进行批量删除</description>
+			<author>蒋志广</author>
+			<revision-time>2019-05-13</revision-time>
+			<baseline>V15.0.0.R.20190712</baseline>
+		</modify>
+		<modify>
+			<description>#72094 修复 制度发起失效流程，前一流程废弃不能再起的缺陷</description>
+			<author>蒋志广</author>
+			<revision-time>2019-04-26</revision-time>
+			<baseline>V15.0.0.R.20190712</baseline>
+		</modify>
+		<modify>
+			<description>#69936 修复 后台失效文档列表删除按钮未翻译</description>
+			<author>蒋志广</author>
+			<revision-time>2019-04-24</revision-time>
+			<baseline>V15.0.0.R.20190712</baseline>
+		</modify>
+		<modify>
+			<description>#69402 优化 文档发起失效审批流程，流程还未结束时删除主文档，同时删除与失效相关的信息</description>
+			<author>蒋志广</author>
+			<revision-time>2019-03-22</revision-time>
+			<baseline>V15.0.0.B3.20190412</baseline>
+		</modify>
+		<modify>
+			<description>#67689 优化 规范制度的创建新版本角色，调整为分类管控模式，和编辑文档、删除文档一样</description>
+			<author>蒋志广</author>
+			<revision-time>2019-03-06</revision-time>
+			<baseline>V15.0.0.B3.20190412</baseline>
+		</modify>
+		<modify>
+			<description>#67835 修复 规范制度单独的类别维护者在类别的列表显示上缺少按钮</description>
+			<author>何协殷</author>
+			<revision-time>2019-03-04</revision-time>
+			<baseline>V15.0.0.B3.20190412</baseline>
+		</modify>
+		<modify>
+			<description>#67293 修复 后台文档维护列表标题显示问题</description>
+			<author>朱湖强</author>
+			<revision-time>2019-01-28</revision-time>
+			<baseline>V15.0.0.B3.20190412</baseline>
+		</modify>
+		<modify>
+			<description>#64324 优化 规范制度部署集团分级</description>
+			<author>朱湖强</author>
+			<revision-time>2019-01-08</revision-time>
+			<baseline>V15.0.0.B2.20190118</baseline>
+		</modify>
+		<modify>
+			<description>修复 旧分类提交自动生成编号问题</description>
+			<author>朱湖强</author>
+			<revision-time>2018-11-22</revision-time>
+			<baseline>V15.0.0.B2.20190118</baseline>
+		</modify>
+		<modify>
+			<description>修复 规范制度给了普通用户规范制度模块所有权限角色，用户执行删除时报无权限操作</description>
+			<author>何协殷</author>
+			<revision-time>2018-10-30</revision-time>
+			<baseline>V15.0.0.B1.20181109</baseline>
+		</modify>
+		<modify>
+			<description>修复 规范制度点击失效按钮如果失效原因是中文，提交后页面找不到，改为post请求</description>
+			<author>何协殷</author>
+			<revision-time>2018-10-12</revision-time>
+			<baseline>V15.0.0.B1.20181109</baseline>
+		</modify>
+		<modify>
+			<description>修复 列表录入时间和最后修改时间显示优化</description>
+			<author>陈经纬</author>
+			<revision-time>2018-09-30</revision-time>
+			<baseline>V15.0.0.B1.20181109</baseline>
+		</modify>
+		<modify>
+			<description>优化 制度编号支持不限制，手动输入</description>
+			<author>朱湖强</author>
+			<revision-time>2018-09-30</revision-time>
+			<baseline>V15.0.0.B1.20181109</baseline>
+		</modify>
+		<modify>
+			<description>优化 选择批量 删除时，弹窗样式需要调整</description>
+			<author>彭伟聪</author>
+			<revision-time>2018-09-13</revision-time>
+			<baseline>V15.0.0.B1.20181109</baseline>
+		</modify>
+		<modify>
+			<description>修复 规范制度模块代码规范问题</description>
+			<author>陈尉建</author>
+			<revision-time>2018-09-11</revision-time>
+			<baseline>V15.0.0.B1.20181109</baseline>
+		</modify>
+		<modify>
+			<description>优化 规范制度编号规则设置，公式定义器可选取的字段显示不全</description>
+			<author>彭伟聪</author>
+			<revision-time>2018-09-04</revision-time>
+			<baseline>V15.0.0.B1.20181109</baseline>
+		</modify>
+		<modify>
+			<description>修复 待审核状态下的制度文档，过期定时任务执行后，不生成过期文档</description>
+			<author>邱雪剑</author>
+			<revision-time>2018-09-04</revision-time>
+			<baseline>V15.0.0.B1.20181109</baseline>
+		</modify>
+		<modify>
+			<description>修复 列表页与view页面删除操作失败</description>
+			<author>潘永辉</author>
+			<revision-time>2018-08-31</revision-time>
+			<baseline>V15.0.0.B1.20181109</baseline>
+		</modify>
+		<modify>
+			<description>修复 文档到了过期时间，执行定时任务后，应该是把发起失效审批流程，而不是直接失效</description>
+			<author>邱雪剑</author>
+			<revision-time>2018-08-29</revision-time>
+			<baseline>V15.0.0.B1.20181109</baseline>
+		</modify>
+		<modify>
+			<description>修复 编辑失效流程文档（审批状态），报错不能编辑</description>
+			<author>邱雪剑</author>
+			<revision-time>2018-08-29</revision-time>
+			<baseline>V15.0.0.B1.20181109</baseline>
+		</modify>
+		<modify>
+			<description>优化 规范制度表单 新增过期时间字段，日期型，（为空则永不过期，文件到达过期时间后将自动转入文件失效流程）</description>
+			<author>邱雪剑</author>
+			<revision-time>2018-08-29</revision-time>
+			<baseline>V15.0.0.B1.20181109</baseline>
+		</modify>
+		<modify>
+			<description>优化 失效流程模板可关联类别，支持不同的类别配置不同的失效流程模板</description>
+			<author>邱雪剑</author>
+			<revision-time>2018-08-29</revision-time>
+			<baseline>V15.0.0.B1.20181109</baseline>
+		</modify>
+		<modify>
+			<description>修复 在列表视图中进行删除，提示操作失败</description>
+			<author>陈经纬</author>
+			<revision-time>2018-08-01</revision-time>
+			<baseline>V15.0.0.B1.20181109</baseline>
+		</modify>
+		<modify>
+			<description>修复【服务问题单】类别移动端权限失效（优先级：高）</description>
+			<author>彭伟聪</author>
+			<revision-time>2018-07-31</revision-time>
+			<baseline>V15.0.0.B1.20181109</baseline>
+		</modify>
+		<modify>
+			<description>修复 后台文档维护点击分类仍旧可以看到全部文档问题</description>
+			<author>周梓凡</author>
+			<revision-time>2018-07-30</revision-time>
+			<baseline>V15.0.0.B1.20181109</baseline>
+		</modify>
+		<modify>
+			<description>修复 多语言依赖模块变更</description>
+			<author>黄泽凯</author>
+			<revision-time>2018-07-20</revision-time>
+			<relation>
+				<relation-module>sys/mobile</relation-module>
+			</relation>
+			<baseline>V15.0.0.B1.20181109</baseline>
+		</modify>
+		<modify>
+			<description>修复 删除历史版本的提示信息显示异常</description>
+			<author>陈经纬</author>
+			<revision-time>2018-07-19</revision-time>
+			<relation>
+				<relation-module>core</relation-module>
+			</relation>
+			<baseline>V15.0.0.B1.20181109</baseline>
+		</modify>
+		<modify>
+			<description>修复 模块列表页面，主分类列表未展现子分类文档</description>
+			<author>郑超</author>
+			<revision-time>2018-06-20</revision-time>
+			<baseline>V14.0.1.R.20180706</baseline>
+		</modify>
+		<modify>
+			<description>修复 有导出权限，导出时提示没权限</description>
+			<author>陈经纬</author>
+			<revision-time>2018-05-31</revision-time>
+			<baseline>V14.0.1.R.20180706</baseline>
+		</modify>
+		<modify>
+			<description>修复 摘要视图导出无数据</description>
+			<author>陈经纬</author>
+			<revision-time>2018-05-31</revision-time>
+			<baseline>V14.0.1.R.20180706</baseline>
+		</modify>
+		<modify>
+			<description>修复 删除文档报错</description>
+			<author>陈尉建</author>
+			<revision-time>2018-04-28</revision-time>
+			<baseline>V14.0.1.R.20180706</baseline>
+		</modify>
+		<modify>
+			<description>优化 自定义设置页面，需要控制url，没有权限用户，通过url访问链接，不能打开设置页面。</description>
+			<author>邵成成</author>
+			<revision-time>2018-02-26</revision-time>
+			<baseline>V14.0.0.R.20180413</baseline>
+		</modify>
+		<modify>
+			<description>部署 【后台配置】资产管理等11个模块列表自定义模块部署</description>
+			<author>邵成成</author>
+			<revision-time>2018-02-26</revision-time>
+			<baseline>V14.0.0.R.20180413</baseline>
+		</modify>
+		<modify>
+			<description>优化 后台文档维护功能改成新UI，并且增加筛选功能</description>
+			<author>张成才</author>
+			<revision-time>2018-01-11</revision-time>
+			<baseline>V14.0.0.B2.20180112</baseline>
+		</modify>
+		<modify>
+			<description>优化 文档版本V1.0，随后创建了新版本V2.0，删除V2.0其历史版本会一并删除，考虑优化</description>
+			<author>陈经纬</author>
+			<revision-time>2018-01-11</revision-time>
+			<relation>
+				<relation-module>sys/transport</relation-module>
+			</relation>
+			<baseline>V14.0.0.B2.20180112</baseline>
+		</modify>
+		<modify>
+			<description>修复 在集团分级管控的数据迁移里面，移除“规范制度”模块</description>
+			<author>潘永辉</author>
+			<revision-time>2017-10-28</revision-time>
+			<baseline>V14.0.0.B1.20171110</baseline>
+		</modify>
+		<modify>
+			<description>优化 查看页面附件支持嵌入式阅读器阅读</description>
+			<author>朱湖强</author>
+			<revision-time>2017-10-12</revision-time>
+			<relation>
+				<relation-module>sys/attachment</relation-module>
+			</relation>
+			<baseline>V14.0.0.B1.20171110</baseline>
+		</modify>
+		<modify>
+			<description>修复 规范制度模块编码显示异常</description>
+			<author>陈经纬</author>
+			<revision-time>2017-09-28</revision-time>
+			<baseline>V14.0.0.B1.20171110</baseline>
+		</modify>
+		<modify>
+			<description>新增 类别模板设置多语言支持</description>
+			<author>黄伟强</author>
+			<revision-time>2017-09-09</revision-time>
+			<relation>
+				<relation-module>core</relation-module>
+			</relation>
+			<baseline>V13.5.0.R.20170915</baseline>
+		</modify>
+		<modify>
+			<description>优化 部门字段支持显示层级结构，可以由系统提供统一接口（显示末级或显示层级，显示最近的几级）</description>
+			<author>潘永辉</author>
+			<revision-time>2017-08-19</revision-time>
+			<relation>
+				<relation-module>sys/organization</relation-module>
+			</relation>
+			<baseline>V13.5.0.R.20170915</baseline>
+		</modify>
+		<modify>
+			<description>修复 左侧菜单增加选中效果</description>
+			<author>潘永辉</author>
+			<revision-time>2017-04-07</revision-time>
+			<relation>
+				<relation-module>sys/ui</relation-module>
+			</relation>
+			<baseline>V13.5.0.B1.20170512</baseline>
+		</modify>
+		<modify>
+			<description>修复 编号机制访问权限泄漏问题</description>
+			<author>林秀贤</author>
+			<revision-time>2017-03-08</revision-time>
+			<relation>
+				<relation-module>sys/number</relation-module>
+			</relation>
+			<baseline>V13.0.0.R.20170310</baseline>
+		</modify>
+		<modify>
+			<description>修复 应用中心下进入各个业务模块，中间帧的字体可随主题包样式</description>
+			<author>陈经纬</author>
+			<revision-time>2017-03-08</revision-time>
+			<baseline>V13.0.0.R.20170310</baseline>
+		</modify>
+		<modify>
+			<description>新增 移动门户portlet</description>
+			<author>朱湖强</author>
+			<revision-time>2017-02-23</revision-time>
+			<relation>
+				<relation-module>sys/mobile</relation-module>
+				<relation-module>sys/mportal</relation-module>
+			</relation>
+			<baseline>V13.0.0.R.20170310</baseline>
+		</modify>
+		<modify>
+			<description>优化 增加关联控件的关联模块扩展点</description>
+			<author>朱国荣</author>
+			<revision-time>2017-01-20</revision-time>
+			<baseline>V13.0.0.R.20170310</baseline>
+		</modify>
+		<modify>
+			<description>新增 文档权限的工作交接</description>
+			<author>潘永辉</author>
+			<revision-time>2016-11-24</revision-time>
+			<relation>
+				<relation-module>sys/handover</relation-module>
+			</relation>
+			<baseline>V13.0.0.B3.20161230</baseline>
+		</modify>
+		<modify>
+			<description>修复 钉一下配置修改</description>
+			<author>周梓凡</author>
+			<revision-time>2016-11-21</revision-time>
+			<relation>
+				<relation-module>third/ding</relation-module>
+				<relation-module>sys/profile</relation-module>
+			</relation>
+			<baseline>V13.0.0.B3.20161230</baseline>
+		</modify>
+		<modify>
+			<description>优化 失效规范制度查看页面，右侧文档信息里失效链接加上超链接标识</description>
+			<author>潘永辉</author>
+			<revision-time>2016-11-11</revision-time>
+			<baseline>V13.0.0.B3.20161230</baseline>
+		</modify>
+		<modify>
+			<description>优化 失效文档与失效流程相关联，方便追溯失效流程</description>
+			<author>潘永辉</author>
+			<revision-time>2016-11-11</revision-time>
+			<baseline>V13.0.0.B3.20161230</baseline>
+		</modify>
+		<modify>
+			<description>修复 规范制度文档失效，审批人无权限访问文档页面</description>
+			<author>潘永辉</author>
+			<revision-time>2016-10-31</revision-time>
+			<baseline>V13.0.0.B3.20161230</baseline>
+		</modify>
+		<modify>
+			<description>修复 除了超级管理员之外，其他用户赋予‘规范制度_失效流程文档管理 ’角色不生效</description>
+			<author>潘永辉</author>
+			<revision-time>2016-10-26</revision-time>
+			<baseline>V13.0.0.B3.20161230</baseline>
+		</modify>
+		<modify>
+			<description>修复 list列表页操作栏中的“删除”按钮调整命名为“批量删除”</description>
+			<author>潘永辉</author>
+			<revision-time>2016-10-20</revision-time>
+			<baseline>V13.0.0.B3.20161230</baseline>
+		</modify>
+		<modify>
+			<description>优化 后台配置中心由“后台管理”角色控制</description>
+			<author>朱湖强</author>
+			<revision-time>2016-10-17</revision-time>
+			<baseline>V13.0.0.B3.20161230</baseline>
+		</modify>
+		<modify>
+			<description>修复 编辑规范制度文档之后，文件编号会在流水号上加1的问题</description>
+			<author>潘永辉</author>
+			<revision-time>2016-09-01</revision-time>
+			<baseline>V13.0.0.B2.20160930</baseline>
+		</modify>
+		<modify>
+			<description>优化 文档失效操作增加失效时间，已过时间立即失效，未过时间生成定时任务</description>
+			<author>潘永辉</author>
+			<revision-time>2016-08-10</revision-time>
+			<baseline>V13.0.0.B2.20160930</baseline>
+		</modify>
+		<modify>
+			<description>修复 失效文档无正文内容里，失效图片无法显示</description>
+			<author>潘永辉</author>
+			<revision-time>2016-08-10</revision-time>
+			<baseline>V13.0.0.B2.20160930</baseline>
+		</modify>
+		<modify>
+			<description>修复 失效日期不能早于生效日期</description>
+			<author>潘永辉</author>
+			<revision-time>2016-08-10</revision-time>
+			<baseline>V13.0.0.B2.20160930</baseline>
+		</modify>
+		<modify>
+			<description>修复 规范制度失效操作页面，失效按钮缺少必填标志</description>
+			<author>潘永辉</author>
+			<revision-time>2016-08-10</revision-time>
+			<baseline>V13.0.0.B2.20160930</baseline>
+		</modify>
+		<modify>
+			<description>优化 规范制度增加概览页面，类同知识中心的分类概览</description>
+			<author>李启龙</author>
+			<revision-time>2016-06-13</revision-time>
+			<baseline>V13.0.0.B2.20160930</baseline>
+		</modify>
+		<modify>
+			<description>修复 失效的规范制度文档不能发布到新闻模块</description>
+			<author>潘永辉</author>
+			<revision-time>2016-06-07</revision-time>
+			<baseline>V13.0.0.B2.20160930</baseline>
+		</modify>
+		<modify>
+			<description>修复 规范制度模块中移动端未翻译的字段</description>
+			<author>潘永辉</author>
+			<revision-time>2016-06-03</revision-time>
+			<baseline>V13.0.0.B2.20160930</baseline>
+		</modify>
+		<modify>
+			<description>修复 设置用户为类别的可维护者，且给予该用户转移文档和分类权限扩充的角色，在模块列表中转移文档时不能选择所有类别</description>
+			<author>潘永辉</author>
+			<revision-time>2016-05-20</revision-time>
+			<relation>
+				<relation-module>sys/simplecategory</relation-module>
+			</relation>
+			<baseline>V13.0.0.B2.20160930</baseline>
+		</modify>
+		<modify>
+			<description>优化 pc端待审、发布状态下的收藏保持与移动端同步</description>
+			<author>李启龙</author>
+			<revision-time>2016-05-19</revision-time>
+			<baseline>V13.0.0.B2.20160930</baseline>
+		</modify>
+		<modify>
+			<description>修复 新建分类权限页签设置了起草人不可修改可阅读者、不可修改可编辑者、不可修改附件权限 无效</description>
+			<author>潘永辉</author>
+			<revision-time>2016-05-16</revision-time>
+			<baseline>V13.0.0.B2.20160930</baseline>
+		</modify>
+		<modify>
+			<description>修复 列表筛选器中按作者筛选数据不对应</description>
+			<author>潘永辉</author>
+			<revision-time>2016-05-16</revision-time>
+			<baseline>V13.0.0.B2.20160930</baseline>
+		</modify>
+		<modify>
+			<description>修复 新建制度分类页面，类别为空校验描述信息不一致</description>
+			<author>潘永辉</author>
+			<revision-time>2016-05-13</revision-time>
+			<baseline>V13.0.0.B2.20160930</baseline>
+		</modify>
+		<modify>
+			<description>修复 在后台配置-失效流程文档筛选器中，去掉不存在的状态（草稿、失效）</description>
+			<author>潘永辉</author>
+			<revision-time>2016-05-13</revision-time>
+			<baseline>V13.0.0.B2.20160930</baseline>
+		</modify>
+		<modify>
+			<description>修复 文档查看界面点击生成链接，复制的链接地址没有前缀服务器dns地址</description>
+			<author>潘永辉</author>
+			<revision-time>2016-05-13</revision-time>
+			<baseline>V13.0.0.B2.20160930</baseline>
+		</modify>
+		<modify>
+			<description>修复 移动端文档查看界面，“发布时间”修改为“生效时间”</description>
+			<author>潘永辉</author>
+			<revision-time>2016-05-13</revision-time>
+			<baseline>V13.0.0.B2.20160930</baseline>
+		</modify>
+		<modify>
+			<description>修复 失效文档查看界面，导航路径“规范制度”不支持链接点击</description>
+			<author>潘永辉</author>
+			<revision-time>2016-05-13</revision-time>
+			<baseline>V13.0.0.B2.20160930</baseline>
+		</modify>
+		<modify>
+			<description>优化 新增创建新版本角色</description>
+			<author>朱湖强</author>
+			<revision-time>2016-05-06</revision-time>
+			<baseline>V13.0.0.B2.20160930</baseline>
+		</modify>
+		<modify>
+			<description>优化 模块首页列表数据改为默认按录入时间排序</description>
+			<author>林秀贤</author>
+			<revision-time>2016-04-22</revision-time>
+			<baseline>V13.0.0.B1.20160429</baseline>
+		</modify>
+		<modify>
+			<description>修复 英文环境，新建页面生效时间字段显示异常</description>
+			<author>潘永辉</author>
+			<revision-time>2016-04-11</revision-time>
+			<baseline>V13.0.0.B1.20160429</baseline>
+		</modify>
+		<modify>
+			<description>修复 失效主文档在页面上删除失败，后台报错</description>
+			<author>潘永辉</author>
+			<revision-time>2016-03-24</revision-time>
+			<baseline>V12.0.9.R.20160325</baseline>
+		</modify>
+		<modify>
+			<description>修复 失效文档查看页面，失效标志颜色与失效原因字体颜色冲突</description>
+			<author>潘永辉</author>
+			<revision-time>2016-03-23</revision-time>
+			<baseline>V12.0.9.R.20160325</baseline>
+		</modify>
+		<modify>
+			<description>修复 失效原因增加字数限制</description>
+			<author>潘永辉</author>
+			<revision-time>2016-03-22</revision-time>
+			<baseline>V12.0.9.R.20160325</baseline>
+		</modify>
+		<modify>
+			<description>修复 对文档进行失效操作时填写失效原因的输入框可被html代码注入</description>
+			<author>潘永辉</author>
+			<revision-time>2016-03-22</revision-time>
+			<baseline>V12.0.9.R.20160325</baseline>
+		</modify>
+		<modify>
+			<description>修复 优化规范制度中文件失效操作流程</description>
+			<author>潘永辉</author>
+			<revision-time>2016-03-21</revision-time>
+			<baseline>V12.0.9.R.20160325</baseline>
+		</modify>
+		<modify>
+			<description>修复 规范制度置为失效，失效原为必填，添加红色星号提示</description>
+			<author>潘永辉</author>
+			<revision-time>2016-03-18</revision-time>
+			<baseline>V12.0.9.R.20160325</baseline>
+		</modify>
+		<modify>
+			<description>修复 没有配置文档失效流程模板的时候，操作置为失效，提示语优化</description>
+			<author>潘永辉</author>
+			<revision-time>2016-03-18</revision-time>
+			<baseline>V12.0.9.R.20160325</baseline>
+		</modify>
+		<modify>
+			<description>修复 优化规范制度中文件失效操作流程</description>
+			<author>潘永辉</author>
+			<revision-time>2016-03-11</revision-time>
+			<baseline>V12.0.9.R.20160325</baseline>
+		</modify>
+		<modify>
+			<description>优化 后台配置中失效页面窗口大小调整</description>
+			<author>林秀贤</author>
+			<revision-time>2016-03-11</revision-time>
+			<baseline>V12.0.9.R.20160325</baseline>
+		</modify>
+		<modify>
+			<description>修复 后台配置界面中失效操作提示窗口呈现优化</description>
+			<author>林秀贤</author>
+			<revision-time>2016-03-11</revision-time>
+			<baseline>V12.0.9.R.20160325</baseline>
+		</modify>
+		<modify>
+			<description>优化 三级页面中当鼠标放在人名上时弹出相关人员信息</description>
+			<author>林秀贤</author>
+			<revision-time>2016-01-28</revision-time>
+			<relation>
+				<relation-module>sys/ui</relation-module>
+			</relation>
+			<baseline>V12.0.9.R.20160325</baseline>
+		</modify>
+		<modify>
+			<description>修复 在门户porlet配置规范制度的某一分类信息，点击“更多”显示当前分类信息</description>
+			<author>潘永辉</author>
+			<revision-time>2016-01-04</revision-time>
+			<baseline>V12.0.9.R.20160325</baseline>
+		</modify>
+		<modify>
+			<description>新增 在移动端流程审批页面增加“钉”图标，点击可直接打开钉的页面</description>
+			<author>林秀贤</author>
+			<revision-time>2015-12-09</revision-time>
+			<relation>
+				<relation-module>third/ding</relation-module>
+			</relation>
+			<baseline>V12.0.8.R.20160114</baseline>
+		</modify>
+		<modify>
+			<description>修复 规范制度不支持集团分级，取消分级授权</description>
+			<author>潘永辉</author>
+			<revision-time>2015-12-07</revision-time>
+			<baseline>V12.0.8.R.20160114</baseline>
+		</modify>
+		<modify>
+			<description>修复 英文包英文翻译纠偏</description>
+			<author>陈晓文</author>
+			<revision-time>2015-12-02</revision-time>
+			<relation>
+				<relation-module>km/review</relation-module>
+				<relation-module>sys/bookmark</relation-module>
+				<relation-module>sys/notify</relation-module>
+				<relation-module>sys/organization</relation-module>
+				<relation-module>sys/right</relation-module>
+				<relation-module>sys/task</relation-module>
+				<relation-module>sys/lbpmservice</relation-module>
+				<relation-module>sys/person</relation-module>
+				<relation-module>sys/ui</relation-module>
+				<relation-module>core</relation-module>
+			</relation>
+			<baseline>V12.0.7.R.20151203</baseline>
+		</modify>
+		<modify>
+			<description>修复 规范制度有一权限显示空白</description>
+			<author>潘永辉</author>
+			<revision-time>2015-12-02</revision-time>
+			<baseline>V12.0.7.R.20151203</baseline>
+		</modify>
+		<modify>
+			<description>修复 在weblogic环境下门户页面中点击"新建"按钮无反应问题修正</description>
+			<author>林秀贤</author>
+			<revision-time>2015-11-02</revision-time>
+			<baseline>V12.0.6.R.20151106</baseline>
+		</modify>
+		<modify>
+			<description>修复 在was环境下移动端列表中点击搜索报错问题修正</description>
+			<author>林秀贤</author>
+			<revision-time>2015-11-02</revision-time>
+			<baseline>V12.0.6.R.20151106</baseline>
+		</modify>
+		<modify>
+			<description>修复 规范制度中的文件编号支持从编号规则中进行选取自动生成。</description>
+			<author>潘永辉</author>
+			<revision-time>2015-10-29</revision-time>
+			<baseline>V12.0.6.R.20151106</baseline>
+		</modify>
+		<modify>
+			<description>新增 移动端首页列表头部搜索部件调整</description>
+			<author>林秀贤</author>
+			<revision-time>2015-08-18</revision-time>
+			<baseline>V12.0.5.R.20150911</baseline>
+		</modify>
+		<modify>
+			<description>优化 发布时间资源描述改为生效时间</description>
+			<author>林秀贤</author>
+			<revision-time>2015-07-27</revision-time>
+			<baseline>V12.0.4.R.20150807</baseline>
+		</modify>
+		<modify>
+			<description>修复 编辑、查看页面在IE8下均会出现右侧空白的问题修正</description>
+			<author>林秀贤</author>
+			<revision-time>2015-07-09</revision-time>
+			<baseline>V12.0.3.R.20150710</baseline>
+		</modify>
+		<modify>
+			<description>新增 添加后台配置角色</description>
+			<author>林秀贤</author>
+			<revision-time>2015-07-09</revision-time>
+			<baseline>V12.0.3.R.20150710</baseline>
+		</modify>
+		<modify>
+			<description>修复 列表中的标签或摘要包含特殊字符时显示问题修正</description>
+			<author>林秀贤</author>
+			<revision-time>2015-07-07</revision-time>
+			<baseline>V12.0.3.R.20150710</baseline>
+		</modify>
+		<modify>
+			<description>移除 移动端新建按钮</description>
+			<author>朱湖强</author>
+			<revision-time>2015-06-15</revision-time>
+			<baseline>V12.0.3.R.20150710</baseline>
+		</modify>
+		<modify>
+			<description>优化 新建新版本不允许修改分类信息</description>
+			<author>朱湖强</author>
+			<revision-time>2015-04-08</revision-time>
+			<baseline>V12.0.1.R.20150508</baseline>
+		</modify>
+		<modify>
+			<description>修复 录入者显示错误问题修正</description>
+			<author>林秀贤</author>
+			<revision-time>2015-04-02</revision-time>
+			<baseline>V12.0.1.R.20150508</baseline>
+		</modify>
+		<modify>
+			<description>优化 文档中心上传附件时,主题无法默认为附件名称.类似于发邮件,取的主题为附件名</description>
+			<author>林秀贤</author>
+			<revision-time>2015-03-31</revision-time>
+			<baseline>V12.0.1.R.20150508</baseline>
+		</modify>
+		<modify>
+			<description>修复 标题中含有标签时在index页面无法显示</description>
+			<author>魏本源</author>
+			<revision-time>2015-03-20</revision-time>
+			<baseline>V12.0.0.R.20150325</baseline>
+		</modify>
+		<modify>
+			<description>优化 列表去除文件编号排序</description>
+			<author>朱湖强</author>
+			<revision-time>2015-03-17</revision-time>
+			<baseline>V12.0.0.R.20150325</baseline>
+		</modify>
+		<modify>
+			<description>修复 可见他人草稿问题处理</description>
+			<author>林秀贤</author>
+			<revision-time>2015-03-07</revision-time>
+			<baseline>V12.0.0.R.20150325</baseline>
+		</modify>
+		<modify>
+			<description>优化 二级页面按钮操作栏翻页功能</description>
+			<author>王腾飞</author>
+			<revision-time>2015-01-16</revision-time>
+			<relation>
+				<relation-module>sys/ui</relation-module>
+			</relation>
+			<baseline>V12.0.0.B3.20150116</baseline>
+		</modify>
+		<modify>
+			<description>修复 规范制度摘要中插入较大图片，会把右侧的关联机制宽度变窄</description>
+			<author>周梓凡</author>
+			<revision-time>2014-12-30</revision-time>
+			<baseline>V12.0.0.B3.20150116</baseline>
+		</modify>
+		<modify>
+			<description>新增 工作交接注册服务</description>
+			<author>王腾飞</author>
+			<revision-time>2014-12-10</revision-time>
+			<relation>
+				<relation-module>sys/handover</relation-module>
+			</relation>
+			<baseline>V12.0.0.B3.20150116</baseline>
+		</modify>
+		<modify>
+			<description>优化 数据字典增加displayProperty属性</description>
+			<author>魏本源</author>
+			<revision-time>2014-12-09</revision-time>
+			<baseline>V12.0.0.B3.20150116</baseline>
+		</modify>
+		<modify>
+			<description>修复 新建页面修改分类信息时，点击取消页面关闭问题</description>
+			<author>朱湖强</author>
+			<revision-time>2014-12-03</revision-time>
+			<baseline>V12.0.0.B3.20150116</baseline>
+		</modify>
+		<modify>
+			<description>修复 门户portlet会显示旧版本的文档</description>
+			<author>朱湖强</author>
+			<revision-time>2014-11-25</revision-time>
+			<baseline>V12.0.0.B3.20150116</baseline>
+		</modify>
+		<modify>
+			<description>优化 表单输入框宽度规范化</description>
+			<author>魏本源</author>
+			<revision-time>2014-10-23</revision-time>
+			<baseline>V12.0.0.B2.20141114</baseline>
+		</modify>
+		<modify>
+			<description>修复 xform:text标签长度校验</description>
+			<author>魏本源</author>
+			<revision-time>2014-10-17</revision-time>
+			<baseline>V12.0.0.B2.20141114</baseline>
+		</modify>
+		<modify>
+			<description>新增 操作成功后自动刷新列表</description>
+			<author>魏本源</author>
+			<revision-time>2014-10-17</revision-time>
+			<baseline>V12.0.0.B2.20141114</baseline>
+		</modify>
+		<modify>
+			<description>新增 全系统分类信息收集部署</description>
+			<author>魏本源</author>
+			<revision-time>2014-10-15</revision-time>
+			<baseline>V12.0.0.B2.20141114</baseline>
+		</modify>
+		<modify>
+			<description>新增 辅分类筛选</description>
+			<author>朱湖强</author>
+			<revision-time>2014-09-28</revision-time>
+			<relation>
+				<relation-module>sys/category</relation-module>
+			</relation>
+			<baseline>V12.0.0.B2.20141114</baseline>
+		</modify>
+		<modify>
+			<description>修复 完善文档维护目录相关功能以便维护者在此进行文档维护</description>
+			<author>易荣烽</author>
+			<revision-time>2014-08-28</revision-time>
+			<relation>
+				<relation-module>core</relation-module>
+			</relation>
+			<baseline>V12.0.0.B1.20140905</baseline>
+		</modify>
+		<modify>
+			<description>修复 门户上的新建按钮权限控制不当问题</description>
+			<author>谭又豪</author>
+			<revision-time>2014-07-15</revision-time>
+			<baseline>V11.0.3.R.20140801</baseline>
+		</modify>
+		<modify>
+			<description>修复 公文门户部件设置未实现多语言问题</description>
+			<author>周梓凡</author>
+			<revision-time>2014-05-29</revision-time>
+			<relation>
+				<relation-module>core</relation-module>
+			</relation>
+			<baseline>V11.0.2.R.20140606</baseline>
+		</modify>
+		<modify>
+			<description>新增 门户时间参数以提高门户加载性能</description>
+			<author>谭又豪</author>
+			<revision-time>2014-04-18</revision-time>
+			<relation>
+				<relation-module>sys/portal</relation-module>
+			</relation>
+			<baseline>V11.0.1.R.20140506</baseline>
+		</modify>
+		<modify>
+			<description>修复 规范制度版本权限控制问题</description>
+			<author>吴肖蓬</author>
+			<revision-time>2013-10-18</revision-time>
+			<baseline>V11.0.0.B1.20140107</baseline>
+		</modify>
+		<modify>
+			<description>优化 简洁阅读界面不显示“文档附件”文字</description>
+			<author>朱湖强</author>
+			<revision-time>2013-09-09</revision-time>
+			<baseline>V11.0.0.B1.20140107</baseline>
+		</modify>
+		<modify>
+			<description>新增 规范制度的新版本功能</description>
+			<author>吴肖蓬</author>
+			<revision-time>2013-09-03</revision-time>
+			<baseline>V11.0.0.B1.20140107</baseline>
+		</modify>
+		<modify>
+			<description>新增 规范制度支持功能区配置分类列表</description>
+			<author>孟磊</author>
+			<revision-time>2013-09-02</revision-time>
+			<baseline>V11.0.0.B1.20140107</baseline>
+		</modify>
+		<modify>
+			<description>修复 在邮件中标题无法显示的问题</description>
+			<author>魏本源</author>
+			<revision-time>2013-05-17</revision-time>
+			<baseline>V10.0.2.R.20130608</baseline>
+		</modify>
+		<modify>
+			<description>优化 list页面按照发布时间倒序排列</description>
+			<author>魏本源</author>
+			<revision-time>2013-04-23</revision-time>
+			<baseline>V10.0.2.R.20130608</baseline>
+		</modify>
+		<modify>
+			<description>优化 增加默认阅读者权限生效时间点（文档审批通过后生效或文档提交后生效）</description>
+			<author>魏本源</author>
+			<revision-time>2013-04-22</revision-time>
+			<relation>
+				<relation-module>sys/right</relation-module>
+			</relation>
+			<baseline>V10.0.2.R.20130608</baseline>
+		</modify>
+		<modify>
+			<description>优化 列表页面按发布时间排序</description>
+			<author>朱湖强</author>
+			<revision-time>2013-03-28</revision-time>
+			<baseline>V10.0.1.R.20130328</baseline>
+		</modify>
+		<modify>
+			<description>优化 解决SQL注入的安全问题</description>
+			<author>李勇</author>
+			<revision-time>2013-01-22</revision-time>
+			<baseline>V10.0.1.R.20130328</baseline>
+		</modify>
+		<modify>
+			<description>修复 list页面排序问题</description>
+			<author>魏本源</author>
+			<revision-time>2012-12-06</revision-time>
+			<baseline>V10.0.0.R.20121215</baseline>
+		</modify>
+		<modify>
+			<description>修复 图片和表格宽度超出一定值之后页面给撑乱问题</description>
+			<author>朱湖强</author>
+			<revision-time>2012-11-23</revision-time>
+			<baseline>V10.0.0.R.20121215</baseline>
+		</modify>
+		<modify>
+			<description>修复 list页面按所属部门和录入人排序乱序问题</description>
+			<author>魏本源</author>
+			<revision-time>2012-09-12</revision-time>
+			<baseline>V10.0.0.B2.20120923</baseline>
+		</modify>
+		<modify>
+			<description>优化 大字段加入延时加载</description>
+			<author>魏本源</author>
+			<revision-time>2012-09-06</revision-time>
+			<baseline>V10.0.0.B2.20120923</baseline>
+		</modify>
+		<modify>
+			<description>修复 文档批量分类转移是通过url传参，参数过长被截断而报错问题</description>
+			<author>朱湖强</author>
+			<revision-time>2012-08-09</revision-time>
+			<baseline>V10.0.0.B2.20120923</baseline>
+		</modify>
+		<modify>
+			<description>优化 统一附件命名为“文档附件”</description>
+			<author>朱湖强</author>
+			<revision-time>2012-08-03</revision-time>
+			<baseline>V10.0.0.B2.20120923</baseline>
+		</modify>
+		<modify>
+			<description>优化 点击portlet的新建按钮时，默认新建该分类的文档而不需要用户选择分类</description>
+			<author>朱湖强</author>
+			<revision-time>2012-06-06</revision-time>
+			<baseline>V10.0.0.B2.20120923</baseline>
+		</modify>
+		<modify>
+			<description>修复 由于SQL语句不规范导致在DB2中出错的问题</description>
+			<author>易荣烽</author>
+			<revision-time>2012-04-25</revision-time>
+			<baseline>V10.0.0.B1.20120522</baseline>
+		</modify>
+		<modify>
+			<description>修复 查看页面的标签相关文档中出现本文档的问题</description>
+			<author>易荣烽</author>
+			<revision-time>2012-04-16</revision-time>
+			<relation>
+				<relation-module>sys/tag</relation-module>
+			</relation>
+			<baseline>V10.0.0.B1.20120522</baseline>
+		</modify>
+		<modify>
+			<description>优化 “无数据时”，提示信息不统一的问题</description>
+			<author>朱湖强</author>
+			<revision-time>2012-04-09</revision-time>
+			<baseline>V10.0.0.B1.20120522</baseline>
+		</modify>
+		<modify>
+			<description>优化 主页配置实现窗口配置时自动生成的URL由模块路径改为所选择模块或类别的精确路径</description>
+			<author>朱湖强</author>
+			<revision-time>2012-04-05</revision-time>
+			<baseline>V10.0.0.B1.20120522</baseline>
+		</modify>
+		<modify>
+			<description>优化 如果用户有设置发布时间，则以用户设置为准，如果没有设置，则以流程结束时间为准</description>
+			<author>朱湖强</author>
+			<revision-time>2012-03-27</revision-time>
+			<baseline>V10.0.0.B1.20120522</baseline>
+		</modify>
+		<modify>
+			<description>配置全文搜索</description>
+			<author>苏韶勇</author>
+			<revision-time>2012-03-15</revision-time>
+			<baseline>V9.0.2.R.20120326</baseline>
+		</modify>
+		<modify>
+			<description>增加枚举文件，同时加入“失效”状态，以在list页面能正常显示文档状态</description>
+			<author>朱湖强</author>
+			<revision-time>2012-02-29</revision-time>
+			<baseline>V9.0.2.R.20120326</baseline>
+		</modify>
+		<modify>
+			<description>修正当规范制度的正文缩小到最小时，缩放功能失效问题</description>
+			<author>朱湖强</author>
+			<revision-time>2012-02-23</revision-time>
+			<baseline>V9.0.2.R.20120326</baseline>
+		</modify>
+		<modify>
+			<description>使新建规范制度的时候，”发布时间“字段不可点击</description>
+			<author>朱湖强</author>
+			<revision-time>2012-02-23</revision-time>
+			<baseline>V9.0.2.R.20120326</baseline>
+		</modify>
+		<modify>
+			<description>增加对规范制度移动办公的支持</description>
+			<author>李衡</author>
+			<revision-time>2012-02-15</revision-time>
+			<relation>
+				<relation-module>third/pda</relation-module>
+			</relation>
+			<baseline>V9.0.2.R.20120326</baseline>
+		</modify>
+		<modify>
+			<description>去掉规范制度显示页面的文件作者</description>
+			<author>朱湖强</author>
+			<revision-time>2011-12-16</revision-time>
+			<baseline>EKP9.0.1.R.20111231</baseline>
+		</modify>
+		<modify>
+			<description>规范制度info_view页面添加发布显示窗口。</description>
+			<author>卢海军</author>
+			<revision-time>2011-11-11</revision-time>
+			<baseline>EKP9.0.1.R.20111231</baseline>
+		</modify>
+		<modify>
+			<description>规范制度的“所有文档”和portlet展示的排序混乱，修改为按发布时间从新到旧展示</description>
+			<author>朱湖强</author>
+			<revision-time>2011-09-23</revision-time>
+			<baseline>EKP9.0.0.R.20111025</baseline>
+		</modify>
+		<modify>
+			<description>增加发布功能</description>
+			<author>赵义洪</author>
+			<revision-time>2011-07-19</revision-time>
+			<baseline>EKP9.0.0.R.20111025</baseline>
+		</modify>
+		<modify>
+			<description>更多按钮被删除角色给控制了，去除控制让能查看到文档的人都能查看到更多按钮</description>
+			<author>杨建宏</author>
+			<revision-time>2011-07-06</revision-time>
+			<baseline>EKP9.0.0.B3.2011071501</baseline>
+		</modify>
+		<modify>
+			<description>加入到模块配置列表里面</description>
+			<author>庄为亮</author>
+			<revision-time>2011-06-14</revision-time>
+			<baseline>EKP9.0.0.B3.2011071501</baseline>
+		</modify>
+	</modifies>
+</version>

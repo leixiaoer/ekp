@@ -1,0 +1,2203 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<version xmlns="http://www.example.org/version-config" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.example.org/version-config ../version.xsd">
+	<modifies>
+		<modify>
+			<description>#165244 修复 任务管理修改任务截止日期，还是会使用原先的截止日期推送任务到期提醒</description>
+			<author>王文豪</author>
+			<revision-time>2022-05-18</revision-time>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#159645 优化 门户部件数据源增加缓存机制</description>
+			<author>苏琦</author>
+			<revision-time>2022-05-12</revision-time>
+			<relation>
+				<relation-module>sys/portal</relation-module>
+			</relation>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#157643 新增 mk数据源接口</description>
+			<author>林宇超</author>
+			<revision-time>2022-02-18</revision-time>
+			<relation>
+				<relation-module>sys/portal</relation-module>
+			</relation>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#149423 修复 暂停任务，负责人会收到待办</description>
+			<author>熊翅辉</author>
+			<revision-time>2021-09-16</revision-time>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#147962 修复 图表中心，选择任务管理模块，缺少截止时间字段</description>
+			<author>潘永辉</author>
+			<revision-time>2021-08-27</revision-time>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#144617 修复 任务管理的下属任务中，选择一个任务，点击，出现报错</description>
+			<author>王京</author>
+			<revision-time>2021-08-06</revision-time>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#139450 修复 新建一个任务并分解，子任务一和子任务二的截止时间都晚于父任务的截止时间，提交时候的提示显示的是0和1</description>
+			<author>徐斌</author>
+			<revision-time>2021-07-22</revision-time>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#145036 修复 满意度分析中，图表中的标注位置有重叠</description>
+			<author>潘永辉</author>
+			<revision-time>2021-07-22</revision-time>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#144209 修复 任务管理模块文档的RTF，移动端不显示表格内容</description>
+			<author>苏琦</author>
+			<revision-time>2021-07-14</revision-time>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#143637 修复 删除未完成的子任务后，总任务无法变为100%</description>
+			<author>潘永辉</author>
+			<revision-time>2021-07-05</revision-time>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#138735 修复 任务管理中创建任务时，勾选“权限范围仅限于此文档”选项，还是可以新建子任务</description>
+			<author>王京</author>
+			<revision-time>2021-04-27</revision-time>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#136368 修复 Chrome浏览器点击任务来源进入查看页，再编辑提交时，无法自动关闭页面</description>
+			<author>郑操辉</author>
+			<revision-time>2021-04-09</revision-time>
+			<relation>
+				<relation-module>core</relation-module>
+			</relation>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#125402 修复 修复任务列表无法搜索“负责人”和“指派人”</description>
+			<author>潘永辉</author>
+			<revision-time>2020-11-14</revision-time>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#121838 修复 钉钉客户端点击新建按钮，会弹出钉钉浏览器调用本地浏览器打开新建页面，并且没有自动登录</description>
+			<author>潘永辉</author>
+			<revision-time>2020-10-15</revision-time>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#114844 修复 当人员名字中含有“,”时，在任务管理负荷分析里，系统会把这个1人员拆成2个人，导致所有数据图发生错误</description>
+			<author>潘永辉</author>
+			<revision-time>2020-08-17</revision-time>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#112878 修复 任务达到最大层级的时候，移动端进行任务分解弹出框异常</description>
+			<author>潘永辉</author>
+			<revision-time>2020-07-24</revision-time>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#112161 修复 ios kk端双击穿透问题</description>
+			<author>钟清学</author>
+			<revision-time>2020-07-20</revision-time>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#111993 修复 任务执行反馈引用流程时，不会新打开一个页面，而是在当前页面查看</description>
+			<author>苏琦</author>
+			<revision-time>2020-07-19</revision-time>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#111537 修复 任务管理模块多语言时间问题</description>
+			<author>潘永辉</author>
+			<revision-time>2020-07-09</revision-time>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#111143 修复 V15任务管理模块，责任人任务完成，被指派人驳回，责任人重新反馈进度，不到百分百时，待办也会消失</description>
+			<author>孙佳</author>
+			<revision-time>2020-07-08</revision-time>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#107666 修复 消息机制出现%%符号</description>
+			<author>林剑文</author>
+			<revision-time>2020-07-07</revision-time>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#110453 修复 任务分析所有分析去二维码</description>
+			<author>林剑文</author>
+			<revision-time>2020-07-07</revision-time>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#106883 修复 移动端任务管理-列表数据负责人未翻译</description>
+			<author>林剑文</author>
+			<revision-time>2020-06-29</revision-time>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#110010 修复 V15移动端任务反馈，评价查看页面，部分显示存在错位</description>
+			<author>梅瑞鹏</author>
+			<revision-time>2020-06-28</revision-time>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#108897 修复 任务管理在用户执行反馈之后，指派人收到待阅提醒点击进去，移动端显示的是任务详情页签，需要定位到任务反馈页签</description>
+			<author>梅瑞鹏</author>
+			<revision-time>2020-06-23</revision-time>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#97520 优化 任务管理任务到期除了给任务负责人发消息外，也要给任务指派人和抄送人发送待阅消息</description>
+			<author>谭昌香</author>
+			<revision-time>2020-06-09</revision-time>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#105930 优化 新建任务页面，完成时间必填图标未水平对齐</description>
+			<author>钟清学</author>
+			<revision-time>2020-05-19</revision-time>
+			<relation>
+				<relation-module>sys/mobile</relation-module>
+			</relation>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#102943 修复 任务反馈中，上传图片后，图片显示不全</description>
+			<author>何景锋</author>
+			<revision-time>2020-04-21</revision-time>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#101219 修复 任务安排编辑和查看帮助跳转链接跳转不正确</description>
+			<author>尹成</author>
+			<revision-time>2020-04-10</revision-time>
+			<relation>
+				<relation-module>sys/forum</relation-module>
+			</relation>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#99398 修复 会议发起任务没有帮助中心按钮</description>
+			<author>蒋志广</author>
+			<revision-time>2020-03-31</revision-time>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#92362 优化 EKP各业务模块帮助中心梳理及部署</description>
+			<author>谭伟铭</author>
+			<revision-time>2020-03-24</revision-time>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#98566 修复 任务管理-门户部件-我的任务，更多-显示的是：我关注的。应该是所有任务</description>
+			<author>谭伟铭</author>
+			<revision-time>2020-03-16</revision-time>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#97396 修复 任务门户样例标题换行</description>
+			<author>谭伟铭</author>
+			<revision-time>2020-03-16</revision-time>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#94404 优化 查看页底部页签优化</description>
+			<author>蒋志广</author>
+			<revision-time>2020-03-03</revision-time>
+			<relation>
+				<relation-module>sys/ui</relation-module>
+			</relation>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#96914 修复 移动端任务管理界面，反馈内容过多的时候会和进度百分比显示重合</description>
+			<author>谭昌香</author>
+			<revision-time>2020-02-24</revision-time>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#94101 优化 进入模块，点击“后台配置”目录，请求的url需要显示在地址栏中</description>
+			<author>钟清学</author>
+			<revision-time>2020-02-15</revision-time>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#94791 修复 任务名带有空格，前端显示没有转译</description>
+			<author>何协殷</author>
+			<revision-time>2020-02-10</revision-time>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#94760 修复 任务权重显示&lt;1%，任务详情页面显示不全</description>
+			<author>何协殷</author>
+			<revision-time>2020-02-10</revision-time>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#75229 优化 任务权重</description>
+			<author>何协殷</author>
+			<revision-time>2020-01-16</revision-time>
+			<baseline>V15.0.3.R.20200117</baseline>
+		</modify>
+		<modify>
+			<description>#92879 修复 员工黄页的统计有逻辑需要调整</description>
+			<author>陈尉建</author>
+			<revision-time>2020-01-15</revision-time>
+			<baseline>V15.0.3.R.20200117</baseline>
+		</modify>
+		<modify>
+			<description>#92849 修复 员工黄页-我负责的列表条数不一致</description>
+			<author>廖碧成</author>
+			<revision-time>2020-01-06</revision-time>
+			<baseline>V15.0.3.R.20200117</baseline>
+		</modify>
+		<modify>
+			<description>#91794 修复 移动端列表页面标题如果带英文双引号被转义</description>
+			<author>何协殷</author>
+			<revision-time>2019-12-23</revision-time>
+			<baseline>V15.0.3.R.20200117</baseline>
+		</modify>
+		<modify>
+			<description>#90948 修复 英语环境任务管理分解子任务时间判断有问题</description>
+			<author>何协殷</author>
+			<revision-time>2019-12-16</revision-time>
+			<baseline>V15.0.3.R.20200117</baseline>
+		</modify>
+		<modify>
+			<description>#90703 修复 流程在kk审批时批注无法加载问题</description>
+			<author>林秀贤</author>
+			<revision-time>2019-12-16</revision-time>
+			<relation>
+				<relation-module>sys/mobile</relation-module>
+			</relation>
+			<baseline>V15.0.3.R.20200117</baseline>
+		</modify>
+		<modify>
+			<description>#87960 优化 移动性能体验</description>
+			<author>陈平山</author>
+			<revision-time>2019-12-09</revision-time>
+			<relation>
+				<relation-module>sys/mobile</relation-module>
+				<relation-module>sys/mportal</relation-module>
+			</relation>
+			<baseline>V15.0.3.R.20200117</baseline>
+		</modify>
+		<modify>
+			<description>#87960 优化 移动性能体验</description>
+			<author>黎凯麟</author>
+			<revision-time>2019-12-09</revision-time>
+			<relation>
+				<relation-module>sys/mobile</relation-module>
+			</relation>
+			<baseline>V15.0.3.R.20200117</baseline>
+		</modify>
+		<modify>
+			<description>#77810 优化 发起工作沟通自动带入模块标题</description>
+			<author>谭伟铭</author>
+			<revision-time>2019-12-09</revision-time>
+			<relation>
+				<relation-module>km/collaborate</relation-module>
+			</relation>
+			<baseline>V15.0.3.R.20200117</baseline>
+		</modify>
+		<modify>
+			<description>#89039 优化 任务管理二级页面UI问题</description>
+			<author>廖碧成</author>
+			<revision-time>2019-11-29</revision-time>
+			<baseline>V15.0.3.R.20200117</baseline>
+		</modify>
+		<modify>
+			<description>#88807 修复 满意度分析报表部分数据被挡问题</description>
+			<author>廖碧成</author>
+			<revision-time>2019-11-29</revision-time>
+			<baseline>V15.0.3.R.20200117</baseline>
+		</modify>
+		<modify>
+			<description>#88791 修复 任务管理任务安排子任务截止时间提示语</description>
+			<author>廖碧成</author>
+			<revision-time>2019-11-29</revision-time>
+			<baseline>V15.0.3.R.20200117</baseline>
+		</modify>
+		<modify>
+			<description>#83310 新增任务管理移动端新增"待评"和"已评"tab页签，与#88791一起提交</description>
+			<author>尹成</author>
+			<revision-time>2019-11-28</revision-time>
+			<relation>
+				<relation-module>#88791</relation-module>
+			</relation>
+			<baseline>V15.0.3.R.20200117</baseline>
+		</modify>
+		<modify>
+			<description>#87426 修复 任务指派人默认语言为英文，新建任务时添加子任务提交报错</description>
+			<author>何协殷</author>
+			<revision-time>2019-11-15</revision-time>
+			<relation>
+				<relation-module>core</relation-module>
+			</relation>
+			<baseline>V15.0.3.R.20200117</baseline>
+		</modify>
+		<modify>
+			<description>#53359 新增 移动门户快捷方式选择系统引入的时候没有任何EKP模块</description>
+			<author>钟清学</author>
+			<revision-time>2019-11-11</revision-time>
+			<baseline>V15.0.3.R.20200117</baseline>
+		</modify>
+		<modify>
+			<description>#82987 优化 “任务管理_驳回任务”权限角色描述</description>
+			<author>何协殷</author>
+			<revision-time>2019-11-06</revision-time>
+			<baseline>V15.0.2.R.20191108</baseline>
+		</modify>
+		<modify>
+			<description>#63575 优化 任务管理发起任务时，增加是否接收任务</description>
+			<author>何协殷</author>
+			<revision-time>2019-11-06</revision-time>
+			<baseline>V15.0.2.R.20191108</baseline>
+		</modify>
+		<modify>
+			<description>#79919 修复 任务负责人姓名后加特殊字符，任务视图显示错误</description>
+			<author>朱道标</author>
+			<revision-time>2019-11-06</revision-time>
+			<baseline>V15.0.2.R.20191108</baseline>
+		</modify>
+		<modify>
+			<description>#82797 修复 任务评价时，满意度没有必填标识，提交时却弹出必填提示</description>
+			<author>何协殷</author>
+			<revision-time>2019-11-04</revision-time>
+			<baseline>V15.0.2.R.20191108</baseline>
+		</modify>
+		<modify>
+			<description>#69327 优化 添加任务指派人是否可修改按钮</description>
+			<author>郑鑫</author>
+			<revision-time>2019-11-01</revision-time>
+			<baseline>V15.0.2.R.20191108</baseline>
+		</modify>
+		<modify>
+			<description>#83564 新增 后台配置优化，ekp各模块后台配置调整</description>
+			<author>钟清学</author>
+			<revision-time>2019-10-21</revision-time>
+			<relation>
+				<relation-module>sys/ui</relation-module>
+			</relation>
+			<baseline>V15.0.2.R.20191108</baseline>
+		</modify>
+		<modify>
+			<description>#82794 修复 从word导入的反馈、评价，任务详情页面的完成情况描述、评价说明出现样式的代码</description>
+			<author>郑鑫</author>
+			<revision-time>2019-10-14</revision-time>
+			<baseline>V15.0.2.R.20191108</baseline>
+		</modify>
+		<modify>
+			<description>#68034 修复 移动端反馈页面无法打开问题</description>
+			<author>林秀贤</author>
+			<revision-time>2019-09-30</revision-time>
+			<baseline>V15.0.2.R.20191108</baseline>
+		</modify>
+		<modify>
+			<description>#81742 修复 英文环境下，新建任务，添加子任务，选择截止时间，提交后子任务截止时间变为00:00</description>
+			<author>何协殷</author>
+			<revision-time>2019-09-29</revision-time>
+			<baseline>V15.0.2.R.20191108</baseline>
+		</modify>
+		<modify>
+			<description>#82127 修复 部分内容未翻译</description>
+			<author>何协殷</author>
+			<revision-time>2019-09-29</revision-time>
+			<baseline>V15.0.2.R.20191108</baseline>
+		</modify>
+		<modify>
+			<description>#82430 修复 任务管理复制粘贴Word中有格式的文字，会出现文字格式编码错误</description>
+			<author>郑鑫</author>
+			<revision-time>2019-09-25</revision-time>
+			<baseline>V15.0.2.R.20191108</baseline>
+		</modify>
+		<modify>
+			<description>#81235 修复 任务查看页面xss安全漏洞问题</description>
+			<author>林秀贤</author>
+			<revision-time>2019-09-11</revision-time>
+			<baseline>V15.0.2.R.20191108</baseline>
+		</modify>
+		<modify>
+			<description>#80884 优化 目录树文案和相关页面文案改动优化</description>
+			<author>陈尉建</author>
+			<revision-time>2019-09-03</revision-time>
+			<baseline>V15.0.1.R.20190906</baseline>
+		</modify>
+		<modify>
+			<description>#68130 优化 任务管理移动端反馈任务时增加通知人字段</description>
+			<author>黄泽凯</author>
+			<revision-time>2019-09-02</revision-time>
+			<relation>
+				<relation-module>sys/mobile</relation-module>
+			</relation>
+			<baseline>V15.0.1.R.20190906</baseline>
+		</modify>
+		<modify>
+			<description>#79416 修复 任务管理移动端点击反馈评价页面点击任务反馈报错，无法查看</description>
+			<author>郑鑫</author>
+			<revision-time>2019-08-21</revision-time>
+			<baseline>V15.0.1.R.20190906</baseline>
+		</modify>
+		<modify>
+			<description>#77856 修复 移动端负责人列表页面出现“下拉刷新”字样问题</description>
+			<author>林秀贤</author>
+			<revision-time>2019-07-19</revision-time>
+			<baseline>V15.0.1.R.20190906</baseline>
+		</modify>
+		<modify>
+			<description>#77777 修复 下属工作查看页任务图加载失败</description>
+			<author>潘永辉</author>
+			<revision-time>2019-07-18</revision-time>
+			<baseline>V15.0.1.R.20190906</baseline>
+		</modify>
+		<modify>
+			<description>#76238 修复 任务管理分解任务待办发送逻辑问题</description>
+			<author>郑鑫</author>
+			<revision-time>2019-07-12</revision-time>
+			<baseline>V15.0.0.R.20190712</baseline>
+		</modify>
+		<modify>
+			<description>#74478 修复 多个子任务在同一时间截止时判断任务是否过期定时任务执行失败死锁问题</description>
+			<author>林秀贤</author>
+			<revision-time>2019-07-12</revision-time>
+			<baseline>V15.0.0.R.20190712</baseline>
+		</modify>
+		<modify>
+			<description>#77339 新增 ekp-cloud智能门户推荐所需接口</description>
+			<author>袁汉祥</author>
+			<revision-time>2019-07-12</revision-time>
+			<relation>
+				<relation-module>core</relation-module>
+			</relation>
+			<baseline>V15.0.0.R.20190712</baseline>
+		</modify>
+		<modify>
+			<description>#74029 新增 支持kk端转日程功能</description>
+			<author>林秀贤</author>
+			<revision-time>2019-07-12</revision-time>
+			<relation>
+				<relation-module>sys/mobile</relation-module>
+			</relation>
+			<baseline>V15.0.0.R.20190712</baseline>
+		</modify>
+		<modify>
+			<description>#73217 修复 IE浏览器下，任务分析的4个分析保存后的查看、编辑页面地址本的组织架构覆盖在页面其他元素上的问题</description>
+			<author>林宇超</author>
+			<revision-time>2019-07-12</revision-time>
+			<baseline>V15.0.0.R.20190712</baseline>
+		</modify>
+		<modify>
+			<description>#73211 修复 PC端门户窗口部件任务管理的待办点击结项后待办不会自动刷新的问题</description>
+			<author>林宇超</author>
+			<revision-time>2019-07-11</revision-time>
+			<baseline>V15.0.0.R.20190712</baseline>
+		</modify>
+		<modify>
+			<description>#70861 优化 工作交接明细列表添加按标题搜索功能</description>
+			<author>杨铮</author>
+			<revision-time>2019-07-06</revision-time>
+			<relation>
+				<relation-module>sys/handover</relation-module>
+			</relation>
+			<baseline>V15.0.0.R.20190712</baseline>
+		</modify>
+		<modify>
+			<description>#75193 修复 任务管理编辑提交无反应，相关日志见附件</description>
+			<author>郑鑫</author>
+			<revision-time>2019-07-05</revision-time>
+			<baseline>V15.0.0.R.20190712</baseline>
+		</modify>
+		<modify>
+			<description>#74890 修复 在移动端主任务执行反馈后，任务进度变成了0%</description>
+			<author>郑鑫</author>
+			<revision-time>2019-06-14</revision-time>
+			<baseline>V15.0.0.R.20190712</baseline>
+		</modify>
+		<modify>
+			<description>#72363 优化 从督办模块进行任务分派没有输入任务内容的地方</description>
+			<author>陈尉建</author>
+			<revision-time>2019-05-15</revision-time>
+			<baseline>V15.0.0.R.20190712</baseline>
+		</modify>
+		<modify>
+			<description>#72528 修复 任务管理修改主任务时间没有校验</description>
+			<author>陈尉建</author>
+			<revision-time>2019-05-10</revision-time>
+			<baseline>V15.0.0.R.20190712</baseline>
+		</modify>
+		<modify>
+			<description>#69854 修复 如果任务权重输入0的话，提交报错，日志见附件</description>
+			<author>陈尉建</author>
+			<revision-time>2019-05-10</revision-time>
+			<baseline>V15.0.0.R.20190712</baseline>
+		</modify>
+		<modify>
+			<description>#68771 新增 新增下属工作组件，实现领导和上级领导查看下属工作/数据，可设置人员范围和业务范围</description>
+			<author>潘永辉</author>
+			<revision-time>2019-04-23</revision-time>
+			<relation>
+				<relation-module>sys/subordinate</relation-module>
+			</relation>
+			<baseline>V15.0.0.R.20190712</baseline>
+		</modify>
+		<modify>
+			<description>#69324 修复 我的任务页面列表数据显示与任务管理模块首页中的数据显示不匹配问题</description>
+			<author>林秀贤</author>
+			<revision-time>2019-03-21</revision-time>
+			<baseline>V15.0.0.B3.20190412</baseline>
+		</modify>
+		<modify>
+			<description>#68335 新增 任务执行反馈的导出内容增加负责人、上级任务等信息</description>
+			<author>林秀贤</author>
+			<revision-time>2019-03-13</revision-time>
+			<baseline>V15.0.0.B3.20190412</baseline>
+		</modify>
+		<modify>
+			<description>#55075 新增 增加“负责人、抄送人、指派人”的工作交接</description>
+			<author>潘永辉</author>
+			<revision-time>2019-01-26</revision-time>
+			<relation>
+				<relation-module>sys/handover</relation-module>
+			</relation>
+			<baseline>V15.0.0.B3.20190412</baseline>
+		</modify>
+		<modify>
+			<description>#66707 修复 任务管理苹果手机（ios）分解图无法左右移动查看</description>
+			<author>何协殷</author>
+			<revision-time>2019-01-16</revision-time>
+			<baseline>V15.0.0.B2.20190118</baseline>
+		</modify>
+		<modify>
+			<description>#65659 修复 任务管理IE浏览器下查看页面图形模块滚动条显示问题</description>
+			<author>何协殷</author>
+			<revision-time>2018-12-22</revision-time>
+			<baseline>V15.0.0.B2.20190118</baseline>
+		</modify>
+		<modify>
+			<description>#62643 优化 繁体语言下时间管理日历视图显示</description>
+			<author>陈尉建</author>
+			<revision-time>2018-12-20</revision-time>
+			<baseline>V15.0.0.B2.20190118</baseline>
+		</modify>
+		<modify>
+			<description>#65123 修复 任务管理当子任务负责人反馈任务到100%时，子任务负责人的待办会置为已办，但父任务负责人的待办会被删除，改为置为已办</description>
+			<author>何协殷</author>
+			<revision-time>2018-12-14</revision-time>
+			<baseline>V15.0.0.B2.20190118</baseline>
+		</modify>
+		<modify>
+			<description>#65122 修复 任务管理当任务负责人任务进度反馈到100%，反馈人的待办会置为已办，但其他负责人的待办会被删除，改为都置为已办</description>
+			<author>何协殷</author>
+			<revision-time>2018-12-14</revision-time>
+			<baseline>V15.0.0.B2.20190118</baseline>
+		</modify>
+		<modify>
+			<description>#60108 优化 任务管理工作任务的“执行反馈”不能取消“待审”，任务进度没有100%，就一直在待审</description>
+			<author>何协殷</author>
+			<revision-time>2018-12-14</revision-time>
+			<baseline>V15.0.0.B2.20190118</baseline>
+		</modify>
+		<modify>
+			<description>#65112 修复 任务管理新建任务安排时，负责人选项的快速选择处，自动带出上一个任务的人，无法识别离职用户</description>
+			<author>何协殷</author>
+			<revision-time>2018-12-14</revision-time>
+			<baseline>V15.0.0.B2.20190118</baseline>
+		</modify>
+		<modify>
+			<description>#63737 优化 移动端任务结项后跳转到原来的任务界面</description>
+			<author>胡永方</author>
+			<revision-time>2018-12-04</revision-time>
+			<baseline>V15.0.0.B2.20190118</baseline>
+		</modify>
+		<modify>
+			<description>#64039 修复 任务管理列表页面批量删除子任务失败</description>
+			<author>何协殷</author>
+			<revision-time>2018-11-26</revision-time>
+			<baseline>V15.0.0.B2.20190118</baseline>
+		</modify>
+		<modify>
+			<description>#63776 修复 任务管理后台限制了任务最大层级，任务层级超出后仍可以分解</description>
+			<author>何协殷</author>
+			<revision-time>2018-11-23</revision-time>
+			<baseline>V15.0.0.B2.20190118</baseline>
+		</modify>
+		<modify>
+			<description>优化 任务管理安卓手机查看页面上级任务和任务来源链接点击不到</description>
+			<author>胡永方</author>
+			<revision-time>2018-11-23</revision-time>
+			<baseline>V15.0.0.B2.20190118</baseline>
+		</modify>
+		<modify>
+			<description>修复 任务新建页面，合并后的单元格中间 在火狐浏览器下还是存在边框</description>
+			<author>胡永方</author>
+			<revision-time>2018-11-15</revision-time>
+			<baseline>V15.0.0.B2.20190118</baseline>
+		</modify>
+		<modify>
+			<description>优化 英文包新建编辑任务统计时，时间校验有误</description>
+			<author>何协殷</author>
+			<revision-time>2018-11-08</revision-time>
+			<baseline>V15.0.0.B1.20181109</baseline>
+		</modify>
+		<modify>
+			<description>优化 任务名长度由原先200个英文字符最大限制调整为 500</description>
+			<author>胡永方</author>
+			<revision-time>2018-11-06</revision-time>
+			<baseline>V15.0.0.B2.20190118</baseline>
+		</modify>
+		<modify>
+			<description>优化 英文包新建任务时，时间校验有误</description>
+			<author>何协殷</author>
+			<revision-time>2018-11-01</revision-time>
+			<baseline>V15.0.0.B1.20181109</baseline>
+		</modify>
+		<modify>
+			<description>优化 新地址本js重构</description>
+			<author>郑超</author>
+			<revision-time>2018-10-22</revision-time>
+			<relation>
+				<relation-module>core</relation-module>
+			</relation>
+			<baseline>V15.0.0.B1.20181109</baseline>
+		</modify>
+		<modify>
+			<description>优化【会议管理-优化】任务新建页、编辑页，点击上传附件，选择文件时一直显示为空</description>
+			<author>胡永方</author>
+			<revision-time>2018-10-22</revision-time>
+			<relation>
+				<relation-module>km/imeeting</relation-module>
+			</relation>
+			<baseline>V15.0.0.B1.20181109</baseline>
+		</modify>
+		<modify>
+			<description>优化 移动端的更多操作按钮中的操作项如果只有一项，不应该以更多的形式出现</description>
+			<author>胡永方</author>
+			<revision-time>2018-10-22</revision-time>
+			<baseline>V15.0.0.B1.20181109</baseline>
+		</modify>
+		<modify>
+			<description>修复 会议任务查看界面，任务的进度显示与UI不符</description>
+			<author>胡永方</author>
+			<revision-time>2018-10-22</revision-time>
+			<relation>
+				<relation-module>km/imeeting</relation-module>
+			</relation>
+			<baseline>V15.0.0.B1.20181109</baseline>
+		</modify>
+		<modify>
+			<description>新增 MAXHUB端任务信息页，无会议任务时显示为空白</description>
+			<author>胡永方</author>
+			<revision-time>2018-10-22</revision-time>
+			<relation>
+				<relation-module>km/imeeting</relation-module>
+			</relation>
+			<baseline>V15.0.0.B1.20181109</baseline>
+		</modify>
+		<modify>
+			<description>新增 MAXHUB端任务信息页任务的承接人很多时，显示超出；而且负责人，完成时间与其他字样不在水平线上</description>
+			<author>胡永方</author>
+			<revision-time>2018-10-22</revision-time>
+			<relation>
+				<relation-module>km/imeeting</relation-module>
+			</relation>
+			<baseline>V15.0.0.B1.20181109</baseline>
+		</modify>
+		<modify>
+			<description>新增 MAXHUB端新建任务页UI不满足需求</description>
+			<author>胡永方</author>
+			<revision-time>2018-10-22</revision-time>
+			<relation>
+				<relation-module>km/imeeting</relation-module>
+			</relation>
+			<baseline>V15.0.0.B1.20181109</baseline>
+		</modify>
+		<modify>
+			<description>优化【任务管理】在会议安排（或云会议）中新建任务安排，含子任务的任务安排点击删除后无提示</description>
+			<author>何协殷</author>
+			<revision-time>2018-09-14</revision-time>
+			<baseline>V15.0.0.B1.20181109</baseline>
+		</modify>
+		<modify>
+			<description>优化【任务管理】ie8任务分析点击柱状图任务明细无法加载，及柱状图显示数据与其他浏览器不同</description>
+			<author>何协殷</author>
+			<revision-time>2018-09-11</revision-time>
+			<baseline>V15.0.0.B1.20181109</baseline>
+		</modify>
+		<modify>
+			<description>优化 督办计划中的页面设计图缺少了任务的完成情况</description>
+			<author>陈尉建</author>
+			<revision-time>2018-09-11</revision-time>
+			<baseline>V15.0.0.B1.20181109</baseline>
+		</modify>
+		<modify>
+			<description>优化 移动端头部进度条显示优化</description>
+			<author>胡永方</author>
+			<revision-time>2018-09-03</revision-time>
+			<baseline>V15.0.0.B1.20181109</baseline>
+		</modify>
+		<modify>
+			<description>修复 任务层级图无法加载问题</description>
+			<author>朱湖强</author>
+			<revision-time>2018-08-31</revision-time>
+			<baseline>V15.0.0.B1.20181109</baseline>
+		</modify>
+		<modify>
+			<description>修复 【任务管理】移动端任务文档的附件未显示</description>
+			<author>胡永方</author>
+			<revision-time>2018-08-30</revision-time>
+			<baseline>V15.0.0.B1.20181109</baseline>
+		</modify>
+		<modify>
+			<description>修复 【任务管理】移动端任务抄送人移动端查看按钮显示空白，负责人、指派人有部分按钮显示空白</description>
+			<author>胡永方</author>
+			<revision-time>2018-08-30</revision-time>
+			<baseline>V15.0.0.B1.20181109</baseline>
+		</modify>
+		<modify>
+			<description>优化 【任务管理】 移动端任务管理部分ui</description>
+			<author>胡永方</author>
+			<revision-time>2018-08-30</revision-time>
+			<baseline>V15.0.0.B1.20181109</baseline>
+		</modify>
+		<modify>
+			<description>新增 任务定义子任务时增加子任务的抄送人字段</description>
+			<author>胡永方</author>
+			<revision-time>2018-08-30</revision-time>
+			<baseline>V15.0.0.B1.20181109</baseline>
+		</modify>
+		<modify>
+			<description>优化 【任务管理】任务管理移动端添加任务类型字段</description>
+			<author>何协殷</author>
+			<revision-time>2018-08-30</revision-time>
+			<baseline>V15.0.0.B1.20181109</baseline>
+		</modify>
+		<modify>
+			<description>优化 【任务管理】当前父任务为暂停状态时，不可以复制为父任务的子任务</description>
+			<author>何协殷</author>
+			<revision-time>2018-08-30</revision-time>
+			<baseline>V15.0.0.B1.20181109</baseline>
+		</modify>
+		<modify>
+			<description>优化 任务暂停操作无提示成功</description>
+			<author>胡永方</author>
+			<revision-time>2018-08-30</revision-time>
+			<baseline>V15.0.0.B1.20181109</baseline>
+		</modify>
+		<modify>
+			<description>优化 maxhub端任务管理功能优化</description>
+			<author>胡永方</author>
+			<revision-time>2018-08-30</revision-time>
+			<baseline>V15.0.0.B1.20181109</baseline>
+		</modify>
+		<modify>
+			<description>新增 maxhub端任务管理</description>
+			<author>胡永方</author>
+			<revision-time>2018-08-30</revision-time>
+			<baseline>V15.0.0.B1.20181109</baseline>
+		</modify>
+		<modify>
+			<description>优化 【任务管理】IE浏览器复制为子任务时，若父任务已经暂停或结束，出现弹窗点击确定无法关闭</description>
+			<author>何协殷</author>
+			<revision-time>2018-08-28</revision-time>
+			<baseline>V15.0.0.B1.20181109</baseline>
+		</modify>
+		<modify>
+			<description>优化 【任务管理】当前父任务勾选了权限范围仅限于此文档时，复制为子任务时应弹出无法进行该操作提示框</description>
+			<author>何协殷</author>
+			<revision-time>2018-08-28</revision-time>
+			<baseline>V15.0.0.B1.20181109</baseline>
+		</modify>
+		<modify>
+			<description>优化 【任务管理】 复制任务，如果是有父任务，复制任务弹出提示框优化，复制为新建任务需要新建任务权限</description>
+			<author>何协殷</author>
+			<revision-time>2018-08-28</revision-time>
+			<baseline>V15.0.0.B1.20181109</baseline>
+		</modify>
+		<modify>
+			<description>优化 【任务管理】任务分析明细显示问题，设置iframe自适应高度</description>
+			<author>何协殷</author>
+			<revision-time>2018-08-28</revision-time>
+			<baseline>V15.0.0.B1.20181109</baseline>
+		</modify>
+		<modify>
+			<description>修复 【任务管理】IE浏览器导出任务分析明细报错，任务分析时间维度全部勾选时柱状图与明细数据显示不一致</description>
+			<author>何协殷</author>
+			<revision-time>2018-08-28</revision-time>
+			<baseline>V15.0.0.B1.20181109</baseline>
+		</modify>
+		<modify>
+			<description>新增 【任务管理】任务分析模块实现导出任务明细（EXCEL）的功能，并且可以根据柱状图筛选条件分别导出</description>
+			<author>何协殷</author>
+			<revision-time>2018-08-28</revision-time>
+			<baseline>V15.0.0.B1.20181109</baseline>
+		</modify>
+		<modify>
+			<description>新增 【任务管理-优化】新增复制任务，将当前任务单拷贝一份出来，节省重复录入工作量</description>
+			<author>何协殷</author>
+			<revision-time>2018-08-28</revision-time>
+			<baseline>V15.0.0.B1.20181109</baseline>
+		</modify>
+		<modify>
+			<description>优化 任务管理移动端头部样式改回到以前的样式</description>
+			<author>胡永方</author>
+			<revision-time>2018-08-28</revision-time>
+			<baseline>V15.0.0.B1.20181109</baseline>
+		</modify>
+		<modify>
+			<description>优化 任务管理移动端标题字体过大，验证图标过大的问题</description>
+			<author>胡永方</author>
+			<revision-time>2018-08-28</revision-time>
+			<baseline>V15.0.0.B1.20181109</baseline>
+		</modify>
+		<modify>
+			<description>优化 任务管理移动图标点击区域只有标记完成，以及任务结项点击按钮不弹出提示框的问题</description>
+			<author>胡永方</author>
+			<revision-time>2018-08-28</revision-time>
+			<baseline>V15.0.0.B1.20181109</baseline>
+		</modify>
+		<modify>
+			<description>优化 任务管理移动端新增暂停、结项等操作功能的优化</description>
+			<author>胡永方</author>
+			<revision-time>2018-08-28</revision-time>
+			<baseline>V15.0.0.B1.20181109</baseline>
+		</modify>
+		<modify>
+			<description>新增 任务管理驳回、结项、暂停移动化支持</description>
+			<author>胡永方</author>
+			<revision-time>2018-08-28</revision-time>
+			<baseline>V15.0.0.B1.20181109</baseline>
+		</modify>
+		<modify>
+			<description>优化 【移动门户】移动门户-卡片配置-新建编辑页面，内容”选择”部件页面多语言</description>
+			<author>何协殷</author>
+			<revision-time>2018-08-21</revision-time>
+			<baseline>V15.0.0.B1.20181109</baseline>
+		</modify>
+		<modify>
+			<description>新增 智能场景的接口提供</description>
+			<author>陈亮</author>
+			<revision-time>2018-07-05</revision-time>
+			<baseline>V14.0.1.R.20180706</baseline>
+		</modify>
+		<modify>
+			<description>优化 css引入位置</description>
+			<author>周梓凡</author>
+			<revision-time>2018-06-30</revision-time>
+			<relation>
+				<relation-module>sys/mobile</relation-module>
+			</relation>
+			<baseline>V14.0.1.R.20180706</baseline>
+		</modify>
+		<modify>
+			<description>修复 任务统计范围太多报错问题</description>
+			<author>朱湖强</author>
+			<revision-time>2018-06-22</revision-time>
+			<baseline>V14.0.1.R.20180706</baseline>
+		</modify>
+		<modify>
+			<description>修复 ie下统计明细无法显示问题</description>
+			<author>朱湖强</author>
+			<revision-time>2018-06-13</revision-time>
+			<baseline>V14.0.1.R.20180706</baseline>
+		</modify>
+		<modify>
+			<description>修复 任务图放大缩小问题</description>
+			<author>朱湖强</author>
+			<revision-time>2018-05-09</revision-time>
+			<baseline>V14.0.1.R.20180706</baseline>
+		</modify>
+		<modify>
+			<description>修复 iphoneX下在kk中新建任务页面，时间、人员、同步页签下的内容未显示</description>
+			<author>黄泽凯</author>
+			<revision-time>2018-04-27</revision-time>
+			<baseline>V14.0.1.R.20180706</baseline>
+		</modify>
+		<modify>
+			<description>优化 edge浏览器下任务图无法显示问题</description>
+			<author>朱湖强</author>
+			<revision-time>2018-04-26</revision-time>
+			<baseline>V14.0.1.R.20180706</baseline>
+		</modify>
+		<modify>
+			<description>修复 移动端uiue改造</description>
+			<author>黄泽凯</author>
+			<revision-time>2018-04-11</revision-time>
+			<baseline>V14.0.0.R.20180413</baseline>
+		</modify>
+		<modify>
+			<description>修复 改变父任务的指派人时，子任务没有更新可阅读者</description>
+			<author>崔文坚</author>
+			<revision-time>2018-03-07</revision-time>
+			<baseline>V14.0.0.R.20180413</baseline>
+		</modify>
+		<modify>
+			<description>任务反馈超过20条，导出报错</description>
+			<author>崔文坚</author>
+			<revision-time>2018-03-05</revision-time>
+			<baseline>V14.0.0.R.20180413</baseline>
+		</modify>
+		<modify>
+			<description>优化 日历体现排班，移动端也要增加</description>
+			<author>陈亮</author>
+			<revision-time>2018-02-26</revision-time>
+			<baseline>V14.0.0.R.20180413</baseline>
+		</modify>
+		<modify>
+			<description>修复 任务反馈进度条显示不正确问题</description>
+			<author>朱湖强</author>
+			<revision-time>2018-01-31</revision-time>
+			<baseline>V14.0.0.R.20180413</baseline>
+		</modify>
+		<modify>
+			<description>优化 任务管理层级树显示优化</description>
+			<author>朱湖强</author>
+			<revision-time>2018-01-10</revision-time>
+			<baseline>V14.0.0.B2.20180112</baseline>
+		</modify>
+		<modify>
+			<description>优化 任务管理层级树显示优化</description>
+			<author>朱湖强</author>
+			<revision-time>2018-01-10</revision-time>
+			<baseline>V14.0.0.B2.20180112</baseline>
+		</modify>
+		<modify>
+			<description>优化 英文环境，时间格式修改dd-mm-yyyy后，任务列表显示的时间格式还是中文时间格式</description>
+			<author>陈尉建</author>
+			<revision-time>2017-11-24</revision-time>
+			<baseline>V14.0.0.B2.20180112</baseline>
+		</modify>
+		<modify>
+			<description>修复 分解子任务时人员校验问题</description>
+			<author>朱湖强</author>
+			<revision-time>2017-11-09</revision-time>
+			<baseline>V14.0.0.B1.20171110</baseline>
+		</modify>
+		<modify>
+			<description>优化 任务树预览图边框优化</description>
+			<author>朱湖强</author>
+			<revision-time>2017-11-09</revision-time>
+			<baseline>V14.0.0.B1.20171110</baseline>
+		</modify>
+		<modify>
+			<description>优化 地址本人员便捷选择，类似exchage\coremail邮件系统</description>
+			<author>郑超</author>
+			<revision-time>2017-11-08</revision-time>
+			<relation>
+				<relation-module>core</relation-module>
+			</relation>
+			<baseline>V14.0.0.B1.20171110</baseline>
+		</modify>
+		<modify>
+			<description>优化 新建任务安排，选择自动分解，子任务的明细表支持复制行操作</description>
+			<author>朱湖强</author>
+			<revision-time>2017-10-12</revision-time>
+			<baseline>V14.0.0.B1.20171110</baseline>
+		</modify>
+		<modify>
+			<description>优化 列表数据展示样式优化</description>
+			<author>黄泽凯</author>
+			<revision-time>2017-09-19</revision-time>
+			<baseline>V14.0.0.B1.20171110</baseline>
+		</modify>
+		<modify>
+			<description>优化 列表数据展示样式优化</description>
+			<author>陈经纬</author>
+			<revision-time>2017-09-04</revision-time>
+			<baseline>V13.5.0.R.20170915</baseline>
+		</modify>
+		<modify>
+			<description>优化 列表数据展示样式优化</description>
+			<author>陈经纬</author>
+			<revision-time>2017-09-04</revision-time>
+			<baseline>V13.5.0.R.20170915</baseline>
+		</modify>
+		<modify>
+			<description>优化 任务统计支持图表查看</description>
+			<author>朱湖强</author>
+			<revision-time>2017-09-02</revision-time>
+			<baseline>V13.5.0.R.20170915</baseline>
+		</modify>
+		<modify>
+			<description>优化 新建任务时支持快速添加子任务</description>
+			<author>朱湖强</author>
+			<revision-time>2017-09-02</revision-time>
+			<baseline>V13.5.0.R.20170915</baseline>
+		</modify>
+		<modify>
+			<description>优化 任务管理左侧菜单增加选中效果</description>
+			<author>黄泽凯</author>
+			<revision-time>2017-07-06</revision-time>
+			<baseline>V13.5.0.B2.20170707</baseline>
+		</modify>
+		<modify>
+			<description>优化 后台配置\任务管理\任务类型配置：任务类型名称可以设置重复项，建议类型名称设置单一化</description>
+			<author>张佳奇</author>
+			<revision-time>2017-07-03</revision-time>
+			<baseline>V13.5.0.B2.20170707</baseline>
+		</modify>
+		<modify>
+			<description>优化 自定义表单中的“关联控件”，关联范围新增对任务管理模块的支持</description>
+			<author>朱国荣</author>
+			<revision-time>2017-07-03</revision-time>
+			<baseline>V13.5.0.B2.20170707</baseline>
+		</modify>
+		<modify>
+			<description>优化 任务评价中“满意度”做必填校验</description>
+			<author>朱湖强</author>
+			<revision-time>2017-07-03</revision-time>
+			<baseline>V13.5.0.B2.20170707</baseline>
+		</modify>
+		<modify>
+			<description>修复 后台配置中，“任务类型配置”编辑报js错误</description>
+			<author>朱湖强</author>
+			<revision-time>2017-06-30</revision-time>
+			<baseline>V13.5.0.B2.20170707</baseline>
+		</modify>
+		<modify>
+			<description>优化 子任务支持按人自动分解</description>
+			<author>朱湖强</author>
+			<revision-time>2017-06-28</revision-time>
+			<baseline>V13.5.0.B2.20170707</baseline>
+		</modify>
+		<modify>
+			<description>修复 在非中文环境下，建议为空提示去除中文文字</description>
+			<author>崔文坚</author>
+			<revision-time>2017-05-24</revision-time>
+			<baseline>V13.5.0.B2.20170707</baseline>
+		</modify>
+		<modify>
+			<description>修复 任务分解层级设置，增加输入值不能为负数和0的检验</description>
+			<author>张建忠</author>
+			<revision-time>2017-05-09</revision-time>
+			<baseline>V13.5.0.B1.20170512</baseline>
+		</modify>
+		<modify>
+			<description>修复 任务日历右上角任务显示下拉菜单中，“按要求完成时间”和“按最近反馈时间”显示不全</description>
+			<author>张建忠</author>
+			<revision-time>2017-05-09</revision-time>
+			<baseline>V13.5.0.B1.20170512</baseline>
+		</modify>
+		<modify>
+			<description>优化 任务管理，执行反馈页签，“完成情况描述”列调整为左对齐</description>
+			<author>张建忠</author>
+			<revision-time>2017-05-04</revision-time>
+			<baseline>V13.5.0.B1.20170512</baseline>
+		</modify>
+		<modify>
+			<description>修复 子任务全部完成时，父任务进度没更新为100%</description>
+			<author>张建忠</author>
+			<revision-time>2017-04-28</revision-time>
+			<baseline>V13.5.0.B1.20170512</baseline>
+		</modify>
+		<modify>
+			<description>修复 任务如果有执行反馈，删除就会报错</description>
+			<author>张建忠</author>
+			<revision-time>2017-04-25</revision-time>
+			<baseline>V13.5.0.B1.20170512</baseline>
+		</modify>
+		<modify>
+			<description>修复 编辑任务进度，没有重新发送待办</description>
+			<author>张建忠</author>
+			<revision-time>2017-04-25</revision-time>
+			<relation>
+				<relation-module>sys/notify</relation-module>
+			</relation>
+			<baseline>V13.5.0.B1.20170512</baseline>
+		</modify>
+		<modify>
+			<description>修复 列表页面头部全选框没有对齐</description>
+			<author>谢幸</author>
+			<revision-time>2017-04-01</revision-time>
+			<relation>
+				<relation-module>sys/ui</relation-module>
+			</relation>
+			<baseline>V13.5.0.B1.20170512</baseline>
+		</modify>
+		<modify>
+			<description>优化 任务查看页，分解图选项，“任务分解图”按钮样式建议优化</description>
+			<author>崔文坚</author>
+			<revision-time>2017-03-09</revision-time>
+			<baseline>V13.0.0.R.20170310</baseline>
+		</modify>
+		<modify>
+			<description>修复 应用中心下进入各个业务模块，中间帧的字体可随主题包样式</description>
+			<author>陈经纬</author>
+			<revision-time>2017-03-08</revision-time>
+			<baseline>V13.0.0.R.20170310</baseline>
+		</modify>
+		<modify>
+			<description>修复 结项的任务不允许进行评价，分解子任务，终止，编辑等操作</description>
+			<author>朱湖强</author>
+			<revision-time>2017-03-02</revision-time>
+			<baseline>V13.0.0.R.20170310</baseline>
+		</modify>
+		<modify>
+			<description>优化 查看页面“任务反馈页签默认展开”</description>
+			<author>朱湖强</author>
+			<revision-time>2017-03-02</revision-time>
+			<baseline>V13.0.0.R.20170310</baseline>
+		</modify>
+		<modify>
+			<description>修复 结项的任务不允许进行反馈</description>
+			<author>朱湖强</author>
+			<revision-time>2017-02-23</revision-time>
+			<baseline>V13.0.0.R.20170310</baseline>
+		</modify>
+		<modify>
+			<description>新增 移动门户portlet</description>
+			<author>周梓凡</author>
+			<revision-time>2017-02-23</revision-time>
+			<relation>
+				<relation-module>sys/mobile</relation-module>
+				<relation-module>sys/mportal</relation-module>
+			</relation>
+			<baseline>V13.0.0.R.20170310</baseline>
+		</modify>
+		<modify>
+			<description>修复 更多按钮有展开和伸缩的效果</description>
+			<author>崔文坚</author>
+			<revision-time>2017-02-18</revision-time>
+			<baseline>V13.0.0.R.20170310</baseline>
+		</modify>
+		<modify>
+			<description>优化 去除字段索引，避免sqlserver下因索引导致数据库兼容性检测修复失败</description>
+			<author>朱湖强</author>
+			<revision-time>2017-01-20</revision-time>
+			<baseline>V13.0.0.R.20170310</baseline>
+		</modify>
+		<modify>
+			<description>修复 移动端查看页面子任务无法显示问题</description>
+			<author>朱湖强</author>
+			<revision-time>2016-12-28</revision-time>
+			<baseline>V13.0.0.B3.20161230</baseline>
+		</modify>
+		<modify>
+			<description>优化 项目协作冰蓝主题下项目门户项目任务窗口，任务进度百分比显示位置建议保持居中</description>
+			<author>陈晓文</author>
+			<revision-time>2016-12-16</revision-time>
+			<baseline>V13.0.0.B3.20161230</baseline>
+		</modify>
+		<modify>
+			<description>优化 任务管理模块，在主页展示的时候，不能展示指定类别的文档</description>
+			<author>陈晓文</author>
+			<revision-time>2016-12-09</revision-time>
+			<baseline>V13.0.0.B3.20161230</baseline>
+		</modify>
+		<modify>
+			<description>优化 任务过期后发送待阅提醒</description>
+			<author>朱湖强</author>
+			<revision-time>2016-11-25</revision-time>
+			<baseline>V13.0.0.B3.20161230</baseline>
+		</modify>
+		<modify>
+			<description>修复 was环境列表页面无法显示问题</description>
+			<author>周梓凡</author>
+			<revision-time>2016-11-22</revision-time>
+			<baseline>V13.0.0.B3.20161230</baseline>
+		</modify>
+		<modify>
+			<description>修复 任务列表中，子任务标题无法点击问题</description>
+			<author>朱湖强</author>
+			<revision-time>2016-11-10</revision-time>
+			<baseline>V13.0.0.B3.20161230</baseline>
+		</modify>
+		<modify>
+			<description>优化 任务分解支持层级配置</description>
+			<author>朱湖强</author>
+			<revision-time>2016-11-07</revision-time>
+			<baseline>V13.0.0.B3.20161230</baseline>
+		</modify>
+		<modify>
+			<description>修复 获取默认待办值接口调用调整</description>
+			<author>林秀贤</author>
+			<revision-time>2016-10-31</revision-time>
+			<relation>
+				<relation-module>sys/notify</relation-module>
+			</relation>
+			<baseline>V13.0.0.B3.20161230</baseline>
+		</modify>
+		<modify>
+			<description>修复 list列表页操作栏中的“删除”按钮调整命名为“批量删除”</description>
+			<author>潘永辉</author>
+			<revision-time>2016-10-20</revision-time>
+			<baseline>V13.0.0.B3.20161230</baseline>
+		</modify>
+		<modify>
+			<description>修复 修改每页数据条数，列表层级显示错乱问题</description>
+			<author>朱湖强</author>
+			<revision-time>2016-10-20</revision-time>
+			<baseline>V13.0.0.B3.20161230</baseline>
+		</modify>
+		<modify>
+			<description>修复 进行状态的任务，对其子任务更新进度之后再评价，进度变为0问题</description>
+			<author>朱湖强</author>
+			<revision-time>2016-10-18</revision-time>
+			<baseline>V13.0.0.B3.20161230</baseline>
+		</modify>
+		<modify>
+			<description>修复 任务列表页面无法返回主页问题</description>
+			<author>周梓凡</author>
+			<revision-time>2016-10-14</revision-time>
+			<baseline>V13.0.0.B3.20161230</baseline>
+		</modify>
+		<modify>
+			<description>优化 后台配置中心由“后台管理”角色控制</description>
+			<author>朱湖强</author>
+			<revision-time>2016-10-12</revision-time>
+			<baseline>V13.0.0.B3.20161230</baseline>
+		</modify>
+		<modify>
+			<description>修复 任务进度为100%后，对任务进行评价，仍然会给负责人发待办问题</description>
+			<author>朱湖强</author>
+			<revision-time>2016-10-10</revision-time>
+			<baseline>V13.0.0.B3.20161230</baseline>
+		</modify>
+		<modify>
+			<description>修复 任务分析时，将某个人员置为无效后，分析结果显示了其他无效人员</description>
+			<author>朱湖强</author>
+			<revision-time>2016-10-08</revision-time>
+			<baseline>V13.0.0.B3.20161230</baseline>
+		</modify>
+		<modify>
+			<description>新增 微任务功能开发</description>
+			<author>陈亮</author>
+			<revision-time>2016-09-28</revision-time>
+			<relation>
+				<relation-module>third/ywork</relation-module>
+			</relation>
+			<baseline>V13.0.0.B2.20160930</baseline>
+		</modify>
+		<modify>
+			<description>优化 应用中心》协同》会议管理》卡片库》分类信息list列表新增操作列，操作项：编辑、删除</description>
+			<author>张佳奇</author>
+			<revision-time>2016-09-28</revision-time>
+			<baseline>V13.0.0.B2.20160930</baseline>
+		</modify>
+		<modify>
+			<description>修复 任务管理，任务类型和满意度配置的是否启用字段值显示为true或者false，正常应该为是或者否</description>
+			<author>张佳奇</author>
+			<revision-time>2016-09-28</revision-time>
+			<baseline>V13.0.0.B2.20160930</baseline>
+		</modify>
+		<modify>
+			<description>优化 筛选项“任务评价“改为单选</description>
+			<author>朱湖强</author>
+			<revision-time>2016-08-22</revision-time>
+			<baseline>V13.0.0.B2.20160930</baseline>
+		</modify>
+		<modify>
+			<description>修复 报表分析新建页面，切换对象类型时，对象范围选择不正确问题</description>
+			<author>朱湖强</author>
+			<revision-time>2016-08-15</revision-time>
+			<baseline>V13.0.0.B2.20160930</baseline>
+		</modify>
+		<modify>
+			<description>修复 任务查看页面出现横向滚动条</description>
+			<author>朱湖强</author>
+			<revision-time>2016-08-15</revision-time>
+			<baseline>V13.0.0.B2.20160930</baseline>
+		</modify>
+		<modify>
+			<description>优化 综合分析和满意度分析结果列表添加评价满意度显示</description>
+			<author>朱湖强</author>
+			<revision-time>2016-08-15</revision-time>
+			<baseline>V13.0.0.B2.20160930</baseline>
+		</modify>
+		<modify>
+			<description>优化 任务列表分级展示</description>
+			<author>朱湖强</author>
+			<revision-time>2016-08-15</revision-time>
+			<baseline>V13.0.0.B2.20160930</baseline>
+		</modify>
+		<modify>
+			<description>优化 任务分解图请按照 任务创建的先后时间（日时分秒）进行排序</description>
+			<author>李启龙</author>
+			<revision-time>2016-07-13</revision-time>
+			<baseline>V13.0.0.B2.20160930</baseline>
+		</modify>
+		<modify>
+			<description>修复 任务管理查看页，出现横向滚动条</description>
+			<author>李启龙</author>
+			<revision-time>2016-06-21</revision-time>
+			<baseline>V13.0.0.B2.20160930</baseline>
+		</modify>
+		<modify>
+			<description>优化 移动端列表图像加载性能优化</description>
+			<author>林秀贤</author>
+			<revision-time>2016-06-14</revision-time>
+			<relation>
+				<relation-module>sys/mobile</relation-module>
+			</relation>
+			<baseline>V13.0.0.B2.20160930</baseline>
+		</modify>
+		<modify>
+			<description>优化 移动端头像大小性能优化</description>
+			<author>林秀贤</author>
+			<revision-time>2016-06-12</revision-time>
+			<baseline>V13.0.0.B2.20160930</baseline>
+		</modify>
+		<modify>
+			<description>修复 当子任务较多的情况下，点击主任务分解图时，子任务分解图显示不全</description>
+			<author>李启龙</author>
+			<revision-time>2016-06-06</revision-time>
+			<baseline>V13.0.0.B2.20160930</baseline>
+		</modify>
+		<modify>
+			<description>修复 移动端英文环境下新建任务失败</description>
+			<author>李启龙</author>
+			<revision-time>2016-06-03</revision-time>
+			<relation>
+				<relation-module>sys/mobile</relation-module>
+			</relation>
+			<baseline>V13.0.0.B2.20160930</baseline>
+		</modify>
+		<modify>
+			<description>修复 移动端多语言</description>
+			<author>李启龙</author>
+			<revision-time>2016-06-01</revision-time>
+			<baseline>V13.0.0.B2.20160930</baseline>
+		</modify>
+		<modify>
+			<description>优化 在负荷分析和综合分析报表中增加完成率一列</description>
+			<author>李启龙</author>
+			<revision-time>2016-06-01</revision-time>
+			<baseline>V13.0.0.B2.20160930</baseline>
+		</modify>
+		<modify>
+			<description>优化 移动端RTF布局调整（操作栏放至底部）</description>
+			<author>周梓凡</author>
+			<revision-time>2016-03-22</revision-time>
+			<relation>
+				<relation-module>sys/mobile</relation-module>
+			</relation>
+			<baseline>V13.0.0.B1.20160429</baseline>
+		</modify>
+		<modify>
+			<description>优化 任务日历头部图标增加提示</description>
+			<author>周梓凡</author>
+			<revision-time>2016-03-07</revision-time>
+			<relation>
+				<relation-module>sys/ui</relation-module>
+			</relation>
+			<baseline>V12.0.9.R.20160325</baseline>
+		</modify>
+		<modify>
+			<description>修复 任务文档搜索权限被放大问题</description>
+			<author>周梓凡</author>
+			<revision-time>2016-03-01</revision-time>
+			<baseline>V12.0.9.R.20160325</baseline>
+		</modify>
+		<modify>
+			<description>优化 移动端列表页面样式</description>
+			<author>周梓凡</author>
+			<revision-time>2016-03-01</revision-time>
+			<baseline>V12.0.9.R.20160325</baseline>
+		</modify>
+		<modify>
+			<description>修复 移动端任务查看界面页签栏无法切换到分解图页签</description>
+			<author>周梓凡</author>
+			<revision-time>2016-03-01</revision-time>
+			<baseline>V12.0.9.R.20160325</baseline>
+		</modify>
+		<modify>
+			<description>优化 移动端任务提示框样式</description>
+			<author>周梓凡</author>
+			<revision-time>2016-03-01</revision-time>
+			<baseline>V12.0.9.R.20160325</baseline>
+		</modify>
+		<modify>
+			<description>修复 任务portlet html标签被多次转义</description>
+			<author>周梓凡</author>
+			<revision-time>2016-03-01</revision-time>
+			<baseline>V12.0.9.R.20160325</baseline>
+		</modify>
+		<modify>
+			<description>优化 任务同步到日程，原先日程的开始时间为任务创建时间，导致日程的提前提醒失去意义</description>
+			<author>李启龙</author>
+			<revision-time>2016-02-26</revision-time>
+			<baseline>V12.0.9.R.20160325</baseline>
+		</modify>
+		<modify>
+			<description>优化 自动分解子任务时，父任务抄送人不带到子任务</description>
+			<author>朱湖强</author>
+			<revision-time>2016-02-23</revision-time>
+			<baseline>V12.0.9.R.20160325</baseline>
+		</modify>
+		<modify>
+			<description>新增 任务负荷统计增加超期完成个数列</description>
+			<author>周梓凡</author>
+			<revision-time>2016-01-06</revision-time>
+			<baseline>V12.0.8.R.20160114</baseline>
+		</modify>
+		<modify>
+			<description>修复 移动端、任务图注入问题</description>
+			<author>周梓凡</author>
+			<revision-time>2015-12-14</revision-time>
+			<baseline>V12.0.8.R.20160114</baseline>
+		</modify>
+		<modify>
+			<description>修复 子任务时间不能晚于父任务提示框宽度问题</description>
+			<author>周梓凡</author>
+			<revision-time>2015-12-09</revision-time>
+			<relation>
+				<relation-module>sys/mobile</relation-module>
+			</relation>
+			<baseline>V12.0.8.R.20160114</baseline>
+		</modify>
+		<modify>
+			<description>修复 任务被设为不能分解子任务，但用链接进去还是可以</description>
+			<author>周梓凡</author>
+			<revision-time>2015-12-09</revision-time>
+			<baseline>V12.0.8.R.20160114</baseline>
+		</modify>
+		<modify>
+			<description>修复 任务编辑时删除负责人原来的待办</description>
+			<author>周梓凡</author>
+			<revision-time>2015-12-02</revision-time>
+			<baseline>V12.0.7.R.20151203</baseline>
+		</modify>
+		<modify>
+			<description>修复 在任务管理中发起督办与沟通，被沟通人无法查看办理依据</description>
+			<author>朱湖强</author>
+			<revision-time>2015-12-02</revision-time>
+			<baseline>V12.0.7.R.20151203</baseline>
+		</modify>
+		<modify>
+			<description>新增 定时任务的详细描述</description>
+			<author>周梓凡</author>
+			<revision-time>2015-11-05</revision-time>
+			<baseline>V12.0.6.R.20151106</baseline>
+		</modify>
+		<modify>
+			<description>修复 列表页面列宽</description>
+			<author>周梓凡</author>
+			<revision-time>2015-11-03</revision-time>
+			<relation>
+				<relation-module>sys/ui</relation-module>
+			</relation>
+			<baseline>V12.0.6.R.20151106</baseline>
+		</modify>
+		<modify>
+			<description>修复 回车键自动提交报错</description>
+			<author>周梓凡</author>
+			<revision-time>2015-11-03</revision-time>
+			<baseline>V12.0.6.R.20151106</baseline>
+		</modify>
+		<modify>
+			<description>优化 任务权限控制</description>
+			<author>周梓凡</author>
+			<revision-time>2015-11-03</revision-time>
+			<baseline>V12.0.6.R.20151106</baseline>
+		</modify>
+		<modify>
+			<description>修复 移动端列表页日历切换按钮和搜索按钮重叠</description>
+			<author>谢幸</author>
+			<revision-time>2015-11-02</revision-time>
+			<baseline>V12.0.6.R.20151106</baseline>
+		</modify>
+		<modify>
+			<description>修复 列表按进度排序不正确问题</description>
+			<author>周梓凡</author>
+			<revision-time>2015-10-22</revision-time>
+			<baseline>V12.0.6.R.20151106</baseline>
+		</modify>
+		<modify>
+			<description>修复 任务截止时间校验取服务器时间做校验</description>
+			<author>周梓凡</author>
+			<revision-time>2015-10-13</revision-time>
+			<baseline>V12.0.6.R.20151106</baseline>
+		</modify>
+		<modify>
+			<description>修复 排序号能输入负数的问题</description>
+			<author>周娅</author>
+			<revision-time>2015-09-14</revision-time>
+			<baseline>V12.0.6.R.20151106</baseline>
+		</modify>
+		<modify>
+			<description>修复 项目协作门户中标题等字段被xml注入</description>
+			<author>魏本源</author>
+			<revision-time>2015-09-10</revision-time>
+			<baseline>V12.0.5.R.20150911</baseline>
+		</modify>
+		<modify>
+			<description>修复 项目协作门户中标题等字段被xml注入</description>
+			<author>魏本源</author>
+			<revision-time>2015-09-10</revision-time>
+			<baseline>V12.0.5.R.20150911</baseline>
+		</modify>
+		<modify>
+			<description>修复 任务反馈中如果存在图片会影响样式问题</description>
+			<author>周梓凡</author>
+			<revision-time>2015-08-04</revision-time>
+			<baseline>V12.0.4.R.20150807</baseline>
+		</modify>
+		<modify>
+			<description>修复 任务统计开始时间、结束时间校验</description>
+			<author>周梓凡</author>
+			<revision-time>2015-08-04</revision-time>
+			<baseline>V12.0.4.R.20150807</baseline>
+		</modify>
+		<modify>
+			<description>修复 移动端weblogic乱码问题</description>
+			<author>周梓凡</author>
+			<revision-time>2015-07-27</revision-time>
+			<baseline>V12.0.4.R.20150807</baseline>
+		</modify>
+		<modify>
+			<description>修复 分解子任务页面没有按人自动分解子任务选项</description>
+			<author>周梓凡</author>
+			<revision-time>2015-07-27</revision-time>
+			<baseline>V12.0.4.R.20150807</baseline>
+		</modify>
+		<modify>
+			<description>优化 查看页面列表视图暂无内容居中</description>
+			<author>周梓凡</author>
+			<revision-time>2015-07-27</revision-time>
+			<baseline>V12.0.4.R.20150807</baseline>
+		</modify>
+		<modify>
+			<description>修复 满意度分值数字校验</description>
+			<author>周梓凡</author>
+			<revision-time>2015-07-20</revision-time>
+			<baseline>V12.0.4.R.20150807</baseline>
+		</modify>
+		<modify>
+			<description>优化 任务分解图</description>
+			<author>周梓凡</author>
+			<revision-time>2015-07-20</revision-time>
+			<baseline>V12.0.4.R.20150807</baseline>
+		</modify>
+		<modify>
+			<description>优化 增加后台配置角色</description>
+			<author>周梓凡</author>
+			<revision-time>2015-07-09</revision-time>
+			<baseline>V12.0.3.R.20150710</baseline>
+		</modify>
+		<modify>
+			<description>优化 KK中查看任务反馈评价界面,来源信息“来自xx“被遮挡了 （样式调整）</description>
+			<author>周梓凡</author>
+			<revision-time>2015-07-09</revision-time>
+			<baseline>V12.0.3.R.20150710</baseline>
+		</modify>
+		<modify>
+			<description>修复 驳回产生两个代办问题</description>
+			<author>周梓凡</author>
+			<revision-time>2015-07-08</revision-time>
+			<baseline>V12.0.3.R.20150710</baseline>
+		</modify>
+		<modify>
+			<description>修复 删除驳回后待办未删除问题</description>
+			<author>周梓凡</author>
+			<revision-time>2015-07-06</revision-time>
+			<baseline>V12.0.3.R.20150710</baseline>
+		</modify>
+		<modify>
+			<description>修复 任务嵌入页面资源文件关联了旧会议</description>
+			<author>周梓凡</author>
+			<revision-time>2015-07-06</revision-time>
+			<baseline>V12.0.3.R.20150710</baseline>
+		</modify>
+		<modify>
+			<description>修复 任务日历展现问题</description>
+			<author>周梓凡</author>
+			<revision-time>2015-07-06</revision-time>
+			<relation>
+				<relation-module>sys/ui</relation-module>
+			</relation>
+			<baseline>V12.0.3.R.20150710</baseline>
+		</modify>
+		<modify>
+			<description>修复 任务统计不填写开始时间条件报错</description>
+			<author>周梓凡</author>
+			<revision-time>2015-07-06</revision-time>
+			<baseline>V12.0.3.R.20150710</baseline>
+		</modify>
+		<modify>
+			<description>修复 父任务结项时子任务未置为结项问题</description>
+			<author>周梓凡</author>
+			<revision-time>2015-06-24</revision-time>
+			<baseline>V12.0.3.R.20150710</baseline>
+		</modify>
+		<modify>
+			<description>修复 任务评价删除后异常问题</description>
+			<author>周梓凡</author>
+			<revision-time>2015-06-19</revision-time>
+			<baseline>V12.0.3.R.20150710</baseline>
+		</modify>
+		<modify>
+			<description>优化 执行反馈任务来源颜色</description>
+			<author>周梓凡</author>
+			<revision-time>2015-06-19</revision-time>
+			<baseline>V12.0.3.R.20150710</baseline>
+		</modify>
+		<modify>
+			<description>修复 任务日历标题html注入问题</description>
+			<author>周梓凡</author>
+			<revision-time>2015-06-16</revision-time>
+			<baseline>V12.0.3.R.20150710</baseline>
+		</modify>
+		<modify>
+			<description>优化 反馈评价条数改成10条</description>
+			<author>周梓凡</author>
+			<revision-time>2015-06-04</revision-time>
+			<baseline>V12.0.2.R.20150605</baseline>
+		</modify>
+		<modify>
+			<description>修复 任务评价在Tomcat7下报错</description>
+			<author>周梓凡</author>
+			<revision-time>2015-06-04</revision-time>
+			<baseline>V12.0.2.R.20150605</baseline>
+		</modify>
+		<modify>
+			<description>优化 自动分解子任务只产生一个日程</description>
+			<author>周梓凡</author>
+			<revision-time>2015-06-02</revision-time>
+			<baseline>V12.0.2.R.20150605</baseline>
+		</modify>
+		<modify>
+			<description>修复 移动端标记完成显示来自XX丢失</description>
+			<author>周梓凡</author>
+			<revision-time>2015-06-02</revision-time>
+			<baseline>V12.0.2.R.20150605</baseline>
+		</modify>
+		<modify>
+			<description>修复 搜索输入框太小，输入标题显示不全，默认10个字</description>
+			<author>谭又豪</author>
+			<revision-time>2015-05-20</revision-time>
+			<baseline>V12.0.2.R.20150605</baseline>
+		</modify>
+		<modify>
+			<description>新增 操作成功后自动刷新列表</description>
+			<author>魏本源</author>
+			<revision-time>2015-05-20</revision-time>
+			<baseline>V12.0.2.R.20150605</baseline>
+		</modify>
+		<modify>
+			<description>修复 任务暂停则禁止更新进度</description>
+			<author>周梓凡</author>
+			<revision-time>2015-04-28</revision-time>
+			<baseline>V12.0.1.R.20150508</baseline>
+		</modify>
+		<modify>
+			<description>新增 实现关键数据使用情况扩展</description>
+			<author>黄伟强</author>
+			<revision-time>2015-03-06</revision-time>
+			<baseline>V12.0.0.R.20150325</baseline>
+		</modify>
+		<modify>
+			<description>优化 二级页面按钮操作栏翻页功能</description>
+			<author>王腾飞</author>
+			<revision-time>2015-01-16</revision-time>
+			<relation>
+				<relation-module>sys/ui</relation-module>
+			</relation>
+			<baseline>V12.0.0.B3.20150116</baseline>
+		</modify>
+		<modify>
+			<description>修复 app中点击子任务没反应问题</description>
+			<author>朱湖强</author>
+			<revision-time>2015-01-14</revision-time>
+			<baseline>V12.0.0.B3.20150116</baseline>
+		</modify>
+		<modify>
+			<description>修复 结项任务不显示更新进度按钮</description>
+			<author>周梓凡</author>
+			<revision-time>2014-12-30</revision-time>
+			<baseline>V12.0.0.B3.20150116</baseline>
+		</modify>
+		<modify>
+			<description>修复 从待办页面进去反馈后自动刷新待办</description>
+			<author>周梓凡</author>
+			<revision-time>2014-12-30</revision-time>
+			<baseline>V12.0.0.B3.20150116</baseline>
+		</modify>
+		<modify>
+			<description>修复 任务结项后出现不必要的待办</description>
+			<author>周梓凡</author>
+			<revision-time>2014-12-25</revision-time>
+			<baseline>V12.0.0.B3.20150116</baseline>
+		</modify>
+		<modify>
+			<description>修复 借项任务在任务统计中不正确问题</description>
+			<author>周梓凡</author>
+			<revision-time>2014-12-25</revision-time>
+			<baseline>V12.0.0.B3.20150116</baseline>
+		</modify>
+		<modify>
+			<description>修复 进行中的任务重新编辑后变成未启动</description>
+			<author>周梓凡</author>
+			<revision-time>2014-12-15</revision-time>
+			<baseline>V12.0.0.B3.20150116</baseline>
+		</modify>
+		<modify>
+			<description>优化 任务查看页面和任务反馈页面进度改成进度条形式（与列表页面保持一致）</description>
+			<author>周梓凡</author>
+			<revision-time>2014-12-15</revision-time>
+			<baseline>V12.0.0.B3.20150116</baseline>
+		</modify>
+		<modify>
+			<description>优化 数据字典增加displayProperty属性</description>
+			<author>魏本源</author>
+			<revision-time>2014-12-09</revision-time>
+			<baseline>V12.0.0.B3.20150116</baseline>
+		</modify>
+		<modify>
+			<description>优化 如果任务没有子任务，反馈时不显示" 自动根据子任务更新进度"</description>
+			<author>朱湖强</author>
+			<revision-time>2014-12-05</revision-time>
+			<baseline>V12.0.0.B3.20150116</baseline>
+		</modify>
+		<modify>
+			<description>优化 执行反馈时，任务进度字段进行数字有效性校验</description>
+			<author>朱湖强</author>
+			<revision-time>2014-12-01</revision-time>
+			<baseline>V12.0.0.B3.20150116</baseline>
+		</modify>
+		<modify>
+			<description>优化 驳回任务后，第一反馈人的待办置为已办，其他人的删除</description>
+			<author>朱湖强</author>
+			<revision-time>2014-11-14</revision-time>
+			<baseline>V12.0.0.B2.20141114</baseline>
+		</modify>
+		<modify>
+			<description>优化 驳回任务后，第一反馈人的待办置为已办，其他人的删除</description>
+			<author>朱湖强</author>
+			<revision-time>2014-11-14</revision-time>
+			<baseline>V12.0.0.B2.20141114</baseline>
+		</modify>
+		<modify>
+			<description>优化 移动端三级页面显示附件</description>
+			<author>朱湖强</author>
+			<revision-time>2014-11-12</revision-time>
+			<baseline>V12.0.0.B2.20141114</baseline>
+		</modify>
+		<modify>
+			<description>移除后台参数设置中关于工作沟通模块的配置</description>
+			<author>朱湖强</author>
+			<revision-time>2014-11-11</revision-time>
+			<baseline>V12.0.0.B2.20141114</baseline>
+		</modify>
+		<modify>
+			<description>优化 移动端任务反馈查询页面增加所属任务字段</description>
+			<author>朱湖强</author>
+			<revision-time>2014-10-31</revision-time>
+			<baseline>V12.0.0.B2.20141114</baseline>
+		</modify>
+		<modify>
+			<description>优化 驳回页面添加驳回操作按钮</description>
+			<author>朱湖强</author>
+			<revision-time>2014-10-31</revision-time>
+			<baseline>V12.0.0.B2.20141114</baseline>
+		</modify>
+		<modify>
+			<description>优化 列表视图中过期任务完成时间显示"超期X天"</description>
+			<author>周梓凡</author>
+			<revision-time>2014-10-29</revision-time>
+			<baseline>V12.0.0.B2.20141114</baseline>
+		</modify>
+		<modify>
+			<description>修复 移动端驳回文档打开空白问题</description>
+			<author>朱湖强</author>
+			<revision-time>2014-10-28</revision-time>
+			<baseline>V12.0.0.B2.20141114</baseline>
+		</modify>
+		<modify>
+			<description>优化 表单输入框宽度规范化</description>
+			<author>魏本源</author>
+			<revision-time>2014-10-23</revision-time>
+			<baseline>V12.0.0.B2.20141114</baseline>
+		</modify>
+		<modify>
+			<description>新增 操作成功后自动刷新列表</description>
+			<author>魏本源</author>
+			<revision-time>2014-10-17</revision-time>
+			<baseline>V12.0.0.B2.20141114</baseline>
+		</modify>
+		<modify>
+			<description>优化 任务表单优化</description>
+			<author>朱湖强</author>
+			<revision-time>2014-10-17</revision-time>
+			<baseline>V12.0.0.B2.20141114</baseline>
+		</modify>
+		<modify>
+			<description>优化 移动端界面和功能优化</description>
+			<author>朱湖强</author>
+			<revision-time>2014-10-08</revision-time>
+			<baseline>V12.0.0.B2.20141114</baseline>
+		</modify>
+		<modify>
+			<description>修复 反馈任务待办接收人不正确问题</description>
+			<author>周梓凡</author>
+			<revision-time>2014-10-08</revision-time>
+			<baseline>V12.0.0.B2.20141114</baseline>
+		</modify>
+		<modify>
+			<description>新增 任务结项的功能</description>
+			<author>周梓凡</author>
+			<revision-time>2014-09-25</revision-time>
+			<baseline>V12.0.0.B2.20141114</baseline>
+		</modify>
+		<modify>
+			<description>新增 查询条件“任务类型”、“任务评价”</description>
+			<author>周梓凡</author>
+			<revision-time>2014-09-22</revision-time>
+			<baseline>V12.0.0.B2.20141114</baseline>
+		</modify>
+		<modify>
+			<description>优化 任务日历中时间展示</description>
+			<author>周梓凡</author>
+			<revision-time>2014-09-18</revision-time>
+			<baseline>V12.0.0.B2.20141114</baseline>
+		</modify>
+		<modify>
+			<description>修复 新建页面国际化</description>
+			<author>周梓凡</author>
+			<revision-time>2014-08-27</revision-time>
+			<baseline>V12.0.0.B1.20140905</baseline>
+		</modify>
+		<modify>
+			<description>修复 英文环境下快速选择完成时间BUG</description>
+			<author>周梓凡</author>
+			<revision-time>2014-08-20</revision-time>
+			<baseline>V12.0.0.B1.20140905</baseline>
+		</modify>
+		<modify>
+			<description>修复 任务按人分解时收到两条待办问题</description>
+			<author>朱湖强</author>
+			<revision-time>2014-08-20</revision-time>
+			<baseline>V12.0.0.B1.20140905</baseline>
+		</modify>
+		<modify>
+			<description>修复 移动端置为“未完成”后，pc端进度显示为null的问题</description>
+			<author>朱湖强</author>
+			<revision-time>2014-07-30</revision-time>
+			<baseline>V11.0.3.R.20140801</baseline>
+		</modify>
+		<modify>
+			<description>修复 移动端置为“未完成”后，pc端进度显示为null的问题</description>
+			<author>朱湖强</author>
+			<revision-time>2014-07-30</revision-time>
+			<baseline>V11.0.3.R.20140801</baseline>
+		</modify>
+		<modify>
+			<description>新增 分解子任务页面同步机制标签</description>
+			<author>周梓凡</author>
+			<revision-time>2014-07-02</revision-time>
+			<baseline>V11.0.3.R.20140704</baseline>
+		</modify>
+		<modify>
+			<description>优化 任务进度以进度条展示</description>
+			<author>魏本源</author>
+			<revision-time>2014-06-11</revision-time>
+			<baseline>V11.0.3.R.20140704</baseline>
+		</modify>
+		<modify>
+			<description>修复 任务管理日历权限问题</description>
+			<author>周梓凡</author>
+			<revision-time>2014-05-27</revision-time>
+			<baseline>V11.0.2.R.20140606</baseline>
+		</modify>
+		<modify>
+			<description>修复 任务管理模块执行反馈时通知人把接收人放在勾选项中</description>
+			<author>周梓凡</author>
+			<revision-time>2014-05-08</revision-time>
+			<baseline>V11.0.2.R.20140606</baseline>
+		</modify>
+		<modify>
+			<description>新增 门户时间参数以提高门户加载性能</description>
+			<author>谭又豪</author>
+			<revision-time>2014-04-18</revision-time>
+			<relation>
+				<relation-module>sys/portal</relation-module>
+			</relation>
+			<baseline>V11.0.1.R.20140506</baseline>
+		</modify>
+		<modify>
+			<description>修复 任务评价提交时校验评价信息是否为空</description>
+			<author>周梓凡</author>
+			<revision-time>2014-04-11</revision-time>
+			<baseline>V11.0.1.R.20140506</baseline>
+		</modify>
+		<modify>
+			<description>新增 任务模块部署日程机制</description>
+			<author>周梓凡</author>
+			<revision-time>2014-02-25</revision-time>
+			<relation>
+				<relation-module>sys/agenda</relation-module>
+			</relation>
+			<baseline>V11.0.0.R.20140320</baseline>
+		</modify>
+		<modify>
+			<description>修复 删除有关联驳回记录和任务评价的任务时报错</description>
+			<author>魏本源</author>
+			<revision-time>2014-02-18</revision-time>
+			<baseline>V11.0.0.R.20140320</baseline>
+		</modify>
+		<modify>
+			<description>优化 任务查看页面子任务显示按创建时间排序</description>
+			<author>魏本源</author>
+			<revision-time>2013-10-28</revision-time>
+			<baseline>V11.0.0.B1.20140107</baseline>
+		</modify>
+		<modify>
+			<description>修复 数据超过1000时，“ 按指派部门”查询报错</description>
+			<author>朱湖强</author>
+			<revision-time>2013-10-11</revision-time>
+			<baseline>V11.0.0.B1.20140107</baseline>
+		</modify>
+		<modify>
+			<description>新增 实现“我关注的任务”portlet</description>
+			<author>魏本源</author>
+			<revision-time>2013-09-16</revision-time>
+			<baseline>V11.0.0.B1.20140107</baseline>
+		</modify>
+		<modify>
+			<description>移除 列表页面按接收人排序功能</description>
+			<author>朱湖强</author>
+			<revision-time>2013-08-29</revision-time>
+			<baseline>V11.0.0.B1.20140107</baseline>
+		</modify>
+		<modify>
+			<description>修复 移动办公任务管理模块，执行反馈显示数字中不包括子任务，而进入链接列表中包括子任务</description>
+			<author>孟磊</author>
+			<revision-time>2013-08-22</revision-time>
+			<baseline>V11.0.0.B1.20140107</baseline>
+		</modify>
+		<modify>
+			<description>修复 执行反馈时，通知方式不是取默认问题</description>
+			<author>朱湖强</author>
+			<revision-time>2013-08-20</revision-time>
+			<baseline>V11.0.0.B1.20140107</baseline>
+		</modify>
+		<modify>
+			<description>新增 任务管理与bam2集成</description>
+			<author>孟磊</author>
+			<revision-time>2013-08-19</revision-time>
+			<baseline>V11.0.0.B1.20140107</baseline>
+		</modify>
+		<modify>
+			<description>修复 import标签没设置编码，导致linux下有可能出现乱码问题；优化 移动端页面样式调整</description>
+			<author>朱湖强</author>
+			<revision-time>2013-08-02</revision-time>
+			<baseline>V11.0.0.B1.20140107</baseline>
+		</modify>
+		<modify>
+			<description>修复 任务管理与旧版工作沟通强关联的问题</description>
+			<author>魏本源</author>
+			<revision-time>2013-07-31</revision-time>
+			<baseline>V11.0.0.B1.20140107</baseline>
+		</modify>
+		<modify>
+			<description>修复 移动端的一些显示调整以及谷歌和火狐下任务反馈进度条异常问题</description>
+			<author>朱湖强</author>
+			<revision-time>2013-07-16</revision-time>
+			<baseline>V11.0.0.B1.20140107</baseline>
+		</modify>
+		<modify>
+			<description>修复 需我完成的任务portlet只显示未启动和进行中的任务</description>
+			<author>魏本源</author>
+			<revision-time>2013-07-15</revision-time>
+			<baseline>V11.0.0.B1.20140107</baseline>
+		</modify>
+		<modify>
+			<description>修复 任务评价的权限</description>
+			<author>朱湖强</author>
+			<revision-time>2013-07-05</revision-time>
+			<baseline>V10.0.3.R.20130712</baseline>
+		</modify>
+		<modify>
+			<description>修复 在DB2下更新层级ID出现空格的问题</description>
+			<author>易荣烽</author>
+			<revision-time>2013-07-04</revision-time>
+			<baseline>V10.0.3.R.20130712</baseline>
+		</modify>
+		<modify>
+			<description>修复 谷歌和火狐下调用表单的reset方法时，隐藏域的值没有清除，导致必填项不填还可以提交问题</description>
+			<author>朱湖强</author>
+			<revision-time>2013-06-28</revision-time>
+			<baseline>V10.0.3.R.20130712</baseline>
+		</modify>
+		<modify>
+			<description>修复 谷歌和火狐浏览器下，任务进度条不能更新问题</description>
+			<author>朱湖强</author>
+			<revision-time>2013-06-28</revision-time>
+			<baseline>V10.0.3.R.20130712</baseline>
+		</modify>
+		<modify>
+			<description>新增 任务有多个任务接收人时其中一人反馈时，其他人将收到该反馈的待阅提示</description>
+			<author>张乐志</author>
+			<revision-time>2013-05-02</revision-time>
+			<baseline>V10.0.2.R.20130608</baseline>
+		</modify>
+		<modify>
+			<description>新增 移动端新增任务管理模块（包括新建、执行反馈、任务评价和分解子任务等）</description>
+			<author>朱湖强</author>
+			<revision-time>2013-04-02</revision-time>
+			<baseline>V10.0.2.R.20130608</baseline>
+		</modify>
+		<modify>
+			<description>新增 任务接收人由单选改成多选</description>
+			<author>张乐志</author>
+			<revision-time>2013-03-13</revision-time>
+			<baseline>V10.0.2.R.20130608</baseline>
+		</modify>
+		<modify>
+			<description>修复 任务分析中，统计出来的任务数和点击查看明细不一致问题</description>
+			<author>朱湖强</author>
+			<revision-time>2013-02-05</revision-time>
+			<baseline>V10.0.1.R.20130328</baseline>
+		</modify>
+		<modify>
+			<description>修复 任务变更后向新接收人发待办并取消旧接收人的待办</description>
+			<author>张乐志</author>
+			<revision-time>2013-01-31</revision-time>
+			<baseline>V10.0.1.R.20130328</baseline>
+		</modify>
+		<modify>
+			<description>修复 oracle数据库中in查询超过1000报错问题</description>
+			<author>朱湖强</author>
+			<revision-time>2013-01-24</revision-time>
+			<baseline>V10.0.1.R.20130328</baseline>
+		</modify>
+		<modify>
+			<description>优化 SQL注入问题</description>
+			<author>邱建华</author>
+			<revision-time>2013-01-22</revision-time>
+			<baseline>V10.0.1.R.20130328</baseline>
+		</modify>
+		<modify>
+			<description>优化 去除了跟沟通机制的模块关联，优化了读取任务来源的接口，以减少模块间的依赖。</description>
+			<author>叶中奇</author>
+			<revision-time>2012-12-07</revision-time>
+			<baseline>V10.0.0.R.20121215</baseline>
+		</modify>
+		<modify>
+			<description>新增 任务管理模块对于BAM2的支持</description>
+			<author>李衡</author>
+			<revision-time>2012-12-06</revision-time>
+			<baseline>V10.0.0.R.20121215</baseline>
+		</modify>
+		<modify>
+			<description>新增 创建任务的时候任务同步到日程</description>
+			<author>朱湖强</author>
+			<revision-time>2012-09-27</revision-time>
+			<relation>
+				<relation-module>sys/calendar</relation-module>
+			</relation>
+			<baseline>V10.0.0.R.20121215</baseline>
+		</modify>
+		<modify>
+			<description>新增 验证要求完成时间大于当前系统时间</description>
+			<author>魏本源</author>
+			<revision-time>2012-09-17</revision-time>
+			<baseline>V10.0.0.B2.20120923</baseline>
+		</modify>
+		<modify>
+			<description>优化 大字段加入延时加载</description>
+			<author>魏本源</author>
+			<revision-time>2012-09-05</revision-time>
+			<baseline>V10.0.0.B2.20120923</baseline>
+		</modify>
+		<modify>
+			<description>修复 分解子任务后，任务接收人无权限访问以及任务树中的人员无法查看整棵任务树文档</description>
+			<author>朱湖强</author>
+			<revision-time>2012-06-19</revision-time>
+			<baseline>V10.0.0.B2.20120923</baseline>
+		</modify>
+		<modify>
+			<description>优化 主页配置，新增窗口时，带出所选择模块或类别的路径而不是默认带出该模块的路径</description>
+			<author>朱湖强</author>
+			<revision-time>2012-05-31</revision-time>
+			<baseline>V10.0.0.B2.20120923</baseline>
+		</modify>
+		<modify>
+			<description>修复 解决在WAS、Tomcat下任务树偶发的显示异常问题</description>
+			<author>朱湖强</author>
+			<revision-time>2012-05-04</revision-time>
+			<baseline>V10.0.0.B1.20120522</baseline>
+		</modify>
+		<modify>
+			<description>修正子任务创建时的时间校验</description>
+			<author>朱湖强</author>
+			<revision-time>2012-03-22</revision-time>
+			<baseline>V9.0.2.R.20120326</baseline>
+		</modify>
+		<modify>
+			<description>解决was下任务树显示异常问题</description>
+			<author>朱湖强</author>
+			<revision-time>2012-03-12</revision-time>
+			<baseline>V9.0.2.R.20120326</baseline>
+		</modify>
+		<modify>
+			<description>增加“是否包括子部门”和“是否包括子任务”字段对统计结果进行控制。</description>
+			<author>朱湖强</author>
+			<revision-time>2012-02-13</revision-time>
+			<baseline>V9.0.2.R.20120326</baseline>
+		</modify>
+		<modify>
+			<description>修改为：对同一条任务的评价可以有多条</description>
+			<author>朱湖强</author>
+			<revision-time>2012-02-08</revision-time>
+			<baseline>V9.0.2.R.20120326</baseline>
+		</modify>
+		<modify>
+			<description>增加校验：子任务的完成时间应该早于父任务完成时间</description>
+			<author>朱湖强</author>
+			<revision-time>2012-02-07</revision-time>
+			<baseline>V9.0.2.R.20120326</baseline>
+		</modify>
+		<modify>
+			<description>修改为：任务进度更新没有完成时，待审信息不消失</description>
+			<author>朱湖强</author>
+			<revision-time>2012-02-07</revision-time>
+			<baseline>V9.0.2.R.20120326</baseline>
+		</modify>
+		<modify>
+			<description>增加portlet</description>
+			<author>赵义洪</author>
+			<revision-time>2011-10-10</revision-time>
+			<baseline>EKP9.0.0.R.20111025</baseline>
+		</modify>
+		<modify>
+			<description>搜索导出结果报错处理</description>
+			<author>李衡</author>
+			<revision-time>2011-09-29</revision-time>
+			<baseline>EKP9.0.0.R.20111025</baseline>
+		</modify>
+		<modify>
+			<description>加入到模块配置列表里面</description>
+			<author>庄为亮</author>
+			<revision-time>2011-06-14</revision-time>
+			<baseline>EKP9.0.0.B3.2011071501</baseline>
+		</modify>
+		<modify>
+			<description>修正任务执行反馈权限，给予“任务管理_执行反馈”角色可以对所有任务执行反馈</description>
+			<author>yangjh</author>
+			<revision-time>2011-05-24</revision-time>
+			<baseline>EKP9.0.0.B3.2011071501</baseline>
+		</modify>
+		<modify>
+			<description>增加驳回功能，指派人可以驳回接收人反馈完成，但实际没有完成的任务</description>
+			<author>zhuangwl</author>
+			<revision-time>2011-04-27</revision-time>
+			<relation>
+				<relation-module>core</relation-module>
+			</relation>
+			<baseline>EKP9.0.0.B3.2011071501</baseline>
+		</modify>
+	</modifies>
+</version>

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<description xmlns="http://www.example.org/description-config" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.example.org/description-config ../../../description.xsd">
+	<module>
+		<module-name>简单分类</module-name>
+		<module-path>sys/simplecategory</module-path>
+		<baseline>V15.0.4.R.20200410</baseline>
+		<source-md5>d15d50d8c3e133fad71b6b67e1938bb2</source-md5>
+		<is-custom>否</is-custom>
+		<serial-num>18</serial-num>
+	</module>
+</description>

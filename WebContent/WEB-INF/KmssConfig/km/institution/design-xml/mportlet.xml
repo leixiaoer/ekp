@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<root xmlns:m="http://www.landray.com.cn/schema/mportlet" xmlns="http://www.landray.com.cn/schema/lui"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.landray.com.cn/schema/mportlet 
+	../../../sys/mobile/mportlet.xsd
+		http://www.landray.com.cn/schema/lui
+	../../../sys/ui/lui.xsd">
+	<m:mportlet 
+		id="km.institution.mportal.latest"
+		name="{km-institution:portlet.kmInstitution.newDoc}"
+		module="{km-institution:kmInstitution.tree.title}"
+		moduleUrl = "/km/institution/mobile/index.jsp#query=categoryId%3A!{cateid}"
+		jsUrl="/km/institution/mobile/mportal/kmInstitutionMportalMain.js?cateid=!{cateid}&amp;rowsize=!{rowsize}&amp;scope=!{scope}">
+		<m:vars>
+		 	 <var name="{km-institution:kmInstitution.docPublishTime}" key="scope" kind="enumValue" default="no">
+                 {  "values":[{ "text":"{portlet.var.date.oneMonth}", "value":"month"},
+	                              { "text":"{portlet.var.date.threeMonths}", "value":"season"},
+	                              { "text":"{portlet.var.date.halfAYear}", "value":"halfYear"},
+	                              { "text":"{portlet.var.date.oneYear}", "value":"year"},
+	                              { "text":"{portlet.var.date.unlimited}", "value":"no"}],
+                   "showType":"radio"
+                  }
+            </var>
+		    <var name="{portlet.rowsize}" key="rowsize" kind="int" default="3"/>
+		     <var name="{km-institution:kmInstitution.docType}" key="cateid" kind="sys.simplecategory" >
+		     	{model:"com.landray.kmss.km.institution.model.KmInstitutionTemplate"}
+		     </var>
+		</m:vars>
+		<m:operations>
+			<m:operation name="换一批" type="random" />
+		</m:operations>
+	</m:mportlet>
+</root>

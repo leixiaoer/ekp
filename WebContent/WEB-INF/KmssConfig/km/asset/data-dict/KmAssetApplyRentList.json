@@ -1,0 +1,34 @@
+{
+    "global":     {
+        "modelName": "com.landray.kmss.km.asset.model.KmAssetApplyRentList",
+        "messageKey": "km-asset:table.kmAssetApplyRentList",
+        "displayProperty": "fdId",
+        "serviceBean": "kmAssetApplyRentListService",
+        "table": "km_asset_apply_rent_list",
+        "url": "/km/asset/km_asset_apply_rent_list/kmAssetApplyRentList.do?method=view&fdId=${fdId}"
+    },
+    "attrs":     {
+        "fdId":         {
+            "propertyType": "id",
+            "generator": {"type": "assigned"}
+        },
+        "fdApplyRent":         {
+            "propertyType": "model",
+            "messageKey": "km-asset:kmAssetApplyRentList.fdApplyRent",
+            "type": "com.landray.kmss.km.asset.model.KmAssetApplyRent",
+            "column": "fd_apply_rent_id",
+            "notNull": "false",
+            "validate": "false",
+            "canLogShow":"1"
+        },
+        "fdAssetCard":         {
+            "propertyType": "model",
+            "messageKey": "km-asset:kmAssetApplyRentList.fdAssetCard",
+            "type": "com.landray.kmss.km.asset.model.KmAssetCard",
+            "column": "fd_asset_card_id",
+            "notNull": "false",
+            "validate": "false",
+            "canLogShow":"1"
+        }
+    }
+}

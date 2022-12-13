@@ -1,0 +1,1477 @@
+@import './../lib/vars.scss';
+@import './../lib/mixins.scss';
+
+
+// 面板头部边框颜色
+$navBorderColor : #eee;
+$navFontSize:16px;
+
+
+/* 面板组件 Starts
+  ========================================================================== */
+
+/* 公共公用 Starts */
+.lui_panel_title_icon {
+    font-size: 20px;
+    color: $primary-color;
+    vertical-align: middle;
+}
+
+.lui-component[data-lui-type='lui/panel!Content'] {
+    padding: 10px;
+}
+
+.lui_nonepanel_frame [data-lui-type='lui/panel!Content'] {
+    padding: 0;
+}
+
+.lui_panel_frame,
+.lui_panel_light_frame,
+// .lui_panel_simple_frame,
+.lui_tabpanel_frame,
+.lui_tabpanel_light_frame,
+// .lui_tabpanel_simple_frame,
+.lui_accordionpanel_frame,
+.lui_tabpanel_border_frame,
+.lui_tabpanel_vertical_frame,
+.lui_nonepanel_color {
+    border: 1px solid #d9d9d9;
+    background-color: #fff;
+    // -webkit-box-shadow: 0 2px 8px -2px rgba(0, 0, 0, .125);
+    // -moz-box-shadow: 0 2px 8px -2px rgba(0, 0, 0, .125);
+    // -ms-box-shadow: 0 2px 8px -2px rgba(0, 0, 0, .125);
+    // -o-box-shadow: 0 2px 8px -2px rgba(0, 0, 0, .125);
+    // box-shadow: 0 2px 8px -2px rgba(0, 0, 0, .125);
+}
+
+.lui_tabpanel_navs_item_title {
+    font-size: 16px;
+    font-weight: normal;
+    display: inline-block;
+    max-width: 100%;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+
+}
+
+.lui_panel_frame .lui_accordionpanel_frame,
+.lui_panel_light_frame .lui_accordionpanel_frame,
+.lui_panel_simple_frame .lui_accordionpanel_frame,
+.lui_tabpanel_frame .lui_accordionpanel_frame,
+.lui_tabpanel_light_frame .lui_accordionpanel_frame,
+.lui_tabpanel_simple_frame .lui_accordionpanel_frame {
+    border-radius: 0;
+    border: 0\9;
+    box-shadow: none;
+}
+
+.lui_panel_frame .lui_list_nav_frame,
+.lui_panel_light_frame .lui_list_nav_frame,
+.lui_panel_simple_frame .lui_list_nav_frame,
+.lui_tabpanel_frame .lui_list_nav_frame,
+.lui_tabpanel_light_frame .lui_list_nav_frame,
+.lui_tabpanel_simple_frame .lui_list_nav_frame {
+    // border: 0;
+}
+
+/* 公共公用 Ends */
+
+/* 默认单标签面板 Starts */
+.lui_panel_frame {
+    position: relative;
+}
+
+.lui_panel_navs_l {
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+.lui_panel_navs_r {}
+
+.lui_panel_navs_c {
+    padding: 0;
+    height: auto;
+    line-height: inherit;
+    vertical-align: middle;
+    color: #333;
+    font-size: inherit;
+    border-top-left-radius: 4px;
+    border-top-right-radius: 4px;
+    border-bottom: 1px solid #d9d9d9;
+    background-image: none;
+    background-color: transparent;
+    position: relative;
+}
+
+.lui_panel_navs_item_l {
+    float: left;
+    max-width: 100%;
+}
+
+.lui_panel_navs_item_r {}
+
+.lui_panel_navs_item_c {
+    margin-bottom: -1px;
+    padding:12px 5px 1px;
+    /* padding: 14px 5px; */
+    height: auto;
+    line-height: 1;
+    font-weight: normal;
+    font-size: inherit;
+    position: relative;
+    /*  */
+    padding-left: 8px;
+}
+
+.lui_panel_navs_item_c .lui_tabpanel_navs_item_title {
+    padding-left: 13px;
+    background: url(../images/panel/bg-panel-select.png) no-repeat left center;
+}
+
+.lui_panel_content_l {}
+
+.lui_panel_content_r {}
+
+.lui_panel_content_c {
+    background-color: transparent;
+}
+
+.lui_panel_footer_l {}
+
+.lui_panel_footer_r {}
+
+.lui_panel_footer_c {}
+
+/* 默认单标签面板 Ends */
+
+/* 浅色单标签面板 Starts */
+.lui_panel_light_frame {
+    position: relative;
+}
+
+.lui_panel_light_navs_l {}
+
+.lui_panel_light_navs_r {}
+
+.lui_panel_light_navs_c {
+    padding: 0;
+    height: auto;
+    line-height: inherit;
+    vertical-align: middle;
+    color: #333;
+    font-size: inherit;
+    border-bottom: 1px solid $primary-color-opacity-10;
+    background-image: none;
+    background-color: $primary-color-opacity-10;
+    position: relative;
+}
+
+.lui_panel_light_navs_item_l {
+    float: left;
+    max-width: 100%;
+}
+
+.lui_panel_light_navs_item_r {}
+
+.lui_panel_light_navs_item_c {
+    margin-bottom: -1px;
+    padding: 9px 15px;
+    height: 20px;
+    line-height: 20px;
+    font-weight: normal;
+    font-size: inherit;
+    position: relative;
+}
+
+.lui_panel_light_content_l {}
+
+.lui_panel_light_content_r {}
+
+.lui_panel_light_content_c {
+    background-color: transparent;
+}
+
+.lui_panel_light_footer_l {}
+
+.lui_panel_light_footer_r {}
+
+.lui_panel_light_footer_c {}
+
+/* 浅色单标签面板 Ends */
+
+/* 简约单标签面板 Starts */
+.lui_panel_simple_frame {
+    position: relative;
+}
+
+.lui_panel_simple_navs_l {
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+.lui_panel_simple_navs_r {}
+
+.lui_panel_simple_navs_c {
+    padding: 6px 0 5px;
+    height: auto;
+    line-height: inherit;
+    vertical-align: middle;
+    color: #333;
+    font-size: inherit;
+    border-top-left-radius: 4px;
+    border-top-right-radius: 4px;
+    border-bottom: 1px solid #d9d9d9;
+    background-image: none;
+    background-color: transparent;
+    position: relative;
+}
+
+.lui_panel_simple_navs_item_l {
+    float: left;
+    max-width: 100%;
+}
+
+.lui_panel_simple_navs_item_r {}
+
+.lui_panel_simple_navs_item_c {
+    margin-top: 3px;
+    margin-bottom: 3px;
+    margin-left: 15px;
+    padding: 0 20px;
+    height: 30px;
+    line-height: 30px;
+    color: $primary-color;
+    font-weight: normal;
+    font-size: inherit;
+    border-top-right-radius: 30px;
+    border-bottom-right-radius: 30px;
+    background-color: $primary-color-opacity-10;
+    position: relative;
+}
+
+.lui_panel_simple_navs_item_c:before {
+    content: '';
+    display: block;
+    width: 35px;
+    height: 36px;
+    background: url(../images/panel/panel_navs_bg.png) no-repeat 50%;
+    position: absolute;
+    left: -15px;
+    top: 50%;
+    margin-top: -18px;
+}
+
+.lui_panel_simple_content_l {}
+
+.lui_panel_simple_content_r {}
+
+.lui_panel_simple_content_c {
+    background-color: transparent;
+}
+
+.lui_panel_simple_footer_l {}
+
+.lui_panel_simple_footer_r {}
+
+.lui_panel_simple_footer_c {}
+
+/* 简约单标签面板 Ends */
+
+/* 垂直单标签 Starts */
+.lui_panel_vertical_navs_l {
+    background-color: $primary-color;
+}
+
+/* 垂直单标签 Ends */
+
+/* 默认多标签面板 Starts */
+.lui_tabpanel_frame {
+    position: relative;
+}
+
+.lui_tabpanel_navs_l {
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+.lui_tabpanel_navs_r {}
+
+.lui_tabpanel_navs_c {
+    padding: 0;
+    height: auto;
+    line-height: inherit;
+    vertical-align: middle;
+    color: #333;
+    font-size: inherit;
+    border-top-left-radius: 4px;
+    border-top-right-radius: 4px;
+    border-bottom: 1px solid $navBorderColor;
+    background-image: none;
+    background-color: transparent;
+    position: relative;
+}
+
+.lui_tabpanel_navs_item_l {
+    float: left;
+    max-width: 100%;
+    height: auto;
+    overflow: visible;
+}
+
+.lui_tabpanel_navs_item_r {}
+
+.lui_tabpanel_navs_item_c {
+    padding: 13px 8px;
+    height: auto;
+    line-height: 1;
+    font-weight: normal;
+    font-size: $navFontSize;
+    border-top-left-radius: 4px;
+    position: relative;
+    padding-bottom: 7px;
+    padding-left: 0;
+    margin-left: 8px;
+}
+
+
+.lui_tabpanel_navs_item_c:hover,
+.lui_tabpanel_navs_item_selected .lui_tabpanel_navs_item_c:hover {
+    color: $primary-color;
+}
+
+.lui_tabpanel_navs_item_selected .lui_tabpanel_navs_item_c {
+    color: $primary-color;
+    font-weight: normal;
+    // border-bottom-color: $primary-color;
+    background-color: #fff;
+    background: url(./../images/panel/bg-tabpanel-select.png) no-repeat left bottom;
+}
+
+.lui_tabpanel_content_l {
+    background-color: transparent;
+}
+
+.lui_tabpanel_content_r {}
+
+.lui_tabpanel_content_c {
+    background-color: transparent;
+}
+
+.lui_tabpanel_footer_l {}
+
+.lui_tabpanel_footer_r {}
+
+.lui_tabpanel_footer_c {}
+
+/* 默认多标签面板 Ends */
+
+/* 浅色多标签面板 Starts */
+.lui_tabpanel_light_frame {
+    position: relative;
+}
+
+.lui_tabpanel_light_navs_l {}
+
+.lui_tabpanel_light_navs_r {}
+
+.lui_tabpanel_light_navs_c {
+    padding: 4px 0 0 5px;
+    height: auto;
+    line-height: inherit;
+    vertical-align: middle;
+    color: #333;
+    font-size: inherit;
+    border-bottom: 1px solid $primary-color-opacity-10;
+    background-image: none;
+    background-color: $primary-color-opacity-10;
+    position: relative;
+}
+
+.lui_tabpanel_light_navs_item_l {
+    float: left;
+    max-width: 100%;
+    overflow: visible;
+}
+
+.lui_tabpanel_light_navs_item_r {}
+
+.lui_tabpanel_light_navs_item_c {
+    margin-bottom: -2px;
+    padding: 8px 10px 14px;
+    height: 20px;
+    line-height: 20px;
+    font-weight: normal;
+    font-size: inherit;
+    border: 0;
+    border-top: 2px solid transparent;
+    transition-duration: .3s;
+    position: relative;
+}
+
+.lui_tabpanel_light_navs_item_c:hover,
+.lui_tabpanel_light_navs_item_selected .lui_tabpanel_light_navs_item_c:hover {
+    color: $primary-color;
+}
+
+.lui_tabpanel_light_navs_item_selected .lui_tabpanel_light_navs_item_c {
+    color: $primary-color;
+    font-weight: normal;
+    border: 0;
+    border-top: 2px solid $primary-color;
+    background-color: #fff;
+}
+
+.lui_tabpanel_light_content_l {
+    background-color: transparent;
+}
+
+.lui_tabpanel_light_content_r {}
+
+.lui_tabpanel_light_content_c {
+    background-color: transparent;
+}
+
+.lui_tabpanel_light_footer_l {}
+
+.lui_tabpanel_light_footer_r {}
+
+.lui_tabpanel_light_footer_c {}
+
+/* 浅色多标签面板 Ends */
+
+/* 简约多标签面板 Starts */
+.lui_tabpanel_simple_frame {
+    position: relative;
+}
+
+.lui_tabpanel_simple_navs_l {
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+.lui_tabpanel_simple_navs_r {
+    border-bottom: 1px solid #d9d9d9;
+}
+
+.lui_tabpanel_simple_navs_c {
+    // margin-left: -10px;
+    // margin-right: -10px;
+    padding: 0;
+    height: auto;
+    line-height: inherit;
+    vertical-align: middle;
+    color: #333;
+    font-size: inherit;
+    border-bottom: 0;
+    background-image: none;
+    background-color: transparent;
+    position: relative;
+}
+
+.lui_tabpanel_simple_navs_item_l {
+    float: left;
+    max-width: 100%;
+}
+
+.lui_tabpanel_simple_navs_item_r {
+    padding-right: 14px;
+}
+
+.lui_tabpanel_simple_navs_item_c {
+    margin-top: 0;
+    margin-bottom: -1px;
+    padding:9px 0px;
+    height: auto;
+    line-height: 1;
+    font-weight: normal;
+    font-size: inherit;
+    transition-property: color;
+    transition-duration: .3s;
+    position: relative;
+}
+
+.lui_tabpanel_simple_navs_item_c:hover {
+    color: $primary-color;
+}
+
+.lui_tabpanel_simple_navs_item_selected .lui_tabpanel_simple_navs_item_c:hover {
+    // color: #fff;
+}
+
+.lui_tabpanel_simple_navs_item_selected .lui_tabpanel_simple_navs_item_c {
+    color: $primary-color;
+    font-weight: normal;
+    border: 0;
+    // background-color: $primary-color;
+}
+
+.lui_tabpanel_simple_navs_item_selected .lui_tabpanel_simple_navs_item_r {
+    // background: url(../images/panel/tabpanel_navs_item_r.png) no-repeat 100% 100%;
+}
+
+.lui_tabpanel_simple_content_l {
+    background-color: transparent;
+}
+
+.lui_tabpanel_simple_content_r {}
+
+.lui_tabpanel_simple_content_c {
+    background-color: transparent;
+}
+
+.lui_tabpanel_simple_footer_l {}
+
+.lui_tabpanel_simple_footer_r {}
+
+.lui_tabpanel_simple_footer_c {}
+
+.lui_tabpanel_simple_frame .lui_tabpanel_simple_navs_item_selected .lui_tabpanel_simple_navs_item_c{
+	background: url(./../images/panel/bg-tabpanel-select.png) no-repeat left bottom;
+}
+
+
+/* 简约多标签面板 Ends */
+
+/* 可折叠面板 Starts */
+.lui_accordionpanel_frame {}
+
+.lui_accordionpanel_frame .lui-component[data-lui-type='lui/panel!Content'] {
+    padding: 0;
+}
+
+.lui_accordionpanel_content_frame {
+    margin-bottom: 1px;
+    border-bottom: 0;
+}
+
+.lui_accordionpanel_content_frame:last-child {
+    margin-bottom: 0;
+}
+
+.lui_accordionpanel_header_l {
+    background-color: $primary-color;
+    transition-duration: .3s;
+    position: relative;
+    cursor: pointer;
+}
+
+.lui_accordionpanel_header_l:hover {
+    background-color: $alter-color;
+}
+
+.lui_accordionpanel_header_r {}
+
+.lui_accordionpanel_header_c {
+    height: auto;
+    line-height: inherit;
+    overflow: hidden;
+}
+
+.lui_accordionpanel_nav_l {}
+
+.lui_accordionpanel_nav_r {}
+
+.lui_accordionpanel_nav_c {}
+
+.lui_accordionpanel_nav_text {
+    padding: 9px 20px 9px 15px;
+    width: auto;
+    line-height: 20px;
+    color: #fff;
+    font-size: 16px;
+    font-weight: normal;
+    display: block;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.lui_accordionpanel_toggle_up,
+.lui_accordionpanel_toggle_down {
+    width: 16px;
+    height: 16px;
+    background-image: url(../images/icons/icon-arrow-s.png);
+    background-repeat: no-repeat;
+    background-size: auto 16px;
+    float: none;
+    position: absolute;
+    top: 50%;
+    right: 4px;
+    margin-top: -8px;
+    cursor: pointer;
+}
+
+.lui_accordionpanel_toggle_up {
+    background-position: -32px 0;
+}
+
+.lui_accordionpanel_toggle_down {
+    background-position: -48px 0;
+}
+
+@media screen and (-webkit-min-device-pixel-ratio: 2) {
+
+    .lui_accordionpanel_toggle_up,
+    .lui_accordionpanel_toggle_down {
+        background-image: url(../images/icons/icon-arrow-s@2x.png);
+    }
+}
+
+.lui_accordionpanel_content_c {
+    margin: -8px;
+    padding: 8px;
+    background-color: transparent;
+}
+
+.lui_accordionpanel_simpletitle_nav_c .lui_accordionpanel_nav_text {
+    padding: 7px 20px 7px 18px;
+}
+
+.lui_accordionpanel_simpletitle_nav_c:before {
+    content: '';
+    display: block;
+    width: 4px;
+    height: 16px;
+    border-radius: 2px;
+    background-color: $primary-color;
+    position: absolute;
+    left: 5px;
+    top: 50%;
+    margin-top: -10px;
+}
+
+.lui_accordionpanel_simpletitle_nav_c .lui_accordionpanel_toggle_up,
+.lui_accordionpanel_simpletitle_nav_c .lui_accordionpanel_toggle_down {
+    background-image: url(../images/icons/icon-arrow-on-s.png);
+    background-size: auto 16px;
+}
+
+.lui_accordionpanel_simpletitle_nav_c .lui_accordionpanel_toggle_up {
+    background-position: -32px 0;
+}
+
+.lui_accordionpanel_simpletitle_nav_c .lui_accordionpanel_toggle_down {
+    background-position: -48px 0;
+}
+
+@media screen and (-webkit-min-device-pixel-ratio: 2) {
+
+    .lui_accordionpanel_simpletitle_nav_c .lui_accordionpanel_toggle_up,
+    .lui_accordionpanel_simpletitle_nav_c .lui_accordionpanel_toggle_down {
+        background-image: url(../images/icons/icon-arrow-on-s@2x.png);
+    }
+}
+
+/* 可折叠面板 Ends */
+
+/* 边框多标签面板 Starts */
+.lui_tabpanel_border_frame {
+    border: 1px solid #d9d9d9;
+}
+
+.lui_tabpanel_border_header_l {}
+
+.lui_tabpanel_border_header_r {}
+
+.lui_tabpanel_border_header_c {}
+
+.lui_tabpanel_border_middle_l {}
+
+.lui_tabpanel_border_middle_r {}
+
+.lui_tabpanel_border_middle_c {}
+
+.lui_tabpanel_border_content_over {
+    background-color: #f8f8f8;
+}
+
+.lui_tabpanel_border_space,
+.lui_tabpanel_border_space_first {
+    padding: 0 3px;
+}
+
+.lui_tabpanel_border_title_l {}
+
+.lui_tabpanel_border_title_r {}
+
+.lui_tabpanel_border_title_c {
+    margin: 0;
+    padding: 9px 15px 8px;
+    height: auto;
+    line-height: 20px;
+    vertical-align: middle;
+    color: #666;
+    font-size: 16px;
+    font-weight: normal;
+    border-bottom: 1px solid #d9d9d9;
+    background-color: transparent;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.lui_tabpanel_border_content_l {}
+
+.lui_tabpanel_border_content_r {}
+
+.lui_tabpanel_border_content_c {}
+
+/* 边框多标签面板 Ends */
+
+/* 无标题面板 Starts */
+.lui_nonepanel_frame {}
+
+.lui_nonepanel_transparent {
+    background-color: transparent;
+}
+
+/* 无标题面板 Ends */
+
+/* 无标题透明背景面板 Starts */
+/* 无标题透明背景面板 Ends */
+
+/* 待办-垂直面板 Starts */
+.lui_tabpanel_vertical_frame {}
+
+.lui_tabpanel_vertical_navs_l {}
+
+.lui_tabpanel_vertical_navs_r {}
+
+.lui_tabpanel_vertical_navs_c {}
+
+.lui_tabpanel_vertical_navs_item_l {}
+
+.lui_tabpanel_vertical_navs_item_r {}
+
+.lui_tabpanel_vertical_navs_item_c {
+    background-color: #f3f3f3;
+    background-repeat: no-repeat;
+    background-position: 100% 0;
+    background-image: url(../images/panel/tabpanel_vertical_bg.png) !important;
+}
+
+.lui_tabpanel_vertical_navs_item_l:first-child .lui_tabpanel_vertical_navs_item_c {
+    background-image: url(../images/panel/tabpanel_todo_bg.png) !important;
+}
+
+.lui_tabpanel_vertical_content_l {}
+
+.lui_tabpanel_vertical_content_r {}
+
+.lui_tabpanel_vertical_content_c {}
+
+.lui_tabpanel_vertical_content_c .lui_portlet_operations {
+    margin-top: 5px;
+    position: absolute;
+    right: 10px;
+    bottom: 0;
+}
+
+.lui_tabpanel_vertical_navs_item_selected {
+    position: relative;
+}
+
+.lui_tabpanel_vertical_navs_item_selected:after {
+    content: '';
+    display: block;
+    width: 0;
+    height: 0;
+    border: 9px solid transparent;
+    border-left-color: $primary-color;
+    position: absolute;
+    left: 140px;
+    top: 50%;
+    margin-top: -9px;
+}
+
+.lui_tabpanel_vertical_navs_item_l.lui_tabpanel_vertical_navs_item_selected .lui_tabpanel_vertical_navs_item_c {
+    background-color: $primary-color;
+    background-image: url(../images/panel/tabpanel_view_cur_bg.png) !important;
+}
+
+.lui_tabpanel_vertical_navs_item_l.lui_tabpanel_vertical_navs_item_selected:first-child .lui_tabpanel_vertical_navs_item_c {
+    background-image: url(../images/panel/tabpanel_todo_cur_bg.png) !important;
+}
+
+.lui_tabpanel_vertical_frame .com_prompt_num {
+    margin-right: 5px;
+    line-height: 1 !important;
+    font-family: Arial;
+    font-size: 36px;
+    height: inherit;
+    line-height: inherit;
+    color: $primary-color;
+    padding: 0;
+    background-color: inherit;
+    border-radius: 0;
+    position: relative;
+    top: 6px;
+}
+
+.lui_tabpanel_vertical_navs_item_selected .com_prompt_num {
+    color: #fff;
+    border-bottom: 1px solid #fff;
+    top: 0;
+}
+
+.lui_tabpanel_vertical_navs_item_selected .com_prompt_text {
+    color: #fff;
+}
+
+.lui_tabpanel_vertical_navs_item_c .lui_tabpanel_navs_item_title {
+    color: #666;
+    font-size: 20px;
+    position: absolute;
+    bottom: 12px;
+    left: 5px;
+    width: 100px;
+    text-align: right;
+}
+
+.lui_tabpanel_vertical_navs_item_selected .lui_tabpanel_vertical_navs_item_c .lui_tabpanel_navs_item_title {
+    color: #fff;
+}
+
+.lui_tabpanel_vertical_navs_item_refresh {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    background-repeat: no-repeat;
+    background-position: 50%;
+    background-size: auto 16px;
+    background-image: url(../images/icons/icon-reflash-on.png);
+    position: absolute;
+    bottom: 16px;
+    left: 108px;
+    cursor: pointer;
+}
+
+.lui_tabpanel_vertical_navs_item_selected .lui_tabpanel_vertical_navs_item_refresh {
+    background-image: url(../images/icons/icon-reflash-white.png);
+}
+
+.lui_tabpanel_vertical_navs_item_selected .lui_tabpanel_vertical_navs_item_refresh:hover {
+    -webkit-animation: refresh-rotate .8s linear 0s infinite both;
+    -moz-animation: refresh-rotate .8s linear 0s infinite both;
+    -ms-animation: refresh-rotate .8s linear 0s infinite both;
+    -o-animation: refresh-rotate .8s linear 0s infinite both;
+    animation: refresh-rotate .8s linear 0s infinite both;
+}
+
+@media screen and (-webkit-min-device-pixel-ratio: 2) {}
+
+/* 待办-垂直面板 Ends */
+
+/* 分组多标签 Starts */
+.lui_tabpanel_multiCollapse_frame {
+    border: 1px solid #d9d9d9;
+    border: 1px solid #d9d9d9 \9;
+    border-radius: 0;
+    background-color: #fff;
+    -webkit-box-shadow: 0 2px 8px -2px rgba(0, 0, 0, .125);
+    -moz-box-shadow: 0 2px 8px -2px rgba(0, 0, 0, .125);
+    -ms-box-shadow: 0 2px 8px -2px rgba(0, 0, 0, .125);
+    -o-box-shadow: 0 2px 8px -2px rgba(0, 0, 0, .125);
+    box-shadow: 0 2px 8px -2px rgba(0, 0, 0, .125);
+}
+
+.lui_tabpanel_multiCollapse_navs_l {
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+.lui_tabpanel_multiCollapse_navs_c {
+    padding-left: 0;
+    padding-right: 0;
+    border-bottom: 1px solid #d9d9d9;
+}
+
+.lui_tabpanel_multiCollapse_container {
+    padding: 5px 0;
+}
+
+.lui_tabpanel_multiCollapse_selected .lui_tabpanel_multiCollapse_groupTitle {
+    color: $primary-color;
+    background-color: $primary-color-opacity-10;
+    /* background-image: url(../images/panel/panel-icon-mul-bg.png); */
+}
+
+.lui_tabpanel_multiCollapse_navs_item_c:hover {
+    color: $primary-color;
+}
+
+.lui_tabpanel_multiCollapse_navs_item_selected .lui_tabpanel_multiCollapse_navs_item_c {
+    color: $primary-color;
+    background-image: none;
+}
+
+.lui_tabpanel_multiCollapse_navs_item_selected .lui_tabpanel_multiCollapse_navs_item_c:before {
+    content: '';
+    width: 30px;
+    border-bottom: 2px solid $primary-color;
+    display: block;
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+    margin-left: -15px;
+}
+
+.lui_tabpanel_multiCollapse_selected .lui_tabpanel_multiCollapse_groupTitle:before {
+    color: $primary-color;
+}
+
+.lui_tabpanel_multiCollapse_groupUl .com_prompt_num {
+    margin-top: 6px;
+    vertical-align: top;
+}
+
+/* 分组多标签 Ends */
+
+/* 二级页面主体内容多标签-V14版本起 Starts */
+.lui_tabpanel_list_content_l [data-lui-type='lui/panel!Content'] {
+    padding: 0;
+}
+
+.lui_tabpanel_list_navs_c {
+    border-top-left-radius: 4px;
+    border-top-right-radius: 4px;
+    border-bottom: 1px solid $primary-color;
+    background-color: $primary-color-opacity-10;
+}
+
+.lui_tabpanel_list_navs_item_c .lui_tabpanel_navs_item_title:hover {
+    color: $primary-color;
+}
+
+.lui_tabpanel_list_navs_item_selected .lui_tabpanel_list_navs_item_c .lui_tabpanel_navs_item_title {
+    color: $alter-color;
+    border-color: transparent;
+    background-color: transparent;
+}
+
+/* 二级页面主体内容多标签-V14版本起 Ends */
+
+/* 三级页面 可折叠标签 Starts */
+.lui_drawerpanel_navs_item_c:hover,
+.lui_drawerpanel_slide .lui_drawerpanel_navs_item_selected .lui_drawerpanel_navs_item_c {
+    background-color: $primary-color;
+    border: 1px solid $primary-color;
+}
+
+/* 三级页面 可折叠标签 Ends */
+
+/* 多标签公共样式 */
+.lui_tabpanel_navs_c .lui_tabpanel_navs_item_title,
+.lui_tabpanel_simple_navs_item_c .lui_tabpanel_navs_item_title,
+.lui_tabpanel_light_navs_item_c .lui_tabpanel_navs_item_title {
+    font-size: $navFontSize;
+}
+
+.lui_panel_frame .lui_panel_title_main,
+.lui_panel_light_frame .lui_panel_title_main,
+.lui_panel_simple_frame .lui_panel_title_main {
+    font-size: $navFontSize;
+}
+
+
+/* 补充-单多标签面板按钮组调位 Starts */
+.lui_panel_frame .lui_panel_navs_c,
+.lui_panel_light_frame .lui_panel_light_navs_c,
+.lui_panel_simple_frame .lui_panel_simple_navs_c,
+.lui_tabpanel_frame .lui_tabpanel_navs_c,
+.lui_tabpanel_light_frame .lui_tabpanel_light_navs_c,
+.lui_tabpanel_simple_frame .lui_tabpanel_simple_navs_c {
+    padding-right: 94px;
+}
+
+.lui_panel_frame .lui_portlet_operations,
+.lui_panel_light_frame .lui_portlet_operations,
+.lui_panel_simple_frame .lui_portlet_operations,
+.lui_tabpanel_frame .lui_portlet_operations,
+.lui_tabpanel_light_frame .lui_portlet_operations,
+.lui_tabpanel_simple_frame .lui_portlet_operations {
+    padding: 0;
+    position: absolute;
+    right: 10px;
+    top: 7px;
+}
+
+.lui_panel_frame .lui_portlet_operations {
+    // top: -7px;
+}
+
+// .lui_panel_frame .lui_portlet_operation,
+// .lui_panel_light_frame .lui_portlet_operation,
+// .lui_panel_simple_frame .lui_portlet_operation,
+// .lui_tabpanel_frame .lui_portlet_operation,
+// .lui_tabpanel_light_frame .lui_portlet_operation,
+// .lui_tabpanel_simple_frame .lui_portlet_operation {
+//     margin: 0 0 0 6px;
+//     padding-right: 16px;
+//     width: auto;
+//     height: 20px;
+//     line-height: 20px;
+//     color: #666;
+//     font-size: 12px;
+//     border: 0;
+//     // background-color: transparent;
+//     // background-image: none;
+//     // background: transparent url(../images/icons/icon-operation-arr.png) no-repeat 100% 1px;
+// }
+
+// .lui_panel_frame .lui_portlet_operation:hover,
+// .lui_panel_light_frame .lui_portlet_operation:hover,
+// .lui_panel_simple_frame .lui_portlet_operation:hover,
+// .lui_tabpanel_frame .lui_portlet_operation:hover,
+// .lui_tabpanel_light_frame .lui_portlet_operation:hover,
+// .lui_tabpanel_simple_frame .lui_portlet_operation:hover {
+//     color: $primary-color;
+//     background-color: transparent;
+//     background-image: none;
+//     /* background-position: 100% -15px; */
+// }
+
+// @media screen and (-webkit-min-device-pixel-ratio: 2) {
+
+//     .lui_panel_frame .lui_portlet_operation,
+//     .lui_panel_light_frame .lui_portlet_operation,
+//     .lui_panel_simple_frame .lui_portlet_operation,
+//     .lui_tabpanel_frame .lui_portlet_operation,
+//     .lui_tabpanel_light_frame .lui_portlet_operation,
+//     .lui_tabpanel_simple_frame .lui_portlet_operation,
+//     .lui_panel_frame .lui_portlet_operation:hover,
+//     .lui_panel_light_frame .lui_portlet_operation:hover,
+//     .lui_panel_simple_frame .lui_portlet_operation:hover,
+//     .lui_tabpanel_frame .lui_portlet_operation:hover,
+//     .lui_tabpanel_light_frame .lui_portlet_operation:hover,
+//     .lui_tabpanel_simple_frame .lui_portlet_operation:hover {
+//         /* background-image: url(../images/icons/icon-operation-arr.png)!important; */
+//     }
+// }
+
+.lui_proItem_w .lui_panel_frame .lui_portlet_operations,
+.lui_proItem_w .lui_panel_light_frame .lui_portlet_operations,
+.lui_proItem_w .lui_panel_simple_frame .lui_portlet_operations,
+.lui_proItem_w .lui_tabpanel_frame .lui_portlet_operations,
+.lui_proItem_w .lui_tabpanel_light_frame .lui_portlet_operations,
+.lui_proItem_w .lui_tabpanel_simple_frame .lui_portlet_operations {
+    top: -30px;
+}
+
+/* 补充-单多标签面板按钮组调位 Ends */
+
+/* 面板组件 Ends
+        ========================================================================== */
+
+
+/* 政务相关组件-卡片列表 Starts
+        ========================================================================== */
+.lui-timebase-list {
+    margin: 0;
+    padding: 4px;
+    list-style: none;
+    line-height: 1.42857143;
+    background-color: #fff;
+}
+
+.lui-timebase-list>li {
+    margin-bottom: 10px;
+    padding-left: 110px;
+    padding-right: 10px;
+    -webkit-box-shadow: 0 0 4px rgba(0, 0, 0, .1);
+    box-shadow: 0 0 4px rgba(0, 0, 0, .1);
+}
+
+.lui-timebase-list>li:after {
+    content: '';
+    display: table;
+    visibility: hidden;
+    clear: both;
+}
+
+.lui-timebase-list>li:last-child,
+.lui-timebase-list>li.last-child {
+    margin-bottom: 0;
+}
+
+.lui-timebase-list .list-date {
+    margin-left: -110px;
+    width: 100px;
+    height: 100px;
+    text-align: center;
+    color: #fff;
+    background-color: $primary-color;
+    float: left;
+}
+
+.lui-timebase-list .list-date>.day {
+    margin-bottom: 3px;
+    padding-top: 20px;
+    font-size: 24px;
+    letter-spacing: 5px;
+    display: block;
+}
+
+.lui-timebase-list .list-date>.date {
+    padding-left: 5px;
+    padding-right: 5px;
+    font-size: 12px;
+    border: 1px solid #fff;
+    border: 1px solid rgba(255, 255, 255, .6);
+    display: inline-block;
+}
+
+.lui-timebase-list .list-title {
+    margin: 0 0 5px;
+    padding-top: 8px;
+    color: #333;
+    font-size: inherit;
+    font-weight: bold;
+    display: block;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    position: relative;
+}
+
+.lui-timebase-list .list-depict {
+    margin: 0;
+    height: 34px;
+    color: #666;
+    font-size: 12px;
+    display: -webkit-box;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    word-break: break-all;
+    word-wrap: break-word;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+}
+
+.lui-timebase-list .list-assist {
+    margin-top: 10px;
+    color: #999;
+    font-size: 12px;
+}
+
+.lui-timebase-list .list-assist>span {
+    margin-right: 10px;
+}
+
+.lui-timebase-list .list-assist>span:last-child {
+    margin-right: 0;
+}
+
+
+.lui-inform-panel .list-inform>li {
+    border-bottom: 1px solid #d9d9d9;
+}
+
+.lui-inform-panel .list-inform>li:first-child {
+    border-top: 1px solid #d9d9d9;
+}
+
+.lui-inform-panel .list-inform .list-inform-title:before {
+    background-color: #666;
+}
+
+.lui-inform-panel .list-inform .list-inform-btn-group .inform-btn {
+    color: $primary-color;
+    background-color: #fff;
+    border: 1px solid $primary-color;
+    border-radius: 3px;
+}
+
+.lui-inform-panel .list-inform .list-inform-btn-group .inform-btn:hover {
+    color: #fff;
+    background-color: $primary-color;
+}
+
+.lui_portlet_switch_prev,
+.lui_portlet_switch_next {
+    background-color: $primary-color;
+}
+
+.lui_portlet_switch_next em:after {
+    border-top-color: $primary-color;
+}
+
+.lui_portlet_switch_prev em:after {
+    border-bottom-color: $primary-color;
+}
+
+/* 政务相关组件-卡片列表 Ends
+        ========================================================================== */
+
+
+/* 面板操作按钮 Starts
+        ========================================================================== */
+.lui_portlet_operations {
+    padding: 0 8px;
+}
+
+.lui_portlet_operation {
+    margin: 5px 2px 10px;
+    padding: 0;
+    display: inline-block;
+    width: 32px;
+    height: 22px;
+    line-height: 20px;
+    padding-right: 20px;
+    // border: 1px solid #d9d9d9;
+    color: #999;
+    // background-color: #fff;
+    background-repeat: no-repeat;
+    background-position: 100% 1px;
+    background-size: auto 16px;
+    // font-size: 0;
+    *white-space: -1px;
+    text-decoration: none;
+    cursor: pointer;
+    transition: backgroud-color, border-color, color .3s;
+
+}
+
+// .lui_portlet_operation:hover {
+//     border-color: $primary-color;
+//     background-color: $primary-color;
+// }
+
+.lui_portlet_operation.lui_portlet_operation_more {
+    background-image: url(../images/icons/icon-more.png);
+    background-size: 16px;
+}
+
+// .lui_portlet_operation.lui_portlet_operation_more:hover {
+//     background-image: url(../images/icons/icon-more-white.png);
+// }
+
+// .lui_panel_frame .lui_portlet_operation.lui_portlet_operation_more:hover,
+// .lui_panel_light_frame .lui_portlet_operation.lui_portlet_operation_more:hover,
+// .lui_panel_simple_frame .lui_portlet_operation.lui_portlet_operation_more:hover,
+// .lui_tabpanel_frame .lui_portlet_operation.lui_portlet_operation_more:hover,
+// .lui_tabpanel_light_frame .lui_portlet_operation.lui_portlet_operation_more:hover,
+// .lui_tabpanel_simple_frame .lui_portlet_operation.lui_portlet_operation_more:hover {
+//     background-image: url(../images/icons/icon-more-red.png);
+// }
+
+.lui_portlet_operation.lui_portlet_operation_create {
+    background-image: url(../images/icons/icon-create.png);
+    background-size: 16px;
+}
+
+// .lui_portlet_operation.lui_portlet_operation_create:hover {
+//     background-image: url(../images/icons/icon-create-white.png);
+// }
+
+// .lui_panel_frame .lui_portlet_operation.lui_portlet_operation_create:hover,
+// .lui_panel_light_frame .lui_portlet_operation.lui_portlet_operation_create:hover,
+// .lui_panel_simple_frame .lui_portlet_operation.lui_portlet_operation_create:hover,
+// .lui_tabpanel_frame .lui_portlet_operation.lui_portlet_operation_create:hover,
+// .lui_tabpanel_light_frame .lui_portlet_operation.lui_portlet_operation_create:hover,
+// .lui_tabpanel_simple_frame .lui_portlet_operation.lui_portlet_operation_create:hover {
+//     background-image: url(../images/icons/icon-create-red.png);
+// }
+
+@media screen and (-webkit-min-device-pixel-ratio: 2) {
+    .lui_portlet_operation.lui_portlet_operation_more {
+        background-image: url(../images/icons/icon-more@2x.png);
+    }
+
+    // .lui_portlet_operation.lui_portlet_operation_more:hover {
+    //     background-image: url(../images/icons/icon-more-white@2x.png);
+    // }
+
+    // .lui_panel_frame .lui_portlet_operation.lui_portlet_operation_more:hover,
+    // .lui_panel_light_frame .lui_portlet_operation.lui_portlet_operation_more:hover,
+    // .lui_panel_simple_frame .lui_portlet_operation.lui_portlet_operation_more:hover,
+    // .lui_tabpanel_frame .lui_portlet_operation.lui_portlet_operation_more:hover,
+    // .lui_tabpanel_light_frame .lui_portlet_operation.lui_portlet_operation_more:hover,
+    // .lui_tabpanel_simple_frame .lui_portlet_operation.lui_portlet_operation_more:hover {
+    //     background-image: url(../images/icons/icon-more-red@2x.png);
+    // }
+
+    .lui_portlet_operation.lui_portlet_operation_create {
+        background-image: url(../images/icons/icon-create@2x.png);
+    }
+
+    // .lui_portlet_operation.lui_portlet_operation_create:hover {
+    //     background-image: url(../images/icons/icon-create-white@2x.png);
+    // }
+
+    // .lui_panel_frame .lui_portlet_operation.lui_portlet_operation_create:hover,
+    // .lui_panel_light_frame .lui_portlet_operation.lui_portlet_operation_create:hover,
+    // .lui_panel_simple_frame .lui_portlet_operation.lui_portlet_operation_create:hover,
+    // .lui_tabpanel_frame .lui_portlet_operation.lui_portlet_operation_create:hover,
+    // .lui_tabpanel_light_frame .lui_portlet_operation.lui_portlet_operation_create:hover,
+    // .lui_tabpanel_simple_frame .lui_portlet_operation.lui_portlet_operation_create:hover {
+    //     background-image: url(../images/icons/icon-create-red@2x.png);
+    // }
+}
+
+/* 面板操作按钮 Ends
+        ========================================================================== */
+
+
+/* 三级页面收展面板 Starts
+        ========================================================================== */
+.lui_tabpage_frame {}
+
+.lui_tabpage_frame .lui_tabpanel_light_frame {
+    box-shadow: none;
+}
+
+.lui_tabpage_float_content {
+    margin-top: 20px;
+    background-color: #fff;
+}
+
+.lui_tabpage_float_content_c {
+    padding: 0;
+}
+
+.lui_tabpage_float_header_l {
+    padding: 10px 0;
+    border-bottom: 1px solid #d9d9d9;
+}
+
+.lui_tabpage_float_header_title {
+    padding: 0 8px;
+    line-height: 20px;
+    background: url(../images/icons/icon-tabpage-title.png) no-repeat 0 2px;
+    background-size: 16px auto;
+    padding-left: 20px;
+    position: relative;
+}
+
+.lui_tabpage_float_header_text {
+    height: auto;
+    line-height: 20px;
+    color: $primary-color;
+    font-size: 16px;
+    font-weight: normal;
+}
+
+.lui_tabpage_float_header_close {
+    position: absolute;
+    right: 5px;
+    top: 50%;
+    margin-top: -6px;
+    background: url(../images/icons/icon-arrow-gray.png) no-repeat -32px 0;
+    background-size: auto 16px;
+    width: 16px;
+    height: 16px;
+    cursor: pointer;
+}
+
+.lui_tabpage_float_header_close:hover {
+    background-image: url(../images/icons/icon-arrow-on.png)
+}
+
+@media screen and (-webkit-min-device-pixel-ratio: 2) {
+    .lui_tabpage_float_header_title {
+        background-image: url(../images/icons/icon-tabpage-title@2x.png);
+    }
+
+    .lui_tabpage_float_header_close {
+        background-image: url(../images/icons/icon-arrow-gray@2x.png);
+    }
+
+    .lui_tabpage_float_header_close:hover {
+        background-image: url(../images/icons/icon-arrow-on@2x.png);
+    }
+}
+
+/* 三级页面收展面板 Ends
+        ========================================================================== */
+
+
+/* 三级页面-底部栏 Starts
+        ========================================================================== */
+.lui_tabpage_float_navs {
+    height: auto;
+    padding-top: 0;
+    z-index: 5;
+    border-top: 1px solid #d9d9d9;
+    background-color: #fff;
+    background-image: none;
+    -webkit-box-shadow: 0 -1px 3px rgba(0, 0, 0, .05);
+    -moz-box-shadow: 0 -1px 3px rgba(0, 0, 0, .05);
+    -ms-box-shadow: 0 -1px 3px rgba(0, 0, 0, .05);
+    -o-box-shadow: 0 -1px 3px rgba(0, 0, 0, .05);
+    box-shadow: 0 -1px 3px rgba(0, 0, 0, .05);
+}
+
+.lui_tabpage_float_navs_c {
+    margin: 0 auto;
+    padding-top: 10px;
+    height: 36px;
+    line-height: 36px;
+}
+
+.lui_tabpage_float_nav_item {
+    margin-right: 3px;
+    padding-left: 10px;
+    padding-right: 10px;
+    min-width: 66px;
+    height: 36px;
+    text-align: center;
+    vertical-align: top;
+    color: #333;
+    font-size: 14px;
+    font-weight: normal;
+    border-top-left-radius: 4px;
+    border-top-right-radius: 4px;
+    border: 1px solid #c7c7c7;
+    background-color: #c7c7c7;
+    transition-duration: .3s;
+    display: inline-block;
+}
+
+.lui_tabpage_float_nav_item.selected {
+    margin-top: -6px;
+    padding-top: 6px;
+    color: #fff;
+    font-size: 16px;
+    border: 1px solid $primary-color;
+    background-color: $primary-color;
+}
+
+.lui_tabpage_float_nav_item:hover {
+    color: #fff;
+    border-color: $primary-color;
+    background-color: $primary-color;
+}
+
+.lui_tabpage_float_nav_item_l,
+.lui_tabpage_float_nav_item.selected .lui_tabpage_float_nav_item_l {
+    padding-left: 0;
+    padding-right: 0;
+    min-width: inherit;
+    height: auto;
+    vertical-align: top;
+    background-color: transparent;
+}
+
+.lui_tabpage_float_nav_item_l,
+.lui_tabpage_float_nav_item_r,
+.lui_tabpage_float_nav_item_c,
+.lui_tabpage_float_nav_item_c>div {
+    font-size: inherit;
+}
+
+/* 收展按钮 Starts */
+.lui_tabpage_float_collapse {}
+
+.lui_tabpage_float_collapse .txt {}
+
+.lui_tabpage_float_collapse:hover .txt {
+    color: $primary-color;
+}
+
+/* 收展按钮 Starts */
+
+
+/* 三级页面-底部栏 Ends
+        ========================================================================== */

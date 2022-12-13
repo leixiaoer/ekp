@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<version xmlns="http://www.example.org/version-config" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.example.org/version-config ../../../version.xsd">
+	<modifies>
+		<modify>
+			<description>#160264 修复 阅读和历史版本附件操作按钮点击后，.et类型的附件，图标不正确</description>
+			<author>叶正平</author>
+			<revision-time>2022-05-12</revision-time>
+			<relation>
+				<relation-module>core</relation-module>
+				<relation-module>sys/attachment</relation-module>
+			</relation>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#125199 修复 新闻审批通过后，发布匿名到匿名门户，修改新闻文档名称，再次发布匿名到匿名门户；然后从“发布匿名-匿名发布记录”点击查看匿名详情，删除第二次发布匿名的匿名记录；匿名门户删除的是第一次发布匿名的文档</description>
+			<author>黄海</author>
+			<revision-time>2021-11-09</revision-time>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#148126 修复 匿名门户，查看文档，打开文档里的附件，页面一直闪，无法加载附件内容</description>
+			<author>叶正平</author>
+			<revision-time>2021-08-30</revision-time>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#146516 修复 匿名门户，PDF文件，在线预览只能显示前两页的内容，其他页都是空白</description>
+			<author>叶正平</author>
+			<revision-time>2021-08-05</revision-time>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#144002 #143998 修复 修复删除附件和流程处理意见的样式</description>
+			<author>潘永辉</author>
+			<revision-time>2021-07-31</revision-time>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#144743 修复 匿名分类名称必填，却未提示必填</description>
+			<author>叶正平</author>
+			<revision-time>2021-07-23</revision-time>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#141514 修复 发布到匿名后的文件无法查看正文附件</description>
+			<author>潘永辉</author>
+			<revision-time>2021-06-11</revision-time>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#140479 #140539 修复 附件样式统一优化</description>
+			<author>潘永辉</author>
+			<revision-time>2021-06-03</revision-time>
+			<relation>
+				<relation-module>sys/attachment</relation-module>
+			</relation>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#137578 修复 附件机制xss漏洞</description>
+			<author>叶正平</author>
+			<revision-time>2021-04-09</revision-time>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#135403 修改 匿名门户配置新闻门户组件-卡片新闻，门户不显示新闻的摘要内容</description>
+			<author>曹勇</author>
+			<revision-time>2021-04-08</revision-time>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#135037 修复ie浏览器下js报错</description>
+			<author>蒋志广</author>
+			<revision-time>2021-03-17</revision-time>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#133442 修复 aspose转换后的附件打开阅读时，浏览器页签名称优化为取附件名称</description>
+			<author>叶正平</author>
+			<revision-time>2021-02-18</revision-time>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#127350 修复 发文匿名页签，发布时间没有默认排序标识</description>
+			<author>梅瑞鹏</author>
+			<revision-time>2020-12-28</revision-time>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#118614 修复 匿名url修改为相对路径</description>
+			<author>叶正平</author>
+			<revision-time>2020-09-07</revision-time>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#110678 修复 匿名附件pdf阅读接口问题</description>
+			<author>钟清学</author>
+			<revision-time>2020-07-02</revision-time>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#101860 修复 请修复AWVS扫描出的EKP代码Web安全漏洞20200408</description>
+			<author>叶正平</author>
+			<revision-time>2020-06-03</revision-time>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#103296 优化 匿名机制记录文字修改</description>
+			<author>钟清学</author>
+			<revision-time>2020-06-01</revision-time>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#105442 修复 IE8浏览器下政务版公文查看文档页面报js错误</description>
+			<author>钟清学</author>
+			<revision-time>2020-05-15</revision-time>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#101885 优化 文档发布匿名后，根据不同的文件格式选择不同的文件展现方式</description>
+			<author>郑操辉</author>
+			<revision-time>2020-04-09</revision-time>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#99674 优化 匿名机制中附件对金格的支持</description>
+			<author>郑操辉</author>
+			<revision-time>2020-04-09</revision-time>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#94663 新增 匿名机制取消、重新发布和批量取消、重新发布匿名文档</description>
+			<author>郑操辉</author>
+			<revision-time>2020-03-26</revision-time>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#95552 优化 列表页样式调整</description>
+			<author>郑操辉</author>
+			<revision-time>2020-03-13</revision-time>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#82845 新增 匿名机制</description>
+			<author>朱道标</author>
+			<revision-time>2020-01-17</revision-time>
+			<relation>
+				<relation-module>core</relation-module>
+				<relation-module>sys/attachment</relation-module>
+				<relation-module>sys/authorization</relation-module>
+				<relation-module>sys/log</relation-module>
+				<relation-module>sys/metadata</relation-module>
+				<relation-module>sys/portal</relation-module>
+				<relation-module>sys/filestore</relation-module>
+				<relation-module>sys/cache</relation-module>
+			</relation>
+			<baseline>V15.0.3.R.20200117</baseline>
+		</modify>
+	</modifies>
+</version>

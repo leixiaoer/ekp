@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<plugin 
+    xsi:schemaLocation="http://www.example.org/plugin-config ../../plugin.xsd" 
+    xmlns="http://www.example.org/plugin-config" 
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <extension 
+        point="com.landray.kmss.sys.listshow.listShowConfig" 
+        model="com.landray.kmss.fssc.ledger.model.FsscLedgerInvoice">
+        <item 
+            name="listShowConfig">
+            <param 
+                name="name" 
+                value="fssc-ledger:table.fsscLedgerInvoice"/>
+            <param 
+                name="model" 
+                value="com.landray.kmss.fssc.ledger.model.FsscLedgerInvoice"/>
+            <param 
+                name="page" 
+                value="invoice"/>
+            <param 
+                name="default" 
+                value="fdInvoiceType;fdInvoiceNumber;fdInvoiceCode;fdBillingDate;fdBz;fdTotalAmount;fdDeductible;fdState"/>
+            <param 
+                name="customized" 
+                value=""/>
+        </item>
+    </extension>
+    <extension 
+        point="com.landray.kmss.sys.listshow.listShowConfig" 
+        model="com.landray.kmss.fssc.ledger.model.FsscLedgerMaterial">
+        <item 
+            name="listShowConfig">
+            <param 
+                name="name" 
+                value="fssc-ledger:table.fsscLedgerMaterial"/>
+            <param 
+                name="model" 
+                value="com.landray.kmss.fssc.ledger.model.FsscLedgerMaterial"/>
+            <param 
+                name="page" 
+                value="material"/>
+            <param 
+                name="default" 
+                value="fdMaterial.name;fdCode;fdType.name;fdIsInventory.name;fdStatus.name;fdStock;fdUnit;docAlterTime"/>
+            <param 
+                name="customized" 
+                value=""/>
+        </item>
+    </extension>
+    <extension 
+        point="com.landray.kmss.sys.listshow.listShowConfig" 
+        model="com.landray.kmss.fssc.ledger.model.FsscLedgerContract">
+        <item 
+            name="listShowConfig">
+            <param 
+                name="name" 
+                value="fssc-ledger:table.fsscLedgerContract"/>
+            <param 
+                name="model" 
+                value="com.landray.kmss.fssc.ledger.model.FsscLedgerContract"/>
+            <param 
+                name="page" 
+                value="contract"/>
+            <param 
+                name="default" 
+                value="fdContractName;fdContractCode;fdContractType.name;fdLedgerType.name;fdEffectDate;fdContractAmount;fdPayedAmount;fdUnpayAmount;fdPayingAmount;fdContractStatus.name"/>
+            <param 
+                name="customized" 
+                value=""/>
+        </item>
+    </extension>
+    <extension 
+        point="com.landray.kmss.sys.listshow.listShowConfig" 
+        model="com.landray.kmss.fssc.ledger.model.FsscLedgerCredit">
+        <item 
+            name="listShowConfig">
+            <param 
+                name="name" 
+                value="fssc-ledger:table.fsscLedgerCredit"/>
+            <param 
+                name="model" 
+                value="com.landray.kmss.fssc.ledger.model.FsscLedgerCredit"/>
+            <param 
+                name="page" 
+                value="credit"/>
+            <param 
+                name="default" 
+                value="fdPerson.fdName;fdCreditNo;docCreateTime"/>
+            <param 
+                name="customized" 
+                value=""/>
+        </item>
+    </extension>
+    <extension	point="com.landray.kmss.sys.webservice2">
+		<item name="registry">
+			<param name="serviceName" value="第三方系统调用物资匹配、领用、释放Webservice接口" />
+			<param name="serviceClass" 
+				value="com.landray.kmss.fssc.ledger.webservice.IFsscLedgerWebserviceService" />
+			<param	name="serviceBean" 
+				value="fsscLedgerWebserviceService" />				
+			<param	name="serviceDoc"	 
+			value="/fssc/ledger/fssc_ledger_webservice/fsscLedgerWebserviceHelp.jsp" />
+		</item>
+	</extension>
+	<extension
+		point="com.landray.kmss.sys.webservice2">
+		<item name="registry">
+			<param name="serviceName" value="合同台账对外webservice接口" />
+			<param name="serviceClass"							
+				value="com.landray.kmss.fssc.ledger.webservice.IFsscLedgerContractWebserviceService" />
+			<param name="serviceBean"
+				value="fsscLedgerContractWebserviceService" />
+			<param name="serviceDoc"
+				value="/fssc/ledger/fssc_ledger_webservice/fsscLedgerContract_webserviceHelp.jsp" />
+		</item>
+	</extension>
+</plugin>

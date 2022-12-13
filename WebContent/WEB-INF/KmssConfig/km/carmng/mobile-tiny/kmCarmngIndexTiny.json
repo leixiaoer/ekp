@@ -1,0 +1,11 @@
+{
+	"id": "kmCarmngIndexTiny",
+	"title": "移动端车辆主页js文件",
+	"desc": "移动端车辆主页js文件",
+	"jsList": [
+	    "/km/carmng/mobile/module/js/ModuleMixin.js",
+	    "/km/carmng/mobile/module/js/MainView.js",
+		"/km/carmng/mobile/module/js/MainView/Statistical.js",
+		"/km/carmng/mobile/module/js/MainView/Functional.js"
+	]
+}

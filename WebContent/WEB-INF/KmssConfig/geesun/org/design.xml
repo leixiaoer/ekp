@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configs 
+    xsi:schemaLocation="http://www.example.org/design-config ../../design.xsd " 
+    xmlns="http://www.example.org/design-config" 
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <module 
+        urlPrefix="/geesun/org/" 
+        messageKey="geesun-org:module.geesun.org" 
+        defaultValidator="roleValidator(role=ROLE_GEESUNORG_DEFAULT)">
+		<roles>
+			ROLE_GEESUNORG_BACKGROUND;
+			ROLE_GEESUNORG_DEFAULT
+		</roles>
+
+		<request
+			path="geesun_org_ekp/geesunOrgEkp*"
+			validatorParameter="recid=fdId,model=com.landray.kmss.geesun.org.model.GeesunOrgEkp">
+		</request>
+		
+		<request 
+            path="geesun_org_organ/geesunOrgOrgan.do*" 
+            validatorParameter="recid=fdId,model=com.landray.kmss.geesun.org.model.GeesunOrgOrgan" 
+            defaultValidator="roleValidator(role=ROLE_GEESUNORG_DEFAULT)">
+            <query 
+                queryString="method=edit|update" 
+                validator="roleValidator(role=ROLE_GEESUNORG_SETTING)"/>
+            <query 
+                queryString="method=delete|deleteall" 
+                validator="roleValidator(role=ROLE_GEESUNORG_SETTING)"/>
+            <query 
+                queryString="method=view" 
+                validator="roleValidator(role=ROLE_GEESUNORG_DEFAULT)"/>
+        </request>
+        <request 
+            path="geesun_org_person/geesunOrgPerson.do*" 
+            validatorParameter="recid=fdId,model=com.landray.kmss.geesun.org.model.GeesunOrgPerson" 
+            defaultValidator="roleValidator(role=ROLE_GEESUNORG_DEFAULT)">
+            <query 
+                queryString="method=edit|update" 
+                validator="roleValidator(role=ROLE_GEESUNORG_SETTING)"/>
+            <query 
+                queryString="method=delete|deleteall" 
+                validator="roleValidator(role=ROLE_GEESUNORG_SETTING)"/>
+            <query 
+                queryString="method=view" 
+                validator="roleValidator(role=ROLE_GEESUNORG_DEFAULT)"/>
+        </request>
+        <request 
+            path="geesun_org_post/geesunOrgPost.do*" 
+            validatorParameter="recid=fdId,model=com.landray.kmss.geesun.org.model.GeesunOrgPost" 
+            defaultValidator="roleValidator(role=ROLE_GEESUNORG_DEFAULT)">
+            <query 
+                queryString="method=edit|update" 
+                validator="roleValidator(role=ROLE_GEESUNORG_SETTING)"/>
+            <query 
+                queryString="method=delete|deleteall" 
+                validator="roleValidator(role=ROLE_GEESUNORG_SETTING)"/>
+            <query 
+                queryString="method=view" 
+                validator="roleValidator(role=ROLE_GEESUNORG_DEFAULT)"/>
+        </request>
+		<request 
+            path="geesun_org_record/geesunOrgRecord.do*" 
+            validatorParameter="recid=fdId,model=com.landray.kmss.geesun.org.model.GeesunOrgRecord" 
+            defaultValidator="roleValidator(role=ROLE_GEESUNORG_DEFAULT)">
+            <query 
+                queryString="method=edit|update" 
+                validator="roleValidator(role=ROLE_GEESUNORG_DEFAULT)"/>
+            <query 
+                queryString="method=delete|deleteall" 
+                validator="roleValidator(role=ROLE_GEESUNORG_DEFAULT)"/>
+            <query 
+                queryString="method=view" 
+                validator="roleValidator(role=ROLE_GEESUNORG_DEFAULT)"/>
+        </request>
+
+	</module>
+	
+	<!-- 接口地址、模板及异常通知人设置 -->
+	<module urlPrefix="/sys/appconfig/">
+		<request 
+			path="sys_appconfig/sysAppConfig*">
+			<query
+				queryString="modelName=com.landray.kmss.geesun.org.model.GeesunOrgSynchroConfig"
+				validator="roleValidator(role=ROLE_GEESUNORG_BACKGROUND)" />
+		</request>
+	</module>
+	
+	<!-- 组织架构同步设置 -->
+	<module urlPrefix="/sys/appconfig/">
+		<request 
+			path="sys_appconfig/sysAppConfig*">
+			<query
+				queryString="modelName=com.landray.kmss.geesun.org.model.GeesunOrgConfig"
+				validator="roleValidator(role=ROLE_GEESUNORG_BACKGROUND)" />
+		</request>
+	</module>
+	
+	<!-- 从中间表同步到EKP定时任务 -->
+	<quartz messageKey="geesun-org:geesunOrgEkp.quartze.synOrganizationQuarze"
+			jobService="geesunSynOrganizationQuarzeService"
+			jobMethod="SynchOrganizationQuartz"
+			cronExpression="0 0 18 * * ?" />
+	
+	<!-- 从SAP同步到中间表定时任务 -->
+	<quartz messageKey="geesun-org:geesunOrgEkp.quartze.synOrganizationToMiddle"
+			jobService="geesunSynOrganizationQuarzeService"
+			jobMethod="SynchOrganizationToMiddleQuartz"
+			cronExpression="0 0 17 * * ?" />
+	
+	<!-- 清理一周前SAP记录定时任务 -->
+	<quartz messageKey="geesun-org:geesunOrgEkp.quartze.deleteBeforeWeekLogQuarze"
+			jobService="geesunOrgRecordService"
+			jobMethod="deleteWeekBeforeLogQuartz"
+			cronExpression="0 0 9 * * ?" />
+			
+		<quartz messageKey="geesun-org:geesun.testQuartz.name"
+			jobService="geesunTestQuartzService"
+			jobMethod="testQuartz"
+			cronExpression="0 0 9 * * ?" />
+
+	<homePage
+		urlPrefix="geesun/org"
+		config="/moduleindex_notopic.jsp?nav=/geesun/org/tree.jsp"
+		url="/geesun/org/index.jsp"
+		messageKey="geesun-org:module.geesun.org" />
+ 
+	<profileConfig
+		key="geesun/org"
+		messageKey="{geesun-org:module.geesun.org}" 
+		url="/sys/profile/moduleindex.jsp?nav=/geesun/org/tree.jsp" 
+		icon="km_review"
+		type="ekp"
+		description="{geesun-org:module.geesun.org.description}"
+		order="101"/>
+ 
+</configs>

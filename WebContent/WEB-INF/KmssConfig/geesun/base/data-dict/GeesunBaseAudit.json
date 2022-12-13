@@ -1,0 +1,107 @@
+
+{
+    "global" : {
+        "modelName" : "com.landray.kmss.geesun.base.model.GeesunBaseAudit",
+        "messageKey" : "geesun-base:table.geesunBaseAudit",
+        "serviceBean" : "geesunBaseAuditService",
+        "displayProperty" : "fdAccountName",
+        "table" : "geesun_base_audit",
+        "url" : "/geesun/base/geesun_base_audit/geesunBaseAudit.do?method=view&fdId=${fdId}"
+    },
+    "attrs" : {
+        "fdId" : {
+            "propertyType" : "id",
+            "generator" : {
+                "type" : "assigned"
+            }
+        },
+        "docCreateTime" : {
+            "propertyType" : "simple",
+            "messageKey" : "geesun-base:geesunBaseAudit.docCreateTime",
+            "type" : "DateTime",
+            "column" : "doc_create_time",
+            "notNull" : "true",
+            "readOnly" : "true",
+            "validate" : "false",
+            "canDisplay" : "true",
+            "canRelation" : "true",
+            "canSearch" : "true"
+        },
+        "docAlterTime" : {
+            "propertyType" : "simple",
+            "messageKey" : "geesun-base:geesunBaseAudit.docAlterTime",
+            "type" : "DateTime",
+            "column" : "doc_alter_time",
+            "notNull" : "false",
+            "readOnly" : "true",
+            "validate" : "false",
+            "canDisplay" : "true",
+            "canRelation" : "true",
+            "canSearch" : "true"
+        },
+        "fdAccountName" : {
+            "propertyType" : "simple",
+            "messageKey" : "geesun-base:geesunBaseAudit.fdAccountName",
+            "type" : "String",
+            "column" : "fd_account_name",
+            "notNull" : "false",
+            "readOnly" : "false",
+            "validate" : "true",
+            "canDisplay" : "true",
+            "canRelation" : "true",
+            "canSearch" : "true",
+            "length" : "200"
+        },
+        "fdAccountCode" : {
+            "propertyType" : "simple",
+            "messageKey" : "geesun-base:geesunBaseAudit.fdAccountCode",
+            "type" : "String",
+            "column" : "fd_account_code",
+            "notNull" : "false",
+            "readOnly" : "false",
+            "validate" : "true",
+            "canDisplay" : "true",
+            "canRelation" : "true",
+            "canSearch" : "true",
+            "length" : "50"
+        },
+        "docCreator" : {
+            "propertyType" : "model",
+            "messageKey" : "geesun-base:geesunBaseAudit.docCreator",
+            "type" : "com.landray.kmss.sys.organization.model.SysOrgPerson",
+            "column" : "doc_creator_id",
+            "notNull" : "true",
+            "readOnly" : "true",
+            "dialogJS" : "Dialog_Address(!{mulSelect}, '!{idField}','!{nameField}', ';',ORG_TYPE_PERSON);",
+            "validate" : "false",
+            "canDisplay" : "true",
+            "canRelation" : "true"
+        },
+        "docAlteror" : {
+            "propertyType" : "model",
+            "messageKey" : "geesun-base:geesunBaseAudit.docAlteror",
+            "type" : "com.landray.kmss.sys.organization.model.SysOrgPerson",
+            "column" : "doc_alteror_id",
+            "notNull" : "false",
+            "readOnly" : "true",
+            "dialogJS" : "Dialog_Address(!{mulSelect}, '!{idField}','!{nameField}', ';',ORG_TYPE_PERSON);",
+            "validate" : "false",
+            "canDisplay" : "true",
+            "canRelation" : "true"
+        },
+        "fdPersons" : {
+            "propertyType" : "list",
+            "messageKey" : "geesun-base:geesunBaseAudit.fdPersons",
+            "type" : "com.landray.kmss.sys.organization.model.SysOrgPerson",
+            "table" : "geesun_base_audit_ry",
+            "elementColumn" : "fd_target_id",
+            "column" : "fd_source_id",
+            "notNull" : "false",
+            "readOnly" : "false",
+            "dialogJS" : "Dialog_Address(!{mulSelect}, '!{idField}','!{nameField}', ';',ORG_TYPE_PERSON);",
+            "validate" : "true",
+            "canDisplay" : "false",
+            "canRelation" : "true"
+        }
+    }
+}

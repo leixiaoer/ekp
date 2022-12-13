@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<plugin
+	xmlns="http://www.example.org/plugin-config"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.example.org/plugin-config ../../plugin.xsd ">
+	
+	<extension point="com.landray.kmss.sys.mobile.compress" model="*">
+		<item name="js-pkg">
+			<param name="name" value="mui-fast-review-todo-list.js" />
+			<param name="targetFile" value="/sys/lbpmperson/mobile/resource/js/mui-fast-review-todo-list.js" />
+			<param name="srcFold" value="/sys/lbpmperson/mobile/resource/js" />
+		</item>
+		<item name="css-file">
+			<param name="name" value="mui-fast-review-todo-list.css" />
+            <param name="targetFile" value="/sys/lbpmperson/mobile/resource/css/FastReviewTodoList.css" />
+		</item>		
+	</extension>
+	
+	<extension point="com.landray.kmss.sys.mobile.config">
+		<item name="info">
+			<param name="name" value="{sys-lbpmperson:module.sys.lbpmperson}" />
+			<param name="modelName" value="com.landray.kmss.sys.lbpmperson.model.LbpmPersonMyProcess" />
+			<param name="defaultUrl" value="/sys/lbpmperson/mobile/nav.json" />
+		</item>
+	</extension>
+	
+	<extension point="com.landray.kmss.sys.mobile.compress" model="*">
+		<item 
+			name="css-file">
+			<param 
+				name="name" 
+				value="mui-lbpmperson-list.css" />
+			<param 
+				name="targetFile" 
+				value="/sys/lbpmperson/mobile/resource/css/list.css" />
+		</item>
+	</extension>
+</plugin>

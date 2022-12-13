@@ -1,0 +1,971 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<version xmlns="http://www.example.org/version-config" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.example.org/version-config ../../../version.xsd">
+	<modifies>
+		<modify>
+			<description>#166727,#147869 修改 附件转换-转换配置列表，第一次取消aspose勾选不生效</description>
+			<author>林剑文</author>
+			<revision-time>2022-06-08</revision-time>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#89721 新增 【关键任务】【数据库 - pgsql】postgresql数据库与ekp适配</description>
+			<author>汪亮</author>
+			<revision-time>2022-06-08</revision-time>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#164987 新增 同一份word文件，在需要转换pdf的模块提交，原来未生成pdf的则重新转换，已经生成pdf的则无需再转换</description>
+			<author>叶正平</author>
+			<revision-time>2022-06-08</revision-time>
+			<relation>
+				<relation-module>AttConvert_Aspose</relation-module>
+			</relation>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#165228 修改 aspose转换队列出现重复</description>
+			<author>林剑文</author>
+			<revision-time>2022-05-23</revision-time>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#164605 修复 aspose转换任务减少无效请求客户端</description>
+			<author>叶正平</author>
+			<revision-time>2022-05-11</revision-time>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#164519 修改 用主文档ID无法查询转换队列中附件</description>
+			<author>林剑文</author>
+			<revision-time>2022-05-11</revision-time>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#161737 修改 V15.0待发布流 -- sonar检测问题20220318</description>
+			<author>林剑文</author>
+			<revision-time>2022-05-07</revision-time>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#153017 优化 TransactionUtils.beginTransaction 和 TransactionUtils.beginNewTransaction</description>
+			<author>黄海</author>
+			<revision-time>2022-05-05</revision-time>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#162400 优化 ekp侧获取未分配排序改为升序，使队列可以先进先出</description>
+			<author>叶正平</author>
+			<revision-time>2022-03-31</revision-time>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#161244 修改 转换配置启动和停用问题</description>
+			<author>林剑文</author>
+			<revision-time>2022-03-15</revision-time>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#159521 修改 WPS云转换问题</description>
+			<author>林剑文</author>
+			<revision-time>2022-03-09</revision-time>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#160868 修改 V15合同功能，文件复制后又会加入队列中</description>
+			<author>林剑文</author>
+			<revision-time>2022-03-08</revision-time>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#161001 修改 V15环境提交合同流程报错</description>
+			<author>林剑文</author>
+			<revision-time>2022-03-08</revision-time>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#159563,#159521 WPS云转换时，如果转换失败次数超出3次，则标记为失败队列</description>
+			<author>林剑文</author>
+			<revision-time>2022-02-25</revision-time>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#146840#146113 修改 V15.0待发布流sonar检测问题20210729</description>
+			<author>林剑文</author>
+			<revision-time>2022-02-14</revision-time>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#154924 修改 转换配置列表，WPS中台转换、WPS在线预览转换出去后面的ofd转换字眼</description>
+			<author>林剑文</author>
+			<revision-time>2021-12-17</revision-time>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#149982 WPS云和WPS中台文件转换问题</description>
+			<author>林剑文</author>
+			<revision-time>2021-10-19</revision-time>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#150861 修改 转换日志记录导致环境卡死</description>
+			<author>林剑文</author>
+			<revision-time>2021-10-18</revision-time>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#147809 优化 转换日志记录优化</description>
+			<author>林剑文</author>
+			<revision-time>2021-09-17</revision-time>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#147691 修改 发起图片投票，上传图片，提示操作失败</description>
+			<author>林剑文</author>
+			<revision-time>2021-09-17</revision-time>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#145985,#144626,#144300 转换队列存在多个重复队列信息</description>
+			<author>林剑文</author>
+			<revision-time>2021-09-17</revision-time>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#139216 修改 转换服务配置项窗口去掉二维码</description>
+			<author>林剑文</author>
+			<revision-time>2021-08-19</revision-time>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#146113 修改 sonar检测问题</description>
+			<author>林剑文</author>
+			<revision-time>2021-08-16</revision-time>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#146232 优化 优化WPS云转换OFD/PDF功能代码</description>
+			<author>林剑文</author>
+			<revision-time>2021-08-16</revision-time>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#142615 需求 在线预览服务需适配PDF的转换</description>
+			<author>林剑文</author>
+			<revision-time>2021-06-29</revision-time>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#140051 修改 未开启aspose服务-不应该存在转换信息</description>
+			<author>林剑文</author>
+			<revision-time>2021-06-29</revision-time>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#142869 修复 后台日志SysAttUploadServiceImp.getFileData报空指针错误的问题</description>
+			<author>林宇超</author>
+			<revision-time>2021-06-28</revision-time>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#142723 修复 附件转换配置读取导致系统宕机的问题</description>
+			<author>林宇超</author>
+			<revision-time>2021-06-25</revision-time>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#140602 修复 其它文件类型云存储多附件目录上传主题包问题</description>
+			<author>汪亮</author>
+			<revision-time>2021-06-23</revision-time>
+			<relation>
+				<relation-module>core</relation-module>
+				<relation-module>sys/property</relation-module>
+				<relation-module>sys/ui</relation-module>
+				<relation-module>sys/profile</relation-module>
+				<relation-module>third/oss/alioss</relation-module>
+				<relation-module>tools/dinginit</relation-module>
+			</relation>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#139536 修改 linux在线预览升级到1.2.800适配及解决ofd无法在线预览问题</description>
+			<author>林剑文</author>
+			<revision-time>2021-06-16</revision-time>
+			<relation>
+				<relation-module>sys/attachment</relation-module>
+				<relation-module>third/wps</relation-module>
+			</relation>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#138780 新增 【关键任务】【附件机制-新增】历史版本附件移出功能需求调整--第二版</description>
+			<author>汪亮</author>
+			<revision-time>2021-06-01</revision-time>
+			<relation>
+				<relation-module>sys/attachment</relation-module>
+			</relation>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#139203 修复 使用阿里云存储，历史转换的mp4视频文件无法播放</description>
+			<author>屈高鹏</author>
+			<revision-time>2021-05-20</revision-time>
+			<relation>
+				<relation-module>sys/attachment</relation-module>
+				<relation-module>third/oss/alioss</relation-module>
+			</relation>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#133511 优化 转换队列查询优化</description>
+			<author>叶正平</author>
+			<revision-time>2021-05-10</revision-time>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#132210 修复 转换推送报java.lang.IllegalArgumentException: n must be positive</description>
+			<author>叶正平</author>
+			<revision-time>2021-05-07</revision-time>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#139167 修改 如果不开启OFD转换，存在历史的OFD队列也不要显示</description>
+			<author>林剑文</author>
+			<revision-time>2021-05-06</revision-time>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#137169 各模块后台模板，替换按钮不见了</description>
+			<author>林剑文</author>
+			<revision-time>2021-04-20</revision-time>
+			<relation>
+				<relation-module>sys/attachment</relation-module>
+				<relation-module>sys/news</relation-module>
+			</relation>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>加载项代码合并到V15</description>
+			<author>林剑文</author>
+			<revision-time>2021-04-16</revision-time>
+			<relation>
+				<relation-module>sys/attachment</relation-module>
+				<relation-module>km/agreement</relation-module>
+				<relation-module>core</relation-module>
+			</relation>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#134553【关键任务】EKP有文件存储功能的模块改为调用附件机制接口</description>
+			<author>汪亮</author>
+			<revision-time>2021-04-07</revision-time>
+			<relation>
+				<relation-module>core</relation-module>
+				<relation-module>sys/attachment</relation-module>
+				<relation-module>sys/property</relation-module>
+				<relation-module>sys/ui</relation-module>
+				<relation-module>sys/profile</relation-module>
+				<relation-module>third/oss</relation-module>
+				<relation-module>tools/dinginit</relation-module>
+			</relation>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#131244 新增 附件机制新增定时清理无用历史版本附件功能</description>
+			<author>汪亮</author>
+			<revision-time>2021-03-31</revision-time>
+			<relation>
+				<relation-module>sys/attachment</relation-module>
+			</relation>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#124119 修复 系统开启三员管理后，附件转换下所有按钮不显示</description>
+			<author>潘永辉</author>
+			<revision-time>2020-11-05</revision-time>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#117514 修复 视频转换成flv后无法播放问题</description>
+			<author>叶正平</author>
+			<revision-time>2020-10-28</revision-time>
+			<relation>
+				<relation-module>sys/attachment</relation-module>
+				<relation-module>AttConvert_Aspose</relation-module>
+				<relation-module>AttConvert_Yozo</relation-module>
+			</relation>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#74144 新增 针对流程中附件变动产生的版本或日志信息的存储</description>
+			<author>叶正平</author>
+			<revision-time>2020-09-21</revision-time>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#108854 修复 dps文件多媒体阅读器没有打开</description>
+			<author>何景锋</author>
+			<revision-time>2020-06-22</revision-time>
+			<relation>
+				<relation-module>sys/attachment</relation-module>
+			</relation>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#106718 新增 WPS文件支持</description>
+			<author>何景锋</author>
+			<revision-time>2020-06-08</revision-time>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#105511 修复 文件存储xss漏洞</description>
+			<author>叶正平</author>
+			<revision-time>2020-05-14</revision-time>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#104979 修复 无权限的用户登录系统，通过链接访问到了历史转换文件清理配置，应该提示无权限</description>
+			<author>叶正平</author>
+			<revision-time>2020-05-11</revision-time>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#104459 修复 SysAttUploadServiceImp单实例导致附件机制出现TX锁表</description>
+			<author>叶正平</author>
+			<revision-time>2020-05-07</revision-time>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#102926 优化 aspose转换excel多sheet的支持</description>
+			<author>叶正平</author>
+			<revision-time>2020-04-27</revision-time>
+			<relation>
+				<relation-module>sys/attachment</relation-module>
+			</relation>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#78363 新增 因附件转换文件占用较大的存储空间，可实现定时清理历史的转换文件</description>
+			<author>叶正平</author>
+			<revision-time>2020-04-08</revision-time>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#90845 新增 富文本框去除FLASH视频播放器上传功能，添加H5视频播放上传功能</description>
+			<author>许远周</author>
+			<revision-time>2020-04-06</revision-time>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#100273 修复 一个页签超多的excel文档，一直在已分配状态，后台一直打印报错日志，到了超时时间也不超时失败，一直占用资源</description>
+			<author>叶正平</author>
+			<revision-time>2020-03-29</revision-time>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#98035 优化 配置说明中增加转换说明</description>
+			<author>代家宽</author>
+			<revision-time>2020-03-28</revision-time>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#98583 优化 合同正文逻辑优化单，针对历史数据</description>
+			<author>梅瑞鹏</author>
+			<revision-time>2020-03-27</revision-time>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#93367 新增 集成WPS云文档功能</description>
+			<author>何景锋</author>
+			<revision-time>2020-03-27</revision-time>
+			<relation>
+				<relation-module>sys/attachment</relation-module>
+			</relation>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#92745 新增 多节点配置处理超时问题</description>
+			<author>叶正平</author>
+			<revision-time>2020-03-14</revision-time>
+			<relation>
+				<relation-module>AttConvert_Aspose</relation-module>
+				<relation-module>AttConvert_Yozo</relation-module>
+			</relation>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#87110 优化 附件转换注册心跳与业务分离</description>
+			<author>叶正平</author>
+			<revision-time>2019-02-24</revision-time>
+			<relation>
+				<relation-module>AttConvert_Aspose</relation-module>
+				<relation-module>AttConvert_Yozo</relation-module>
+				<relation-module>sys/attachment</relation-module>
+			</relation>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#92512 修复 转换配置新建时点击保存并新建页面无法输入的问题</description>
+			<author>朱道标</author>
+			<revision-time>2019-12-27</revision-time>
+			<baseline>V15.0.3.R.20200117</baseline>
+		</modify>
+		<modify>
+			<description>#83715 修复 转换服务死锁问题</description>
+			<author>洪泽铨</author>
+			<revision-time>2019-10-24</revision-time>
+			<baseline>V15.0.2.R.20191108</baseline>
+		</modify>
+		<modify>
+			<description>#84202 修复 流程启动接口附件名称为空引起报错，无法调用</description>
+			<author>叶正平</author>
+			<revision-time>2019-10-23</revision-time>
+			<baseline>V15.0.2.R.20191108</baseline>
+		</modify>
+		<modify>
+			<description>#82945 修复 一台服务器启动2个tomcat的ekp会导致cpu爆满</description>
+			<author>李显鹏</author>
+			<revision-time>2019-10-16</revision-time>
+			<baseline>V15.0.2.R.20191108</baseline>
+		</modify>
+		<modify>
+			<description>#82969 修复 excel文件sheet较多名称较长时，转换后写入sys_file_viewer_param表报错</description>
+			<author>叶正平</author>
+			<revision-time>2019-10-14</revision-time>
+			<baseline>V15.0.2.R.20191108</baseline>
+		</modify>
+		<modify>
+			<description>#79692 新增 支持CAD文件转换</description>
+			<author>洪泽铨</author>
+			<revision-time>2019-09-05</revision-time>
+			<relation>
+				<relation-module>sys/attachment</relation-module>
+			</relation>
+			<baseline>V15.0.1.R.20190906</baseline>
+		</modify>
+		<modify>
+			<description>#80839 修复 公文正文重新编辑保存出现jg_service.jsp的错误信息提示，正文内容保存失败</description>
+			<author>屈高鹏</author>
+			<revision-time>2019-09-03</revision-time>
+			<relation>
+				<relation-module>core</relation-module>
+			</relation>
+			<baseline>V15.0.1.R.20190906</baseline>
+		</modify>
+		<modify>
+			<description>#80250 修复 公文转PDF经常性转换后没有pdf下载按钮</description>
+			<author>朱道标</author>
+			<revision-time>2019-08-29</revision-time>
+			<baseline>V15.0.1.R.20190906</baseline>
+		</modify>
+		<modify>
+			<description>#80082 优化 解决加密线程事务过长等待问题</description>
+			<author>叶正平</author>
+			<revision-time>2019-08-16</revision-time>
+			<baseline>V15.0.1.R.20190906</baseline>
+		</modify>
+		<modify>
+			<description>#78011 优化 流程沉淀到知识仓库时沉淀内容包括流程附件和流程内容，流程内容html（V14）和pdf（V15）需要排序在第一位</description>
+			<author>朱道标</author>
+			<revision-time>2019-08-11</revision-time>
+			<baseline>V15.0.1.R.20190906</baseline>
+		</modify>
+		<modify>
+			<description>#69205 优化 知识沉淀后的文档附件转换到PDF文件</description>
+			<author>朱道标</author>
+			<revision-time>2019-06-19</revision-time>
+			<baseline>V15.0.0.R.20190712</baseline>
+		</modify>
+		<modify>
+			<description>#74155 修复 附件机制连接泄漏</description>
+			<author>叶正平</author>
+			<revision-time>2019-05-31</revision-time>
+			<baseline>V15.0.0.R.20190712</baseline>
+		</modify>
+		<modify>
+			<description>#73784 优化 ofd服务不启用，队列不显示ofd的转换数据</description>
+			<author>朱湖强</author>
+			<revision-time>2019-05-26</revision-time>
+			<baseline>V15.0.0.R.20190712</baseline>
+		</modify>
+		<modify>
+			<description>#70238 新增 数科ofd转换服务调用</description>
+			<author>朱湖强</author>
+			<revision-time>2019-05-13</revision-time>
+			<relation>
+				<relation-module>core</relation-module>
+			</relation>
+			<baseline>V15.0.0.R.20190712</baseline>
+		</modify>
+		<modify>
+			<description>#70961 修复 附件连接池泄露</description>
+			<author>洪泽铨</author>
+			<revision-time>2019-04-23</revision-time>
+			<baseline>V15.0.0.R.20190712</baseline>
+		</modify>
+		<modify>
+			<description>#70243 新增 批量入库功能</description>
+			<author>洪泽铨</author>
+			<revision-time>2019-04-10</revision-time>
+			<baseline>V15.0.0.B3.20190412</baseline>
+		</modify>
+		<modify>
+			<description>#69609 优化 处理Aspose附件转换服务新增转换配置窗口未国际化翻译的字段</description>
+			<author>杨铮</author>
+			<revision-time>2019-03-31</revision-time>
+			<baseline>V15.0.0.B3.20190412</baseline>
+		</modify>
+		<modify>
+			<description>#69038 优化 admin.do中AES加密、阿里云存储中备注修改</description>
+			<author>何景锋</author>
+			<revision-time>2019-03-18</revision-time>
+			<baseline>V15.0.0.B3.20190412</baseline>
+		</modify>
+		<modify>
+			<description>#63418 新增 归档支持aspose转换PDF</description>
+			<author>严明镜</author>
+			<revision-time>2019-01-24</revision-time>
+			<baseline>V15.0.0.B3.20190412</baseline>
+		</modify>
+		<modify>
+			<description>#59152 新增 压缩文件在线预览</description>
+			<author>chenl</author>
+			<revision-time>2019-01-21</revision-time>
+			<baseline>V15.0.0.B3.20190412</baseline>
+		</modify>
+		<modify>
+			<description>#59152 新增 压缩文件在线预览</description>
+			<author>chenl</author>
+			<revision-time>2019-01-17</revision-time>
+			<baseline>V15.0.0.B2.20190118</baseline>
+		</modify>
+		<modify>
+			<description>#66962 修复 加密流重复嵌套图片显示异常的问题</description>
+			<author>洪泽铨</author>
+			<revision-time>2019-01-15</revision-time>
+			<baseline>V15.0.0.B2.20190118</baseline>
+		</modify>
+		<modify>
+			<description>#63701 新增 附件支持存储扩展</description>
+			<author>洪泽铨</author>
+			<revision-time>2019-01-04</revision-time>
+			<relation>
+				<relation-module>sys/attachment</relation-module>
+				<relation-module>sys/xform</relation-module>
+				<relation-module>sys/zone</relation-module>
+				<relation-module>sys/mobile</relation-module>
+				<relation-module>sys/lbpmservice</relation-module>
+				<relation-module>kms/multidoc</relation-module>
+				<relation-module>kms/wiki</relation-module>
+				<relation-module>kms/common</relation-module>
+				<relation-module>kms/kmaps</relation-module>
+				<relation-module>kms/learn</relation-module>
+				<relation-module>kms/exam</relation-module>
+				<relation-module>kms/medal</relation-module>
+				<relation-module>kms/diploma</relation-module>
+			</relation>
+			<baseline>V15.0.0.B2.20190118</baseline>
+		</modify>
+		<modify>
+			<description>#59381 新增 高清转换按模块word和ppt生成PDF</description>
+			<author>李显鹏</author>
+			<revision-time>2018-12-19</revision-time>
+			<baseline>V15.0.0.B2.20190118</baseline>
+		</modify>
+		<modify>
+			<description>新增 RTF格式附件转换并在线预览</description>
+			<author>李显鹏</author>
+			<revision-time>2018-09-11</revision-time>
+			<relation>
+				<relation-module>AttConvert_Aspose</relation-module>
+			</relation>
+			<baseline>V15.0.0.B1.20181109</baseline>
+		</modify>
+		<modify>
+			<description>新增 视频转换支持m4v格式</description>
+			<author>洪泽铨</author>
+			<revision-time>2018-08-21</revision-time>
+			<relation>
+				<relation-module>AttConvert_Aspose</relation-module>
+			</relation>
+			<baseline>V15.0.0.B1.20181109</baseline>
+		</modify>
+		<modify>
+			<description>修复 附件转换调度器集群环境下不能切换的问题</description>
+			<author>李显鹏</author>
+			<revision-time>2018-08-14</revision-time>
+			<baseline>V15.0.0.B1.20181109</baseline>
+		</modify>
+		<modify>
+			<description>优化 转换配置的读取采用缓存形式</description>
+			<author>李显鹏</author>
+			<revision-time>2018-04-11</revision-time>
+			<baseline>V14.0.0.R.20180413</baseline>
+		</modify>
+		<modify>
+			<description>优化 附件备份逻辑优化</description>
+			<author>朱湖强</author>
+			<revision-time>2018-01-15</revision-time>
+			<baseline>V14.0.0.R.20180413</baseline>
+		</modify>
+		<modify>
+			<description>修复 背景是透明的png图片默认会填充黑色</description>
+			<author>黎凯麟</author>
+			<revision-time>2017-12-26</revision-time>
+			<baseline>V14.0.0.B2.20180112</baseline>
+		</modify>
+		<modify>
+			<description>修复 附件转换未翻译的字段</description>
+			<author>陈尉建</author>
+			<revision-time>2017-12-21</revision-time>
+			<baseline>V14.0.0.B2.20180112</baseline>
+		</modify>
+		<modify>
+			<description>修复 IE11浏览器设置转换参数窗口，水平方向出现了滚动条</description>
+			<author>郑超</author>
+			<revision-time>2017-12-20</revision-time>
+			<baseline>V14.0.0.B2.20180112</baseline>
+		</modify>
+		<modify>
+			<description>优化 附件转换服务稳定性</description>
+			<author>李显鹏</author>
+			<revision-time>2017-11-06</revision-time>
+			<relation>
+				<relation-module>AttConvert_Aspose</relation-module>
+				<relation-module>AttConvert_Yozo</relation-module>
+			</relation>
+			<baseline>V14.0.0.B1.20171110</baseline>
+		</modify>
+		<modify>
+			<description>优化 高清转换速度和文件大小以及高分辨率的PDF转换的清晰度</description>
+			<author>李显鹏</author>
+			<revision-time>2017-10-23</revision-time>
+			<relation>
+				<relation-module>AttConvert_Aspose</relation-module>
+				<relation-module>AttConvert_Yozo</relation-module>
+				<relation-module>sys/attachment</relation-module>
+			</relation>
+			<baseline>V14.0.0.B1.20171110</baseline>
+		</modify>
+		<modify>
+			<description>优化 通过点击转换队列可以清晰的知道该队列是否高清转换</description>
+			<author>李显鹏</author>
+			<revision-time>2017-07-24</revision-time>
+			<relation>
+				<relation-module>AttConvert_Aspose</relation-module>
+			</relation>
+			<baseline>V13.5.0.R.20170915</baseline>
+		</modify>
+		<modify>
+			<description>修复 在线编辑删除旧文件队列相关信息时候可能出错导致新文件没有保存从而丢失的错误</description>
+			<author>李显鹏</author>
+			<revision-time>2017-07-03</revision-time>
+			<baseline>V13.5.0.B2.20170707</baseline>
+		</modify>
+		<modify>
+			<description>优化 操作按钮居右显示</description>
+			<author>李显鹏</author>
+			<revision-time>2017-05-05</revision-time>
+			<baseline>V13.5.0.B1.20170512</baseline>
+		</modify>
+		<modify>
+			<description>优化 队列的分发和转换服务任务的处理</description>
+			<author>李显鹏</author>
+			<revision-time>2017-05-04</revision-time>
+			<relation>
+				<relation-module>sys/cluster</relation-module>
+				<relation-module>AttConvert_Aspose</relation-module>
+			</relation>
+			<baseline>V13.5.0.B1.20170512</baseline>
+		</modify>
+		<modify>
+			<description>优化 去掉方法同步标示，去掉入队列时的新加事物</description>
+			<author>李显鹏</author>
+			<revision-time>2017-03-23</revision-time>
+			<baseline>V13.5.0.B1.20170512</baseline>
+		</modify>
+		<modify>
+			<description>修复 运维监控中心&gt;&gt;附件转换，中间帧字体大小不统一</description>
+			<author>潘永辉</author>
+			<revision-time>2017-03-06</revision-time>
+			<baseline>V13.0.0.R.20170310</baseline>
+		</modify>
+		<modify>
+			<description>优化 附件转换监控后台权限保持跟超管admin一致</description>
+			<author>李显鹏</author>
+			<revision-time>2017-03-02</revision-time>
+			<baseline>V13.0.0.R.20170310</baseline>
+		</modify>
+		<modify>
+			<description>修复 清除无效队列兼容Oracle数据库</description>
+			<author>李显鹏</author>
+			<revision-time>2017-02-13</revision-time>
+			<baseline>V13.0.0.R.20170310</baseline>
+		</modify>
+		<modify>
+			<description>优化 附件转换稳定性-减少非必要通讯优化转换服务内存的释放</description>
+			<author>李显鹏</author>
+			<revision-time>2017-02-13</revision-time>
+			<relation>
+				<relation-module>AttConvert_Aspose</relation-module>
+			</relation>
+			<baseline>V13.0.0.R.20170310</baseline>
+		</modify>
+		<modify>
+			<description>优化 针对doc、docx、pdf格式的文件默认启用高保真</description>
+			<author>李显鹏</author>
+			<revision-time>2016-12-26</revision-time>
+			<baseline>V13.0.0.B3.20161230</baseline>
+		</modify>
+		<modify>
+			<description>修复 无效队列导致后续不分配</description>
+			<author>李显鹏</author>
+			<revision-time>2016-12-26</revision-time>
+			<baseline>V13.0.0.B3.20161230</baseline>
+		</modify>
+		<modify>
+			<description>修复 单词拼写错误</description>
+			<author>李显鹏</author>
+			<revision-time>2016-12-26</revision-time>
+			<baseline>V13.0.0.B3.20161230</baseline>
+		</modify>
+		<modify>
+			<description>修复 删除转换配置报错</description>
+			<author>李显鹏</author>
+			<revision-time>2016-12-26</revision-time>
+			<baseline>V13.0.0.B3.20161230</baseline>
+		</modify>
+		<modify>
+			<description>优化 转换配置操作列颜色调整</description>
+			<author>李显鹏</author>
+			<revision-time>2016-12-26</revision-time>
+			<baseline>V13.0.0.B3.20161230</baseline>
+		</modify>
+		<modify>
+			<description>优化 高保真阅读</description>
+			<author>李显鹏</author>
+			<revision-time>2016-12-26</revision-time>
+			<relation>
+				<relation-module>sys/attachment</relation-module>
+				<relation-module>AttConvert_Aspose</relation-module>
+				<relation-module>AttConvert_Yozo</relation-module>
+			</relation>
+			<baseline>V13.0.0.B3.20161230</baseline>
+		</modify>
+		<modify>
+			<description>修复 缩略图小图不生成的问题</description>
+			<author>洪泽铨</author>
+			<revision-time>2016-12-26</revision-time>
+			<baseline>V13.0.0.B3.20161230</baseline>
+		</modify>
+		<modify>
+			<description>优化 移除文件存储组件的后台管理</description>
+			<author>李显鹏</author>
+			<revision-time>2016-11-11</revision-time>
+			<relation>
+				<relation-module>sys/profile</relation-module>
+			</relation>
+			<baseline>V13.0.0.B3.20161230</baseline>
+		</modify>
+		<modify>
+			<description>优化 原来代码的事物管理交由系统中Spring框架来管理以防止数据库连接泄#33428 优化 原来代码的事物管理交由系统中Spring框架来管理以防止数据库连接泄 优化 原来代码的事物管理交由系统中Spring框架来管理以防止数据库连接泄漏</description>
+			<author>李显鹏</author>
+			<revision-time>2016-11-11</revision-time>
+			<relation>
+				<relation-module>sys/attachment</relation-module>
+				<relation-module>AttConvert_Aspose</relation-module>
+				<relation-module>AttConvert_Yozo</relation-module>
+			</relation>
+			<baseline>V13.0.0.B3.20161230</baseline>
+		</modify>
+		<modify>
+			<description>修复 list列表页操作栏中的“删除”按钮调整命名为“批量删除”</description>
+			<author>潘永辉</author>
+			<revision-time>2016-10-20</revision-time>
+			<baseline>V13.0.0.B3.20161230</baseline>
+		</modify>
+		<modify>
+			<description>优化 修改附件转换数据迁移任务说明，优化只删除旧的转换数据</description>
+			<author>李显鹏</author>
+			<revision-time>2016-08-03</revision-time>
+			<relation>
+				<relation-module>sys/attachment</relation-module>
+			</relation>
+			<baseline>V13.0.0.B2.20160930</baseline>
+		</modify>
+		<modify>
+			<description>优化 更换图片处理使用的包</description>
+			<author>陈建林</author>
+			<revision-time>2016-07-27</revision-time>
+			<baseline>V13.0.0.B2.20160930</baseline>
+		</modify>
+		<modify>
+			<description>优化 附件转换和阅读（附件机制，文件存储，Aspose附件转换版本一致）</description>
+			<author>李显鹏</author>
+			<revision-time>2016-06-06</revision-time>
+			<relation>
+				<relation-module>sys/attachment</relation-module>
+				<relation-module>AttConvert_Aspose</relation-module>
+			</relation>
+			<baseline>V13.0.0.B2.20160930</baseline>
+		</modify>
+		<modify>
+			<description>新增 附件转换启用与否总开关</description>
+			<author>李显鹏</author>
+			<revision-time>2016-05-30</revision-time>
+			<relation>
+				<relation-module>sys/attachment</relation-module>
+				<relation-module>AttConvert_Aspose</relation-module>
+			</relation>
+			<baseline>V13.0.0.B2.20160930</baseline>
+		</modify>
+		<modify>
+			<description>优化 通讯</description>
+			<author>李显鹏</author>
+			<revision-time>2016-05-05</revision-time>
+			<relation>
+				<relation-module>AttConvert_Aspose</relation-module>
+			</relation>
+			<baseline>V13.0.0.B2.20160930</baseline>
+		</modify>
+		<modify>
+			<description>优化 增加附件转换客户端Aspsoe版本可看</description>
+			<author>李显鹏</author>
+			<revision-time>2016-04-25</revision-time>
+			<relation>
+				<relation-module>AttConvert_Aspose</relation-module>
+			</relation>
+			<baseline>V13.0.0.B1.20160429</baseline>
+		</modify>
+		<modify>
+			<description>优化 新增附件转换升级到12.0.8的迁移任务</description>
+			<author>李显鹏</author>
+			<revision-time>2016-01-18</revision-time>
+			<relation>
+				<relation-module>sys/attachment</relation-module>
+			</relation>
+			<baseline>V12.0.9.R.20160325</baseline>
+		</modify>
+		<modify>
+			<description>修复 增加事务控制防止Hibernate连接池泄漏</description>
+			<author>李显鹏</author>
+			<revision-time>2016-01-06</revision-time>
+			<baseline>V12.0.8.R.20160114</baseline>
+		</modify>
+		<modify>
+			<description>优化 转换通讯</description>
+			<author>李显鹏</author>
+			<revision-time>2015-12-29</revision-time>
+			<relation>
+				<relation-module>sys/attachment</relation-module>
+				<relation-module>AttConvert_Aspose</relation-module>
+			</relation>
+			<baseline>V12.0.8.R.20160114</baseline>
+		</modify>
+		<modify>
+			<description>优化 转换相关（相对稳定版本）</description>
+			<author>李显鹏</author>
+			<revision-time>2015-12-01</revision-time>
+			<relation>
+				<relation-module>sys/attchment</relation-module>
+				<relation-module>AttConvert_Aspose</relation-module>
+			</relation>
+			<baseline>V12.0.7.R.20151203</baseline>
+		</modify>
+		<modify>
+			<description>优化 兼容多转换工具</description>
+			<author>李显鹏</author>
+			<revision-time>2015-11-19</revision-time>
+			<relation>
+				<relation-module>sys/attachment</relation-module>
+				<relation-module>AttConvert_Aspose</relation-module>
+				<relation-module>sys/news</relation-module>
+				<relation-module>km/smissive</relation-module>
+				<relation-module>km/imissive</relation-module>
+				<relation-module>kms/multidoc</relation-module>
+			</relation>
+			<baseline>V12.0.7.R.20151203</baseline>
+		</modify>
+		<modify>
+			<description>优化 转换api跟EKP分开，由组件自行管理</description>
+			<author>李显鹏</author>
+			<revision-time>2015-11-13</revision-time>
+			<relation>
+				<relation-module>AttConvert_Aspose</relation-module>
+			</relation>
+			<baseline>V12.0.7.R.20151203</baseline>
+		</modify>
+		<modify>
+			<description>新增 点击转换队列所在模块进入模块主文档查看页面</description>
+			<author>李显鹏</author>
+			<revision-time>2015-11-12</revision-time>
+			<relation>
+				<relation-module>sys/attachment</relation-module>
+				<relation-module>kms/exam</relation-module>
+				<relation-module>sns/album</relation-module>
+				<relation-module>sns/ispace</relation-module>
+			</relation>
+			<baseline>V12.0.7.R.20151203</baseline>
+		</modify>
+		<modify>
+			<description>优化 附件转换</description>
+			<author>李显鹏</author>
+			<revision-time>2015-11-09</revision-time>
+			<relation>
+				<relation-module>sys/attachment</relation-module>
+				<relation-module>AttConvert_Aspose</relation-module>
+			</relation>
+			<baseline>V12.0.7.R.20151203</baseline>
+		</modify>
+		<modify>
+			<description>新增 附件转换队列的相关体验优化</description>
+			<author>李显鹏</author>
+			<revision-time>2015-09-08</revision-time>
+			<relation>
+				<relation-module>AttConvert_Aspose</relation-module>
+			</relation>
+			<baseline>V12.0.5.R.20150911</baseline>
+		</modify>
+		<modify>
+			<description>新增 附件转换队列的相关体验优化</description>
+			<author>李显鹏</author>
+			<revision-time>2015-09-08</revision-time>
+			<relation>
+				<relation-module>sys/attachment</relation-module>
+			</relation>
+			<baseline>V12.0.5.R.20150911</baseline>
+		</modify>
+		<modify>
+			<description>优化 金格控件在线编辑保存时生成备份文件，同时删除旧的file文档记录和磁盘文件</description>
+			<author>魏本源</author>
+			<revision-time>2015-09-01</revision-time>
+			<baseline>V12.0.5.R.20150911</baseline>
+		</modify>
+		<modify>
+			<description>新增 集群环境下自动获取附件转换调度器的IP地址</description>
+			<author>李显鹏</author>
+			<revision-time>2015-08-07</revision-time>
+			<relation>
+				<relation-module>AttConvert_Aspose</relation-module>
+			</relation>
+			<baseline>V12.0.4.R.20150807</baseline>
+		</modify>
+		<modify>
+			<description>优化 客户端转换稳定性</description>
+			<author>李显鹏</author>
+			<revision-time>2015-05-18</revision-time>
+			<relation>
+				<relation-module>AttConvert_Aspose</relation-module>
+			</relation>
+			<baseline>V12.0.2.R.20150605</baseline>
+		</modify>
+		<modify>
+			<description>新增 文件存储</description>
+			<author>李显鹏</author>
+			<revision-time>2014-12-24</revision-time>
+			<relation>
+				<relation-module>sys/attachment</relation-module>
+			</relation>
+			<baseline>V12.0.0.B3.20150116</baseline>
+		</modify>
+	</modifies>
+</version>

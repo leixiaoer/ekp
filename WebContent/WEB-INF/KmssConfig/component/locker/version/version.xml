@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<version xmlns="http://www.example.org/version-config" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.example.org/version-config ../../../version.xsd">
+	<modifies>
+		<modify>
+			<description>#148626 修复 修复脚本XSS注入漏洞</description>
+			<author>潘永辉</author>
+			<revision-time>2021-09-06</revision-time>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#126112 修复 会审节点，两个人同时打开文档审批，点击编辑修改表单内容，后提交的人修改的表单内容无法覆盖</description>
+			<author>王逍</author>
+			<revision-time>2020-11-30</revision-time>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#124122 修复 锁机制component_locker_version表生成大量数据</description>
+			<author>叶正平</author>
+			<revision-time>2020-11-02</revision-time>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#110606 优化 会审或会签时，增加“关闭同时审核数据覆盖提醒”设置功能</description>
+			<author>王逍</author>
+			<revision-time>2020-10-26</revision-time>
+			<relation>
+				<relation-module>sys/lbpm</relation-module>
+				<relation-module>sys/lbpmservice</relation-module>
+			</relation>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#102481 修复 审批人打开两个待审,先提交一个，后提交时可修改表单中本来无权限修改的字段</description>
+			<author>詹垒</author>
+			<revision-time>2020-05-27</revision-time>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#96721 优化 项目反馈需要性能优化的问题集</description>
+			<author>叶正平</author>
+			<revision-time>2020-02-28</revision-time>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#76290 修复 安全漏洞报告，请产品评估处理</description>
+			<author>郑操辉</author>
+			<revision-time>2019-08-02</revision-time>
+			<baseline>V15.0.1.R.20190906</baseline>
+		</modify>
+		<modify>
+			<description>#66698 修复 流程审批页面，多人修改表单内容并同时提交时提示版本冲突</description>
+			<author>潘永辉</author>
+			<revision-time>2019-01-17</revision-time>
+			<baseline>V15.0.0.B2.20190118</baseline>
+		</modify>
+		<modify>
+			<description>优化 多浏览器编辑表单提示语优化</description>
+			<author>朱国荣</author>
+			<revision-time>2016-12-02</revision-time>
+			<baseline>V13.0.0.B3.20161230</baseline>
+		</modify>
+		<modify>
+			<description>修复 锁机制权限设置错误的问题</description>
+			<author>易荣烽</author>
+			<revision-time>2012-08-21</revision-time>
+			<baseline>V10.0.0.B2.20120923</baseline>
+		</modify>
+		<modify>
+			<description>新增 锁机制组件</description>
+			<author>傅游翔</author>
+			<revision-time>2012-05-09</revision-time>
+			<baseline>V10.0.0.B1.20120522</baseline>
+		</modify>
+	</modifies>
+</version>

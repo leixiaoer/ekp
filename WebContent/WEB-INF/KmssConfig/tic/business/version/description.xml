@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<description xmlns="http://www.example.org/description-config" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.example.org/description-config ../../../description.xsd">
+	<module>
+		<module-name>集成中心_业务集成组件</module-name>
+		<module-path>tic/business</module-path>
+		<baseline>V15.0.4.R.20200410</baseline>
+		<source-md5>137b9a24776d73d0b216ba157ce58bec</source-md5>
+		<is-custom>否</is-custom>
+		<serial-num>5</serial-num>
+	</module>
+</description>

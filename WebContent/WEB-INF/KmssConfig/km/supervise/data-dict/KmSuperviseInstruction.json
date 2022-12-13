@@ -1,0 +1,64 @@
+{
+    "global":     {
+        "modelName": "com.landray.kmss.km.supervise.model.KmSuperviseInstruction",
+        "messageKey": "km-supervise:table.kmSuperviseInstruction",
+        "table": "km_supervise_Instruction",
+        "url": "/km/supervise/km_supervise_Instruction/kmSuperviseInstruction.do?method=view&fdId=${fdId}",
+        "displayProperty": "docSubject",
+        "serviceBean": "kmSuperviseInstructionService"
+    },
+    "attrs":     {
+        "fdId":         {
+            "propertyType": "id",
+            "generator": {"type": "assigned"}
+        },
+        "docCreateTime":         {
+            "propertyType": "simple",
+            "type": "DateTime",
+            "messageKey": "km-supervise:kmSuperviseInstruction.docCreateTime",
+            "column": "doc_create_time",
+            "notNull": "true",
+            "validate": "false",
+            "canSearch": "true",
+            "canRelation": "true",
+            "canDisplay": "true",
+            "readOnly": "true"
+        },
+        "docCreator":         {
+            "propertyType": "model",
+            "type": "com.landray.kmss.sys.organization.model.SysOrgPerson",
+            "messageKey": "km-supervise:kmSuperviseInstruction.docCreator",
+            "column": "doc_creator_id",
+            "notNull": "true",
+            "validate": "false",
+            "canSearch": "true",
+            "canRelation": "true",
+            "canDisplay": "true",
+            "readOnly": "false",
+            "dialogJS": "Dialog_Address(!{mulSelect}, '!{idField}','!{nameField}', ';',ORG_TYPE_PERSON);"
+        },
+        "docContent":         {
+            "propertyType": "simple",
+            "messageKey": "km-supervise:kmSuperviseInstruction.docContent",
+            "type": "RTF",
+            "column": "doc_content",
+            "notNull": "false",
+            "canSearch": "true",
+            "canDisplay": "true",
+            "length": "1000000"
+        },
+        "kmSuperviseMain":         {
+            "propertyType": "model",
+            "type": "com.landray.kmss.km.supervise.model.KmSuperviseMain",
+            "messageKey": "km-supervise:kmSuperviseInstruction.kmSuperviseMain",
+            "column": "fd_main_id",
+            "notNull": "false",
+            "validate": "true",
+            "canSearch": "true",
+            "canRelation": "true",
+            "canDisplay": "true",
+            "readOnly": "false"
+        }
+       
+    }
+}

@@ -1,0 +1,57 @@
+{
+    "global":     {
+        "modelName": "com.landray.kmss.km.asset.model.KmAssetApplyTaskDetail",
+        "messageKey": "km-asset:table.kmAssetApplyTaskDetail",
+        "displayProperty": "fdName",
+        "serviceBean": "kmAssetApplyTaskDetailService",
+        "table": "km_asset_apply_task_detail",
+        "url": "/km/asset/km_asset_apply_task_detail/kmAssetApplyTaskDetail.do?method=view&fdId=${fdId}"
+    },
+    "attrs":     {
+        "fdId":         {
+            "propertyType": "id",
+            "generator": {"type": "assigned"}
+        },
+        "fdName":         {
+            "propertyType": "simple",
+            "messageKey": "km-asset:kmAssetApplyTaskDetail.fdName",
+            "type": "String",
+            "column": "fd_name",
+            "notNull": "false",
+            "length": "200",
+            "validate": "true"
+        },
+        "fdStatus":         {
+            "propertyType": "simple",
+            "messageKey": "km-asset:kmAssetApplyTaskDetail.fdStatus",
+            "type": "String",
+            "column": "fd_status",
+            "notNull": "false",
+            "length": "36",
+            "enumType": "km_asset_apply_task_detail_fd_status",
+            "validate": "false"
+        },
+        "fdAssetCard":         {
+            "propertyType": "model",
+            "messageKey": "km-asset:kmAssetApplyTaskDetail.fdAssetCard",
+            "type": "com.landray.kmss.km.asset.model.KmAssetCard",
+            "column": "fd_asset_card",
+            "notNull": "true",
+            "validate": "true"
+        },
+        "fdTask":         {
+            "propertyType": "model",
+            "messageKey": "km-asset:kmAssetApplyTaskDetail.fdTask",
+            "type": "com.landray.kmss.km.asset.model.KmAssetApplyTask",
+            "column": "fd_task",
+            "notNull": "false",
+            "validate": "false"
+        },
+        "fdOprUrlRecord":         {
+            "propertyType": "simple",
+            "type": "String",
+            "column": "fd_opr_url_record",
+            "length": "300"
+        }
+    }
+}

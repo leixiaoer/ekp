@@ -1,0 +1,163 @@
+
+{
+    "global" : {
+        "modelName" : "com.landray.kmss.geesun.base.model.GeesunBaseBxsj",
+        "messageKey" : "geesun-base:table.geesunBaseBxsj",
+        "serviceBean" : "geesunBaseBxsjService",
+        "displayProperty" : "fdTwoAccountCode",
+        "table" : "geesun_base_bxsj",
+        "url" : "/geesun/base/geesun_base_bxsj/geesunBaseBxsj.do?method=view&fdId=${fdId}"
+    },
+    "attrs" : {
+        "fdId" : {
+            "propertyType" : "id",
+            "generator" : {
+                "type" : "assigned"
+            }
+        },
+        "fdTwoAccountName" : {
+            "propertyType" : "simple",
+            "messageKey" : "geesun-base:geesunBaseBxsj.fdTwoAccountName",
+            "type" : "String",
+            "column" : "fd_two_account_name",
+            "notNull" : "true",
+            "readOnly" : "false",
+            "validate" : "true",
+            "canDisplay" : "true",
+            "canRelation" : "true",
+            "canSearch" : "true",
+            "length" : "400"
+        },
+        "fdTwoAccountCode" : {
+            "propertyType" : "simple",
+            "messageKey" : "geesun-base:geesunBaseBxsj.fdTwoAccountCode",
+            "type" : "String",
+            "column" : "fd_two_account_code",
+            "notNull" : "true",
+            "readOnly" : "false",
+            "validate" : "true",
+            "canDisplay" : "true",
+            "canRelation" : "true",
+            "canSearch" : "true",
+            "length" : "50"
+        },
+        "fdRelateName" : {
+            "propertyType" : "simple",
+            "messageKey" : "geesun-base:geesunBaseBxsj.fdRelateName",
+            "type" : "String",
+            "column" : "fd_relate_name",
+            "notNull" : "true",
+            "readOnly" : "false",
+            "validate" : "true",
+            "canDisplay" : "true",
+            "canRelation" : "true",
+            "canSearch" : "true",
+            "length" : "400"
+        },
+        "fdRelateCode" : {
+            "propertyType" : "simple",
+            "messageKey" : "geesun-base:geesunBaseBxsj.fdRelateCode",
+            "type" : "String",
+            "column" : "fd_relate_code",
+            "notNull" : "false",
+            "readOnly" : "false",
+            "validate" : "true",
+            "canDisplay" : "true",
+            "canRelation" : "true",
+            "canSearch" : "true",
+            "length" : "50"
+        },
+        "fdRelateType" : {
+            "propertyType" : "simple",
+            "messageKey" : "geesun-base:geesunBaseBxsj.fdRelateType",
+            "type" : "String",
+            "column" : "fd_relate_type",
+            "notNull" : "false",
+            "readOnly" : "false",
+            "enumType" : "geesun_base_type",
+            "validate" : "true",
+            "canDisplay" : "true",
+            "canRelation" : "true",
+            "canSearch" : "true",
+            "length" : "30"
+        },
+        "docCreateTime" : {
+            "propertyType" : "simple",
+            "messageKey" : "geesun-base:geesunBaseBxsj.docCreateTime",
+            "type" : "DateTime",
+            "column" : "doc_create_time",
+            "notNull" : "true",
+            "readOnly" : "true",
+            "validate" : "false",
+            "canDisplay" : "true",
+            "canRelation" : "true",
+            "canSearch" : "true"
+        },
+        "docAlterTime" : {
+            "propertyType" : "simple",
+            "messageKey" : "geesun-base:geesunBaseBxsj.docAlterTime",
+            "type" : "DateTime",
+            "column" : "doc_alter_time",
+            "notNull" : "false",
+            "readOnly" : "true",
+            "validate" : "false",
+            "canDisplay" : "true",
+            "canRelation" : "true",
+            "canSearch" : "true"
+        },
+        "docCreator" : {
+            "propertyType" : "model",
+            "messageKey" : "geesun-base:geesunBaseBxsj.docCreator",
+            "type" : "com.landray.kmss.sys.organization.model.SysOrgPerson",
+            "column" : "doc_creator_id",
+            "notNull" : "true",
+            "readOnly" : "true",
+            "dialogJS" : "Dialog_Address(!{mulSelect}, '!{idField}','!{nameField}', ';',ORG_TYPE_PERSON);",
+            "validate" : "false",
+            "canDisplay" : "true",
+            "canRelation" : "true"
+        },
+        "docAlteror" : {
+            "propertyType" : "model",
+            "messageKey" : "geesun-base:geesunBaseBxsj.docAlteror",
+            "type" : "com.landray.kmss.sys.organization.model.SysOrgPerson",
+            "column" : "doc_alteror_id",
+            "notNull" : "false",
+            "readOnly" : "true",
+            "dialogJS" : "Dialog_Address(!{mulSelect}, '!{idField}','!{nameField}', ';',ORG_TYPE_PERSON);",
+            "validate" : "false",
+            "canDisplay" : "true",
+            "canRelation" : "true"
+        },
+        "fdFirstCharger":         {
+            "propertyType": "list",
+            "type": "com.landray.kmss.sys.organization.model.SysOrgPerson",
+            "table": "geesun_base_bxsj_fst",
+            "elementColumn": "fd_target_id",
+            "messageKey": "geesun-base:geesunBaseBxsj.fdFirstCharger",
+            "column": "fd_source_id",
+            "notNull": "false",
+            "validate": "true",
+            "canSearch": "true",
+            "canRelation": "true",
+            "canDisplay": "true",
+            "readOnly": "false",
+            "dialogJS": "Dialog_Address(!{mulSelect}, '!{idField}','!{nameField}', ';',ORG_TYPE_PERSON);"
+        },
+        "fdSecondCharger":         {
+            "propertyType": "list",
+            "type": "com.landray.kmss.sys.organization.model.SysOrgPerson",
+            "table": "geesun_base_bxsj_snd",
+            "elementColumn": "fd_target_id",
+            "messageKey": "geesun-base:geesunBaseBxsj.fdSecondCharger",
+            "column": "fd_source_id",
+            "notNull": "false",
+            "validate": "true",
+            "canSearch": "true",
+            "canRelation": "true",
+            "canDisplay": "true",
+            "readOnly": "false",
+            "dialogJS": "Dialog_Address(!{mulSelect}, '!{idField}','!{nameField}', ';',ORG_TYPE_PERSON);"
+        }
+    }
+}

@@ -1,0 +1,32 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE hibernate-configuration
+    PUBLIC "-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+    "http://hibernate.sourceforge.net/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+	<session-factory>
+		<mapping
+			resource="com/landray/kmss/km/pindagate/model/KmPindagateTemplate.hbm.xml" />
+		<mapping
+			resource="com/landray/kmss/km/pindagate/model/KmPindagateQuestion.hbm.xml" />
+		<mapping
+			resource="com/landray/kmss/km/pindagate/model/KmPindagateResponse.hbm.xml" />
+		<mapping
+			resource="com/landray/kmss/km/pindagate/model/KmPindagateMain.hbm.xml" />
+		<mapping
+			resource="com/landray/kmss/km/pindagate/model/KmPindagateMainTemp.hbm.xml" />
+		<mapping
+			resource="com/landray/kmss/km/pindagate/model/KmPindagateQuestionRes.hbm.xml" />
+		<mapping
+			resource="com/landray/kmss/km/pindagate/model/KmPindagateAbsent.hbm.xml" />
+		<mapping
+			resource="com/landray/kmss/km/pindagate/model/KmPindagateStatisticSources.hbm.xml" />
+		<mapping
+			resource="com/landray/kmss/km/pindagate/model/KmPindagateTarget.hbm.xml" />
+		<mapping
+			resource="com/landray/kmss/km/pindagate/model/KmPindagateStatistic.hbm.xml" />
+		<mapping
+			resource="com/landray/kmss/km/pindagate/model/KmPindagateStatisticHistory.hbm.xml" />
+		<mapping
+			resource="com/landray/kmss/km/pindagate/model/KmPindagateRejectPerson.hbm.xml" />
+	</session-factory>
+</hibernate-configuration> 

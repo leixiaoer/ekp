@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<column-enums>
+  <type name="kmOitemsTempletFdTempletType">
+		<value-label>
+			<value>1</value>
+			<label-key>kmOitemsTemplet.fdTempletType.dept</label-key>
+			<bundle>km-oitems</bundle>
+		</value-label>
+		<value-label>
+			<value>2</value>
+			<label-key>kmOitemsTemplet.fdTempletType.person</label-key>
+			<bundle>km-oitems</bundle>
+		</value-label>
+	</type>
+	<type name="kmOitems_docStatus">
+	    
+		<value-label>
+			<value>10</value>
+			<label-key>status.draft</label-key>
+			<label>草稿</label>
+		</value-label>
+		<value-label>
+			<value>20</value>
+			<label-key>status.examine</label-key>
+			<label>批中</label>
+		</value-label>
+		<value-label>
+			<value>11</value>
+			<label-key>status.refuse</label-key>
+			<label>驳回</label>
+		</value-label>
+		<value-label>
+			<value>00</value>
+			<label-key>status.discard</label-key>
+			<label>废弃</label>
+		</value-label>
+		<value-label>
+			<value>30</value>
+			<label-key>kmOitemsBudgerApplication.fdOutStatus0</label-key>
+			<bundle>km-oitems</bundle>
+		</value-label>
+		<value-label>
+			<value>31</value>
+			<label-key>kmOitemsBudgerApplication.fdOutStatus1</label-key>
+			<bundle>km-oitems</bundle>
+		</value-label>
+	</type>
+	  <type name="kmOitemsBudgerApplication_fdType">
+		<value-label>
+			<value>2</value>
+			<label-key>kmOitems.tree.person.application</label-key>
+			<bundle>km-oitems</bundle>
+		</value-label>
+		<value-label>
+			<value>1</value>
+			<label-key>kmOitems.tree.dept.application</label-key>
+			<bundle>km-oitems</bundle>
+		</value-label>
+	</type>
+</column-enums>
+

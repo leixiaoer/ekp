@@ -1,0 +1,14 @@
+[
+    {
+		"url" : "/km/pindagate/km_pindagate_main/kmPindagateData.do?method=listChildren&treeNode=participate&nodeType=&orderby=docCreateTime&ordertype=down",
+		"text" : "km-pindagate:kmPindagate.tree.all"
+	},
+	{
+		"url" : "/km/pindagate/km_pindagate_main/kmPindagateData.do?method=listChildren&treeNode=participate&nodeType=&q.join=mine&orderby=docCreateTime&ordertype=down", 
+		"text" : "km-pindagate:kmPindagate.tree.join.mine"
+	},
+	{ 
+		"url" : "/km/pindagate/km_pindagate_main/kmPindagateData.do?method=listChildren&treeNode=result", 
+		"text" : "km-pindagate:kmPindagate.tree.result"
+	}
+]

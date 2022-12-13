@@ -1,0 +1,1586 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<module xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:noNamespaceSchemaLocation="import.xsd">
+	<!-- 员工账户 -->
+	<model name="com.landray.kmss.fssc.base.model.FsscBaseAccount" key-col="fdBankAccount;fdPerson">
+		<column property="fdName" type="String">
+			<validator rel="required"/>
+		</column>
+		<column property="fdBankName" type="String">
+		</column>
+		<column property="fdBankNo" type="String">
+		</column>
+		<column property="fdBankAccount" type="String">
+		</column>
+		<column property="fdPerson.fdName" type="Unused">
+			<rel type="strong" ref="com.landray.kmss.sys.organization.model.SysOrgElement">
+				<key name="fdName"/>
+			</rel>
+		</column>
+		<column property="fdPerson" type="Object">
+			<rel type="strong" ref="com.landray.kmss.sys.organization.model.SysOrgPerson">
+				<key name="fdNo;fdLoginName"/>
+				<field name="fdIsAvailable" type="static" data-type="Boolean" value="true"/>
+			</rel>
+			<validator rel="required"/>
+			<validator rel="exists"/>
+		</column>
+		<column property="fdIsDefault" type="Radio">
+			<validator rel="radio"/>
+			<validator rel="exists"/>
+		</column>
+		<column property="fdAccountArea" type="String">
+		</column>
+	</model>
+	<!-- 提单转授权 -->
+	<model name="com.landray.kmss.fssc.base.model.FsscBaseAuthorize" key-col="fdAuthorizedBy">
+		<column property="fdAuthorizedBy.fdName" type="Unused">
+			<rel type="strong" ref="com.landray.kmss.sys.organization.model.SysOrgElement">
+				<key name="fdName"/>
+			</rel>
+		</column>
+		<column property="fdAuthorizedBy" type="Object">
+			<rel type="strong" ref="com.landray.kmss.sys.organization.model.SysOrgPerson">
+				<key name="fdNo;fdLoginName"/>
+				<field name="fdIsAvailable" type="static" data-type="Boolean" value="true"/>
+			</rel>
+			<validator rel="required"/>
+			<validator rel="exists"/>
+		</column>
+		<column property="fdToOrg.fdName" type="Unused">
+			<rel type="strong" ref="com.landray.kmss.sys.organization.model.SysOrgPerson">
+				<key name="fdName"/>
+			</rel>
+		</column>
+		<column property="fdToOrg" type="List">
+			<rel type="strong" ref="com.landray.kmss.sys.organization.model.SysOrgPerson">
+				<key name="fdNo;fdLoginName"/>
+				<field name="fdIsAvailable" type="static" data-type="Boolean" value="true"/>
+			</rel>
+			<validator rel="required"/>
+			<validator rel="exists"/>
+		</column>
+		<column property="fdDesc" type="String">
+			<validator rel="required"/>
+		</column>
+	</model>
+	<!-- 货币 -->
+	<model name="com.landray.kmss.fssc.base.model.FsscBaseCurrency" key-col="fdSymbol">
+		<column property="fdName" type="String">
+			<validator rel="required"/>
+		</column>
+		<column property="fdNameEn" type="String">
+			<validator rel="required"/>
+		</column>
+		<column property="fdSymbol" type="String">
+			<validator rel="required"/>
+		</column>
+		<column property="fdChar" type="String">
+		</column>
+		<column property="fdCountry" type="String">
+			<validator rel="required"/>
+		</column>
+		<column property="fdCode" type="String">
+			<validator rel="required"/>
+		</column>
+		<column property="fdOrder" type="Integer">
+		</column>
+	</model>
+	<!-- 公司组 -->
+	<model name="com.landray.kmss.fssc.base.model.FsscBaseCompanyGroup" key-col="fdCode">
+		<column property="hbmParent.fdName" type="Unused">
+			<rel type="strong" ref="com.landray.kmss.fssc.base.model.FsscBaseCompanyGroup">
+				<key name="fdName"/>
+			</rel>
+		</column>
+		<column property="hbmParent" type="Object">
+			<rel type="strong" ref="com.landray.kmss.fssc.base.model.FsscBaseCompanyGroup">
+				<key name="fdCode"/>
+				<field name="fdIsAvailable" data-type="Boolean" type="static" value="true"/>
+			</rel>
+		</column>
+		<column property="fdName" type="String">
+			<validator rel="required"/>
+		</column>
+		<column property="fdCode" type="String">
+			<validator rel="required"/>
+		</column>
+	</model>
+	<!-- 记账公司 -->
+	<model name="com.landray.kmss.fssc.base.model.FsscBaseCompany" key-col="fdCode">
+		<column property="fdGroup.fdName" type="Unused">
+			<rel type="strong" ref="com.landray.kmss.fssc.base.model.FsscBaseCompanyGroup">
+				<key name="fdName"/>
+			</rel>
+		</column>
+		<column property="fdGroup" type="Object">
+			<rel type="strong" ref="com.landray.kmss.fssc.base.model.FsscBaseCompanyGroup">
+				<key name="fdCode"/>
+				<field name="fdIsAvailable" data-type="Boolean" type="static" value="true"/>
+			</rel>
+			<validator rel="exists"/>
+		</column>
+		<column property="fdName" type="String">
+			<validator rel="required"/>
+		</column>
+		<column property="fdCode" type="String">
+			<validator rel="required"/>
+		</column>
+		<column property="fdAccountCurrency.fdName" type="Unused">
+			<rel type="strong" ref="com.landray.kmss.fssc.base.model.FsscBaseCurrency">
+				<key name="fdName"/>
+			</rel>
+		</column>
+		<column property="fdAccountCurrency" type="Object">
+			<rel type="strong" ref="com.landray.kmss.fssc.base.model.FsscBaseCurrency">
+				<key name="fdSymbol"/>
+				<field name="fdIsAvailable" type="static" data-type="Boolean" value="true"/>
+			</rel>
+			<validator rel="exists"/>
+		</column>
+		<column property="fdBudgetCurrency.fdName" type="Unused">
+			<rel type="strong" ref="com.landray.kmss.fssc.base.model.FsscBaseCurrency">
+				<key name="fdName"/>
+			</rel>
+		</column>
+		<column property="fdBudgetCurrency" type="Object">
+			<rel type="strong" ref="com.landray.kmss.fssc.base.model.FsscBaseCurrency">
+				<key name="fdSymbol"/>
+				<field name="fdIsAvailable" type="static" data-type="Boolean" value="true"/>
+			</rel>
+			<validator rel="exists"/>
+		</column>
+		<column property="fdEkpOrg.fdName" type="Unused">
+			<rel type="strong" ref="com.landray.kmss.sys.organization.model.SysOrgElement">
+				<key name="fdName"/>
+			</rel>
+		</column>
+		<column property="fdEkpOrg" type="List">
+			<rel type="strong" ref="com.landray.kmss.sys.organization.model.SysOrgElement">
+				<key name="fdNo"/>
+				<field name="fdIsAvailable" type="static" data-type="Boolean" value="true"/>
+			</rel>
+			<validator rel="unique"/>
+			<validator rel="exists"/>
+		</column>
+		<column property="fdFinancialStaff.fdName" type="Unused">
+			<rel type="strong" ref="com.landray.kmss.sys.organization.model.SysOrgElement">
+				<key name="fdName"/>
+			</rel>
+		</column>
+		<column property="fdFinancialStaff" type="List">
+			<rel type="strong" ref="com.landray.kmss.sys.organization.model.SysOrgElement">
+				<key name="fdNo"/>
+				<field name="fdIsAvailable" type="static" data-type="Boolean" value="true"/>
+			</rel>
+			<validator rel="unique"/>
+			<validator rel="exists"/>
+		</column>
+		<column property="fdFinancialManager.fdName" type="Unused">
+			<rel type="strong" ref="com.landray.kmss.sys.organization.model.SysOrgElement">
+				<key name="fdName"/>
+			</rel>
+		</column>
+		<column property="fdFinancialManager" type="List">
+			<rel type="strong" ref="com.landray.kmss.sys.organization.model.SysOrgElement">
+				<key name="fdNo"/>
+				<field name="fdIsAvailable" type="static" data-type="Boolean" value="true"/>
+			</rel>
+			<validator rel="unique"/>
+			<validator rel="exists"/>
+		</column>
+		<column property="fdType" type="Radio">
+			<validator rel="required"/>
+			<validator rel="radio"/>
+			<validator rel="exists"/>
+		</column>
+	</model>
+	<!-- 会计科目(公共) -->
+	<model name="com.landray.kmss.fssc.base.model.FsscBaseAccounts" key-col="fdCode">
+		<column property="hbmParent.fdName" type="Unused">
+			<rel type="strong" ref="com.landray.kmss.fssc.base.model.FsscBaseAccounts">
+				<key name="fdName"/>
+			</rel>
+		</column>
+		<column property="hbmParent" type="Object">
+			<rel type="strong" ref="com.landray.kmss.fssc.base.model.FsscBaseAccounts">
+				<key name="fdCode"/>
+				<field name="fdIsAvailable" data-type="Boolean" type="static" value="true"/>
+			</rel>
+		</column>
+		<column property="fdName" type="String">
+			<validator rel="required"/>
+		</column>
+		<column property="fdCode" type="String">
+			<validator rel="required"/>
+		</column>
+	</model>
+	<!-- 预算科目(公共) -->
+	<model name="com.landray.kmss.fssc.base.model.FsscBaseBudgetItem" key-col="fdCode">
+		<column property="hbmParent.fdName" type="Unused">
+			<rel type="strong" ref="com.landray.kmss.fssc.base.model.FsscBaseBudgetItem">
+				<key name="fdName"/>
+			</rel>
+		</column>
+		<column property="hbmParent" type="Object">
+			<rel type="strong" ref="com.landray.kmss.fssc.base.model.FsscBaseBudgetItem">
+				<key name="fdCode"/>
+				<field name="fdIsAvailable" data-type="Boolean" type="static" value="true"/>
+			</rel>
+		</column>
+		<column property="fdName" type="String">
+			<validator rel="required"/>
+		</column>
+		<column property="fdCode" type="String">
+			<validator rel="required"/>
+		</column>
+	</model>
+	<!-- 物资类别 -->
+	<model name="com.landray.kmss.fssc.base.model.FsscBaseMaterialType" key-col="fdCode">
+		<column property="fdName" type="String">
+			<validator rel="required"/>
+		</column>
+		<column property="fdCode" type="String">
+			<validator rel="required"/>
+		</column>
+	</model>
+	<!-- 物资信息 -->
+	<model name="com.landray.kmss.fssc.base.model.FsscBaseMaterialInfo" key-col="fdCode">
+		<column property="fdType.fdName" type="Unused">
+			<rel type="strong" ref="com.landray.kmss.fssc.base.model.FsscBaseMaterialType">
+				<key name="fdName"/>
+			</rel>
+		</column>
+		<column property="fdType" type="Object">
+			<rel type="strong" ref="com.landray.kmss.fssc.base.model.FsscBaseMaterialType">
+				<key name="fdCode"/>
+				<field name="fdIsAvailable" data-type="Boolean" type="static" value="true"/>
+			</rel>
+			<validator rel="exists"/>
+		</column>
+		<column property="fdName" type="String">
+			<validator rel="required"/>
+		</column>
+		<column property="fdCode" type="String">
+			<validator rel="required"/>
+		</column>
+		<column property="fdUnit" type="String">
+		</column>
+		<column property="fdPrice" type="Double">
+		</column>
+		<column property="fdStatus" type="Enums">
+			<validator rel="required"/>
+			<validator rel="unique"/>
+			<validator rel="exists"/>
+		</column>
+		<column property="fdIsInventory" type="Radio">
+			<validator rel="radio"/>
+			<validator rel="exists"/>
+		</column>
+	</model>
+	<!-- 成本中心类型 -->
+	<model name="com.landray.kmss.fssc.base.model.FsscBaseCostType" key-col="fdCompany;fdCode">
+		<column property="fdCompany.fdName" type="Unused">
+			<rel type="strong" ref="com.landray.kmss.fssc.base.model.FsscBaseCompany">
+				<key name="fdName"/>
+			</rel>
+		</column>
+		<column property="fdCompany" type="Object">
+			<rel type="strong" ref="com.landray.kmss.fssc.base.model.FsscBaseCompany">
+				<key name="fdCode"/>
+				<field name="fdIsAvailable" data-type="Boolean" type="static" value="true"/>
+			</rel>
+			<validator rel="exists"/>
+		</column>
+		<column property="fdName" type="String">
+			<validator rel="required"/>
+		</column>
+		<column property="fdCode" type="String">
+			<validator rel="required"/>
+		</column>
+	</model>
+	<!-- 成本中心 -->
+	<model name="com.landray.kmss.fssc.base.model.FsscBaseCostCenter" key-col="fdCompany;fdCode">
+		<column property="fdCompany.fdName" type="Unused">
+			<rel type="strong" ref="com.landray.kmss.fssc.base.model.FsscBaseCompany">
+				<key name="fdName"/>
+			</rel>
+		</column>
+		<column property="fdCompany" type="Object">
+			<rel type="strong" ref="com.landray.kmss.fssc.base.model.FsscBaseCompany">
+				<key name="fdCode"/>
+				<field name="fdIsAvailable" data-type="Boolean" type="static" value="true"/>
+			</rel>
+			<validator rel="exists"/>
+		</column>
+		<column property="hbmParent.fdName" type="Unused">
+			<rel type="strong" ref="com.landray.kmss.fssc.base.model.FsscBaseCostCenter">
+				<key name="fdName"/>
+			</rel>
+		</column>
+		<column property="hbmParent" type="Object">
+			<rel type="strong" ref="com.landray.kmss.fssc.base.model.FsscBaseCostCenter">
+				<key name="fdCode"/>
+				<field name="fdCode" type="ref" rel-column="fdCompany"/>
+				<field name="fdIsAvailable" data-type="Boolean" type="static" value="true"/>
+			</rel>
+		</column>
+		<column property="fdName" type="String">
+			<validator rel="required"/>
+		</column>
+		<column property="fdCode" type="String">
+			<validator rel="required"/>
+		</column>
+		<column property="fdIsGroup" type="Radio">
+			<validator rel="required"/>
+			<validator rel="radio"/>
+			<validator rel="exists"/>
+		</column>
+		<column property="fdEkpOrg.fdName" type="Unused">
+			<rel type="strong" ref="com.landray.kmss.sys.organization.model.SysOrgElement">
+				<key name="fdName"/>
+			</rel>
+		</column>
+		<column property="fdEkpOrg" type="List">
+			<rel type="strong" ref="com.landray.kmss.sys.organization.model.SysOrgElement">
+				<key name="fdNo"/>
+				<field name="fdIsAvailable" data-type="Boolean" type="static" value="true"/>
+			</rel>
+			<validator rel="unique"/>
+			<validator rel="exists"/>
+		</column>
+		<column property="fdFirstCharger.fdName" type="Unused">
+			<rel type="strong" ref="com.landray.kmss.sys.organization.model.SysOrgElement">
+				<key name="fdName"/>
+			</rel>
+		</column>
+		<column property="fdFirstCharger" type="List">
+			<rel type="strong" ref="com.landray.kmss.sys.organization.model.SysOrgPerson">
+				<key name="fdNo;fdLoginName"/>
+				<field name="fdIsAvailable" data-type="Boolean" type="static" value="true"/>
+			</rel>
+			<validator rel="unique"/>
+			<validator rel="exists"/>
+		</column>
+		<column property="fdSecondCharger.fdName" type="Unused">
+			<rel type="strong" ref="com.landray.kmss.sys.organization.model.SysOrgElement">
+				<key name="fdName"/>
+			</rel>
+		</column>
+		<column property="fdSecondCharger" type="List">
+			<rel type="strong" ref="com.landray.kmss.sys.organization.model.SysOrgPerson">
+				<key name="fdNo;fdLoginName"/>
+				<field name="fdIsAvailable" data-type="Boolean" type="static" value="true"/>
+			</rel>
+			<validator rel="unique"/>
+			<validator rel="exists"/>
+		</column>
+		<column property="fdManager.fdName" type="Unused">
+			<rel type="strong" ref="com.landray.kmss.sys.organization.model.SysOrgElement">
+				<key name="fdName"/>
+			</rel>
+		</column>
+		<column property="fdManager" type="List">
+			<rel type="strong" ref="com.landray.kmss.sys.organization.model.SysOrgPerson">
+				<key name="fdNo;fdLoginName"/>
+				<field name="fdIsAvailable" data-type="Boolean" type="static" value="true"/>
+			</rel>
+			<validator rel="unique"/>
+			<validator rel="exists"/>
+		</column>
+		<column property="fdBudgetManager.fdName" type="Unused">
+			<rel type="strong" ref="com.landray.kmss.sys.organization.model.SysOrgElement">
+				<key name="fdName"/>
+			</rel>
+		</column>
+		<column property="fdBudgetManager" type="List">
+			<rel type="strong" ref="com.landray.kmss.sys.organization.model.SysOrgPerson">
+				<key name="fdNo;fdLoginName"/>
+				<field name="fdIsAvailable" data-type="Boolean" type="static" value="true"/>
+			</rel>
+			<validator rel="unique"/>
+			<validator rel="exists"/>
+		</column>
+		<column property="fdType.fdName" type="Unused">
+			<rel type="strong" ref="com.landray.kmss.fssc.base.model.FsscBaseCostType">
+				<key name="fdName"/>
+			</rel>
+		</column>
+		<column property="fdType" type="Object">
+			<rel type="strong" ref="com.landray.kmss.fssc.base.model.FsscBaseCostType">
+				<key name="fdCode"/>
+				<field name="fdCode" type="ref" rel-column="fdCompany"/>
+				<field name="fdIsAvailable" data-type="Boolean" type="static" value="true"/>
+			</rel>
+			<validator rel="required"/>
+			<validator rel="exists"/>
+			<validator rel="companyContained"/>
+		</column>
+	</model>
+	<!-- ERP人员 -->
+	<model name="com.landray.kmss.fssc.base.model.FsscBaseErpPerson" key-col="fdCompany;fdCode">
+		<column property="fdCompany.fdName" type="Unused">
+			<rel type="strong" ref="com.landray.kmss.fssc.base.model.FsscBaseCompany">
+				<key name="fdName"/>
+			</rel>
+		</column>
+		<column property="fdCompany" type="Object">
+			<rel type="strong" ref="com.landray.kmss.fssc.base.model.FsscBaseCompany">
+				<key name="fdCode"/>
+				<field name="fdIsAvailable" data-type="Boolean" type="static" value="true"/>
+			</rel>
+			<validator rel="exists"/>
+		</column>
+		<column property="fdName" type="String">
+			<validator rel="required"/>
+		</column>
+		<column property="fdCode" type="String">
+			<validator rel="required"/>
+		</column>
+		<column property="fdDeptCode" type="String">
+		</column>
+		<column property="fdOrg" type="Object">
+			<rel type="strong" ref="com.landray.kmss.sys.organization.model.SysOrgPerson">
+				<key name="fdNo;fdLoginName"/>
+				<field name="fdIsAvailable" data-type="Boolean" type="static" value="true"/>
+			</rel>
+			<validator rel="exists"/>
+		</column>
+	</model>
+	<!-- 会计科目(公司) -->
+	<model name="com.landray.kmss.fssc.base.model.FsscBaseAccountsCom" key-col="fdCompany;fdCode">
+		<column property="fdCompany.fdName" type="Unused">
+			<rel type="strong" ref="com.landray.kmss.fssc.base.model.FsscBaseCompany">
+				<key name="fdName"/>
+			</rel>
+		</column>
+		<column property="fdCompany" type="Object">
+			<rel type="strong" ref="com.landray.kmss.fssc.base.model.FsscBaseCompany">
+				<key name="fdCode"/>
+				<field name="fdIsAvailable" data-type="Boolean" type="static" value="true"/>
+			</rel>
+			<validator rel="exists"/>
+		</column>
+		<column property="hbmParent.fdName" type="Unused">
+			<rel type="strong" ref="com.landray.kmss.fssc.base.model.FsscBaseAccountsCom">
+				<key name="fdName"/>
+			</rel>
+		</column>
+		<column property="hbmParent" type="Object">
+			<rel type="strong" ref="com.landray.kmss.fssc.base.model.FsscBaseAccountsCom">
+				<key name="fdCode"/>
+				<field name="fdCode" type="ref" rel-column="fdCompany"/>
+				<field name="fdStatus" data-type="String" type="static" value="1"/>
+			</rel>
+		</column>
+		<column property="fdName" type="String">
+			<validator rel="required"/>
+		</column>
+		<column property="fdCode" type="String">
+			<validator rel="required"/>
+		</column>
+		<column property="fdCostItem" type="Enums">
+			<validator rel="unique"/>
+			<validator rel="exists"/>
+		</column>
+	</model>
+	<!-- 预算科目(公司) -->
+	<model name="com.landray.kmss.fssc.base.model.FsscBaseBudgetItemCom" key-col="fdCompany;fdCode">
+		<column property="fdCompany.fdName" type="Unused">
+			<rel type="strong" ref="com.landray.kmss.fssc.base.model.FsscBaseCompany">
+				<key name="fdName"/>
+			</rel>
+		</column>
+		<column property="fdCompany" type="Object">
+			<rel type="strong" ref="com.landray.kmss.fssc.base.model.FsscBaseCompany">
+				<key name="fdCode"/>
+				<field name="fdIsAvailable" data-type="Boolean" type="static" value="true"/>
+			</rel>
+			<validator rel="exists"/>
+		</column>
+		<column property="hbmParent.fdName" type="Unused">
+			<rel type="strong" ref="com.landray.kmss.fssc.base.model.FsscBaseBudgetItemCom">
+				<key name="fdName"/>
+			</rel>
+		</column>
+		<column property="hbmParent" type="Object">
+			<rel type="strong" ref="com.landray.kmss.fssc.base.model.FsscBaseBudgetItemCom">
+				<key name="fdCode"/>
+				<field name="fdCode" type="ref" rel-column="fdCompany"/>
+				<field name="fdStatus" data-type="String" type="static" value="1"/>
+			</rel>
+		</column>
+		<column property="fdName" type="String">
+			<validator rel="required"/>
+		</column>
+		<column property="fdCode" type="String">
+			<validator rel="required"/>
+		</column>
+	</model>
+	<!-- 项目 -->
+	<model name="com.landray.kmss.fssc.base.model.FsscBaseProject" key-col="fdCompany;fdCode">
+		<column property="fdCompany.fdName" type="Unused">
+			<rel type="strong" ref="com.landray.kmss.fssc.base.model.FsscBaseCompany">
+				<key name="fdName"/>
+			</rel>
+		</column>
+		<column property="fdCompany" type="Object">
+			<rel type="strong" ref="com.landray.kmss.fssc.base.model.FsscBaseCompany">
+				<key name="fdCode"/>
+				<field name="fdIsAvailable" data-type="Boolean" type="static" value="true"/>
+			</rel>
+			<validator rel="exists"/>
+		</column>
+		<column property="hbmParent.fdName" type="Unused">
+			<rel type="strong" ref="com.landray.kmss.fssc.base.model.FsscBaseProject">
+				<key name="fdName"/>
+			</rel>
+		</column>
+		<column property="hbmParent" type="Object">
+			<rel type="strong" ref="com.landray.kmss.fssc.base.model.FsscBaseProject">
+				<key name="fdCode"/>
+				<field name="fdCode" type="ref" rel-column="fdCompany"/>
+				<field name="fdIsAvailable" data-type="Boolean" type="static" value="true"/>
+			</rel>
+		</column>
+		<column property="fdName" type="String">
+			<validator rel="required"/>
+		</column>
+		<column property="fdCode" type="String">
+			<validator rel="required"/>
+		</column>
+		<column property="fdType" type="Radio">
+			<validator rel="required"/>
+		</column>
+	</model>
+	<!-- 内部订单 -->
+	<model name="com.landray.kmss.fssc.base.model.FsscBaseInnerOrder" key-col="fdCompany;fdCode">
+		<column property="fdCompany.fdName" type="Unused">
+			<rel type="strong" ref="com.landray.kmss.fssc.base.model.FsscBaseCompany">
+				<key name="fdName"/>
+			</rel>
+		</column>
+		<column property="fdCompany" type="Object">
+			<rel type="strong" ref="com.landray.kmss.fssc.base.model.FsscBaseCompany">
+				<key name="fdCode"/>
+				<field name="fdIsAvailable" data-type="Boolean" type="static" value="true"/>
+			</rel>
+			<validator rel="exists"/>
+		</column>
+		<column property="hbmParent.fdName" type="Unused">
+			<rel type="strong" ref="com.landray.kmss.fssc.base.model.FsscBaseInnerOrder">
+				<key name="fdName"/>
+			</rel>
+		</column>
+		<column property="hbmParent" type="Object">
+			<rel type="strong" ref="com.landray.kmss.fssc.base.model.FsscBaseInnerOrder">
+				<key name="fdCode"/>
+				<field name="fdCode" type="ref" rel-column="fdCompany"/>
+				<field name="fdIsAvailable" data-type="Boolean" type="static" value="true"/>
+			</rel>
+		</column>
+		<column property="fdName" type="String">
+			<validator rel="required"/>
+		</column>
+		<column property="fdCode" type="String">
+			<validator rel="required"/>
+		</column>
+	</model>
+	<!-- WBS号 -->
+	<model name="com.landray.kmss.fssc.base.model.FsscBaseWbs" key-col="fdCompany;fdCode">
+		<column property="fdCompany.fdName" type="Unused">
+			<rel type="strong" ref="com.landray.kmss.fssc.base.model.FsscBaseCompany">
+				<key name="fdName"/>
+			</rel>
+		</column>
+		<column property="fdCompany" type="Object">
+			<rel type="strong" ref="com.landray.kmss.fssc.base.model.FsscBaseCompany">
+				<key name="fdCode"/>
+				<field name="fdIsAvailable" data-type="Boolean" type="static" value="true"/>
+			</rel>
+			<validator rel="exists"/>
+		</column>
+		<column property="hbmParent.fdName" type="Unused">
+			<rel type="strong" ref="com.landray.kmss.fssc.base.model.FsscBaseWbs">
+				<key name="fdName"/>
+			</rel>
+		</column>
+		<column property="hbmParent" type="Object">
+			<rel type="strong" ref="com.landray.kmss.fssc.base.model.FsscBaseWbs">
+				<key name="fdCode"/>
+				<field name="fdCode" type="ref" rel-column="fdCompany"/>
+				<field name="fdIsAvailable" data-type="Boolean" type="static" value="true"/>
+			</rel>
+		</column>
+		<column property="fdProject.fdName" type="Unused">
+			<rel type="strong" ref="com.landray.kmss.fssc.base.model.FsscBaseProject">
+				<key name="fdName"/>
+			</rel>
+		</column>
+		<column property="fdProject" type="Object">
+			<rel type="strong" ref="com.landray.kmss.fssc.base.model.FsscBaseProject">
+				<key name="fdCode"/>
+				<field name="fdCode" type="ref" rel-column="fdCompany"/>
+				<field name="fdIsAvailable" data-type="Boolean" type="static" value="true"/>
+			</rel>
+			<validator rel="exists"/>
+			<validator rel="companyContained"/>
+		</column>
+		<column property="fdName" type="String">
+			<validator rel="required"/>
+		</column>
+		<column property="fdCode" type="String">
+			<validator rel="required"/>
+		</column>
+	</model>
+	<!-- 客商 -->
+	<model name="com.landray.kmss.fssc.base.model.FsscBaseSupplier" key-col="fdCompany;fdCode">
+		<column property="fdCompany.fdName" type="Unused">
+			<rel type="strong" ref="com.landray.kmss.fssc.base.model.FsscBaseCompany">
+				<key name="fdName"/>
+			</rel>
+		</column>
+		<column property="fdCompany" type="Object">
+			<rel type="strong" ref="com.landray.kmss.fssc.base.model.FsscBaseCompany">
+				<key name="fdCode"/>
+				<field name="fdIsAvailable" data-type="Boolean" type="static" value="true"/>
+			</rel>
+			<validator rel="exists"/>
+		</column>
+		<column property="fdName" type="String">
+			<validator rel="required"/>
+		</column>
+		<column property="fdCode" type="String">
+			<validator rel="required"/>
+		</column>
+		<column property="fdSupplierType" type="Radio">
+			<validator rel="required"/>
+			<validator rel="radio"/>
+			<validator rel="exists"/>
+		</column>
+		<column property="fdTaxNo" type="String">
+		</column>
+		<column property="fdAccountName" type="String">
+			<validator rel="required"/>
+		</column>
+		<column property="fdBankName" type="String">
+		</column>
+		<column property="fdBankNo" type="String">
+		</column>
+		<column property="fdBankAccount" type="String">
+			<validator rel="required"/>
+		</column>
+		<column property="fdSourceLink" type="String">
+		</column>
+		<column property="fdErpNo" type="String">
+		</column>
+		<column property="fdAddress" type="String">
+		</column>
+		<column property="fdPhoneNo" type="String">
+		</column>
+		<column property="fdBankSwift" type="String">
+		</column>
+		<column property="fdReceiveBankName" type="String">
+		</column>
+		<column property="fdReceiveBankAddress" type="String">
+		</column>
+		<column property="fdInfo" type="String">
+		</column>
+		<column property="fdType" type="Radio">
+			<validator rel="required"/>
+			<validator rel="radio"/>
+			<validator rel="exists"/>
+		</column>
+	</model>
+	<!-- 凭证类型 -->
+	<model name="com.landray.kmss.fssc.base.model.FsscBaseVoucherType" key-col="fdCompany;fdCode">
+		<column property="fdCompany.fdName" type="Unused">
+			<rel type="strong" ref="com.landray.kmss.fssc.base.model.FsscBaseCompany">
+				<key name="fdName"/>
+			</rel>
+		</column>
+		<column property="fdCompany" type="Object">
+			<rel type="strong" ref="com.landray.kmss.fssc.base.model.FsscBaseCompany">
+				<key name="fdCode"/>
+				<field name="fdIsAvailable" data-type="Boolean" type="static" value="true"/>
+			</rel>
+			<validator rel="exists"/>
+		</column>
+		<column property="fdName" type="String">
+			<validator rel="required"/>
+		</column>
+		<column property="fdCode" type="String">
+			<validator rel="required"/>
+		</column>
+	</model>
+	<!-- 汇率 -->
+	<model name="com.landray.kmss.fssc.base.model.FsscBaseExchangeRate" key-col="fdCompany;fdSourceCurrency;fdTargetCurrency">
+		<column property="fdCompany.fdName" type="Unused">
+			<rel type="strong" ref="com.landray.kmss.fssc.base.model.FsscBaseCompany">
+				<key name="fdName"/>
+			</rel>
+		</column>
+		<column property="fdCompany" type="Object">
+			<rel type="strong" ref="com.landray.kmss.fssc.base.model.FsscBaseCompany">
+				<key name="fdCode"/>
+				<field name="fdIsAvailable" data-type="Boolean" type="static" value="true"/>
+			</rel>
+			<validator rel="exists"/>
+		</column>
+		<column property="fdSourceCurrency.fdName" type="Unused">
+			<rel type="strong" ref="com.landray.kmss.fssc.base.model.FsscBaseCurrency">
+				<key name="fdName"/>
+			</rel>
+		</column>
+		<column property="fdSourceCurrency" type="Object">
+			<rel type="strong" ref="com.landray.kmss.fssc.base.model.FsscBaseCurrency">
+				<key name="fdSymbol"/>
+				<field name="fdIsAvailable" data-type="Boolean" type="static" value="true"/>
+			</rel>
+			<validator rel="exists"/>
+		</column>
+		<column property="fdTargetCurrency.fdName" type="Unused">
+			<rel type="strong" ref="com.landray.kmss.fssc.base.model.FsscBaseCurrency">
+				<key name="fdName"/>
+			</rel>
+		</column>
+		<column property="fdTargetCurrency" type="Object">
+			<rel type="strong" ref="com.landray.kmss.fssc.base.model.FsscBaseCurrency">
+				<key name="fdSymbol"/>
+				<field name="fdIsAvailable" data-type="Boolean" type="static" value="true"/>
+			</rel>
+			<validator rel="exists"/>
+		</column>
+		<column property="fdRate" type="Double">
+			<validator rel="required"/>
+		</column>
+		<column property="fdType" type="Radio">
+			<validator rel="required"/>
+			<validator rel="radio"/>
+			<validator rel="exists"/>
+		</column>
+		<column property="fdOrder" type="Integer">
+		</column>
+	</model>
+	<!-- 现金流量项目 -->
+	<model name="com.landray.kmss.fssc.base.model.FsscBaseCashFlow" key-col="fdCompany;fdCode">
+		<column property="fdCompany.fdName" type="Unused">
+			<rel type="strong" ref="com.landray.kmss.fssc.base.model.FsscBaseCompany">
+				<key name="fdName"/>
+			</rel>
+		</column>
+		<column property="fdCompany" type="Object">
+			<rel type="strong" ref="com.landray.kmss.fssc.base.model.FsscBaseCompany">
+				<key name="fdCode"/>
+				<field name="fdIsAvailable" data-type="Boolean" type="static" value="true"/>
+			</rel>
+			<validator rel="exists"/>
+		</column>
+		<column property="hbmParent.fdName" type="Unused">
+			<rel type="strong" ref="com.landray.kmss.fssc.base.model.FsscBaseCashFlow">
+				<key name="fdName"/>
+			</rel>
+		</column>
+		<column property="hbmParent" type="Object">
+			<rel type="strong" ref="com.landray.kmss.fssc.base.model.FsscBaseCashFlow">
+				<key name="fdCode"/>
+				<field name="fdCode" type="ref" rel-column="fdCompany"/>
+				<field name="fdIsAvailable" data-type="Boolean" type="static" value="true"/>
+			</rel>
+		</column>
+		<column property="fdName" type="String">
+			<validator rel="required"/>
+		</column>
+		<column property="fdCode" type="String">
+			<validator rel="required"/>
+		</column>
+		<!--#127062 新增导出模板“会计科目”字段名称和编码-->
+		<column property="fdAccountsCom.fdName" type="Unused">
+			<rel type="strong" ref="com.landray.kmss.fssc.base.model.FsscBaseAccountsCom">
+				<key name="fdName"/>
+			</rel>
+		</column>
+		<column property="fdAccountsCom" type="Object">
+			<rel type="strong" ref="com.landray.kmss.fssc.base.model.FsscBaseAccountsCom">
+				<key name="fdCode"/>
+				<field name="fdCode" type="ref" rel-column="fdCompany"/>
+				<field name="fdStatus" data-type="String" type="static" value="1"/>
+			</rel>
+			<validator rel="exists"/>
+			<validator rel="companyContained"/>
+		</column>
+	</model>
+	<!-- 付款方式 -->
+	<model name="com.landray.kmss.fssc.base.model.FsscBasePayWay" key-col="fdCompany;fdName">
+		<column property="fdCompany.fdName" type="Unused">
+			<rel type="strong" ref="com.landray.kmss.fssc.base.model.FsscBaseCompany">
+				<key name="fdName"/>
+			</rel>
+		</column>
+		<column property="fdCompany" type="Object">
+			<rel type="strong" ref="com.landray.kmss.fssc.base.model.FsscBaseCompany">
+				<key name="fdCode"/>
+				<field name="fdIsAvailable" data-type="Boolean" type="static" value="true"/>
+			</rel>
+			<validator rel="exists"/>
+		</column>
+		<column property="fdName" type="String">
+			<validator rel="required"/>
+		</column>
+		<column property="fdIsDefault" type="Radio">
+			<validator rel="radio"/>
+			<validator rel="exists"/>
+		</column>
+		<column property="fdAccount.fdName" type="Unused">
+			<rel type="strong" ref="com.landray.kmss.fssc.base.model.FsscBaseAccountsCom">
+				<key name="fdName"/>
+			</rel>
+		</column>
+		<column property="fdAccount" type="Object">
+			<rel type="strong" ref="com.landray.kmss.fssc.base.model.FsscBaseAccountsCom">
+				<key name="fdCode"/>
+				<field name="fdCode" type="ref" rel-column="fdCompany"/>
+				<field name="fdStatus" data-type="String" type="static" value="1"/>
+			</rel>
+			<validator rel="exists"/>
+			<validator rel="companyContained"/>
+		</column>
+		<column property="fdOrder" type="Integer">
+		</column>
+		<column property="fdIsTransfer" type="Radio">
+			<validator rel="radio"/>
+			<validator rel="exists"/>
+		</column>
+	</model>
+	<!-- 付款银行 -->
+	<model name="com.landray.kmss.fssc.base.model.FsscBasePayBank" key-col="fdCompany;fdBankAccount">
+		<column property="fdCompany.fdName" type="Unused">
+			<rel type="strong" ref="com.landray.kmss.fssc.base.model.FsscBaseCompany">
+				<key name="fdName"/>
+			</rel>
+		</column>
+		<column property="fdCompany" type="Object">
+			<rel type="strong" ref="com.landray.kmss.fssc.base.model.FsscBaseCompany">
+				<key name="fdCode"/>
+				<field name="fdIsAvailable" data-type="Boolean" type="static" value="true"/>
+			</rel>
+			<validator rel="exists"/>
+		</column>
+		<column property="fdAccountName" type="String">
+			<validator rel="required"/>
+		</column>
+		<column property="fdBankName" type="String">
+			<validator rel="required"/>
+		</column>
+		<column property="fdBankAccount" type="String">
+			<validator rel="required"/>
+		</column>
+		<column property="fdBankNo" type="String">
+		</column>
+		<column property="fdUse" type="String">
+		</column>
+		<column property="fdPayBankBelong" type="Enums">
+			<validator rel="required"/>
+			<validator rel="unique"/>
+			<validator rel="exists"/>
+		</column>
+		<column property="fdAccountsCom.fdName" type="Unused">
+			<rel type="strong" ref="com.landray.kmss.fssc.base.model.FsscBaseAccountsCom">
+				<key name="fdName"/>
+			</rel>
+		</column>
+		<column property="fdAccountsCom" type="Object">
+			<rel type="strong" ref="com.landray.kmss.fssc.base.model.FsscBaseAccountsCom">
+				<key name="fdCode"/>
+				<field name="fdCode" type="ref" rel-column="fdCompany"/>
+				<field name="fdStatus" data-type="String" type="static" value="1"/>
+			</rel>
+			<validator rel="exists"/>
+			<validator rel="companyContained"/>
+		</column>
+		<column property="fdAccountAreaName" type="Unused">
+			<rel type="weak" ref="com.landray.kmss.fssc.cmb.model.FsscCmbAccountArea">
+				<key name="fdArea"/>
+			</rel>
+		</column>
+		<column property="fdAccountAreaId" type="Object">
+			<rel type="weak" ref="com.landray.kmss.fssc.cmb.model.FsscCmbAccountArea">
+				<key name="fdAreaCode"/>
+			</rel>
+			<validator rel="exists"/>
+		</column>
+	</model>
+	<!-- 税率 -->
+	<model name="com.landray.kmss.fssc.base.model.FsscBaseTaxRate" key-col="fdCompany;fdAccount">
+		<column property="fdCompany.fdName" type="Unused">
+			<rel type="strong" ref="com.landray.kmss.fssc.base.model.FsscBaseCompany">
+				<key name="fdName"/>
+			</rel>
+		</column>
+		<column property="fdCompany" type="Object">
+			<rel type="strong" ref="com.landray.kmss.fssc.base.model.FsscBaseCompany">
+				<key name="fdCode"/>
+				<field name="fdIsAvailable" data-type="Boolean" type="static" value="true"/>
+			</rel>
+			<validator rel="exists"/>
+		</column>
+		<column property="fdRate" type="Double">
+			<validator rel="required"/>
+		</column>
+		<column property="fdAccount.fdName" type="Unused">
+			<rel type="strong" ref="com.landray.kmss.fssc.base.model.FsscBaseAccountsCom">
+				<key name="fdName"/>
+			</rel>
+		</column>
+		<column property="fdAccount" type="Object">
+			<rel type="strong" ref="com.landray.kmss.fssc.base.model.FsscBaseAccountsCom">
+				<key name="fdCode"/>
+				<field name="fdCode" type="ref" rel-column="fdCompany"/>
+				<field name="fdStatus" data-type="String" type="static" value="1"/>
+			</rel>
+			<validator rel="required"/>
+			<validator rel="exists"/>
+			<validator rel="companyContained"/>
+		</column>
+		<column property="fdOrder" type="Integer">
+		</column>
+	</model>
+	<!-- 费用类型 -->
+	<model name="com.landray.kmss.fssc.base.model.FsscBaseExpenseItem" key-col="fdCompany;fdCode">
+		<column property="fdCompany.fdName" type="Unused">
+			<rel type="strong" ref="com.landray.kmss.fssc.base.model.FsscBaseCompany">
+				<key name="fdName"/>
+			</rel>
+		</column>
+		<column property="fdCompany" type="Object">
+			<rel type="strong" ref="com.landray.kmss.fssc.base.model.FsscBaseCompany">
+				<key name="fdCode"/>
+				<field name="fdIsAvailable" data-type="Boolean" type="static" value="true"/>
+			</rel>
+			<validator rel="exists"/>
+		</column>
+		<column property="hbmParent.fdName" type="Unused">
+			<rel type="strong" ref="com.landray.kmss.fssc.base.model.FsscBaseExpenseItem">
+				<key name="fdName"/>
+			</rel>
+		</column>
+		<column property="hbmParent" type="Object">
+			<rel type="strong" ref="com.landray.kmss.fssc.base.model.FsscBaseExpenseItem">
+				<key name="fdCode"/>
+				<field name="fdCode" type="ref" rel-column="fdCompany"/>
+				<field name="fdIsAvailable" data-type="Boolean" type="static" value="true"/>
+			</rel>
+		</column>
+		<column property="fdName" type="String">
+			<validator rel="required"/>
+		</column>
+		<column property="fdCode" type="String">
+			<validator rel="required"/>
+		</column>
+		<column property="fdBudgetItems.fdName" type="Unused">
+			<rel type="strong" ref="com.landray.kmss.fssc.base.model.FsscBaseBudgetItemCom">
+				<key name="fdName"/>
+			</rel>
+		</column>
+		<column property="fdBudgetItems" type="List">
+			<rel type="strong" ref="com.landray.kmss.fssc.base.model.FsscBaseBudgetItemCom">
+				<key name="fdCode"/>
+				<field name="fdCode" type="ref" rel-column="fdCompany"/>
+				<field name="fdStatus" data-type="String" type="static" value="1"/>
+			</rel>
+			<validator rel="exists"/>
+			<validator rel="companyContained"/>
+		</column>
+		<column property="fdAccounts.fdName" type="Unused">
+			<rel type="strong" ref="com.landray.kmss.fssc.base.model.FsscBaseAccountsCom">
+				<key name="fdName"/>
+			</rel>
+		</column>
+		<column property="fdAccounts" type="List">
+			<rel type="strong" ref="com.landray.kmss.fssc.base.model.FsscBaseAccountsCom">
+				<key name="fdCode"/>
+				<field name="fdCode" type="ref" rel-column="fdCompany"/>
+				<field name="fdStatus" data-type="String" type="static" value="1"/>
+			</rel>
+			<validator rel="exists"/>
+			<validator rel="companyContained"/>
+		</column>
+		<column property="fdOrder" type="Integer">
+		</column>
+	</model>
+	<!-- 费用类型-预算控制维护 -->
+	<model name="com.landray.kmss.fssc.base.model.FsscBaseItemBudget" key-col="fdCompany;fdItems;fdCategory">
+		<column property="fdCompany.fdName" type="Unused">
+			<rel type="strong" ref="com.landray.kmss.fssc.base.model.FsscBaseCompany">
+				<key name="fdName"/>
+			</rel>
+		</column>
+		<column property="fdCompany" type="Object">
+			<rel type="strong" ref="com.landray.kmss.fssc.base.model.FsscBaseCompany">
+				<key name="fdCode"/>
+				<field name="fdIsAvailable" data-type="Boolean" type="static" value="true"/>
+			</rel>
+			<validator rel="exists"/>
+		</column>
+		<column property="fdItems.fdName" type="Unused">
+			<rel type="strong" ref="com.landray.kmss.fssc.base.model.FsscBaseExpenseItem">
+				<key name="fdName"/>
+			</rel>
+		</column>
+		<column property="fdItems" type="List">
+			<rel type="strong" ref="com.landray.kmss.fssc.base.model.FsscBaseExpenseItem">
+				<key name="fdCode"/>
+				<field name="fdCode" type="ref" rel-column="fdCompany"/>
+				<field name="fdIsAvailable" data-type="Boolean" type="static" value="true"/>
+			</rel>
+			<validator rel="required"/>
+			<validator rel="unique"/>
+			<validator rel="exists"/>
+			<validator rel="companyContained"/>
+		</column>
+		<column property="fdCategory.fdName" type="Unused">
+			<rel type="strong" ref="com.landray.kmss.fssc.base.model.FsscBaseBudgetScheme">
+				<key name="fdName"/>
+			</rel>
+		</column>
+		<column property="fdCategory" type="Object">
+			<rel type="strong" ref="com.landray.kmss.fssc.base.model.FsscBaseBudgetScheme">
+				<key name="fdCode"/>
+				<field name="fdIsAvailable" data-type="Boolean" type="static" value="true"/>
+			</rel>
+			<validator rel="required"/>
+			<validator rel="exists"/>
+		</column>
+		<column property="fdOrgs.fdName" type="Unused">
+			<rel type="strong" ref="com.landray.kmss.sys.organization.model.SysOrgElement">
+				<key name="fdName"/>
+			</rel>
+		</column>
+		<column property="fdOrgs" type="List">
+			<rel type="strong" ref="com.landray.kmss.sys.organization.model.SysOrgElement">
+				<key name="fdNo"/>
+				<field name="fdIsAvailable" data-type="Boolean" type="static" value="true"/>
+			</rel>
+			<validator rel="required"/>
+			<validator rel="unique"/>
+			<validator rel="exists"/>
+		</column>
+	</model>
+	<!-- 费用类型-显示字段维护 -->
+	<model name="com.landray.kmss.fssc.base.model.FsscBaseItemField" key-col="fdCompany;fdItems">
+		<column property="fdCompany.fdName" type="Unused">
+			<rel type="strong" ref="com.landray.kmss.fssc.base.model.FsscBaseCompany">
+				<key name="fdName"/>
+			</rel>
+		</column>
+		<column property="fdCompany" type="Object">
+			<rel type="strong" ref="com.landray.kmss.fssc.base.model.FsscBaseCompany">
+				<key name="fdCode"/>
+				<field name="fdIsAvailable" data-type="Boolean" type="static" value="true"/>
+			</rel>
+			<validator rel="exists"/>
+		</column>
+		<column property="fdItems.fdName" type="Unused">
+			<rel type="strong" ref="com.landray.kmss.fssc.base.model.FsscBaseExpenseItem">
+				<key name="fdName"/>
+			</rel>
+		</column>
+		<column property="fdItems" type="List">
+			<rel type="strong" ref="com.landray.kmss.fssc.base.model.FsscBaseExpenseItem">
+				<key name="fdCode"/>
+				<field name="fdCode" type="ref" rel-column="fdCompany"/>
+				<field name="fdIsAvailable" data-type="Boolean" type="static" value="true"/>
+			</rel>
+			<validator rel="required"/>
+			<validator rel="unique"/>
+			<validator rel="exists"/>
+		</column>
+		<column property="fdFields" type="Enums">
+			<validator rel="required"/>
+			<validator rel="unique"/>
+			<validator rel="exists"/>
+		</column>
+	</model>
+	<!-- 标准方案 -->
+	<model name="com.landray.kmss.fssc.base.model.FsscBaseStandardScheme" key-col="fdCompany;fdCode">
+		<column property="fdCompany.fdName" type="Unused">
+			<rel type="strong" ref="com.landray.kmss.fssc.base.model.FsscBaseCompany">
+				<key name="fdName"/>
+			</rel>
+		</column>
+		<column property="fdCompany" type="Object">
+			<rel type="strong" ref="com.landray.kmss.fssc.base.model.FsscBaseCompany">
+				<key name="fdCode"/>
+				<field name="fdIsAvailable" data-type="Boolean" type="static" value="true"/>
+			</rel>
+			<validator rel="exists"/>
+		</column>
+		<column property="fdName" type="String">
+			<validator rel="required"/>
+		</column>
+		<column property="fdCode" type="String">
+			<validator rel="required"/>
+		</column>
+		<column property="fdItems.fdName" type="Unused">
+			<rel type="strong" ref="com.landray.kmss.fssc.base.model.FsscBaseExpenseItem">
+				<key name="fdName"/>
+			</rel>
+		</column>
+		<column property="fdItems" type="List">
+			<rel type="strong" ref="com.landray.kmss.fssc.base.model.FsscBaseExpenseItem">
+				<key name="fdCode"/>
+				<field name="fdCode" type="ref" rel-column="fdCompany"/>
+				<field name="fdIsAvailable" data-type="Boolean" type="static" value="true"/>
+			</rel>
+			<validator rel="required"/>
+			<validator rel="unique"/>
+			<validator rel="exists"/>
+			<validator rel="companyContained"/>
+		</column>
+		<column property="fdDimension" type="Enums">
+			<validator rel="required"/>
+			<validator rel="unique"/>
+			<validator rel="exists"/>
+		</column>
+		<column property="fdType" type="Radio">
+			<validator rel="required"/>
+			<validator rel="radio"/>
+			<validator rel="exists"/>
+		</column>
+		<column property="fdTarget" type="Radio">
+			<validator rel="required"/>
+			<validator rel="radio"/>
+			<validator rel="exists"/>
+		</column>
+		<column property="fdForbid" type="Radio">
+			<validator rel="required"/>
+			<validator rel="radio"/>
+			<validator rel="exists"/>
+		</column>
+		<column property="fdOrder" type="Integer">
+		</column>
+	</model>
+	<!-- 标准方案 -->
+	<model name="com.landray.kmss.fssc.base.model.FsscBaseArea" key-col="fdCity">
+		<column property="fdCompany.fdName" type="Unused">
+			<rel type="strong" ref="com.landray.kmss.fssc.base.model.FsscBaseCompany">
+				<key name="fdName"/>
+			</rel>
+		</column>
+		<column property="fdCompany" type="Object">
+			<rel type="strong" ref="com.landray.kmss.fssc.base.model.FsscBaseCompany">
+				<key name="fdCode"/>
+				<field name="fdIsAvailable" data-type="Boolean" type="static" value="true"/>
+			</rel>
+			<validator rel="exists"/>
+		</column>
+		<column property="fdArea" type="String">
+			<validator rel="required"/>
+		</column>
+		<column property="fdType" type="Radio">
+			<validator rel="required"/>
+			<validator rel="radio"/>
+			<validator rel="exists"/>
+		</column>
+		<column property="fdCity" type="String">
+			<validator rel="required"/>
+		</column>
+		<column property="fdOrder" type="Integer">
+		</column>
+	</model>
+	<!-- 职级 -->
+	<model name="com.landray.kmss.fssc.base.model.FsscBaseLevel" key-col="fdCompany;fdCode">
+		<column property="fdCompany.fdName" type="Unused">
+			<rel type="strong" ref="com.landray.kmss.fssc.base.model.FsscBaseCompany">
+				<key name="fdName"/>
+			</rel>
+		</column>
+		<column property="fdCompany" type="Object">
+			<rel type="strong" ref="com.landray.kmss.fssc.base.model.FsscBaseCompany">
+				<key name="fdCode"/>
+				<field name="fdIsAvailable" data-type="Boolean" type="static" value="true"/>
+			</rel>
+			<validator rel="exists"/>
+		</column>
+		<column property="fdName" type="String">
+			<validator rel="required"/>
+		</column>
+		<column property="fdCode" type="String">
+			<validator rel="required"/>
+		</column>
+		<column property="fdPersonList.fdName" type="Unused">
+			<rel type="strong" ref="com.landray.kmss.sys.organization.model.SysOrgElement">
+				<key name="fdName"/>
+			</rel>
+		</column>
+		<column property="fdPersonList" type="List">
+			<rel type="strong" ref="com.landray.kmss.sys.organization.model.SysOrgPerson">
+				<key name="fdNo;fdLoginName"/>
+				<field name="fdIsAvailable" type="static" data-type="Boolean" value="true"/>
+			</rel>
+			<validator rel="unique"/>
+			<validator rel="exists"/>
+		</column>
+	</model>
+	<!-- 交通工具 -->
+	<model name="com.landray.kmss.fssc.base.model.FsscBaseVehicle" key-col="fdCompany;fdCode">
+		<column property="fdCompany.fdName" type="Unused">
+			<rel type="strong" ref="com.landray.kmss.fssc.base.model.FsscBaseCompany">
+				<key name="fdName"/>
+			</rel>
+		</column>
+		<column property="fdCompany" type="Object">
+			<rel type="strong" ref="com.landray.kmss.fssc.base.model.FsscBaseCompany">
+				<key name="fdCode"/>
+				<field name="fdIsAvailable" data-type="Boolean" type="static" value="true"/>
+			</rel>
+			<validator rel="exists"/>
+		</column>
+		<column property="fdName" type="String">
+			<validator rel="required"/>
+		</column>
+		<column property="fdCode" type="String">
+			<validator rel="required"/>
+		</column>
+		<column property="fdLevel" type="Enums">
+			<validator rel="required"/>
+			<validator rel="unique"/>
+			<validator rel="exists"/>
+		</column>
+	</model>
+	<!-- 舱位 -->
+	<model name="com.landray.kmss.fssc.base.model.FsscBaseBerth" key-col="fdCompany;fdCode">
+		<column property="fdCompany.fdName" type="Unused">
+			<rel type="strong" ref="com.landray.kmss.fssc.base.model.FsscBaseCompany">
+				<key name="fdName"/>
+			</rel>
+		</column>
+		<column property="fdCompany" type="Object">
+			<rel type="strong" ref="com.landray.kmss.fssc.base.model.FsscBaseCompany">
+				<key name="fdCode"/>
+				<field name="fdIsAvailable" data-type="Boolean" type="static" value="true"/>
+			</rel>
+			<validator rel="exists"/>
+		</column>
+		<column property="fdName" type="String">
+			<validator rel="required"/>
+		</column>
+		<column property="fdCode" type="String">
+			<validator rel="required"/>
+		</column>
+		<column property="fdLevel" type="Enums">
+			<validator rel="required"/>
+			<validator rel="unique"/>
+			<validator rel="exists"/>
+		</column>
+		<column property="fdVehicle.fdName" type="Unused">
+			<rel type="strong" ref="com.landray.kmss.fssc.base.model.FsscBaseVehicle">
+				<key name="fdName"/>
+			</rel>
+		</column>
+		<column property="fdVehicle" type="Object">
+			<rel type="strong" ref="com.landray.kmss.fssc.base.model.FsscBaseVehicle">
+				<key name="fdCode"/>
+				<field name="fdCode" type="ref" rel-column="fdCompany"/>
+				<field name="fdIsAvailable" type="static" data-type="Boolean" value="true"/>
+			</rel>
+			<validator rel="required"/>
+			<validator rel="exists"/>
+			<validator rel="companyContained"/>
+		</column>
+	</model>
+	<!-- 特殊事项 -->
+	<model name="com.landray.kmss.fssc.base.model.FsscBaseSpecialItem" key-col="fdCompany;fdCode">
+		<column property="fdCompany.fdName" type="Unused">
+			<rel type="strong" ref="com.landray.kmss.fssc.base.model.FsscBaseCompany">
+				<key name="fdName"/>
+			</rel>
+		</column>
+		<column property="fdCompany" type="Object">
+			<rel type="strong" ref="com.landray.kmss.fssc.base.model.FsscBaseCompany">
+				<key name="fdCode"/>
+				<field name="fdIsAvailable" data-type="Boolean" type="static" value="true"/>
+			</rel>
+			<validator rel="exists"/>
+		</column>
+		<column property="fdDescription" type="String">
+			<validator rel="required"/>
+		</column>
+		<column property="fdCode" type="String">
+			<validator rel="required"/>
+		</column>
+	</model>
+	<!-- 标准数据 -->
+	<model name="com.landray.kmss.fssc.base.model.FsscBaseStandard" key-col="fdCompany;fdItem;fdPerson;fdLevel;fdArea;fdVehicle;fdBerth">
+		<column property="fdCompany.fdName" type="Unused">
+			<rel type="strong" ref="com.landray.kmss.fssc.base.model.FsscBaseCompany">
+				<key name="fdName"/>
+			</rel>
+		</column>
+		<column property="fdCompany" type="Object">
+			<rel type="strong" ref="com.landray.kmss.fssc.base.model.FsscBaseCompany">
+				<key name="fdCode"/>
+				<field name="fdIsAvailable" data-type="Boolean" type="static" value="true"/>
+			</rel>
+			<validator rel="exists"/>
+		</column>
+		<column property="fdItem.fdName" type="Unused">
+			<rel type="strong" ref="com.landray.kmss.fssc.base.model.FsscBaseExpenseItem">
+				<key name="fdName"/>
+			</rel>
+		</column>
+		<column property="fdItem" type="Object">
+			<rel type="strong" ref="com.landray.kmss.fssc.base.model.FsscBaseExpenseItem">
+				<key name="fdCode"/>
+				<field name="fdCode" type="ref" rel-column="fdCompany"/>
+				<field name="fdIsAvailable" type="static" data-type="Boolean" value="true"/>
+			</rel>
+			<validator rel="required"/>
+			<validator rel="exists"/>
+			<validator rel="companyContained"/>
+		</column>
+		<column property="fdPerson.fdName" type="Unused">
+			<rel type="strong" ref="com.landray.kmss.sys.organization.model.SysOrgPerson">
+				<key name="fdName"/>
+			</rel>
+		</column>
+		<column property="fdPerson" type="Object">
+			<rel type="strong" ref="com.landray.kmss.sys.organization.model.SysOrgPerson">
+				<key name="fdNo;fdLoginName"/>
+				<field name="fdIsAvailable" type="static" data-type="Boolean" value="true"/>
+			</rel>
+			<validator rel="exists"/>
+		</column>
+		<column property="fdLevel.fdName" type="Unused">
+			<rel type="strong" ref="com.landray.kmss.fssc.base.model.FsscBaseLevel">
+				<key name="fdName"/>
+			</rel>
+		</column>
+		<column property="fdLevel" type="Object">
+			<rel type="strong" ref="com.landray.kmss.fssc.base.model.FsscBaseLevel">
+				<key name="fdCode"/>
+				<field name="fdCode" type="ref" rel-column="fdCompany"/>
+				<field name="fdIsAvailable" type="static" data-type="Boolean" value="true"/>
+			</rel>
+			<validator rel="exists"/>
+			<validator rel="companyContained"/>
+		</column>
+		<column property="fdArea" type="Object">
+			<rel type="strong" ref="com.landray.kmss.fssc.base.model.FsscBaseArea">
+				<key name="fdArea"/>
+				<field name="fdCode" type="ref" rel-column="fdCompany"/>
+				<field name="fdIsAvailable" type="static" data-type="Boolean" value="true"/>
+			</rel>
+			<validator rel="exists"/>
+		</column>
+		<column property="fdVehicle.fdName" type="Unused">
+			<rel type="strong" ref="com.landray.kmss.fssc.base.model.FsscBaseVehicle">
+				<key name="fdName"/>
+			</rel>
+		</column>
+		<column property="fdVehicle" type="Object">
+			<rel type="strong" ref="com.landray.kmss.fssc.base.model.FsscBaseVehicle">
+				<key name="fdCode"/>
+				<field name="fdCode" type="ref" rel-column="fdCompany"/>
+				<field name="fdIsAvailable" type="static" data-type="Boolean" value="true"/>
+			</rel>
+			<validator rel="exists"/>
+			<validator rel="companyContained"/>
+		</column>
+		<column property="fdBerth.fdName" type="Unused">
+			<rel type="strong" ref="com.landray.kmss.fssc.base.model.FsscBaseBerth">
+				<key name="fdName"/>
+			</rel>
+		</column>
+		<column property="fdBerth" type="Object">
+			<rel type="strong" ref="com.landray.kmss.fssc.base.model.FsscBaseBerth">
+				<key name="fdCode"/>
+				<field name="fdCode" type="ref" rel-column="fdCompany"/>
+				<field name="fdCode" type="ref" rel-column="fdVehicle"/>
+				<field name="fdIsAvailable" type="static" data-type="Boolean" value="true"/>
+			</rel>
+			<validator rel="exists"/>
+			<validator rel="companyContained"/>
+		</column>
+		<column property="fdCurrency.fdName" type="Unused">
+			<rel type="strong" ref="com.landray.kmss.fssc.base.model.FsscBaseCurrency">
+				<key name="fdName"/>
+			</rel>
+		</column>
+		<column property="fdCurrency" type="Object">
+			<rel type="strong" ref="com.landray.kmss.fssc.base.model.FsscBaseCurrency">
+				<key name="fdSymbol"/>
+				<field name="fdIsAvailable" type="static" data-type="Boolean" value="true"/>
+			</rel>
+			<validator rel="exists"/>
+		</column>
+		<column property="fdMoney" type="Double">
+		</column>
+		<column property="fdOrder" type="Integer">
+		</column>
+	</model>
+	<!-- 预算方案 -->
+	<model name="com.landray.kmss.fssc.base.model.FsscBaseBudgetScheme" key-col="fdCode">
+		<column property="fdName" type="String">
+		</column>
+		<column property="fdCode" type="String">
+		</column>
+		<column property="fdDimension" type="Enums">
+			<validator rel="required"/>
+			<validator rel="unique"/>
+			<validator rel="exists"/>
+		</column>
+		<column property="fdType" type="Radio">
+			<validator rel="required"/>
+			<validator rel="radio"/>
+			<validator rel="exists"/>
+		</column>
+		<column property="fdPeriod" type="Enums">
+			<validator rel="required"/>
+			<validator rel="unique"/>
+			<validator rel="exists"/>
+		</column>
+		<column property="fdOrder" type="Integer">
+		</column>
+	</model>
+	<!-- 员工护照 -->
+	<model name="com.landray.kmss.fssc.base.model.FsscBasePassport" key-col="fdPerson">
+		<column property="fdName" type="String">
+			<validator rel="required"/>
+			<validator rel="unique"/>
+			<validator rel="exists"/>
+		</column>
+		<column property="fdPerson.fdName" type="Unused">
+			<rel type="strong" ref="com.landray.kmss.sys.organization.model.SysOrgElement">
+				<key name="fdName"/>
+			</rel>
+		</column>
+		<column property="fdPerson" type="Object">
+			<rel type="strong" ref="com.landray.kmss.sys.organization.model.SysOrgPerson">
+				<key name="fdNo;fdLoginName"/>
+				<field name="fdIsAvailable" type="static" data-type="Boolean" value="true"/>
+			</rel>
+			<validator rel="exists"/>
+			<validator rel="required"/>
+			<validator rel="unique"/>
+		</column>
+	</model>
+	<!-- 费用类型与科目对照表 -->
+	<model name="com.landray.kmss.fssc.base.model.FsscBaseItemAccount" key-col="fdCompany;fdExpenseItem">
+		<column property="fdCompany.fdName" type="Unused">
+			<rel type="strong" ref="com.landray.kmss.fssc.base.model.FsscBaseCompany">
+				<key name="fdName"/>
+			</rel>
+		</column>
+		<column property="fdCompany" type="Object">
+			<rel type="strong" ref="com.landray.kmss.fssc.base.model.FsscBaseCompany">
+				<key name="fdCode"/>
+				<field name="fdIsAvailable" data-type="Boolean" type="static" value="true"/>
+			</rel>
+			<validator rel="exists"/>
+			<validator rel="required"/>
+		</column>
+		<column property="fdExpenseItem.fdName" type="Unused">
+			<rel type="strong" ref="com.landray.kmss.fssc.base.model.FsscBaseExpenseItem">
+				<key name="fdName"/>
+			</rel>
+		</column>
+		<column property="fdExpenseItem" type="Object">
+			<rel type="strong" ref="com.landray.kmss.fssc.base.model.FsscBaseExpenseItem">
+				<key name="fdCode"/>
+				<field name="fdCode" type="ref" rel-column="fdCompany"/>
+				<field name="fdIsAvailable" data-type="Boolean" type="static" value="true"/>
+			</rel>
+			<validator rel="required"/>
+			<validator rel="unique"/>
+			<validator rel="exists"/>
+			<validator rel="required"/>
+			<validator rel="companyContained"/>
+		</column>
+		<column property="fdAmortize.fdName" type="Unused">
+			<rel type="strong" ref="com.landray.kmss.fssc.base.model.FsscBaseAccountsCom">
+				<key name="fdName"/>
+			</rel>
+		</column>
+		<column property="fdAmortize" type="Object">
+			<rel type="strong" ref="com.landray.kmss.fssc.base.model.FsscBaseAccountsCom">
+				<key name="fdCode"/>
+				<field name="fdCode" type="ref" rel-column="fdCompany"/>
+				<field name="fdStatus" data-type="String" type="static" value="1"/>
+			</rel>
+			<validator rel="exists"/>
+			<validator rel="companyContained"/>
+		</column>
+		<column property="fdAccruals.fdName" type="Unused">
+			<rel type="strong" ref="com.landray.kmss.fssc.base.model.FsscBaseAccountsCom">
+				<key name="fdName"/>
+			</rel>
+		</column>
+		<column property="fdAccruals" type="Object">
+			<rel type="strong" ref="com.landray.kmss.fssc.base.model.FsscBaseAccountsCom">
+				<key name="fdCode"/>
+				<field name="fdCode" type="ref" rel-column="fdCompany"/>
+				<field name="fdStatus" data-type="String" type="static" value="1"/>
+			</rel>
+			<validator rel="exists"/>
+			<validator rel="companyContained"/>
+		</column>
+		<column property="fdDesc" type="String">
+		</column>
+	</model>
+	<!-- 进项税率 -->
+	<model name="com.landray.kmss.fssc.base.model.FsscBaseInputTax" key-col="fdCompany;fdItem;fdTaxRate">
+		<column property="fdCompany.fdName" type="Unused">
+			<rel type="strong" ref="com.landray.kmss.fssc.base.model.FsscBaseCompany">
+				<key name="fdName"/>
+			</rel>
+		</column>
+		<column property="fdCompany" type="Object">
+			<rel type="strong" ref="com.landray.kmss.fssc.base.model.FsscBaseCompany">
+				<key name="fdCode"/>
+				<field name="fdIsAvailable" data-type="Boolean" type="static" value="true"/>
+			</rel>
+			<validator rel="exists"/>
+			<validator rel="required"/>
+		</column>
+		<column property="fdItem.fdName" type="Unused">
+			<rel type="strong" ref="com.landray.kmss.fssc.base.model.FsscBaseExpenseItem">
+				<key name="fdName"/>
+			</rel>
+		</column>
+		<column property="fdItem" type="Object">
+			<rel type="strong" ref="com.landray.kmss.fssc.base.model.FsscBaseExpenseItem">
+				<key name="fdCode"/>
+				<field name="fdCode" type="ref" rel-column="fdCompany"/>
+				<field name="fdIsAvailable" data-type="Boolean" type="static" value="true"/>
+			</rel>
+			<validator rel="required"/>
+			<validator rel="unique"/>
+			<validator rel="exists"/>
+			<validator rel="companyContained"/>
+		</column>
+		<column property="fdIsInputTax" type="Radio">
+			<validator rel="required"/>
+		</column>
+		<column property="fdTaxRate" type="Double">
+			<validator rel="required"/>
+		</column>
+		<column property="fdAccount.fdName" type="Unused">
+			<rel type="strong" ref="com.landray.kmss.fssc.base.model.FsscBaseAccountsCom">
+				<key name="fdName"/>
+			</rel>
+		</column>
+		<column property="fdAccount" type="Object">
+			<rel type="strong" ref="com.landray.kmss.fssc.base.model.FsscBaseAccountsCom">
+				<key name="fdCode"/>
+				<field name="fdCode" type="ref" rel-column="fdCompany"/>
+				<field name="fdStatus" data-type="String" type="static" value="1"/>
+			</rel>
+			<validator rel="exists"/>
+			<validator rel="required"/>
+			<validator rel="companyContained"/>
+		</column>
+		<column property="fdDesc" type="String">
+		</column>
+	</model>
+</module>

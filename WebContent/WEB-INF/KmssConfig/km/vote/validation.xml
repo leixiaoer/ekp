@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE form-validation PUBLIC "-//Apache Software Foundation//DTD Commons Validator Rules Configuration 1.1//EN" "http://jakarta.apache.org/commons/dtds/validator_1_1.dtd">
+
+<form-validation>
+	<formset>
+		<form
+			name="kmVoteMainForm"> 
+			<field
+				property="docSubject"
+				depends="required,maxlength">
+				<arg
+					key="kmVoteMain.docSubject"
+					bundle="km-vote"
+					position="0" />
+				<arg1
+					name="maxlength"
+					key="${var:maxlength}"
+					resource="false" />
+				<var>
+					<var-name>maxlength</var-name>
+					<var-value>200</var-value>
+				</var>
+			</field>
+			<field
+				property="fdCategoryId"
+				depends="required">
+				<arg
+					key="kmVoteMain.fdCategoryId"
+					bundle="km-vote"
+					position="0" />
+			</field>
+			<field
+				property="fdDescription"
+				depends="maxlength">
+				<arg
+					key="kmVoteMain.fdDescription"
+					bundle="km-vote"
+					position="0" />
+				<arg1
+					name="maxlength"
+					key="${var:maxlength}"
+					resource="false" />
+				<var>
+					<var-name>maxlength</var-name>
+					<var-value>2000</var-value>
+				</var>
+			</field> 
+		</form>
+		<form
+			name="kmVoteMainItemForm">
+			<field
+				property="fdName"
+				depends="maxlength">
+				<arg
+					key="kmVoteMainItem.fdName"
+					bundle="km-vote"
+					position="0" />
+				<arg1
+					name="maxlength"
+					key="${var:maxlength}"
+					resource="false" />
+				<var>
+					<var-name>maxlength</var-name>
+					<var-value>200</var-value>
+				</var>
+			</field>
+		</form>
+		<form
+			name="kmVoteCategoryForm">
+			<field
+				property="fdName"
+				depends="required,maxlength">
+				<arg
+					key="kmVoteCategory.fdName"
+					bundle="km-vote"
+					position="0" />
+				<arg1
+					name="maxlength"
+					key="${var:maxlength}"
+					resource="false" />
+				<var>
+					<var-name>maxlength</var-name>
+					<var-value>200</var-value>
+				</var>
+			</field>
+			<field
+				property="fdOrder"
+				depends="integer,maxlength">
+				<arg
+					key="kmVoteCategory.fdOrder"
+					bundle="km-vote"
+					position="0" />
+				<arg1
+					name="maxlength"
+					key="${var:maxlength}"
+					resource="false" />
+				<var>
+					<var-name>maxlength</var-name>
+					<var-value>10</var-value>
+				</var>
+			</field>
+		<!--  	<field
+				property="fdRemark"
+				depends="maxlength">
+				<arg
+					key="kmVoteCategory.fdRemark"
+					bundle="km-vote"
+					position="0" />
+				<arg1
+					name="maxlength"
+					key="${var:maxlength}"
+					resource="false" />
+				<var>
+					<var-name>maxlength</var-name>
+					<var-value>2000</var-value>
+				</var>
+			</field>-->
+		</form>
+
+	</formset>
+</form-validation>

@@ -1,0 +1,179 @@
+
+{
+    "global" : {
+        "modelName" : "com.landray.kmss.fssc.ledger.model.FsscLedgerMaterial",
+        "messageKey" : "fssc-ledger:table.fsscLedgerMaterial",
+        "serviceBean" : "fsscLedgerMaterialService",
+        "displayProperty" : "fdCode",
+        "table" : "fssc_ledger_material",
+        "url" : "/fssc/ledger/fssc_ledger_material/fsscLedgerMaterial.do?method=view&fdId=${fdId}"
+    },
+    "attrs" : {
+        "fdId" : {
+            "propertyType" : "id",
+            "generator" : {
+                "type" : "assigned"
+            }
+        },
+        "fdCode" : {
+            "propertyType" : "simple",
+            "messageKey" : "fssc-ledger:fsscLedgerMaterial.fdCode",
+            "type" : "String",
+            "column" : "fd_code",
+            "notNull" : "false",
+            "readOnly" : "false",
+            "validate" : "true",
+            "canDisplay" : "true",
+            "canRelation" : "true",
+            "canSearch" : "true",
+            "length" : "100"
+        },
+        "fdIsInventory" : {
+            "propertyType" : "simple",
+            "messageKey" : "fssc-ledger:fsscLedgerMaterial.fdIsInventory",
+            "type" : "Boolean",
+            "column" : "fd_is_inventory",
+            "notNull" : "false",
+            "readOnly" : "false",
+            "validate" : "true",
+            "canDisplay" : "true",
+            "canRelation" : "true",
+            "canSearch" : "true"
+        },
+        "fdStatus" : {
+            "propertyType" : "simple",
+            "messageKey" : "fssc-ledger:fsscLedgerMaterial.fdStatus",
+            "type" : "String",
+            "column" : "fd_status",
+            "notNull" : "false",
+            "readOnly" : "false",
+            "enumType" : "fssc_ledger_material_status",
+            "validate" : "true",
+            "canDisplay" : "true",
+            "canRelation" : "true",
+            "canSearch" : "true",
+            "length" : "2"
+        },
+        "fdStock" : {
+            "propertyType" : "simple",
+            "messageKey" : "fssc-ledger:fsscLedgerMaterial.fdStock",
+            "type" : "Integer",
+            "column" : "fd_stock",
+            "notNull" : "false",
+            "readOnly" : "false",
+            "validate" : "true",
+            "canDisplay" : "true",
+            "canRelation" : "true",
+            "canSearch" : "true"
+        },
+        "fdDesc" : {
+            "propertyType" : "simple",
+            "messageKey" : "fssc-ledger:fsscLedgerMaterial.fdDesc",
+            "type" : "String",
+            "column" : "fd_desc",
+            "notNull" : "false",
+            "readOnly" : "false",
+            "validate" : "true",
+            "canDisplay" : "true",
+            "canRelation" : "true",
+            "canSearch" : "true",
+            "length" : "2000"
+        },
+        "fdPhone" : {
+            "propertyType" : "simple",
+            "messageKey" : "fssc-ledger:fsscLedgerMaterial.fdPhone",
+            "type" : "String",
+            "column" : "fd_phone",
+            "notNull" : "false",
+            "readOnly" : "false",
+            "validate" : "true",
+            "canDisplay" : "true",
+            "canRelation" : "true",
+            "canSearch" : "true",
+            "length" : "30"
+        },
+        "docCreateTime" : {
+            "propertyType" : "simple",
+            "messageKey" : "fssc-ledger:fsscLedgerMaterial.docCreateTime",
+            "type" : "DateTime",
+            "column" : "doc_create_time",
+            "notNull" : "true",
+            "readOnly" : "true",
+            "validate" : "false",
+            "canDisplay" : "true",
+            "canRelation" : "true",
+            "canSearch" : "true"
+        },
+        "docAlterTime" : {
+            "propertyType" : "simple",
+            "messageKey" : "fssc-ledger:fsscLedgerMaterial.docAlterTime",
+            "type" : "DateTime",
+            "column" : "doc_alter_time",
+            "notNull" : "false",
+            "readOnly" : "true",
+            "validate" : "false",
+            "canDisplay" : "true",
+            "canRelation" : "true",
+            "canSearch" : "true"
+        },
+        "fdUnit" : {
+            "propertyType" : "simple",
+            "messageKey" : "fssc-ledger:fsscLedgerMaterial.fdUnit",
+            "type" : "String",
+            "column" : "fd_unit",
+            "notNull" : "false",
+            "readOnly" : "false",
+            "validate" : "true",
+            "canDisplay" : "true",
+            "canRelation" : "true",
+            "canSearch" : "true",
+            "length" : "20"
+        },
+        "fdType" : {
+            "propertyType" : "model",
+            "messageKey" : "fssc-ledger:fsscLedgerMaterial.fdType",
+            "type" : "com.landray.kmss.fssc.base.model.FsscBaseMaterialType",
+            "column" : "fd_type_id",
+            "notNull" : "false",
+            "readOnly" : "false",
+            "validate" : "true",
+            "canDisplay" : "true",
+            "canRelation" : "true"
+        },
+        "fdPurchase" : {
+            "propertyType" : "model",
+            "messageKey" : "fssc-ledger:fsscLedgerMaterial.fdPurchase",
+            "type" : "com.landray.kmss.sys.organization.model.SysOrgPerson",
+            "column" : "fd_purchase_id",
+            "notNull" : "false",
+            "readOnly" : "false",
+            "dialogJS" : "Dialog_Address(!{mulSelect}, '!{idField}','!{nameField}', ';',ORG_TYPE_PERSON);",
+            "validate" : "true",
+            "canDisplay" : "true",
+            "canRelation" : "true"
+        },
+        "fdPurchaseDept" : {
+            "propertyType" : "model",
+            "messageKey" : "fssc-ledger:fsscLedgerMaterial.fdPurchaseDept",
+            "type" : "com.landray.kmss.sys.organization.model.SysOrgElement",
+            "column" : "fd_purchase_dept_id",
+            "notNull" : "false",
+            "readOnly" : "false",
+            "dialogJS" : "Dialog_Address(!{mulSelect}, '!{idField}','!{nameField}', ';',ORG_TYPE_ORGORDEPT);",
+            "validate" : "true",
+            "canDisplay" : "true",
+            "canRelation" : "true"
+        },
+        "fdMaterial" : {
+            "propertyType" : "model",
+            "messageKey" : "fssc-ledger:fsscLedgerMaterial.fdMaterial",
+            "type" : "com.landray.kmss.fssc.base.model.FsscBaseMaterialInfo",
+            "column" : "fd_material_id",
+            "notNull" : "false",
+            "readOnly" : "false",
+            "validate" : "true",
+            "canDisplay" : "true",
+            "canRelation" : "true"
+        }
+    }
+}

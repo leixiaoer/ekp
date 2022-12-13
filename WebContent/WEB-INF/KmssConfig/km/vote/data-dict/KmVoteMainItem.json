@@ -1,0 +1,55 @@
+{
+    "global":     {
+        "modelName": "com.landray.kmss.km.vote.model.KmVoteMainItem",
+        "messageKey": "km-vote:table.kmVoteMainItem",
+        "displayProperty": "fdName",
+        "serviceBean": "kmVoteMainItemService",
+        "table": "km_vote_main_item",
+        "url": "/km/vote/km_vote_main_item/kmVoteMainItem.do?method=view&fdId=${fdId}"
+    },
+    "attrs":     {
+        "fdId":         {
+            "propertyType": "id",
+            "generator": {"type": "assigned"}
+        },
+        "fdName":         {
+            "propertyType": "simple",
+            "messageKey": "km-vote:kmVoteMainItem.fdName",
+            "type": "String",
+            "column": "fd_name",
+            "notNull": "false",
+            "length": "200"
+        },
+        "fdUrl":         {
+            "propertyType": "simple",
+            "messageKey": "km-vote:kmVoteMainItem.fdUrl",
+            "type": "String",
+            "column": "fd_url",
+            "notNull": "false",
+            "length": "200"
+        },
+        "fdVoteItemNum":         {
+            "propertyType": "simple",
+            "messageKey": "km-vote:kmVoteMainItem.fdVoteItemNum",
+            "type": "Long",
+            "column": "fd_vote_item_num",
+            "notNull": "false",
+            "length": "19"
+        },
+        "fdIndex":         {
+            "propertyType": "simple",
+            "messageKey": "",
+            "type": "Integer",
+            "column": "fd_index",
+            "notNull": "false",
+            "length": "36"
+        },
+        "fdVote":         {
+            "propertyType": "model",
+            "messageKey": "km-vote:kmVoteMainItem.fdVoteId",
+            "type": "com.landray.kmss.km.vote.model.KmVoteMain",
+            "column": "fd_vote_id",
+            "notNull": "false"
+        }
+    }
+}

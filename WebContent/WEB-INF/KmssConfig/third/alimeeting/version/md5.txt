@@ -1,0 +1,14 @@
+WebContent/WEB-INF/KmssConfig/third/alimeeting/design.xml=07bef6013389232d93affe1d6c85aa34
+WebContent/WEB-INF/KmssConfig/third/alimeeting/enums.xml=5c6b5a194b785be56bc5b5b0dc62ae05
+WebContent/WEB-INF/KmssConfig/third/alimeeting/hibernate.xml=ecb8730045820ff217351b311e2f4bc3
+WebContent/WEB-INF/KmssConfig/third/alimeeting/plugin.xml=2f60d3d4837c2f95207b2e10c76e3ce1
+WebContent/WEB-INF/KmssConfig/third/alimeeting/spring-mvc.xml=fcf3b6700f4f6988b0e9f5895740ccef
+WebContent/WEB-INF/KmssConfig/third/alimeeting/spring.xml=1a051d6e369c1a4305f464d710df4044
+WebContent/WEB-INF/KmssConfig/third/alimeeting/version/description.xml=0f271d50c7f37e0168144ee6d40bef3e
+WebContent/WEB-INF/KmssConfig/third/alimeeting/version/version.xml=23431a37436bf15f5a3673661baf6237
+WebContent/WEB-INF/lib/kmss_third_alimeeting.jar=5ac0f807f694afeb92fdca972b06a208
+WebContent/third/alimeeting/aliMeetingConfig_edit.jsp=e1f0ab299d3201cfcf0badac6a800081
+WebContent/third/alimeeting/resource/css/aliyunMeeting.css=28c200096a6951d71ca355afb7036ad4
+WebContent/third/alimeeting/third_alimeeting/joinMeeting.jsp=f8294c403322052c9fbaa0e2a112a8a0
+WebContent/third/alimeeting/third_alimeeting/videoMeeting.html=bd33bebb3ccdb947d5f6c541150cfaeb
+WebContent/third/alimeeting/tree.jsp=056e03bcc78cd54ec01ef35e2d92d569

@@ -1,0 +1,198 @@
+{
+    "global":     {
+        "modelName": "com.landray.kmss.km.oitems.model.KmOitemsListing",
+        "messageKey": "km-oitems:table.kmOitemsListing",
+        "displayProperty": "fdName",
+        "serviceBean": "kmOitemsListingService",
+        "table": "km_oitems_listing",
+        "url": "/km/oitems/km_oitems_listing/kmOitemsListing.do?method=view&fdId=${fdId}"
+    },
+    "attrs":     {
+        "fdId":         {
+            "propertyType": "id",
+            "generator": {"type": "assigned"}
+        },
+        "fdNo":         {
+            "propertyType": "simple",
+            "messageKey": "km-oitems:kmOitemsListing.fdNo",
+            "type": "String",
+            "column": "fd_no",
+            "notNull": "true",
+            "length": "100",
+            "validate": "true"
+        },
+        "fdName":         {
+            "propertyType": "simple",
+            "messageKey": "km-oitems:kmOitemsListing.fdName",
+            "type": "String",
+            "column": "fd_name",
+            "notNull": "true",
+            "length": "200",
+            "canSearch": "true",
+            "validate": "true"
+        },
+        "fdSpecification":         {
+            "propertyType": "simple",
+            "messageKey": "km-oitems:kmOitemsListing.fdSpecification",
+            "type": "String",
+            "column": "fd_specification",
+            "notNull": "false",
+            "length": "100",
+            "validate": "true"
+        },
+        "fdBrand":         {
+            "propertyType": "simple",
+            "messageKey": "km-oitems:kmOitemsListing.fdBrand",
+            "type": "String",
+            "column": "fd_brand",
+            "notNull": "false",
+            "length": "200",
+            "validate": "true"
+        },
+        "fdReferencePrice":         {
+            "propertyType": "simple",
+            "messageKey": "km-oitems:kmOitemsListing.fdReferencePrice",
+            "type": "Double",
+            "column": "fd_reference_price",
+            "notNull": "true",
+            "length": "100",
+            "validate": "true"
+        },
+        "fdUnit":         {
+            "propertyType": "simple",
+            "messageKey": "km-oitems:kmOitemsListing.fdUnit",
+            "type": "String",
+            "column": "fd_unit",
+            "notNull": "false",
+            "length": "100",
+            "validate": "true"
+        },
+        "fdRemark":         {
+            "propertyType": "simple",
+            "messageKey": "km-oitems:kmOitemsListing.fdRemark",
+            "type": "String",
+            "column": "fd_remark",
+            "notNull": "false",
+            "length": "2000",
+            "validate": "true"
+        },
+        "fdAmount":         {
+            "propertyType": "simple",
+            "messageKey": "km-oitems:kmOitemsListing.fdAmount",
+            "type": "Integer",
+            "column": "fd_amount",
+            "notNull": "true",
+            "length": "12",
+            "validate": "true"
+        },
+        "docCreateTime":         {
+            "propertyType": "simple",
+            "messageKey": "km-oitems:kmOitemsListing.docCreateTime",
+            "type": "DateTime",
+            "column": "doc_create_time",
+            "notNull": "false",
+            "canSearch": "true"
+        },
+        "fdCategory":         {
+            "propertyType": "model",
+            "messageKey": "km-oitems:kmOitemsListing.fdCategoryId",
+            "type": "com.landray.kmss.km.oitems.model.KmOitemsManage",
+            "column": "fd_category_id",
+            "notNull": "false"
+        },
+        "docCreator":         {
+            "propertyType": "model",
+            "messageKey": "km-oitems:kmOitemsListing.docCreatorId",
+            "type": "com.landray.kmss.sys.organization.model.SysOrgPerson",
+            "column": "doc_creator_id",
+            "notNull": "false",
+            "canSearch": "true"
+        },
+        "kmOitemsWarehousingRecordList":         {
+            "propertyType": "list",
+            "messageKey": "",
+            "column": "fd_listing_id",
+            "type": "com.landray.kmss.km.oitems.model.KmOitemsWarehousingRecord",
+            "inverse": "true",
+            "table": "km_oitems_warehousing_record"
+        },
+        "authAllReaders":         {
+            "propertyType": "list",
+            "messageKey": "km-oitems:kmOitemsListing.authAllReaders",
+            "column": "fd_doc_id",
+            "type": "com.landray.kmss.sys.organization.model.SysOrgElement",
+            "elementColumn": "auth_reader_id",
+            "table": "km_oitems_listing_areader",
+            "canDisplay": "false"
+        },
+        "authAllEditors":         {
+            "propertyType": "list",
+            "messageKey": "km-oitems:kmOitemsListing.authAllEditors",
+            "column": "fd_doc_id",
+            "type": "com.landray.kmss.sys.organization.model.SysOrgElement",
+            "elementColumn": "auth_editor_id",
+            "table": "km_oitems_listing_aeditor",
+            "canDisplay": "false"
+        },
+        "authReaders":         {
+            "propertyType": "list",
+            "messageKey": "sys-doc:sysDocBaseInfo.authReaders",
+            "column": "fd_doc_id",
+            "type": "com.landray.kmss.sys.organization.model.SysOrgElement",
+            "elementColumn": "fd_org_id",
+            "table": "km_oitems_listing_readers",
+            "readOnly": "true"
+        },
+        "authEditors":         {
+            "propertyType": "list",
+            "messageKey": "sys-doc:sysDocBaseInfo.authEditors",
+            "column": "fd_doc_id",
+            "type": "com.landray.kmss.sys.organization.model.SysOrgElement",
+            "table": "km_oitems_listing_editors",
+            "elementColumn": "fd_org_id",
+            "readOnly": "true"
+        },
+        "authChangeReaderFlag":         {
+            "propertyType": "simple",
+            "messageKey": "sys-right:right.read.authChangeReaderFlag",
+            "type": "Boolean",
+            "column": "fd_change_reader_flag",
+            "canDisplay": "false",
+            "readOnly": "false"
+        },
+        "authChangeEditorFlag":         {
+            "propertyType": "simple",
+            "messageKey": "sys-right:right.edit.authChangeEditorFlag",
+            "type": "Boolean",
+            "column": "fd_change_editor_flag",
+            "canDisplay": "false",
+            "readOnly": "false"
+        },
+        "fdIsAbandon":         {
+            "propertyType": "simple",
+            "messageKey": "km-oitems:kmOitemsListing.fdIsAbandon",
+            "type": "Boolean",
+            "column": "fd_is_abandon"
+        },
+        "kmOitemsWarehousingRecordJoinListList":         {
+            "propertyType": "list",
+            "type": "com.landray.kmss.km.oitems.model.KmOitemsWarehousingRecordJoinList",
+            "column": "fd_listing_id",
+            "cascade": "delete",
+            "inverse": "true",
+            "table": "km_oitems_warehousing_joinlist"
+        },
+        "authReaderFlag":         {
+            "propertyType": "simple",
+            "messageKey": "sys-right:right.read.authReaderFlag",
+            "canDisplay": "false",
+            "type": "Boolean",
+            "column": "auth_reader_flag",
+            "length": "1"
+        }
+    },
+    "attachments": {"kmOitemsListing":     {
+        "propertyType": "att",
+        "messageKey": "km-oitems:kmOitemsListing.picture"
+    }}
+}

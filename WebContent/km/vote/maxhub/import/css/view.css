@@ -1,0 +1,153 @@
+@CHARSET "UTF-8";
+.mhVoteItemList{
+	padding: 0;
+}
+.mhVoteItem{
+	list-style: none;
+	padding: 2.4rem 1.6rem 0 2.1rem;
+}
+.mhVoteItemWrapper{
+	padding-bottom: 2.4rem;
+	border-bottom: 1px solid #D5D5D5;
+}
+.mhVoteItemStatus{
+	float: right;
+    position: relative;
+    margin-top: -2rem;
+}
+.mhVoteItemStatus > i{
+	font-size: 7rem;
+    line-height: 6.5rem;
+    color: #999999;
+}
+.mhVoteItemStatusTxt{
+	position: absolute;
+    top: 50%;
+    left: 0;
+    font-size: 1.4rem;
+    transform: rotateZ(-20deg);
+    margin-left: 1.4rem;
+    margin-top: -.5rem;
+    color: #999999;
+}
+.mhVoteItemTitle{
+	font-size: 2rem;
+    color: #333333;
+    font-weight: normal;
+}
+.mhVoteItemBottom{
+	font-size: 1.3rem;
+    color: #999999;
+}
+.mhVoteItemBottom > span{
+	margin-right: 1.2rem;
+}
+.mhVoteNoData{
+	height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.mhVoteNoDataTextContainer{
+	margin-top: 0.9375rem;
+	font-size: 1.625rem;
+    color: #999;
+}
+.mhVoteRefreshContainer{
+	font-size: 1.625rem;
+	margin-left: 1rem;
+	color: #4285f4;
+}
+.mhVoteNoDataItem{
+	text-align: center;
+}
+.mhVoteView,.mhVoteResultView{
+	position: absolute;
+	top : 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	background-color: #fff;	
+	z-index: 2000;
+}
+.mhVoteResultView{
+	z-index: 20001;
+}
+.mhVoteViewTitle{
+	margin: 3.4rem 0 1.3rem;
+    text-align: center;
+    font-size: 2.6rem;
+    color: #333333;
+}
+.mhVoteViewDetail{
+	text-align: center;
+    color: #999999;
+    font-size: 1.73rem;
+}
+.mhVoteViewDetail > span{
+	margin-right: 1.3rem;
+}
+.mhVoteViewQRContainer{
+	margin: 5rem auto 0;
+    width: 35.5rem;
+    text-align: center;
+}
+.mhVoteViewQRTitle{
+	opacity: 0.7;
+	font-size: 2rem;
+	color: #333333;
+	padding: 1.6rem 0 2rem;
+}
+.mhVoteViewQRCode{
+	width: 28.6rem;
+    height: 28.6rem;
+    margin: 0 auto;
+}
+.mhVoteViewQRContainer{
+	border: 1px solid #4285F4;
+	border-radius: 8px;
+}
+.mhVoteViewCount{
+	margin: 1.8rem;
+	color: #333333;
+}
+.mhVoteToolbar{
+	background-color: #0A2655;
+}
+.mhVoteViewQRCode * {
+	margin: 0 auto;
+}
+.mhVoteResultList{
+	margin: 2.1rem auto;
+    padding: 0;
+    width: 81rem;
+}
+.mhVoteResultItem{
+	list-style: none;
+	padding: 0;
+	line-height: 8rem;
+	border-bottom: 1px solid #D5D5D5
+}
+.mhVoteResultItem:FIRST-CHILD{
+	border-top: 1px solid #D5D5D5
+}
+.mhVoteResultNum{
+	float:right;
+}
+.mhVoteResultAtt{
+	width: 8.6rem;
+    height: 6.5rem;
+    float: left;
+    vertical-align: middle;
+    margin-right: 1.2rem;
+    margin-top: 0.75rem;
+}
+.mhuiVoteAlertDialog{
+	z-index: 9999;
+}
+.mhuiVoteAlertDialog .mhuiDialogContent{
+	height: 10rem;
+    line-height: 10rem;
+    text-align: center;
+    width: 35rem;
+}

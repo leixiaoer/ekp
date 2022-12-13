@@ -1,0 +1,177 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans 
+    xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.0.xsd" 
+    xmlns="http://www.springframework.org/schema/beans" 
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <bean 
+        id="geesunLeaveMainDao" 
+        class="com.landray.kmss.geesun.leave.dao.hibernate.GeesunLeaveMainDaoImp" 
+        parent="KmssAuthBaseDao">
+        <property 
+            name="modelName">
+            <value>com.landray.kmss.geesun.leave.model.GeesunLeaveMain</value>
+        </property>
+    </bean>
+    <bean 
+        id="geesunLeaveMainTarget" 
+        class="com.landray.kmss.geesun.leave.service.spring.GeesunLeaveMainServiceImp" 
+        parent="KmssExtendDataTarget">
+        <property 
+            name="baseDao">
+            <ref 
+                bean="geesunLeaveMainDao"/>
+        </property>
+    </bean>
+    <bean 
+        id="geesunLeaveMainService" 
+        parent="KmssBaseService">
+        <property 
+            name="target">
+            <ref 
+                bean="geesunLeaveMainTarget"/>
+        </property>
+    </bean>
+    <bean 
+        id="geesunLeaveAdjustDao" 
+        class="com.landray.kmss.geesun.leave.dao.hibernate.GeesunLeaveAdjustDaoImp" 
+        parent="KmssAuthBaseDao">
+        <property 
+            name="modelName">
+            <value>com.landray.kmss.geesun.leave.model.GeesunLeaveAdjust</value>
+        </property>
+    </bean>
+    <bean 
+        id="geesunLeaveAdjustTarget" 
+        class="com.landray.kmss.geesun.leave.service.spring.GeesunLeaveAdjustServiceImp" 
+        parent="KmssExtendDataTarget">
+        <property 
+            name="baseDao">
+            <ref 
+                bean="geesunLeaveAdjustDao"/>
+        </property>
+    </bean>
+    <bean 
+        id="geesunLeaveAdjustService" 
+        parent="KmssBaseService">
+        <property 
+            name="target">
+            <ref 
+                bean="geesunLeaveAdjustTarget"/>
+        </property>
+    </bean>
+    <bean 
+        id="geesunLeaveBarterDao" 
+        class="com.landray.kmss.geesun.leave.dao.hibernate.GeesunLeaveBarterDaoImp" 
+        parent="KmssAuthBaseDao">
+        <property 
+            name="modelName">
+            <value>com.landray.kmss.geesun.leave.model.GeesunLeaveBarter</value>
+        </property>
+    </bean>
+    <bean 
+        id="geesunLeaveBarterTarget" 
+        class="com.landray.kmss.geesun.leave.service.spring.GeesunLeaveBarterServiceImp" 
+        parent="KmssExtendDataTarget">
+        <property 
+            name="baseDao">
+            <ref 
+                bean="geesunLeaveBarterDao"/>
+        </property>
+    </bean>
+    <bean 
+        id="geesunLeaveBarterService" 
+        parent="KmssBaseService">
+        <property 
+            name="target">
+            <ref 
+                bean="geesunLeaveBarterTarget"/>
+        </property>
+    </bean>
+    <bean 
+        id="geesunLeaveMobileService" 
+        class="com.landray.kmss.sys.mobile.service.spring.SysMobileModuleRegisterService">
+        <property 
+            name="modulePath">
+            <value>geesun/leave</value>
+        </property>
+    </bean>
+    
+	<!-- 流程结束增加调休额度 -->
+	<bean
+		class="com.landray.kmss.geesun.leave.listener.GeesunLeaveIntoLeaveListener"
+		id="GeesunLeaveIntoAddLeaveListener">
+	</bean>
+
+	<!-- 调休表单扩展自定义 -->
+	<bean
+		class="com.landray.kmss.geesun.leave.service.spring.GeesunLeaveOrderFormEvent"
+		id="GeesunLeaveOrderFormEvent">
+	</bean>
+
+	<!-- 进入开始节点修改调休冻结额度状态(30) -->
+	<bean
+		class="com.landray.kmss.geesun.leave.listener.GeesunLeaveIntoMappingFormListener"
+		id="GeesunLeaveIntoMappingFormListener">
+	</bean>
+	
+	<!-- 监听批量加班申请的流程事件 -->
+	<bean
+		class="com.landray.kmss.geesun.leave.service.spring.GeesunLeaveOvertimeBatchApplicationService"
+		id="geesunLeaveOvertimeBatchApplicationService">
+	</bean>
+	
+	<!-- 批量加班申请的流程结束事件 -->
+	<bean
+		class="com.landray.kmss.geesun.leave.listener.GeesunLeaveBatchOvertimeFinishListener"
+		id="geesunLeaveBatchOvertimeFinishListener">
+	</bean>
+	
+	<!-- 进入开始节点修改加班冻结时间状态(30) -->
+	<bean
+		class="com.landray.kmss.geesun.leave.listener.GeesunLeaveIntoMappingAdjustFromListener"
+		id="GeesunLeaveIntoMappingAdjustFromListener">
+	</bean>
+
+	<!-- 调休流程废弃修改调休冻结额度状态(30) -->
+	<bean
+		class="com.landray.kmss.geesun.leave.listener.GeesunLeaveIntoDiscardListener"
+		id="GeesunLeaveIntoDiscardListener">
+	</bean>
+	
+	<!-- 加班流程废弃修改调休冻结日期状态(30) -->
+	<bean
+		class="com.landray.kmss.geesun.leave.listener.GeesunLeaveIntoAdjustDiscardListener"
+		id="GeesunLeaveIntoAdjustDiscardListener">
+	</bean>
+	
+	<!-- 流程结束修改调休时数 -->
+	<bean
+		class="com.landray.kmss.geesun.leave.listener.GeesunLeaveIntoAddTakeWorkingListener"
+		id="GeesunLeaveIntoAddTakeWorkingListener">
+	</bean>
+	
+	<!-- 机器人节点扩展事件 -->
+	<bean
+		class="com.landray.kmss.geesun.leave.service.spring.GeesunLeaveRobotNodeServiceImp"
+		id="GeesunLeaveRobotNodeServiceImpl">
+	</bean>
+	
+	<!-- 补录考勤结束节点触发事件 -->
+	<bean
+		class="com.landray.kmss.geesun.leave.listener.GeesunLeaveBuKaFinishiListener"
+		id="GeesunLeaveBuKaFinishiListener">
+	</bean>
+	
+	<!-- 补录考勤流程废弃触发事件 -->
+	<bean
+		class="com.landray.kmss.geesun.leave.listener.GeesunLeaveBuKaDiscardListener"
+		id="GeesunLeaveBuKaDiscardListener">
+	</bean>
+
+	<!-- 补录考勤流程进入开始节点触发事件 -->
+	<bean
+		class="com.landray.kmss.geesun.leave.listener.GeesunLeaveBukaIntoListener"
+		id="GeesunLeaveBukaIntoListener">
+	</bean>
+
+</beans>

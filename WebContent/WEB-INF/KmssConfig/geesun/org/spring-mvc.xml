@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans
+	xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.0.xsd">
+	<bean 
+        class="com.landray.kmss.geesun.org.actions.GeesunOrgOrganAction" 
+        parent="KmssBaseAction" 
+        name="/geesun/org/geesun_org_organ/geesunOrgOrgan.do" 
+        lazy-init="true">
+        <property 
+            name="formType" 
+            value="com.landray.kmss.geesun.org.forms.GeesunOrgOrganForm"/>
+        <property 
+            name="forwards">
+            <map>
+                <entry 
+                    key="data" 
+                    value="/geesun/org/geesun_org_organ/geesunOrgOrgan_data.jsp"/>
+                <entry 
+                    key="edit" 
+                    value="/geesun/org/geesun_org_organ/geesunOrgOrgan_edit.jsp"/>
+                <entry 
+                    key="view" 
+                    value="/geesun/org/geesun_org_organ/geesunOrgOrgan_view.jsp"/>
+            </map>
+        </property>
+    </bean>
+    <bean 
+        class="com.landray.kmss.geesun.org.actions.GeesunOrgPersonAction" 
+        parent="KmssBaseAction" 
+        name="/geesun/org/geesun_org_person/geesunOrgPerson.do" 
+        lazy-init="true">
+        <property 
+            name="formType" 
+            value="com.landray.kmss.geesun.org.forms.GeesunOrgPersonForm"/>
+        <property 
+            name="forwards">
+            <map>
+                <entry 
+                    key="data" 
+                    value="/geesun/org/geesun_org_person/geesunOrgPerson_data.jsp"/>
+                <entry 
+                    key="edit" 
+                    value="/geesun/org/geesun_org_person/geesunOrgPerson_edit.jsp"/>
+                <entry 
+                    key="view" 
+                    value="/geesun/org/geesun_org_person/geesunOrgPerson_view.jsp"/>
+            </map>
+        </property>
+    </bean>
+    <bean 
+        class="com.landray.kmss.geesun.org.actions.GeesunOrgPostAction" 
+        parent="KmssBaseAction" 
+        name="/geesun/org/geesun_org_post/geesunOrgPost.do" 
+        lazy-init="true">
+        <property 
+            name="formType" 
+            value="com.landray.kmss.geesun.org.forms.GeesunOrgPostForm"/>
+        <property 
+            name="forwards">
+            <map>
+                <entry 
+                    key="data" 
+                    value="/geesun/org/geesun_org_post/geesunOrgPost_data.jsp"/>
+                <entry 
+                    key="edit" 
+                    value="/geesun/org/geesun_org_post/geesunOrgPost_edit.jsp"/>
+                <entry 
+                    key="view" 
+                    value="/geesun/org/geesun_org_post/geesunOrgPost_view.jsp"/>
+            </map>
+        </property>
+    </bean>
+	<bean
+		name="/geesun/org/geesun_org_ekp/geesunOrgEkp.do"
+		class="com.landray.kmss.geesun.org.actions.GeesunOrgEkpAction"
+		lazy-init="true"
+		parent="KmssBaseAction">
+		<property
+			name="formType"
+			value="com.landray.kmss.geesun.org.forms.GeesunOrgEkpForm" />
+		<property name="forwards">
+			<map>
+				<entry
+					key="view"
+					value="/geesun/org/geesun_org_ekp/geesunOrgEkp_view.jsp" />
+				<entry
+					key="edit"
+					value="/geesun/org/geesun_org_ekp/geesunOrgEkp_edit.jsp" />
+				<entry
+					key="data"
+					value="/geesun/org/geesun_org_ekp/geesunOrgEkp_data.jsp" />
+			</map>
+		</property>
+	</bean>
+	<bean
+		name="/geesun/org/geesun_org_record/geesunOrgRecord.do"
+		class="com.landray.kmss.geesun.org.actions.GeesunOrgRecordAction"
+		lazy-init="true"
+		parent="KmssBaseAction">
+		<property
+			name="formType"
+			value="com.landray.kmss.geesun.org.forms.GeesunOrgRecordForm" />
+		<property name="forwards">
+			<map>
+				<entry
+					key="data"
+					value="/geesun/org/geesun_org_record/geesunOrgRecord_data.jsp" />
+				<entry
+					key="edit"
+					value="/geesun/org/geesun_org_record/geesunOrgRecord_edit.jsp" />
+				<entry
+					key="view"
+					value="/geesun/org/geesun_org_record/geesunOrgRecord_view.jsp" />
+			</map>
+		</property>
+	</bean>
+</beans>

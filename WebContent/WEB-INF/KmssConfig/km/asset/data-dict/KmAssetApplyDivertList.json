@@ -1,0 +1,97 @@
+{
+    "global":     {
+        "modelName": "com.landray.kmss.km.asset.model.KmAssetApplyDivertList",
+        "messageKey": "km-asset:table.kmAssetApplyDivertList",
+        "displayProperty": "fdId",
+        "serviceBean": "kmAssetApplyDivertListService",
+        "table": "km_asset_apply_divert_list",
+        "url": "/km/asset/km_asset_apply_divert_list/kmAssetApplyDivertList.do?method=view&fdId=${fdId}"
+    },
+    "attrs":     {
+        "fdId":         {
+            "propertyType": "id",
+            "generator": {"type": "assigned"}
+        },
+        "fdDivertDate":         {
+            "propertyType": "simple",
+            "messageKey": "km-asset:kmAssetApplyDivertList.fdDivertDate",
+            "type": "DateTime",
+            "column": "fd_divert_date",
+            "notNull": "false",
+            "validate": "true",
+            "canLogShow":"1"
+        },
+        "fdApplyDivert":         {
+            "propertyType": "model",
+            "messageKey": "km-asset:kmAssetApplyDivertList.fdApplyDivert",
+            "type": "com.landray.kmss.km.asset.model.KmAssetApplyDivert",
+            "column": "fd_apply_divert_id",
+            "notNull": "false",
+            "validate": "false",
+            "canLogShow":"1"
+        },
+        "fdOldDept":         {
+            "propertyType": "model",
+            "messageKey": "km-asset:kmAssetApplyDivertList.fdOldDept",
+            "type": "com.landray.kmss.sys.organization.model.SysOrgElement",
+            "column": "fd_old_dept",
+            "notNull": "false",
+            "validate": "false",
+            "canLogShow":"1"
+        },
+        "fdNowDept":         {
+            "propertyType": "model",
+            "messageKey": "km-asset:kmAssetApplyDivertList.fdNowDept",
+            "type": "com.landray.kmss.sys.organization.model.SysOrgElement",
+            "column": "fd_now_dept",
+            "notNull": "false",
+            "validate": "true",
+            "canLogShow":"1"
+        },
+        "fdGetPerson":         {
+            "propertyType": "model",
+            "messageKey": "km-asset:kmAssetApplyDivertList.fdGetPerson",
+            "type": "com.landray.kmss.sys.organization.model.SysOrgElement",
+            "column": "fd_get_person",
+            "notNull": "false",
+            "validate": "false",
+            "canLogShow":"1"
+        },
+        "fdNowPerson":         {
+            "propertyType": "model",
+            "messageKey": "km-asset:kmAssetApplyDivertList.fdNowPerson",
+            "type": "com.landray.kmss.sys.organization.model.SysOrgElement",
+            "column": "fd_now_person",
+            "notNull": "false",
+            "validate": "true",
+            "canLogShow":"1"
+        },
+        "fdAssetCard":         {
+            "propertyType": "model",
+            "messageKey": "km-asset:kmAssetApplyDivertList.fdAssetCard",
+            "type": "com.landray.kmss.km.asset.model.KmAssetCard",
+            "column": "fd_asset_card_id",
+            "notNull": "false",
+            "validate": "false",
+            "canLogShow":"1"
+        },
+        "fdNewAddress":         {
+            "propertyType": "model",
+            "messageKey": "km-asset:kmAssetApplyDivertList.fdNewAddress",
+            "type": "com.landray.kmss.km.asset.model.KmAssetAddress",
+            "column": "fd_new_address",
+            "notNull": "false",
+            "validate": "true",
+            "canLogShow":"1"
+        },
+        "fdOldAddress":         {
+            "propertyType": "model",
+            "messageKey": "km-asset:kmAssetApplyDivertList.fdOldAddress",
+            "type": "com.landray.kmss.km.asset.model.KmAssetAddress",
+            "column": "fd_old_address",
+            "notNull": "false",
+            "validate": "false",
+            "canLogShow":"1"
+        }
+    }
+}

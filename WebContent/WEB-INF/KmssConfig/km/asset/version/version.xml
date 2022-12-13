@@ -1,0 +1,2312 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<version xmlns="http://www.example.org/version-config" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.example.org/version-config ../version.xsd">
+	<modifies>
+		<modify>
+			<description>#165211 修复 资产卡片导入，后台配置选择手工输入，导入表格中资产卡片的资产编码相同，导入时没有进行提示</description>
+			<author>苏琦</author>
+			<revision-time>2022-05-17</revision-time>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#164998 修复 资产管理类别如果设置了可使用者无法导入</description>
+			<author>苏琦</author>
+			<revision-time>2022-05-16</revision-time>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#162874 优化 资产卡片导入优化</description>
+			<author>潘永辉</author>
+			<revision-time>2022-04-22</revision-time>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#163587 修复 资产卡片导出时，类别显示全路径名称</description>
+			<author>潘永辉</author>
+			<revision-time>2022-04-21</revision-time>
+			<relation>
+				<relation-module>sys/search</relation-module>
+			</relation>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#162863 修复 固定资产导入时“使用部门”无法处理多层级机构</description>
+			<author>潘永辉</author>
+			<revision-time>2022-04-14</revision-time>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#161927 修复 资产卡片上传资产图片后，发起盘点任务，移动端查看盘点任务信息，上传的资产图片不显示</description>
+			<author>苏琦</author>
+			<revision-time>2022-03-25</revision-time>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#161818 修复 资产导入时，使用部门如果是机构会忽略无法导入</description>
+			<author>魏泽钧</author>
+			<revision-time>2022-03-23</revision-time>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#159150 修复 资产管理模块资产盘点流程报错</description>
+			<author>苏琦</author>
+			<revision-time>2022-01-28</revision-time>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#157870 修复 资产卡片查询导出出现重复的情况</description>
+			<author>王文豪</author>
+			<revision-time>2022-01-07</revision-time>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#155291 修复 资产盘点发布后，盘点人没有收到盘点任务</description>
+			<author>张颖</author>
+			<revision-time>2021-12-15</revision-time>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#154971 修复 资产卡片修改可阅读权限报错</description>
+			<author>张颖</author>
+			<revision-time>2021-12-02</revision-time>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#154813 修复 选择列表显示不友好，最后会显示一大片空白的问题</description>
+			<author>魏泽钧</author>
+			<revision-time>2021-11-29</revision-time>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#154698 修复 发起资产调拨和处理流程暂存，资产卡片生命周期就更新了</description>
+			<author>王进府</author>
+			<revision-time>2021-11-29</revision-time>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#154275 修复 资产管理盘点，发起盘点流程暂存后资产就变更为已盘点了</description>
+			<author>苏琦</author>
+			<revision-time>2021-11-23</revision-time>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#153940 修复 导入资产卡片慢（5000条)</description>
+			<author>苏琦</author>
+			<revision-time>2021-11-18</revision-time>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#150251 修复 【设计规范】新增特殊数字字体</description>
+			<author>郜静然</author>
+			<revision-time>2021-11-08</revision-time>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#148167 修复 资产类别新建保存报错</description>
+			<author>潘永辉</author>
+			<revision-time>2021-09-02</revision-time>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#148121 修复 父类别设置为“所有人不可用”，子类别添加可使用者无效后，可使用者无法选择子类别</description>
+			<author>潘永辉</author>
+			<revision-time>2021-08-31</revision-time>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#139573 修复 资产调拨单，审核人员修改责任人原部门和原责任人都是null</description>
+			<author>熊翅辉</author>
+			<revision-time>2021-08-30</revision-time>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#148093 修复 从我的资产进入资产列表，批量修改卡片信息不生效</description>
+			<author>潘永辉</author>
+			<revision-time>2021-08-27</revision-time>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#144623 修复 资产盘点中的所属资产卡片 字段删除</description>
+			<author>王京</author>
+			<revision-time>2021-08-02</revision-time>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#144620 修复 资产盘点，点击盘点完成后，出现报404错误</description>
+			<author>王京</author>
+			<revision-time>2021-08-02</revision-time>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#143939 修复 资产卡片详情里的附属配置增加分页</description>
+			<author>潘永辉</author>
+			<revision-time>2021-07-12</revision-time>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#142661 修复 资产卡片批量导入，使用部门字段有些部门无法导入，提示忽略</description>
+			<author>苏琦</author>
+			<revision-time>2021-07-06</revision-time>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#141731 修复 资产入库单时对资源编号增加长度校验</description>
+			<author>潘永辉</author>
+			<revision-time>2021-06-21</revision-time>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#141268 修复 导入资产卡片，采购日期和开始使用日期显示不对，入库日期为空</description>
+			<author>苏琦</author>
+			<revision-time>2021-06-10</revision-time>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#140708 修复 SQL参数化</description>
+			<author>苏运彬</author>
+			<revision-time>2021-06-03</revision-time>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#138833 修复 【日常缺陷】【资产管理】，“盘点任务”，新建一个盘点任务，“存放地点”能取到无效的地点数据</description>
+			<author>徐斌</author>
+			<revision-time>2021-04-30</revision-time>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#138550 修复 父类别设置为“所有人不可用”，子类别添加可使用者无效后，可使用者无法选择子类别</description>
+			<author>潘永辉</author>
+			<revision-time>2021-04-29</revision-time>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#138877 修复 资产卡片导入报错</description>
+			<author>曹勇</author>
+			<revision-time>2021-04-28</revision-time>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#138831 优化 资产采购单主题的公式定义器使用 申请事由 字段无法带出采购事项</description>
+			<author>王书强</author>
+			<revision-time>2021-04-27</revision-time>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#137912 修复 资产管理流程启用子流程报错</description>
+			<author>李文昌</author>
+			<revision-time>2021-04-26</revision-time>
+			<relation>
+				<relation-module>sys/xform</relation-module>
+			</relation>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#137226 修复 资产地点导入权限问题</description>
+			<author>王书强</author>
+			<revision-time>2021-04-10</revision-time>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#137175 修复 修改权限 的权限验证</description>
+			<author>王京</author>
+			<revision-time>2021-04-01</revision-time>
+			<relation>
+				<relation-module>sys/right</relation-module>
+			</relation>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#134349 修复 资产申购新建时，规格型号、单位是非必填字段，但是到了编辑时就变成了必填字段</description>
+			<author>曹勇</author>
+			<revision-time>2021-03-29</revision-time>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#135426 优化 资产管理，新建采购单的单价过大，在流程审批节点编辑文档，会出现科学计数，无法提交</description>
+			<author>王书强</author>
+			<revision-time>2021-03-17</revision-time>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#135469 修复 待审批中的资产在列表页显示“小锁”</description>
+			<author>潘永辉</author>
+			<revision-time>2021-03-17</revision-time>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#135727 优化 资产数在3500左右，打开资产盘点任务页面加载速度也很慢</description>
+			<author>王书强</author>
+			<revision-time>2021-03-17</revision-time>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#135848 修复 谷歌浏览器最新版本（88）无法自动关闭页面的问题</description>
+			<author>王书强</author>
+			<revision-time>2021-03-16</revision-time>
+			<relation>
+				<relation-module>core</relation-module>
+			</relation>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#134653 修复 资产模块数据导出重复</description>
+			<author>王京</author>
+			<revision-time>2021-03-08</revision-time>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#133110 修复 入库单手动输入编号没有校验重复</description>
+			<author>王京</author>
+			<revision-time>2021-02-03</revision-time>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#132215 修复 资产判断创建任务时过滤已报废的资产</description>
+			<author>王京</author>
+			<revision-time>2021-01-29</revision-time>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#132062 修复 资产管理模块，后台未开启的模板，前端二级页面申请页面能看到</description>
+			<author>苏琦</author>
+			<revision-time>2021-01-25</revision-time>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#131063 修复 导入资产卡片，入库日期和采购日期导入时被忽略，未导入成功</description>
+			<author>王京</author>
+			<revision-time>2021-01-12</revision-time>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#125599 优化 资产卡片批量打印</description>
+			<author>潘永辉</author>
+			<revision-time>2020-12-13</revision-time>
+			<relation>
+				<relation-module>sys/ui</relation-module>
+			</relation>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#128002 修复 移动端进行资产盘点时，仅能进行盘点不能进行盘亏，并且盘点操作</description>
+			<author>苏琦</author>
+			<revision-time>2020-12-10</revision-time>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#126606 修复 资产卡片表单使用单选和多选控件，使用块状模式，在移动端未展现</description>
+			<author>王京</author>
+			<revision-time>2020-12-10</revision-time>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#126364 修复 导入卡片时，存在excel导入数据与卡片详情页显示数据不一致</description>
+			<author>王京</author>
+			<revision-time>2020-11-23</revision-time>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#125588 修复 资产导入时纯数字的字段会自动给填加上小数点和俩零</description>
+			<author>王京</author>
+			<revision-time>2020-11-23</revision-time>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#124619 优化 当普通用户无权限进行资产流程新建时，进入发起申请页签一片空白。改成无权限不显示申请页签</description>
+			<author>王京</author>
+			<revision-time>2020-11-05</revision-time>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#124673 修复 资产卡片导出导入内容错位</description>
+			<author>王京</author>
+			<revision-time>2020-11-05</revision-time>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#122859 修复 资产管理，通过子流程发起的归还单没有显示在资产卡片生命周期中</description>
+			<author>王京</author>
+			<revision-time>2020-10-28</revision-time>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#121058 修复 资产管理新建各流程，暂存，再提交，流程无异常，但是生命周期中该单号未被关联上</description>
+			<author>苏琦</author>
+			<revision-time>2020-10-13</revision-time>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#116924 修复 资产各模板设置中的主题预置生成规则，选择元素后，进行模拟提示表达式发生错误</description>
+			<author>苏琦</author>
+			<revision-time>2020-09-02</revision-time>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#114377 修复 新建资产归还单移动端打开不显示附件</description>
+			<author>林剑文</author>
+			<revision-time>2020-09-01</revision-time>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#115871 修复 资产卡片打印，选择导出PDF，PDF文件后边的页码有问题，分页后会把卡片信息割裂（不在一张纸上）</description>
+			<author>徐斌</author>
+			<revision-time>2020-08-20</revision-time>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#115079 修复 资产管理处置流程，大写金额在打印时未显示</description>
+			<author>潘永辉</author>
+			<revision-time>2020-08-13</revision-time>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#103425 优化 默认审批模式的新建页面，右下角增加展现二维码的功能，无移动端的默认不展示</description>
+			<author>林剑文</author>
+			<revision-time>2020-08-06</revision-time>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#112640 修复 资产管理，资产盘点列表中资产状态、备注文本、备注搜索不出东西</description>
+			<author>苏琦</author>
+			<revision-time>2020-08-06</revision-time>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#113129 修复 资产管理-资产卡片存放地点类型改为存放地点</description>
+			<author>林剑文</author>
+			<revision-time>2020-07-27</revision-time>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#112531 修复 流程机器人节点处理后申请人信息和头像异常</description>
+			<author>林剑文</author>
+			<revision-time>2020-07-21</revision-time>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#111912 修复 资产管理入库时，到货数量未做正整数校验</description>
+			<author>林剑文</author>
+			<revision-time>2020-07-14</revision-time>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#110944 修复 导入资产卡片的模板中,再用改为在用</description>
+			<author>林剑文</author>
+			<revision-time>2020-07-10</revision-time>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#111326 修复 资产卡片，筛选人员时，多选报错</description>
+			<author>梅瑞鹏</author>
+			<revision-time>2020-07-09</revision-time>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#110980 修复 资产卡片页面样式调整</description>
+			<author>林剑文</author>
+			<revision-time>2020-07-07</revision-time>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#103425 优化 默认审批模式的新建页面，右下角增加展现二维码的功能，无移动端的默认不展示</description>
+			<author>郑操辉</author>
+			<revision-time>2020-07-07</revision-time>
+			<relation>
+				<relation-module>sys/ui</relation-module>
+			</relation>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#109865 修复 通过流程机器人节点使用资产管理资产调拨不生效</description>
+			<author>苏琦</author>
+			<revision-time>2020-06-29</revision-time>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#107495 修复 资产管理模块提示不对</description>
+			<author>林剑文</author>
+			<revision-time>2020-06-24</revision-time>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#108954 修复 设置好标题自动生成规则，PC端可以自动生成，但是移动端还是需要手动填写</description>
+			<author>梅瑞鹏</author>
+			<revision-time>2020-06-15</revision-time>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#107910 修复 使用机器人节点更新资产管理系统不生效</description>
+			<author>孙佳</author>
+			<revision-time>2020-06-10</revision-time>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#103211 移动端资产卡片查看页面因二级列表页面优化导致样式错乱</description>
+			<author>杨铮</author>
+			<revision-time>2020-06-02</revision-time>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#107127 修复 资产管理-资产卡片,资产状态和资产存放地点同时检索,报错</description>
+			<author>冯大利</author>
+			<revision-time>2020-06-02</revision-time>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#103200 修复 移动端资产管理模块8080环境兼容问题，资产明细显示乱码</description>
+			<author>梅瑞鹏</author>
+			<revision-time>2020-05-23</revision-time>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#101855 新增 删除盘点明细表为空的数据</description>
+			<author>孙佳</author>
+			<revision-time>2020-04-26</revision-time>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#102247 修复 资产导入，选择人员部门全路径，人员无法导入</description>
+			<author>孙佳</author>
+			<revision-time>2020-04-21</revision-time>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#101833 修复 V15机器人节点应该类的资产卡片调拨，设置之后，回写资产卡片不生效</description>
+			<author>陈尉建</author>
+			<revision-time>2020-04-15</revision-time>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#99487 修复 资产管理，各模板申请后处于待审状态下，点击进入，默认显示传阅记录而不是流程处理，内容超出窗口导致传阅记录样式发生变化</description>
+			<author>陈尉建</author>
+			<revision-time>2020-04-11</revision-time>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#101170 修复 移动端，盘点任务、资产盘点列表详情页中，不应该显示所有申购，请开发更换文案</description>
+			<author>陈尉建</author>
+			<revision-time>2020-04-03</revision-time>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#100280 修复 移动端资产盘点中的缩略图不显示</description>
+			<author>陈尉建</author>
+			<revision-time>2020-03-27</revision-time>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#99731 优化 资产卡片类别的可使用者为空，则所有人可以使用此类别下的所有卡片，否则，只有类别可使用者使用</description>
+			<author>陈尉建</author>
+			<revision-time>2020-03-23</revision-time>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#97264 修复 后台配置中，资产管理模板（旧数据），主题预置规则为空，但是前端新建时，仍会自动生成规则</description>
+			<author>陈尉建</author>
+			<revision-time>2020-02-27</revision-time>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#94101 优化 进入模块，点击“后台配置”目录，请求的url需要显示在地址栏中</description>
+			<author>钟清学</author>
+			<revision-time>2020-02-15</revision-time>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#96008 修复 V15资产管理模块，二级页面不同类型的模板申请页面，显示的都是“资产申购单模板”</description>
+			<author>陈尉建</author>
+			<revision-time>2020-02-13</revision-time>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#95077 修复 各入口进去都有字段未翻译</description>
+			<author>陈尉建</author>
+			<revision-time>2020-02-12</revision-time>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#95967 修复 移动端多语言翻译异常导致我发起的、待我审的、我已审的二级列表页面异常</description>
+			<author>杨铮</author>
+			<revision-time>2020-02-12</revision-time>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#94413 优化 人事行政模块文档底部页签展现部署</description>
+			<author>陈尉建</author>
+			<revision-time>2020-02-10</revision-time>
+			<relation>
+				<relation-module>sys/ui</relation-module>
+			</relation>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#94988 修复 移动端，首页各选项未翻译</description>
+			<author>陈尉建</author>
+			<revision-time>2020-02-10</revision-time>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#91850 优化 已报废的资产，并且相关的流程都删掉了，但该资产卡片还是无法删除</description>
+			<author>孙佳</author>
+			<revision-time>2020-01-19</revision-time>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#91190 优化 移动端资产管理二级页面UI调整</description>
+			<author>杨铮</author>
+			<revision-time>2020-01-16</revision-time>
+			<relation>
+				<relation-module>sys/mobile</relation-module>
+			</relation>
+			<baseline>V15.0.3.R.20200117</baseline>
+		</modify>
+		<modify>
+			<description>#93794 修复 起草人申请盘点任务，任意删除几条资产盘点数据，提交，管理员驳回该流程，起草人编辑该文档，被删除数据行的变成空行</description>
+			<author>孙佳</author>
+			<revision-time>2020-01-15</revision-time>
+			<baseline>V15.0.3.R.20200117</baseline>
+		</modify>
+		<modify>
+			<description>#92170 修复 资产卡片生命周期多语言未翻译</description>
+			<author>陈尉建</author>
+			<revision-time>2020-01-01</revision-time>
+			<baseline>V15.0.3.R.20200117</baseline>
+		</modify>
+		<modify>
+			<description>#92794 修复 新建资产处置单，选择资产，输入资产编码时后方多输入了空格导致搜索不到信息</description>
+			<author>陈尉建</author>
+			<revision-time>2019-12-31</revision-time>
+			<baseline>V15.0.3.R.20200117</baseline>
+		</modify>
+		<modify>
+			<description>#92169 修复 资产出租单，借出开始时间和借出结束时间显示异常</description>
+			<author>陈尉建</author>
+			<revision-time>2019-12-24</revision-time>
+			<baseline>V15.0.3.R.20200117</baseline>
+		</modify>
+		<modify>
+			<description>#87414 优化 当没有资产申请模板的时候，资产申请单新建界面显示空白，没有任何提示，导致用户不知道怎么回事，建议加个提示信息</description>
+			<author>李飞</author>
+			<revision-time>2019-12-18</revision-time>
+			<baseline>V15.0.3.R.20200117</baseline>
+		</modify>
+		<modify>
+			<description>#87960 优化 移动性能体验</description>
+			<author>陈平山</author>
+			<revision-time>2019-12-09</revision-time>
+			<relation>
+				<relation-module>sys/mobile</relation-module>
+			</relation>
+			<baseline>V15.0.3.R.20200117</baseline>
+		</modify>
+		<modify>
+			<description>#90005 修复 V15资产管理资产卡片批量打印，卡片的二维码扫描，取的是head头，而不是调用的admin.do配置的DNS</description>
+			<author>李飞</author>
+			<revision-time>2019-12-05</revision-time>
+			<baseline>V15.0.3.R.20200117</baseline>
+		</modify>
+		<modify>
+			<description>#89608 修复 英语版本资产管理导入资产卡片问题</description>
+			<author>陈尉建</author>
+			<revision-time>2019-12-03</revision-time>
+			<baseline>V15.0.3.R.20200117</baseline>
+		</modify>
+		<modify>
+			<description>#89195 修复 入库单关联采购单时会出现报错</description>
+			<author>陈尉建</author>
+			<revision-time>2019-11-27</revision-time>
+			<baseline>V15.0.3.R.20200117</baseline>
+		</modify>
+		<modify>
+			<description>#88270 优化 资产管理模块入库时关联采购清单问题</description>
+			<author>陈尉建</author>
+			<revision-time>2019-11-15</revision-time>
+			<baseline>V15.0.3.R.20200117</baseline>
+		</modify>
+		<modify>
+			<description>#87930 修复 资产采购单，导入Excel，采购人可以为空但不能导入</description>
+			<author>陈尉建</author>
+			<revision-time>2019-11-12</revision-time>
+			<baseline>V15.0.3.R.20200117</baseline>
+		</modify>
+		<modify>
+			<description>#53359 新增 移动门户快捷方式选择系统引入的时候没有任何EKP模块</description>
+			<author>钟清学</author>
+			<revision-time>2019-11-11</revision-time>
+			<baseline>V15.0.3.R.20200117</baseline>
+		</modify>
+		<modify>
+			<description>#87159 修复 资产管理批量删除模板报错</description>
+			<author>陈尉建</author>
+			<revision-time>2019-11-04</revision-time>
+			<baseline>V15.0.2.R.20191108</baseline>
+		</modify>
+		<modify>
+			<description>#83564 新增 后台配置优化，ekp各模块后台配置调整</description>
+			<author>钟清学</author>
+			<revision-time>2019-10-21</revision-time>
+			<relation>
+				<relation-module>sys/ui</relation-module>
+			</relation>
+			<baseline>V15.0.2.R.20191108</baseline>
+		</modify>
+		<modify>
+			<description>#83966 修复【专项测试任务12】【资产管理】点击后台管理出现前台目录</description>
+			<author>钟清学</author>
+			<revision-time>2019-10-17</revision-time>
+			<baseline>V15.0.2.R.20191108</baseline>
+		</modify>
+		<modify>
+			<description>#83618 优化 右侧审批调整</description>
+			<author>王逍</author>
+			<revision-time>2019-10-16</revision-time>
+			<baseline>V15.0.2.R.20191108</baseline>
+		</modify>
+		<modify>
+			<description>#82449 修复 移动端进行资产盘点时，应该只能选资产盘点模板</description>
+			<author>陈尉建</author>
+			<revision-time>2019-09-29</revision-time>
+			<baseline>V15.0.2.R.20191108</baseline>
+		</modify>
+		<modify>
+			<description>#82450 修复 移动端查看资产盘点申请单时，不显示资产盘点明细</description>
+			<author>陈尉建</author>
+			<revision-time>2019-09-29</revision-time>
+			<baseline>V15.0.2.R.20191108</baseline>
+		</modify>
+		<modify>
+			<description>#82536 修复 普通用户无法删除资产卡片</description>
+			<author>陈尉建</author>
+			<revision-time>2019-09-23</revision-time>
+			<baseline>V15.0.2.R.20191108</baseline>
+		</modify>
+		<modify>
+			<description>#82444 修复 资产采购单查看个人名下资产列表，资产名称显示错误</description>
+			<author>陈尉建</author>
+			<revision-time>2019-09-23</revision-time>
+			<baseline>V15.0.2.R.20191108</baseline>
+		</modify>
+		<modify>
+			<description>#82332 修复 给了资产管理删除权限的普通用户，对资产卡片进行筛选后批量删除按钮消失</description>
+			<author>陈尉建</author>
+			<revision-time>2019-09-20</revision-time>
+			<baseline>V15.0.2.R.20191108</baseline>
+		</modify>
+		<modify>
+			<description>#80619 修复 资产管理模块引入政务版公文的相关代码</description>
+			<author>郑楷山</author>
+			<revision-time>2019-09-16</revision-time>
+			<baseline>V15.0.2.R.20191108</baseline>
+		</modify>
+		<modify>
+			<description>#80592 修复 摘要模式下盘点任务和盘点申请单显示不正确</description>
+			<author>陈尉建</author>
+			<revision-time>2019-09-05</revision-time>
+			<baseline>V15.0.1.R.20190906</baseline>
+		</modify>
+		<modify>
+			<description>#81243 修复 V15待发布流 后台配置--文档维护--资产卡片界面图文模式下显示异常</description>
+			<author>陈尉建</author>
+			<revision-time>2019-09-05</revision-time>
+			<baseline>V15.0.1.R.20190906</baseline>
+		</modify>
+		<modify>
+			<description>#80764 修复 资产管理（资产卡片）明细中的资产状态显示的是实际值而不是显示值</description>
+			<author>叶正平</author>
+			<revision-time>2019-09-03</revision-time>
+			<baseline>V15.0.1.R.20190906</baseline>
+		</modify>
+		<modify>
+			<description>#80716 修复 资产管理模块，每个申请单中的“说明”字段都无法填写</description>
+			<author>陈尉建</author>
+			<revision-time>2019-09-03</revision-time>
+			<baseline>V15.0.1.R.20190906</baseline>
+		</modify>
+		<modify>
+			<description>#80767 修复 资产管理自定义主题取不到变量“申请单编号”</description>
+			<author>陈尉建</author>
+			<revision-time>2019-09-03</revision-time>
+			<baseline>V15.0.1.R.20190906</baseline>
+		</modify>
+		<modify>
+			<description>#80806 修复 资产盘点，盘点任务的题头和预定义主题问题</description>
+			<author>陈尉建</author>
+			<revision-time>2019-08-30</revision-time>
+			<baseline>V15.0.1.R.20190906</baseline>
+		</modify>
+		<modify>
+			<description>#79493 优化 资产管理前端列表全选按钮优化</description>
+			<author>孙佳</author>
+			<revision-time>2019-08-27</revision-time>
+			<baseline>V15.0.1.R.20190906</baseline>
+		</modify>
+		<modify>
+			<description>#52420 修复 鼠标移入后，标题应显示主题色。覆盖该模块所有列表标题</description>
+			<author>孙佳</author>
+			<revision-time>2019-08-27</revision-time>
+			<baseline>V15.0.1.R.20190906</baseline>
+		</modify>
+		<modify>
+			<description>#80586 修复 资产卡片图文模式下显示错误</description>
+			<author>陈尉建</author>
+			<revision-time>2019-08-27</revision-time>
+			<baseline>V15.0.1.R.20190906</baseline>
+		</modify>
+		<modify>
+			<description>#78277 修复 资产领用申请单没有暂存状态的筛选</description>
+			<author>黄泽凯</author>
+			<revision-time>2019-07-29</revision-time>
+			<baseline>V15.0.1.R.20190906</baseline>
+		</modify>
+		<modify>
+			<description>#77446 修复 图文模式下，资产状态显示不正确</description>
+			<author>陈尉建</author>
+			<revision-time>2019-07-17</revision-time>
+			<baseline>V15.0.1.R.20190906</baseline>
+		</modify>
+		<modify>
+			<description>#77463 修复 盘点完成后，盘点任务移动端字段修改</description>
+			<author>陈尉建</author>
+			<revision-time>2019-07-17</revision-time>
+			<baseline>V15.0.1.R.20190906</baseline>
+		</modify>
+		<modify>
+			<description>#77146 修复 存放地点导入问题</description>
+			<author>陈尉建</author>
+			<revision-time>2019-07-11</revision-time>
+			<baseline>V15.0.0.R.20190712</baseline>
+		</modify>
+		<modify>
+			<description>#75556 新增 资产管理右侧审批部署</description>
+			<author>陈尉建</author>
+			<revision-time>2019-07-11</revision-time>
+			<relation>
+				<relation-module>sys/lbpmservice</relation-module>
+				<relation-module>sys/lbpmext</relation-module>
+				<relation-module>sys/ui</relation-module>
+				<relation-module>sys/attachment</relation-module>
+				<relation-module>sys/authorization</relation-module>
+				<relation-module>sys/relation</relation-module>
+			</relation>
+			<baseline>V15.0.0.R.20190712</baseline>
+		</modify>
+		<modify>
+			<description>#75394 修复 集团分级下，资产管理人员无打印按钮显示</description>
+			<author>陈尉建</author>
+			<revision-time>2019-07-11</revision-time>
+			<baseline>V15.0.0.R.20190712</baseline>
+		</modify>
+		<modify>
+			<description>#72722 新增 资产的所有申请部署传阅机制</description>
+			<author>孙佳</author>
+			<revision-time>2019-07-11</revision-time>
+			<baseline>V15.0.0.R.20190712</baseline>
+		</modify>
+		<modify>
+			<description>#70861 优化 工作交接明细列表添加按标题搜索功能</description>
+			<author>杨铮</author>
+			<revision-time>2019-07-06</revision-time>
+			<relation>
+				<relation-module>sys/handover</relation-module>
+			</relation>
+			<baseline>V15.0.0.R.20190712</baseline>
+		</modify>
+		<modify>
+			<description>#75174 修复 “我的资产”添加“报废”状态的筛选</description>
+			<author>陈尉建</author>
+			<revision-time>2019-06-28</revision-time>
+			<baseline>V15.0.0.R.20190712</baseline>
+		</modify>
+		<modify>
+			<description>#73281 修复 修改父资产后，子资产页面的父资产名称被清空，编号还在</description>
+			<author>陈尉建</author>
+			<revision-time>2019-05-21</revision-time>
+			<baseline>V15.0.0.R.20190712</baseline>
+		</modify>
+		<modify>
+			<description>#66989 修复 资产资源被占用提交时，优化为弹窗提示</description>
+			<author>陈尉建</author>
+			<revision-time>2019-04-25</revision-time>
+			<baseline>V15.0.0.R.20190712</baseline>
+		</modify>
+		<modify>
+			<description>#72011 修复 资产盘点时，盘点明细表中“存放地点”字段名称错误</description>
+			<author>陈尉建</author>
+			<revision-time>2019-04-23</revision-time>
+			<baseline>V15.0.0.R.20190712</baseline>
+		</modify>
+		<modify>
+			<description>#70663 修复 资产管理配置中存放地点分类的可使用者后，非可使用者依然可以在地点信息管理中看到此分类</description>
+			<author>陈尉建</author>
+			<revision-time>2019-04-22</revision-time>
+			<baseline>V15.0.0.R.20190712</baseline>
+		</modify>
+		<modify>
+			<description>#63443 优化 资产盘点新增批量盘点功能</description>
+			<author>陈尉建</author>
+			<revision-time>2019-04-22</revision-time>
+			<baseline>V15.0.0.R.20190712</baseline>
+		</modify>
+		<modify>
+			<description>#70668 优化 资产申购、采购、领用、归还等所有目录的分类筛选，优化为只展现自己类型的模板</description>
+			<author>陈尉建</author>
+			<revision-time>2019-04-16</revision-time>
+			<baseline>V15.0.0.R.20190712</baseline>
+		</modify>
+		<modify>
+			<description>#70850 修复 资产管理模块新建申购单后通过子流程创建采购单和入库单，入库单结束后未生成资产编号</description>
+			<author>陈尉建</author>
+			<revision-time>2019-04-16</revision-time>
+			<baseline>V15.0.0.R.20190712</baseline>
+		</modify>
+		<modify>
+			<description>#70500 修复 资产卡片导入，编号若有变量，导入的编号是已存在的，不会更新而是新增</description>
+			<author>陈尉建</author>
+			<revision-time>2019-04-11</revision-time>
+			<baseline>V15.0.0.B3.20190412</baseline>
+		</modify>
+		<modify>
+			<description>#69980 优化 资产管理页面翻译问题</description>
+			<author>陈尉建</author>
+			<revision-time>2019-04-11</revision-time>
+			<relation>
+				<relation-module>sys/ui</relation-module>
+			</relation>
+			<baseline>V15.0.0.B3.20190412</baseline>
+		</modify>
+		<modify>
+			<description>#65428 新增 部署事项（业务）工作交接，交接字段为“责任人”</description>
+			<author>潘永辉</author>
+			<revision-time>2019-04-09</revision-time>
+			<relation>
+				<relation-module>sys/handover</relation-module>
+			</relation>
+			<baseline>V15.0.0.B3.20190412</baseline>
+		</modify>
+		<modify>
+			<description>#67484 修复 领用单查看页面，资产名下，没显示名下资产</description>
+			<author>彭伟聪</author>
+			<revision-time>2019-02-12</revision-time>
+			<baseline>V15.0.0.B3.20190412</baseline>
+		</modify>
+		<modify>
+			<description>#58830 优化 个人名下资产查询调整为超链方式，点击弹窗进行详情查看</description>
+			<author>彭伟聪</author>
+			<revision-time>2019-01-28</revision-time>
+			<baseline>V15.0.0.B3.20190412</baseline>
+		</modify>
+		<modify>
+			<description>#66405 修复 资产卡片筛选没有“报废”状态</description>
+			<author>陈尉建</author>
+			<revision-time>2019-01-15</revision-time>
+			<baseline>V15.0.0.B2.20190118</baseline>
+		</modify>
+		<modify>
+			<description>#63679 优化 资产管理功能，资产卡片导出功能，手动勾选资产列表后，选择导出，但是导出的是全部数据，不是我所勾选那些数据</description>
+			<author>陈尉建</author>
+			<revision-time>2019-01-15</revision-time>
+			<baseline>V15.0.0.B2.20190118</baseline>
+		</modify>
+		<modify>
+			<description>修复 英文包中将系统日期显示格式由月/日/年 (MM/DD/YYYY)调整为 日/月/年 (DD/MM/YYYY)，资产出租单新建，日期计算有误</description>
+			<author>陈尉建</author>
+			<revision-time>2018-11-07</revision-time>
+			<baseline>V15.0.0.B1.20181109</baseline>
+		</modify>
+		<modify>
+			<description>修复 英文包中将系统日期显示格式由月/日/年 (MM/DD/YYYY)调整为 日/月/年 (DD/MM/YYYY)，资产采购单新建，默认的日期校验不通过</description>
+			<author>陈尉建</author>
+			<revision-time>2018-11-07</revision-time>
+			<baseline>V15.0.0.B1.20181109</baseline>
+		</modify>
+		<modify>
+			<description>修复 未盘点的资产单，放在未盘点的页签</description>
+			<author>安浩峰</author>
+			<revision-time>2018-10-25</revision-time>
+			<baseline>V15.0.0.B1.20181109</baseline>
+		</modify>
+		<modify>
+			<description>修复 分类引用富文本模式，保存后，没有保存到富文本的内容</description>
+			<author>安浩峰</author>
+			<revision-time>2018-10-23</revision-time>
+			<baseline>V15.0.0.B1.20181109</baseline>
+		</modify>
+		<modify>
+			<description>修复 资产分类表单引用方式-引用其他模板屏蔽掉</description>
+			<author>安浩峰</author>
+			<revision-time>2018-10-16</revision-time>
+			<baseline>V15.0.0.B1.20181109</baseline>
+		</modify>
+		<modify>
+			<description>优化 资产卡片与申请单的关联问题</description>
+			<author>安浩峰</author>
+			<revision-time>2018-10-16</revision-time>
+			<baseline>V15.0.0.B1.20181109</baseline>
+		</modify>
+		<modify>
+			<description>修复 资产管理模块移动审批下一步的文字引用有问题（优先级：高）</description>
+			<author>安浩峰</author>
+			<revision-time>2018-10-12</revision-time>
+			<baseline>V15.0.0.B1.20181109</baseline>
+		</modify>
+		<modify>
+			<description>修复【资产管理】资产类别设置中有定义默认权限（默认阅读者、默认编辑者、附件权限），新建资产卡片时会默认继承权限，但如果是通过入库单生成的资产卡片没有继承权限设置</description>
+			<author>安浩峰</author>
+			<revision-time>2018-10-12</revision-time>
+			<baseline>V15.0.0.B1.20181109</baseline>
+		</modify>
+		<modify>
+			<description>修复【资产管理】资产卡片中A设置所属父资产为B，查看B资产卡片附属配置内容为空</description>
+			<author>安浩峰</author>
+			<revision-time>2018-10-11</revision-time>
+			<baseline>V15.0.0.B1.20181109</baseline>
+		</modify>
+		<modify>
+			<description>修复 固定资产模板无法删除</description>
+			<author>孙佳</author>
+			<revision-time>2018-09-05</revision-time>
+			<baseline>V15.0.0.B1.20181109</baseline>
+		</modify>
+		<modify>
+			<description>修复 资产申请缺少按状态的查询，另筛选器中字体大小不一</description>
+			<author>彭伟聪</author>
+			<revision-time>2018-09-04</revision-time>
+			<baseline>V15.0.0.B1.20181109</baseline>
+		</modify>
+		<modify>
+			<description>修复 资产编码为手工编码，分类提交时提示“请设置默认的编号规则”</description>
+			<author>朱湖强</author>
+			<revision-time>2018-09-04</revision-time>
+			<baseline>V15.0.0.B1.20181109</baseline>
+		</modify>
+		<modify>
+			<description>修复 文档中的权限交接，交接总数和明细数部分不一致</description>
+			<author>潘永辉</author>
+			<revision-time>2018-08-14</revision-time>
+			<relation>
+				<relation-module>sys/handover</relation-module>
+			</relation>
+			<baseline>V15.0.0.B1.20181109</baseline>
+		</modify>
+		<modify>
+			<description>修复 资产管理，资产信息批量变更，从前台可以变更，但是从后台批量变更类别，不起作用</description>
+			<author>陈尉建</author>
+			<revision-time>2018-08-01</revision-time>
+			<baseline>V15.0.0.B1.20181109</baseline>
+		</modify>
+		<modify>
+			<description>修复 下载导入模板，Excel内容需优化</description>
+			<author>陈尉建</author>
+			<revision-time>2018-07-31</revision-time>
+			<baseline>V15.0.0.B1.20181109</baseline>
+		</modify>
+		<modify>
+			<description>修复 资产管理资产卡片最多只能导出5000条</description>
+			<author>陈尉建</author>
+			<revision-time>2018-07-31</revision-time>
+			<baseline>V15.0.0.B1.20181109</baseline>
+		</modify>
+		<modify>
+			<description>修复 多语言依赖模块变更</description>
+			<author>黄泽凯</author>
+			<revision-time>2018-07-20</revision-time>
+			<relation>
+				<relation-module>sys/mobile</relation-module>
+			</relation>
+			<baseline>V15.0.0.B1.20181109</baseline>
+		</modify>
+		<modify>
+			<description>修复 后台配置资产图片显示比例和前端页面不同</description>
+			<author>陈尉建</author>
+			<revision-time>2018-07-20</revision-time>
+			<baseline>V15.0.0.B1.20181109</baseline>
+		</modify>
+		<modify>
+			<description>修复 资产管理模板删除时，如果有关联数据，则给出提示，而不是一直在加载</description>
+			<author>陈经纬</author>
+			<revision-time>2018-07-18</revision-time>
+			<baseline>V15.0.0.B1.20181109</baseline>
+		</modify>
+		<modify>
+			<description>新增 资产管理的扩展字段选择富文本形式，弹出框无数据</description>
+			<author>陈经纬</author>
+			<revision-time>2018-07-10</revision-time>
+			<baseline>V15.0.0.B1.20181109</baseline>
+		</modify>
+		<modify>
+			<description>修复 点击我的资产，实际上看到的是所有资产，非我名下的资产</description>
+			<author>陈尉建</author>
+			<revision-time>2018-07-04</revision-time>
+			<baseline>V14.0.1.R.20180706</baseline>
+		</modify>
+		<modify>
+			<description>修复 资产盘点，资产类别选择大类，查询不到资产，选择小类才可以</description>
+			<author>陈经纬</author>
+			<revision-time>2018-06-29</revision-time>
+			<baseline>V14.0.1.R.20180706</baseline>
+		</modify>
+		<modify>
+			<description>修复 批量修改资产卡片，当选到列表下最后一个数据是，修改不成功</description>
+			<author>陈经纬</author>
+			<revision-time>2018-06-22</revision-time>
+			<baseline>V14.0.1.R.20180706</baseline>
+		</modify>
+		<modify>
+			<description>修复 后台文档维护导出报错</description>
+			<author>陈经纬</author>
+			<revision-time>2018-06-21</revision-time>
+			<baseline>V14.0.1.R.20180706</baseline>
+		</modify>
+		<modify>
+			<description>修复 移动端资产盘点页面，左侧未对齐</description>
+			<author>陈经纬</author>
+			<revision-time>2018-06-21</revision-time>
+			<baseline>V14.0.1.R.20180706</baseline>
+		</modify>
+		<modify>
+			<description>修复 资产盘点列表，自定义字段没按照后台设置显示</description>
+			<author>陈经纬</author>
+			<revision-time>2018-05-31</revision-time>
+			<baseline>V14.0.1.R.20180706</baseline>
+		</modify>
+		<modify>
+			<description>修复 摘要视图导出无数据</description>
+			<author>陈经纬</author>
+			<revision-time>2018-05-31</revision-time>
+			<baseline>V14.0.1.R.20180706</baseline>
+		</modify>
+		<modify>
+			<description>导出 有导出权限，导出时提示没权限</description>
+			<author>陈经纬</author>
+			<revision-time>2018-05-14</revision-time>
+			<baseline>V14.0.1.R.20180706</baseline>
+		</modify>
+		<modify>
+			<description>修复 资产申购列表批量删除和批量修改权限按钮缺失</description>
+			<author>陈经纬</author>
+			<revision-time>2018-05-14</revision-time>
+			<baseline>V14.0.1.R.20180706</baseline>
+		</modify>
+		<modify>
+			<description>修复 采购单发起之后，列表没数据</description>
+			<author>陈经纬</author>
+			<revision-time>2018-05-14</revision-time>
+			<baseline>V14.0.1.R.20180706</baseline>
+		</modify>
+		<modify>
+			<description>优化 盘点任务新建页面，未翻译</description>
+			<author>陈经纬</author>
+			<revision-time>2018-05-14</revision-time>
+			<baseline>V14.0.1.R.20180706</baseline>
+		</modify>
+		<modify>
+			<description>修复 左边目录和右边标签未翻译，后台自定义字段未翻译</description>
+			<author>陈经纬</author>
+			<revision-time>2018-04-27</revision-time>
+			<baseline>V14.0.1.R.20180706</baseline>
+		</modify>
+		<modify>
+			<description>修复【资产管理】PC端二级页面改造</description>
+			<author>陈经纬</author>
+			<revision-time>2018-04-11</revision-time>
+			<baseline>V14.0.0.R.20180413</baseline>
+		</modify>
+		<modify>
+			<description>优化 新建盘点任务优化</description>
+			<author>陈经纬</author>
+			<revision-time>2018-01-30</revision-time>
+			<baseline>V14.0.0.R.20180413</baseline>
+		</modify>
+		<modify>
+			<description>优化 新建资产入库单，关联采购单选择页面，新增搜索功能</description>
+			<author>陈尉建</author>
+			<revision-time>2018-01-27</revision-time>
+			<baseline>V14.0.0.R.20180413</baseline>
+		</modify>
+		<modify>
+			<description>修复 资产申请单，当编辑主文档过后，申请单编号，就会改变一次</description>
+			<author>孙佳</author>
+			<revision-time>2018-01-25</revision-time>
+			<baseline>V14.0.0.R.20180413</baseline>
+		</modify>
+		<modify>
+			<description>修复 firefox、chrome浏览器下流程机器人节点，应用模块类-资产管理-变更资产卡片显示有误</description>
+			<author>孙佳</author>
+			<revision-time>2018-01-18</revision-time>
+			<baseline>V14.0.0.R.20180413</baseline>
+		</modify>
+		<modify>
+			<description>优化 新建资产任务时，加个操作，可删掉不想盘点的资产，可参考资产领用单模板新建页面</description>
+			<author>吴志斌</author>
+			<revision-time>2018-01-18</revision-time>
+			<baseline>V14.0.0.R.20180413</baseline>
+		</modify>
+		<modify>
+			<description>优化 后端页面优化为新UI</description>
+			<author>吴志斌</author>
+			<revision-time>2018-01-17</revision-time>
+			<baseline>V14.0.0.R.20180413</baseline>
+		</modify>
+		<modify>
+			<description>修复 流程管理、公文政务版、会议管理、调查管理、资产管理新增模板停用开关。</description>
+			<author>吴志斌</author>
+			<revision-time>2018-01-11</revision-time>
+			<baseline>V14.0.0.B2.20180112</baseline>
+		</modify>
+		<modify>
+			<description>新增 模板停用开关</description>
+			<author>胡耀华</author>
+			<revision-time>2018-01-11</revision-time>
+			<baseline>V14.0.0.B2.20180112</baseline>
+		</modify>
+		<modify>
+			<description>新增 各个模块的文档维护界面新增筛选器，并且使用新UI</description>
+			<author>张成才</author>
+			<revision-time>2018-01-11</revision-time>
+			<baseline>V14.0.0.B2.20180112</baseline>
+		</modify>
+		<modify>
+			<description>优化 盘点任务新建盘亏单，盘亏单子新建之后，删除盘点任务，提示语需优化</description>
+			<author>吴志斌</author>
+			<revision-time>2018-01-11</revision-time>
+			<baseline>V14.0.0.B2.20180112</baseline>
+		</modify>
+		<modify>
+			<description>新增 将表单数据 导出成HTML文件或WORD文件、PDF文件、图片快照等格式附件，作为备案存档</description>
+			<author>郑超</author>
+			<revision-time>2018-01-09</revision-time>
+			<relation>
+				<relation-module>core</relation-module>
+				<relation-module>sys/ui</relation-module>
+			</relation>
+			<baseline>V14.0.0.B2.20180112</baseline>
+		</modify>
+		<modify>
+			<description>新增 资产管理模块新增盘点功能</description>
+			<author>吴志斌</author>
+			<revision-time>2018-01-08</revision-time>
+			<baseline>V14.0.0.B2.20180112</baseline>
+		</modify>
+		<modify>
+			<description>修复 资产提交维修申请，资产状态没有变为维修状态</description>
+			<author>孙佳</author>
+			<revision-time>2017-12-12</revision-time>
+			<baseline>V14.0.0.B2.20180112</baseline>
+		</modify>
+		<modify>
+			<description>修复 新建资产领用单时，删除明细表的资产，其他的资产序号保持不变</description>
+			<author>孙佳</author>
+			<revision-time>2017-12-12</revision-time>
+			<baseline>V14.0.0.B2.20180112</baseline>
+		</modify>
+		<modify>
+			<description>修复 表单多浏览器提交重复提示保存版本</description>
+			<author>朱湖强</author>
+			<revision-time>2017-11-20</revision-time>
+			<relation>
+				<relation-module>sys/xform</relation-module>
+			</relation>
+			<baseline>V14.0.0.B2.20180112</baseline>
+		</modify>
+		<modify>
+			<description>优化 后台模板支持快速新建操作</description>
+			<author>朱湖强</author>
+			<revision-time>2017-10-17</revision-time>
+			<baseline>V14.0.0.B1.20171110</baseline>
+		</modify>
+		<modify>
+			<description>修复 入库单添加明细再删除后无法再添加问题</description>
+			<author>朱湖强</author>
+			<revision-time>2017-10-11</revision-time>
+			<baseline>V14.0.0.B1.20171110</baseline>
+		</modify>
+		<modify>
+			<description>修复 资产入库单删除明细后序号显示不正确问题</description>
+			<author>朱湖强</author>
+			<revision-time>2017-10-11</revision-time>
+			<baseline>V14.0.0.B1.20171110</baseline>
+		</modify>
+		<modify>
+			<description>修复 “个人名下资产”默认显示申请人名下的资产</description>
+			<author>朱湖强</author>
+			<revision-time>2017-09-22</revision-time>
+			<baseline>V14.0.0.B1.20171110</baseline>
+		</modify>
+		<modify>
+			<description>新增 类别模板设置多语言支持</description>
+			<author>黄伟强</author>
+			<revision-time>2017-09-09</revision-time>
+			<relation>
+				<relation-module>core</relation-module>
+			</relation>
+			<baseline>V13.5.0.R.20170915</baseline>
+		</modify>
+		<modify>
+			<description>优化 资产导入新增币种和供应商列</description>
+			<author>郑超</author>
+			<revision-time>2017-09-08</revision-time>
+			<baseline>V13.5.0.R.20170915</baseline>
+		</modify>
+		<modify>
+			<description>修复 资产打印二维码右侧没有显示资产名称</description>
+			<author>郑超</author>
+			<revision-time>2017-08-25</revision-time>
+			<baseline>V13.5.0.R.20170915</baseline>
+		</modify>
+		<modify>
+			<description>优化 二维码打印出来后，kk扫描，进不了资产的查看页面</description>
+			<author>郑超</author>
+			<revision-time>2017-08-25</revision-time>
+			<baseline>V13.5.0.R.20170915</baseline>
+		</modify>
+		<modify>
+			<description>修复 打印参数以post表单方式提交，防止URL过长</description>
+			<author>郑超</author>
+			<revision-time>2017-08-25</revision-time>
+			<baseline>V13.5.0.R.20170915</baseline>
+		</modify>
+		<modify>
+			<description>修复 打印卡片间距调整</description>
+			<author>郑超</author>
+			<revision-time>2017-08-25</revision-time>
+			<baseline>V13.5.0.R.20170915</baseline>
+		</modify>
+		<modify>
+			<description>移除 移动端资产页签配置</description>
+			<author>朱湖强</author>
+			<revision-time>2017-08-23</revision-time>
+			<baseline>V13.5.0.R.20170915</baseline>
+		</modify>
+		<modify>
+			<description>优化 部门字段支持显示层级结构，可以由系统提供统一接口（显示末级或显示层级，显示最近的几级）</description>
+			<author>潘永辉</author>
+			<revision-time>2017-08-19</revision-time>
+			<relation>
+				<relation-module>sys/organization</relation-module>
+			</relation>
+			<baseline>V13.5.0.R.20170915</baseline>
+		</modify>
+		<modify>
+			<description>修复 资产管理-资产卡片中当生命周期记录太多（一般超过17条记录）查看资产的生命周期报错</description>
+			<author>张佳奇</author>
+			<revision-time>2017-07-27</revision-time>
+			<baseline>V13.5.0.R.20170915</baseline>
+		</modify>
+		<modify>
+			<description>修复 搜索无效责任人的资产会将所有资产搜出问题</description>
+			<author>朱湖强</author>
+			<revision-time>2017-07-05</revision-time>
+			<baseline>V13.5.0.B2.20170707</baseline>
+		</modify>
+		<modify>
+			<description>优化 流程机器人节点和事件增加使用说明</description>
+			<author>林彬彬</author>
+			<revision-time>2017-06-20</revision-time>
+			<baseline>V13.5.0.B2.20170707</baseline>
+		</modify>
+		<modify>
+			<description>优化 资产卡片查询，存放地点支持多选</description>
+			<author>朱湖强</author>
+			<revision-time>2017-05-18</revision-time>
+			<baseline>V13.5.0.B2.20170707</baseline>
+		</modify>
+		<modify>
+			<description>修复 资产卡片批量修改，修改资产状态不生效</description>
+			<author>张建忠</author>
+			<revision-time>2017-04-28</revision-time>
+			<baseline>V13.5.0.B1.20170512</baseline>
+		</modify>
+		<modify>
+			<description>优化 资产管理左侧导航增加选中效果</description>
+			<author>张建忠</author>
+			<revision-time>2017-04-25</revision-time>
+			<relation>
+				<relation-module>sys/ui</relation-module>
+			</relation>
+			<baseline>V13.5.0.B1.20170512</baseline>
+		</modify>
+		<modify>
+			<description>修复 编号机制访问权限泄漏问题</description>
+			<author>林秀贤</author>
+			<revision-time>2017-03-08</revision-time>
+			<relation>
+				<relation-module>sys/number</relation-module>
+			</relation>
+			<baseline>V13.0.0.R.20170310</baseline>
+		</modify>
+		<modify>
+			<description>修复 应用中心下进入各个业务模块，中间帧的字体可随主题包样式</description>
+			<author>陈经纬</author>
+			<revision-time>2017-03-08</revision-time>
+			<baseline>V13.0.0.R.20170310</baseline>
+		</modify>
+		<modify>
+			<description>优化 删除无意义的新建资产领用单-选择资产-资产类别分级</description>
+			<author>张佳奇</author>
+			<revision-time>2017-03-08</revision-time>
+			<baseline>V13.0.0.R.20170310</baseline>
+		</modify>
+		<modify>
+			<description>优化 新建资产领用单-选择框-搜索条件伸缩，改为鼠标单击实现伸缩</description>
+			<author>张佳奇</author>
+			<revision-time>2017-03-08</revision-time>
+			<baseline>V13.0.0.R.20170310</baseline>
+		</modify>
+		<modify>
+			<description>优化 【冰红主题】资产管理-资产申请-批量修改权限，保存、关闭按钮修改颜色并位置下移，参考办公用品的批量修改权限</description>
+			<author>张佳奇</author>
+			<revision-time>2017-03-06</revision-time>
+			<baseline>V13.0.0.R.20170310</baseline>
+		</modify>
+		<modify>
+			<description>优化 新建和查看申请单时，默认带出申请人名下的资产</description>
+			<author>朱湖强</author>
+			<revision-time>2017-02-14</revision-time>
+			<baseline>V13.0.0.R.20170310</baseline>
+		</modify>
+		<modify>
+			<description>优化 增加关联控件的关联模块扩展点</description>
+			<author>朱国荣</author>
+			<revision-time>2017-01-20</revision-time>
+			<baseline>V13.0.0.R.20170310</baseline>
+		</modify>
+		<modify>
+			<description>修复 组织机构代码中文资源标签含有制表符引起编号公式变量出错</description>
+			<author>林秀贤</author>
+			<revision-time>2016-12-21</revision-time>
+			<baseline>V13.0.0.B3.20161230</baseline>
+		</modify>
+		<modify>
+			<description>新增 资产管理文档权限的工作交接</description>
+			<author>陈晓文</author>
+			<revision-time>2016-12-16</revision-time>
+			<relation>
+				<relation-module>sys/handover</relation-module>
+			</relation>
+			<baseline>V13.0.0.B3.20161230</baseline>
+		</modify>
+		<modify>
+			<description>修复 筛选器选中“我的资产”，导出不正确问题</description>
+			<author>朱湖强</author>
+			<revision-time>2016-12-16</revision-time>
+			<baseline>V13.0.0.B3.20161230</baseline>
+		</modify>
+		<modify>
+			<description>修复 表单的关联控件，选择资产管理模块的分类，报错</description>
+			<author>朱国荣</author>
+			<revision-time>2016-12-08</revision-time>
+			<baseline>V13.0.0.B3.20161230</baseline>
+		</modify>
+		<modify>
+			<description>修复 钉一下配置修改</description>
+			<author>周梓凡</author>
+			<revision-time>2016-11-21</revision-time>
+			<relation>
+				<relation-module>third/ding</relation-module>
+				<relation-module>sys/profile</relation-module>
+			</relation>
+			<baseline>V13.0.0.B3.20161230</baseline>
+		</modify>
+		<modify>
+			<description>优化 移动端多语言支持</description>
+			<author>朱湖强</author>
+			<revision-time>2016-11-18</revision-time>
+			<baseline>V13.0.0.B3.20161230</baseline>
+		</modify>
+		<modify>
+			<description>优化 资产导入时，责任人过滤无效人员</description>
+			<author>朱湖强</author>
+			<revision-time>2016-11-08</revision-time>
+			<baseline>V13.0.0.B3.20161230</baseline>
+		</modify>
+		<modify>
+			<description>优化 资产管理的关联配置中添加关联项</description>
+			<author>崔文坚</author>
+			<revision-time>2016-10-27</revision-time>
+			<baseline>V13.0.0.B3.20161230</baseline>
+		</modify>
+		<modify>
+			<description>修复 list列表页操作栏中的“删除”按钮调整命名为“批量删除”</description>
+			<author>潘永辉</author>
+			<revision-time>2016-10-20</revision-time>
+			<baseline>V13.0.0.B3.20161230</baseline>
+		</modify>
+		<modify>
+			<description>优化 后台配置中心由“后台管理”角色控制</description>
+			<author>朱湖强</author>
+			<revision-time>2016-10-17</revision-time>
+			<baseline>V13.0.0.B3.20161230</baseline>
+		</modify>
+		<modify>
+			<description>修复 资产启动子流程报错问题</description>
+			<author>朱湖强</author>
+			<revision-time>2016-06-20</revision-time>
+			<baseline>V13.0.0.B2.20160930</baseline>
+		</modify>
+		<modify>
+			<description>优化 移动端列表图像加载显示性能优化</description>
+			<author>林秀贤</author>
+			<revision-time>2016-06-14</revision-time>
+			<baseline>V13.0.0.B2.20160930</baseline>
+		</modify>
+		<modify>
+			<description>优化 移动端头像大小性能优化</description>
+			<author>林秀贤</author>
+			<revision-time>2016-06-14</revision-time>
+			<baseline>V13.0.0.B2.20160930</baseline>
+		</modify>
+		<modify>
+			<description>修复 资产归还后，责任人和责任部门没清空问题</description>
+			<author>朱湖强</author>
+			<revision-time>2016-06-13</revision-time>
+			<baseline>V13.0.0.B2.20160930</baseline>
+		</modify>
+		<modify>
+			<description>新增 资产申请单打印</description>
+			<author>朱湖强</author>
+			<revision-time>2016-06-13</revision-time>
+			<baseline>V13.0.0.B2.20160930</baseline>
+		</modify>
+		<modify>
+			<description>修复 资产导入时，勾选“更新原有数据”选项，提示资产编码重复问题</description>
+			<author>朱湖强</author>
+			<revision-time>2016-05-04</revision-time>
+			<baseline>V13.0.0.B2.20160930</baseline>
+		</modify>
+		<modify>
+			<description>修复 资产卡片新建和查看时fdId不一致以及优化资产卡片编码重复校验样式</description>
+			<author>朱湖强</author>
+			<revision-time>2016-04-26</revision-time>
+			<baseline>V13.0.0.B1.20160429</baseline>
+		</modify>
+		<modify>
+			<description>优化 隐藏资产分类拓展字段中除表单模式以外其他的两种模式</description>
+			<author>朱湖强</author>
+			<revision-time>2016-03-09</revision-time>
+			<baseline>V12.0.9.R.20160325</baseline>
+		</modify>
+		<modify>
+			<description>修复 重新编辑申请单，添加明细后序号显示不正确问题</description>
+			<author>朱湖强</author>
+			<revision-time>2016-03-07</revision-time>
+			<baseline>V12.0.9.R.20160325</baseline>
+		</modify>
+		<modify>
+			<description>修复 重新编辑申请单，添加明细后序号显示不正确问题</description>
+			<author>朱湖强</author>
+			<revision-time>2016-03-04</revision-time>
+			<baseline>V12.0.9.R.20160325</baseline>
+		</modify>
+		<modify>
+			<description>优化 批量修改权限由模块角色控制，如果模块没配置则由全局分类的“类别维护人员角色”控制</description>
+			<author>  朱湖强</author>
+			<revision-time>2016-03-04</revision-time>
+			<relation>
+				<relation-module>sys/category</relation-module>
+				<relation-module>sys/right</relation-module>
+			</relation>
+			<baseline>V12.0.9.R.20160325</baseline>
+		</modify>
+		<modify>
+			<description>优化 入库单中，关联采购单明显点击体验</description>
+			<author>朱湖强</author>
+			<revision-time>2016-02-26</revision-time>
+			<baseline>V12.0.9.R.20160325</baseline>
+		</modify>
+		<modify>
+			<description>修复 新建入库单，关联采购单序号不显示问题</description>
+			<author>朱湖强</author>
+			<revision-time>2016-02-24</revision-time>
+			<baseline>V12.0.9.R.20160325</baseline>
+		</modify>
+		<modify>
+			<description>优化 地点信息选择页面</description>
+			<author>朱湖强</author>
+			<revision-time>2016-02-24</revision-time>
+			<baseline>V12.0.9.R.20160325</baseline>
+		</modify>
+		<modify>
+			<description>修复 资产新建页面，不选择父资产，点击确定报js错误</description>
+			<author>朱湖强</author>
+			<revision-time>2016-02-24</revision-time>
+			<baseline>V12.0.9.R.20160325</baseline>
+		</modify>
+		<modify>
+			<description>移除 资产申购单中 规格型号、单位的必填校验</description>
+			<author>陈晓文</author>
+			<revision-time>2016-02-17</revision-time>
+			<baseline>V12.0.9.R.20160325</baseline>
+		</modify>
+		<modify>
+			<description>修复 新建调拨单和领用单中，批量修改责任人和部门问题</description>
+			<author>朱湖强</author>
+			<revision-time>2016-02-01</revision-time>
+			<baseline>V12.0.9.R.20160325</baseline>
+		</modify>
+		<modify>
+			<description>优化 资产删除有外键约束时的提示信息</description>
+			<author>朱湖强</author>
+			<revision-time>2016-01-22</revision-time>
+			<baseline>V12.0.9.R.20160325</baseline>
+		</modify>
+		<modify>
+			<description>修复 资产卡片部分内容中，特殊字符被转义了</description>
+			<author>陈晓文</author>
+			<revision-time>2016-01-18</revision-time>
+			<baseline>V12.0.9.R.20160325</baseline>
+		</modify>
+		<modify>
+			<description>优化 资产编码方式为“自动”编码时，卡片导入忽略编码字段</description>
+			<author>朱湖强</author>
+			<revision-time>2016-01-07</revision-time>
+			<baseline>V12.0.8.R.20160114</baseline>
+		</modify>
+		<modify>
+			<description>修复 申购单明细填写过多内容后换行显示问题</description>
+			<author>朱湖强</author>
+			<revision-time>2016-01-06</revision-time>
+			<baseline>V12.0.8.R.20160114</baseline>
+		</modify>
+		<modify>
+			<description>修复 模板“起草人不可修改xxx”设置项不起作用</description>
+			<author>朱湖强</author>
+			<revision-time>2016-01-06</revision-time>
+			<baseline>V12.0.8.R.20160114</baseline>
+		</modify>
+		<modify>
+			<description>修复 ie11下，批量修改卡片信息页面去掉勾选项后提示信息不消失问题</description>
+			<author>朱湖强</author>
+			<revision-time>2015-12-10</revision-time>
+			<baseline>V12.0.8.R.20160114</baseline>
+		</modify>
+		<modify>
+			<description>新增 在流程审批页面增加钉的图标，点击“钉”，可直接打开钉的页面</description>
+			<author>朱湖强</author>
+			<revision-time>2015-12-03</revision-time>
+			<relation>
+				<relation-module>third/ding</relation-module>
+			</relation>
+			<baseline>V12.0.8.R.20160114</baseline>
+		</modify>
+		<modify>
+			<description>修复 资产管理资产申购单申请中单价与数量允许输入负数</description>
+			<author>陈晓文</author>
+			<revision-time>2015-12-02</revision-time>
+			<baseline>V12.0.7.R.20151203</baseline>
+		</modify>
+		<modify>
+			<description>优化 资产管理模块主页左侧导航栏，点击所有申请和所有资产卡片会整个页面刷新而不是局部刷新</description>
+			<author>陈晓文</author>
+			<revision-time>2015-11-30</revision-time>
+			<baseline>V12.0.7.R.20151203</baseline>
+		</modify>
+		<modify>
+			<description>修复 资产管理存放地点类别排序号，不是整数未提示，同时如果不是整数，则保存为0</description>
+			<author>陈晓文</author>
+			<revision-time>2015-11-30</revision-time>
+			<relation>
+				<relation-module>sys/simplecategory</relation-module>
+			</relation>
+			<baseline>V12.0.7.R.20151203</baseline>
+		</modify>
+		<modify>
+			<description>优化 资产卡片查看页面附属配置显示</description>
+			<author>朱湖强</author>
+			<revision-time>2015-11-20</revision-time>
+			<baseline>V12.0.7.R.20151203</baseline>
+		</modify>
+		<modify>
+			<description>优化 资产卡片支持修改分类</description>
+			<author>朱湖强</author>
+			<revision-time>2015-11-20</revision-time>
+			<baseline>V12.0.7.R.20151203</baseline>
+		</modify>
+		<modify>
+			<description>修复 资产处置单查看页面和编辑页面html注入问题</description>
+			<author>陈晓文</author>
+			<revision-time>2015-11-06</revision-time>
+			<baseline>V12.0.7.R.20151203</baseline>
+		</modify>
+		<modify>
+			<description>修复 资产领用单编辑页面，资产编码等被html注入</description>
+			<author>陈晓文</author>
+			<revision-time>2015-11-06</revision-time>
+			<baseline>V12.0.7.R.20151203</baseline>
+		</modify>
+		<modify>
+			<description>新增 资产类别支持加入常用分类</description>
+			<author>陈晓文</author>
+			<revision-time>2015-11-03</revision-time>
+			<baseline>V12.0.6.R.20151106</baseline>
+		</modify>
+		<modify>
+			<description>修复 资产申购单页面，题头、资产名称、规格型号、单位被html注入</description>
+			<author>陈晓文</author>
+			<revision-time>2015-11-03</revision-time>
+			<baseline>V12.0.6.R.20151106</baseline>
+		</modify>
+		<modify>
+			<description>修复 地点类别权限问题</description>
+			<author>朱湖强</author>
+			<revision-time>2015-10-28</revision-time>
+			<baseline>V12.0.6.R.20151106</baseline>
+		</modify>
+		<modify>
+			<description>优化 新建资产入库单页面，点击搜索，弹出的资产窗口，未选择资产点击“确定“，给予提示信息</description>
+			<author>陈晓文</author>
+			<revision-time>2015-10-26</revision-time>
+			<baseline>V12.0.6.R.20151106</baseline>
+		</modify>
+		<modify>
+			<description>新增 资产新建快捷方式</description>
+			<author>朱湖强</author>
+			<revision-time>2015-10-26</revision-time>
+			<baseline>V12.0.6.R.20151106</baseline>
+		</modify>
+		<modify>
+			<description>移除 pc端资产原值和资产计量单位的必填校验</description>
+			<author>陈晓文</author>
+			<revision-time>2015-10-26</revision-time>
+			<baseline>V12.0.6.R.20151106</baseline>
+		</modify>
+		<modify>
+			<description>优化 后台配置-地点信息管理下选择对应的分类后，新建地点信息时所属分类值没有带过来</description>
+			<author>陈晓文</author>
+			<revision-time>2015-10-26</revision-time>
+			<baseline>V12.0.6.R.20151106</baseline>
+		</modify>
+		<modify>
+			<description>优化 明细表标题头显示问题</description>
+			<author>朱湖强</author>
+			<revision-time>2015-10-26</revision-time>
+			<baseline>V12.0.6.R.20151106</baseline>
+		</modify>
+		<modify>
+			<description>优化 出租出借单查看页面时间只显示日期</description>
+			<author>朱湖强</author>
+			<revision-time>2015-10-26</revision-time>
+			<baseline>V12.0.6.R.20151106</baseline>
+		</modify>
+		<modify>
+			<description>优化 维修单查看页面类别显示全路径</description>
+			<author>朱湖强</author>
+			<revision-time>2015-10-26</revision-time>
+			<baseline>V12.0.6.R.20151106</baseline>
+		</modify>
+		<modify>
+			<description>优化 移除新建地点页面多出的空白行</description>
+			<author>陈晓文</author>
+			<revision-time>2015-10-26</revision-time>
+			<baseline>V12.0.6.R.20151106</baseline>
+		</modify>
+		<modify>
+			<description>优化 新建入库单时，搜索采购单无数据时不显示按钮</description>
+			<author>朱湖强</author>
+			<revision-time>2015-10-26</revision-time>
+			<baseline>V12.0.6.R.20151106</baseline>
+		</modify>
+		<modify>
+			<description>修复 html注入问题</description>
+			<author>朱湖强</author>
+			<revision-time>2015-10-26</revision-time>
+			<baseline>V12.0.6.R.20151106</baseline>
+		</modify>
+		<modify>
+			<description>优化 移除资产类别权限页签下的权限生效时间</description>
+			<author>朱湖强</author>
+			<revision-time>2015-10-26</revision-time>
+			<baseline>V12.0.6.R.20151106</baseline>
+		</modify>
+		<modify>
+			<description>修复 图文列表切换问题</description>
+			<author>朱湖强</author>
+			<revision-time>2015-10-26</revision-time>
+			<baseline>V12.0.6.R.20151106</baseline>
+		</modify>
+		<modify>
+			<description>修复 资产卡片图文视图下删除报错</description>
+			<author>朱湖强</author>
+			<revision-time>2015-10-26</revision-time>
+			<baseline>V12.0.6.R.20151106</baseline>
+		</modify>
+		<modify>
+			<description>优化 资产使用部门，责任人，采购人支持层级导入</description>
+			<author>朱湖强</author>
+			<revision-time>2015-10-26</revision-time>
+			<baseline>V12.0.6.R.20151106</baseline>
+		</modify>
+		<modify>
+			<description>优化 多行文本框显示</description>
+			<author>朱湖强</author>
+			<revision-time>2015-10-22</revision-time>
+			<baseline>V12.0.6.R.20151106</baseline>
+		</modify>
+		<modify>
+			<description>修复 英文环境下采购单时间显示问题</description>
+			<author>朱湖强</author>
+			<revision-time>2015-08-28</revision-time>
+			<baseline>V12.0.5.R.20150911</baseline>
+		</modify>
+		<modify>
+			<description>优化 申购数量为整数</description>
+			<author>朱湖强</author>
+			<revision-time>2015-08-28</revision-time>
+			<baseline>V12.0.5.R.20150911</baseline>
+		</modify>
+		<modify>
+			<description>修复 后台文档维护选择模板节点无法新建问题</description>
+			<author>朱湖强</author>
+			<revision-time>2015-08-28</revision-time>
+			<baseline>V12.0.5.R.20150911</baseline>
+		</modify>
+		<modify>
+			<description>优化 资产新增图文视图</description>
+			<author>朱湖强</author>
+			<revision-time>2015-08-24</revision-time>
+			<baseline>V12.0.5.R.20150911</baseline>
+		</modify>
+		<modify>
+			<description>修复 批量修改卡片信息时，选择数据过多修改不成功问题</description>
+			<author>朱湖强</author>
+			<revision-time>2015-08-24</revision-time>
+			<baseline>V12.0.5.R.20150911</baseline>
+		</modify>
+		<modify>
+			<description>优化 资产卡片“计量单位”必填</description>
+			<author>朱湖强</author>
+			<revision-time>2015-08-24</revision-time>
+			<baseline>V12.0.5.R.20150911</baseline>
+		</modify>
+		<modify>
+			<description>修复 非ie下，后台文档维护中新建问题</description>
+			<author>朱湖强</author>
+			<revision-time>2015-08-24</revision-time>
+			<baseline>V12.0.5.R.20150911</baseline>
+		</modify>
+		<modify>
+			<description>修复 非ie下，后台文档维护，点击搜索申请没反应</description>
+			<author>朱湖强</author>
+			<revision-time>2015-08-24</revision-time>
+			<baseline>V12.0.5.R.20150911</baseline>
+		</modify>
+		<modify>
+			<description>优化 资产维修单时间检验问题</description>
+			<author>朱湖强</author>
+			<revision-time>2015-08-13</revision-time>
+			<baseline>V12.0.5.R.20150911</baseline>
+		</modify>
+		<modify>
+			<description>优化 去除导航栏所有分类</description>
+			<author>朱湖强</author>
+			<revision-time>2015-08-12</revision-time>
+			<baseline>V12.0.5.R.20150911</baseline>
+		</modify>
+		<modify>
+			<description>优化 "批量修改卡片信息"不为空提示信息</description>
+			<author>朱湖强</author>
+			<revision-time>2015-08-11</revision-time>
+			<baseline>V12.0.5.R.20150911</baseline>
+		</modify>
+		<modify>
+			<description>修复 资产变更单审批通过后，资产状态被修改为闲置</description>
+			<author>朱湖强</author>
+			<revision-time>2015-08-11</revision-time>
+			<baseline>V12.0.5.R.20150911</baseline>
+		</modify>
+		<modify>
+			<description>修复 资产采购单查看页面采购明细中单价显示不正确问题</description>
+			<author>朱湖强</author>
+			<revision-time>2015-08-11</revision-time>
+			<baseline>V12.0.5.R.20150911</baseline>
+		</modify>
+		<modify>
+			<description>修复 ie11下选择地点报js错误</description>
+			<author>朱湖强</author>
+			<revision-time>2015-08-05</revision-time>
+			<baseline>V12.0.4.R.20150807</baseline>
+		</modify>
+		<modify>
+			<description>优化 移动端首页按钮点击时默认回到第一个页签</description>
+			<author>朱湖强</author>
+			<revision-time>2015-08-05</revision-time>
+			<baseline>V12.0.4.R.20150807</baseline>
+		</modify>
+		<modify>
+			<description>修复 地点选择弹出框包含无效地点问题</description>
+			<author>朱湖强</author>
+			<revision-time>2015-08-04</revision-time>
+			<baseline>V12.0.4.R.20150807</baseline>
+		</modify>
+		<modify>
+			<description>修复 转移地点校验问题</description>
+			<author>朱湖强</author>
+			<revision-time>2015-08-04</revision-time>
+			<baseline>V12.0.4.R.20150807</baseline>
+		</modify>
+		<modify>
+			<description>优化 模板“可使用者”“可维护者”描述信息</description>
+			<author>朱湖强</author>
+			<revision-time>2015-07-27</revision-time>
+			<baseline>V12.0.4.R.20150807</baseline>
+		</modify>
+		<modify>
+			<description>优化 压缩资产资源文件（js和css）</description>
+			<author>朱湖强</author>
+			<revision-time>2015-07-16</revision-time>
+			<baseline>V12.0.4.R.20150807</baseline>
+		</modify>
+		<modify>
+			<description>优化 增加后台配置角色</description>
+			<author>朱湖强</author>
+			<revision-time>2015-07-09</revision-time>
+			<baseline>V12.0.3.R.20150710</baseline>
+		</modify>
+		<modify>
+			<description>修复 修改个人头像后部分页面头像没有立即更新问题修正</description>
+			<author>林秀贤</author>
+			<revision-time>2015-07-09</revision-time>
+			<baseline>V12.0.3.R.20150710</baseline>
+		</modify>
+		<modify>
+			<description>修复 重新编辑资产卡片，资产原值字段长度校验问题</description>
+			<author>朱湖强</author>
+			<revision-time>2015-07-07</revision-time>
+			<baseline>V12.0.3.R.20150710</baseline>
+		</modify>
+		<modify>
+			<description>优化 移动端列表页面用小图</description>
+			<author>朱湖强</author>
+			<revision-time>2015-07-01</revision-time>
+			<baseline>V12.0.3.R.20150710</baseline>
+		</modify>
+		<modify>
+			<description>优化 移动端view页面查看和预览时看大图</description>
+			<author>朱湖强</author>
+			<revision-time>2015-07-01</revision-time>
+			<baseline>V12.0.3.R.20150710</baseline>
+		</modify>
+		<modify>
+			<description>修复 后台设置文档维护中，批量修改资产卡片信息报js错误</description>
+			<author>朱湖强</author>
+			<revision-time>2015-07-01</revision-time>
+			<baseline>V12.0.3.R.20150710</baseline>
+		</modify>
+		<modify>
+			<description>修复 移动端申请单查看页面返回顶部样式问题</description>
+			<author>朱湖强</author>
+			<revision-time>2015-06-05</revision-time>
+			<baseline>V12.0.3.R.20150710</baseline>
+		</modify>
+		<modify>
+			<description>优化 资产卡片列表，价格按千分位显示</description>
+			<author>朱湖强</author>
+			<revision-time>2015-06-05</revision-time>
+			<baseline>V12.0.3.R.20150710</baseline>
+		</modify>
+		<modify>
+			<description>修复 全文搜索结果，“所属模块”显示问题</description>
+			<author>朱湖强</author>
+			<revision-time>2015-06-05</revision-time>
+			<baseline>V12.0.3.R.20150710</baseline>
+		</modify>
+		<modify>
+			<description>优化 资产附件只能选图片且支持多图上传</description>
+			<author>朱湖强</author>
+			<revision-time>2015-06-04</revision-time>
+			<baseline>V12.0.2.R.20150605</baseline>
+		</modify>
+		<modify>
+			<description>优化 样式调整</description>
+			<author>朱湖强</author>
+			<revision-time>2015-06-04</revision-time>
+			<baseline>V12.0.2.R.20150605</baseline>
+		</modify>
+		<modify>
+			<description>修复 谷歌下无法选择地点问题</description>
+			<author>朱湖强</author>
+			<revision-time>2015-06-04</revision-time>
+			<baseline>V12.0.2.R.20150605</baseline>
+		</modify>
+		<modify>
+			<description>优化 卡片搜索结果返回按钮</description>
+			<author>朱湖强</author>
+			<revision-time>2015-06-02</revision-time>
+			<baseline>V12.0.2.R.20150605</baseline>
+		</modify>
+		<modify>
+			<description>修复 文档维护节点下查询资产卡片为空问题</description>
+			<author>朱湖强</author>
+			<revision-time>2015-06-02</revision-time>
+			<baseline>V12.0.2.R.20150605</baseline>
+		</modify>
+		<modify>
+			<description>优化 查看页面资产更多详情体验</description>
+			<author>朱湖强</author>
+			<revision-time>2015-05-28</revision-time>
+			<baseline>V12.0.2.R.20150605</baseline>
+		</modify>
+		<modify>
+			<description>修复 申请单全文搜索结果pc端和移动端不一致问题</description>
+			<author>朱湖强</author>
+			<revision-time>2015-05-27</revision-time>
+			<baseline>V12.0.2.R.20150605</baseline>
+		</modify>
+		<modify>
+			<description>优化 卡片查看页面样式</description>
+			<author>朱湖强</author>
+			<revision-time>2015-05-27</revision-time>
+			<baseline>V12.0.2.R.20150605</baseline>
+		</modify>
+		<modify>
+			<description>修复 资产原值为空时，列表页和查看页金额显示不一致问题</description>
+			<author>朱湖强</author>
+			<revision-time>2015-05-27</revision-time>
+			<baseline>V12.0.2.R.20150605</baseline>
+		</modify>
+		<modify>
+			<description>移除 资产卡片列表页“更多资产按钮”</description>
+			<author>朱湖强</author>
+			<revision-time>2015-05-27</revision-time>
+			<baseline>V12.0.2.R.20150605</baseline>
+		</modify>
+		<modify>
+			<description>新增 操作成功后自动刷新列表</description>
+			<author>魏本源</author>
+			<revision-time>2015-05-20</revision-time>
+			<baseline>V12.0.2.R.20150605</baseline>
+		</modify>
+		<modify>
+			<description>优化 样式调整</description>
+			<author>朱湖强</author>
+			<revision-time>2015-05-14</revision-time>
+			<baseline>V12.0.2.R.20150605</baseline>
+		</modify>
+		<modify>
+			<description>修复 移动端资产数和列表数据不一致问题</description>
+			<author>朱湖强</author>
+			<revision-time>2015-05-14</revision-time>
+			<baseline>V12.0.2.R.20150605</baseline>
+		</modify>
+		<modify>
+			<description>新增 所有资产导航栏</description>
+			<author>朱湖强</author>
+			<revision-time>2015-05-14</revision-time>
+			<baseline>V12.0.2.R.20150605</baseline>
+		</modify>
+		<modify>
+			<description>优化 资产搜索支持按名称</description>
+			<author>朱湖强</author>
+			<revision-time>2015-05-14</revision-time>
+			<baseline>V12.0.2.R.20150605</baseline>
+		</modify>
+		<modify>
+			<description>修复 卡片三级页面子资产默认图片不显示问题</description>
+			<author>朱湖强</author>
+			<revision-time>2015-05-14</revision-time>
+			<baseline>V12.0.2.R.20150605</baseline>
+		</modify>
+		<modify>
+			<description>修复 卡片在用状态显示问题</description>
+			<author>朱湖强</author>
+			<revision-time>2015-05-14</revision-time>
+			<baseline>V12.0.2.R.20150605</baseline>
+		</modify>
+		<modify>
+			<description>优化 卡片列表样式</description>
+			<author>朱湖强</author>
+			<revision-time>2015-05-14</revision-time>
+			<baseline>V12.0.2.R.20150605</baseline>
+		</modify>
+		<modify>
+			<description>优化 移动端资产生命周期显示具体时间</description>
+			<author>朱湖强</author>
+			<revision-time>2015-05-14</revision-time>
+			<baseline>V12.0.2.R.20150605</baseline>
+		</modify>
+		<modify>
+			<description>优化 资产卡片删除问题</description>
+			<author>朱湖强</author>
+			<revision-time>2015-05-14</revision-time>
+			<baseline>V12.0.2.R.20150605</baseline>
+		</modify>
+		<modify>
+			<description>修复 资产卡片类别可使用者为岗位时导入资产不成功问题</description>
+			<author>朱湖强</author>
+			<revision-time>2015-05-14</revision-time>
+			<baseline>V12.0.2.R.20150605</baseline>
+		</modify>
+		<modify>
+			<description>新增 资产卡片移动</description>
+			<author>朱湖强</author>
+			<revision-time>2015-05-14</revision-time>
+			<baseline>V12.0.2.R.20150605</baseline>
+		</modify>
+		<modify>
+			<description>新增 资产移动新ued</description>
+			<author>朱湖强</author>
+			<revision-time>2015-05-14</revision-time>
+			<baseline>V12.0.2.R.20150605</baseline>
+		</modify>
+		<modify>
+			<description>优化 资产卡片删除问题</description>
+			<author>朱湖强</author>
+			<revision-time>2015-05-06</revision-time>
+			<baseline>V12.0.2.R.20150605</baseline>
+		</modify>
+		<modify>
+			<description>优化 资产删除报错提示</description>
+			<author>朱湖强</author>
+			<revision-time>2015-04-27</revision-time>
+			<baseline>V12.0.1.R.20150508</baseline>
+		</modify>
+		<modify>
+			<description>修复 资产卡片导出为空问题</description>
+			<author>朱湖强</author>
+			<revision-time>2015-04-15</revision-time>
+			<relation>
+				<relation-module>core</relation-module>
+			</relation>
+			<baseline>V12.0.1.R.20150508</baseline>
+		</modify>
+		<modify>
+			<description>优化 资产卡片添加”批量修改权限“功能</description>
+			<author>朱湖强</author>
+			<revision-time>2015-03-24</revision-time>
+			<baseline>V12.0.0.R.20150325</baseline>
+		</modify>
+		<modify>
+			<description>修复 资产选择为空，点击确定报错</description>
+			<author>朱湖强</author>
+			<revision-time>2015-03-18</revision-time>
+			<baseline>V12.0.0.R.20150325</baseline>
+		</modify>
+		<modify>
+			<description>#4149 优化 二级页面按钮操作栏翻页功能</description>
+			<author>王腾飞</author>
+			<revision-time>2015-01-16</revision-time>
+			<relation>
+				<relation-module>sys/ui</relation-module>
+			</relation>
+			<baseline>V12.0.0.B3.20150116</baseline>
+		</modify>
+		<modify>
+			<description>新增 工作交接注册服务</description>
+			<author>王腾飞</author>
+			<revision-time>2014-12-10</revision-time>
+			<relation>
+				<relation-module>sys/handover</relation-module>
+			</relation>
+			<baseline>V12.0.0.B3.20150116</baseline>
+		</modify>
+		<modify>
+			<description>优化 类别必填提示信息</description>
+			<author>周梓凡</author>
+			<revision-time>2014-12-10</revision-time>
+			<baseline>V12.0.0.B3.20150116</baseline>
+		</modify>
+		<modify>
+			<description>修复 资产卡片导出不包含子分类数据问题</description>
+			<author>朱湖强</author>
+			<revision-time>2014-12-08</revision-time>
+			<baseline>V12.0.0.B3.20150116</baseline>
+		</modify>
+		<modify>
+			<description>优化 筛选器标题输入框长度</description>
+			<author>朱湖强</author>
+			<revision-time>2014-11-25</revision-time>
+			<baseline>V12.0.0.B3.20150116</baseline>
+		</modify>
+		<modify>
+			<description>优化 分类导航在筛选器中时，筛选某个分类显示出当前类别下的所有子级类别数据</description>
+			<author>朱湖强</author>
+			<revision-time>2014-11-17</revision-time>
+			<baseline>V12.0.0.B3.20150116</baseline>
+		</modify>
+		<modify>
+			<description>优化 全文搜索部署与修改</description>
+			<author>魏本源</author>
+			<revision-time>2014-10-30</revision-time>
+			<baseline>V12.0.0.B2.20141114</baseline>
+		</modify>
+		<modify>
+			<description>优化 二级页面路径显示</description>
+			<author>朱湖强</author>
+			<revision-time>2014-10-29</revision-time>
+			<baseline>V12.0.0.B2.20141114</baseline>
+		</modify>
+		<modify>
+			<description>新增 资产存放地点类别设置</description>
+			<author>朱湖强</author>
+			<revision-time>2014-10-29</revision-time>
+			<baseline>V12.0.0.B2.20141114</baseline>
+		</modify>
+		<modify>
+			<description>优化 选择资产弹出框中，在左侧选中某个资产类别时，当其下的资产为空时，搜索条件保留</description>
+			<author>朱湖强</author>
+			<revision-time>2014-10-29</revision-time>
+			<baseline>V12.0.0.B2.20141114</baseline>
+		</modify>
+		<modify>
+			<description>新增 资产存放地点类别设置</description>
+			<author>朱湖强</author>
+			<revision-time>2014-10-29</revision-time>
+			<baseline>V12.0.0.B2.20141114</baseline>
+		</modify>
+		<modify>
+			<description>优化 资产归还单增加【批量存放地点】操作</description>
+			<author>朱湖强</author>
+			<revision-time>2014-10-22</revision-time>
+			<baseline>V12.0.0.B2.20141114</baseline>
+		</modify>
+		<modify>
+			<description>新增 全系统分类信息收集部署</description>
+			<author>魏本源</author>
+			<revision-time>2014-10-15</revision-time>
+			<baseline>V12.0.0.B2.20141114</baseline>
+		</modify>
+		<modify>
+			<description>修复 采购单、维修单和归还单文档模式为非标准模式问题</description>
+			<author>朱湖强</author>
+			<revision-time>2014-10-11</revision-time>
+			<baseline>V12.0.0.B2.20141114</baseline>
+		</modify>
+		<modify>
+			<description>新增 操作成功后自动刷新列表</description>
+			<author>魏本源</author>
+			<revision-time>2014-10-11</revision-time>
+			<baseline>V12.0.0.B2.20141114</baseline>
+		</modify>
+		<modify>
+			<description>优化 xform:text标签增加长度校验</description>
+			<author>魏本源</author>
+			<revision-time>2014-10-11</revision-time>
+			<baseline>V12.0.0.B2.20141114</baseline>
+		</modify>
+		<modify>
+			<description>优化 申请单明细表增加显示序号列</description>
+			<author>朱湖强</author>
+			<revision-time>2014-09-28</revision-time>
+			<baseline>V12.0.0.B2.20141114</baseline>
+		</modify>
+		<modify>
+			<description>修复 时间校验问题</description>
+			<author>朱湖强</author>
+			<revision-time>2014-09-04</revision-time>
+			<baseline>V12.0.0.B1.20140905</baseline>
+		</modify>
+		<modify>
+			<description>优化 资产生命周期日期显示</description>
+			<author>朱湖强</author>
+			<revision-time>2014-09-03</revision-time>
+			<baseline>V12.0.0.B1.20140905</baseline>
+		</modify>
+		<modify>
+			<description>修复 完善文档维护目录相关功能以便维护者在此进行文档维护</description>
+			<author>易荣烽</author>
+			<revision-time>2014-08-28</revision-time>
+			<relation>
+				<relation-module>core</relation-module>
+				<relation-module>sys/category</relation-module>
+			</relation>
+			<baseline>V12.0.0.B1.20140905</baseline>
+		</modify>
+		<modify>
+			<description>修复 采购单导入问题</description>
+			<author>朱湖强</author>
+			<revision-time>2014-08-21</revision-time>
+			<baseline>V12.0.0.B1.20140905</baseline>
+		</modify>
+		<modify>
+			<description>修复 时间校验问题</description>
+			<author>朱湖强</author>
+			<revision-time>2014-08-18</revision-time>
+			<baseline>V12.0.0.B1.20140905</baseline>
+		</modify>
+		<modify>
+			<description>修复 样式问题</description>
+			<author>朱湖强</author>
+			<revision-time>2014-08-11</revision-time>
+			<baseline>V12.0.0.B1.20140905</baseline>
+		</modify>
+		<modify>
+			<description>修复 资产类别中设置扩展字段后由入仓单生成的该类别资产卡片无扩展字段问题</description>
+			<author>张乐志</author>
+			<revision-time>2014-02-18</revision-time>
+			<baseline>V11.0.0.R.20140320</baseline>
+		</modify>
+		<modify>
+			<description>新增 资产维修保养流程增加“填写维修信息”附加节点，并调整录单时维修相关信息非必填，审批过程中拥有‘填写维修信息’节点权限的人员可对维修信息进行录入</description>
+			<author>张乐志</author>
+			<revision-time>2013-12-10</revision-time>
+			<baseline>V11.0.0.B1.20140107</baseline>
+		</modify>
+		<modify>
+			<description>新增 资产领用单和资产调拨单明细增加批量设置功能</description>
+			<author>张乐志</author>
+			<revision-time>2013-12-10</revision-time>
+			<baseline>V11.0.0.B1.20140107</baseline>
+		</modify>
+		<modify>
+			<description>优化 调整维修保养单走完流程后原资产状态不改变</description>
+			<author>张乐志</author>
+			<revision-time>2013-12-10</revision-time>
+			<baseline>V11.0.0.B1.20140107</baseline>
+		</modify>
+		<modify>
+			<description>优化 资产处置单中处置方式改入明细行中</description>
+			<author>张乐志</author>
+			<revision-time>2013-12-10</revision-time>
+			<baseline>V11.0.0.B1.20140107</baseline>
+		</modify>
+		<modify>
+			<description>新增 资产地点信息excel导入功能</description>
+			<author>张乐志</author>
+			<revision-time>2013-12-10</revision-time>
+			<baseline>V11.0.0.B1.20140107</baseline>
+		</modify>
+		<modify>
+			<description>优化 资产存放地点唯一性校验，不允许重名</description>
+			<author>张乐志</author>
+			<revision-time>2013-12-10</revision-time>
+			<baseline>V11.0.0.B1.20140107</baseline>
+		</modify>
+		<modify>
+			<description>优化 资产卡片删除提示</description>
+			<author>张乐志</author>
+			<revision-time>2013-12-10</revision-time>
+			<baseline>V11.0.0.B1.20140107</baseline>
+		</modify>
+		<modify>
+			<description>修复 在删除资产分类时执行资产转移时报错的问题</description>
+			<author>张乐志</author>
+			<revision-time>2013-12-10</revision-time>
+			<baseline>V11.0.0.B1.20140107</baseline>
+		</modify>
+		<modify>
+			<description>优化 调整资产调拨单中现使用部门和现责任人以及转移地点的填写要求并结合部门和责任人调整卡片状态</description>
+			<author>张乐志</author>
+			<revision-time>2013-11-11</revision-time>
+			<baseline>V11.0.0.B1.20140107</baseline>
+		</modify>
+		<modify>
+			<description>修复 调整数据样式，调整采购单样式和计算</description>
+			<author>张乐志</author>
+			<revision-time>2013-11-11</revision-time>
+			<baseline>V11.0.0.B1.20140107</baseline>
+		</modify>
+		<modify>
+			<description>优化 界面优化调整并修复部分申请单草稿编辑时提交异常</description>
+			<author>张乐志</author>
+			<revision-time>2013-11-04</revision-time>
+			<baseline>V11.0.0.B1.20140107</baseline>
+		</modify>
+		<modify>
+			<description>新增 资产管理</description>
+			<author>张乐志</author>
+			<revision-time>2013-08-30</revision-time>
+			<relation>
+				<relation-module>km/provider</relation-module>
+			</relation>
+			<baseline>V10.0.3.R.20130712</baseline>
+		</modify>
+	</modifies>
+</version>

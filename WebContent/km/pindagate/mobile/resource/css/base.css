@@ -1,0 +1,94 @@
+@CHARSET "UTF-8";
+.muiResponsePage{
+	width: 76px;
+  	height: 76px;
+  	line-height: 118px;
+  	text-align: center;
+  	color: #fff;
+  	font-size: 1.2rem;
+  	border-radius: 50%;
+  	background-color: #399be8;
+  	overflow: hidden;
+  	-webkit-box-sizing: border-box;
+	box-sizing: border-box;
+  	position: absolute;
+  	left: 50%;
+  	top: -45px;
+  	margin-left: -38px;
+}
+.muiResponsePage em {
+  margin-right: 2px;
+  font-size: 1.8rem;
+  font-weight: bold;
+}
+.muiResponseCard{
+  	margin:1rem 1.5rem;
+  	border-radius: 10px;
+  	border: 1px solid #d7d8d9;
+  	background-color: #fff;
+  	-webkit-box-sizing: border-box;
+  	box-sizing: border-box;
+  	overflow-y: hidden;
+  	position: absolute;
+  	width: 90%;
+  	height:350px;
+  	top:35px;
+  	-webkit-transform-origin:bottom right;
+  	-webkit-transition: -webkit-transform 100ms linea;
+}
+.muiPindagateTimeCard{
+	-webkit-box-flex:1;
+}
+.muiPindagateTimeCard .item {
+  margin-right: 3px;
+  color: #424242;
+  display: inline-block;
+}
+.muiPindagateTimeCard .item:last-child {
+  margin-right: 0;
+  margin-left: 2px;
+}
+.muiPindagateTimeCard .num {
+  margin-right: 2px;
+  padding: 4px;
+  color: #fff;
+  font-size: 1.4rem;
+  border-radius: 3px;
+  background-color: #323232;
+  display: inline-block;
+}
+.muiResponse{
+	padding: .5rem 1.5rem; 
+}
+
+.muiResponse .muiSubject{
+	margin-bottom: 1rem;
+}
+.muiResponse .muiRequire{
+	color: red;
+	margin-left: 5px;
+}
+.muiResponse .muiPindagateField{
+	border: 1px solid #e2e2e2;
+	border-radius:5px;
+}
+.muiResponse .muiFormOptionsField{
+	padding: 0.5rem;
+	border-bottom: 1px solid #e2e2e2;
+}
+.muiResponse .muiFormOptionsField:last-child{
+	border: 0;
+}
+.muiResponse .muiFieldOptions > .muiFieldText{
+	border: 0;
+}
+.muiSubSubject{
+	color: gray;
+}
+.muiResponse .muiListSummary{
+	margin-bottom: 1rem;
+}
+.muiResponseBarTip{
+	z-index :99;
+	background: #999;
+}

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<description xmlns="http://www.example.org/description-config" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.example.org/description-config ../../../description.xsd">
+	<module>
+		<module-name>移动组件</module-name>
+		<module-path>third/pda</module-path>
+		<baseline>V15.0.4.R.20200410</baseline>
+		<source-md5>acad3dd3e90a65f7f45140cc4764b0cc</source-md5>
+		<is-custom>否</is-custom>
+		<serial-num>21</serial-num>
+	</module>
+</description>

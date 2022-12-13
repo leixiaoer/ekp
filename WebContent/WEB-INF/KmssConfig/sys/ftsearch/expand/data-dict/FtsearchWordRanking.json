@@ -1,0 +1,36 @@
+{
+    "global":     {
+        "modelName": "com.landray.kmss.sys.ftsearch.expand.model.FtsearchWordRanking",
+        "messageKey": "sys-ftsearch-expand:table.sysFtsearchWord.ranking",
+        "displayProperty": "fdId",
+        "table": "ftsearch_word_ranking",
+        "url": ""
+    },
+    "attrs":     {
+        "fdId":         {
+            "propertyType": "id",
+            "generator": {"type": "assigned"}
+        },
+        "fdSearchWord":         {
+            "propertyType": "simple",
+            "type": "String",
+            "column": "fd_search_word",
+            "length": "255",
+            "notNull": "true"
+        },
+        "fdNum":         {
+            "propertyType": "simple",
+            "type": "Integer",
+            "column": "fd_num",
+            "length": "100",
+            "notNull": "true"
+        },
+        "fdType":         {
+            "propertyType": "simple",
+            "type": "Integer",
+            "column": "fd_type",
+            "length": "100",
+            "notNull": "true"
+        }
+    }
+}

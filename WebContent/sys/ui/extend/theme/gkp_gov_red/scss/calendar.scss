@@ -1,0 +1,158 @@
+
+@import './lib/vars.scss';
+@import './lib/mixins.scss';
+.lui_calendar_frame{ }
+
+.lui_calendar_header_tab .lui_calendar_header_left > div:hover,
+.lui_calendar_header_tab .lui_calendar_header_right > div:hover,
+.lui_calendar_header_tab div.lui_calendar_header_button_on {
+  color: #fff!important;
+  background-color: $primary-color!important;
+}
+.lui_calendar_header_tab .lui_calendar_header_right .lui_calendar_header_date:hover,
+.lui_calendar_header_tab .lui_calendar_header_left .lui_calendar_header_next:hover,
+.lui_calendar_header_tab .lui_calendar_header_right .lui_calendar_header_list:hover,
+.lui_calendar_header_tab .lui_calendar_header_left .lui_calendar_header_prev:hover,
+.lui_calendar_header_tab .lui_calenda.lui-calendar-today-textr_header_left .lui_calendar_header_next:hover,
+.lui_calendar_header_tab .lui_calendar_header_right .lui_calendar_header_refresh:hover{
+  background-color: $primary-color!important; 
+}
+body .calendar-setting:hover .trig {
+  border-color: #fff $primary-color;
+}
+.calendar_dropdown {
+  border: 1px solid #d9d9d9;
+  border-bottom-left-radius: 4px;
+  border-bottom-right-radius: 4px;
+  -webkit-box-shadow: 0 0 7px rgba(0, 0, 0, .15);
+     -moz-box-shadow: 0 0 7px rgba(0, 0, 0, .15);
+      -ms-box-shadow: 0 0 7px rgba(0, 0, 0, .15);
+       -o-box-shadow: 0 0 7px rgba(0, 0, 0, .15);
+          box-shadow: 0 0 7px rgba(0, 0, 0, .15);
+}
+body .calendar_dropdown li a{
+  width: auto;
+}
+body .calendar_dropdown li a:hover,
+body .calendar_dropdown li.setting_select_on a,
+body .calendar_dropdown li.setting_select_on a:hover{
+  color: #fff;
+  background-color: $primary-color;
+}
+.res_calendar_cate.on{ background-color: $primary-color; }
+.lui-calendar-today-text { background: $primary-color; }
+
+.meeting_calendar_header .meeting_calendar_category_th.on {
+  background-color: #d9e7fd;
+}
+/* 搜索按钮 */
+.lui_calendar_search_back:hover{
+	background-color:$primary-color;
+}
+
+.lui_calendar{
+  border: 1px solid #d9d9d9;
+}
+.lui_calendar_top{
+  border-bottom: 1px solid #d9d9d9;
+  background-color: transparent;
+}
+.lui_calendar_top .lui_calendar_title {
+  padding-left: 10px;
+  color: #666;
+}
+.lui_calendar_top .lui_calendar_close{
+  padding-right: 10px;
+  height: 30px;
+}
+.lui_calendar .add_sched_wrapper{
+  padding: 10px;
+}
+.lui_calendar .lui_shades_btnGroup{
+  border-bottom-left-radius: 4px;
+  border-bottom-right-radius: 4px;
+  border-top: 1px solid #d9d9d9;
+  background-color: #f7f5f6;
+}
+.lui_calendar .lui_shades_btnGroup .left{
+  padding-left: 10px;
+}
+.lui_calendar .lui_shades_btnGroup a,
+.lui_calendar .add_sched_wrapper .link{
+  color:$primary-color;
+}
+.lui_calendar .lui_shades_btnGroup a:hover,
+.lui_calendar .add_sched_wrapper .link:hover{
+  color:$alter-color;
+}
+
+// 日程空状态
+.lui_calendar_portlet_month_nodata .lui_pce_iconStyle i {
+  background-image: url(../images/icon_calendar_empty.png);
+  
+}
+
+.lui_calendar_portlet_month_main .today > div[div],
+.lui_calendar_dirction_main .today > div[div],
+.lui_calendar_white_main .today > div[div]{
+	border-color:$primary-color;
+}
+.lui_calendar_portlet_month_nodata .lui_pce_iconStyle i,
+.lui_calendar_portlet_dirction_nodata .lui_pce_is_emptyImg,
+.lui_calendar_white_nodata .lui_pce_is_emptyImg{
+	background-image: url(../images/icons/icon_calendar_empty.png);
+}
+.lui_calendar_portlet_month_main .current > div[div],
+.lui_calendar_white_main .current > div[div],
+.lui_calendar_dirction_main .current > div[div]{
+	background-color:$primary-color;
+	border-color:$primary-color;
+}
+.lui_calendar_portlet_dirction_left{background-color: #F35D29;}
+
+/* 日历 */
+.lui_calendar_portlet .today .lui_date_box[class],
+.lui_calendar_white_main .today .lui_date_box[class],
+.lui_calendar_portlet_month_main .today .lui_date_box[class],
+.lui_calendar_dirction_main .today .lui_date_box[class]{
+  border-color:$primary-color;
+}
+.lui_calendar_portlet .today .lui_number[class],
+.lui_calendar_portlet .today .lui_solar[class],
+.lui_calendar_portlet_white .today .lui_number[class],
+.lui_calendar_portlet_white .today .lui_solar[class],
+.lui_calendar_portlet_month_main .today .lui_number[class],
+.lui_calendar_portlet_month_main .today .lui_solar[class],
+.lui_calendar_portlet_dirction .today .lui_number[class],
+.lui_calendar_portlet_dirction .today .lui_solar[class]{
+  color:$primary-color;
+}
+.lui_calendar_dirction_main .current .lui_date_box,
+.lui_calendar_portlet_month_main .current .lui_date_box,
+.lui_calendar_white_main .current .lui_date_box,
+.lui_calendar_portlet .current .lui_date_box{
+  background-color: $primary-color;
+  border-color:$primary-color;
+}
+
+.lui_calendar_portlet .current .lui_number[class],
+.lui_calendar_portlet .current .lui_solar[class],
+.lui_calendar_portlet_white .current .lui_number[class],
+.lui_calendar_portlet_white .current .lui_solar[class],
+.lui_calendar_portlet_month_main .current .lui_number[class],
+.lui_calendar_portlet_month_main .current .lui_solar[class],
+.lui_calendar_portlet_dirction .current .lui_number[class],
+.lui_calendar_portlet_dirction .current .lui_solar[class]{
+  color:#fff;
+}
+
+.lui_calendar_portlet_dirction_left{
+  background-color: $primary-color;
+}
+.lui_calendar_portlet .lui_calendar_dot .point,
+.lui_calendar_portlet_month_main .lui_calendar_dot .point,
+.lui_calendar_dirction_main .lui_calendar_dot .point,
+.lui_calendar_white_main .lui_calendar_dot .point{
+  background-color: $primary-color;
+}
+

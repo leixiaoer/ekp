@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<description xmlns="http://www.example.org/description-config" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.example.org/description-config ../../../description.xsd">
+	<module>
+		<module-name>K3对接组件</module-name>
+		<module-path>fssc/k3</module-path>
+		<baseline>V15.0.4.R.20200410</baseline>
+		<source-md5>243e320a0eea43eb4e009c387413276a</source-md5>
+		<is-custom>否</is-custom>
+		<serial-num>9</serial-num>
+	</module>
+</description>

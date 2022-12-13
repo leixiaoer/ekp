@@ -1,0 +1,54 @@
+{
+    "global":     {
+        "modelName": "com.landray.kmss.km.asset.model.KmAssetApplyStock",
+        "messageKey": "km-asset:table.kmAssetApplyStock",
+        "displayProperty": "docSubject",
+        "serviceBean": "kmAssetApplyStockService",
+        "extendClass": "com.landray.kmss.km.asset.model.KmAssetApplyBase",
+        "discriminatorValue": "com.landray.kmss.km.asset.model.KmAssetApplyStock",
+        "table": "km_asset_apply_base",
+        "url": "/km/asset/km_asset_apply_stock/kmAssetApplyStock.do?method=view&fdId=${fdId}"
+    },
+    "attrs":     {
+        "fdId":         {
+            "propertyType": "id",
+            "generator": {"type": "assigned"}
+        },
+        "fdTotalMoney":         {
+            "propertyType": "simple",
+            "messageKey": "km-asset:kmAssetApplyStock.fdTotalMoney",
+            "type": "Double",
+            "column": "fd_total_money",
+            "notNull": "false",
+            "length": "36",
+            "validate": "false",
+            "canLogShow":"1"
+        },
+        "fdStockMatter":         {
+            "propertyType": "simple",
+            "messageKey": "km-asset:kmAssetApplyStock.fdStockMatter",
+            "type": "String",
+            "column": "fd_stock_matter",
+            "notNull": "false",
+            "length": "1500",
+            "validate": "true",
+            "canLogShow":"1"
+        },
+        "fdItems":         {
+            "propertyType": "list",
+            "messageKey": "km-asset:table.kmAssetApplyStockList",
+            "type": "com.landray.kmss.km.asset.model.KmAssetApplyStockList",
+            "column": "fd_asset_apply_stock",
+            "inverse": "true",
+            "canDisplay": "false",
+            "cascade": "all-delete-orphan",
+            "table": "km_asset_apply_stock_list",
+            "canLogShow":"1"
+        }
+    },
+    "attachments": {"kmAssetApplyStock":     {
+        "propertyType": "att",
+        "messageKey": "km-asset:kmAssetApplyBase.attachMent",
+        "canDisplay": "true"
+    }}
+}

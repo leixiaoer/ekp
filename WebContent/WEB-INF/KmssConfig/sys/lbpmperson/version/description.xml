@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<description xmlns="http://www.example.org/description-config" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.example.org/description-config ../../../description.xsd">
+	<module>
+		<module-name>个人流程中心</module-name>
+		<module-path>sys/lbpmperson</module-path>
+		<baseline>V15.0.4.R.20200410</baseline>
+		<source-md5>3110406281f45186b058da19ecdc490d</source-md5>
+		<is-custom>否</is-custom>
+		<serial-num>34</serial-num>
+	</module>
+</description>

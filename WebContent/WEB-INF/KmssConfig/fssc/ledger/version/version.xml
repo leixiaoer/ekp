@@ -1,0 +1,836 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<version xmlns="http://www.example.org/version-config" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.example.org/version-config ../../../version.xsd">
+	<modifies>
+		<modify>
+			<description>#163474 修复 【服务问题单】【费控-缺陷】票小秘OCR无法识别ofd格式发票并回写到明细表</description>
+			<author>谢星星</author>
+			<revision-time>2022-04-20</revision-time>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#156932 新增 票小秘、探智立方新增增值税电子专用发票识别。合力中税新增增值税电子专用发票验真</description>
+			<author>余艳祥</author>
+			<revision-time>2022-01-17</revision-time>
+			<relation>
+				<relation-module>fssc/expense</relation-module>
+				<relation-module>fssc/baiwang</relation-module>
+				<relation-module>fssc/payment</relation-module>
+				<relation-module>fssc/ocr</relation-module>
+				<relation-module>fssc/mobile</relation-module>
+				<relation-module>fssc/iqubic</relation-module>
+			</relation>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#157527 优化 未出采购模块不出现物质台账列表子自定义导航</description>
+			<author>谢星星</author>
+			<revision-time>2022-01-04</revision-time>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#156409 新增 英文资源文件</description>
+			<author>谢星星</author>
+			<revision-time>2021-12-16</revision-time>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#151315 优化 移快报随手记转报销，删除费用明细，级联删除发票明细</description>
+			<author>谢星星</author>
+			<revision-time>2021-12-09</revision-time>
+			<relation>
+				<relation-module>fssc/common</relation-module>
+				<relation-module>fssc/expense</relation-module>
+				<relation-module>fssc/mobile</relation-module>
+			</relation>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#116872 修复 判断是否本公司发票</description>
+			<author>谢星星</author>
+			<revision-time>2021-08-19</revision-time>
+			<relation>
+				<relation-module>fssc/expense</relation-module>
+				<relation-module>fssc/payment</relation-module>
+				<relation-module>fssc/mobile</relation-module>
+			</relation>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#129706 新增 单据提交人可设置手动验真发票</description>
+			<author>谢星星</author>
+			<revision-time>2021-07-22</revision-time>
+			<relation>
+				<relation-module>fssc/base</relation-module>
+				<relation-module>fssc/common</relation-module>
+				<relation-module>fssc/expense</relation-module>
+				<relation-module>fssc/payment</relation-module>
+				<relation-module>fssc/mobile</relation-module>
+				<relation-module>fssc/baiwang</relation-module>
+			</relation>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#140222 修复 付款关联合同，挂账金额没有占用到合同金额</description>
+			<author>贺金波</author>
+			<revision-time>2021-07-16</revision-time>
+			<relation>
+				<relation-module>fssc/payment</relation-module>
+			</relation>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#140895 修复 【服务问题单】合同台账Excel导入，框架合同不校验合同金额</description>
+			<author>余艳祥</author>
+			<revision-time>2021-06-03</revision-time>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#137580 修复 数据字典缺失描述或者字段及表名和hbm对不上问题</description>
+			<author>谢星星</author>
+			<revision-time>2021-04-14</revision-time>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#107855 新增 发票信息items明细信息保存</description>
+			<author>贺金波</author>
+			<revision-time>2020-12-25</revision-time>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#127059 优化 报销、付款单发票明细新增发票状态字段</description>
+			<author>谢星星</author>
+			<revision-time>2020-12-04</revision-time>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#125661 修复 探智立方识别的发票，验真了，在发票台账查看中没有验真状态</description>
+			<author>余艳祥</author>
+			<revision-time>2020-12-01</revision-time>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#126217 优化 发票台账是否验真、使用状态、数据来源加个筛选项</description>
+			<author>余艳祥</author>
+			<revision-time>2020-11-19</revision-time>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#117837 修复 移动端发票及随手记报销的问题</description>
+			<author>汪金满</author>
+			<revision-time>2020-10-30</revision-time>
+			<relation>
+				<relation-module>fssc/expense</relation-module>
+				<relation-module>fssc/mobile</relation-module>
+			</relation>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#123313 修复 初始化合同台账有已付、付款中金额时，提交付款重新计算只会计算费控单据的问题</description>
+			<author>谢星星</author>
+			<revision-time>2020-10-24</revision-time>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#116356 新增 凭证中需要新增合同号字段，取值合同台账的编号</description>
+			<author>余艳祥</author>
+			<revision-time>2020-10-24</revision-time>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#103084 修复 标准版台账管理后台设置中没有隐藏合同台账、物资台账</description>
+			<author>张慧慧</author>
+			<revision-time>2020-10-13</revision-time>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#120528 修复 移动端随手记转报销，撤回后，发票还是已使用状态问题</description>
+			<author>谢星星</author>
+			<revision-time>2020-10-10</revision-time>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#110396 修复 物资台账Excel导入没有创建日期</description>
+			<author>余艳祥</author>
+			<revision-time>2020-09-24</revision-time>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#118774 修复 关联随手记的发票不允许直接被选择</description>
+			<author>汪金满</author>
+			<revision-time>2020-10-10</revision-time>
+			<relation>
+				<relation-module>fssc/expense</relation-module>
+				<relation-module>fssc/mobile</relation-module>
+			</relation>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#120058 修复 合同台账框架合同报错问题</description>
+			<author>谢星星</author>
+			<revision-time>2020-09-19</revision-time>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#118496 修复 付款关联框架合同，框架合同金额为空，提交就会报错，没有判空</description>
+			<author>张慧慧</author>
+			<revision-time>2020-09-10</revision-time>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#116857 修复 开启了发票验真，发票有多位小数，识别报错了</description>
+			<author>汪金满</author>
+			<revision-time>2020-09-07</revision-time>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#113393 新增 校验合同可预提金额</description>
+			<author>谢星星</author>
+			<revision-time>2020-09-07</revision-time>
+			<relation>
+				<relation-module>fssc/base</relation-module>
+				<relation-module>fssc/common</relation-module>
+				<relation-module>fssc/expense</relation-module>
+				<relation-module>fssc/voucher</relation-module>
+				<relation-module>fssc/payment</relation-module>
+				<relation-module>fssc/proapp</relation-module>
+				<relation-module>fssc/provision</relation-module>
+			</relation>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#118275 修复 由于发票识别错误导致校验码超过20位，发票保存失败</description>
+			<author>谢星星</author>
+			<revision-time>2020-09-03</revision-time>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#117964 修复 发票台账，金额为空，台账筛选报500</description>
+			<author>余艳祥</author>
+			<revision-time>2020-09-02</revision-time>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#115951 优化 发票台账数据来源</description>
+			<author>陈博</author>
+			<revision-time>2020-08-26</revision-time>
+			<relation>
+				<relation-module>fssc/base</relation-module>
+				<relation-module>fssc/expense</relation-module>
+				<relation-module>fssc/iqubic</relation-module>
+				<relation-module>fssc/ocr</relation-module>
+				<relation-module>fssc/payment</relation-module>
+				<relation-module>fssc/mobile</relation-module>
+			</relation>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#115860 修复 合同台账多个合同导入，合同台账顺序显示有问题</description>
+			<author>谢星星</author>
+			<revision-time>2020-08-21</revision-time>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#114337 修复 物资台账的新建权限去掉</description>
+			<author>张慧慧</author>
+			<revision-time>2020-08-10</revision-time>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#113169 修复 同一随手记上传同一个发票，无验重问题</description>
+			<author>谢星星</author>
+			<revision-time>2020-08-01</revision-time>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#108470 修复 京东订单发票和订单信息一起识别有误，及订单信息保存，及机票行程单识别</description>
+			<author>谢星星</author>
+			<revision-time>2020-08-01</revision-time>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#112897 修复 合同台账已付、未付、付款中计算错误的问题</description>
+			<author>谢星星</author>
+			<revision-time>2020-08-01</revision-time>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#112522 修复 报销提交含税不含税金额未空字符串导致提交报错（偶发）</description>
+			<author>谢星星</author>
+			<revision-time>2020-07-22</revision-time>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#112218 修复 移快报新建报销PC端发票状态未显示问题</description>
+			<author>谢星星</author>
+			<revision-time>2020-07-22</revision-time>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#110957 修复 报销发票判断</description>
+			<author>谢星星</author>
+			<revision-time>2020-07-21</revision-time>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#111995 修复 合同台账对外webservice接口，已付款、付款中金额不能输入0</description>
+			<author>张慧慧</author>
+			<revision-time>2020-07-16</revision-time>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#105015 修复 财务审核无法选择发票</description>
+			<author>谢星星</author>
+			<revision-time>2020-07-10</revision-time>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#105907 修复 需求申请流程结束之后会直接回写到物资台账里面，但是，物资台账里面还回写了库存金额</description>
+			<author>谢星星</author>
+			<revision-time>2020-06-29</revision-time>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#102932 优化 台账管理，发票台账、物资台账、合同台账三个权限分开控制</description>
+			<author>谢星星</author>
+			<revision-time>2020-06-28</revision-time>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#102989 修复 发票台账金额过大出现科学计数法</description>
+			<author>张慧慧</author>
+			<revision-time>2020-06-17</revision-time>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#109541 优化 Excel批量导入数据支持xls、xlsx格式</description>
+			<author>谢星星</author>
+			<revision-time>2020-06-17</revision-time>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#109262 修复 单据关联发票提交，撤回修改发票，单据在关联原来的发票，提示被使用了</description>
+			<author>谢星星</author>
+			<revision-time>2020-06-16</revision-time>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#108634 修复 合同金额过大，导出合同，Excel显示为科学计数法</description>
+			<author>张慧慧</author>
+			<revision-time>2020-06-16</revision-time>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#107230 修复 随手记转报销了，对应的发票随手记又能进入随手记</description>
+			<author>谢星星</author>
+			<revision-time>2020-05-29</revision-time>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#106200 优化 获取发票信息</description>
+			<author>谢星星</author>
+			<revision-time>2020-05-20</revision-time>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#103038 修复 手动验真后会将发票的已使用状态修改为未使用状态的问题</description>
+			<author>谢星星</author>
+			<revision-time>2020-05-20</revision-time>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#103038 优化 发票选择过滤已使用的发票</description>
+			<author>谢星星</author>
+			<revision-time>2020-05-18</revision-time>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#103989 修复 报销选择未报费用发票税率计算问题</description>
+			<author>汪金满</author>
+			<revision-time>2020-05-09</revision-time>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#103782 修复 PC端上传未提交，移动端上传提示发票已使用</description>
+			<author>谢星星</author>
+			<revision-time>2020-05-07</revision-time>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#102375 修复 PC端发票明细改造之后，导致移动端填写的报销单发票信息没有回写到PC端的发票明细中去</description>
+			<author>张慧慧</author>
+			<revision-time>2020-05-06</revision-time>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#90464 新增 新版移快报</description>
+			<author>谢星星</author>
+			<revision-time>2020-04-19</revision-time>
+			<relation>
+				<relation-module>fssc/baiwang</relation-module>
+				<relation-module>fssc/base</relation-module>
+				<relation-module>fssc/common</relation-module>
+				<relation-module>fssc/expense</relation-module>
+				<relation-module>fssc/fee</relation-module>
+				<relation-module>fssc/mobile</relation-module>
+				<relation-module>fssc/ocr</relation-module>
+			</relation>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#101630 修复 识别火车票报错的问题 by xiexx</description>
+			<author>谢星星</author>
+			<revision-time>2020-04-14</revision-time>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#101635 修复 校验码在发票提交后被清空，导致无法手动发票验真</description>
+			<author>谢星星</author>
+			<revision-time>2020-04-08</revision-time>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#98923 修复 发票添加多条，发票号码为空；关联从记一笔的发票都提交报错</description>
+			<author>钟彩霞</author>
+			<revision-time>2020-03-11</revision-time>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#97348 修复 【费控-缺陷】台账管理录入合同台账时付款比例的百分比四舍五入与付款金额的自动计算逻辑出现冲突</description>
+			<author>钟彩霞</author>
+			<revision-time>2020-03-02</revision-time>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#91470 优化 【restservice服务】restservice接口文档说明调整</description>
+			<author>谢星星</author>
+			<revision-time>2020-02-28</revision-time>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#93506 修复 发票弹框无明细提交报错，重复发票上传未校验到，发票代码未显示完全等问题</description>
+			<author>谢星星</author>
+			<revision-time>2020-01-07</revision-time>
+			<baseline>V15.0.3.R.20200117</baseline>
+		</modify>
+		<modify>
+			<description>#90412 新增 发票上传后是否自动验真</description>
+			<author>谢星星</author>
+			<revision-time>2020-01-02</revision-time>
+			<relation>
+				<relation-module>fssc/common</relation-module>
+			</relation>
+			<baseline>V15.0.3.R.20200117</baseline>
+		</modify>
+		<modify>
+			<description>#90412 新增 发票台账增加票种、地点、是否验真字段</description>
+			<author>谢星星</author>
+			<revision-time>2019-12-27</revision-time>
+			<baseline>V15.0.3.R.20200117</baseline>
+		</modify>
+		<modify>
+			<description>#84713 优化 【日志打印-优化】日志打印了大量常用分类错误的日志，没有做什么操作，就只是访问某个模块</description>
+			<author>钟彩霞</author>
+			<revision-time>2019-12-19</revision-time>
+			<baseline>V15.0.3.R.20200117</baseline>
+		</modify>
+		<modify>
+			<description>#90412 新增 发票台账增加票种、地点、是否验真字段</description>
+			<author>谢星星</author>
+			<revision-time>2019-12-19</revision-time>
+			<relation>
+				<relation-module>fssc/common</relation-module>
+			</relation>
+			<baseline>V15.0.3.R.20200117</baseline>
+		</modify>
+		<modify>
+			<description>#83566 优化 【后台配置-优化】费控产品各个模块主页后台配置目录链接调整</description>
+			<author>余艳祥</author>
+			<revision-time>2019-10-11</revision-time>
+			<relation>
+				<relation-module>sys/ui</relation-module>
+			</relation>
+			<baseline>V15.0.2.R.20191108</baseline>
+		</modify>
+		<modify>
+			<description>#68034 优化 无采购模块，物资台账不显示</description>
+			<author>谢星星</author>
+			<revision-time>2019-09-05</revision-time>
+			<baseline>V15.0.2.R.20191108</baseline>
+		</modify>
+		<modify>
+			<description>#80345 修复 付款关联合同，合同又重新编辑了，定额合同总额不允许小于已付和付款中的金额</description>
+			<author>余艳祥</author>
+			<revision-time>2019-08-22</revision-time>
+			<baseline>V15.0.1.R.20190906</baseline>
+		</modify>
+		<modify>
+			<description>#79727 优化 合同新建时合同状态默认为执行</description>
+			<author>余艳祥</author>
+			<revision-time>2019-08-20</revision-time>
+			<baseline>V15.0.1.R.20190906</baseline>
+		</modify>
+		<modify>
+			<description>#79886 修复 付款关联合同，驳回单据没有释放合同金额</description>
+			<author>余艳祥</author>
+			<revision-time>2019-08-17</revision-time>
+			<baseline>V15.0.1.R.20190906</baseline>
+		</modify>
+		<modify>
+			<description>#79728 修复 新建合同时，1、合同金额根据合同明细的金额自动汇总，2、框架合同，合同金额不必填，3、合同金额一块钱，最后一条明细金额计算错误</description>
+			<author>余艳祥</author>
+			<revision-time>2019-08-12</revision-time>
+			<baseline>V15.0.1.R.20190906</baseline>
+		</modify>
+		<modify>
+			<description>#79477 修复 付款关联合同明细，提交之后流程直接报错了</description>
+			<author>余艳祥</author>
+			<revision-time>2019-08-11</revision-time>
+			<relation>
+				<relation-module>fssc/common</relation-module>
+			</relation>
+			<baseline>V15.0.1.R.20190906</baseline>
+		</modify>
+		<modify>
+			<description>#74791 移动端我的发票功能完善</description>
+			<author>汪金满</author>
+			<revision-time>2019-08-10</revision-time>
+			<relation>
+				<relation-module>fssc/common</relation-module>
+			</relation>
+			<baseline>V15.0.1.R.20190906</baseline>
+		</modify>
+		<modify>
+			<description>#78939 修复 需求提交库存校验错误的问题</description>
+			<author>谢星星</author>
+			<revision-time>2019-08-09</revision-time>
+			<baseline>V15.0.1.R.20190906</baseline>
+		</modify>
+		<modify>
+			<description>#78258 优化 发票台账的发票类型改为下拉框</description>
+			<author>汪金满</author>
+			<revision-time>2019-08-08</revision-time>
+			<baseline>V15.0.1.R.20190906</baseline>
+		</modify>
+		<modify>
+			<description>#79438 修复 发票选择搜索报错</description>
+			<author>谢星星</author>
+			<revision-time>2019-08-08</revision-time>
+			<baseline>V15.0.1.R.20190906</baseline>
+		</modify>
+		<modify>
+			<description>#79438 修复 发票选择搜索报错</description>
+			<author>谢星星</author>
+			<revision-time>2019-08-08</revision-time>
+			<baseline>V15.0.1.R.20190906</baseline>
+		</modify>
+		<modify>
+			<description>#79371 修复 1、IE关联合同时没有自动带出合同明细，2、关联合同撤回之后流程报错了，合同时Excel导入的</description>
+			<author>余艳祥</author>
+			<revision-time>2019-08-08</revision-time>
+			<relation>
+				<relation-module>fssc/common</relation-module>
+			</relation>
+			<baseline>V15.0.1.R.20190906</baseline>
+		</modify>
+		<modify>
+			<description>#78947 优化 领用申请，库存为0的不展现</description>
+			<author>谢星星</author>
+			<revision-time>2019-08-08</revision-time>
+			<baseline>V15.0.1.R.20190906</baseline>
+		</modify>
+		<modify>
+			<description>#79444 修复 合同Excel导入，没有导入合同明细，手动添加合同明细之后，付款关联了该合同，但是自动带出的合同明细不对</description>
+			<author>余艳祥</author>
+			<revision-time>2019-08-08</revision-time>
+			<relation>
+				<relation-module>fssc/common</relation-module>
+			</relation>
+			<baseline>V15.0.1.R.20190906</baseline>
+		</modify>
+		<modify>
+			<description>#78483 修复 付款/预付款关联了合同之后，要回写到合同中，有使用记录</description>
+			<author>余艳祥</author>
+			<revision-time>2019-08-07</revision-time>
+			<relation>
+				<relation-module>fssc/common</relation-module>
+			</relation>
+			<baseline>V15.0.1.R.20190906</baseline>
+		</modify>
+		<modify>
+			<description>#79177 修复 物资状态、合同台账状态显示问题</description>
+			<author>谢星星</author>
+			<revision-time>2019-08-06</revision-time>
+			<baseline>V15.0.1.R.20190906</baseline>
+		</modify>
+		<modify>
+			<description>#79189 删除 信用台账多余代码</description>
+			<author>谢星星</author>
+			<revision-time>2019-08-06</revision-time>
+			<baseline>V15.0.1.R.20190906</baseline>
+		</modify>
+		<modify>
+			<description>#79202 修复 合同台账删除权限无效的问题</description>
+			<author>谢星星</author>
+			<revision-time>2019-08-06</revision-time>
+			<baseline>V15.0.1.R.20190906</baseline>
+		</modify>
+		<modify>
+			<description>#79191 修复 Excel导入框架合同时，一直提示合同明细为空</description>
+			<author>余艳祥</author>
+			<revision-time>2019-08-05</revision-time>
+			<baseline>V15.0.1.R.20190906</baseline>
+		</modify>
+		<modify>
+			<description>#79192 修复 合同Excel模板中没有加本期剩余应付金额，导致Excel导入时报错了，Excel模板中的本期剩余应付金额手输必填</description>
+			<author>余艳祥</author>
+			<revision-time>2019-08-05</revision-time>
+			<relation>
+				<relation-module>fssc/common</relation-module>
+			</relation>
+			<baseline>V15.0.1.R.20190906</baseline>
+		</modify>
+		<modify>
+			<description>#78705 修复 付款关联合同，有合同明细，合同明细加两个字段，本期剩余金额、实际付款金额</description>
+			<author>余艳祥</author>
+			<revision-time>2019-08-02</revision-time>
+			<relation>
+				<relation-module>fssc/common</relation-module>
+			</relation>
+			<baseline>V15.0.1.R.20190906</baseline>
+		</modify>
+		<modify>
+			<description>#76914 修复 付款/预付款关联框架合同，不需要做金额校验控制</description>
+			<author>余艳祥</author>
+			<revision-time>2019-07-31</revision-time>
+			<relation>
+				<relation-module>fssc/common</relation-module>
+			</relation>
+			<baseline>V15.0.1.R.20190906</baseline>
+		</modify>
+		<modify>
+			<description>#78937 优化 列表修改为自定义展现</description>
+			<author>谢星星</author>
+			<revision-time>2019-07-31</revision-time>
+			<baseline>V15.0.1.R.20190906</baseline>
+		</modify>
+		<modify>
+			<description>#78937 优化 列表修改为自定义展现</description>
+			<author>谢星星</author>
+			<revision-time>2019-07-31</revision-time>
+			<baseline>V15.0.1.R.20190906</baseline>
+		</modify>
+		<modify>
+			<description>#78653 修复 入库未回写采购人、采购部门和电话号码</description>
+			<author>谢星星</author>
+			<revision-time>2019-07-25</revision-time>
+			<baseline>V15.0.1.R.20190906</baseline>
+		</modify>
+		<modify>
+			<description>#78037 修复 合同台账明细付款金额自动计算出多位小数</description>
+			<author>余艳祥</author>
+			<revision-time>2019-07-31</revision-time>
+			<relation>
+				<relation-module>fssc/common</relation-module>
+			</relation>
+			<baseline>V15.0.1.R.20190906</baseline>
+		</modify>
+		<modify>
+			<description>#78404 修复 合同金额修改之后，合同明细的金额不会自动更新</description>
+			<author>余艳祥</author>
+			<revision-time>2019-07-25</revision-time>
+			<baseline>V15.0.1.R.20190906</baseline>
+		</modify>
+		<modify>
+			<description>#78309 修复 合同编号要校验一致性，合同关闭了则不需要校验合同编码一致性</description>
+			<author>余艳祥</author>
+			<revision-time>2019-07-24</revision-time>
+			<relation>
+				<relation-module>fssc/common</relation-module>
+			</relation>
+			<baseline>V15.0.1.R.20190906</baseline>
+		</modify>
+		<modify>
+			<description>#76881 新增 库存占用、释放、使用逻辑</description>
+			<author>谢星星</author>
+			<revision-time>2019-07-24</revision-time>
+			<baseline>V15.0.1.R.20190906</baseline>
+		</modify>
+		<modify>
+			<description>#78291 修复 付款关联合同、关联采购单时，弹框报错了</description>
+			<author>余艳祥</author>
+			<revision-time>2019-07-24</revision-time>
+			<baseline>V15.0.1.R.20190906</baseline>
+		</modify>
+		<modify>
+			<description>#76395 修复 物资选择能选到废弃状态的物资</description>
+			<author>谢星星</author>
+			<revision-time>2019-07-23</revision-time>
+			<baseline>V15.0.1.R.20190906</baseline>
+		</modify>
+		<modify>
+			<description>#76977 修复 新建合同为定额合同，合同金额为必填项，而且合同付款条件也需要默认展示一行，不能为空</description>
+			<author>余艳祥</author>
+			<revision-time>2019-07-23</revision-time>
+			<baseline>V15.0.1.R.20190906</baseline>
+		</modify>
+		<modify>
+			<description>#78283 修复 新建框架合同时，不要校验合同金额不等于付款总额，框架合同可以不需要付款条件</description>
+			<author>余艳祥</author>
+			<revision-time>2019-07-22</revision-time>
+			<baseline>V15.0.1.R.20190906</baseline>
+		</modify>
+		<modify>
+			<description>#76973 修复 新建合同为框架合同，那么单价为必填项，合同付款条件隐藏</description>
+			<author>余艳祥</author>
+			<revision-time>2019-07-22</revision-time>
+			<baseline>V15.0.1.R.20190906</baseline>
+		</modify>
+		<modify>
+			<description>#77600 修复 校验库存包含需求导致校验有误的问题</description>
+			<author>谢星星</author>
+			<revision-time>2019-07-20</revision-time>
+			<baseline>V15.0.1.R.20190906</baseline>
+		</modify>
+		<modify>
+			<description>#78038 修复 合同标的放在下面，合同已付、合同未付、付款中放上面</description>
+			<author>余艳祥</author>
+			<revision-time>2019-07-19</revision-time>
+			<baseline>V15.0.1.R.20190906</baseline>
+		</modify>
+		<modify>
+			<description>#78111 修复 发票代码重复时查看发票信息不对的问题</description>
+			<author>汪金满</author>
+			<revision-time>2019-07-19</revision-time>
+			<baseline>V15.0.1.R.20190906</baseline>
+		</modify>
+		<modify>
+			<description>#74780 修复 移动端扫码后带出发票状态</description>
+			<author>汪金满</author>
+			<revision-time>2019-07-19</revision-time>
+			<relation>
+				<relation-module>fssc/common</relation-module>
+			</relation>
+			<baseline>V15.0.1.R.20190906</baseline>
+		</modify>
+		<modify>
+			<description>#74780 优化 移动端扫发票后自动计算金额</description>
+			<author>汪金满</author>
+			<revision-time>2019-07-18</revision-time>
+			<relation>
+				<relation-module>fssc/common</relation-module>
+			</relation>
+			<baseline>V15.0.1.R.20190906</baseline>
+		</modify>
+		<modify>
+			<description>#74834 新增 采购管理模块</description>
+			<author>谢星星</author>
+			<revision-time>2019-07-10</revision-time>
+			<relation>
+				<relation-module>fssc/common</relation-module>
+			</relation>
+			<baseline>V15.0.1.R.20190906</baseline>
+		</modify>
+		<modify>
+			<description>#74851 新增 领用申请关联需求，发布后使用预算</description>
+			<author>谢星星</author>
+			<revision-time>2019-07-10</revision-time>
+			<baseline>V15.0.0.R.20190712</baseline>
+		</modify>
+		<modify>
+			<description>#74850 新增 领用关联采购申请逻辑</description>
+			<author>谢星星</author>
+			<revision-time>2019-07-09</revision-time>
+			<baseline>V15.0.0.R.20190712</baseline>
+		</modify>
+		<modify>
+			<description>#74863 新增 合同台账，付款条件查询接口</description>
+			<author>余艳祥</author>
+			<revision-time>2019-07-07</revision-time>
+			<relation>
+				<relation-module>fssc/common</relation-module>
+			</relation>
+			<baseline>V15.0.1.R.20190906</baseline>
+		</modify>
+		<modify>
+			<description>#74849 新增 库存列表展现接口实现</description>
+			<author>谢星星</author>
+			<revision-time>2019-07-04</revision-time>
+			<relation>
+				<relation-module>fssc/common</relation-module>
+			</relation>
+			<baseline>V15.0.0.R.20190712</baseline>
+		</modify>
+		<modify>
+			<description>#74868 优化 付款时选择支出的合同台账</description>
+			<author>余艳祥</author>
+			<revision-time>2019-07-03</revision-time>
+			<baseline>V15.0.1.R.20190906</baseline>
+		</modify>
+		<modify>
+			<description>#74829 新增 库存新增接口</description>
+			<author>谢星星</author>
+			<revision-time>2019-06-29</revision-time>
+			<baseline>V15.0.0.R.20190712</baseline>
+		</modify>
+		<modify>
+			<description>#68034 优化 物质修改为物资</description>
+			<author>谢星星</author>
+			<revision-time>2019-06-26</revision-time>
+			<baseline>V15.0.0.R.20190712</baseline>
+		</modify>
+		<modify>
+			<description>#74830 修改合同台账开关</description>
+			<author>余艳祥</author>
+			<revision-time>2019-06-25</revision-time>
+			<baseline>V15.0.1.R.20190906</baseline>
+		</modify>
+		<modify>
+			<description>#74833 新增 合同台账对外webservice接口</description>
+			<author>余艳祥</author>
+			<revision-time>2019-06-25</revision-time>
+			<baseline>V15.0.1.R.20190906</baseline>
+		</modify>
+		<modify>
+			<description>#68034 删除 多余的引用包</description>
+			<author>谢星星</author>
+			<revision-time>2019-06-20</revision-time>
+			<baseline>V15.0.1.R.20190906</baseline>
+		</modify>
+		<modify>
+			<description>#74832 新增 合同台账导入导出</description>
+			<author>余艳祥</author>
+			<revision-time>2019-06-19</revision-time>
+			<baseline>V15.0.0.R.20190712</baseline>
+		</modify>
+		<modify>
+			<description>#74829 新增 物资台账对外接口</description>
+			<author>谢星星</author>
+			<revision-time>2019-06-18</revision-time>
+			<relation>
+				<relation-module>fssc/common</relation-module>
+			</relation>
+			<baseline>V15.0.0.R.20190712</baseline>
+		</modify>
+		<modify>
+			<description>#74828 新增 物资台账查看页面出库入库记录页签</description>
+			<author>谢星星</author>
+			<revision-time>2019-06-18</revision-time>
+			<baseline>V15.0.0.R.20190712</baseline>
+		</modify>
+		<modify>
+			<description>#75292 物资台账导入导出</description>
+			<author>谢星星</author>
+			<revision-time>2019-06-18</revision-time>
+			<relation>
+				<relation-module>fssc/base</relation-module>
+			</relation>
+			<baseline>V15.0.1.R.20190906</baseline>
+		</modify>
+		<modify>
+			<description>#68034 新增 初始化费控V4代码</description>
+			<author>谢星星</author>
+			<revision-time>2019-06-03</revision-time>
+			<baseline>V15.0.0.R.20190712</baseline>
+		</modify>
+	</modifies>
+</version>

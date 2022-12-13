@@ -1,0 +1,49 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN" 
+    "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+	<class
+		name="com.landray.kmss.geesun.oitems.model.GeesunOitemsApplicationListing"
+		table="geesun_oitems_application_list">
+		<id
+			name="fdId"
+			column="fd_id"
+			length="36">
+			<generator class="assigned" />
+		</id>
+
+
+		<property
+			name="fdApplicationNumber"
+			column="fd_application_number"
+			update="true"
+			insert="true"
+			not-null="false"
+			length="12" />
+			
+		<property
+			name="fdApplicationId"
+			column="fd_apply_Id"
+			update="true"
+			insert="true"
+			not-null="false"
+			length="36" />
+
+		<many-to-one
+			name="geesunOitemsGetApplication"
+			column="fd_application_id"
+			insert="true"
+			update="true"
+			not-null="false" />
+
+		<many-to-one
+			name="geesunOitemsListing"
+			column="fd_listing_id"
+			insert="true"
+			update="true"
+			not-null="false" />
+
+	</class>
+</hibernate-mapping>

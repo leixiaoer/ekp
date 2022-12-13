@@ -1,0 +1,134 @@
+{
+    "global":     {
+        "modelName": "com.landray.kmss.fssc.base.model.FsscBaseCompanyGroup",
+        "messageKey": "fssc-base:table.fsscBaseCompanyGroup",
+        "table": "fssc_base_company_group",
+        "url": "/fssc/base/fssc_base_company_group/fsscBaseCompanyGroup.do?method=view&fdId=${fdId}",
+        "displayProperty": "fdName",
+        "serviceBean": "fsscBaseCompanyGroupService",
+        "canLogShow": "1"
+    },
+    "attrs":     {
+        "fdId":         {
+            "propertyType": "id",
+            "generator": {"type": "assigned"}
+        },
+        "fdName":         {
+            "propertyType": "simple",
+            "type": "String",
+            "length": "200",
+            "defaultValue": "",
+            "messageKey": "fssc-base:fsscBaseCompanyGroup.fdName",
+            "column": "fd_name",
+            "notNull": "true",
+            "validate": "true",
+            "canSearch": "true",
+            "canRelation": "true",
+            "canDisplay": "true",
+            "readOnly": "false"
+        },
+        "fdCode":         {
+            "propertyType": "simple",
+            "type": "String",
+            "length": "50",
+            "defaultValue": "",
+            "messageKey": "fssc-base:fsscBaseCompanyGroup.fdCode",
+            "column": "fd_code",
+            "notNull": "true",
+            "validate": "true",
+            "canSearch": "true",
+            "canRelation": "true",
+            "canDisplay": "true",
+            "readOnly": "false"
+        },
+        "fdOrder":         {
+            "propertyType": "simple",
+            "type": "Integer",
+            "defaultValue": "",
+            "messageKey": "fssc-base:fsscBaseCompanyGroup.fdOrder",
+            "column": "fd_order",
+            "notNull": "false",
+            "validate": "true",
+            "canSearch": "true",
+            "canRelation": "true",
+            "canDisplay": "true",
+            "readOnly": "false"
+        },
+        "fdIsAvailable":         {
+            "propertyType": "simple",
+            "type": "Boolean",
+            "defaultValue": "true",
+            "messageKey": "fssc-base:fsscBaseCompanyGroup.fdIsAvailable",
+            "column": "fd_is_available",
+            "notNull": "false",
+            "validate": "true",
+            "canSearch": "true",
+            "canRelation": "true",
+            "canDisplay": "true",
+            "readOnly": "false"
+        },
+        "docCreateTime":         {
+            "propertyType": "simple",
+            "type": "DateTime",
+            "messageKey": "fssc-base:fsscBaseCompanyGroup.docCreateTime",
+            "column": "doc_create_time",
+            "notNull": "true",
+            "validate": "false",
+            "canSearch": "true",
+            "canRelation": "true",
+            "canDisplay": "true",
+            "readOnly": "true"
+        },
+        "docAlterTime":         {
+            "propertyType": "simple",
+            "type": "DateTime",
+            "messageKey": "fssc-base:fsscBaseCompanyGroup.docAlterTime",
+            "column": "doc_alter_time",
+            "notNull": "false",
+            "validate": "false",
+            "canSearch": "true",
+            "canRelation": "true",
+            "canDisplay": "true",
+            "readOnly": "true"
+        },
+        "hbmParent": {
+            "propertyType": "model",
+            "type": "com.landray.kmss.fssc.base.model.FsscBaseCompanyGroup",
+            "messageKey": "fssc-base:fsscBaseCompanyGroup.fdParent",
+            "column": "fd_parent_id",
+            "notNull": "true",
+            "validate": "false",
+            "canSearch": "true",
+            "canRelation": "true",
+            "canDisplay": "true",
+            "readOnly": "true",
+            "dialogJS": "Dialog_Address(!{mulSelect}, '!{idField}','!{nameField}', ';',ORG_TYPE_PERSON);"
+        },
+        "docCreator":         {
+            "propertyType": "model",
+            "type": "com.landray.kmss.sys.organization.model.SysOrgPerson",
+            "messageKey": "fssc-base:fsscBaseCompanyGroup.docCreator",
+            "column": "doc_creator_id",
+            "notNull": "true",
+            "validate": "false",
+            "canSearch": "true",
+            "canRelation": "true",
+            "canDisplay": "true",
+            "readOnly": "true",
+            "dialogJS": "Dialog_Address(!{mulSelect}, '!{idField}','!{nameField}', ';',ORG_TYPE_PERSON);"
+        },
+        "docAlteror":         {
+            "propertyType": "model",
+            "type": "com.landray.kmss.sys.organization.model.SysOrgPerson",
+            "messageKey": "fssc-base:fsscBaseCompanyGroup.docAlteror",
+            "column": "doc_alteror_id",
+            "notNull": "false",
+            "validate": "false",
+            "canSearch": "true",
+            "canRelation": "true",
+            "canDisplay": "true",
+            "readOnly": "true",
+            "dialogJS": "Dialog_Address(!{mulSelect}, '!{idField}','!{nameField}', ';',ORG_TYPE_PERSON);"
+        }
+    }
+}

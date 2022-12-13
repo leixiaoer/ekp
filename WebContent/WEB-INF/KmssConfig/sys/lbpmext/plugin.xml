@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<plugin
+	xmlns="http://www.example.org/plugin-config"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.example.org/plugin-config ../../plugin.xsd ">
+	
+	<!--监听秘书预审	-->
+	<extension
+             point="com.landray.kmss.lbpm.engine.event">
+             <item
+                   name="listener">
+                   <param
+                          name="unid"
+                          value="lbpmExtNodeHanlderLeaderSecretaryListener" />
+                   <param
+                          name="messageKey"
+                          value="" />
+                   <param
+                          name="eventTypes"
+                          value="manualNodeHanlderGetterEvent" />
+                   <param
+                          name="listener"
+                          value="lbpmExtNodeHanlderLeaderSecretaryListener" />
+                   <param
+                          name="enforce"
+                          value="true" />
+             </item>
+   </extension>
+</plugin>

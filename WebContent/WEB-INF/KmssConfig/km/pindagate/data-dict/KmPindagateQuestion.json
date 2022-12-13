@@ -1,0 +1,126 @@
+{
+    "global":     {
+        "modelName": "com.landray.kmss.km.pindagate.model.KmPindagateQuestion",
+        "messageKey": "km-pindagate:table.kmPindagateQuestion",
+        "displayProperty": "fdName",
+        "serviceBean": "kmPindagateQuestionService",
+        "table": "km_pindagate_question",
+        "url": "/km/pindagate/km_pindagate_question/kmPindagateQuestion.do?method=view&fdId=${fdId}"
+    },
+    "attrs":     {
+        "fdId":         {
+            "propertyType": "id",
+            "generator": {"type": "assigned"}
+        },
+        "version":         {
+            "propertyType": "simple",
+            "messageKey": "km-pindagate:kmPindagateQuestion.version",
+            "type": "Integer",
+            "column": "version",
+            "notNull": "false",
+            "length": "4",
+            "validate": "true"
+        },
+        "fdName":         {
+            "propertyType": "simple",
+            "messageKey": "km-pindagate:kmPindagateQuestion.fdName",
+            "type": "RTF",
+            "column": "fd_name",
+            "notNull": "false",
+            "length": "1000000",
+            "validate": "true"
+        },
+        "fdType":         {
+            "propertyType": "simple",
+            "messageKey": "km-pindagate:kmPindagateQuestion.fdType",
+            "type": "String",
+            "column": "fd_type",
+            "notNull": "false",
+            "length": "50",
+            "validate": "true"
+        },
+        "fdRelationSign":         {
+            "propertyType": "simple",
+            "messageKey": "km-pindagate:kmPindagateQuestion.fdRelationSign",
+            "type": "String",
+            "column": "fd_relation_sign",
+            "notNull": "false",
+            "length": "50",
+            "validate": "true"
+        },
+        "fdOrder":         {
+            "propertyType": "simple",
+            "messageKey": "km-pindagate:kmPindagateQuestion.fdOrder",
+            "type": "Integer",
+            "column": "fd_order",
+            "notNull": "false",
+            "length": "200",
+            "validate": "true"
+        },
+        "fdSplit":         {
+            "propertyType": "simple",
+            "messageKey": "km-pindagate:kmPindagateQuestion.fdSplit",
+            "type": "Boolean",
+            "column": "fd_split",
+            "notNull": "false",
+            "length": "50",
+            "validate": "true"
+        },
+        "fdQuestionDef":         {
+            "propertyType": "simple",
+            "messageKey": "km-pindagate:kmPindagateQuestion.fdQuestionDef",
+            "type": "RTF",
+            "column": "fd_question_def",
+            "notNull": "false",
+            "length": "1000000",
+            "validate": "false"
+        },
+        "fdRelationDef":         {
+            "propertyType": "simple",
+            "messageKey": "km-pindagate:kmPindagateQuestion.fdRelationDef",
+            "type": "RTF",
+            "column": "fd_relation_def",
+            "notNull": "false",
+            "length": "1000000",
+            "validate": "false"
+        },
+        "fdStatistic":         {
+            "propertyType": "simple",
+            "messageKey": "km-pindagate:kmPindagateQuestion.fdStatistic",
+            "type": "RTF",
+            "column": "fd_statistic",
+            "notNull": "false",
+            "length": "1000000",
+            "validate": "true"
+        },
+        "authArea":         {
+            "propertyType": "model",
+            "messageKey": "sys-authorization:sysAuthArea.authArea",
+            "type": "com.landray.kmss.sys.authorization.model.SysAuthArea",
+            "column": "auth_area_id",
+            "notNull": "false",
+            "unique": "false",
+            "readOnly": "true"
+        },
+        "fdFromTmp":         {
+            "propertyType": "simple",
+            "type": "Boolean",
+            "column": "fd_from_tmp",
+            "length": "2"
+        },
+        "kmPindagateMain":         {
+            "propertyType": "model",
+            "type": "com.landray.kmss.km.pindagate.model.KmPindagateMain",
+            "column": "km_pindagate_main_id"
+        },
+        "kmPindagateMainTemp":         {
+            "propertyType": "model",
+            "type": "com.landray.kmss.km.pindagate.model.KmPindagateMainTemp",
+            "column": "km_pindagate_main_temp_id"
+        }
+    },
+    "attachments": {"questionAtt":     {
+        "propertyType": "att",
+        "messageKey": "km-pindagate:kmPindagateQuestion.attachment"
+    }}
+}

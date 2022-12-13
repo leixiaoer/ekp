@@ -1,0 +1,1324 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configs
+	xmlns="http://www.example.org/design-config"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.example.org/design-config ../../design.xsd ">
+
+	<module
+		messageKey="km-asset:module.km.asset"
+		defaultValidator="roleValidator(role=ROLE_KMASSET_DEFAULT)"
+		urlPrefix="/km/asset/">
+		<roles>
+			ROLE_KMASSET_DEFAULT;
+			ROLE_KMASSET_OPTALL;
+			ROLE_KMASSETAPPLY_CATEGORY_MAINTAINER;
+			ROLE_KMASSETAPPLY_CREATE;
+			ROLE_KMASSETAPPLY_DELETE;
+			ROLE_KMASSETAPPLY_READER;
+			ROLE_KMASSETCARD_CATEGORY_MAINTAINER;
+			ROLE_KMASSETADDRESS_CATEGORY_MAINTAINER;
+			ROLE_KMASSETADDRESS_CREATE;
+			ROLE_KMASSETADDRESS_EDITOR;
+			ROLE_KMASSETADDRESS_DELETE;
+			ROLE_KMASSETCARD_CREATE;
+			ROLE_KMASSETCARD_READER;
+			ROLE_KMASSETCARD_DELETE;
+			ROLE_KMASSETCARD_EDITOR;
+			ROLE_KMASSETCARD_BATCHEDIT;
+			ROLE_KMASSET_BASESET;
+			ROLE_KMASSETCARD_EXPORT;
+			ROLE_KMASSETCARD_CHANGERIGHT;
+			ROLE_KMASSETAPPLY_CHANGERIGHT;
+			ROLE_KMASSET_BACKSTAGE_MANAGER;
+			ROLE_KMASSETAPPLY_PRINT;
+			ROLE_KMASSET_TRANSPORT_EXPORT;
+			ROLE_KMASSET_CIRCULATION_CREATE;
+			ROLE_KMASSET_CIRCULATION_DELETE
+		</roles>
+		<request
+			path="tree_config.jsp*"
+			defaultValidator="roleValidator(role=ROLE_KMASSET_BACKSTAGE_MANAGER)"/>
+		<request
+			path="km_asset_address_cate/kmAssetAddressCate.do*"
+			validatorParameter="recid=fdId,model=com.landray.kmss.km.asset.model.KmAssetAddressCate,adminRoleName=ROLE_KMASSETADDRESS_CATEGORY_MAINTAINER">
+			<!-- 保存 -->
+			<query
+				queryString="method=add"
+				validator="sysSimpleCategoryEditorValidator(recid=parentId)" />
+			<!-- 阅读 -->
+			<query
+				queryString="method=view"
+				validator="sysSimpleCategoryReaderValidator()"/>
+			<!-- 编辑和删除 -->
+			<query
+				queryString="method=edit|update|delete"
+				validator="sysSimpleCategoryEditorValidator()" />
+			<query
+				queryString="method=copy"
+				validator="sysSimpleCategoryEditorValidator(recid=fdCopyId)" />
+		</request>
+		<!-- 资产卡片类别 -->
+		<request
+			path="km_asset_category/kmAssetCategory*"
+			validatorParameter="recid=fdId,model=com.landray.kmss.km.asset.model.KmAssetCategory,adminRoleName=ROLE_KMASSETCARD_CATEGORY_MAINTAINER">
+			<!-- 保存 -->
+			<query
+				queryString="method=add"
+				validator="sysSimpleCategoryEditorValidator(recid=parentId)" />
+			<!-- 阅读 -->
+			<query
+				queryString="method=view"
+				validator="sysSimpleCategoryReaderValidator()" />
+			<!-- 编辑和删除 -->
+			<query
+				queryString="method=edit|update|delete"
+				validator="sysSimpleCategoryEditorValidator()" />
+		</request>
+		
+		<!-- 资产卡片 -->
+		<request
+			path="km_asset_card/kmAssetCard*"
+			validatorParameter="recid=fdId,model=com.landray.kmss.km.asset.model.KmAssetCard,cateModel=com.landray.kmss.km.asset.model.KmAssetCategory,adminRoleName=ROLE_KMASSETCARD_CATEGORY_MAINTAINER">
+			<!-- 在类别下新建 -->
+			<query
+				queryString="method=add|importExcel&amp;fdTemplateId=*"
+				validator="roleValidator(role=ROLE_KMASSETCARD_CREATE)&amp;authSimpleCategoryReaderValidator(cateId=fdTemplateId)" />
+			<!-- 保存 -->
+			<query
+				queryString="method=save|saveadd"
+				validator="roleValidator(role=ROLE_KMASSETCARD_CREATE)&amp;authSimpleCategoryReaderValidator(cateId=fdTemplateId)" />
+			<!-- 阅读 -->
+			<query
+				queryString="method=view"
+				validator="authFieldValidator(type=SYS_READER)|authFieldValidator(type=responsiblePerson)|authSimpleCategoryEditorValidator(property=fdAssetCategory)" />
+			<!-- 编辑 -->
+			<query
+				queryString="method=edit|update"
+				validator="authFieldValidator(type=creator)|authFieldValidator(type=SYS_EDITOR)|roleValidator(role=ROLE_KMASSETCARD_EDITOR)&amp;[roleValidator(role=ROLE_KMASSETCARD_CATEGORY_MAINTAINER)|roleValidator(role=ROLE_KMASSET_OPTALL)|authSimpleCategoryEditorValidator(property=fdAssetCategory)]" />
+			<!-- 批量修改 -->
+			<query
+				queryString="method=addBatchEdit|batchEdit"
+				validator="roleValidator(role=ROLE_KMASSETCARD_BATCHEDIT)"/>
+			
+			<query
+				queryString="method=exportResult"
+				validator="roleValidator(role=ROLE_KMASSETCARD_EXPORT)"/>
+			
+			<!-- 文档中的删除 -->
+			<query
+				queryString="method=delete"
+				validator="roleValidator(role=ROLE_KMASSETCARD_DELETE)&amp;[roleValidator(role=ROLE_KMASSETCARD_CATEGORY_MAINTAINER)|roleValidator(role=ROLE_KMASSET_OPTALL)|authSimpleCategoryEditorValidator(property=fdAssetCategory)]" />
+			<!-- 删除所有草稿视图 -->
+			<query
+				queryString="method=deleteall&amp;status=10"
+				validator="roleValidator(role=ROLE_KMASSET_DEFAULT)" />
+			<!-- 删除所有其他视图 -->
+			<query
+				queryString="method=deleteall"
+				validator="roleValidator(role=ROLE_KMASSETCARD_DELETE)&amp;[roleValidator(role=ROLE_KMASSETCARD_CATEGORY_MAINTAINER)|roleValidator(role=ROLE_KMASSET_OPTALL)|authSimpleCategoryEditorValidator(cateId=categoryId)]" />
+		</request>
+				
+		<!-- 资产申请模板 -->
+		<request
+			path="km_asset_apply_template/kmAssetApplyTemplate*"
+			validatorParameter="recid=fdId,model=com.landray.kmss.km.asset.model.KmAssetApplyTemplate">
+			<!-- 保存 -->
+			<query
+				queryString="method=save|saveadd"
+				validator="authCategoryReaderValidator(cateid=parentId)" />
+			<!-- 阅读 -->
+			<query
+				queryString="method=view"
+				validator="authFieldValidator(type=SYS_READER)|authCategoryEditorValidator(property=docCategory)" />
+			<!-- 编辑和删除 -->
+			<query
+				queryString="method=edit|update|delete"
+				validator="authFieldValidator(type=SYS_EDITOR)|authCategoryEditorValidator(property=docCategory)" />
+			<!-- 删除所有 -->
+			<query
+				queryString="method=deleteall"
+				validator="authCategoryEditorValidator(cateid=parentId)" />
+		</request>
+		
+		<!-- 基类 -->
+		<request
+			path="km_asset_apply_base/kmAssetApplyBase*"
+			validatorParameter="recid=fdId,model=com.landray.kmss.km.asset.model.KmAssetApplyBase,templatemodel=com.landray.kmss.km.asset.model.KmAssetApplyTemplate">
+		    <query
+				queryString="method=add&amp;fdTemplateId=*"
+				validator="roleValidator(role=ROLE_KMASSETAPPLY_CREATE)&amp;authCategoryReaderValidator(templateid=fdTemplateId)" />
+			<!-- 删除所有草稿视图 -->
+			<query
+				queryString="method=deleteall&amp;mydoc=true&amp;docStatus=10"
+				validator="roleValidator(role=ROLE_KMASSET_DEFAULT)" />
+			<query
+				queryString="method=deleteall"
+				validator="roleValidator(role=ROLE_KMASSETAPPLY_DELETE)&amp;[fieldValueValidator(field=nodeType,value=CATEGORY)&amp;authCategoryEditorValidator(cateid=categoryId)|fieldValueValidator(field=nodeType,value=TEMPLATE)&amp;authCategoryEditorValidator(templateid=categoryId)|roleValidator(role=ROLE_KMASSET_OPTALL)|roleValidator(role=ROLE_KMASSETAPPLY_CATEGORY_MAINTAINER)|roleValidator(role=ROLE_SYSCATEGORY_MAINTAINER)]" />
+		   <!-- 修改权限 -->
+		</request>
+		
+		<!-- 资产申购 -->
+		<request
+			path="km_asset_apply_buy/kmAssetApplyBuy*"
+			validatorParameter="recid=fdId,model=com.landray.kmss.km.asset.model.KmAssetApplyBuy,templatemodel=com.landray.kmss.km.asset.model.KmAssetApplyTemplate">
+			<!-- 新增 -->
+			<query
+				queryString="method=add&amp;fdTemplateId=*"
+				validator="roleValidator(role=ROLE_KMASSETAPPLY_CREATE)&amp;authCategoryReaderValidator(templateid=fdTemplateId)" />
+			<!-- 保存 -->
+			<query
+				queryString="method=save|saveadd|saveDraft"
+				validator="roleValidator(role=ROLE_KMASSETAPPLY_CREATE)&amp;authCategoryReaderValidator(templateid=fdTemplateId)" />
+			<!-- 阅读 -->
+			<query
+				queryString="method=view"
+				validator="authFieldValidator(type=SYS_READER)|authCategoryEditorValidator(property=fdApplyTemplate)" />
+			<query
+				queryString="method=print"
+				validator="roleValidator(role=ROLE_KMASSETAPPLY_PRINT)&amp;fieldValueValidator(fieldproperty=docStatus,except=10)" />
+			<!-- 编辑、更新 -->
+			<query
+				queryString="method=edit|update"
+				validator="authFieldValidator(type=SYS_EDITOR)&amp;fieldValueValidator(fieldproperty=docStatus,value=10;11;20)"/>
+			<!-- 删除 -->
+			<query
+				queryString="method=delete"
+				validator="fieldValueValidator(fieldproperty=docStatus,value=10)&amp;authFieldValidator(type=creator)|roleValidator(role=ROLE_KMASSETAPPLY_DELETE)&amp;[authCategoryEditorValidator(property=fdApplyTemplate,role=ROLE_KMREVIEW_OPTALL)|roleValidator(role=ROLE_KMASSETAPPLY_CATEGORY_MAINTAINER)|roleValidator(role=ROLE_SYSCATEGORY_MAINTAINER)]" />
+			<!-- 删除所有草稿视图 -->
+			<query
+				queryString="method=deleteall&amp;status=10"
+				validator="roleValidator(role=ROLE_KMASSET_DEFAULT)" />
+			<!-- 删除所有其他视图 -->
+			<query
+				queryString="method=deleteall"
+				validator="roleValidator(role=ROLE_KMASSETAPPLY_DELETE)&amp;[roleValidator(role=ROLE_KMASSET_OPTALL)|roleValidator(role=ROLE_KMASSETAPPLY_CATEGORY_MAINTAINER)|roleValidator(role=ROLE_SYSCATEGORY_MAINTAINER)]" />
+		</request>
+		
+		<!-- 资产采购 -->
+		<request
+			path="km_asset_apply_stock/kmAssetApplyStock*"
+			validatorParameter="recid=fdId,model=com.landray.kmss.km.asset.model.KmAssetApplyStock,templatemodel=com.landray.kmss.km.asset.model.KmAssetApplyTemplate">
+			<!-- 新增 -->
+			<query
+				queryString="method=add&amp;fdTemplateId=*"
+				validator="roleValidator(role=ROLE_KMASSETAPPLY_CREATE)&amp;authCategoryReaderValidator(templateid=fdTemplateId)" />
+			<!-- 保存 -->
+			<query
+				queryString="method=save|saveadd|saveDraft"
+				validator="roleValidator(role=ROLE_KMASSETAPPLY_CREATE)&amp;authCategoryReaderValidator(templateid=fdTemplateId)" />
+			<!-- 阅读 -->
+			<query
+				queryString="method=view"
+				validator="authFieldValidator(type=SYS_READER)|authCategoryEditorValidator(property=fdApplyTemplate)" />
+			<query
+				queryString="method=print"
+				validator="roleValidator(role=ROLE_KMASSETAPPLY_PRINT)&amp;fieldValueValidator(fieldproperty=docStatus,except=10)" />
+			<!-- 编辑、更新 -->
+			<query
+				queryString="method=edit|update"
+				validator="authFieldValidator(type=SYS_EDITOR)&amp;fieldValueValidator(fieldproperty=docStatus,value=10;11;20)"/>
+			<!-- 删除 -->
+			<query
+				queryString="method=delete"
+				validator="fieldValueValidator(fieldproperty=docStatus,value=10)&amp;authFieldValidator(type=creator)|roleValidator(role=ROLE_KMASSETAPPLY_DELETE)&amp;[authCategoryEditorValidator(property=fdApplyTemplate,role=ROLE_KMREVIEW_OPTALL)|roleValidator(role=ROLE_KMASSETAPPLY_CATEGORY_MAINTAINER)|roleValidator(role=ROLE_SYSCATEGORY_MAINTAINER)]" />
+			<!-- 删除所有草稿视图 -->
+			<query
+				queryString="method=deleteall&amp;status=10"
+				validator="roleValidator(role=ROLE_KMASSET_DEFAULT)" />
+			<!-- 删除所有其他视图 -->
+			<query
+				queryString="method=deleteall"
+				validator="roleValidator(role=ROLE_KMASSETAPPLY_DELETE)&amp;[roleValidator(role=ROLE_KMASSET_OPTALL)|roleValidator(role=ROLE_KMASSETAPPLY_CATEGORY_MAINTAINER)|roleValidator(role=ROLE_SYSCATEGORY_MAINTAINER)]" />
+		</request>
+		
+		<!-- 入库 -->
+		<request
+			path="km_asset_apply_in/kmAssetApplyIn*"
+			validatorParameter="recid=fdId,model=com.landray.kmss.km.asset.model.KmAssetApplyIn,templatemodel=com.landray.kmss.km.asset.model.KmAssetApplyTemplate">
+			<!-- 新增 -->
+			<query
+				queryString="method=add&amp;fdTemplateId=*"
+				validator="roleValidator(role=ROLE_KMASSETAPPLY_CREATE)&amp;authCategoryReaderValidator(templateid=fdTemplateId)" />
+			<!-- 保存 -->
+			<query
+				queryString="method=save|saveadd|saveDraft"
+				validator="roleValidator(role=ROLE_KMASSETAPPLY_CREATE)&amp;authCategoryReaderValidator(templateid=fdTemplateId)" />
+			<!-- 阅读 -->
+			<query
+				queryString="method=view"
+				validator="authFieldValidator(type=SYS_READER)|authCategoryEditorValidator(property=fdApplyTemplate)" />
+			<query
+				queryString="method=print"
+				validator="roleValidator(role=ROLE_KMASSETAPPLY_PRINT)&amp;fieldValueValidator(fieldproperty=docStatus,except=10)" />
+			<!-- 编辑、更新 -->
+			<query
+				queryString="method=edit|update"
+				validator="authFieldValidator(type=SYS_EDITOR)&amp;fieldValueValidator(fieldproperty=docStatus,value=10;11;20)"/>
+			<!-- 删除 -->
+			<query
+				queryString="method=delete"
+				validator="fieldValueValidator(fieldproperty=docStatus,value=10)&amp;authFieldValidator(type=creator)|roleValidator(role=ROLE_KMASSETAPPLY_DELETE)&amp;[authCategoryEditorValidator(property=fdApplyTemplate,role=ROLE_KMREVIEW_OPTALL)|roleValidator(role=ROLE_KMASSETAPPLY_CATEGORY_MAINTAINER)|roleValidator(role=ROLE_SYSCATEGORY_MAINTAINER)]" />
+			<!-- 删除所有草稿视图 -->
+			<query
+				queryString="method=deleteall&amp;status=10"
+				validator="roleValidator(role=ROLE_KMASSET_DEFAULT)" />
+			<!-- 删除所有其他视图 -->
+			<query
+				queryString="method=deleteall"
+				validator="roleValidator(role=ROLE_KMASSETAPPLY_DELETE)&amp;[roleValidator(role=ROLE_KMASSET_OPTALL)|roleValidator(role=ROLE_KMASSETAPPLY_CATEGORY_MAINTAINER)|roleValidator(role=ROLE_SYSCATEGORY_MAINTAINER)]" />
+		</request>
+		
+		<!-- 领用 -->
+		<request
+			path="km_asset_apply_get/kmAssetApplyGet*"
+			validatorParameter="recid=fdId,model=com.landray.kmss.km.asset.model.KmAssetApplyGet,templatemodel=com.landray.kmss.km.asset.model.KmAssetApplyTemplate">
+			<!-- 新增 -->
+			<query
+				queryString="method=add&amp;fdTemplateId=*"
+				validator="roleValidator(role=ROLE_KMASSETAPPLY_CREATE)&amp;authCategoryReaderValidator(templateid=fdTemplateId)" />
+			<!-- 保存 -->
+			<query
+				queryString="method=save|saveadd|saveDraft"
+				validator="roleValidator(role=ROLE_KMASSETAPPLY_CREATE)&amp;authCategoryReaderValidator(templateid=fdTemplateId)" />
+			<!-- 阅读 -->
+			<query
+				queryString="method=view"
+				validator="authFieldValidator(type=SYS_READER)|authCategoryEditorValidator(property=fdApplyTemplate)" />
+			<query
+				queryString="method=print"
+				validator="roleValidator(role=ROLE_KMASSETAPPLY_PRINT)&amp;fieldValueValidator(fieldproperty=docStatus,except=10)" />
+			<!-- 编辑、更新 -->
+			<query
+				queryString="method=edit|update"
+				validator="authFieldValidator(type=SYS_EDITOR)&amp;fieldValueValidator(fieldproperty=docStatus,value=10;11;20)"/>
+			<!-- 删除 -->
+			<query
+				queryString="method=delete"
+				validator="fieldValueValidator(fieldproperty=docStatus,value=10)&amp;authFieldValidator(type=creator)|roleValidator(role=ROLE_KMASSETAPPLY_DELETE)&amp;[authCategoryEditorValidator(property=fdApplyTemplate,role=ROLE_KMREVIEW_OPTALL)|roleValidator(role=ROLE_KMASSETAPPLY_CATEGORY_MAINTAINER)|roleValidator(role=ROLE_SYSCATEGORY_MAINTAINER)]" />
+			<!-- 删除所有草稿视图 -->
+			<query
+				queryString="method=deleteall&amp;status=10"
+				validator="roleValidator(role=ROLE_KMASSET_DEFAULT)" />
+			<!-- 删除所有其他视图 -->
+			<query
+				queryString="method=deleteall"
+				validator="roleValidator(role=ROLE_KMASSETAPPLY_DELETE)&amp;[roleValidator(role=ROLE_KMASSET_OPTALL)|roleValidator(role=ROLE_KMASSETAPPLY_CATEGORY_MAINTAINER)|roleValidator(role=ROLE_SYSCATEGORY_MAINTAINER)]" />
+		</request>
+		
+		<!-- 调拨 -->
+		<request
+			path="km_asset_apply_divert/kmAssetApplyDivert*"
+			validatorParameter="recid=fdId,model=com.landray.kmss.km.asset.model.KmAssetApplyDivert,templatemodel=com.landray.kmss.km.asset.model.KmAssetApplyTemplate">
+			<!-- 新增 -->
+			<query
+				queryString="method=add&amp;fdTemplateId=*"
+				validator="roleValidator(role=ROLE_KMASSETAPPLY_CREATE)&amp;authCategoryReaderValidator(templateid=fdTemplateId)" />
+			<!-- 保存 -->
+			<query
+				queryString="method=save|saveadd|saveDraft"
+				validator="roleValidator(role=ROLE_KMASSETAPPLY_CREATE)&amp;authCategoryReaderValidator(templateid=fdTemplateId)" />
+			<query
+				queryString="method=print"
+				validator="roleValidator(role=ROLE_KMASSETAPPLY_PRINT)&amp;fieldValueValidator(fieldproperty=docStatus,except=10)" />
+			<!-- 阅读 -->
+			<query
+				queryString="method=view"
+				validator="authFieldValidator(type=SYS_READER)|authCategoryEditorValidator(property=fdApplyTemplate)" />
+			<!-- 编辑、更新 -->
+			<query
+				queryString="method=edit|update"
+				validator="authFieldValidator(type=SYS_EDITOR)&amp;fieldValueValidator(fieldproperty=docStatus,value=10;11;20)"/>
+			<!-- 删除 -->
+			<query
+				queryString="method=delete"
+				validator="fieldValueValidator(fieldproperty=docStatus,value=10)&amp;authFieldValidator(type=creator)|roleValidator(role=ROLE_KMASSETAPPLY_DELETE)&amp;[authCategoryEditorValidator(property=fdApplyTemplate,role=ROLE_KMREVIEW_OPTALL)|roleValidator(role=ROLE_KMASSETAPPLY_CATEGORY_MAINTAINER)|roleValidator(role=ROLE_SYSCATEGORY_MAINTAINER)]" />
+			<!-- 删除所有草稿视图 -->
+			<query
+				queryString="method=deleteall&amp;status=10"
+				validator="roleValidator(role=ROLE_KMASSET_DEFAULT)" />
+			<!-- 删除所有其他视图 -->
+			<query
+				queryString="method=deleteall"
+				validator="roleValidator(role=ROLE_KMASSETAPPLY_DELETE)&amp;[roleValidator(role=ROLE_KMASSET_OPTALL)|roleValidator(role=ROLE_KMASSETAPPLY_CATEGORY_MAINTAINER)|roleValidator(role=ROLE_SYSCATEGORY_MAINTAINER)]" />
+		</request>
+		
+		<!-- 资产维修 -->
+		<request
+			path="km_asset_apply_repair/kmAssetApplyRepair*"
+			validatorParameter="recid=fdId,model=com.landray.kmss.km.asset.model.KmAssetApplyRepair,templatemodel=com.landray.kmss.km.asset.model.KmAssetApplyTemplate">
+			<!-- 新增 -->
+			<query
+				queryString="method=add&amp;fdTemplateId=*"
+				validator="roleValidator(role=ROLE_KMASSETAPPLY_CREATE)&amp;authCategoryReaderValidator(templateid=fdTemplateId)" />
+			<!-- 保存 -->
+			<query
+				queryString="method=save|saveadd|saveDraft"
+				validator="roleValidator(role=ROLE_KMASSETAPPLY_CREATE)&amp;authCategoryReaderValidator(templateid=fdTemplateId)" />
+			<query
+				queryString="method=print"
+				validator="roleValidator(role=ROLE_KMASSETAPPLY_PRINT)&amp;fieldValueValidator(fieldproperty=docStatus,except=10)" />
+			<!-- 阅读 -->
+			<query
+				queryString="method=view"
+				validator="authFieldValidator(type=SYS_READER)|authCategoryEditorValidator(property=fdApplyTemplate)" />
+			<!-- 编辑、更新 -->
+			<query
+				queryString="method=edit|update"
+				validator="authFieldValidator(type=SYS_EDITOR)&amp;fieldValueValidator(fieldproperty=docStatus,value=10;11;20)"/>
+			<!-- 删除 -->
+			<query
+				queryString="method=delete"
+				validator="fieldValueValidator(fieldproperty=docStatus,value=10)&amp;authFieldValidator(type=creator)|roleValidator(role=ROLE_KMASSETAPPLY_DELETE)&amp;[authCategoryEditorValidator(property=fdApplyTemplate,role=ROLE_KMREVIEW_OPTALL)|roleValidator(role=ROLE_KMASSETAPPLY_CATEGORY_MAINTAINER)|roleValidator(role=ROLE_SYSCATEGORY_MAINTAINER)]" />
+			<!-- 删除所有草稿视图 -->
+			<query
+				queryString="method=deleteall&amp;status=10"
+				validator="roleValidator(role=ROLE_KMASSET_DEFAULT)" />
+			<!-- 删除所有其他视图 -->
+			<query
+				queryString="method=deleteall"
+				validator="roleValidator(role=ROLE_KMASSETAPPLY_DELETE)&amp;[roleValidator(role=ROLE_KMASSET_OPTALL)|roleValidator(role=ROLE_KMASSETAPPLY_CATEGORY_MAINTAINER)|roleValidator(role=ROLE_SYSCATEGORY_MAINTAINER)]" />
+		</request>
+		
+		<!-- 资产出租 -->
+		<request
+			path="km_asset_apply_rent/kmAssetApplyRent*"
+			validatorParameter="recid=fdId,model=com.landray.kmss.km.asset.model.KmAssetApplyRent,templatemodel=com.landray.kmss.km.asset.model.KmAssetApplyTemplate">
+			<!-- 新增 -->
+			<query
+				queryString="method=add&amp;fdTemplateId=*"
+				validator="roleValidator(role=ROLE_KMASSETAPPLY_CREATE)&amp;authCategoryReaderValidator(templateid=fdTemplateId)" />
+			<!-- 保存 -->
+			<query
+				queryString="method=save|saveadd|saveDraft"
+				validator="roleValidator(role=ROLE_KMASSETAPPLY_CREATE)&amp;authCategoryReaderValidator(templateid=fdTemplateId)" />
+			<!-- 阅读 -->
+			<query
+				queryString="method=view"
+				validator="authFieldValidator(type=SYS_READER)|authCategoryEditorValidator(property=fdApplyTemplate)" />
+			<query
+				queryString="method=print"
+				validator="roleValidator(role=ROLE_KMASSETAPPLY_PRINT)&amp;fieldValueValidator(fieldproperty=docStatus,except=10)" />
+			<!-- 编辑、更新 -->
+			<query
+				queryString="method=edit|update"
+				validator="authFieldValidator(type=SYS_EDITOR)&amp;fieldValueValidator(fieldproperty=docStatus,value=10;11;20)"/>
+			<!-- 删除 -->
+			<query
+				queryString="method=delete"
+				validator="fieldValueValidator(fieldproperty=docStatus,value=10)&amp;authFieldValidator(type=creator)|roleValidator(role=ROLE_KMASSETAPPLY_DELETE)&amp;[authCategoryEditorValidator(property=fdApplyTemplate,role=ROLE_KMREVIEW_OPTALL)|roleValidator(role=ROLE_KMASSETAPPLY_CATEGORY_MAINTAINER)|roleValidator(role=ROLE_SYSCATEGORY_MAINTAINER)]" />
+			<!-- 删除所有草稿视图 -->
+			<query
+				queryString="method=deleteall&amp;status=10"
+				validator="roleValidator(role=ROLE_KMASSET_DEFAULT)" />
+			<!-- 删除所有其他视图 -->
+			<query
+				queryString="method=deleteall"
+				validator="roleValidator(role=ROLE_KMASSETAPPLY_DELETE)&amp;[roleValidator(role=ROLE_KMASSET_OPTALL)|roleValidator(role=ROLE_KMASSETAPPLY_CATEGORY_MAINTAINER)|roleValidator(role=ROLE_SYSCATEGORY_MAINTAINER)]" />
+		</request>
+		
+		<!-- 资产归还 -->
+		<request
+			path="km_asset_apply_return/kmAssetApplyReturn*"
+			validatorParameter="recid=fdId,model=com.landray.kmss.km.asset.model.KmAssetApplyReturn,templatemodel=com.landray.kmss.km.asset.model.KmAssetApplyTemplate">
+			<!-- 新增 -->
+			<query
+				queryString="method=add&amp;fdTemplateId=*"
+				validator="roleValidator(role=ROLE_KMASSETAPPLY_CREATE)&amp;authCategoryReaderValidator(templateid=fdTemplateId)" />
+			<!-- 保存 -->
+			<query
+				queryString="method=save|saveadd|saveDraft"
+				validator="roleValidator(role=ROLE_KMASSETAPPLY_CREATE)&amp;authCategoryReaderValidator(templateid=fdTemplateId)" />
+			<query
+				queryString="method=print"
+				validator="roleValidator(role=ROLE_KMASSETAPPLY_PRINT)&amp;fieldValueValidator(fieldproperty=docStatus,except=10)" />
+			<!-- 阅读 -->
+			<query
+				queryString="method=view"
+				validator="authFieldValidator(type=SYS_READER)|authCategoryEditorValidator(property=fdApplyTemplate)" />
+			<!-- 编辑、更新 -->
+			<query
+				queryString="method=edit|update"
+				validator="authFieldValidator(type=SYS_EDITOR)&amp;fieldValueValidator(fieldproperty=docStatus,value=10;11;20)"/>
+			<!-- 删除 -->
+			<query
+				queryString="method=delete"
+				validator="fieldValueValidator(fieldproperty=docStatus,value=10)&amp;authFieldValidator(type=creator)|roleValidator(role=ROLE_KMASSETAPPLY_DELETE)&amp;[authCategoryEditorValidator(property=fdApplyTemplate,role=ROLE_KMREVIEW_OPTALL)|roleValidator(role=ROLE_KMASSETAPPLY_CATEGORY_MAINTAINER)|roleValidator(role=ROLE_SYSCATEGORY_MAINTAINER)]" />
+			<!-- 删除所有草稿视图 -->
+			<query
+				queryString="method=deleteall&amp;status=10"
+				validator="roleValidator(role=ROLE_KMASSET_DEFAULT)" />
+			<!-- 删除所有其他视图 -->
+			<query
+				queryString="method=deleteall"
+				validator="roleValidator(role=ROLE_KMASSETAPPLY_DELETE)&amp;[roleValidator(role=ROLE_KMASSET_OPTALL)|roleValidator(role=ROLE_KMASSETAPPLY_CATEGORY_MAINTAINER)|roleValidator(role=ROLE_SYSCATEGORY_MAINTAINER)]" />
+		</request>
+		
+		<!-- 资产变更 -->
+		<request
+			path="km_asset_apply_change/kmAssetApplyChange*"
+			validatorParameter="recid=fdId,model=com.landray.kmss.km.asset.model.KmAssetApplyChange,templatemodel=com.landray.kmss.km.asset.model.KmAssetApplyTemplate">
+			<!-- 新增 -->
+			<query
+				queryString="method=add&amp;fdTemplateId=*"
+				validator="roleValidator(role=ROLE_KMASSETAPPLY_CREATE)&amp;authCategoryReaderValidator(templateid=fdTemplateId)" />
+			<!-- 保存 -->
+			<query
+				queryString="method=save|saveadd|saveDraft"
+				validator="roleValidator(role=ROLE_KMASSETAPPLY_CREATE)&amp;authCategoryReaderValidator(templateid=fdTemplateId)" />
+			<query
+				queryString="method=print"
+				validator="roleValidator(role=ROLE_KMASSETAPPLY_PRINT)&amp;fieldValueValidator(fieldproperty=docStatus,except=10)" />
+			<!-- 阅读 -->
+			<query
+				queryString="method=view"
+				validator="authFieldValidator(type=SYS_READER)|authCategoryEditorValidator(property=fdApplyTemplate)" />
+			<!-- 编辑、更新 -->
+			<query
+				queryString="method=edit|update"
+				validator="authFieldValidator(type=SYS_EDITOR)&amp;fieldValueValidator(fieldproperty=docStatus,value=10;11;20)"/>
+			<!-- 删除 -->
+			<query
+				queryString="method=delete"
+				validator="fieldValueValidator(fieldproperty=docStatus,value=10)&amp;authFieldValidator(type=creator)|roleValidator(role=ROLE_KMASSETAPPLY_DELETE)&amp;[authCategoryEditorValidator(property=fdApplyTemplate,role=ROLE_KMREVIEW_OPTALL)|roleValidator(role=ROLE_KMASSETAPPLY_CATEGORY_MAINTAINER)|roleValidator(role=ROLE_SYSCATEGORY_MAINTAINER)]" />
+			<!-- 删除所有草稿视图 -->
+			<query
+				queryString="method=deleteall&amp;status=10"
+				validator="roleValidator(role=ROLE_KMASSET_DEFAULT)" />
+			<!-- 删除所有其他视图 -->
+			<query
+				queryString="method=deleteall"
+				validator="roleValidator(role=ROLE_KMASSETAPPLY_DELETE)&amp;[roleValidator(role=ROLE_KMASSET_OPTALL)|roleValidator(role=ROLE_KMASSETAPPLY_CATEGORY_MAINTAINER)|roleValidator(role=ROLE_SYSCATEGORY_MAINTAINER)]" />
+		</request>
+		
+		<!-- 资产处置 -->
+		<request
+			path="km_asset_apply_deal/kmAssetApplyDeal*"
+			validatorParameter="recid=fdId,model=com.landray.kmss.km.asset.model.KmAssetApplyDeal,templatemodel=com.landray.kmss.km.asset.model.KmAssetApplyTemplate">
+			<!-- 新增 -->
+			<query
+				queryString="method=add&amp;fdTemplateId=*"
+				validator="roleValidator(role=ROLE_KMASSETAPPLY_CREATE)&amp;authCategoryReaderValidator(templateid=fdTemplateId)" />
+			<!-- 保存 -->
+			<query
+				queryString="method=save|saveadd|saveDraft"
+				validator="roleValidator(role=ROLE_KMASSETAPPLY_CREATE)&amp;authCategoryReaderValidator(templateid=fdTemplateId)" />
+			<query
+				queryString="method=print"
+				validator="roleValidator(role=ROLE_KMASSETAPPLY_PRINT)&amp;fieldValueValidator(fieldproperty=docStatus,except=10)" />
+			<!-- 阅读 -->
+			<query
+				queryString="method=view"
+				validator="authFieldValidator(type=SYS_READER)|authCategoryEditorValidator(property=fdApplyTemplate)" />
+			<!-- 编辑、更新 -->
+			<query
+				queryString="method=edit|update"
+				validator="authFieldValidator(type=SYS_EDITOR)&amp;fieldValueValidator(fieldproperty=docStatus,value=10;11;20)"/>
+			<!-- 删除 -->
+			<query
+				queryString="method=delete"
+				validator="fieldValueValidator(fieldproperty=docStatus,value=10)&amp;authFieldValidator(type=creator)|roleValidator(role=ROLE_KMASSETAPPLY_DELETE)&amp;[authCategoryEditorValidator(property=fdApplyTemplate,role=ROLE_KMREVIEW_OPTALL)|roleValidator(role=ROLE_KMASSETAPPLY_CATEGORY_MAINTAINER)|roleValidator(role=ROLE_SYSCATEGORY_MAINTAINER)]" />
+			<!-- 删除所有草稿视图 -->
+			<query
+				queryString="method=deleteall&amp;status=10"
+				validator="roleValidator(role=ROLE_KMASSET_DEFAULT)" />
+			<!-- 删除所有其他视图 -->
+			<query
+				queryString="method=deleteall"
+				validator="roleValidator(role=ROLE_KMASSETAPPLY_DELETE)&amp;[roleValidator(role=ROLE_KMASSET_OPTALL)|roleValidator(role=ROLE_KMASSETAPPLY_CATEGORY_MAINTAINER)|roleValidator(role=ROLE_SYSCATEGORY_MAINTAINER)]" />
+		</request>
+		
+		<request
+			path="km_asset_apply_repair_expend/kmAssetApplyRepairExpend*"
+			validatorParameter="recid=fdId,model=com.landray.kmss.km.asset.model.KmAssetApplyRepairExpend">
+		</request>
+
+		<request
+			path="km_asset_apply_divert_list/kmAssetApplyDivertList*"
+			validatorParameter="recid=fdId,model=com.landray.kmss.km.asset.model.KmAssetApplyDivertList">
+		</request>
+
+		<request
+			path="km_asset_apply_buy_list/kmAssetApplyBuyList*"
+			validatorParameter="recid=fdId,model=com.landray.kmss.km.asset.model.KmAssetApplyBuyList">
+		</request>
+		
+		<request
+			path="km_asset_apply_category/kmAssetApplyCategory*"
+			validatorParameter="recid=fdId,model=com.landray.kmss.km.asset.model.KmAssetApplyCategory">
+		</request>
+
+		<request
+			path="km_asset_apply_return_list/kmAssetApplyReturnList*"
+			validatorParameter="recid=fdId,model=com.landray.kmss.km.asset.model.KmAssetApplyReturnList">
+		</request>
+
+		<request
+			path="km_asset_apply_stock_list/kmAssetApplyStockList*"
+			validatorParameter="recid=fdId,model=com.landray.kmss.km.asset.model.KmAssetApplyStockList">
+		</request>
+
+		<request
+			path="km_asset_apply_change_list/kmAssetApplyChangeList*"
+			validatorParameter="recid=fdId,model=com.landray.kmss.km.asset.model.KmAssetApplyChangeList">
+		</request>
+
+		<request
+			path="km_asset_apply_in_list/kmAssetApplyInList*"
+			validatorParameter="recid=fdId,model=com.landray.kmss.km.asset.model.KmAssetApplyInList">
+		</request>
+
+		<request
+			path="km_asset_address/kmAssetAddress*"
+			validatorParameter="recid=fdId,model=com.landray.kmss.km.asset.model.KmAssetAddress,cateModel=com.landray.kmss.km.asset.model.KmAssetAddressCate">
+			<!-- 指定模板下新增 -->
+			<query
+				queryString="method=add&amp;categoryId=*"
+				validator="roleValidator(role=ROLE_KMASSETADDRESS_CREATE)&amp;authSimpleCategoryReaderValidator(cateId=categoryId)" />
+			<!-- 新增 -->
+			<query
+				queryString="method=add"
+				validator="roleValidator(role=ROLE_KMASSETADDRESS_CREATE)" />
+			<!-- 保存 -->
+			<query
+				queryString="method=save&amp;categoryId=*"
+				validator="roleValidator(role=ROLE_KMASSETADDRESS_CREATE)&amp;authSimpleCategoryReaderValidator(cateId=categoryId)" />
+			<!-- 保存 -->
+			<query
+				queryString="method=save|saveadd"
+				validator="roleValidator(role=ROLE_KMASSETADDRESS_CREATE)&amp;authSimpleCategoryReaderValidator(cateId=categoryId)" />
+			<!-- 阅读 -->
+			<query
+				queryString="method=view"
+				validator="authFieldValidator(type=SYS_READER)" />
+			<!-- 编辑 -->
+			<query
+				queryString="method=edit"
+				validator="authFieldValidator(type=SYS_EDITOR)|roleValidator(role=ROLE_KMASSETADDRESS_EDITOR)&amp;[roleValidator(role=ROLE_KMASSETADDRESS_CATEGORY_MAINTAINER)|roleValidator(role=ROLE_KMASSET_OPTALL)|authSimpleCategoryEditorValidator(property=fdAssetAddressCate)]" />
+			<!-- 文档中的删除 -->
+			<query
+				queryString="method=delete"
+				validator="authFieldValidator(type=SYS_EDITOR)|roleValidator(role=ROLE_KMASSETADDRESS_DELETE)&amp;[roleValidator(role=ROLE_KMASSETADDRESS_CATEGORY_MAINTAINER)|roleValidator(role=ROLE_KMASSET_OPTALL)|authSimpleCategoryEditorValidator(property=fdAssetAddressCate)]" />
+			<!-- 删除所有其他视图 -->
+			<query
+				queryString="method=deleteall"
+				validator="roleValidator(role=ROLE_KMASSETADDRESS_DELETE)&amp;[roleValidator(role=ROLE_KMASSETADDRESS_CATEGORY_MAINTAINER)|roleValidator(role=ROLE_KMASSET_OPTALL)|authSimpleCategoryEditorValidator(cateId=categoryId)]" />
+		</request>
+
+		<request
+			path="km_asset_card_life/kmAssetCardLife*"
+			validatorParameter="recid=fdId,model=com.landray.kmss.km.asset.model.KmAssetCardLife">
+		</request>
+
+		<request
+			path="km_asset_apply_repair_list/kmAssetApplyRepairList*"
+			validatorParameter="recid=fdId,model=com.landray.kmss.km.asset.model.KmAssetApplyRepairList">
+		</request>
+
+		<request
+			path="km_asset_apply_rent_list/kmAssetApplyRentList*"
+			validatorParameter="recid=fdId,model=com.landray.kmss.km.asset.model.KmAssetApplyRentList">
+		</request>
+
+		<request
+			path="km_asset_apply_deal_list/kmAssetApplyDealList*"
+			validatorParameter="recid=fdId,model=com.landray.kmss.km.asset.model.KmAssetApplyDealList">
+		</request>
+
+		<request
+			path="km_asset_apply_get_list/kmAssetApplyGetList*"
+			validatorParameter="recid=fdId,model=com.landray.kmss.km.asset.model.KmAssetApplyGetList">
+		</request>
+		
+		<!-- 资产盘点 -->
+		<request
+			path="km_asset_apply_inventory/kmAssetApplyInventory*"
+			validatorParameter="recid=fdId,model=com.landray.kmss.km.asset.model.KmAssetApplyInventory,templatemodel=com.landray.kmss.km.asset.model.KmAssetApplyTemplate">
+			<!-- 新增 -->
+			<query
+				queryString="method=add&amp;fdTemplateId=*"
+				validator="roleValidator(role=ROLE_KMASSETAPPLY_CREATE)&amp;authCategoryReaderValidator(templateid=fdTemplateId)" />
+			<!-- 保存 -->
+			<query
+				queryString="method=save|saveadd|saveDraft"
+				validator="roleValidator(role=ROLE_KMASSETAPPLY_CREATE)&amp;authCategoryReaderValidator(templateid=fdTemplateId)" />
+			<!-- 阅读 -->
+			<query
+				queryString="method=view"
+				validator="authFieldValidator(type=SYS_READER)|authCategoryEditorValidator(property=fdApplyTemplate)" />
+			<!-- 编辑、更新 -->
+			<query
+				queryString="method=edit|update"
+				validator="authFieldValidator(type=SYS_EDITOR)&amp;fieldValueValidator(fieldproperty=docStatus,value=10;11;20)"/>
+			<!-- 删除 -->
+			<query
+				queryString="method=delete"
+				validator="fieldValueValidator(fieldproperty=docStatus,value=10)&amp;authFieldValidator(type=creator)|roleValidator(role=ROLE_KMASSETAPPLY_DELETE)&amp;[authCategoryEditorValidator(property=fdApplyTemplate)|roleValidator(role=ROLE_KMASSETAPPLY_CATEGORY_MAINTAINER)|roleValidator(role=ROLE_SYSCATEGORY_MAINTAINER)]" />
+			<!-- 删除所有草稿视图 -->
+			<query
+				queryString="method=deleteall&amp;status=10"
+				validator="roleValidator(role=ROLE_KMASSET_DEFAULT)" />
+			<!-- 删除所有其他视图 -->
+			<query
+				queryString="method=deleteall"
+				validator="roleValidator(role=ROLE_KMASSETAPPLY_DELETE)&amp;[roleValidator(role=ROLE_KMASSET_OPTALL)|roleValidator(role=ROLE_KMASSETAPPLY_CATEGORY_MAINTAINER)|roleValidator(role=ROLE_SYSCATEGORY_MAINTAINER)]" />
+		</request>
+		
+		<!-- 资产盘点任务 -->
+		<request
+			path="km_asset_apply_task/kmAssetApplyTask*"
+			validatorParameter="recid=fdId,model=com.landray.kmss.km.asset.model.KmAssetApplyTask,templatemodel=com.landray.kmss.km.asset.model.KmAssetApplyTemplate">
+			<!-- 新增 -->
+			<query
+				queryString="method=add&amp;fdTemplateId=*"
+				validator="roleValidator(role=ROLE_KMASSETAPPLY_CREATE)&amp;authCategoryReaderValidator(templateid=fdTemplateId)" />
+			<!-- 保存 -->
+			<query
+				queryString="method=save|saveadd|saveDraft"
+				validator="roleValidator(role=ROLE_KMASSETAPPLY_CREATE)&amp;authCategoryReaderValidator(templateid=fdTemplateId)" />
+			<!-- 阅读 -->
+			<query
+				queryString="method=view"
+				validator="authFieldValidator(type=SYS_READER)|authCategoryEditorValidator(property=fdApplyTemplate)|kmAssetApplyTaskValidator()" />
+			<!-- 编辑、更新 -->
+			<query
+				queryString="method=edit|update"
+				validator="authFieldValidator(type=SYS_EDITOR)&amp;fieldValueValidator(fieldproperty=docStatus,value=10;11;20)"/>
+			<!-- 删除 -->
+			<query
+				queryString="method=delete"
+				validator="fieldValueValidator(fieldproperty=docStatus,value=10)&amp;authFieldValidator(type=creator)|roleValidator(role=ROLE_KMASSETAPPLY_DELETE)&amp;[authCategoryEditorValidator(property=fdApplyTemplate)|roleValidator(role=ROLE_KMASSETAPPLY_CATEGORY_MAINTAINER)|roleValidator(role=ROLE_SYSCATEGORY_MAINTAINER)]" />
+			<!-- 删除所有草稿视图 -->
+			<query
+				queryString="method=deleteall&amp;status=10"
+				validator="roleValidator(role=ROLE_KMASSET_DEFAULT)" />
+			<!-- 删除所有其他视图 -->
+			<query
+				queryString="method=deleteall"
+				validator="roleValidator(role=ROLE_KMASSETAPPLY_DELETE)&amp;[roleValidator(role=ROLE_KMASSET_OPTALL)|roleValidator(role=ROLE_KMASSETAPPLY_CATEGORY_MAINTAINER)|roleValidator(role=ROLE_SYSCATEGORY_MAINTAINER)]" />
+			<!-- 任务盘点 -->
+			<query
+				queryString="method=inventory"
+				validator="authFieldValidator(type=SYS_EDITOR)&amp;fieldValueValidator(fieldproperty=docStatus,value=30)|authFieldValidator(type=creator)|kmAssetApplyTaskValidator()"/>
+		</request>
+
+		<request
+			path="km_asset_apply_task_detail/kmAssetApplyTaskDetail*"
+			validatorParameter="recid=fdId,model=com.landray.kmss.km.asset.model.KmAssetApplyTaskDetail">
+		</request>
+		
+		<!-- 盘点任务过滤器 -->
+		<filters
+			modelName="com.landray.kmss.km.asset.model.KmAssetApplyTask">
+			<filter
+				type="creator"
+				expression="authFieldFilter(field=fdCreator.fdId)" />
+			<filter
+				type="SYS_READER"
+				expression="roleFilter(role=ROLE_KMASSETAPPLY_READER)" />
+			<filter
+				type="SYS_READER"
+				expression="authFieldFilter(field=authAllReaders.fdId)" />
+			<filter
+				type="SYS_READER"
+				expression="flagFieldFilter(field=authReaderFlag,value=1)" />
+			<filter
+				type="SYS_EDITOR"
+				expression="authFieldFilter(field=authAllEditors.fdId)" />	
+		</filters>
+		<!-- 资产盘点过滤器 -->
+		<filters
+			modelName="com.landray.kmss.km.asset.model.KmAssetApplyInventory">
+				<filter
+				type="creator"
+				expression="authFieldFilter(field=fdCreator.fdId)" />
+			<filter
+				type="SYS_READER"
+				expression="roleFilter(role=ROLE_KMASSETAPPLY_READER)" />
+			<filter
+				type="SYS_READER"
+				expression="authFieldFilter(field=authAllReaders.fdId)" />
+			<filter
+				type="SYS_READER"
+				expression="flagFieldFilter(field=authReaderFlag,value=1)" />
+			<filter
+				type="SYS_EDITOR"
+				expression="authFieldFilter(field=authAllEditors.fdId)" />				
+		</filters>
+		<!-- 资产卡片过滤器 -->
+		<filters
+			modelName="com.landray.kmss.km.asset.model.KmAssetCard">
+			<filter
+				type="creator"
+				expression="authFieldFilter(field=docCreator.fdId)" />
+			<filter
+				type="responsiblePerson"
+				expression="authFieldFilter(field=fdResponsiblePerson.fdId)" />
+			<filter
+				type="SYS_READER"
+				expression="roleFilter(role=ROLE_KMASSETCARD_READER)" />
+			<filter
+				type="SYS_READER"
+				expression="authFieldFilter(field=authAllReaders.fdId)" />
+			<filter
+				type="SYS_READER"
+				expression="flagFieldFilter(field=authReaderFlag,value=1)" />
+			<filter
+				type="SYS_EDITOR"
+				expression="authFieldFilter(field=authAllEditors.fdId)" />				
+		</filters>
+		
+		<!-- 资产申请模板过滤器 -->
+		<filters
+			modelName="com.landray.kmss.km.asset.model.KmAssetApplyTemplate">
+			<filter
+				type="SYS_READER"
+				expression="roleFilter(role=ROLE_SYSCATEGORY_MAINTAINER)" />
+			<filter
+				type="SYS_READER"
+				expression="roleFilter(role=ROLE_KMASSETAPPLY_CATEGORY_MAINTAINER)" />
+			<filter
+				type="SYS_READER"
+				expression="authFieldFilter(field=authAllReaders.fdId)" />
+			<filter
+				type="SYS_READER"
+				expression="flagFieldFilter(field=authReaderFlag,value=1)" />	
+			<filter
+				type="SYS_EDITOR"
+				expression="roleFilter(role=ROLE_SYSCATEGORY_MAINTAINER)" />
+			<filter
+				type="SYS_EDITOR"
+				expression="roleFilter(role=ROLE_KMASSETAPPLY_CATEGORY_MAINTAINER)" />				
+			<filter
+				type="SYS_EDITOR"
+				expression="authFieldFilter(field=authAllEditors.fdId)" />
+		</filters>
+		<!-- 基类过滤器 -->
+		<filters
+			modelName="com.landray.kmss.km.asset.model.KmAssetApplyBase">
+			<filter
+				type="creator"
+				expression="authFieldFilter(field=fdCreator.fdId)" />
+			<filter
+				type="SYS_READER"
+				expression="roleFilter(role=ROLE_KMASSETAPPLY_READER)" />
+			<filter
+				type="SYS_READER"
+				expression="authFieldFilter(field=authAllReaders.fdId)" />
+			<filter
+				type="SYS_READER"
+				expression="flagFieldFilter(field=authReaderFlag,value=1)" />
+			<filter
+				type="SYS_EDITOR"
+				expression="authFieldFilter(field=authAllEditors.fdId)" />
+		</filters>
+		<!-- 资产申购过滤器 -->
+		<filters
+			modelName="com.landray.kmss.km.asset.model.KmAssetApplyBuy">
+			<filter
+				type="creator"
+				expression="authFieldFilter(field=fdCreator.fdId)" />
+			<filter
+				type="SYS_READER"
+				expression="roleFilter(role=ROLE_KMASSETAPPLY_READER)" />
+			<filter
+				type="SYS_READER"
+				expression="authFieldFilter(field=authAllReaders.fdId)" />
+			<filter
+				type="SYS_READER"
+				expression="flagFieldFilter(field=authReaderFlag,value=1)" />
+			<filter
+				type="SYS_EDITOR"
+				expression="authFieldFilter(field=authAllEditors.fdId)" />
+		</filters>
+		<!-- 资产采购过滤器 -->
+		<filters
+			modelName="com.landray.kmss.km.asset.model.KmAssetApplyStock">
+			<filter
+				type="creator"
+				expression="authFieldFilter(field=fdCreator.fdId)" />
+			<filter
+				type="SYS_READER"
+				expression="roleFilter(role=ROLE_KMASSETAPPLY_READER)" />
+			<filter
+				type="SYS_READER"
+				expression="authFieldFilter(field=authAllReaders.fdId)" />
+			<filter
+				type="SYS_READER"
+				expression="flagFieldFilter(field=authReaderFlag,value=1)" />
+			<filter
+				type="SYS_EDITOR"
+				expression="authFieldFilter(field=authAllEditors.fdId)" />
+		</filters>
+		<!-- 入库过滤器 -->
+		<filters
+			modelName="com.landray.kmss.km.asset.model.KmAssetApplyIn">
+			<filter
+				type="creator"
+				expression="authFieldFilter(field=fdCreator.fdId)" />
+			<filter
+				type="SYS_READER"
+				expression="roleFilter(role=ROLE_KMASSETAPPLY_READER)" />
+			<filter
+				type="SYS_READER"
+				expression="authFieldFilter(field=authAllReaders.fdId)" />
+			<filter
+				type="SYS_READER"
+				expression="flagFieldFilter(field=authReaderFlag,value=1)" />
+			<filter
+				type="SYS_EDITOR"
+				expression="authFieldFilter(field=authAllEditors.fdId)" />
+		</filters>
+		<!-- 领用过滤器 -->
+		<filters
+			modelName="com.landray.kmss.km.asset.model.KmAssetApplyGet">
+			<filter
+				type="creator"
+				expression="authFieldFilter(field=fdCreator.fdId)" />
+			<filter
+				type="SYS_READER"
+				expression="roleFilter(role=ROLE_KMASSETAPPLY_READER)" />
+			<filter
+				type="SYS_READER"
+				expression="authFieldFilter(field=authAllReaders.fdId)" />
+			<filter
+				type="SYS_READER"
+				expression="flagFieldFilter(field=authReaderFlag,value=1)" />
+			<filter
+				type="SYS_EDITOR"
+				expression="authFieldFilter(field=authAllEditors.fdId)" />
+		</filters>
+		<!-- 调拨过滤器 -->
+		<filters
+			modelName="com.landray.kmss.km.asset.model.KmAssetApplyDivert">
+			<filter
+				type="creator"
+				expression="authFieldFilter(field=fdCreator.fdId)" />
+			<filter
+				type="SYS_READER"
+				expression="roleFilter(role=ROLE_KMASSETAPPLY_READER)" />
+			<filter
+				type="SYS_READER"
+				expression="authFieldFilter(field=authAllReaders.fdId)" />
+			<filter
+				type="SYS_READER"
+				expression="flagFieldFilter(field=authReaderFlag,value=1)" />
+			<filter
+				type="SYS_EDITOR"
+				expression="authFieldFilter(field=authAllEditors.fdId)" />
+		</filters>
+		<!-- 维护保养过滤器 -->
+		<filters
+			modelName="com.landray.kmss.km.asset.model.KmAssetApplyRepair">
+			<filter
+				type="creator"
+				expression="authFieldFilter(field=fdCreator.fdId)" />
+			<filter
+				type="SYS_READER"
+				expression="roleFilter(role=ROLE_KMASSETAPPLY_READER)" />
+			<filter
+				type="SYS_READER"
+				expression="authFieldFilter(field=authAllReaders.fdId)" />
+			<filter
+				type="SYS_READER"
+				expression="flagFieldFilter(field=authReaderFlag,value=1)" />
+			<filter
+				type="SYS_EDITOR"
+				expression="authFieldFilter(field=authAllEditors.fdId)" />
+		</filters>
+		<!-- 出租过滤器 -->
+		<filters
+			modelName="com.landray.kmss.km.asset.model.KmAssetApplyRent">
+			<filter
+				type="creator"
+				expression="authFieldFilter(field=fdCreator.fdId)" />
+			<filter
+				type="SYS_READER"
+				expression="roleFilter(role=ROLE_KMASSETAPPLY_READER)" />
+			<filter
+				type="SYS_READER"
+				expression="authFieldFilter(field=authAllReaders.fdId)" />
+			<filter
+				type="SYS_READER"
+				expression="flagFieldFilter(field=authReaderFlag,value=1)" />
+			<filter
+				type="SYS_EDITOR"
+				expression="authFieldFilter(field=authAllEditors.fdId)" />
+		</filters>
+		<!-- 归还过滤器 -->
+		<filters
+			modelName="com.landray.kmss.km.asset.model.KmAssetApplyReturn">
+			<filter
+				type="creator"
+				expression="authFieldFilter(field=fdCreator.fdId)" />
+			<filter
+				type="SYS_READER"
+				expression="roleFilter(role=ROLE_KMASSETAPPLY_READER)" />
+			<filter
+				type="SYS_READER"
+				expression="authFieldFilter(field=authAllReaders.fdId)" />
+			<filter
+				type="SYS_READER"
+				expression="flagFieldFilter(field=authReaderFlag,value=1)" />
+			<filter
+				type="SYS_EDITOR"
+				expression="authFieldFilter(field=authAllEditors.fdId)" />
+		</filters>
+		<!-- 资产变更过滤器 -->
+		<filters
+			modelName="com.landray.kmss.km.asset.model.KmAssetApplyChange">
+			<filter
+				type="creator"
+				expression="authFieldFilter(field=fdCreator.fdId)" />
+			<filter
+				type="SYS_READER"
+				expression="roleFilter(role=ROLE_KMASSETAPPLY_READER)" />
+			<filter
+				type="SYS_READER"
+				expression="authFieldFilter(field=authAllReaders.fdId)" />
+			<filter
+				type="SYS_READER"
+				expression="flagFieldFilter(field=authReaderFlag,value=1)" />
+			<filter
+				type="SYS_EDITOR"
+				expression="authFieldFilter(field=authAllEditors.fdId)" />
+		</filters>
+		<!-- 资产处置过滤器 -->
+		<filters
+			modelName="com.landray.kmss.km.asset.model.KmAssetApplyDeal">
+			<filter
+				type="creator"
+				expression="authFieldFilter(field=fdCreator.fdId)" />
+			<filter
+				type="SYS_READER"
+				expression="roleFilter(role=ROLE_KMASSETAPPLY_READER)" />
+			<filter
+				type="SYS_READER"
+				expression="authFieldFilter(field=authAllReaders.fdId)" />
+			<filter
+				type="SYS_READER"
+				expression="flagFieldFilter(field=authReaderFlag,value=1)" />
+			<filter
+				type="SYS_EDITOR"
+				expression="authFieldFilter(field=authAllEditors.fdId)" />
+		</filters>
+		<!-- 存放地点过滤器 -->
+		<filters
+			modelName="com.landray.kmss.km.asset.model.KmAssetAddress">
+			<filter
+				type="SYS_READER"
+				expression="roleFilter(role=ROLE_KMASSET_DEFAULT)" />
+			<filter
+				type="SYS_EDITOR"
+				expression="authFieldFilter(field=docCreator.fdId)" />
+		</filters>
+		
+	</module>
+	
+	<!-- 资产管理类别设置目录下 替换处理人和 批量修改特权人 -->
+	<module urlPrefix="/sys/lbpmservice/">
+		<request 
+			path="support/lbpm_template/lbpmTemplate*">
+			<query
+				queryString="method=updateAuditor|updateTemplateAuditor|updateCategoryAuditor|doUpdateAuditor&amp;fdModelName=com.landray.kmss.km.asset.model.KmAssetApplyTemplate"
+				validator="roleValidator(role=ROLE_KMASSET_BACKSTAGE_MANAGER)" />
+		</request>
+		<request 
+			path="support/lbpm_template/lbpmPrivileger*">
+			<query
+				queryString="method=updatePrivileger|doUpdatePrivileger&amp;fdModelName=com.landray.kmss.km.asset.model.KmAssetApplyTemplate"
+				validator="roleValidator(role=ROLE_KMASSET_BACKSTAGE_MANAGER)" />
+		</request>
+	</module>
+	<module urlPrefix="/sys/transport/">
+		<request path="sys_transport_export/SysTransportExport*">
+			<query validator="roleValidator(role=ROLE_KMASSET_TRANSPORT_EXPORT)"
+				queryString="fdModelName=com.landray.kmss.km.asset.model.KmAssetApplyBase" />
+		</request>
+	</module>
+	<!-- 列表自定义权限 -->
+	<module urlPrefix="/sys/profile/">
+		<request 
+			path="listShow/sys_listShow/sysListShow*">
+			<query
+				queryString="modelName=com.landray.kmss.km.asset.model.KmAssetApplyBase"
+				validator="roleValidator(role=ROLE_KMASSET_DEFAULT)&amp;roleValidator(role=ROLE_KMASSET_BACKSTAGE_MANAGER)&amp;roleValidator(role=ROLE_KMASSET_BASESET)" />
+		</request>
+	</module>
+	
+	<module urlPrefix="/sys/right/">
+		<request path="cchange_doc_right/cchange_doc_right.jsp" validatorParameter="model=com.landray.kmss.km.asset.model.KmAssetApplyBase,templatemodel=com.landray.kmss.km.asset.model.KmAssetApplyTemplate">
+			<!-- 控制显示 修改权限按钮对应的页面权限 -->
+			<query
+				queryString="modelName=com.landray.kmss.km.asset.model.KmAssetApplyBase"
+				validator="roleValidator(role=ROLE_KMASSETAPPLY_CHANGERIGHT)&amp;[fieldValueValidator(field=nodeType,value=CATEGORY)&amp;authCategoryEditorValidator(cateid=categoryId)|fieldValueValidator(field=nodeType,value=TEMPLATE)&amp;authCategoryEditorValidator(templateid=categoryId,model=com.landray.kmss.km.asset.model.KmAssetApplyBase,templatemodel=com.landray.kmss.km.asset.model.KmAssetApplyTemplate)|roleValidator(role=ROLE_KMASSET_OPTALL)|roleValidator(role=ROLE_KMASSETAPPLY_CATEGORY_MAINTAINER)|roleValidator(role=ROLE_SYSCATEGORY_MAINTAINER)]" />
+		</request>
+	</module>
+		<module urlPrefix="/sys/right/">
+		<request path="cchange_doc_right/cchange_doc_right.jsp">
+			<query
+				queryString="modelName=com.landray.kmss.km.asset.model.KmAssetCard"
+				validator="roleValidator(role=ROLE_KMASSETCARD_CHANGERIGHT)&amp;[roleValidator(role=ROLE_KMASSETCARD_CATEGORY_MAINTAINER)|roleValidator(role=ROLE_KMASSET_OPTALL)|authSimpleCategoryEditorValidator(cateId=categoryId,cateModel=com.landray.kmss.km.asset.model.KmAssetCategory)]" />
+		</request>
+	</module>
+		<!-- 通用流程模板设置权限 -->
+	<module urlPrefix="/sys/workflow/">
+		<request 
+			path="sys_wf_common_template/sysWfCommonTemplate*">
+			<query
+				queryString="fdModelName=com.landray.kmss.km.asset.model.KmAssetApplyTemplate"
+				validator="roleValidator(role=ROLE_KMASSET_BASESET)" />
+		</request>
+		<!-- 替换流程模板处理人权限 -->
+		<request path="sys_wf_template/sysWfTemplate*">
+			<query
+				queryString="method=updateTemplateAuditor|updateAuditor&amp;fdModelName=com.landray.kmss.km.asset.model.KmAssetApplyTemplate"
+				validator="authCategoryEditorValidator(cateid=cateid)" />
+		</request>
+	</module>
+	<!-- 文档视图列表批量修改权限 -->
+	<module urlPrefix="/sys/right/">
+		<request path="rightCateChange*">
+			<query
+				queryString="method=cateRightEdit&amp;cateModelName=com.landray.kmss.km.asset.model.KmAssetApplyTemplate"
+				validator="roleValidator(role=ROLE_KMASSET_BACKSTAGE_MANAGER)|roleValidator(role=ROLE_KMASSETCARD_CATEGORY_MAINTAINER)|roleValidator(role=ROLE_KMASSETADDRESS_CATEGORY_MAINTAINER)" />
+		</request>
+		<request path="rightDocChange*">
+			<query
+				queryString="method=docRightEdit&amp;modelName=com.landray.kmss.km.asset.model.KmAssetCard"
+				validator="roleValidator(role=ROLE_KMASSETCARD_CHANGERIGHT)&amp;[roleValidator(role=ROLE_KMASSETCARD_CATEGORY_MAINTAINER)|roleValidator(role=ROLE_KMASSET_OPTALL)|authSimpleCategoryEditorValidator(cateId=categoryId,cateModel=com.landray.kmss.km.asset.model.KmAssetCategory)]" />				
+			 <query
+				queryString="method=docRightEdit&amp;modelName=com.landray.kmss.km.asset.model.KmAssetApplyBase"
+				validator="roleValidator(role=ROLE_KMASSETAPPLY_CHANGERIGHT)&amp;[fieldValueValidator(field=nodeType,value=CATEGORY)&amp;authCategoryEditorValidator(cateid=categoryId)|fieldValueValidator(field=nodeType,value=TEMPLATE)&amp;authCategoryEditorValidator(templateid=categoryId,model=com.landray.kmss.km.asset.model.KmAssetApplyBase,templatemodel=com.landray.kmss.km.asset.model.KmAssetApplyTemplate)|roleValidator(role=ROLE_KMASSET_OPTALL)|roleValidator(role=ROLE_KMASSETAPPLY_CATEGORY_MAINTAINER)|roleValidator(role=ROLE_SYSCATEGORY_MAINTAINER)]"
+				/>
+		</request>
+	</module>
+	
+	<!-- 通用编号规则设置权限 -->
+	<module urlPrefix="/sys/number/">
+	    <request path="sys_number_main/sysNumberMain*">
+	        <query queryString="modelName=com.landray.kmss.km.asset.model.KmAssetApplyBase|com.landray.kmss.km.asset.model.KmAssetCard"
+	                 validator="roleValidator(role=ROLE_KMASSET_BASESET)"/>
+	    </request>
+	</module>
+	
+	<module urlPrefix="/sys/search/">
+		<request path="search*">
+			<query
+				queryString="method=exportResult&amp;fdModelName=com.landray.kmss.km.asset.model.KmAssetApplyBase|com.landray.kmss.km.asset.model.KmAssetCard" 
+				validator="roleValidator(role=ROLE_KMASSETCARD_EXPORT)"/>
+		</request>
+	</module>
+	 	
+	<module
+		messageKey=""
+		urlPrefix="/sys/ftsearch/">
+		<request path="searchBuilder*">
+			<query
+				queryString="modelName=com.landray.kmss.km.asset.model.KmAssetCard"
+				validator="roleValidator(role=ROLE_KMASSET_DEFAULT)" />
+		</request>
+		<request path="searchBuilder*">
+			<query
+				queryString="modelName=com.landray.kmss.km.asset.model.KmAssetApplyBase"
+				validator="roleValidator(role=ROLE_KMASSET_DEFAULT)" />
+		</request>
+	</module>
+	
+	<!-- 传阅权限 -->
+	<module
+		messageKey=""
+		urlPrefix="/sys/circulation/">
+		<request 
+			path="sys_circulation_main/sysCirculationMain*">
+			<query
+				queryString="fdModelName=com.landray.kmss.km.asset.model.KmAssetApplyBuy|com.landray.kmss.km.asset.model.KmAssetApplyGet|com.landray.kmss.km.asset.model.KmAssetApplyReturn|com.landray.kmss.km.asset.model.KmAssetApplyStock|com.landray.kmss.km.asset.model.KmAssetApplyIn|com.landray.kmss.km.asset.model.KmAssetApplyRent|com.landray.kmss.km.asset.model.KmAssetApplyDivert|com.landray.kmss.km.asset.model.KmAssetApplyRepair|com.landray.kmss.km.asset.model.KmAssetApplyChange|com.landray.kmss.km.asset.model.KmAssetApplyDeal&amp;method=add|save|saveadd"
+				validator="roleValidator(role=ROLE_KMASSET_CIRCULATION_CREATE,recid=fdModelId,model=com.landray.kmss.km.asset.model.KmAssetApplyBase)&amp;fieldValueValidator(recid=fdModelId,model=com.landray.kmss.km.asset.model.KmAssetApplyBase,fieldproperty=fdCanCircularize,except=false)" />
+			<query
+				queryString="fdModelName=com.landray.kmss.km.asset.model.KmAssetApplyBuy|com.landray.kmss.km.asset.model.KmAssetApplyGet|com.landray.kmss.km.asset.model.KmAssetApplyReturn|com.landray.kmss.km.asset.model.KmAssetApplyStock|com.landray.kmss.km.asset.model.KmAssetApplyIn|com.landray.kmss.km.asset.model.KmAssetApplyRent|com.landray.kmss.km.asset.model.KmAssetApplyDivert|com.landray.kmss.km.asset.model.KmAssetApplyRepair|com.landray.kmss.km.asset.model.KmAssetApplyChange|com.landray.kmss.km.asset.model.KmAssetApplyDeal&amp;method=delete"
+				validator="roleValidator(role=ROLE_KMASSET_CIRCULATION_DELETE,recid=fdModelId,model=com.landray.kmss.km.asset.model.KmAssetApplyBase)&amp;[authCategoryEditorValidator(recid=fdModelId,model=com.landray.kmss.km.asset.model.KmAssetApplyBase,property=fdTemplate)|roleValidator(role=ROLE_KMASSET_OPTALL,recid=fdModelId,model=com.landray.kmss.km.asset.model.KmAssetApplyBase)|roleValidator(role=ROLE_KMASSETAPPLY_CATEGORY_MAINTAINER,recid=fdModelId,model=com.landray.kmss.km.asset.model.KmAssetApplyBase)|roleValidator(role=ROLE_SYSCATEGORY_MAINTAINER,recid=fdModelId,model=com.landray.kmss.km.asset.model.KmAssetApplyBase)]" />
+			<query
+				queryString="fdModelName=com.landray.kmss.km.asset.model.KmAssetApplyBase"
+				validator="roleValidator(role=ROLE_KMASSET_DEFAULT)" />
+		</request>
+	</module>
+	
+ 	<!-- 资产卡片搜索 -->
+	<search 
+		modelName="com.landray.kmss.km.asset.model.KmAssetCard" 
+		messageKey="km-asset:kmAssetCard.search"
+		resultProperties="fdName;docStatus;fdAssetStatus;docCreateTime;docAlterTime;fdCode;fdNo;fdNum;fdStandard;fdMeasure;fdFirstValue;fdCanUseYears;fdBuyDate;fdInDeptNo;fdInDeptDate;fdWarranty;fdFirstUsedDate;fdExplanation;fdContent;fdResponsiblePerson;fdBuyer;fdAssetCategory;fdAssetAddress;fdProvider"/>
+
+	<search modelName="com.landray.kmss.km.asset.model.KmAssetApplyBase" 
+			messageKey="km-asset:kmAssetApplyBase.search" 
+ 			resultProperties="docSubject;fdNo;fdCreator;fdCreateDate"/>
+ 	<ftSearch
+		modelName="com.landray.kmss.km.asset.model.KmAssetCard"
+		boost="2.0"
+		timeField="fdLastModifiedTime">
+		<luceneField
+			name="subject"
+			property="fdName"
+			type="Text" />
+		<luceneField
+			name="template"
+			property="fdAssetCategory.fdName"
+			type="Text" />
+		<luceneField
+			name="content"
+			property="fdExplanation"
+			type="text" />
+		<luceneField
+            name="category"
+            property="fdAssetCategory.fdHierarchyId"
+            type="Text" />
+		<luceneField
+			name="creator"
+			property="docCreator.fdName"
+			type="Text" />
+		<luceneField
+			name="createTime"
+			property="docCreateTime"
+			type="keyword" />
+	</ftSearch>
+	<ftSearch
+		modelName="com.landray.kmss.km.asset.model.KmAssetApplyBase"
+		boost="2.0"
+		timeField="fdLastModifiedTime">
+		<luceneField
+			name="subject"
+			property="docSubject"
+			type="Text" />
+		<luceneField
+			name="template"
+			property="fdApplyTemplate.fdName"
+			type="Text" />
+		<luceneField
+            name="category"
+            property="fdApplyTemplate.docCategory.fdHierarchyId"
+            type="Text" />
+		<luceneField
+			name="content"
+			property="fdReason"
+			type="text" />		
+		<luceneField
+			name="creator"
+			property="docCreator.fdName"
+			type="Text" />
+		<luceneField
+			name="createTime"
+			property="docCreateTime"
+			type="keyword" />
+	</ftSearch>
+	<!-- 关联机制 -->
+	<relation
+		modelName="com.landray.kmss.km.asset.model.KmAssetApplyBase"
+		messageKey="km-asset:module.km.asset"/>
+	
+	<homePage
+		urlPrefix="km/asset"
+		url="/sys/portal/page.jsp#j_start=/km/asset/index.jsp&amp;j_target=_iframe"
+		messageKey="km-asset:module.km.asset" 
+		config="/moduleindex_notopic.jsp?nav=/km/asset/tree_config.jsp"/>
+		
+	<categoryMng
+		modelName="com.landray.kmss.km.asset.model.KmAssetApplyTemplate"
+		serviceName="kmAssetApplyTemplateTreeService"
+		messageKey="km-asset:module.km.asset"
+		adminRoleName="ROLE_KMASSETAPPLY_CATEGORY_MAINTAINER"/>
+	<flowDef
+		modelName="com.landray.kmss.km.asset.model.KmAssetApplyBuy"
+		templateModelName="com.landray.kmss.km.asset.model.KmAssetApplyTemplate"
+		key="KmAssetApplyBuyDoc"
+		templatePropertyName="fdApplyTemplate"
+		moduleMessageKey="km-asset:module.km.asset.Buy"
+		type="oa" />
+	<flowDef
+		modelName="com.landray.kmss.km.asset.model.KmAssetApplyStock"
+		templateModelName="com.landray.kmss.km.asset.model.KmAssetApplyTemplate"
+		key="KmAssetApplyStockDoc"
+		templatePropertyName="fdApplyTemplate"
+		moduleMessageKey="km-asset:module.km.asset.Stock"
+		type="oa" />
+	<flowDef
+		modelName="com.landray.kmss.km.asset.model.KmAssetApplyIn"
+		templateModelName="com.landray.kmss.km.asset.model.KmAssetApplyTemplate"
+		key="KmAssetApplyInDoc"
+		templatePropertyName="fdApplyTemplate"
+		moduleMessageKey="km-asset:module.km.asset.In"
+		type="oa" />
+	<flowDef
+		modelName="com.landray.kmss.km.asset.model.KmAssetApplyGet"
+		templateModelName="com.landray.kmss.km.asset.model.KmAssetApplyTemplate"
+		key="KmAssetApplyGetDoc"
+		templatePropertyName="fdApplyTemplate"
+		moduleMessageKey="km-asset:module.km.asset.Get"
+		type="oa" />
+	<flowDef
+		modelName="com.landray.kmss.km.asset.model.KmAssetApplyDivert"
+		templateModelName="com.landray.kmss.km.asset.model.KmAssetApplyTemplate"
+		key="KmAssetApplyDivertDoc"
+		templatePropertyName="fdApplyTemplate"
+		moduleMessageKey="km-asset:module.km.asset.Divert"
+		type="oa" />
+	<flowDef
+		modelName="com.landray.kmss.km.asset.model.KmAssetApplyRepair"
+		templateModelName="com.landray.kmss.km.asset.model.KmAssetApplyTemplate"
+		key="KmAssetApplyRepairDoc"
+		templatePropertyName="fdApplyTemplate"
+		moduleMessageKey="km-asset:module.km.asset.Repair"
+		type="oa" >
+		<variant name="writeRepairInfo" key="km-asset:kmAssetApplyRepair.writeRepairInfo"/>
+	</flowDef>
+	<flowDef
+		modelName="com.landray.kmss.km.asset.model.KmAssetApplyDeal"
+		templateModelName="com.landray.kmss.km.asset.model.KmAssetApplyTemplate"
+		key="KmAssetApplyDealDoc"
+		templatePropertyName="fdApplyTemplate"
+		moduleMessageKey="km-asset:module.km.asset.Deal"
+		type="oa" />
+	<flowDef
+		modelName="com.landray.kmss.km.asset.model.KmAssetApplyChange"
+		templateModelName="com.landray.kmss.km.asset.model.KmAssetApplyTemplate"
+		key="KmAssetApplyChangeDoc"
+		templatePropertyName="fdApplyTemplate"
+		moduleMessageKey="km-asset:module.km.asset.Change"
+		type="oa" />
+	<flowDef
+		modelName="com.landray.kmss.km.asset.model.KmAssetApplyRent"
+		templateModelName="com.landray.kmss.km.asset.model.KmAssetApplyTemplate"
+		key="KmAssetApplyRentDoc"
+		templatePropertyName="fdApplyTemplate"
+		moduleMessageKey="km-asset:module.km.asset.Rent"
+		type="oa" />
+	<flowDef
+		modelName="com.landray.kmss.km.asset.model.KmAssetApplyReturn"
+		templateModelName="com.landray.kmss.km.asset.model.KmAssetApplyTemplate"
+		key="KmAssetApplyReturnDoc"
+		templatePropertyName="fdApplyTemplate"
+		moduleMessageKey="km-asset:module.km.asset.Return"
+		type="oa" />
+	<flowDef
+		modelName="com.landray.kmss.km.asset.model.KmAssetApplyTask"
+		templateModelName="com.landray.kmss.km.asset.model.KmAssetApplyTemplate"
+		key="KmAssetApplyTaskDoc"
+		templatePropertyName="fdApplyTemplate"
+		moduleMessageKey="km-asset:table.kmAssetApplyTask"
+		type="oa" />
+	<flowDef
+		modelName="com.landray.kmss.km.asset.model.KmAssetApplyInventory"
+		templateModelName="com.landray.kmss.km.asset.model.KmAssetApplyTemplate"
+		key="KmAssetApplyInventoryDoc"
+		templatePropertyName="fdApplyTemplate"
+		moduleMessageKey="km-asset:table.kmAssetApplyInventory"
+		type="oa" />
+	
+	<profileConfig
+	    key="km/asset"
+		messageKey="{km-asset:module.km.asset}" 
+		url="/sys/profile/moduleindex.jsp?nav=/km/asset/tree_config.jsp" 
+		icon="km_asset"
+		type="ekp"
+		description="{km-asset:kmAsset.profileCfg.description}"
+		order="403"/>	
+		
+</configs>

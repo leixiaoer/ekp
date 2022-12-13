@@ -1,0 +1,86 @@
+{
+    "global":     {
+        "modelName": "com.landray.kmss.km.carmng.model.KmCarmngInfringeInfo",
+        "messageKey": "km-carmng:table.kmCarmngInfringeInfo",
+        "displayProperty": "fdInfringeSite",
+        "serviceBean": "kmCarmngInfringeInfoService",
+        "table": "km_carmng_infringe_info",
+        "url": "/km/carmng/km_carmng_infringe_info/kmCarmngInfringeInfo.do?method=view&fdId=${fdId}"
+    },
+    "attrs":     {
+        "fdId":         {
+            "propertyType": "id",
+            "generator": {"type": "assigned"}
+        },
+        "fdInfringePersonName":         {
+            "propertyType": "simple",
+            "messageKey": "km-carmng:kmCarmngInfringeInfo.fdInfringePerson",
+            "type": "String",
+            "column": "fd_infringe_person_name",
+            "notNull": "false",
+            "length": "200"
+        },
+        "fdInfringeTime":         {
+            "propertyType": "simple",
+            "messageKey": "km-carmng:kmCarmngInfringeInfo.fdInfringeTime",
+            "type": "DateTime",
+            "column": "fd_infringe_time",
+            "notNull": "false"
+        },
+        "fdInfringeFee":         {
+            "propertyType": "simple",
+            "messageKey": "km-carmng:kmCarmngInfringeInfo.fdInfringeFee",
+            "type": "Double",
+            "column": "fd_infringe_fee",
+            "notNull": "false",
+            "length": "12"
+        },
+        "fdInfringeSite":         {
+            "propertyType": "simple",
+            "messageKey": "km-carmng:kmCarmngInfringeInfo.fdInfringeSite",
+            "type": "String",
+            "column": "fd_infringe_site",
+            "notNull": "false",
+            "length": "200"
+        },
+        "fdRemark":         {
+            "propertyType": "simple",
+            "messageKey": "km-carmng:kmCarmngInfringeInfo.fdRemark",
+            "type": "String",
+            "column": "fd_remark",
+            "notNull": "false",
+            "length": "2000",
+            "validate": "true"
+        },
+        "docCreateTime":         {
+            "propertyType": "simple",
+            "messageKey": "km-carmng:kmCarmngInfringeInfo.docCreateTime",
+            "type": "DateTime",
+            "column": "doc_create_time",
+            "notNull": "false"
+        },
+        "fdInfringePersonId":         {
+            "propertyType": "simple",
+            "messageKey": "km-carmng:kmCarmngInfringeInfo.fdInfringePersonId",
+            "type": "String",
+            "column": "fd_infringe_person_id",
+            "length": "200"
+        },
+        "fdVehiclesInfo":         {
+            "propertyType": "model",
+            "messageKey": "km-carmng:kmCarmngInfringeInfo.fdVehiclesInfoId",
+            "type": "com.landray.kmss.km.carmng.model.KmCarmngInfomation",
+            "column": "fd_vehicles_info_id"
+        },
+        "docCreator":         {
+            "propertyType": "model",
+            "messageKey": "km-carmng:kmCarmngInfringeInfo.docCreatorId",
+            "type": "com.landray.kmss.sys.organization.model.SysOrgElement",
+            "column": "doc_creator_id"
+        }
+    },
+    "attachments": {"attachment":     {
+        "propertyType": "att",
+        "messageKey": "km-carmng:kmCarmngInsuranceInfo.attachment"
+    }}
+}

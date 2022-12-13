@@ -1,0 +1,75 @@
+.FS_MsgDivMain {
+	width: 80%;
+	text-align: center;
+	border: 2px #C0C0C0 solid;
+	margin-top: 5px;
+	padding: 10px;
+	background-image: url(images/bg.gif);
+	display: block;
+}
+
+
+.FS_MsgFailDiv div{
+	height: 25;
+	text-align: left;
+	font-weight: bold;font-size: 13px;
+	padding-left: 5px;padding-top: 3px;
+	background-color: #CFF1F2;
+	color: #fff;
+	border: 1px solid #ccc;
+	cursor:pointer;
+	background: url("images/bg_red.gif");
+}
+.FS_MsgFailDiv table{
+	width: 100%;
+	background-color: #fff;
+}
+.FS_MsgFailDiv table tr{
+	height: 20px;
+}
+.FS_MsgFailDiv table tr td{
+	padding-left: 10px;
+}
+.FS_MsgSuccessDiv div{
+	height: 25;
+	text-align: left;
+	font-weight: bold;font-size: 13px;
+	padding-left: 5px;padding-top: 3px;
+	background-color: #CFF1F2;
+	color: #fff;
+	cursor:pointer;
+	border: 1px solid #ccc;
+	background: url("images/bg_blue.gif");
+}
+.FS_MsgSuccessDiv table{
+	width: 100%;
+	background-color: #fff;
+}
+.FS_MsgSuccessDiv table tr{
+	height: 20px;
+}
+.FS_MsgSuccessDiv table tr td{
+	padding-left: 10px;
+}
+.FS_TxtTitle{
+	font-size: 18px;
+	font-weight: bold; 
+	text-align: center;
+}
+.FS_MsgFailSpan{
+	height: 17px;
+	width: 17px;
+	margin-right:5px;
+	background: url("images/icons.png") -179px -9px ;
+}
+.FS_MsgSuccessSpan{
+	height: 17px;
+	width: 17px;
+	margin-right:5px;
+	background: url("images/icons.png") -9px -178px ;
+}
+.FS_TxtTitle{
+	font-size: 18px;
+	font-weight: bold; 
+	text-align: center;
+}

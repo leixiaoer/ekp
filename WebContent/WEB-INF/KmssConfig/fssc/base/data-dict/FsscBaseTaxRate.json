@@ -1,0 +1,130 @@
+{
+    "global":     {
+        "modelName": "com.landray.kmss.fssc.base.model.FsscBaseTaxRate",
+        "messageKey": "fssc-base:table.fsscBaseTaxRate",
+        "table": "fssc_base_tax_rate",
+        "url": "/fssc/base/fssc_base_tax_rate/fsscBaseTaxRate.do?method=view&fdId=${fdId}",
+        "displayProperty": "fdRate",
+        "serviceBean": "fsscBaseTaxRateService",
+        "canLogShow": "1"
+    },
+    "attrs":     {
+        "fdId":         {
+            "propertyType": "id",
+            "generator": {"type": "assigned"}
+        },
+        "fdRate":         {
+            "propertyType": "simple",
+            "type": "Double",
+            "defaultValue": "",
+            "messageKey": "fssc-base:fsscBaseTaxRate.fdRate",
+            "column": "fd_rate",
+            "notNull": "true",
+            "validate": "true",
+            "canSearch": "true",
+            "canRelation": "true",
+            "canDisplay": "true",
+            "readOnly": "false"
+        },
+        "fdIsAvailable":         {
+            "propertyType": "simple",
+            "type": "Boolean",
+            "defaultValue": "true",
+            "messageKey": "fssc-base:fsscBaseTaxRate.fdIsAvailable",
+            "column": "fd_is_available",
+            "notNull": "false",
+            "validate": "true",
+            "canSearch": "true",
+            "canRelation": "true",
+            "canDisplay": "true",
+            "readOnly": "false"
+        },
+        "docCreateTime":         {
+            "propertyType": "simple",
+            "type": "DateTime",
+            "messageKey": "fssc-base:fsscBaseTaxRate.docCreateTime",
+            "column": "doc_create_time",
+            "notNull": "true",
+            "validate": "false",
+            "canSearch": "true",
+            "canRelation": "true",
+            "canDisplay": "true",
+            "readOnly": "true"
+        },
+        "docAlterTime":         {
+            "propertyType": "simple",
+            "type": "DateTime",
+            "messageKey": "fssc-base:fsscBaseTaxRate.docAlterTime",
+            "column": "doc_alter_time",
+            "notNull": "false",
+            "validate": "false",
+            "canSearch": "true",
+            "canRelation": "true",
+            "canDisplay": "true",
+            "readOnly": "true"
+        },
+        "fdOrder":         {
+            "propertyType": "simple",
+            "type": "Integer",
+            "defaultValue": "",
+            "messageKey": "fssc-base:fsscBaseTaxRate.fdOrder",
+            "column": "fd_order",
+            "notNull": "false",
+            "validate": "true",
+            "canSearch": "true",
+            "canRelation": "true",
+            "canDisplay": "true",
+            "readOnly": "false"
+        },
+        "fdCompany":         {
+            "propertyType": "model",
+            "type": "com.landray.kmss.fssc.base.model.FsscBaseCompany",
+            "messageKey": "fssc-base:fsscBaseTaxRate.fdCompany",
+            "column": "fd_company_id",
+            "notNull": "false",
+            "validate": "true",
+            "canSearch": "true",
+            "canRelation": "true",
+            "canDisplay": "true",
+            "readOnly": "false"
+        },
+        "fdAccount":         {
+            "propertyType": "model",
+            "type": "com.landray.kmss.fssc.base.model.FsscBaseAccountsCom",
+            "messageKey": "fssc-base:fsscBaseTaxRate.fdAccount",
+            "column": "fd_account_id",
+            "notNull": "true",
+            "validate": "true",
+            "canSearch": "true",
+            "canRelation": "true",
+            "canDisplay": "true",
+            "readOnly": "false"
+        },
+        "docCreator":         {
+            "propertyType": "model",
+            "type": "com.landray.kmss.sys.organization.model.SysOrgPerson",
+            "messageKey": "fssc-base:fsscBaseTaxRate.docCreator",
+            "column": "doc_creator_id",
+            "notNull": "true",
+            "validate": "false",
+            "canSearch": "true",
+            "canRelation": "true",
+            "canDisplay": "true",
+            "readOnly": "true",
+            "dialogJS": "Dialog_Address(!{mulSelect}, '!{idField}','!{nameField}', ';',ORG_TYPE_PERSON);"
+        },
+        "docAlteror":         {
+            "propertyType": "model",
+            "type": "com.landray.kmss.sys.organization.model.SysOrgPerson",
+            "messageKey": "fssc-base:fsscBaseTaxRate.docAlteror",
+            "column": "doc_alteror_id",
+            "notNull": "false",
+            "validate": "false",
+            "canSearch": "true",
+            "canRelation": "true",
+            "canDisplay": "true",
+            "readOnly": "true",
+            "dialogJS": "Dialog_Address(!{mulSelect}, '!{idField}','!{nameField}', ';',ORG_TYPE_PERSON);"
+        }
+    }
+}

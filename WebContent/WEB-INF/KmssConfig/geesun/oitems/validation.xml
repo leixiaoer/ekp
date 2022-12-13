@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE form-validation PUBLIC "-//Apache Software Foundation//DTD Commons Validator Rules Configuration 1.1//EN" "http://jakarta.apache.org/commons/dtds/validator_1_1.dtd">
+
+<form-validation>
+
+	<formset>
+		<form name="geesunOitemsManageForm">
+
+			<field property="fdName" depends="required">
+				<arg key="geesunOitemsManage.fdName" bundle="geesun-oitems" position="0" />
+
+			</field>
+			<field property="fdOrder" depends="integer">
+				<arg key="geesunOitemsManage.fdOrder" bundle="geesun-oitems" position="0" />
+			</field>
+
+		</form>
+
+		<form name="geesunOitemsTempletForm">
+
+			<field property="fdName" depends="required">
+				<arg key="geesunOitemsTemplet.fdName" bundle="geesun-oitems" position="0" />
+
+			</field>
+
+		</form>
+
+		<form name="geesunOitemsGetApplicationForm">
+
+
+			<field property="docSubject" depends="required">
+				<arg key="geesunOitemsGetApplication.docSubject" bundle="geesun-oitems"
+					position="0" />
+			</field>
+
+
+			<field property="fdApplicantsId" depends="required">
+				<arg key="geesunOitemsBudgerApplication.fdApplicantsId" bundle="geesun-oitems"
+					position="0" />
+			</field>
+
+
+		</form>
+		<form name="geesunOitemsBudgerApplicationForm">
+
+
+			<field property="docSubject" depends="required">
+				<arg key="geesunOitemsBudgerApplication.docSubject" bundle="geesun-oitems"
+					position="0" />
+			</field>
+
+
+			<field property="fdApplicantsId" depends="required">
+				<arg key="geesunOitemsBudgerApplication.fdApplicantsId" bundle="geesun-oitems"
+					position="0" />
+			</field>
+			
+			<field property="fdTemplateId" depends="required">
+				<arg key="table.geesunOitemsTemplet" bundle="geesun-oitems"
+					position="0" />
+			</field>
+
+
+		</form>
+		<form name="geesunOitemsWarehousingRecordForm">
+			<field property="fdPrice" depends="required">
+				<arg key="geesunOitemsWarehousingRecord.fdPrice" bundle="geesun-oitems"
+					position="0" />
+			</field>
+			<field property="fdNumber" depends="required">
+				<arg key="geesunOitemsWarehousingRecord.fdNumber" bundle="geesun-oitems"
+					position="0" />
+			</field>
+		</form>
+
+	</formset>
+</form-validation>

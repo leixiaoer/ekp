@@ -1,0 +1,73 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE hibernate-configuration
+    PUBLIC "-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+    "http://hibernate.sourceforge.net/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+	<session-factory>
+		<mapping
+				resource="com/landray/kmss/km/asset/model/KmAssetApplyTemplate.hbm.xml" />
+		<mapping
+				resource="com/landray/kmss/km/asset/model/KmAssetCard.hbm.xml" />
+		<mapping
+				resource="com/landray/kmss/km/asset/model/KmAssetAddress.hbm.xml" />
+		<mapping
+				resource="com/landray/kmss/km/asset/model/KmAssetAddressCate.hbm.xml" />
+		<mapping
+				resource="com/landray/kmss/km/asset/model/KmAssetCategory.hbm.xml" />
+		<mapping
+			resource="com/landray/kmss/km/asset/model/KmAssetApplyBuy.hbm.xml" />
+		<mapping
+			resource="com/landray/kmss/km/asset/model/KmAssetApplyRepairExpend.hbm.xml" />
+		<mapping
+			resource="com/landray/kmss/km/asset/model/KmAssetApplyRent.hbm.xml" />
+		<mapping
+			resource="com/landray/kmss/km/asset/model/KmAssetApplyDivertList.hbm.xml" />
+		<mapping
+			resource="com/landray/kmss/km/asset/model/KmAssetApplyBuyList.hbm.xml" />
+		
+		<mapping
+			resource="com/landray/kmss/km/asset/model/KmAssetApplyReturnList.hbm.xml" />
+		<mapping
+			resource="com/landray/kmss/km/asset/model/KmAssetApplyStockList.hbm.xml" />
+		<mapping
+			resource="com/landray/kmss/km/asset/model/KmAssetApplyDivert.hbm.xml" />
+		<mapping
+			resource="com/landray/kmss/km/asset/model/KmAssetApplyBase.hbm.xml" />
+		<mapping
+			resource="com/landray/kmss/km/asset/model/KmAssetApplyChangeList.hbm.xml" />
+		<mapping
+			resource="com/landray/kmss/km/asset/model/KmAssetApplyInList.hbm.xml" />
+		<mapping
+			resource="com/landray/kmss/km/asset/model/KmAssetApplyChange.hbm.xml" />
+		<mapping
+			resource="com/landray/kmss/km/asset/model/KmAssetApplyDeal.hbm.xml" />
+		<mapping
+			resource="com/landray/kmss/km/asset/model/KmAssetApplyGet.hbm.xml" />
+		<mapping
+			resource="com/landray/kmss/km/asset/model/KmAssetCardLife.hbm.xml" />
+		<mapping
+			resource="com/landray/kmss/km/asset/model/KmAssetApplyReturn.hbm.xml" />
+		<mapping
+			resource="com/landray/kmss/km/asset/model/KmAssetApplyRepairList.hbm.xml" />
+		<mapping
+			resource="com/landray/kmss/km/asset/model/KmAssetApplyRentList.hbm.xml" />
+		<mapping
+			resource="com/landray/kmss/km/asset/model/KmAssetApplyDealList.hbm.xml" />
+		<mapping
+			resource="com/landray/kmss/km/asset/model/KmAssetApplyRepair.hbm.xml" />
+		<mapping
+			resource="com/landray/kmss/km/asset/model/KmAssetApplyStock.hbm.xml" />
+		<mapping
+			resource="com/landray/kmss/km/asset/model/KmAssetApplyIn.hbm.xml" />
+		<mapping
+			resource="com/landray/kmss/km/asset/model/KmAssetApplyGetList.hbm.xml" />
+		<mapping
+			resource="com/landray/kmss/km/asset/model/KmAssetApplyInventory.hbm.xml" />
+		<mapping
+			resource="com/landray/kmss/km/asset/model/KmAssetApplyInventoryDetail.hbm.xml" />
+		<mapping
+			resource="com/landray/kmss/km/asset/model/KmAssetApplyTask.hbm.xml" />
+		<mapping
+			resource="com/landray/kmss/km/asset/model/KmAssetApplyTaskDetail.hbm.xml" />
+	</session-factory>
+</hibernate-configuration> 

@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<column-enums>
+	<type name="kmPindagateMain_config_unit">
+		<value-label>
+			<value>1</value>
+			<label-key>kmPindagateMain.config.min</label-key>
+			<bundle>km-pindagate</bundle>
+			<label />
+		</value-label>
+		<value-label>
+			<value>2</value>
+			<label-key>kmPindagateMain.config.hour</label-key>
+			<bundle>km-pindagate</bundle>
+			<label />
+		</value-label>
+			<value-label>
+			<value>3</value>
+			<label-key>kmPindagateMain.config.day</label-key>
+			<bundle>km-pindagate</bundle>
+			<label />
+		</value-label>
+	</type>
+	<type name="kmPindagate_status">
+	    <value-label>
+	      <value>00</value>
+	      <label-key>kmPindagate.tree.status.discard</label-key>
+	      <label>废弃</label>
+	      <bundle>km-pindagate</bundle>
+	      <label />
+	    </value-label>
+	    <value-label>
+	      <value>10</value>
+	      <label-key>kmPindagate.tree.status.draft</label-key>
+	      <label>草稿</label>
+	      <bundle>km-pindagate</bundle>
+	      <label />
+	    </value-label>
+	     <value-label>
+	      <value>11</value>
+	      <label-key>kmPindagate.tree.status.refuse</label-key>
+	      <label>被驳回</label>
+	      <bundle>km-pindagate</bundle>
+	      <label />
+	    </value-label>
+	    <value-label>
+	      <value>20</value>
+	      <label-key>kmPindagate.tree.status.examine</label-key>
+	      <label>审批中</label>
+	      <bundle>km-pindagate</bundle>
+	      <label />
+	    </value-label>
+	    <value-label>
+	      <value>30</value>
+	      <label-key>kmPindagate.tree.status.publish</label-key>
+	      <label>流程结束</label>
+	      <bundle>km-pindagate</bundle>
+	      <label />
+	    </value-label>
+	    <value-label>
+	      <value>31</value>
+	      <label-key>kmPindagate.tree.status.indagating</label-key>
+	      <label>调查中</label>
+	      <bundle>km-pindagate</bundle>
+	      <label />
+	    </value-label>
+	    <value-label>
+	      <value>32</value>
+	      <label-key>kmPindagate.tree.status.complete</label-key>
+	      <label>调查结束</label>
+	      <bundle>km-pindagate</bundle>
+	      <label />
+	    </value-label>
+  	</type>
+  	<type name="kmPindagateMain_type">
+		<value-label>
+			<value>normal</value>
+			<label-key>kmPindagateMain.normal</label-key>
+			<bundle>km-pindagate</bundle>
+			<label />
+		</value-label>
+		<value-label>
+			<value>code</value>
+			<label-key>kmPindagateMain.code</label-key>
+			<bundle>km-pindagate</bundle>
+			<label />
+		</value-label>
+	</type>
+</column-enums>

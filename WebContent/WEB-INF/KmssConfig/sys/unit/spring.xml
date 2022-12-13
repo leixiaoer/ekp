@@ -1,0 +1,323 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans
+	xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.0.xsd">
+	 <bean id="sysUnitNatureValidator" class="com.landray.kmss.sys.unit.service.spring.SysUnitNatureValidator">
+		 <property	name="kmImissiveUnitService">
+			<ref local="kmImissiveUnitService" />
+		</property>
+	 </bean>
+	 
+	 <bean
+		id="sysUnitSecretaryDao"
+		parent="KmssAuthBaseDao"
+		class="com.landray.kmss.sys.unit.dao.hibernate.SysUnitSecretaryDaoImp">
+		<property
+			name="modelName"
+			value="com.landray.kmss.sys.unit.model.SysUnitSecretary" />
+	</bean>
+	<bean
+		id="sysUnitSecretaryTarget"
+		parent="KmssBaseTarget"
+		class="com.landray.kmss.sys.unit.service.spring.SysUnitSecretaryServiceImp">
+		<property
+			name="baseDao">
+			<ref
+				local="sysUnitSecretaryDao" />
+		</property>
+		<property
+			name="kmImissiveUnitService">
+			<ref
+				local="kmImissiveUnitService" />
+		</property>
+	</bean>
+	<bean
+		id="sysUnitSecretaryService"
+		parent="KmssBaseService">
+		<property
+			name="target">
+			<ref
+				local="sysUnitSecretaryTarget" />
+		</property>
+	</bean>
+	 
+	 
+	<bean
+		id="kmImissiveUnitBrunchLeaderDao"
+		parent="KmssAuthBaseDao"
+		class="com.landray.kmss.sys.unit.dao.hibernate.KmImissiveUnitBrunchLeaderDaoImp">
+		<property
+			name="modelName"
+			value="com.landray.kmss.sys.unit.model.KmImissiveUnitBrunchLeader" />
+	</bean>
+	<bean
+		id="kmImissiveUnitBrunchLeaderTarget"
+		parent="KmssBaseTarget"
+		class="com.landray.kmss.sys.unit.service.spring.KmImissiveUnitBrunchLeaderServiceImp">
+		<property
+			name="baseDao">
+			<ref
+				local="kmImissiveUnitBrunchLeaderDao" />
+		</property>
+		<property
+			name="kmImissiveUnitService">
+			<ref
+				local="kmImissiveUnitService" />
+		</property>
+	</bean>
+	<bean
+		id="kmImissiveUnitBrunchLeaderService"
+		parent="KmssBaseService">
+		<property
+			name="target">
+			<ref
+				local="kmImissiveUnitBrunchLeaderTarget" />
+		</property>
+	</bean>
+	
+	<bean
+		id="kmImissiveUnitCategoryDao"
+		parent="KmssAuthBaseDao"
+		class="com.landray.kmss.sys.unit.dao.hibernate.KmImissiveUnitCategoryDaoImp">
+		<property
+			name="modelName"
+			value="com.landray.kmss.sys.unit.model.KmImissiveUnitCategory" />
+	</bean>
+	<bean
+		id="kmImissiveUnitCategoryTarget"
+		parent="KmssBaseTarget"
+		class="com.landray.kmss.sys.unit.service.spring.KmImissiveUnitCategoryServiceImp">
+		<property
+			name="baseDao">
+			<ref
+				local="kmImissiveUnitCategoryDao" />
+		</property>
+	</bean>
+	<bean
+		id="kmImissiveUnitCategoryService"
+		parent="KmssBaseService">
+		<property
+			name="target">
+			<ref
+				local="kmImissiveUnitCategoryTarget" />
+		</property>
+	</bean>
+	
+	<bean
+		id="kmImissiveUnitCategoryTreeService"
+		class="com.landray.kmss.sys.unit.service.spring.KmImissiveUnitCategoryTreeServiceImp">
+		<property
+			name="kmImissiveUnitCategoryService">
+			<ref
+				local="kmImissiveUnitCategoryService" />
+		</property>
+	</bean>
+	
+	<bean
+		id="kmImissiveUnitCategoryInnerTreeService"
+		class="com.landray.kmss.sys.unit.service.spring.KmImissiveUnitCategoryInnerTreeServiceImp">
+		<property
+			name="kmImissiveUnitCategoryService">
+			<ref
+				local="kmImissiveUnitCategoryService" />
+		</property>
+	</bean>
+	
+	<bean
+		id="kmImissiveUnitAllCategoryTreeService"
+		class="com.landray.kmss.sys.unit.service.spring.KmImissiveUnitAllCategoryTreeServiceImp">
+		<property
+			name="kmImissiveUnitCategoryService">
+			<ref
+				local="kmImissiveUnitCategoryService" />
+		</property>
+	</bean>
+    
+	<bean
+		id="kmImissiveUnitDao"
+		parent="KmssAuthBaseDao"
+		class="com.landray.kmss.sys.unit.dao.hibernate.KmImissiveUnitDaoImp">
+		<property
+			name="modelName"
+			value="com.landray.kmss.sys.unit.model.KmImissiveUnit" />
+	</bean>
+	<bean
+		id="kmImissiveUnitTarget"
+		parent="KmssBaseTarget"
+		class="com.landray.kmss.sys.unit.service.spring.KmImissiveUnitServiceImp">
+		<property
+			name="baseDao">
+			<ref
+				local="kmImissiveUnitDao" />
+		</property>
+		<property
+			name="kmImissiveUnitCategoryService">
+			<ref
+				local="kmImissiveUnitCategoryService" />
+		</property>
+	</bean>
+	<bean
+		id="kmImissiveUnitService"
+		parent="KmssBaseService">
+		<property
+			name="target">
+			<ref
+				local="kmImissiveUnitTarget" />
+		</property>
+	</bean>	
+	
+	<bean
+		id="kmImissiveUnitListService"
+		class="com.landray.kmss.sys.unit.service.spring.KmImissiveUnitListServiceImp">
+		<property
+			name="kmImissiveUnitService">
+			<ref
+				local="kmImissiveUnitService" />
+		</property>
+	</bean>
+	<bean id="kmImissiveUnitDataBeanService"
+		class="com.landray.kmss.sys.unit.service.spring.KmImissiveUnitDataBeanService">
+	</bean>
+	<bean id="kmImissiveUnitMobileDataBeanService"
+		class="com.landray.kmss.sys.unit.service.spring.KmImissiveUnitMobileDataBeanService">
+	</bean>
+	<bean id="kmImissiveUnitAuthDataBeanService"
+		class="com.landray.kmss.sys.unit.service.spring.KmImissiveUnitAuthDataBeanService">
+	</bean>
+	<bean id="kmImissiveUnitMobileAuthDataBeanService"
+		class="com.landray.kmss.sys.unit.service.spring.KmImissiveUnitMobileAuthDataBeanService">
+	</bean>
+	<bean id="kmImissiveOuterUnitDataBeanService"
+		class="com.landray.kmss.sys.unit.service.spring.KmImissiveOuterUnitDataBeanService">
+	</bean>
+	<bean id="kmImissiveUnitMobileSearchDataBeanService"
+		class="com.landray.kmss.sys.unit.service.spring.KmImissiveUnitMobileSearchDataBeanService">
+	</bean>
+	
+	<bean
+		id="kmImissiveUnitListWithAuthService"
+		class="com.landray.kmss.sys.unit.service.spring.KmImissiveUnitListWithAuthServiceImp">
+		<property
+			name="kmImissiveUnitService">
+			<ref
+				local="kmImissiveUnitService" />
+		</property>
+	</bean>
+	<bean
+		id="kmImissiveUnitDetailService"
+		class="com.landray.kmss.sys.unit.service.spring.KmImissiveUnitDetailServiceImp">
+		<property
+			name="kmImissiveUnitService">
+			<ref
+				local="kmImissiveUnitService" />
+		</property>
+		<property
+			name="kmImissiveUnitCategoryService">
+			<ref
+				local="kmImissiveUnitCategoryService" />
+		</property>
+	</bean>
+	<bean
+		id="kmImissiveUnitHeaderService"
+		class="com.landray.kmss.sys.unit.service.spring.KmImissiveUnitHeaderServiceImp">
+		<property
+			name="kmImissiveUnitService">
+			<ref
+				local="kmImissiveUnitService" />
+		</property>
+		<property
+			name="kmImissiveUnitCategoryService">
+			<ref
+				local="kmImissiveUnitCategoryService" />
+		</property>
+	</bean>
+	<bean
+		id="kmImissiveUnitTreeService"
+		class="com.landray.kmss.sys.unit.service.spring.KmImissiveUnitTreeServiceImp">
+		<property
+			name="kmImissiveUnitService">
+			<ref
+				local="kmImissiveUnitService" />
+		</property>
+		<property
+			name="kmImissiveUnitCategoryService">
+			<ref
+				local="kmImissiveUnitCategoryService" />
+		</property>
+	</bean>
+	<bean
+		id="kmImissiveUnitUseTreeService"
+		class="com.landray.kmss.sys.unit.service.spring.KmImissiveUnitUseTreeServiceImp">
+		<property
+			name="kmImissiveUnitService">
+			<ref
+				local="kmImissiveUnitService" />
+		</property>
+	</bean>
+	
+	<!-- 群组 start -->
+	<bean
+		id="sysUnitGroupDao"
+		parent="KmssAuthBaseDao"
+		class="com.landray.kmss.sys.unit.dao.hibernate.SysUnitGroupDaoImp">
+		<property
+			name="modelName"
+			value="com.landray.kmss.sys.unit.model.SysUnitGroup" />
+	</bean>
+	<bean
+		id="sysUnitGroupTarget"
+		parent="KmssBaseTarget"
+		class="com.landray.kmss.sys.unit.service.spring.SysUnitGroupServiceImp">
+		<property
+			name="baseDao">
+			<ref
+				local="sysUnitGroupDao" />
+		</property>
+	</bean>
+	<bean
+		id="sysUnitGroupService"
+		parent="KmssBaseService">
+		<property
+			name="target">
+			<ref
+				local="sysUnitGroupTarget" />
+		</property>
+	</bean>
+	<bean id="sysUnitGroupTreeService" class="com.landray.kmss.sys.unit.service.spring.SysUnitGroupTreeService">
+		<property name="sysUnitGroupService">
+			<ref local="sysUnitGroupService" />
+		</property>
+	</bean>
+	<bean id="sysUnitListWithAuthByGroupService" class="com.landray.kmss.sys.unit.service.spring.SysUnitListWithAuthByGroupService">
+		<property name="kmImissiveUnitService">
+			<ref local="kmImissiveUnitService" />
+		</property>
+		<property name="sysUnitGroupService">
+			<ref local="sysUnitGroupService" />
+		</property>
+	</bean>
+	<bean id="sysUnitMobileAuthDataWithGroupBeanService"
+		class="com.landray.kmss.sys.unit.service.spring.SysUnitMobileAuthDataWithGroupBeanService">
+	</bean>
+	<!-- 群组 end -->
+	<!-- 所有分类 -->
+	<bean id="sysUnitListWithAuthByCateService" class="com.landray.kmss.sys.unit.service.spring.SysUnitListWithAuthByCateService">
+		<property name="kmImissiveUnitCategoryService">
+			<ref bean="kmImissiveUnitCategoryService" />
+		</property>
+	</bean>
+	<bean id="sysUnitMobileAuthDataWithCateBeanService"
+		class="com.landray.kmss.sys.unit.service.spring.SysUnitMobileAuthDataWithCateBeanService">
+		<property name="kmImissiveUnitCategoryService">
+			<ref bean="kmImissiveUnitCategoryService" />
+		</property>
+	</bean>
+	<bean id="sysUnitCategoryTreeService"
+		class="com.landray.kmss.sys.unit.service.spring.SysUnitCategoryTreeServiceImp">
+		<property name="kmImissiveUnitCategoryService">
+			<ref bean="kmImissiveUnitCategoryService" />
+		</property>
+	</bean>
+	<!-- 所有分类end -->
+</beans>

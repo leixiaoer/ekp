@@ -1,0 +1,1722 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<version xmlns="http://www.example.org/version-config" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.example.org/version-config ../version.xsd">
+	<modifies>
+		<modify>
+			<description>#166068 修复 办公用品个人申请页面显示瑕疵</description>
+			<author>苏琦</author>
+			<revision-time>2022-05-31</revision-time>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#164745 修复 入库记录总金额计算不对</description>
+			<author>苏琦</author>
+			<revision-time>2022-05-17</revision-time>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#164401 修复 信创环境，单价1元以下的物品无法合并汇总</description>
+			<author>潘永辉</author>
+			<revision-time>2022-05-09</revision-time>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#160942 修复 办公物品领用模块，个人申请，在移动端没有加载对应的流程</description>
+			<author>王京</author>
+			<revision-time>2022-03-10</revision-time>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#159625 修复 办公用品，在移动端新建个人申请提交后流程当前环节仍是起草节点</description>
+			<author>王文豪</author>
+			<revision-time>2022-02-17</revision-time>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#158243 修复 新建个人或部门办公用品申请-选择用品时如果该办公用品有两条库存信息，点击该行控制台报错无法选中</description>
+			<author>魏泽钧</author>
+			<revision-time>2022-01-20</revision-time>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#157564 办公用品新建，选择办公用品时，办公用品点击“取消”按钮后，上面的一列信息没有跟着一块取消掉</description>
+			<author>张颖</author>
+			<revision-time>2022-01-06</revision-time>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#155629 修复 【办公用品=缺陷】按照个人去查看，可以看到无效人员</description>
+			<author>张颖</author>
+			<revision-time>2021-12-13</revision-time>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#155070 修复 编辑分类页面页签的名称显示新建字样的问题</description>
+			<author>魏泽钧</author>
+			<revision-time>2021-12-01</revision-time>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#149952 修复 领用统计部门无效时，统计不到</description>
+			<author>熊翅辉</author>
+			<revision-time>2021-09-27</revision-time>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#147462 修复 办公用品未建立申请流程模版，可以提交</description>
+			<author>熊翅辉</author>
+			<revision-time>2021-08-27</revision-time>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#147033 优化 申请办公用品时，物品数量加必填校验</description>
+			<author>熊翅辉</author>
+			<revision-time>2021-08-16</revision-time>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#143751 修复 点选物品有延迟，会给人选择的错觉</description>
+			<author>熊翅辉</author>
+			<revision-time>2021-07-09</revision-time>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#143230 修复 筛选器无法搜索已离职的申请人</description>
+			<author>潘永辉</author>
+			<revision-time>2021-07-05</revision-time>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#140716 修复 SQL参数化</description>
+			<author>苏运彬</author>
+			<revision-time>2021-06-03</revision-time>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#140522 修复 移动端提交办公用品申请，前端计算总金额</description>
+			<author>潘永辉</author>
+			<revision-time>2021-05-29</revision-time>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#139309 修复 编辑模板时，主题生成规则配置成：$字符串.显示信息$("$申请者$")，校验通过，模拟不行</description>
+			<author>潘永辉</author>
+			<revision-time>2021-05-11</revision-time>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#133936 修复 关于谷歌浏览器最新版本（88）无法自动关闭页面的问题</description>
+			<author>王京</author>
+			<revision-time>2021-04-27</revision-time>
+			<relation>
+				<relation-module>core</relation-module>
+			</relation>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#137420 修复 拥有 后台办公用品_库存管理权限就能看到库存数据</description>
+			<author>王京</author>
+			<revision-time>2021-04-27</revision-time>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#138605 优化 办公用品部门申请，修改申请后列表页的申请者部门会变更为修改者的所在部门</description>
+			<author>王书强</author>
+			<revision-time>2021-04-27</revision-time>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#132207 修复 办公物品数据迁移任务执行后会把申请单状态改为已领取</description>
+			<author>苏琦</author>
+			<revision-time>2021-02-22</revision-time>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#132569 修复 导入物品报错</description>
+			<author>王京</author>
+			<revision-time>2021-01-27</revision-time>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#131721 修复 办公用品可阅读者设置部门，新建部门申请使用导入excel提示无权限</description>
+			<author>苏琦</author>
+			<revision-time>2021-01-21</revision-time>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#127756 优化 移动端选择物料方式优化</description>
+			<author>潘永辉</author>
+			<revision-time>2020-12-21</revision-time>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#128336 修复 办公物品领用，选择物品之后并没有提交，物品会删除不了（购物车数据关联）</description>
+			<author>潘永辉</author>
+			<revision-time>2020-12-21</revision-time>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#127439 修复 办公用品可阅读者设置部门，新建部门申请使用导入excel提示无权限</description>
+			<author>苏琦</author>
+			<revision-time>2020-12-10</revision-time>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description> #127161 修复 办公物品库存查询的排序问题</description>
+			<author>王京</author>
+			<revision-time>2020-11-30</revision-time>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#125820 修复 办公用品管理模块-月度领用报表-标题搜索功能无法使用</description>
+			<author>苏琦</author>
+			<revision-time>2020-11-24</revision-time>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#114648 修复【办公用品】safria浏览器，统计报表导航中个页面存在的样式问题 by 尹涛</description>
+			<author>尹涛</author>
+			<revision-time>2020-09-22</revision-time>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#117726 修复 办公用品库存管理中的入库记录样式异常</description>
+			<author>苏琦</author>
+			<revision-time>2020-09-01</revision-time>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#111780 修复 苹果手机，kk入口，创建用品申请，提交流程成功后，仍停留在流程提交页，未跳转</description>
+			<author>梅瑞鹏</author>
+			<revision-time>2020-08-20</revision-time>
+			<relation>
+				<relation-module>sys/mobile</relation-module>
+			</relation>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>113241 修复【办公用品】快速录入列表项safria浏览器样式出现问题</description>
+			<author>尹涛</author>
+			<revision-time>2020-07-30</revision-time>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#113136 修复 办公物品库存查询和导出计算不一致</description>
+			<author>徐斌</author>
+			<revision-time>2020-07-28</revision-time>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#111321 修复 办公用品手机端物品种类和明细不能上下滑动</description>
+			<author>苏琦</author>
+			<revision-time>2020-07-10</revision-time>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#105440 修复 办公用品模块移动端新建个人申请和部门申请时选择模板类型是单选按钮，但是可以快速选择多个</description>
+			<author>梅瑞鹏</author>
+			<revision-time>2020-07-09</revision-time>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#111205 修复 个人申请新建页面修改一下新建模板后扫码报错，提示操作失败</description>
+			<author>谭昌香</author>
+			<revision-time>2020-07-09</revision-time>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#110465 修复 办公物品领用移动端新建领用字体调整</description>
+			<author>林剑文</author>
+			<revision-time>2020-07-06</revision-time>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#109747 修复 办公用品选择物品时点一下就取消选中</description>
+			<author>林剑文</author>
+			<revision-time>2020-06-28</revision-time>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#109803 修复 移动端领用办公用品无法修改数量</description>
+			<author>梅瑞鹏</author>
+			<revision-time>2020-06-23</revision-time>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#102681 修复 调整文档发布后编辑页只展现基本信息，改动导致左侧的审批记录显示不出来</description>
+			<author>何协殷</author>
+			<revision-time>2020-05-13</revision-time>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#104737 修复【服务问题单】办公用品发起后修改流程模板，还没提交起草人就发生改变，且编辑者不是原申请人</description>
+			<author>徐斌</author>
+			<revision-time>2020-05-13</revision-time>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#104655 修复v15办公用品模块，移动端新建申请单，选择物品---选择分类，文字区域无法点选，只能点击箭头才能选择</description>
+			<author>徐斌</author>
+			<revision-time>2020-05-09</revision-time>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#104351 优化 办公用品管理新建流程模板时，无法设置流程模板标题多语言</description>
+			<author>孙佳</author>
+			<revision-time>2020-05-07</revision-time>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#102741 优化 人员具有办公用品的基础权限，但是可以看到所有的办公申请</description>
+			<author>孙佳</author>
+			<revision-time>2020-04-29</revision-time>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#102693 修复 办公用品模块，快速录入通过搜索录入，搜索，清除，查询这三个按钮都不能用</description>
+			<author>叶正平</author>
+			<revision-time>2020-04-24</revision-time>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#102741 修复 人员具有办公用品的基础权限，但是可以看到所有的办公申请</description>
+			<author>孙佳</author>
+			<revision-time>2020-04-22</revision-time>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#102327 修复 V15办公用品模块，库存查询通过名称搜索，无结果</description>
+			<author>陈尉建</author>
+			<revision-time>2020-04-16</revision-time>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#102275 修复 点击导出PDF，然后点击打印，会将打印选项展现出来</description>
+			<author>叶正平</author>
+			<revision-time>2020-04-16</revision-time>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#101736 修复 办公用品在录入时单价有小数保存后会把小数去掉，导致单价有误差，库存查询导出也是取的整数</description>
+			<author>陈尉建</author>
+			<revision-time>2020-04-10</revision-time>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#100560 修复 办公物品领用模块编辑类别时选择父分类页面有报错</description>
+			<author>陈尉建</author>
+			<revision-time>2020-03-28</revision-time>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#99483 优化 办公物品的库存与量价中的值不一样</description>
+			<author>孙佳</author>
+			<revision-time>2020-03-23</revision-time>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#99418 修复 库存查询时选择该分类后会出现400错误</description>
+			<author>胡永方</author>
+			<revision-time>2020-03-18</revision-time>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#97882 优化 办公用品申请流程发布后进行编辑，右侧模式下默认显示基本信息</description>
+			<author>何协殷</author>
+			<revision-time>2020-03-16</revision-time>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#97056 修复 移动端，筛选项中，申请类型选择个人申请，显示的是部门申请的数据。申请类型选择部门申请，显示的是个人申请的数据</description>
+			<author>陈尉建</author>
+			<revision-time>2020-03-03</revision-time>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#95352 修复 移动端，英文环境下，筛选项中仍有一些中文未翻译成英文，与pc端不一致</description>
+			<author>陈尉建</author>
+			<revision-time>2020-02-17</revision-time>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#94101 优化 进入模块，点击“后台配置”目录，请求的url需要显示在地址栏中</description>
+			<author>钟清学</author>
+			<revision-time>2020-02-15</revision-time>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#95356 修复 IE11、快速录入、库存查询两个二级页面中。名称查询会出现400错误。库存查询二级页面中，名称查询与用品类别查询搜索都会出现400错误</description>
+			<author>陈尉建</author>
+			<revision-time>2020-02-14</revision-time>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#94413 优化 人事行政模块文档底部页签展现部署</description>
+			<author>陈尉建</author>
+			<revision-time>2020-02-10</revision-time>
+			<relation>
+				<relation-module>sys/ui</relation-module>
+			</relation>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#93594 修复 办公用品领用 没有走完的流程都变成了已领用状态，在统计表里是没有</description>
+			<author>陈尉建</author>
+			<revision-time>2020-01-08</revision-time>
+			<baseline>V15.0.3.R.20200117</baseline>
+		</modify>
+		<modify>
+			<description>#91170 优化 办公物品移动端二级列表页的功能优化</description>
+			<author>杨铮</author>
+			<revision-time>2019-12-26</revision-time>
+			<relation>
+				<relation-module>sys/mobile</relation-module>
+			</relation>
+			<baseline>V15.0.3.R.20200117</baseline>
+		</modify>
+		<modify>
+			<description>#89805 修复 中海圣荣项目办公用品库存相关领用流程已全部删除，但是该办公用品还是无法删除</description>
+			<author>陈尉建</author>
+			<revision-time>2019-12-17</revision-time>
+			<baseline>V15.0.3.R.20200117</baseline>
+		</modify>
+		<modify>
+			<description>#91488 修复 右侧审批模式下，打开待审文档页面，页面无法上下滚动，看不到底部的内容</description>
+			<author>陈尉建</author>
+			<revision-time>2019-12-17</revision-time>
+			<baseline>V15.0.3.R.20200117</baseline>
+		</modify>
+		<modify>
+			<description>#83711 修复 ios新建申请选择办公物品后，点击明细表的删除按钮会同时删除多行</description>
+			<author>陈尉建</author>
+			<revision-time>2019-12-13</revision-time>
+			<baseline>V15.0.3.R.20200117</baseline>
+		</modify>
+		<modify>
+			<description>#88825 修复 办公用品移动端,在选择办公用品时,无法翻页或者上下拉动,导致选择不到想要办公用品</description>
+			<author>陈尉建</author>
+			<revision-time>2019-12-03</revision-time>
+			<baseline>V15.0.3.R.20200117</baseline>
+		</modify>
+		<modify>
+			<description>#89590 修复 办公用品有多个入库单价时，移动端申请领用库存量显示不正确</description>
+			<author>陈尉建</author>
+			<revision-time>2019-11-29</revision-time>
+			<baseline>V15.0.3.R.20200117</baseline>
+		</modify>
+		<modify>
+			<description>#87609 修复 办公物品KmOitemsWarehousingRecordJoinList.hbm.xml问题</description>
+			<author>陈尉建</author>
+			<revision-time>2019-11-20</revision-time>
+			<baseline>V15.0.3.R.20200117</baseline>
+		</modify>
+		<modify>
+			<description>#84587 修复 办公用品管理模块，统计报表月领用记录跟导出数据小计不匹配</description>
+			<author>陈尉建</author>
+			<revision-time>2019-11-12</revision-time>
+			<baseline>V15.0.3.R.20200117</baseline>
+		</modify>
+		<modify>
+			<description>#53359 新增 移动门户快捷方式选择系统引入的时候没有任何EKP模块</description>
+			<author>钟清学</author>
+			<revision-time>2019-11-11</revision-time>
+			<baseline>V15.0.3.R.20200117</baseline>
+		</modify>
+		<modify>
+			<description>#86951 优化 人员属于类别的下的可维护者和仓库管理员，新建库存无对应的类别</description>
+			<author>孙佳</author>
+			<revision-time>2019-11-04</revision-time>
+			<baseline>V15.0.2.R.20191108</baseline>
+		</modify>
+		<modify>
+			<description>#84320 修复 快速录入页面，修改入库数量或单价后，点击提交提示“您沒有选择需要操作的数据”</description>
+			<author>陈尉建</author>
+			<revision-time>2019-10-28</revision-time>
+			<baseline>V15.0.2.R.20191108</baseline>
+		</modify>
+		<modify>
+			<description>#83564 新增 后台配置优化，ekp各模块后台配置调整</description>
+			<author>钟清学</author>
+			<revision-time>2019-10-21</revision-time>
+			<relation>
+				<relation-module>sys/ui</relation-module>
+			</relation>
+			<baseline>V15.0.2.R.20191108</baseline>
+		</modify>
+		<modify>
+			<description>#83541 修复 ios创建申请单，点击选办公用品选不中，长按可以，取消也一样，安卓正常</description>
+			<author>孙佳</author>
+			<revision-time>2019-10-14</revision-time>
+			<baseline>V15.0.2.R.20191108</baseline>
+		</modify>
+		<modify>
+			<description>#82795 修复 办公用品的类别有多个可使用者时，在移动端会显示多个重复的类别</description>
+			<author>陈尉建</author>
+			<revision-time>2019-09-26</revision-time>
+			<baseline>V15.0.2.R.20191108</baseline>
+		</modify>
+		<modify>
+			<description>#80538 修复 流程仿真计划新建页面，选择模板时，办公用品的模板显示异常</description>
+			<author>孙佳</author>
+			<revision-time>2019-09-24</revision-time>
+			<baseline>V15.0.2.R.20191108</baseline>
+		</modify>
+		<modify>
+			<description>#81801 修复 移动端物品选择列表库存和单价没翻译</description>
+			<author>陈尉建</author>
+			<revision-time>2019-09-23</revision-time>
+			<baseline>V15.0.2.R.20191108</baseline>
+		</modify>
+		<modify>
+			<description>#81659 修复 右侧审批模式下，“暂存审批意见”，“电子签名”与“常用意见”不在同一水平线</description>
+			<author>陈尉建</author>
+			<revision-time>2019-09-12</revision-time>
+			<baseline>V15.0.2.R.20191108</baseline>
+		</modify>
+		<modify>
+			<description>#74809 修复 一个excel模板中用品有相同的编号，新建部门申请时可以正常导入</description>
+			<author>陈尉建</author>
+			<revision-time>2019-09-05</revision-time>
+			<baseline>V15.0.1.R.20190906</baseline>
+		</modify>
+		<modify>
+			<description>#74808 修复 用户不是用品类别可使用者，新建部门申请时可以excel导入该类别下用品</description>
+			<author>陈尉建</author>
+			<revision-time>2019-09-05</revision-time>
+			<baseline>V15.0.1.R.20190906</baseline>
+		</modify>
+		<modify>
+			<description>#80851 修复 办公物品快速录入，可以导入超过库存的负值造成库存为负值</description>
+			<author>陈尉建</author>
+			<revision-time>2019-09-03</revision-time>
+			<baseline>V15.0.1.R.20190906</baseline>
+		</modify>
+		<modify>
+			<description>#61569 修复 办公用品申请单编辑，更换申请流程模板，提交报错</description>
+			<author>孙佳</author>
+			<revision-time>2019-08-27</revision-time>
+			<baseline>V15.0.1.R.20190906</baseline>
+		</modify>
+		<modify>
+			<description>#79636 修复 有通用编号规则模板设置的用户新建编号规则提交时提示没权限</description>
+			<author>陈尉建</author>
+			<revision-time>2019-08-21</revision-time>
+			<baseline>V15.0.1.R.20190906</baseline>
+		</modify>
+		<modify>
+			<description>#79595 修复 办公物品统计导出excel计算错误</description>
+			<author>孙佳</author>
+			<revision-time>2019-08-13</revision-time>
+			<baseline>V15.0.1.R.20190906</baseline>
+		</modify>
+		<modify>
+			<description>#77473 修复 办公物品 “单价”字段名称修改</description>
+			<author>朱道标</author>
+			<revision-time>2019-07-18</revision-time>
+			<baseline>V15.0.1.R.20190906</baseline>
+		</modify>
+		<modify>
+			<description>#77483 修复 办公物品领用明细中部门申请的申请人/申请部门显示值修改</description>
+			<author>朱道标</author>
+			<revision-time>2019-07-16</revision-time>
+			<baseline>V15.0.1.R.20190906</baseline>
+		</modify>
+		<modify>
+			<description>#75554 修复 流程右侧审批部署</description>
+			<author>黄伟强</author>
+			<revision-time>2019-07-11</revision-time>
+			<relation>
+				<relation-module>sys/relation</relation-module>
+				<relation-module>sys/lbpmext</relation-module>
+				<relation-module>sys/lbpmservice</relation-module>
+				<relation-module>sys/ui</relation-module>
+				<relation-module>sys/attachment</relation-module>
+				<relation-module>sys/authorization</relation-module>
+			</relation>
+			<baseline>V15.0.0.R.20190712</baseline>
+		</modify>
+		<modify>
+			<description>#73909 修复 办公用品导入问题，只根据编号判断，导致不同类别相同编号的用品在同一个类别下</description>
+			<author>陈尉建</author>
+			<revision-time>2019-05-29</revision-time>
+			<baseline>V15.0.0.R.20190712</baseline>
+		</modify>
+		<modify>
+			<description>#72032 优化 月领用统计报表数据在生成时按照部门归类</description>
+			<author>陈尉建</author>
+			<revision-time>2019-05-08</revision-time>
+			<baseline>V15.0.0.R.20190712</baseline>
+		</modify>
+		<modify>
+			<description>#72025 优化 个人申请，将申请者加入到领用申请的所有可阅读者中，给予阅读权限 by 陈尉建 #72025 优化 个人申请，将申请者加入到领用申请的所有可阅读者中，给予阅读权限</description>
+			<author>陈尉建</author>
+			<revision-time>2019-05-06</revision-time>
+			<baseline>V15.0.0.R.20190712</baseline>
+		</modify>
+		<modify>
+			<description>#71898 修复 非超管导入办公用品报错，同模板超管可以正常导入</description>
+			<author>陈尉建</author>
+			<revision-time>2019-04-23</revision-time>
+			<baseline>V15.0.0.R.20190712</baseline>
+		</modify>
+		<modify>
+			<description>#70898 修复 V14/V15待发布流，个人申请领用办公用品提交报错</description>
+			<author>陈尉建</author>
+			<revision-time>2019-04-16</revision-time>
+			<baseline>V15.0.0.R.20190712</baseline>
+		</modify>
+		<modify>
+			<description>#68846 新增 15B3优化---办公用品新增申请单编号功能</description>
+			<author>陈尉建</author>
+			<revision-time>2019-04-11</revision-time>
+			<baseline>V15.0.0.B3.20190412</baseline>
+		</modify>
+		<modify>
+			<description>#68029 新增 V15B3办公物品新增移动端发起用品申请和领用用品的功能</description>
+			<author>陈尉建</author>
+			<revision-time>2019-04-11</revision-time>
+			<relation>
+				<relation-module>sys/mobile</relation-module>
+			</relation>
+			<baseline>V15.0.0.B3.20190412</baseline>
+		</modify>
+		<modify>
+			<description>#67929 新增 办公用品部门申请新建时支持excel导入申请明细</description>
+			<author>陈尉建</author>
+			<revision-time>2019-04-11</revision-time>
+			<baseline>V15.0.0.B3.20190412</baseline>
+		</modify>
+		<modify>
+			<description>#65511 修复 用品的单价和总额计算的地方都保留两位小数计算</description>
+			<author>陈尉建</author>
+			<revision-time>2019-04-11</revision-time>
+			<baseline>V15.0.0.B3.20190412</baseline>
+		</modify>
+		<modify>
+			<description>#70033 优化 新建用品时，新建页”最后入库单价“改为”单价“</description>
+			<author>陈尉建</author>
+			<revision-time>2019-04-03</revision-time>
+			<baseline>V15.0.0.B3.20190412</baseline>
+		</modify>
+		<modify>
+			<description>#67258 优化 权限变更页面显示的属性名称自定义扩展</description>
+			<author>潘永辉</author>
+			<revision-time>2019-03-08</revision-time>
+			<relation>
+				<relation-module>sys/right</relation-module>
+			</relation>
+			<baseline>V15.0.0.B3.20190412</baseline>
+		</modify>
+		<modify>
+			<description>#68117 优化 办公用品管理模块库存管理的库存查询结果单价与实际库存中用品单价不一致</description>
+			<author>陈尉建</author>
+			<revision-time>2019-03-05</revision-time>
+			<baseline>V15.0.0.B3.20190412</baseline>
+		</modify>
+		<modify>
+			<description>#66563 优化 办公用品分类权限字段描述由“可使用者”修正为“仓库管理员”</description>
+			<author>潘永辉</author>
+			<revision-time>2019-01-23</revision-time>
+			<baseline>V15.0.0.B3.20190412</baseline>
+		</modify>
+		<modify>
+			<description>#63284 修复 办公物品领用库存查询选择类别搜索后类别变成编码</description>
+			<author>陈尉建</author>
+			<revision-time>2018-12-07</revision-time>
+			<baseline>V15.0.0.B2.20190118</baseline>
+		</modify>
+		<modify>
+			<description>优化 新地址本js重构</description>
+			<author>郑超</author>
+			<revision-time>2018-10-22</revision-time>
+			<relation>
+				<relation-module>core</relation-module>
+			</relation>
+			<baseline>V15.0.0.B1.20181109</baseline>
+		</modify>
+		<modify>
+			<description>修复 多语言依赖模块变更</description>
+			<author>黄泽凯</author>
+			<revision-time>2018-07-20</revision-time>
+			<relation>
+				<relation-module>sys/mobile</relation-module>
+			</relation>
+			<baseline>V15.0.0.B1.20181109</baseline>
+		</modify>
+		<modify>
+			<description>新增 启动子流程的列表支持选到办公用品的模板</description>
+			<author>陈尉建</author>
+			<revision-time>2018-07-02</revision-time>
+			<baseline>V14.0.1.R.20180706</baseline>
+		</modify>
+		<modify>
+			<description>修复 有导出角色，没看到导出按钮</description>
+			<author>陈经纬</author>
+			<revision-time>2018-06-21</revision-time>
+			<baseline>V14.0.1.R.20180706</baseline>
+		</modify>
+		<modify>
+			<description>修复 有导出权限，导出时提示没权限</description>
+			<author>陈经纬</author>
+			<revision-time>2018-06-21</revision-time>
+			<baseline>V14.0.1.R.20180706</baseline>
+		</modify>
+		<modify>
+			<description>优化 数据字典中，缺少表，“KM_OITEMS_SHOPPING_TROLLEY”，数据库中能找到</description>
+			<author>陈尉建</author>
+			<revision-time>2018-03-14</revision-time>
+			<baseline>V14.0.0.R.20180413</baseline>
+		</modify>
+		<modify>
+			<description>部署 资产管理等11个模块列表页导出</description>
+			<author>邵成成</author>
+			<revision-time>2018-02-26</revision-time>
+			<baseline>V14.0.0.R.20180413</baseline>
+		</modify>
+		<modify>
+			<description>部署 【后台配置】资产管理等11个模块列表自定义模块部署</description>
+			<author>邵成成</author>
+			<revision-time>2018-02-26</revision-time>
+			<baseline>V14.0.0.R.20180413</baseline>
+		</modify>
+		<modify>
+			<description>优化 自定义设置页面，需要控制url，没有权限用户，通过url访问链接，不能打开设置页面。</description>
+			<author>邵成成</author>
+			<revision-time>2018-02-26</revision-time>
+			<baseline>V14.0.0.R.20180413</baseline>
+		</modify>
+		<modify>
+			<description>新增 各个模块的文档维护界面新增筛选器，并且使用新UI</description>
+			<author>张成才</author>
+			<revision-time>2018-01-11</revision-time>
+			<baseline>V14.0.0.B2.20180112</baseline>
+		</modify>
+		<modify>
+			<description>优化 办公用品中的库存管理导入数据优化</description>
+			<author>郑超</author>
+			<revision-time>2018-01-11</revision-time>
+			<baseline>V14.0.0.B2.20180112</baseline>
+		</modify>
+		<modify>
+			<description>新增 将表单数据 导出成HTML文件或WORD文件、PDF文件、图片快照等格式附件，作为备案存档</description>
+			<author>郑超</author>
+			<revision-time>2018-01-10</revision-time>
+			<relation>
+				<relation-module>core</relation-module>
+				<relation-module>sys/ui</relation-module>
+			</relation>
+			<baseline>V14.0.0.B2.20180112</baseline>
+		</modify>
+		<modify>
+			<description>修复 系统时间格式改dd-mm-yyyy，入库统计查询时，时间格式不支持该格式</description>
+			<author>陈尉建</author>
+			<revision-time>2017-12-21</revision-time>
+			<baseline>V14.0.0.B2.20180112</baseline>
+		</modify>
+		<modify>
+			<description>优化 地址本人员便捷选择，类似exchage\coremail邮件系统</description>
+			<author>郑超</author>
+			<revision-time>2017-11-08</revision-time>
+			<relation>
+				<relation-module>core</relation-module>
+			</relation>
+			<baseline>V14.0.0.B1.20171110</baseline>
+		</modify>
+		<modify>
+			<description>修复 一次选择的用品比较多时出现undefined</description>
+			<author>朱湖强</author>
+			<revision-time>2017-11-06</revision-time>
+			<baseline>V14.0.0.B1.20171110</baseline>
+		</modify>
+		<modify>
+			<description>修复 明细表删除物品之后，序号没重新排，优化下删除按钮居中显示</description>
+			<author>郑超</author>
+			<revision-time>2017-10-27</revision-time>
+			<baseline>V14.0.0.B1.20171110</baseline>
+		</modify>
+		<modify>
+			<description>修复 当库存为0且申请数量也为0时无法领取问题</description>
+			<author>朱湖强</author>
+			<revision-time>2017-09-30</revision-time>
+			<baseline>V14.0.0.B1.20171110</baseline>
+		</modify>
+		<modify>
+			<description>新增 类别模板设置多语言支持</description>
+			<author>黄伟强</author>
+			<revision-time>2017-09-09</revision-time>
+			<relation>
+				<relation-module>core</relation-module>
+			</relation>
+			<baseline>V13.5.0.R.20170915</baseline>
+		</modify>
+		<modify>
+			<description>新增 新增打印日志</description>
+			<author>郑超</author>
+			<revision-time>2017-09-08</revision-time>
+			<relation>
+				<relation-module>sys/print</relation-module>
+			</relation>
+			<baseline>V13.5.0.R.20170915</baseline>
+		</modify>
+		<modify>
+			<description>修复 新建用品申请单，选择用品后再删除提交，出现空行</description>
+			<author>朱湖强</author>
+			<revision-time>2017-08-28</revision-time>
+			<baseline>V13.5.0.R.20170915</baseline>
+		</modify>
+		<modify>
+			<description>优化 部门字段支持显示层级结构，可以由系统提供统一接口（显示末级或显示层级，显示最近的几级）</description>
+			<author>潘永辉</author>
+			<revision-time>2017-08-19</revision-time>
+			<relation>
+				<relation-module>sys/organization</relation-module>
+			</relation>
+			<baseline>V13.5.0.R.20170915</baseline>
+		</modify>
+		<modify>
+			<description>修复 单位为数字时，统计中小计不正确问题</description>
+			<author>朱湖强</author>
+			<revision-time>2017-05-22</revision-time>
+			<baseline>V13.5.0.B2.20170707</baseline>
+		</modify>
+		<modify>
+			<description>修复 选择物品时出现400错误</description>
+			<author>朱湖强</author>
+			<revision-time>2017-04-17</revision-time>
+			<baseline>V13.5.0.B1.20170512</baseline>
+		</modify>
+		<modify>
+			<description>优化 当申请数量超过整型范围时，给出提示信息</description>
+			<author>朱湖强</author>
+			<revision-time>2017-04-11</revision-time>
+			<baseline>V13.5.0.B1.20170512</baseline>
+		</modify>
+		<modify>
+			<description>优化 二级页面左侧导航增加选中效果</description>
+			<author>朱湖强</author>
+			<revision-time>2017-04-06</revision-time>
+			<relation>
+				<relation-module>sys/ui</relation-module>
+			</relation>
+			<baseline>V13.5.0.B1.20170512</baseline>
+		</modify>
+		<modify>
+			<description>修复 应用中心下进入各个业务模块，中间帧的字体可随主题包样式</description>
+			<author>陈经纬</author>
+			<revision-time>2017-03-08</revision-time>
+			<baseline>V13.0.0.R.20170310</baseline>
+		</modify>
+		<modify>
+			<description>优化 个人申请和部门申请创建权限分开控制</description>
+			<author>朱湖强</author>
+			<revision-time>2017-03-07</revision-time>
+			<baseline>V13.0.0.R.20170310</baseline>
+		</modify>
+		<modify>
+			<description>修复 重新编辑用品申请，删除部分用品明细，总金额不更新问题</description>
+			<author>朱湖强</author>
+			<revision-time>2017-03-07</revision-time>
+			<baseline>V13.0.0.R.20170310</baseline>
+		</modify>
+		<modify>
+			<description>优化 办公用品导入提示</description>
+			<author>朱湖强</author>
+			<revision-time>2017-03-03</revision-time>
+			<baseline>V13.0.0.R.20170310</baseline>
+		</modify>
+		<modify>
+			<description>优化 增加关联控件的关联模块扩展点</description>
+			<author>朱国荣</author>
+			<revision-time>2017-01-20</revision-time>
+			<baseline>V13.0.0.R.20170310</baseline>
+		</modify>
+		<modify>
+			<description>修复 AWVS扫描出的EKP代码Web安全漏洞 20161222</description>
+			<author>陈晓文</author>
+			<revision-time>2017-01-04</revision-time>
+			<baseline>V13.0.0.R.20170310</baseline>
+		</modify>
+		<modify>
+			<description>优化 代码中在旧数据中可能出现的空指针错误</description>
+			<author>朱湖强</author>
+			<revision-time>2016-12-30</revision-time>
+			<baseline>V13.0.0.R.20170310</baseline>
+		</modify>
+		<modify>
+			<description>优化 用品筛选搜索支持编号</description>
+			<author>朱湖强</author>
+			<revision-time>2016-12-27</revision-time>
+			<baseline>V13.0.0.B3.20161230</baseline>
+		</modify>
+		<modify>
+			<description>新增 办公用品管理文档权限的工作交接</description>
+			<author>陈晓文</author>
+			<revision-time>2016-12-22</revision-time>
+			<relation>
+				<relation-module>sys/handover</relation-module>
+			</relation>
+			<baseline>V13.0.0.B3.20161230</baseline>
+		</modify>
+		<modify>
+			<description>修复 模板导出为初始数据报错</description>
+			<author>朱湖强</author>
+			<revision-time>2016-11-28</revision-time>
+			<baseline>V13.0.0.B3.20161230</baseline>
+		</modify>
+		<modify>
+			<description>修复 钉一下配置修改</description>
+			<author>周梓凡</author>
+			<revision-time>2016-11-21</revision-time>
+			<relation>
+				<relation-module>third/ding</relation-module>
+				<relation-module>sys/profile</relation-module>
+			</relation>
+			<baseline>V13.0.0.B3.20161230</baseline>
+		</modify>
+		<modify>
+			<description>优化 移动多语言处理</description>
+			<author>朱湖强</author>
+			<revision-time>2016-11-21</revision-time>
+			<baseline>V13.0.0.B3.20161230</baseline>
+		</modify>
+		<modify>
+			<description>优化 办公用品申请单，主题生成规则可由管理员定义</description>
+			<author>朱湖强</author>
+			<revision-time>2016-11-21</revision-time>
+			<baseline>V13.0.0.B3.20161230</baseline>
+		</modify>
+		<modify>
+			<description>修复 选择一个用品，设置好申请数量，确定后，再增加选择用品，前面选择是用品数量被重置问题</description>
+			<author>朱湖强</author>
+			<revision-time>2016-11-04</revision-time>
+			<baseline>V13.0.0.B3.20161230</baseline>
+		</modify>
+		<modify>
+			<description>修复 list列表页操作栏中的“删除”按钮调整命名为“批量删除”</description>
+			<author>潘永辉</author>
+			<revision-time>2016-10-20</revision-time>
+			<baseline>V13.0.0.B3.20161230</baseline>
+		</modify>
+		<modify>
+			<description>优化 后台配置中心由“后台管理”角色控制</description>
+			<author>朱湖强</author>
+			<revision-time>2016-10-17</revision-time>
+			<baseline>V13.0.0.B3.20161230</baseline>
+		</modify>
+		<modify>
+			<description>优化 新建申请选择用品时，当用品有多个价格时，过滤数量为0的记录</description>
+			<author>朱湖强</author>
+			<revision-time>2016-08-31</revision-time>
+			<baseline>V13.0.0.B2.20160930</baseline>
+		</modify>
+		<modify>
+			<description>优化 新建申请单，用品搜索支持编号搜索</description>
+			<author>朱湖强</author>
+			<revision-time>2016-08-31</revision-time>
+			<baseline>V13.0.0.B2.20160930</baseline>
+		</modify>
+		<modify>
+			<description>修复 新建用品时，创建者没保存问题；</description>
+			<author>朱湖强</author>
+			<revision-time>2016-08-31</revision-time>
+			<baseline>V13.0.0.B2.20160930</baseline>
+		</modify>
+		<modify>
+			<description>优化 申请数量做整数校验</description>
+			<author>朱湖强</author>
+			<revision-time>2016-08-31</revision-time>
+			<baseline>V13.0.0.B2.20160930</baseline>
+		</modify>
+		<modify>
+			<description>修复 模板设置了可使用者，新建流程时加载的流程不正确问题</description>
+			<author>朱湖强</author>
+			<revision-time>2016-08-31</revision-time>
+			<baseline>V13.0.0.B2.20160930</baseline>
+		</modify>
+		<modify>
+			<description>优化 用品搜索框，输入搜索内容时自动处理字段前后的空格</description>
+			<author>崔文坚</author>
+			<revision-time>2016-08-31</revision-time>
+			<baseline>V13.0.0.B2.20160930</baseline>
+		</modify>
+		<modify>
+			<description>优化 新建用品申请选择用品搜索栏，不支持回车搜索问题</description>
+			<author>崔文坚</author>
+			<revision-time>2016-08-31</revision-time>
+			<baseline>V13.0.0.B2.20160930</baseline>
+		</modify>
+		<modify>
+			<description>修复 部门领用申请，模板不能正常显示问题</description>
+			<author>崔文坚</author>
+			<revision-time>2016-08-31</revision-time>
+			<baseline>V13.0.0.B2.20160930</baseline>
+		</modify>
+		<modify>
+			<description>修复 新建用品，规格字段校验问题</description>
+			<author>朱湖强</author>
+			<revision-time>2016-08-25</revision-time>
+			<baseline>V13.0.0.B2.20160930</baseline>
+		</modify>
+		<modify>
+			<description>修复 oracle下，申请明细中有些字段如果为空显示null</description>
+			<author>朱湖强</author>
+			<revision-time>2016-07-19</revision-time>
+			<baseline>V13.0.0.B2.20160930</baseline>
+		</modify>
+		<modify>
+			<description>新增 用品申请单打印功能</description>
+			<author>朱湖强</author>
+			<revision-time>2016-07-19</revision-time>
+			<baseline>V13.0.0.B2.20160930</baseline>
+		</modify>
+		<modify>
+			<description>优化 移动端头像大小性能优化</description>
+			<author>林秀贤</author>
+			<revision-time>2016-06-12</revision-time>
+			<baseline>V13.0.0.B2.20160930</baseline>
+		</modify>
+		<modify>
+			<description>优化 新建申请选择用品时，左侧分类树权限按统一分类中配置的权限过滤</description>
+			<author>朱湖强</author>
+			<revision-time>2016-06-02</revision-time>
+			<baseline>V13.0.0.B2.20160930</baseline>
+		</modify>
+		<modify>
+			<description>修复 起草节点含有流程分支时，切换模板会提示选择分支走向，导致流程模板无法切换</description>
+			<author>朱湖强</author>
+			<revision-time>2016-05-10</revision-time>
+			<baseline>V13.0.0.B2.20160930</baseline>
+		</modify>
+		<modify>
+			<description>优化 申请单筛选器可根据申请类型出现不同筛选项</description>
+			<author>朱湖强</author>
+			<revision-time>2016-04-27</revision-time>
+			<baseline>V13.0.0.B1.20160429</baseline>
+		</modify>
+		<modify>
+			<description>修复 月统计报表中偶发“小计”为空问题</description>
+			<author>朱湖强</author>
+			<revision-time>2016-04-26</revision-time>
+			<baseline>V13.0.0.B1.20160429</baseline>
+		</modify>
+		<modify>
+			<description>修复 申请单暂存后，重新编辑用品无法删除</description>
+			<author>朱湖强</author>
+			<revision-time>2016-04-25</revision-time>
+			<baseline>V13.0.0.B1.20160429</baseline>
+		</modify>
+		<modify>
+			<description>修复 编辑部门申请单时，申请部门会变成申请者问题</description>
+			<author>朱湖强</author>
+			<revision-time>2016-04-25</revision-time>
+			<baseline>V13.0.0.B1.20160429</baseline>
+		</modify>
+		<modify>
+			<description>优化 新建用品时，用品编号重复校验用户体验</description>
+			<author>朱湖强</author>
+			<revision-time>2016-04-25</revision-time>
+			<baseline>V13.0.0.B1.20160429</baseline>
+		</modify>
+		<modify>
+			<description>优化 用品数量修改只保留一个入口</description>
+			<author>朱湖强</author>
+			<revision-time>2016-04-25</revision-time>
+			<baseline>V13.0.0.B1.20160429</baseline>
+		</modify>
+		<modify>
+			<description>优化 用品申请模板支持权限，同时允许创建多个</description>
+			<author>朱湖强</author>
+			<revision-time>2016-04-25</revision-time>
+			<relation>
+				<relation-module>core</relation-module>
+			</relation>
+			<baseline>V13.0.0.B1.20160429</baseline>
+		</modify>
+		<modify>
+			<description>优化 申请单列表增加“当前环节”和“当前处理人”显示</description>
+			<author>朱湖强</author>
+			<revision-time>2016-03-31</revision-time>
+			<baseline>V13.0.0.B1.20160429</baseline>
+		</modify>
+		<modify>
+			<description>优化 快速录入时，入库数量不为空校验</description>
+			<author>朱湖强</author>
+			<revision-time>2016-03-24</revision-time>
+			<baseline>V13.0.0.B1.20160429</baseline>
+		</modify>
+		<modify>
+			<description>修复 用品单价带小数位时，计算不准确</description>
+			<author>朱湖强</author>
+			<revision-time>2016-03-24</revision-time>
+			<baseline>V13.0.0.B1.20160429</baseline>
+		</modify>
+		<modify>
+			<description>修复 重新编辑申请单，修改没提交但是值已修改成功问题</description>
+			<author>朱湖强</author>
+			<revision-time>2016-03-24</revision-time>
+			<baseline>V13.0.0.B1.20160429</baseline>
+		</modify>
+		<modify>
+			<description>优化 重新编辑用品信息不允许修改价格</description>
+			<author>朱湖强</author>
+			<revision-time>2016-03-17</revision-time>
+			<baseline>V12.0.9.R.20160325</baseline>
+		</modify>
+		<modify>
+			<description>修复 调整库，入库存数量或单价为空时，增减总金额显示NaN</description>
+			<author>朱湖强</author>
+			<revision-time>2016-03-15</revision-time>
+			<baseline>V12.0.9.R.20160325</baseline>
+		</modify>
+		<modify>
+			<description>修复 高版本ie下，个人和部门流程模板连线画不了问题</description>
+			<author>朱湖强</author>
+			<revision-time>2016-03-01</revision-time>
+			<baseline>V12.0.9.R.20160325</baseline>
+		</modify>
+		<modify>
+			<description>优化 申请时，用品申请支持“搜全部”和“搜当前分类”</description>
+			<author>朱湖强</author>
+			<revision-time>2016-01-28</revision-time>
+			<baseline>V12.0.9.R.20160325</baseline>
+		</modify>
+		<modify>
+			<description>优化 物品删除有外键约束时的提示信息</description>
+			<author>朱湖强</author>
+			<revision-time>2016-01-22</revision-time>
+			<baseline>V12.0.9.R.20160325</baseline>
+		</modify>
+		<modify>
+			<description>优化 用品申请单增加总金额字段</description>
+			<author>朱湖强</author>
+			<revision-time>2016-01-22</revision-time>
+			<baseline>V12.0.9.R.20160325</baseline>
+		</modify>
+		<modify>
+			<description>修复 拥有“领用物品”角色时可以查看所有用品申请问题</description>
+			<author>朱湖强</author>
+			<revision-time>2015-12-31</revision-time>
+			<baseline>V12.0.8.R.20160114</baseline>
+		</modify>
+		<modify>
+			<description>优化 用品分类和用品信息增加“可阅读者”和“可编辑者”</description>
+			<author>朱湖强</author>
+			<revision-time>2015-12-24</revision-time>
+			<baseline>V12.0.8.R.20160114</baseline>
+		</modify>
+		<modify>
+			<description>优化 移动组件模块支持办公物品的自定义页签配置</description>
+			<author>朱湖强</author>
+			<revision-time>2015-12-07</revision-time>
+			<baseline>V12.0.8.R.20160114</baseline>
+		</modify>
+		<modify>
+			<description>优化 移动端列表展现问题</description>
+			<author>朱湖强</author>
+			<revision-time>2015-12-03</revision-time>
+			<baseline>V12.0.8.R.20160114</baseline>
+		</modify>
+		<modify>
+			<description>新增 在流程审批页面增加钉的图标，点击“钉”，可直接打开钉的页面</description>
+			<author>朱湖强</author>
+			<revision-time>2015-12-03</revision-time>
+			<relation>
+				<relation-module>third/ding</relation-module>
+			</relation>
+			<baseline>V12.0.8.R.20160114</baseline>
+		</modify>
+		<modify>
+			<description>优化 用品导入模板添加必填标识</description>
+			<author>朱湖强</author>
+			<revision-time>2015-11-27</revision-time>
+			<baseline>V12.0.7.R.20151203</baseline>
+		</modify>
+		<modify>
+			<description>优化 新建和导入时，用品编码做唯一性校验</description>
+			<author>朱湖强</author>
+			<revision-time>2015-11-20</revision-time>
+			<baseline>V12.0.7.R.20151203</baseline>
+		</modify>
+		<modify>
+			<description>新增 办公用品申请单移动支持</description>
+			<author>朱湖强</author>
+			<revision-time>2015-11-18</revision-time>
+			<relation>
+				<relation-module>third/pda</relation-module>
+			</relation>
+			<baseline>V12.0.7.R.20151203</baseline>
+		</modify>
+		<modify>
+			<description>优化 添加定时任务描述信息</description>
+			<author>朱湖强</author>
+			<revision-time>2015-11-04</revision-time>
+			<baseline>V12.0.6.R.20151106</baseline>
+		</modify>
+		<modify>
+			<description>优化 新建页面分类显示问题</description>
+			<author>朱湖强</author>
+			<revision-time>2015-09-23</revision-time>
+			<baseline>V12.0.6.R.20151106</baseline>
+		</modify>
+		<modify>
+			<description>优化 入库记录金额显示</description>
+			<author>朱湖强</author>
+			<revision-time>2015-09-22</revision-time>
+			<baseline>V12.0.6.R.20151106</baseline>
+		</modify>
+		<modify>
+			<description>修复 html注入问题</description>
+			<author>朱湖强</author>
+			<revision-time>2015-09-22</revision-time>
+			<baseline>V12.0.6.R.20151106</baseline>
+		</modify>
+		<modify>
+			<description>优化 快速录入提交成功提示</description>
+			<author>朱湖强</author>
+			<revision-time>2015-09-16</revision-time>
+			<baseline>V12.0.6.R.20151106</baseline>
+		</modify>
+		<modify>
+			<description>优化 新建申请单时流程页签展开</description>
+			<author>朱湖强</author>
+			<revision-time>2015-09-06</revision-time>
+			<baseline>V12.0.5.R.20150911</baseline>
+		</modify>
+		<modify>
+			<description>移除 用品筛选器多选</description>
+			<author>朱湖强</author>
+			<revision-time>2015-09-02</revision-time>
+			<baseline>V12.0.5.R.20150911</baseline>
+		</modify>
+		<modify>
+			<description>移除 报表统计导航栏新建图标</description>
+			<author>朱湖强</author>
+			<revision-time>2015-08-31</revision-time>
+			<baseline>V12.0.5.R.20150911</baseline>
+		</modify>
+		<modify>
+			<description>优化 领用报表中，double类型数据精度显示问题</description>
+			<author>朱湖强</author>
+			<revision-time>2015-08-25</revision-time>
+			<baseline>V12.0.5.R.20150911</baseline>
+		</modify>
+		<modify>
+			<description>修复 用品名称长度校验问题</description>
+			<author>朱湖强</author>
+			<revision-time>2015-07-20</revision-time>
+			<baseline>V12.0.4.R.20150807</baseline>
+		</modify>
+		<modify>
+			<description>优化 减库存不能超过当前库存量</description>
+			<author>朱湖强</author>
+			<revision-time>2015-07-20</revision-time>
+			<baseline>V12.0.4.R.20150807</baseline>
+		</modify>
+		<modify>
+			<description>优化 增加后台配置角色</description>
+			<author>朱湖强</author>
+			<revision-time>2015-07-09</revision-time>
+			<baseline>V12.0.3.R.20150710</baseline>
+		</modify>
+		<modify>
+			<description>优化 领用统计，统计部门时包括子部门一起统计</description>
+			<author>朱湖强</author>
+			<revision-time>2015-07-08</revision-time>
+			<baseline>V12.0.3.R.20150710</baseline>
+		</modify>
+		<modify>
+			<description>修复 编辑用品价格校验问题</description>
+			<author>朱湖强</author>
+			<revision-time>2015-06-08</revision-time>
+			<baseline>V12.0.3.R.20150710</baseline>
+		</modify>
+		<modify>
+			<description>修复 用品选择搜索时，含特殊符号报错问题</description>
+			<author>朱湖强</author>
+			<revision-time>2015-06-04</revision-time>
+			<baseline>V12.0.2.R.20150605</baseline>
+		</modify>
+		<modify>
+			<description>修复 添加物品明细表中，超过50的部分数据不会显示问题</description>
+			<author>朱湖强</author>
+			<revision-time>2015-05-25</revision-time>
+			<baseline>V12.0.2.R.20150605</baseline>
+		</modify>
+		<modify>
+			<description>新增 操作成功后自动刷新列表</description>
+			<author>魏本源</author>
+			<revision-time>2015-05-20</revision-time>
+			<baseline>V12.0.2.R.20150605</baseline>
+		</modify>
+		<modify>
+			<description>新增 申请单无效用品信息清理定时任务</description>
+			<author>朱湖强</author>
+			<revision-time>2015-04-17</revision-time>
+			<baseline>V12.0.1.R.20150508</baseline>
+		</modify>
+		<modify>
+			<description>修复 可见他人草稿问题处理</description>
+			<author>林秀贤</author>
+			<revision-time>2015-03-07</revision-time>
+			<baseline>V12.0.0.R.20150325</baseline>
+		</modify>
+		<modify>
+			<description>优化 二级页面按钮操作栏翻页功能</description>
+			<author>王腾飞</author>
+			<revision-time>2015-01-16</revision-time>
+			<relation>
+				<relation-module>sys/ui</relation-module>
+			</relation>
+			<baseline>V12.0.0.B3.20150116</baseline>
+		</modify>
+		<modify>
+			<description>新增 工作交接注册服务</description>
+			<author>王腾飞</author>
+			<revision-time>2014-12-10</revision-time>
+			<relation>
+				<relation-module>sys/handover</relation-module>
+			</relation>
+			<baseline>V12.0.0.B3.20150116</baseline>
+		</modify>
+		<modify>
+			<description>优化 数据字典增加displayProperty属性</description>
+			<author>魏本源</author>
+			<revision-time>2014-12-09</revision-time>
+			<baseline>V12.0.0.B3.20150116</baseline>
+		</modify>
+		<modify>
+			<description>优化 新建或编辑用品信息时，修改分类信息不需要提示信息</description>
+			<author>朱湖强</author>
+			<revision-time>2014-12-03</revision-time>
+			<baseline>V12.0.0.B3.20150116</baseline>
+		</modify>
+		<modify>
+			<description>修复 数据迁移在新数据库中不显示为待迁移</description>
+			<author>朱湖强</author>
+			<revision-time>2014-11-26</revision-time>
+			<baseline>V12.0.0.B3.20150116</baseline>
+		</modify>
+		<modify>
+			<description>优化 筛选器标题输入框长度</description>
+			<author>朱湖强</author>
+			<revision-time>2014-11-25</revision-time>
+			<baseline>V12.0.0.B3.20150116</baseline>
+		</modify>
+		<modify>
+			<description>修复 待领用统计导出结果不正确问题</description>
+			<author>朱湖强</author>
+			<revision-time>2014-11-21</revision-time>
+			<baseline>V12.0.0.B3.20150116</baseline>
+		</modify>
+		<modify>
+			<description>修复 库存单价改为必填字段</description>
+			<author>魏本源</author>
+			<revision-time>2014-11-07</revision-time>
+			<baseline>V12.0.0.B2.20141114</baseline>
+		</modify>
+		<modify>
+			<description>优化 全文搜索部署与修改</description>
+			<author>魏本源</author>
+			<revision-time>2014-10-30</revision-time>
+			<baseline>V12.0.0.B2.20141114</baseline>
+		</modify>
+		<modify>
+			<description>优化 对办公用品领用申请单中的物品清单按编号排序</description>
+			<author>林秀贤</author>
+			<revision-time>2014-10-23</revision-time>
+			<baseline>V12.0.0.B2.20141114</baseline>
+		</modify>
+		<modify>
+			<description>优化 表单输入框宽度规范化</description>
+			<author>魏本源</author>
+			<revision-time>2014-10-23</revision-time>
+			<baseline>V12.0.0.B2.20141114</baseline>
+		</modify>
+		<modify>
+			<description>新增 操作成功后自动刷新列表</description>
+			<author>魏本源</author>
+			<revision-time>2014-10-17</revision-time>
+			<baseline>V12.0.0.B2.20141114</baseline>
+		</modify>
+		<modify>
+			<description>新增 全系统分类信息收集部署</description>
+			<author>魏本源</author>
+			<revision-time>2014-10-16</revision-time>
+			<baseline>V12.0.0.B2.20141114</baseline>
+		</modify>
+		<modify>
+			<description>修复 xform:text标签长度校验</description>
+			<author>魏本源</author>
+			<revision-time>2014-09-30</revision-time>
+			<baseline>V12.0.0.B2.20141114</baseline>
+		</modify>
+		<modify>
+			<description>优化 编辑用品信息时，分类可修改</description>
+			<author>朱糊墙</author>
+			<revision-time>2014-09-30</revision-time>
+			<baseline>V12.0.0.B2.20141114</baseline>
+		</modify>
+		<modify>
+			<description>优化 库存管理单价前端校验</description>
+			<author>魏本源</author>
+			<revision-time>2014-09-29</revision-time>
+			<baseline>V12.0.0.B2.20141114</baseline>
+		</modify>
+		<modify>
+			<description>优化 导入用品时价格和数量允许为0</description>
+			<author>朱湖强</author>
+			<revision-time>2014-09-17</revision-time>
+			<baseline>V12.0.0.B2.20141114</baseline>
+		</modify>
+		<modify>
+			<description>修复 领用统计样式问题</description>
+			<author>朱湖强</author>
+			<revision-time>2014-09-04</revision-time>
+			<baseline>V12.0.0.B1.20140905</baseline>
+		</modify>
+		<modify>
+			<description>修复 表格显示样式</description>
+			<author>朱湖强</author>
+			<revision-time>2014-09-03</revision-time>
+			<baseline>V12.0.0.B1.20140905</baseline>
+		</modify>
+		<modify>
+			<description>修复 出入库统计导出字段顺序问题</description>
+			<author>朱湖强</author>
+			<revision-time>2014-09-02</revision-time>
+			<baseline>V12.0.0.B1.20140905</baseline>
+		</modify>
+		<modify>
+			<description>优化 申请单中切换流程模板时，点击取消后单选按钮状态问题和物品空校验问题</description>
+			<author>朱湖强</author>
+			<revision-time>2014-08-18</revision-time>
+			<baseline>V12.0.0.B1.20140905</baseline>
+		</modify>
+		<modify>
+			<description>修复 库存查询导出时，导出了无效用品</description>
+			<author>朱湖强</author>
+			<revision-time>2014-08-01</revision-time>
+			<baseline>V12.0.0.B1.20140905</baseline>
+		</modify>
+		<modify>
+			<description>优化 当前库存增加“是否有效”筛选项，“快速录入”和“库存查询”只查询有效用品</description>
+			<author>朱湖强</author>
+			<revision-time>2014-07-18</revision-time>
+			<baseline>V11.0.3.R.20140801</baseline>
+		</modify>
+		<modify>
+			<description>修复 删除出错时给出提示</description>
+			<author>朱湖强</author>
+			<revision-time>2014-07-16</revision-time>
+			<baseline>V11.0.3.R.20140801</baseline>
+		</modify>
+		<modify>
+			<description>新增 用品置为无效功能</description>
+			<author>朱湖强</author>
+			<revision-time>2014-07-04</revision-time>
+			<baseline>V11.0.3.R.20140704</baseline>
+		</modify>
+		<modify>
+			<description>优化 编辑时，申请类型只读</description>
+			<author>朱湖强</author>
+			<revision-time>2014-06-04</revision-time>
+			<baseline>V11.0.2.R.20140606</baseline>
+		</modify>
+		<modify>
+			<description>修复 引用了未定义的资源文件</description>
+			<author>魏本源</author>
+			<revision-time>2014-05-22</revision-time>
+			<baseline>V11.0.2.R.20140606</baseline>
+		</modify>
+		<modify>
+			<description>修复 编辑待领取的申请单，文档变为待审问题</description>
+			<author>朱湖强</author>
+			<revision-time>2014-05-06</revision-time>
+			<baseline>V11.0.1.R.20140506</baseline>
+		</modify>
+		<modify>
+			<description>修复 管理员工具箱导出设置页面多语言化</description>
+			<author>魏本源</author>
+			<revision-time>2014-04-30</revision-time>
+			<baseline>V11.0.1.R.20140506</baseline>
+		</modify>
+		<modify>
+			<description>修复 新建申请单，点击用品选择需要的物品，再点击确定后会报错【IE8】</description>
+			<author>周梓凡</author>
+			<revision-time>2014-04-09</revision-time>
+			<baseline>V11.0.1.R.20140506</baseline>
+		</modify>
+		<modify>
+			<description>优化 查看版本信息页面</description>
+			<author>魏本源</author>
+			<revision-time>2014-04-09</revision-time>
+			<baseline>V11.0.1.R.20140506</baseline>
+		</modify>
+		<modify>
+			<description>修复 英文环境下，“领用统计”“入库统计”“出库统计”“待领用统计”时间校验问题</description>
+			<author>朱湖强</author>
+			<revision-time>2014-03-31</revision-time>
+			<baseline>V11.0.1.R.20140506</baseline>
+		</modify>
+		<modify>
+			<description>修复 导入不存在的类别不提示问题</description>
+			<author>朱湖强</author>
+			<revision-time>2014-02-10</revision-time>
+			<baseline>V11.0.0.R.20140320</baseline>
+		</modify>
+		<modify>
+			<description>修复 暂存的申请，重新编辑后点击提交，流程一直处于草稿状态</description>
+			<author>朱湖强</author>
+			<revision-time>2014-02-08</revision-time>
+			<baseline>V11.0.0.R.20140320</baseline>
+		</modify>
+		<modify>
+			<description>优化 实现领取物品时数量个库存校验</description>
+			<author>魏本源</author>
+			<revision-time>2013-12-25</revision-time>
+			<baseline>V11.0.0.B1.20140107</baseline>
+		</modify>
+		<modify>
+			<description>修复 领取时领用物品大于库存报错</description>
+			<author>魏本源</author>
+			<revision-time>2013-12-23</revision-time>
+			<baseline>V11.0.0.B1.20140107</baseline>
+		</modify>
+		<modify>
+			<description>优化 领取数量大于库存量时添加提示信息</description>
+			<author>魏本源</author>
+			<revision-time>2013-12-03</revision-time>
+			<baseline>V11.0.0.B1.20140107</baseline>
+		</modify>
+		<modify>
+			<description>优化 鼠标在分类名称上悬浮时显示所有父分类名称</description>
+			<author>魏本源</author>
+			<revision-time>2013-09-24</revision-time>
+			<baseline>V11.0.0.B1.20140107</baseline>
+		</modify>
+		<modify>
+			<description>优化 没有搜索到符合条件的记录时，返回页面给予相应的提示</description>
+			<author>魏本源</author>
+			<revision-time>2013-09-13</revision-time>
+			<baseline>V11.0.0.B1.20140107</baseline>
+		</modify>
+		<modify>
+			<description>修复 点击“取消选定”报错</description>
+			<author>魏本源</author>
+			<revision-time>2013-09-12</revision-time>
+			<baseline>V11.0.0.B1.20140107</baseline>
+		</modify>
+		<modify>
+			<description>优化 搜索框保留搜索信息</description>
+			<author>魏本源</author>
+			<revision-time>2013-09-12</revision-time>
+			<baseline>V11.0.0.B1.20140107</baseline>
+		</modify>
+		<modify>
+			<description>修复 办公用品导入后类别不正确问题</description>
+			<author>朱湖强</author>
+			<revision-time>2013-09-05</revision-time>
+			<baseline>V11.0.0.B1.20140107</baseline>
+		</modify>
+		<modify>
+			<description>优化 如果用品只有一种入库价格，选择物品时不弹出框</description>
+			<author>朱湖强</author>
+			<revision-time>2013-09-03</revision-time>
+			<baseline>V11.0.0.B1.20140107</baseline>
+		</modify>
+		<modify>
+			<description>新增 办公物品申请单添加“申请说明”字段和部署附件机制，同时选择物品时可以模糊按用品名称搜索</description>
+			<author>朱湖强</author>
+			<revision-time>2013-09-03</revision-time>
+			<baseline>V11.0.0.B1.20140107</baseline>
+		</modify>
+		<modify>
+			<description>修复 导入物品报错问题</description>
+			<author>朱湖强</author>
+			<revision-time>2013-09-03</revision-time>
+			<baseline>V11.0.0.B1.20140107</baseline>
+		</modify>
+		<modify>
+			<description>修复 新建申请单选择物品，点击列表标题报错和取消选定报错</description>
+			<author>朱湖强</author>
+			<revision-time>2013-08-12</revision-time>
+			<baseline>V11.0.0.B1.20140107</baseline>
+		</modify>
+		<modify>
+			<description>修复 办公物品出库入库导出时没按所选时间条件导出问题</description>
+			<author>朱湖强</author>
+			<revision-time>2013-07-09</revision-time>
+			<baseline>V10.0.3.R.20130712</baseline>
+		</modify>
+		<modify>
+			<description>修复 谷歌和火狐下，取消选定时还是添加了物品问题</description>
+			<author>朱湖强</author>
+			<revision-time>2013-07-01</revision-time>
+			<baseline>V10.0.3.R.20130712</baseline>
+		</modify>
+		<modify>
+			<description>修复 由于SQL语句不规范导致在DB2中出错的问题</description>
+			<author>易荣烽</author>
+			<revision-time>2013-06-14</revision-time>
+			<baseline>V10.0.3.R.20130712</baseline>
+		</modify>
+		<modify>
+			<description>修复 出库统计导出报错问题和分类树显示异常问题</description>
+			<author>朱湖强</author>
+			<revision-time>2013-05-14</revision-time>
+			<baseline>V10.0.2.R.20130608</baseline>
+		</modify>
+		<modify>
+			<description>优化 选择流程模板替换为单选框，且排在表单第一列展示</description>
+			<author>魏本源</author>
+			<revision-time>2013-05-09</revision-time>
+			<baseline>V10.0.2.R.20130608</baseline>
+		</modify>
+		<modify>
+			<description>修复 办公物品分类为空时仍可以导入</description>
+			<author>朱湖强</author>
+			<revision-time>2013-04-08</revision-time>
+			<baseline>V10.0.2.R.20130608</baseline>
+		</modify>
+		<modify>
+			<description>优化 增加类别权限设置，防止链接直接访问</description>
+			<author>魏本源</author>
+			<revision-time>2013-02-20</revision-time>
+			<baseline>V10.0.1.R.20130328</baseline>
+		</modify>
+		<modify>
+			<description>修复 导入不存在的分类报错问题</description>
+			<author>朱湖强</author>
+			<revision-time>2013-02-01</revision-time>
+			<baseline>V10.0.1.R.20130328</baseline>
+		</modify>
+		<modify>
+			<description>优化 解决SQL注入的安全问题</description>
+			<author>李勇</author>
+			<revision-time>2013-01-22</revision-time>
+			<baseline>V10.0.1.R.20130328</baseline>
+		</modify>
+		<modify>
+			<description>优化 修改办公物品数据迁移的描述信息</description>
+			<author>朱湖强</author>
+			<revision-time>2013-01-07</revision-time>
+			<baseline>V10.0.1.R.20130328</baseline>
+		</modify>
+		<modify>
+			<description>新增 数据迁移新增模块判断</description>
+			<author>朱湖强</author>
+			<revision-time>2012-12-20</revision-time>
+			<baseline>V10.0.1.R.20130328</baseline>
+		</modify>
+		<modify>
+			<description>修复 在oracle数据库中，汇总表名字太长导致表创建不成功，新建物品的时候报错(如果是sql server数据库升级的，请手动到数据库把km_oitems_warehousing_record_Joinlist这个表重命名为km_oitems_warehousing_Joinlist)</description>
+			<author>朱湖强</author>
+			<revision-time>2012-11-20</revision-time>
+			<baseline>V10.0.0.R.20121215</baseline>
+		</modify>
+		<modify>
+			<description>修复 在自定义页面中配办公物品的新建链接，选择的流程模板不生效问题</description>
+			<author>朱湖强</author>
+			<revision-time>2012-10-26</revision-time>
+			<baseline>V10.0.0.R.20121215</baseline>
+		</modify>
+		<modify>
+			<description>优化 模板支持子分类导入</description>
+			<author>朱湖强</author>
+			<revision-time>2012-10-22</revision-time>
+			<baseline>V10.0.0.R.20121215</baseline>
+		</modify>
+		<modify>
+			<description>修复 入库统计结果中没有“供应商字段信息”</description>
+			<author>朱湖强</author>
+			<revision-time>2012-10-22</revision-time>
+			<baseline>V10.0.0.R.20121215</baseline>
+		</modify>
+		<modify>
+			<description>新增 办公物品数据迁移(物品表的数据迁移到汇总表，请确保升级后马上到管理员工具箱中做数据迁移，否则可能出现历史数据无法查阅)；修复 入库统计和出库统计</description>
+			<author>朱湖强</author>
+			<revision-time>2012-10-08</revision-time>
+			<relation>
+				<relation-module>sys/admin</relation-module>
+			</relation>
+			<baseline>V10.0.0.R.20121215</baseline>
+		</modify>
+		<modify>
+			<description>新增 物品查看页面增加价格/数量汇总标签</description>
+			<author>朱湖强</author>
+			<revision-time>2012-09-10</revision-time>
+			<baseline>V10.0.0.R.20121215</baseline>
+		</modify>
+		<modify>
+			<description>优化 新建申请单时可以选择某个物品的具体某次入库；新增 调整某个物品库存时可以输入品牌信息</description>
+			<author>朱湖强</author>
+			<revision-time>2012-08-29</revision-time>
+			<baseline>V10.0.0.R.20121215</baseline>
+		</modify>
+		<modify>
+			<description>修复 物品类别不存在还可以进行导入问题</description>
+			<author>朱湖强</author>
+			<revision-time>2012-08-07</revision-time>
+			<baseline>V10.0.0.R.20121215</baseline>
+		</modify>
+		<modify>
+			<description>修复 修改物品信息而影响历史申请单数据问题</description>
+			<author>朱湖强</author>
+			<revision-time>2012-05-30</revision-time>
+			<baseline>V10.0.0.B2.20120923</baseline>
+		</modify>
+		<modify>
+			<description>修复 多行文本框编辑时输入换行，显示的时候没换行的问题</description>
+			<author>朱湖强</author>
+			<revision-time>2012-04-27</revision-time>
+			<baseline>V10.0.0.B1.20120522</baseline>
+		</modify>
+		<modify>
+			<description>配置全文搜索</description>
+			<author>苏韶勇</author>
+			<revision-time>2012-03-15</revision-time>
+			<baseline>V9.0.2.R.20120326</baseline>
+		</modify>
+		<modify>
+			<description>个人领用增加部门以及增加统计月领用报表功能</description>
+			<author>苏韶勇</author>
+			<revision-time>2012-03-08</revision-time>
+			<baseline>V9.0.2.R.20120326</baseline>
+		</modify>
+		<modify>
+			<description>修正：在待领用统计页面，鼠标移动到列表上时没有背景色</description>
+			<author>苏韶勇</author>
+			<revision-time>2012-02-22</revision-time>
+			<baseline>V9.0.2.R.20120326</baseline>
+		</modify>
+		<modify>
+			<description>修正问题：办公用品申请时，流程模板的选择对话框，点击取消选择，清空的是主题，却不是模板</description>
+			<author>朱湖强</author>
+			<revision-time>2012-02-22</revision-time>
+			<baseline>V9.0.2.R.20120326</baseline>
+		</modify>
+		<modify>
+			<description>解决oracle环境下办公物品领用出库统计报表，点击明细内容进去后，系统报错，显示月份转换无效。测试编号20120112009</description>
+			<author>周超</author>
+			<revision-time>2012-01-18</revision-time>
+			<baseline>V9.0.2.R.20120326</baseline>
+		</modify>
+		<modify>
+			<description>导航树中，“领用统计”其实是统计待领取的物品，容易误导用户，改为“待领用统计”</description>
+			<author>朱湖强</author>
+			<revision-time>2011-12-27</revision-time>
+			<baseline>EKP9.0.1.R.20111231</baseline>
+		</modify>
+		<modify>
+			<description>修改导航栏标题兼容多语言</description>
+			<author>苏韶勇</author>
+			<revision-time>2011-08-17</revision-time>
+			<baseline>EKP9.0.0.R.20111025</baseline>
+		</modify>
+		<modify>
+			<description>加入到模块配置列表里面</description>
+			<author>庄为亮</author>
+			<revision-time>2011-06-14</revision-time>
+			<baseline>EKP9.0.0.B3.2011071501</baseline>
+		</modify>
+	</modifies>
+</version>

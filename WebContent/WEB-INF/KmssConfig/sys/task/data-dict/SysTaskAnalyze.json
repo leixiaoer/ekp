@@ -1,0 +1,140 @@
+{
+    "global":     {
+        "modelName": "com.landray.kmss.sys.task.model.SysTaskAnalyze",
+        "messageKey": "sys-task:table.sysTaskAnalyze",
+        "displayProperty": "docSubject",
+        "serviceBean": "sysTaskAnalyzeService",
+        "table": "sys_task_analyze",
+        "url": "/sys/task/sys_task_analyze/sysTaskAnalyze.do?method=view&fdId=${fdId}"
+    },
+    "attrs":     {
+        "fdId":         {
+            "propertyType": "id",
+            "generator": {"type": "assigned"}
+        },
+        "docSubject":         {
+            "propertyType": "simple",
+            "messageKey": "sys-task:sysTaskAnalyze.docSubject",
+            "type": "String",
+            "column": "doc_subject",
+            "notNull": "true",
+            "length": "200",
+            "validate": "true",
+            "canDisplay": "true"
+        },
+        "fdAnalyzeObjType":         {
+            "propertyType": "simple",
+            "messageKey": "sys-task:sysTaskAnalyze.fdAnalyzeObjType",
+            "type": "String",
+            "column": "fd_analyze_obj_type",
+            "notNull": "false",
+            "length": "1",
+            "enumType": "sysTaskAnalyze_analyzeObj_type"
+        },
+        "fdAnalyzeType":         {
+            "propertyType": "simple",
+            "messageKey": "sys-task:sysTaskAnalyze.fdAnalyzeType",
+            "type": "String",
+            "column": "fd_analyze_type",
+            "notNull": "false",
+            "length": "1",
+            "enumType": "sysTaskFreedback_analyze_type"
+        },
+        "fdIsincludechild":         {
+            "propertyType": "simple",
+            "messageKey": "sys-task:sysTaskAnalyze.fdIsincludechild",
+            "type": "String",
+            "column": "fd_is_include_child",
+            "notNull": "false",
+            "length": "1"
+        },
+        "fdIsincludechildTask":         {
+            "propertyType": "simple",
+            "messageKey": "sys-task:sysTaskAnalyze.fdIsincludechildTask",
+            "type": "String",
+            "column": "fd_is_include_childtask",
+            "notNull": "false",
+            "length": "1"
+        },
+        "fdStartDate":         {
+            "propertyType": "simple",
+            "messageKey": "sys-task:sysTaskAnalyze.fdStartDate",
+            "type": "DateTime",
+            "column": "fd_start_date",
+            "notNull": "false"
+        },
+        "fdEndDate":         {
+            "propertyType": "simple",
+            "messageKey": "sys-task:sysTaskAnalyze.fdEndDate",
+            "type": "DateTime",
+            "column": "fd_end_date",
+            "notNull": "false"
+        },
+        "docCreateTime":         {
+            "propertyType": "simple",
+            "messageKey": "sys-task:sysTaskAnalyze.docCreateTime",
+            "type": "DateTime",
+            "column": "doc_create_time",
+            "notNull": "false"
+        },
+        "fdDateQueryType":         {
+            "propertyType": "simple",
+            "messageKey": "sys-task:sysTaskAnalyze.fdDateQueryType",
+            "type": "String",
+            "column": "fd_date_query_type",
+            "notNull": "false"
+        },
+        "docCreator":         {
+            "propertyType": "model",
+            "messageKey": "sys-task:sysTaskAnalyze.docCreator",
+            "type": "com.landray.kmss.sys.organization.model.SysOrgPerson",
+            "column": "doc_creator_id",
+            "notNull": "false"
+        },
+        "fdAnalyzeObjBoundList":         {
+            "propertyType": "list",
+            "messageKey": "sys-task:sysTaskAnalyze.fdAnalyzeObjBoundList",
+            "column": "fd_id",
+            "type": "com.landray.kmss.sys.organization.model.SysOrgElement",
+            "elementColumn": "fd_bound_id",
+            "table": "sys_task_analyze_bound"
+        },
+        "authReaders":         {
+            "propertyType": "list",
+            "messageKey": "sys-right:right.read.authReaders",
+            "column": "fd_main_id",
+            "type": "com.landray.kmss.sys.organization.model.SysOrgElement",
+            "elementColumn": "auth_reader_id",
+            "table": "sys_task_analyze_reader",
+            "canDisplay": "false"
+        },
+        "authAllReaders":         {
+            "propertyType": "list",
+            "messageKey": "sys-right:right.read.authAllReaders",
+            "column": "fd_main_id",
+            "type": "com.landray.kmss.sys.organization.model.SysOrgElement",
+            "elementColumn": "auth_all_reader_id",
+            "table": "sys_task_analyze_areader",
+            "canDisplay": "false"
+        },
+        "fdDateType":         {
+            "propertyType": "simple",
+            "messageKey": "sys-task:sysTaskAnalyze.fdDateType",
+            "type": "String",
+            "column": "fd_date_type",
+            "length": "36"
+        },
+        "docAlteror":         {
+            "propertyType": "model",
+            "messageKey": "sys-doc:sysDocBaseInfo.docAlteror",
+            "type": "com.landray.kmss.sys.organization.model.SysOrgPerson",
+            "column": "doc_alteror_id"
+        },
+        "docAlterTime":         {
+            "propertyType": "simple",
+            "messageKey": "sys-doc:sysDocBaseInfo.docAlterTime",
+            "type": "DateTime",
+            "column": "doc_alter_time"
+        }
+    }
+}

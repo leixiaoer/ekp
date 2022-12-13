@@ -1,0 +1,18 @@
+[ 
+	{ 
+		url : "/km/vote/km_vote_main/kmVoteMainIndex.do?method=listChildren&myNotVote=notvote&q.fdVoteStatus=0&orderby=docCreateTime&ordertype=down", 
+		text : "km-vote:kmVoteMain.notJoin"
+	},
+	{
+		url : "/km/vote/km_vote_main/kmVoteMainIndex.do?method=listChildren&q.myvote=end&orderby=docCreateTime&ordertype=down",
+		text: "km-vote:kmVoteMain.attend"
+	},
+	{ 
+		url : "/km/vote/km_vote_main/kmVoteMainIndex.do?method=listChildren&q.myvote=notstart&orderby=docCreateTime&ordertype=down", 
+		text : "km-vote:kmVoteMain.launch"
+	},
+	{
+		url : "/km/vote/km_vote_main/kmVoteMainIndex.do?method=listChildren&q.fdVoteStatus=2&orderby=docCreateTime&ordertype=down",
+		text: "km-vote:kmVoteMain.history"
+	}
+]

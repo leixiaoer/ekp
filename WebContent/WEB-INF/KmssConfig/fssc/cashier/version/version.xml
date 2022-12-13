@@ -1,0 +1,358 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<version xmlns="http://www.example.org/version-config" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.example.org/version-config ../../../version.xsd">
+	<modifies>
+		<modify>
+			<description>#134276 修复 中行对公付款拼接报文，付款银行取值收款银行问题</description>
+			<author>谢星星</author>
+			<revision-time>2021-02-23</revision-time>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#93152 修复 报销，付款，借款付款方式选择了现金，银行承兑还要填写开户行，开户行账号</description>
+			<author>余艳祥</author>
+			<revision-time>2021-01-26</revision-time>
+			<relation>
+				<relation-module>fssc/base</relation-module>
+			</relation>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#130057 新增 出纳付款单增加规则，超多少钱，拆分明细行</description>
+			<author>贺金波</author>
+			<revision-time>2021-01-26</revision-time>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#129394 优化 借款、报销，挂账付款收款账户信息不允许存在空格</description>
+			<author>余艳祥</author>
+			<revision-time>2020-12-31</revision-time>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#127528 修复 银企直连付款失败，流程条件分支不会自动通过，主表单付款状态也未更新的问题</description>
+			<author>谢星星</author>
+			<revision-time>2020-12-24</revision-time>
+			<relation>
+				<relation-module>fssc/base</relation-module>
+				<relation-module>fssc/expense</relation-module>
+				<relation-module>fssc/loan/fssc/payment</relation-module>
+			</relation>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#127523 修复 预付款的出纳生成规则要根据付款分类是否预付进行判断</description>
+			<author>余艳祥</author>
+			<revision-time>2020-12-21</revision-time>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#128972 修复 出纳工作台引入预算service导致查询条件报错的问题</description>
+			<author>谢星星</author>
+			<revision-time>2020-12-19</revision-time>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#124647 修复 基础数据列表模式下，记账公司下的所有数据，选择记账公司时弹框全部显示为undefined</description>
+			<author>余艳祥</author>
+			<revision-time>2020-12-04</revision-time>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#126418 优化 增加出纳工作台加个摘要、结算方式字段，用于银企直联推送</description>
+			<author>王兵</author>
+			<revision-time>2020-12-04</revision-time>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#126015 修复 银企直连手动查询未更新单据付款状态问题</description>
+			<author>谢星星</author>
+			<revision-time>2020-11-18</revision-time>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#123988 修复 手动推送招行银企直联，系统会重复提交两次，导致单据提交报错</description>
+			<author>汪金满</author>
+			<revision-time>2020-11-02</revision-time>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#103039 修复 系统所有选择弹框时，弹框要有显示选择的是什么</description>
+			<author>张慧慧</author>
+			<revision-time>2020-10-30</revision-time>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#122655 修复 出纳规则新建无法提交</description>
+			<author>谢星星</author>
+			<revision-time>2020-10-16</revision-time>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#115804 修复 付款没有出纳审核时，没有判断是否勾选了中行或者招行</description>
+			<author>谢星星</author>
+			<revision-time>2020-08-24</revision-time>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#115806 修复 付款模块，出纳付款通过时，报错了，由于oracle数据库付款时间没有进行转换</description>
+			<author>张慧慧</author>
+			<revision-time>2020-08-20</revision-time>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#103020 修复 重新生成出纳付款单权限控制</description>
+			<author>谢星星</author>
+			<revision-time>2020-07-15</revision-time>
+			<relation>
+				<relation-module>fssc/base</relation-module>
+			</relation>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#111195 修复 收款账户名超长报错的问题</description>
+			<author>谢星星</author>
+			<revision-time>2020-07-08</revision-time>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#102974 修复 修改出纳付款单时，付款银行字段显示的是付款名称，而不是开户行账号和开户行</description>
+			<author>张慧慧</author>
+			<revision-time>2020-06-18</revision-time>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#106596 修复 出纳工作台的弹框修改</description>
+			<author>张慧慧</author>
+			<revision-time>2020-06-18</revision-time>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#105461 修复 出纳工作台选择对应分类名称时，没有分页，导致分类选择不到</description>
+			<author>张慧慧</author>
+			<revision-time>2020-05-19</revision-time>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#105306 修复 出纳工作台，复制的出纳规则对应分类后无法提交</description>
+			<author>张慧慧</author>
+			<revision-time>2020-05-18</revision-time>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#105694 修复 先制证后付款，凭证取不到贷方银行里面的会计科目</description>
+			<author>张慧慧</author>
+			<revision-time>2020-05-16</revision-time>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#104122 修复 报销切换公司，主表的成本中心会没有赋值</description>
+			<author>张慧慧</author>
+			<revision-time>2020-05-11</revision-time>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#100371 修复 招行定时器查询，等待银行付款也会自动过流程</description>
+			<author>钟彩霞</author>
+			<revision-time>2020-03-25</revision-time>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#94751 优化 弹框选择</description>
+			<author>谢星星</author>
+			<revision-time>2020-02-29</revision-time>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#95452 优化 【费控-优化】出纳付款单的收款单位名称字数限制只能是16个汉字以内</description>
+			<author>钟彩霞</author>
+			<revision-time>2020-02-07</revision-time>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#84713 优化 【日志打印-优化】日志打印了大量常用分类错误的日志，没有做什么操作，就只是访问某个模块</description>
+			<author>钟彩霞</author>
+			<revision-time>2019-12-19</revision-time>
+			<baseline>V15.0.3.R.20200117</baseline>
+		</modify>
+		<modify>
+			<description>#90436 修复 未付款前需要生成凭证则直接获取付款方式对应的会计科目。已经付款取值付款银行对应的会计科目</description>
+			<author>钟彩霞</author>
+			<revision-time>2019-12-07</revision-time>
+			<baseline>V15.0.3.R.20200117</baseline>
+		</modify>
+		<modify>
+			<description>#88340 修复 推送招行和推送中行，支付失败之后，1、流程条件分支自动驳回到出纳节点，2、自动回到出纳节点，自动发送代办给出纳</description>
+			<author>钟彩霞</author>
+			<revision-time>2019-11-19</revision-time>
+			<baseline>V15.0.3.R.20200117</baseline>
+		</modify>
+		<modify>
+			<description>#88153 修復 出纳工作台付款单明细筛选项增加时间筛选项</description>
+			<author>钟彩霞</author>
+			<revision-time>2019-11-14</revision-time>
+			<baseline>V15.0.3.R.20200117</baseline>
+		</modify>
+		<modify>
+			<description>#88063 修復 财务付款推送到中行，回写过来的信息显示为OK，改为弹框银行已受理</description>
+			<author>钟彩霞</author>
+			<revision-time>2019-11-12</revision-time>
+			<baseline>V15.0.3.R.20200117</baseline>
+		</modify>
+		<modify>
+			<description>#87493 修复 开关设置中没有选择中行和招行，出纳节点就报错了</description>
+			<author>钟彩霞</author>
+			<revision-time>2019-11-07</revision-time>
+			<baseline>V15.0.2.R.20191108</baseline>
+		</modify>
+		<modify>
+			<description>#80951新增 出纳对接中行接口初始化</description>
+			<author>钟彩霞</author>
+			<revision-time>2019-11-01</revision-time>
+			<baseline>V15.0.2.R.20191108</baseline>
+		</modify>
+		<modify>
+			<description>#83422 优化 付款台账增加筛选项（分类、付款类型、付款日期、记账日期、成本中心等，参考现有台账fs的）</description>
+			<author>余艳祥</author>
+			<revision-time>2019-10-22</revision-time>
+			<baseline>V15.0.2.R.20191108</baseline>
+		</modify>
+		<modify>
+			<description>#83328 修复【后台配置中心】英文环境下后台搜索无效，应用列表的首页按钮提示语未翻译</description>
+			<author>钟清学</author>
+			<revision-time>2019-10-17</revision-time>
+			<baseline>V15.0.2.R.20191108</baseline>
+		</modify>
+		<modify>
+			<description>#83566 优化 【后台配置-优化】费控产品各个模块主页后台配置目录链接调整</description>
+			<author>余艳祥</author>
+			<revision-time>2019-10-11</revision-time>
+			<relation>
+				<relation-module>sys/ui</relation-module>
+			</relation>
+			<baseline>V15.0.2.R.20191108</baseline>
+		</modify>
+		<modify>
+			<description>#80161 新增 出纳生成规则复制功能</description>
+			<author>钟彩霞</author>
+			<revision-time>2019-08-26</revision-time>
+			<baseline>V15.0.1.R.20190906</baseline>
+		</modify>
+		<modify>
+			<description>#80161 修復 标准版报销生成出纳付款单报错了</description>
+			<author>钟彩霞</author>
+			<revision-time>2019-08-22</revision-time>
+			<baseline>V15.0.1.R.20190906</baseline>
+		</modify>
+		<modify>
+			<description>#79891 修复 出纳付款配置出现分号</description>
+			<author>钟彩霞</author>
+			<revision-time>2019-08-16</revision-time>
+			<baseline>V15.0.1.R.20190906</baseline>
+		</modify>
+		<modify>
+			<description>#79897 修復 挂账付款、预付款、付款单据在出纳节点时，财务人员修改新增了明细行，但是凭证生成的金额跟出纳付款明细的金额不一致</description>
+			<author>钟彩霞</author>
+			<revision-time>2019-08-14</revision-time>
+			<baseline>V15.0.1.R.20190906</baseline>
+		</modify>
+		<modify>
+			<description>#79419 对公付款根据收款账户明细的币种自动带出，不允许修改币种和汇率，对私付款则可以修改币种和汇率</description>
+			<author>钟彩霞</author>
+			<revision-time>2019-08-12</revision-time>
+			<baseline>V15.0.1.R.20190906</baseline>
+		</modify>
+		<modify>
+			<description>#79419 修复 对公付款的付款明细财务添加行或者复制行还是可以多币种</description>
+			<author>钟彩霞</author>
+			<revision-time>2019-08-09</revision-time>
+			<baseline>V15.0.1.R.20190906</baseline>
+		</modify>
+		<modify>
+			<description>#79419 修复 对公付款的付款明细财务添加行或者复制行还是可以多币种</description>
+			<author>钟彩霞</author>
+			<revision-time>2019-08-09</revision-time>
+			<baseline>V15.0.1.R.20190906</baseline>
+		</modify>
+		<modify>
+			<description>#79450 修复 付款\预付款、挂账付款没有推送招行</description>
+			<author>钟彩霞</author>
+			<revision-time>2019-08-08</revision-time>
+			<baseline>V15.0.1.R.20190906</baseline>
+		</modify>
+		<modify>
+			<description>#79419 修复 对公付款根据收款账户明细的币种自动带出，不允许修改币种和汇率，对私付款则可以修改币种和汇率</description>
+			<author>钟彩霞</author>
+			<revision-time>2019-08-07</revision-time>
+			<baseline>V15.0.1.R.20190906</baseline>
+		</modify>
+		<modify>
+			<description>#79376 修复 出纳规则对公付款，凭证直接原币金额</description>
+			<author>谢星星</author>
+			<revision-time>2019-08-07</revision-time>
+			<baseline>V15.0.1.R.20190906</baseline>
+		</modify>
+		<modify>
+			<description>#79162 修复 列表的付款状态显示错误、制证状态、记账状态</description>
+			<author>钟彩霞</author>
+			<revision-time>2019-08-04</revision-time>
+			<baseline>V15.0.1.R.20190906</baseline>
+		</modify>
+		<modify>
+			<description>#79069 新增 付款/预付款的流程到达出纳节点时，出纳人员在出纳工作台点击批量审核通过</description>
+			<author>钟彩霞</author>
+			<revision-time>2019-08-02</revision-time>
+			<baseline>V15.0.1.R.20190906</baseline>
+		</modify>
+		<modify>
+			<description>#78056 修复 出纳付款单去掉付款单编号</description>
+			<author>钟彩霞</author>
+			<revision-time>2019-07-23</revision-time>
+			<baseline>V15.0.1.R.20190906</baseline>
+		</modify>
+		<modify>
+			<description>#76887 修复 出纳工作台的出纳付款单明细没有根据付款单明细编号进行搜索</description>
+			<author>钟彩霞</author>
+			<revision-time>2019-07-16</revision-time>
+			<baseline>V15.0.1.R.20190906</baseline>
+		</modify>
+		<modify>
+			<description>#76438 新增 在单据中点击提交时也要推送到银企直联，出纳工作台新增对私对私字段</description>
+			<author>钟彩霞</author>
+			<revision-time>2019-07-09</revision-time>
+			<baseline>V15.0.0.R.20190712</baseline>
+		</modify>
+		<modify>
+			<description>#76152 修复 报销出纳付款单编辑出纳规则设置，没有保存成功</description>
+			<author>钟彩霞</author>
+			<revision-time>2019-07-02</revision-time>
+			<baseline>V15.0.0.R.20190712</baseline>
+		</modify>
+		<modify>
+			<description>#75673 优化 新版本流程右侧显示</description>
+			<author>谢星星</author>
+			<revision-time>2019-06-24</revision-time>
+			<baseline>V15.0.0.R.20190712</baseline>
+		</modify>
+		<modify>
+			<description>#744572 修复 由于收款币种在报销明细不存在导致自动生成付款单失败</description>
+			<author>谢星星</author>
+			<revision-time>2019-06-06</revision-time>
+			<relation>
+				<relation-module>fssc/base</relation-module>
+			</relation>
+			<baseline>V15.0.0.R.20190712</baseline>
+		</modify>
+		<modify>
+			<description>#65664 修复 报销判断出纳节点出错</description>
+			<author>谢星星</author>
+			<revision-time>2019-06-04</revision-time>
+			<baseline>V15.0.0.R.20190712</baseline>
+		</modify>
+		<modify>
+			<description>#68034 新增 初始化费控V4代码</description>
+			<author>谢星星</author>
+			<revision-time>2019-06-03</revision-time>
+			<baseline>V15.0.0.R.20190712</baseline>
+		</modify>
+	</modifies>
+</version>

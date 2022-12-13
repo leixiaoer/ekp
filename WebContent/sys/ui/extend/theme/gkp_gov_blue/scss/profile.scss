@@ -1,0 +1,88 @@
+@import './lib/vars.scss';
+@import './lib/mixins.scss';
+/* 后台管理页面相关样式 porfile.css Starts ++++++++++++++++++++++++++++++++++++++++ */
+
+	/* 头部 Starts */
+.lui_profile_header_frame {
+  background-color: $primary-color;
+}
+.lui_profile_header_navTop_item:hover,
+.lui_profile_header_navTop_item.current,
+.lui_profile_header_navTop_item.more.current,
+.lui_profile_header_navTop_item.more:hover,
+.lui_profile_header_navTop_item.lui_profile_navTop_over {
+  background-color: $alter-color;
+  -webkit-box-shadow: inset 0 3px 5px rgba(0, 0, 0, .125);
+     -moz-box-shadow: inset 0 3px 5px rgba(0, 0, 0, .125);
+      -ms-box-shadow: inset 0 3px 5px rgba(0, 0, 0, .125);
+       -o-box-shadow: inset 0 3px 5px rgba(0, 0, 0, .125);
+          box-shadow: inset 0 3px 5px rgba(0, 0, 0, .125);
+}
+.lui_profile_header_navTop_popup .lui_profile_header_navTop_item{
+  background-color: $primary-color;
+}
+.lui_profile_header_navTop_popup .lui_profile_header_navTop_item:hover {
+  background-color: $alter-color;
+}
+.lui_portal_header_location:after {
+  border-color: #fff;
+  border-color: rgba(255,255,255,.35);
+}
+.lui_profile_userinfo{
+  background-color: $primary-color;
+}
+.lui_profile_userinfo.lui_profile_userinfo_over{
+  background-color: $alter-color;
+}
+.lui_profile_userinfo_header{
+  background-color: $primary-color;
+}
+
+.location_input{
+  border: 1px solid #d9d9d9;
+}
+.location_input.status_select {
+	border-color: $primary-color;
+}
+.location_input .location_arrow:before{
+  border-bottom-color: #d9d9d9;
+}
+.location_input .location_arrow:after{
+  border-bottom-color: #fff;
+}
+.location_input.status_select .location_arrow:before {
+  border-bottom-color: $primary-color;
+}
+  /* 头部 Ends */
+  
+	/* 左侧栏 Starts */
+.lui_profile_navLeft_container {
+  background-color: $primary-color;
+}
+.lui_profile_navLeft_mask{
+  background-color: rgba(0, 0, 0, .6);
+}
+.lui_profile_navLeft_item{
+  margin-top: 2px;
+  margin-bottom: 2px;
+}
+.lui_profile_link{
+  border-left: 0;
+}
+.lui_profile_navLeft_item .lui_profile_link:hover,
+.lui_profile_navLeft_item.current .lui_profile_link,
+.lui_profile_navLeft_item.current .lui_profile_link:hover {
+  color: #fff;
+  background-color: $alter-color;
+}
+.lui_profile_navLeft_item.current .lui_profile_link,
+.lui_profile_navLeft_item.current .lui_profile_link:hover{
+  -webkit-box-shadow: inset 0 3px 5px rgba(0, 0, 0, .125);
+     -moz-box-shadow: inset 0 3px 5px rgba(0, 0, 0, .125);
+      -ms-box-shadow: inset 0 3px 5px rgba(0, 0, 0, .125);
+       -o-box-shadow: inset 0 3px 5px rgba(0, 0, 0, .125);
+          box-shadow: inset 0 3px 5px rgba(0, 0, 0, .125);
+}
+	/* 左侧栏 Ends */
+
+/* 后台管理页面相关样式 porfile.css Ends ++++++++++++++++++++++++++++++++++++++++ */

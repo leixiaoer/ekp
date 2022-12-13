@@ -1,0 +1,4 @@
+<model >
+<extendSimpleProperty name="fd_3991e064cfb7f4" label="文本1" type="String" businessType="inputText" length="200" isMark="false" customElementProperties="" />
+<extendSimpleProperty name="fd_3991e065a4dbaa" label="文本2" type="String" businessType="inputText" length="200" isMark="false" customElementProperties="" />
+</model>

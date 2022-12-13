@@ -1,0 +1,608 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<plugin 
+    xsi:schemaLocation="http://www.example.org/plugin-config ../../plugin.xsd" 
+    xmlns="http://www.example.org/plugin-config" 
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <extension 
+        point="com.landray.kmss.sys.number.config" 
+        model="*">
+        <item 
+            name="extend">
+            <param 
+                name="modelName" 
+                value="com.landray.kmss.km.supervise.model.KmSuperviseMain"/>
+            <param 
+                name="templatePropertyName" 
+                value="docTemplate"/>
+            <param 
+                name="moduleName" 
+                value="{km-supervise:module.km.supervise}"/>
+        </item>
+    </extension>
+    
+    	
+	<!-- 个人中心发起的流程计数 -->
+	<extension point="com.landray.kmss.sys.portal">
+		<item name="stat">
+			<!-- 模块名称 -->
+			<param
+				name="moduleName"
+				value="km-supervise:module.km.supervise" />
+			<!-- 主文档全名称 -->
+			<param
+				name="modelName"
+				value="com.landray.kmss.km.supervise.model.KmSuperviseMain" />
+			<param
+				name="url"
+				value="/km/supervise/km_supervise_main/kmSuperviseMainStat.do?method=showStat" />
+			<param name="icon" value="lui_iconfont_nav_km_supervise" />
+			<param name="viewUrl" value="/km/supervise/index.jsp#j_path=%2FmyCharge&amp;mydoc=duty" />
+		</item>
+	</extension>
+    <!-- 软删除功能扩展点实现 -->
+	<extension point="com.landray.kmss.sys.recycle">
+		<item name="softDelete">
+			<param
+				name="modelName"
+				value="km-supervise:module.km.supervise" />
+			<param
+				name="modelClassName"
+				value="com.landray.kmss.km.supervise.model.KmSuperviseMain" />
+			<param
+				name="categoryClassName"
+				value="com.landray.kmss.km.supervise.model.KmSuperviseTemplet" />
+			<param
+				name="categoryField"
+				value="docTemplate" />
+			<param
+				name="titleField"
+				value="docSubject" />
+		</item>
+	</extension>
+	
+	<!-- <extension
+		point="com.landray.kmss.sys.listshow.listShowConfig"
+		model="com.landray.kmss.km.supervise.model.KmSuperviseMain">
+		<item
+			name="listShowConfig">
+			<param
+				name="name"
+				value="km-supervise:py.WoDuBanDe" />
+			<param
+				name="model"
+				value="com.landray.kmss.km.supervise.model.KmSuperviseMain" />
+			<param
+				name="page"
+				value="/WoDuBanDe" />
+			<param
+				name="default"
+				value="docSubject;fdLead.name;fdStatus;fdSuperviseProgress;fdFinishTime;docCreateTime" />
+			<param
+				name="customized"
+				value="nodeName;km-supervise:sysWfNode.processingNode.currentProcess,handlerName;km-supervise:sysWfNode.processingNode.currentProcessor" />	
+		</item>
+	</extension>-->
+	<extension
+		point="com.landray.kmss.sys.listshow.listShowConfig"
+		model="com.landray.kmss.km.supervise.model.KmSuperviseMain">
+		<item
+			name="listShowConfig">
+			<param
+				name="name"
+				value="km-supervise:kmSuperviseMain.content.title"/>
+			<param
+				name="model"
+				value="com.landray.kmss.km.supervise.model.KmSuperviseMain" />
+			<param
+				name="page"
+				value="/listContent"/>
+			<param
+				name="default"
+				value="docTemplate.name;docSubject;fdSysUnit.name;fdFinishTime;docStatus;"/>
+			<param
+				name="customized"
+				value="docTemplate.name;km-supervise:kmSuperviseMain.type,fdSysUnit.name;km-supervise:kmSuperviseMain.fdSysUnit" />
+		</item>
+	</extension>
+	<extension
+		point="com.landray.kmss.sys.listshow.listShowConfig"
+		model="com.landray.kmss.km.supervise.model.KmSuperviseMain">
+		<item
+			name="listShowConfig">
+			<param
+				name="name"
+				value="km-supervise:py.WoFenGuande" />
+			<param
+				name="model"
+				value="com.landray.kmss.km.supervise.model.KmSuperviseMain" />
+			<param
+				name="page"
+				value="/myManage" />
+			<param
+				name="default"
+				value="docTemplate.name;docSubject;fdSysUnit.name;fdFinishTime;fdStatusNew;" />
+			<param
+				name="customized"
+				value="docTemplate.name;km-supervise:kmSuperviseMain.type,fdSysUnit.name;km-supervise:kmSuperviseMain.fdSysUnit,fdStatusNew;km-supervise:kmSuperviseMain.fdStatus" />	
+		</item>
+	</extension>
+	<extension
+		point="com.landray.kmss.sys.listshow.listShowConfig"
+		model="com.landray.kmss.km.supervise.model.KmSuperviseMain">
+		<item
+			name="listShowConfig">
+			<param
+				name="name"
+				value="km-supervise:py.WoFuZeDe" />
+			<param
+				name="model"
+				value="com.landray.kmss.km.supervise.model.KmSuperviseMain" />
+			<param
+				name="page"
+				value="/myCharge" />
+			<param
+				name="default"
+				value="docTemplate.name;docSubject;fdSysUnit.name;fdFinishTime;fdStatusNew" />
+			<param
+				name="customized"
+				value="docTemplate.name;km-supervise:kmSuperviseMain.type,fdSysUnit.name;km-supervise:kmSuperviseMain.fdSysUnit,fdStatusNew;km-supervise:kmSuperviseMain.fdStatus" />
+		</item>
+	</extension>
+	
+	<extension
+		point="com.landray.kmss.sys.listshow.listShowConfig"
+		model="com.landray.kmss.km.supervise.model.KmSuperviseMain">
+		<item
+			name="listShowConfig">
+			<param
+				name="name"
+				value="km-supervise:py.WoXieBanDe" />
+			<param
+				name="model"
+				value="com.landray.kmss.km.supervise.model.KmSuperviseMain" />
+			<param
+				name="page"
+				value="/mySup" />
+			<param
+				name="default"
+				value="docTemplate.name;docSubject;fdSysUnit.name;fdFinishTime;fdStatusNew;" />
+			<param
+				name="customized"
+				value="docTemplate.name;km-supervise:kmSuperviseMain.type,fdSysUnit.name;km-supervise:kmSuperviseMain.fdSysUnit,fdStatusNew;km-supervise:kmSuperviseMain.fdStatus" />
+		</item>
+	</extension>
+	<!--<extension
+		point="com.landray.kmss.sys.listshow.listShowConfig"
+		model="com.landray.kmss.km.supervise.model.KmSuperviseMain">
+		<item
+			name="listShowConfig">
+			<param
+				name="name"
+				value="km-supervise:py.SuoYouDuBan" />
+			<param
+				name="model"
+				value="com.landray.kmss.km.supervise.model.KmSuperviseMain" />
+			<param
+				name="page"
+				value="/SuoYouDuBan" />
+			<param
+				name="default"
+				value="docSubject;fdLead.name;fdStatus;fdSuperviseProgress;fdFinishTime;docCreateTime" />
+			<param
+				name="customized"
+				value="nodeName;km-supervise:sysWfNode.processingNode.currentProcess,handlerName;km-supervise:sysWfNode.processingNode.currentProcessor" />	
+		</item>
+	</extension>-->
+	<extension
+		point="com.landray.kmss.sys.listshow.listShowConfig"
+		model="com.landray.kmss.km.supervise.model.KmSuperviseMain">
+		<item
+			name="listShowConfig">
+			<param
+				name="name"
+				value="km-supervise:py.WoGuanZhuDe" />
+			<param
+				name="model"
+				value="com.landray.kmss.km.supervise.model.KmSuperviseMain" />
+			<param
+				name="page"
+				value="/myConcern" />
+			<param
+				name="default"
+				value="docTemplate.name;docSubject;fdSysUnit.name;fdFinishTime;fdStatusNew;" />
+			<param
+				name="customized"
+				value="docTemplate.name;km-supervise:kmSuperviseMain.type,fdSysUnit.name;km-supervise:kmSuperviseMain.fdSysUnit,fdStatusNew;km-supervise:kmSuperviseMain.fdStatus" />
+		</item>
+	</extension>
+	<!--<extension
+		point="com.landray.kmss.sys.listshow.listShowConfig"
+		model="com.landray.kmss.km.supervise.model.KmSuperviseMain">
+		<item
+			name="listShowConfig">
+			<param
+				name="name"
+				value="km-supervise:py.ChaoSongWoDe" />
+			<param
+				name="model"
+				value="com.landray.kmss.km.supervise.model.KmSuperviseMain" />
+			<param
+				name="page"
+				value="/ChaoSongWoDe" />
+			<param
+				name="default"
+				value="docSubject;fdLead.name;fdStatus;fdSuperviseProgress;fdFinishTime;docCreateTime" />
+			<param
+				name="customized"
+				value="nodeName;km-supervise:sysWfNode.processingNode.currentProcess,handlerName;km-supervise:sysWfNode.processingNode.currentProcessor" />	
+		</item>
+	</extension>-->
+	<extension
+		point="com.landray.kmss.sys.listshow.listShowConfig"
+		model="com.landray.kmss.km.supervise.model.KmSuperviseMain">
+		<item
+			name="listShowConfig">
+			<param
+				name="name"
+				value="km-supervise:py.WoDeShenPi" />
+			<param
+				name="model"
+				value="com.landray.kmss.km.supervise.model.KmSuperviseMain" />
+			<param
+				name="page"
+				value="/audit" />
+			<param
+				name="default"
+				value="docTemplate.name;docSubject;fdSysUnit.name;fdFinishTime;fdStatusNew;nodeName;handlerName" />
+			<param
+				name="customized"
+				value="nodeName;km-supervise:sysWfNode.processingNode.currentProcess,handlerName;km-supervise:sysWfNode.processingNode.currentProcessor" />	
+		</item>
+	</extension>
+	<!--<extension
+		point="com.landray.kmss.sys.listshow.listShowConfig"
+		model="com.landray.kmss.km.supervise.model.KmSuperviseMain">
+		<item
+			name="listShowConfig">
+			<param
+				name="name"
+				value="km-supervise:py.DuBanKaoPing" />
+			<param
+				name="model"
+				value="com.landray.kmss.km.supervise.model.KmSuperviseMain" />
+			<param
+				name="page"
+				value="/DuBanKaoPing" />
+			<param
+				name="default"
+				value="docSubject;fdUnit;fdResponsible;fdRemarkStatus;fdSuperviseProgress;fdFinishLevel" />
+			<param
+				name="customized"
+				value="" />	
+		</item>
+	</extension>-->
+	<extension
+		point="com.landray.kmss.sys.listshow.listShowConfig"
+		model="com.landray.kmss.km.supervise.model.KmSuperviseMain">
+		<item
+			name="listShowConfig">
+			<param
+				name="name"
+				value="km-supervise:py.DuBanKaoPing" />
+			<param
+				name="model"
+				value="com.landray.kmss.km.supervise.model.KmSuperviseMain" />
+			<param
+				name="page"
+				value="/evaluate" />
+			<param
+				name="default"
+				value="docSubject;fdSysUnit.name;fdSponsor.name;fdRemarkStatus;fdStatusNew;fdFinishLevel" />
+			<param
+				name="customized"
+				value="fdSysUnit.name;km-supervise:kmSuperviseMain.fdSysUnit" />	
+		</item>
+	</extension>
+	<extension
+		point="com.landray.kmss.sys.listshow.listShowConfig"
+		model="com.landray.kmss.km.supervise.model.KmSuperviseMain">
+		<item
+			name="listShowConfig">
+			<param
+				name="name"
+				value="km-supervise:py.LiShiDuBan" />
+			<param
+				name="model"
+				value="com.landray.kmss.km.supervise.model.KmSuperviseMain" />
+			<param
+				name="page"
+				value="/history" />
+			<param
+				name="default"
+				value="docSubject;fdLead.name;fdStatus;fdSuperviseProgress;fdFinishTime;docCreateTime" />
+			<param
+				name="customized"
+				value="nodeName;km-supervise:sysWfNode.processingNode.currentProcess,handlerName;km-supervise:sysWfNode.processingNode.currentProcessor" />	
+		</item>
+	</extension>
+	<extension
+		point="com.landray.kmss.sys.listshow.listShowConfig"
+		model="com.landray.kmss.km.supervise.model.KmSuperviseMain">
+		<item
+			name="listShowConfig">
+			<param
+				name="name"
+				value="km-supervise:py.DuBanShiXiang" />
+			<param
+				name="model"
+				value="com.landray.kmss.km.supervise.model.KmSuperviseMain" />
+			<param
+				name="page"
+				value="/ItemView" />
+			<param
+				name="default"
+				value="docTemplate.name;docSubject;fdSysUnit.name;fdFinishTime;fdBackTime;fdBackContent;fdStatusNew;newOperations" />
+			<param
+				name="customized"
+				value="docTemplate.name;km-supervise:kmSuperviseMain.type,fdSysUnit.name;km-supervise:kmSuperviseMain.fdSysUnit,fdStatusNew;km-supervise:kmSuperviseMain.fdStatus,newOperations;list.operation" />
+		</item>
+	</extension>
+	<extension
+		point="com.landray.kmss.sys.listshow.listShowConfig"
+		model="com.landray.kmss.km.supervise.model.KmSuperviseMain">
+		<item
+			name="listShowConfig">
+			<param
+				name="name"
+				value="km-supervise:py.BianGengLiuCheng" />
+			<param
+				name="model"
+				value="com.landray.kmss.km.supervise.model.KmSuperviseMain" />
+			<param
+				name="page"
+				value="/changeReview" />
+			<param
+				name="default"
+				value="docTemplate.name;docSubject;fdStartTime;fdFinishTime;fdChangeTime;fdChangePerson.name;fdChangeDesc" />
+			<param
+				name="customized"
+				value="docTemplate.name;km-supervise:kmSuperviseMain.type,fdChangePerson.name;km-supervise:kmSuperviseMain.fdChangePerson" />	
+		</item>
+	</extension>
+	<extension
+		point="com.landray.kmss.sys.listshow.listShowConfig"
+		model="com.landray.kmss.km.supervise.model.KmSuperviseMain">
+		<item
+			name="listShowConfig">
+			<param
+				name="name"
+				value="km-supervise:py.abandon" />
+			<param
+				name="model"
+				value="com.landray.kmss.km.supervise.model.KmSuperviseMain" />
+			<param
+				name="page"
+				value="/listDiscard" />
+			<param
+				name="default"
+				value="docTemplate.name;docSubject;fdSysUnit.name;fdFinishTime;fdStatusNew;" />
+			<param
+				name="customized"
+				value="docTemplate.name;km-supervise:kmSuperviseMain.type,fdSysUnit.name;km-supervise:kmSuperviseMain.fdSysUnit,fdStatusNew;km-supervise:kmSuperviseMain.fdStatus" />	
+		</item>
+	</extension>
+	<extension
+		point="com.landray.kmss.sys.listshow.listShowConfig"
+		model="com.landray.kmss.km.supervise.model.KmSuperviseMain">
+		<item
+			name="listShowConfig">
+			<param
+				name="name"
+				value="km-supervise:py.CaoGaoXiang" />
+			<param
+				name="model"
+				value="com.landray.kmss.km.supervise.model.KmSuperviseMain" />
+			<param
+				name="page"
+				value="/draftBox" />
+			<param
+				name="default"
+				
+				value="docTemplate.name;docSubject;fdSysUnit.name;fdFinishTime;fdStatusNew;docCreateTime;operations" />
+			<param
+				name="customized"
+				value="operations;list.operation,docTemplate.name;km-supervise:kmSuperviseMain.type,fdSysUnit.name;km-supervise:kmSuperviseMain.fdSysUnit,fdStatusNew;km-supervise:kmSuperviseMain.fdStatus" />	
+		</item>
+	</extension>
+	<extension
+		point="com.landray.kmss.sys.listshow.listShowConfig"
+		model="com.landray.kmss.km.supervise.model.KmSuperviseMain">
+		<item
+			name="listShowConfig">
+			<param
+				name="name"
+				value="km-supervise:py.LiXiangLiuCheng" />
+			<param
+				name="model"
+				value="com.landray.kmss.km.supervise.model.KmSuperviseMain" />
+			<param
+				name="page"
+				value="/createReview" />
+			<param
+				name="default"
+				value="docTemplate.name;docSubject;fdStartTime;fdFinishTime;fdApprovalTime;docCreator.name;docStatus" />
+			<param
+				name="customized"
+				value="operations;list.operation" />	
+		</item>
+	</extension>
+	<!-- 数据中台 -RTF -->
+	<extension point="com.landray.kmss.sys.xform.maindata.rtf">
+		<item name="config">
+			<!-- 主文档全名称 -->
+			<param
+				name="modelName"
+				value="com.landray.kmss.km.supervise.model.KmSuperviseMain" />
+			<param
+				name="fields"
+				value="docXform" />
+		</item>
+	</extension>
+	<!--mobile -->
+	<extension point="com.landray.kmss.sys.mobile.compress" model="*">
+		<item name="js-pkg">
+			<param name="name" value="mui-supervise.js" />
+			<param name="targetFile" value="/km/supervise/mobile/resource/js/mui-supervise.js" />
+			<param name="srcFold" value="/km/supervise/mobile/resource/js" />
+		</item>
+		<item name="js-pkg">
+			<param name="name" value="mui-supervise-list.js" />
+			<param name="targetFile" value="/km/supervise/mobile/resource/js/mui-supervise-list.js" />
+			<param name="tinyId" value="supervise-list" />
+		</item>
+		<item
+			name="css-file">
+			<param
+				name="name"
+				value="mui-supervise-view.css" />
+			<param
+				name="targetFile"
+				value="/km/supervise/mobile/resource/css/view.css" />
+		</item>
+		<item
+			name="css-file">
+			<param
+				name="name"
+				value="mui-supervise-edit.css" />
+			<param
+				name="targetFile"
+				value="/km/supervise/mobile/resource/css/edit.css" />
+		</item>
+		<item
+			name="css-file">
+			<param
+				name="name"
+				value="mui-supervise-index.css" />
+			<param
+				name="targetFile"
+				value="/km/supervise/mobile/resource/css/index.css" />
+		</item>
+		<item
+			name="css-file">
+			<param
+				name="name"
+				value="mui-supervise-allSupervision.css" />
+			<param
+				name="targetFile"
+				value="/km/supervise/mobile/resource/css/allSupervision.css" />
+		</item>
+		<item
+			name="css-file">
+			<param
+				name="name"
+				value="mui-supervise-list.css" />
+			<param
+				name="targetFile"
+				value="/km/supervise/mobile/resource/css/list.css" />
+		</item>
+		
+	</extension>
+	
+	<!-- 督办数据迁移 -->
+	<extension
+		point="com.landray.kmss.sys.admin.transfer">
+		<item
+			name="config">
+			<param
+				name="unid"
+				value="com.landray.kmss.km.supervise.transfer.KmSuperviseTask" />
+			<param
+				name="name"
+				value="{km-supervise:transfer.kmSuperviseTask.name}" />
+			<param
+				name="path"
+				value="/km/supervise/" />
+			<param
+				name="check"
+				value="com.landray.kmss.km.supervise.transfer.KmSuperviseChecker" />
+			<param
+				name="upgrade"
+				value="com.landray.kmss.km.supervise.transfer.KmSuperviseTask" />
+			<param
+				name="description"
+				value="{km-supervise:transfer.kmSuperviseTask.desc}" />
+		</item>
+	</extension>
+	
+	<extension
+		point="com.landray.kmss.lbpm.engine.event" 
+		model="com.landray.kmss.km.supervise.model.KmSuperviseMain;com.landray.kmss.km.supervise.model.KmSuperviseMainFinish;com.landray.kmss.km.supervise.model.KmSuperviseMainStop;com.landray.kmss.km.supervise.model.KmSuperviseBack;com.landray.kmss.km.supervise.model.KmSuperviseMainPlan">
+		<!-- 主文档权限变更事件监听器 -->
+		<item
+			name="listener">
+			<param
+				name="unid"
+				value="superviseChangedListener" />
+			<param
+				name="messageKey"
+				value="" />
+			<param
+				name="eventTypes"
+				value="lbpmMainModelRightChangeEvent" />
+			<param
+				name="listener"
+				value="superviseChangedListener" />
+			<param
+				name="enforce"
+				value="true" />
+		</item>
+	</extension>
+	
+	<!-- 工作交接 -->
+	<extension point="com.landray.kmss.sys.handover.item">
+		<item name="config">
+			<!-- 主文档全名称 -->
+			<param
+				name="module"
+				value="com.landray.kmss.km.supervise.model.KmSuperviseMain" />
+			<param
+				name="messageKey"
+				value="km-supervise:module.km.supervise" />
+			<param
+				name="handler"
+				value="com.landray.kmss.km.supervise.handover.KmSuperviseHandler" />
+			<param
+				name="provider"
+				value="com.landray.kmss.km.supervise.handover.KmSuperviseProvider" />
+		</item>
+	</extension>
+	
+	<extension point="com.landray.kmss.sys.handover.item">
+		<item name="config">
+			<!-- 主文档全名称 -->
+			<param
+				name="module"
+				value="com.landray.kmss.km.supervise.model.KmSuperviseTask" />
+			<param
+				name="messageKey"
+				value="km-supervise:table.kmSuperviseTask" />
+			<param
+				name="handler"
+				value="com.landray.kmss.km.supervise.handover.KmSuperviseTaskHandler" />
+			<param
+				name="provider"
+				value="com.landray.kmss.km.supervise.handover.KmSuperviseTaskProvider" />
+		</item>
+	</extension>
+	
+	<!-- 表单关联控件的模块扩展点 -->
+	<extension point="com.landray.kmss.sys.xform.base.service.controls.relevance" model="*">
+		<item name="node">
+			<param name="modelName" value="com.landray.kmss.km.supervise.model.KmSuperviseMain" />
+			<param name="templateModelName" value="com.landray.kmss.km.supervise.model.KmSuperviseTemplet" />
+			<param name="key" value="kmSupervise" />
+			<param name="templatePropertyName" value="docTemplate" />
+			<param name="moduleMessageKey" value="km-supervise:module.km.supervise" />
+		</item>
+	</extension>
+</plugin>

@@ -1,0 +1,183 @@
+{
+    "global":     {
+        "modelName": "com.landray.kmss.km.carmng.model.KmCarmngDriversInfo",
+        "messageKey": "km-carmng:table.kmCarmngDriversInfo",
+        "displayProperty": "fdName",
+        "serviceBean": "kmCarmngDriversInfoService",
+        "table": "km_carmng_drivers_info",
+        "url": "/km/carmng/km_carmng_drivers_info/kmCarmngDriversInfo.do?method=view&fdId=${fdId}"
+    },
+    "attrs":     {
+        "fdId":         {
+            "propertyType": "id",
+            "generator": {"type": "assigned"}
+        },
+        "fdOrder":         {
+            "propertyType": "simple",
+            "messageKey": "km-carmng:kmCarmngDriversInfo.fdOrder",
+            "type": "Integer",
+            "column": "fd_order",
+            "notNull": "false"
+        },
+        "fdName":         {
+            "propertyType": "simple",
+            "messageKey": "km-carmng:kmCarmngDriversInfo.fdName",
+            "type": "String",
+            "column": "fd_name",
+            "notNull": "false",
+            "length": "200"
+        },
+        "fdDriveYear":         {
+            "propertyType": "simple",
+            "messageKey": "km-carmng:kmCarmngDriversInfo.fdDriveYear",
+            "type": "String",
+            "column": "fd_drive_year",
+            "notNull": "false",
+            "length": "10"
+        },
+        "fdDriverNumber":         {
+            "propertyType": "simple",
+            "messageKey": "km-carmng:kmCarmngDriversInfo.fdDriverNumber",
+            "type": "String",
+            "column": "fd_driver_number",
+            "notNull": "false",
+            "length": "100"
+        },
+        "fdAnnualAuditingTime":         {
+            "propertyType": "simple",
+            "messageKey": "km-carmng:kmCarmngDriversInfo.fdAnnualAuditingTime",
+            "type": "DateTime",
+            "column": "fd_annual_auditing_time",
+            "notNull": "false"
+        },
+        "fdCredentialsType":         {
+            "propertyType": "simple",
+            "messageKey": "km-carmng:kmCarmngDriversInfo.fdCredentialsType",
+            "type": "String",
+            "column": "fd_credentials_type",
+            "notNull": "false",
+            "length": "200"
+        },
+        "fdCredentialsTime":         {
+            "propertyType": "simple",
+            "messageKey": "km-carmng:kmCarmngDriversInfo.fdCredentialsTime",
+            "type": "DateTime",
+            "column": "fd_credentials_time",
+            "notNull": "false"
+        },
+        "fdValidTime":         {
+            "propertyType": "simple",
+            "messageKey": "km-carmng:kmCarmngDriversInfo.fdValidTime",
+            "type": "DateTime",
+            "column": "fd_valid_time",
+            "notNull": "false"
+        },
+        "fdAnnualExamFrequency":         {
+            "propertyType": "simple",
+            "messageKey": "km-carmng:kmCarmngDriversInfo.fdAnnualExamFrequency",
+            "type": "String",
+            "column": "fd_annual_exam_frequency",
+            "notNull": "false",
+            "length": "10"
+        },
+        "fdCredentialsNumber":         {
+            "propertyType": "simple",
+            "messageKey": "km-carmng:kmCarmngDriversInfo.fdCredentialsNumber",
+            "type": "String",
+            "column": "fd_credentials_number",
+            "notNull": "false",
+            "length": "100"
+        },
+        "fdIdentificationNumber":         {
+            "propertyType": "simple",
+            "messageKey": "km-carmng:kmCarmngDriversInfo.fdIdentificationNumber",
+            "type": "String",
+            "column": "fd_identification_number",
+            "notNull": "false",
+            "length": "100"
+        },
+        "fdRelationInfo":         {
+            "propertyType": "simple",
+            "messageKey": "km-carmng:kmCarmngDriversInfo.fdRelationInfo",
+            "type": "String",
+            "column": "fd_relation_info",
+            "notNull": "false",
+            "length": "1000"
+        },
+        "fdRelationPhone":         {
+            "propertyType": "simple",
+            "messageKey": "km-carmng:kmCarmngDriversInfo.fdRelationPhone",
+            "type": "String",
+            "column": "fd_relation_phone",
+            "notNull": "false",
+            "length": "100"
+        },
+        "fdNotifyType":         {
+            "propertyType": "simple",
+            "messageKey": "km-carmng:kmCarmngDriversInfo.fdNotifyType",
+            "type": "String",
+            "column": "fd_notify_type",
+            "notNull": "false",
+            "length": "200"
+        },
+        "fdRemark":         {
+            "propertyType": "simple",
+            "messageKey": "km-carmng:kmCarmngDriversInfo.fdRemark",
+            "type": "String",
+            "column": "fd_remark",
+            "notNull": "false",
+            "length": "2000"
+        },
+        "docCreateTime":         {
+            "propertyType": "simple",
+            "messageKey": "km-carmng:kmCarmngDriversInfo.docCreateTime",
+            "type": "DateTime",
+            "column": "doc_create_time",
+            "notNull": "false"
+        },
+        "fdMotorcade":         {
+            "propertyType": "model",
+            "messageKey": "km-carmng:kmCarmngDriversInfo.fdMotorcadeId",
+            "type": "com.landray.kmss.km.carmng.model.KmCarmngMotorcadeSet",
+            "column": "fd_motorcade_id"
+        },
+        "docCreator":         {
+            "propertyType": "model",
+            "messageKey": "km-carmng:kmCarmngDriversInfo.docCreatorId",
+            "type": "com.landray.kmss.sys.organization.model.SysOrgElement",
+            "column": "doc_creator_id"
+        },
+        "fdNotifyPersons":         {
+            "propertyType": "list",
+            "messageKey": "km-carmng:kmCarmngDriversInfo.fdNotifyPersons",
+            "column": "fd_driver_id",
+            "type": "com.landray.kmss.sys.organization.model.SysOrgElement",
+            "elementColumn": "fd_person_id",
+            "table": "km_carmng_drivers_notify_list"
+        },
+        "fdSysId":         {
+            "propertyType": "simple",
+            "messageKey": "km-carmng:kmCarmngDriversInfo.fdSysId",
+            "type": "String",
+            "column": "fd_sys_id",
+            "length": "36"
+        },
+        "fdType":         {
+            "propertyType": "simple",
+            "messageKey": "km-carmng:kmCarmngDriversInfo.fdType",
+            "type": "String",
+            "column": "fd_type",
+            "length": "2"
+        },
+        "fdIsValidation":         {
+            "propertyType": "simple",
+            "messageKey": "km-carmng:kmCarmngDriversInfo.fdIsValidation",
+            "type": "String",
+            "column": "fd_is_validation"
+        }
+    },
+    "attachments": {"kmCarmngDriverPic":     {
+        "propertyType": "att",
+        "messageKey": "km-carmng:kmCarmngInsuranceInfo.attachment"
+    }}
+}

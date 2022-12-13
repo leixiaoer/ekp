@@ -1,0 +1,1370 @@
+@import './lib/vars.scss';
+@import './lib/mixins.scss';
+/* portal.css Starts ++++++++++++++++++++++++++++++++++++++++ */
+
+.lui_portal_body{
+  background-color: #fff;
+}
+.lui_list_body_frame{
+  background-color: #fff;
+} 
+ 
+
+/* 页眉 Starts
+   ========================================================================== */
+
+	/* 公共公用 Starts */
+
+.searchCategory {
+  padding: 4px 0;
+  text-align: center;
+  font-size: 0;
+  *white-space: -1px;
+  border: 1px solid $primary-color;
+  background-color: $primary-color-opacity-10;
+  -webkit-box-sizing: content-box;
+          box-sizing: content-box;
+}
+.searchCategory .search_item{
+  margin: 0 5px;
+  height: auto;
+  line-height: 20px;
+  display: inline-block;
+}
+.searchCategory label{
+  white-space: nowrap;
+  font-size: 12px;
+}
+.searchCategory .search_radio input+i.item_radio{
+  background-size: auto 16px;
+  background-image: url(../images/icons/icon-radio.png);
+}
+@media screen and (-webkit-min-device-pixel-ratio: 2){
+  .searchCategory .search_radio input+i.item_radio{
+    background-image: url(../images/icons/icon-radio@2x.png);
+  }
+}
+
+.lui_portal_header_search_input input:focus {
+  color: #333;
+  border-color: $primary-color;
+  background-color: #fff;
+  outline: 0;
+  -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075), 0 0 8px rgba(197, 0, 1, .35);
+          box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075), 0 0 8px rgba(197, 0, 1, .35);
+}
+.lui_portal_header_search_input input::-moz-placeholder {
+  color: #fff!important;
+  font-size: inherit;
+}
+.lui_portal_header_search_input input:-ms-input-placeholder {
+  color: #fff!important;
+  font-size: inherit;
+}
+.lui_portal_header_search_input input::-webkit-input-placeholder {
+  color: #fff!important;
+  font-size: inherit;
+}
+
+.lui_portal_header_icon_arrow{
+  display: inline-block;
+  width: 0;
+  height: 0;
+  vertical-align: middle;
+  margin-left: 2px;
+  border-top: 4px dashed;
+  border-top: 4px solid \9;
+  border-right: 4px solid transparent;
+  border-left: 4px solid transparent;
+  transition-duration: .3s;
+  background-image: none;
+}
+.lui_portal_header_text .lui_icon_s_collect,
+.lui_portal_header_text .lui_icon_s_daiban,
+.lui_portal_header_text .lui_icon_s_daiyue,
+.lui_portal_header_hitch .lui_icon_hitch {
+  background-image: url(../images/icons/head_sprite_default.png);
+  background-repeat: no-repeat;
+  background-size: auto 64px;
+  position: relative;
+}
+.lui_portal_header_text .lui_icon_s_collect{
+  background-position: -16px 0;
+  top: -2px;
+}
+.lui_portal_header_text .lui_icon_s_daiban{ background-position: -32px 0;}
+.lui_portal_header_text .lui_icon_s_daiyue{ background-position: -48px 0;}
+.lui_portal_header_hitch .lui_icon_hitch{
+  background-position: -64px 0;
+  top: -2px;
+}
+
+@media screen and (-webkit-min-device-pixel-ratio: 2){
+  .lui_portal_header_text .lui_icon_s_collect,
+  .lui_portal_header_text .lui_icon_s_daiban,
+  .lui_portal_header_text .lui_icon_s_daiyue,
+  .lui_portal_header_hitch .lui_icon_hitch {
+      background-image: url(../images/icons/head_sprite_default@2x.png);
+  }
+}
+
+	/* 公共公用 Ends */
+
+  /* 默认页眉 Starts */
+.lui_tlayout_header_h,
+.lui_tlayout_header_h.lui_portal_header_zone_frame_h {
+  height: auto;
+}
+.lui_tlayout_header{
+  padding: 0 15px;
+  height: 50px;
+  background-color: $primary-color;
+  background-image: none;
+  -webkit-box-shadow: 0 1px 1px rgba(0, 0, 0, .15);
+     -moz-box-shadow: 0 1px 1px rgba(0, 0, 0, .15);
+      -ms-box-shadow: 0 1px 1px rgba(0, 0, 0, .15);
+       -o-box-shadow: 0 1px 1px rgba(0, 0, 0, .15);
+          box-shadow: 0 1px 1px rgba(0, 0, 0, .15);
+}
+.lui_tlayout_header .lui_tlayout_header_logo {
+  margin-right: 10px;
+  padding: 5px 0;
+  width: 185px;
+  height: 40px;
+  line-height: 40px;
+}
+.lui_tlayout_header .lui_tlayout_header_left{}
+.lui_tlayout_header .lui_tlayout_header_item {
+  color: #fff;
+}
+.lui_tlayout_header .lui_tlayout_header_item .lui_caret{
+  transition-duration: .3s;
+}
+.lui_tlayout_header .lui_tlayout_header_item.hover .lui_dropdown_toggle {
+  background-color: $alter-color;
+}
+.lui_tlayout_header .lui_tlayout_header_item.hover .lui_caret{
+  -webkit-transform: rotate(180deg);
+     -moz-transform: rotate(180deg);
+      -ms-transform: rotate(180deg);
+       -o-transform: rotate(180deg);
+          transform: rotate(180deg);
+}
+
+.lui_tlayout_header .lui_tlayout_header_logo{}
+.lui_tlayout_header_searchbar.lui_portal_header_zone_search{
+  margin-top: 10px;
+}
+.lui_tlayout_header_searchbar.lui_portal_header_zone_search .lui_portal_header_search_include{
+  margin-top: 0;
+  font-size: 0;
+  *white-space: -1px;
+}
+.lui_tlayout_header_searchbar.lui_portal_header_zone_search .lui_portal_header_search_input input {
+  padding: 0 4%;
+  width: 92%;
+  height: 30px;
+  line-height: 30px;
+  color: #fff;
+  border-radius: 0;
+  border: 0;
+  background-color: rgba(255,255,255,.5);
+}
+.lui_tlayout_header_searchbar.lui_portal_header_zone_search .lui_portal_header_search_btn{
+  margin-left: 4px;
+  height: 28px;
+  line-height: 28px;
+  color: #fff;
+  background-image: none;
+  border-radius: 0;
+  border: 1px solid $alter-color;
+  background-color: $alter-color;
+}
+.lui_tlayout_header_searchbar.lui_portal_header_zone_search .lui_portal_header_search_btn:hover {
+  color: #fff;
+  border-color: #7e0001;
+  background-color: #7e0001;
+}
+.lui_tlayout_header_searchbar.lui_portal_header_zone_search .lui_portal_header_search_btn.search_btn_icon{
+  margin-left: 0;
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+}
+.lui_tlayout_header_searchbar.lui_portal_header_zone_search .lui_portal_header_search_btn.search_btn_icon input {
+  width: 24px;
+  height: 28px;
+  font-size: 0;
+  background: url(../images/icons/icon-search-white.png) no-repeat 50%;
+  background-size: 16px auto;
+  display: block;
+}
+@media screen and (-webkit-min-device-pixel-ratio: 2){
+  .lui_tlayout_header_searchbar.lui_portal_header_zone_search .lui_portal_header_search_btn.search_btn_icon input {
+    background-image: url(../images/icons/icon-search-white@2x.png);
+  }
+}
+
+.lui_tlayout_header .icon-header-favorite{
+	background-image:url(../images/icons/icon-header-favorite.png);
+}
+.lui_tlayout_header .icon_header_portal{
+	background-image:url(../images/icons/icon-header-portal.png);
+}
+.lui_tlayout_header_infobar .icon-header-notify{
+	background-image:url(../images/icons/icon-header-notify.png);
+}
+.lui_tlayout_header_portal .lui_dropdown_toggle:after,
+.lui_tlayout_header_favorite .lui_dropdown_toggle:after,
+.lui_tlayout_header_notify .lui_dropdown_toggle:after {
+  background-color: #e07772;
+  background-color: rgba(255,255,255,.4);
+}
+.lui_tlayout_header_item .com_prompt_num {
+  padding: 1px 2px;
+  color: #ea4335;
+  background-color: #fff;
+}
+
+.lui_tlayout_header_page_popup .lui_dataview_treemenu2_portal_lv1_all{
+  margin-bottom: 0;
+  padding: 0;
+  border-bottom: 0;
+}
+.lui_tlayout_header_page_popup .lui_dataview_treemenu2_portal_lv1_c{
+  margin-bottom: 1px;
+  padding: 0;
+  height: auto;
+  line-height: 20px;
+}
+.lui_tlayout_header_page_popup .lui_dataview_treemenu2_portal_lv1_c:last-child{
+  margin-bottom: 1px;
+}
+.lui_tlayout_header_page_popup .lui_dataview_treemenu2_portal_lv1_c a{
+  font-size: inherit;
+}
+.lui_tlayout_header_page_popup .lui_dataview_treemenu2_portal_lv1_c a:hover,
+.lui_tlayout_header_page_popup .lui_dataview_treemenu2_portal_lv1_c .selected {
+  color: #fff;
+  background-color: $primary-color;
+}
+
+.lui_tlayout_header_portal_popup .lui_dataview_treemenu_flat_text a:hover,
+.lui_tlayout_header_portal_popup .lui_dataview_treemenu_flat_selected .lui_dataview_treemenu_flat_text a {
+  color: #fff;
+  background-color: $primary-color;
+}
+
+.lui_tlayout_header_person_popup .lui_tlayout_dropdown_list > li a{
+  padding: 6px 10px;
+  line-height: 20px;
+  display: block;
+}
+.lui_tlayout_header_person_popup .lui_tlayout_dropdown_list > li a:hover {
+  color: #fff;
+  background-color: $primary-color;
+}
+.lui_tlayout_header_person_popup .lui_tlayout_dropdown_list > li a .info {
+  color: #333;
+  font-weight: bold;
+}
+.lui_tlayout_header_person_popup .lui_tlayout_dropdown_list > li a:hover .info{
+  color: #fff;
+}
+
+.lui_tlayout_header_portal_popup .lui_dataview_treemenu_flat {
+	margin-left: -1px;
+}
+.lui_tlayout_header_portal_popup .lui_dataview_treemenu_flat_text {
+	padding: 0;
+}
+.lui_tlayout_header_portal_popup .lui_dataview_treemenu_flat_item{
+	margin-bottom: 1px;
+}
+.lui_tlayout_header_portal_popup .lui_dataview_treemenu_flat_item:last-child{
+	margin-bottom: 0;
+}
+.lui_tlayout_header_portal_popup .lui_dataview_treemenu_flat_text a{
+	padding: 6px 10px;
+	line-height: 20px;
+	transition: background .3s;
+}
+.lui_tlayout_header_portal_popup .lui_dataview_treemenu_flat_children{ margin-left: 0; }
+.lui_tlayout_header_portal_popup .lui_dataview_treemenu_flat_children .lui_dataview_treemenu_flat_text a{
+	color: #666;
+	font-size: 12px;
+	text-indent: 16px;
+	position: relative;
+}
+.lui_tlayout_header_portal_popup .lui_dataview_treemenu_flat_children .lui_dataview_treemenu_flat_text a:after,
+.lui_tlayout_header_portal_popup .lui_dataview_treemenu_flat_children .lui_dataview_treemenu_flat_text a:before{
+	content: '';
+	display: inline-block;
+	position: absolute;
+}
+.lui_tlayout_header_portal_popup .lui_dataview_treemenu_flat_children .lui_dataview_treemenu_flat_text a:before {
+	border-left: 1px dotted #aaa;
+	height: 16px;
+	left: 10px;
+	top: 0;
+}
+.lui_tlayout_header_portal_popup .lui_dataview_treemenu_flat_children .lui_dataview_treemenu_flat_text a:after {
+	border-bottom: 1px dotted #aaa;
+	width: 10px;
+	left: 10px;
+	top: 16px;
+}
+.lui_tlayout_header_portal_popup .lui_dataview_treemenu_flat_children .lui_dataview_treemenu_flat_text a:hover:after,
+.lui_tlayout_header_portal_popup .lui_dataview_treemenu_flat_children .lui_dataview_treemenu_flat_text a:hover:before{
+	border-color: #fff;
+}
+.lui_tlayout_header_portal_popup .lui_dataview_treemenu_flat_selected .lui_dataview_treemenu_flat_text {
+	background-color: transparent;
+}
+.lui_tlayout_header_portal_popup .lui_dataview_treemenu_flat_text a:hover,
+.lui_tlayout_header_portal_popup .lui_dataview_treemenu_flat_selected .lui_dataview_treemenu_flat_text a {
+	color: #fff;
+	background-color: $primary-color;
+}
+.lui_tlayout_header_portal_popup .lui_dataview_treemenu_flat_text_hover {
+  background-color: #fff;
+}
+.lui_tlayout_header_person_lang ul > li a:hover{
+	color: #fff;
+	background-color: $primary-color;
+}
+	/* 默认页眉 Ends */
+
+	/* 经典页眉 Starts */
+.lui_portal_header_menu_frame{
+  background: url(../images/portal/header_menu_frame_bg.png) repeat-x 50% 0;
+  background-color: $primary-color;
+}
+.lui_portal_header_menu_frame .lui_portal_header_menu_content{
+  height: 88px;
+  background-image: none;
+}
+.lui_portal_header_menu_frame .lui_portal_header_menu_logo{
+  padding-top: 30px;
+  padding-left: 15px;
+}
+.lui_portal_header_menu_frame .lui_portal_header_menu_item_div{
+  height: 50px;
+}
+.lui_portal_header_menu_frame .lui_portal_header_menu_logo .lui_portal_header_logo_div {
+  height: 50px;
+  line-height: 50px;
+}
+.lui_portal_header_menu_frame .lui_portal_header_menu_search {
+  margin-left: 0;
+  margin-right: 15px;
+  margin-top: 46px;
+  min-width: auto;
+  text-align: left;
+  float: right;
+}
+.lui_portal_header_menu_frame .lui_portal_header_menu_search .lui_portal_header_search_include{
+  margin-top: 0;
+  font-size: 0;
+}
+.lui_portal_header_menu_frame .lui_portal_header_search_input.lui_portal_header_search_intell {
+  width: 220px;
+}
+.lui_portal_header_menu_frame .lui_portal_header_menu_search .lui_portal_header_search_input input {
+  height: 28px;
+  line-height: 28px;
+  color: #333;
+  border: 2px solid $primary-color;
+  background-color: transparent;
+}
+.lui_portal_header_menu_frame .lui_portal_header_menu_search .lui_portal_header_search_input input::-moz-placeholder {
+  color: #666!important;
+  font-size: inherit;
+}
+.lui_portal_header_menu_frame .lui_portal_header_menu_search .lui_portal_header_search_input input:-ms-input-placeholder {
+  color: #666!important;
+  font-size: inherit;
+}
+.lui_portal_header_menu_frame .lui_portal_header_menu_search .lui_portal_header_search_input input::-webkit-input-placeholder {
+  color: #666!important;
+  font-size: inherit;
+}
+
+.lui_portal_header_menu_frame .lui_portal_header_menu_search .lui_portal_header_search_btn{
+  padding-left: 8px;
+  padding-right: 8px;
+  height: 30px;
+  line-height: 30px;
+  border: 1px solid $primary-color;
+  background-image: none;
+  background-color: $primary-color;
+  transition-duration: .3s;
+}
+.lui_portal_header_menu_frame .lui_portal_header_menu_search .lui_portal_header_search_btn:hover,
+.lui_portal_header_menu_frame .lui_portal_header_menu_search .lui_portal_header_search_btn.search_btn_icon:hover{
+  color: #fff;
+  border-color: $alter-color;
+  background-color: $alter-color;
+}
+.lui_portal_header_menu_frame .lui_portal_header_menu_search .lui_portal_header_search_btn input{
+  color: #fff;
+  font-size: inherit;
+}
+.lui_portal_header_menu_frame .lui_portal_header_menu_search .lui_portal_header_search_btn:hover input{
+  color: #fff;
+}
+.lui_portal_header_menu_frame .lui_portal_header_menu_search .lui_portal_header_search_btn.search_btn_icon{
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+  border-color: $primary-color;
+  background-color: $primary-color;
+  position: relative;
+  z-index: 1;
+}
+.lui_portal_header_menu_frame .lui_portal_header_menu_search .lui_portal_header_search_btn.search_btn_icon input{
+  height: 30px;
+  display: block;
+}
+.lui_portal_header_menu_frame .lui_portal_header_menu_search .lui_portal_header_search_btn.search_btn_icon:hover input{
+
+}
+
+.lui_portal_header_menu_frame .lui_portal_header_menu_person {
+  top: 5px;
+}
+.lui_portal_header_menu_frame .lui_portal_header_menu_person_c_l,
+.lui_portal_header_menu_frame .lui_portal_header_menu_person_c_r,
+.lui_portal_header_menu_frame .lui_portal_header_menu_person_c_c {
+  background-image: none;
+}
+.lui_portal_header_menu_frame .lui_portal_header_menu_content .lui_portal_header_text{
+  margin-top: 0;
+  padding: 5px;
+}
+
+.lui_portal_header_menu_frame .lui_portal_header_text.lui_portal_header_text_over,
+.lui_portal_header_menu_frame .lui_portal_header_text.lui_portal_header_text_over:hover {
+  color: $primary-color;
+}
+.lui_portal_header_menu_frame .lui_portal_header_text.lui_portal_header_text_over{
+  border-color: #d9d9d9;
+  border-top-left-radius: 4px;
+  border-top-right-radius: 4px;
+  background-color: #fff;
+  box-shadow: 0 0 7px rgba(0,0,0,.15);
+  position: relative;
+  z-index: 81;
+}
+.lui_portal_header_menu_frame .lui_portal_header_text_over .lui_portal_header_icon_arrow{
+  -webkit-transform: rotate(180deg);
+     -moz-transform: rotate(180deg);
+      -ms-transform: rotate(180deg);
+       -o-transform: rotate(180deg);
+          transform: rotate(180deg);
+}
+.lui_portal_header_menu_frame .lui_portal_header_menu_content .lui_portal_header_icon_arrow{
+  width: 0;
+  background-image: none;
+}
+.lui_portal_header_menu_frame .lui_portal_header_text .lui_icon_s_collect{
+  background-position: -16px -48px;
+  top: -1px;
+}
+.lui_portal_header_menu_frame .lui_portal_header_text .lui_icon_s_daiban{ background-position: -32px -48px;}
+.lui_portal_header_menu_frame .lui_portal_header_text .lui_icon_s_daiyue{ background-position: -48px -48px;}
+.lui_portal_header_menu_frame .lui_portal_header_hitch .lui_icon_hitch{
+  background-position: -64px -48px;
+  top: -1px;
+}
+.lui_portal_header_menu_frame .lui_portal_header_text_over .lui_icon_s_collect{
+  background-position: -16px -32px;
+}
+
+.lui_portal_header_menu_frame .lui_portal_header_menu_menu{
+  height: auto;
+}
+.lui_portal_header_menu_frame .lui_portal_header_menu_item_l{
+  margin-left: 1px;
+  margin-right: 1px;
+}
+.lui_portal_header_menu_frame .lui_portal_header_menu_item_c {
+  margin-top: 0;
+  padding-left: 10px;
+  padding-right: 10px;
+  min-width: 100px;
+  height: 50px;
+  line-height: 50px;
+  text-align: center;
+  background-color: transparent;
+  transition-duration: .3s;
+}
+.lui_portal_header_menu_frame .lui_portal_header_menu_item_hover .lui_portal_header_menu_item_c,
+.lui_portal_header_menu_frame .lui_portal_header_menu_item_current .lui_portal_header_menu_item_c {
+  height: 50px;
+  line-height: 50px;
+  color: $primary-color;
+  text-decoration: none;
+  background-color: #f9e3e3;
+}
+.lui_portal_header_menu_frame .lui_portal_header_menu_item_line {
+  width: 3px;
+  height: 50px;
+  background-image: none;
+  position: relative;
+  display: none!important;
+}
+.lui_portal_header_menu_frame .lui_portal_header_menu_item_line:before{
+  content: '';
+  height: 16px;
+  display: block;
+  border-left: 1px solid #fff;
+  border-left: 1px solid rgba(255,255,255,.5);
+  position: absolute;
+  left: 1px;
+  top: 50%;
+  margin-top: -8px;
+}
+.lui_portal_header_menu_frame .lui_portal_header_menu_item_left,
+.lui_portal_header_menu_frame .lui_portal_header_menu_item_right{
+  width: 20px;
+  height: 50px;
+  transition: background-color .3s;
+  background: url(../images/icons/icon-arrow.png) no-repeat 2px 50%;
+  background-size: auto 16px;
+}
+.lui_portal_header_menu_frame .lui_portal_header_menu_item_left{
+  background-position: 4px 50%;
+}
+.lui_portal_header_menu_frame .lui_portal_header_menu_item_right{
+  background-position: -12px 50%;
+}
+.lui_portal_header_menu_frame .lui_portal_header_menu_item_left:hover,
+.lui_portal_header_menu_frame .lui_portal_header_menu_item_right:hover{
+  opacity: .75;
+  filter: alpha(opacity=75);
+  background-color: $alter-color;
+}
+@media screen and (-webkit-min-device-pixel-ratio: 2){
+  .lui_portal_header_menu_frame .lui_portal_header_menu_item_left,
+  .lui_portal_header_menu_frame .lui_portal_header_menu_item_right{
+    background-image: url(../images/icons/icon-arrow@2x.png);
+  }
+}
+
+	/* 经典页眉 Ends */
+
+	/* 多页签页眉 Starts */
+.lui_portal_header_complex_frame {
+  width: auto;
+  padding-left: 15px;
+  padding-right: 15px;
+  background: $primary-color url(../images/portal/header_complex_frame_bg.png) no-repeat 100% 100%;
+  -webkit-box-shadow: 0 1px 1px rgba(0, 0, 0, .15);
+     -moz-box-shadow: 0 1px 1px rgba(0, 0, 0, .15);
+      -ms-box-shadow: 0 1px 1px rgba(0, 0, 0, .15);
+       -o-box-shadow: 0 1px 1px rgba(0, 0, 0, .15);
+          box-shadow: 0 1px 1px rgba(0, 0, 0, .15);
+}
+.lui_portal_header_complex_frame .lui_portal_header_complex_logo {
+  position: static;
+  float: left;
+}
+.lui_portal_header_complex_frame .lui_portal_header_complex_logo .lui_portal_header_logo_div {
+  margin-top: 0;
+  height: 40px;
+  line-height: 40px;
+}
+.lui_portal_header_complex_frame .lui_portal_header_complex_logo .lui_portal_header_logo_div img{
+  max-height: 100%;
+}
+
+.lui_portal_quick .lui_portal_header_complex_content,
+.tTempalte .lui_portal_header_complex_content,
+.lui_portal_quick .lui_portal_header_complex_menu,
+.tTempalte .lui_portal_header_complex_menu {
+  max-width: inherit!important;
+}
+.lui_portal_header_complex_frame .lui_portal_header_complex_menu{
+  margin-top: 0;
+  padding-top: 15px;
+  padding-bottom: 5px;
+}
+
+.lui_portal_header_complex_frame .lui_portal_header_complex_content .lui_portal_header_icon_arrow{
+  width: 0;
+  background-image: none;
+}
+.lui_portal_header_complex_frame .lui_portal_header_text_over .lui_portal_header_icon_arrow{
+  -webkit-transform: rotate(180deg);
+     -moz-transform: rotate(180deg);
+      -ms-transform: rotate(180deg);
+       -o-transform: rotate(180deg);
+          transform: rotate(180deg);
+}
+.lui_portal_header_complex_frame .lui_portal_header_complex_content .lui_portal_header_text{
+  margin-top: 0;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  color: #fff;
+  border-top-left-radius: 4px;
+  border-top-right-radius: 4px;
+}
+.lui_portal_header_complex_frame .lui_portal_header_complex_content .lui_portal_header_text_over{
+  color: $primary-color;
+  background-color: #fff;
+  box-shadow: 0 0 7px rgba(0,0,0,.15);
+}
+.lui_portal_header_complex_frame .lui_portal_header_hitch .lui_icon_hitch{
+  background-position: -64px 0;
+}
+.lui_portal_header_complex_frame .lui_portal_header_text_over .lui_icon_s_collect{
+  background-position: -16px -32px;
+}
+
+.lui_portal_header_complex_frame .lui_portal_header_complex_search{
+  margin-top: 5px;
+}
+.lui_portal_header_complex_frame .lui_portal_header_complex_search .lui_portal_header_search_include{
+  margin-top: 0;
+  font-size: 0;
+}
+.lui_portal_header_complex_frame .lui_portal_header_complex_search .lui_portal_header_search_input{
+  margin-right: 0;
+  width: 220px;
+  display: inline-block;
+  vertical-align: middle;
+  border-top-left-radius: 40px;
+  border-bottom-left-radius: 40px;
+  border: 1px solid transparent;
+  background-color: $alter-color;
+  background-color: rgba(0,0,0,.2);
+}
+.lui_portal_header_complex_frame .lui_portal_header_complex_search .lui_portal_header_search_input input {
+  border: 0;
+  width: 92%;
+  color: #fff;
+  font-size: 14px;
+  height: 20px;
+  line-height: 20px;
+  border: 0;
+  padding: 4px 4%;
+  border-top-left-radius: 40px;
+  border-bottom-left-radius: 40px;
+  background-color: transparent;
+}
+.lui_portal_header_complex_frame .lui_portal_header_complex_search .lui_portal_header_search_btn {
+  width: auto;
+  height: auto;
+  line-height: 20px;
+  padding: 0;
+  cursor: pointer;
+  margin-right: 4px;
+  display: inline-block;
+  vertical-align: top;
+  border: 0;
+  background-color: transparent;
+}
+.lui_portal_header_complex_frame .lui_portal_header_complex_search .lui_portal_header_search_btn input {
+  margin-left: 0;
+  padding: 0 5px;
+  min-width: 40px;
+  height: 28px;
+  line-height: 28px;
+  color: #fff;
+  font-size: 14px;
+  border: 1px solid transparent;
+  background-color: $alter-color;
+  background-color: rgba(0,0,0,.2);
+  border-radius: 40px;
+  cursor: pointer;
+  transition-duration: .3s;
+}
+.lui_portal_header_complex_frame .lui_portal_header_complex_search .lui_portal_header_search_btn:hover input{
+  color: #fff;
+  background-color: #760001;
+  background-color: rgba(0,0,0,.4);
+}
+.lui_portal_header_complex_frame .lui_portal_header_complex_search .lui_portal_header_search_btn.search_btn_icon {
+  margin-right: 0;
+}
+.lui_portal_header_complex_frame .lui_portal_header_complex_search .lui_portal_header_search_btn.search_btn_icon input {
+  min-width: 24px;
+  font-size: 0;
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+  background-image: url(../images/icons/icon-search-white.png);
+  background-repeat: no-repeat;
+  background-position: 50%;
+  background-size: 16px auto;
+}
+
+.lui_portal_header_complex_frame .lui_portal_header_menu_item_div,
+.lui_portal_header_complex_frame .lui_portal_header_menu_item_current {
+  height: 30px;
+  border-bottom: 0;
+  position: relative;
+}
+.lui_portal_header_complex_frame .lui_portal_header_menu_item_frame .lui_portal_header_menu_item_div,
+.lui_portal_header_complex_frame .lui_portal_header_menu_item_frame .lui_portal_header_menu_item_current {
+  margin-right: 5px;
+  margin-left: 5px;
+}
+.lui_portal_header_complex_frame .lui_portal_header_menu_item_c {
+  margin-top: 0;
+  padding-left: 10px;
+  padding-right: 10px;
+  height: 30px;
+  line-height: 30px;
+  color: #fff;
+  border-radius: 40px;
+  background-color: transparent;
+  transition-duration: .3s;
+}
+.lui_portal_header_complex_frame .lui_portal_header_menu_item_hover .lui_portal_header_menu_item_c,
+.lui_portal_header_complex_frame .lui_portal_header_menu_item_current .lui_portal_header_menu_item_c,
+.lui_portal_header_complex_frame .lui_portal_header_menu_item_current:hover .lui_portal_header_menu_item_c{
+  color: $primary-color;
+  background-color: #f9e3e3;
+}
+.lui_portal_header_complex_frame .lui_portal_header_menu_item_line{
+  width: 3px;
+  height: 30px;
+  background-image: none;
+  position: relative;
+}
+.lui_portal_header_complex_frame .lui_portal_header_menu_item_line:before{
+  content: '';
+  height: 16px;
+  display: block;
+  border-left: 1px solid #fff;
+  border-left: 1px solid rgba(255,255,255,.5);
+  position: absolute;
+  left: 1px;
+  top: 50%;
+  margin-top: -8px;
+}
+.lui_portal_header_complex_frame .lui_portal_header_menu_item_left,
+.lui_portal_header_complex_frame .lui_portal_header_menu_item_right{
+  width: 20px;
+  height: 30px;
+  background: url(../images/icons/icon-arrow.png) no-repeat 2px 50%;
+  background-size: auto 16px;
+  transition: background-color .3s;
+}
+.lui_portal_header_complex_frame .lui_portal_header_menu_item_left{
+  background-position: 4px 50%;
+}
+.lui_portal_header_complex_frame .lui_portal_header_menu_item_right{
+  background-position: -12px 50%;
+}
+.lui_portal_header_complex_frame .lui_portal_header_menu_item_left:hover,
+.lui_portal_header_complex_frame .lui_portal_header_menu_item_right:hover{
+  opacity: .75;
+  filter: alpha(opacity=75);
+  background-color: $alter-color;
+}
+@media screen and (-webkit-min-device-pixel-ratio: 2){
+  .lui_portal_header_complex_frame .lui_portal_header_complex_search .lui_portal_header_search_btn.search_btn_icon input{
+    background-image: url(../images/icons/icon-search-white@2x.png);
+  }
+  .lui_portal_header_complex_frame .lui_portal_header_menu_item_left,
+  .lui_portal_header_complex_frame .lui_portal_header_menu_item_right{
+    background-image: url(../images/icons/icon-arrow@2x.png);
+  }
+}
+	/* 多页签页眉 Ends */
+
+  /* 简洁页眉 Starts */
+.lui_portal_header_zone_frame_h {
+  height: 50px;
+}
+.lui_portal_header_zone_frame {
+  width: auto;
+  padding-left: 15px;
+  padding-right: 15px;
+  background-color: $primary-color;
+  -webkit-box-shadow: 0 1px 1px rgba(0, 0, 0, .15);
+     -moz-box-shadow: 0 1px 1px rgba(0, 0, 0, .15);
+      -ms-box-shadow: 0 1px 1px rgba(0, 0, 0, .15);
+       -o-box-shadow: 0 1px 1px rgba(0, 0, 0, .15);
+          box-shadow: 0 1px 1px rgba(0, 0, 0, .15);
+  position: fixed;
+  left: 0;          
+  right: 0;
+  top: 0;
+}
+.lui_portal_header_zone_frame .lui_portal_header_zone_frame_h,
+.lui_portal_header_zone_frame .lui_portal_header_zone_content{
+  height: 50px;
+}
+.lui_portal_header_zone_frame .lui_portal_header_zone_logo{
+  margin-top: 5px;
+  width: 175px;
+}
+.lui_portal_header_zone_frame .lui_portal_header_zone_content .lui_portal_header_text{
+  margin-top: 0;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  transition-duration: .3s;
+}
+.lui_portal_header_zone_frame .lui_portal_header_zone_content .lui_portal_header_text.lui_portal_header_text_over{
+  color: #fff;
+  background-color: $alter-color;
+}
+.lui_portal_header_zone_frame .lui_portal_header_text_over .lui_icon_s_collect {
+  background-position: -16px 0;
+}
+.lui_portal_header_zone_frame .lui_portal_header_icon_arrow{
+  width: 0;
+  background-image: none;
+}
+.lui_portal_header_zone_frame .lui_portal_header_text_over .lui_portal_header_icon_arrow{
+  -webkit-transform: rotate(180deg);
+     -moz-transform: rotate(180deg);
+      -ms-transform: rotate(180deg);
+       -o-transform: rotate(180deg);
+          transform: rotate(180deg);
+}
+.lui_portal_header_zone_frame .lui_portal_header_zone_search{
+  margin-top: 10px;
+}
+.lui_portal_header_zone_frame .lui_portal_header_zone_search .lui_portal_header_search_include{
+  margin-top: 0;
+  font-size: 0;
+}
+.lui_portal_header_zone_frame .lui_portal_header_zone_search .lui_portal_header_search_input input{
+  height: 30px;
+  line-height: 30px;
+  border-top-left-radius: 4px;
+  border-bottom-left-radius: 4px;
+  background-color: #fff;
+  background-color: rgba(255,255,255,.5);
+}
+.lui_portal_header_zone_frame .lui_portal_header_zone_search .lui_portal_header_search_btn.search_btn_icon{
+  margin-left: 0;
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+}
+.lui_portal_header_zone_frame .lui_portal_header_zone_search .lui_portal_header_search_btn{
+  margin: 0 5px 0 0;
+  padding: 0 5px;
+  height: 30px;
+  line-height: 30px;
+  color: #fff;
+  background-color: $alter-color;
+  background-image: none;
+  transition-duration: .3s;
+}
+.lui_portal_header_zone_frame .lui_portal_header_zone_search .lui_portal_header_search_btn:hover{
+  color: #fff;
+  border-color: #760001;
+  background-color: #760001;
+}
+.lui_portal_header_zone_frame .lui_portal_header_zone_search .lui_portal_header_search_btn:hover input{
+  color: inherit;
+}
+  /* 简洁页眉 Ends */
+
+	/* 简洁多页签页眉 Starts */
+.lui_portal_header_simple_frame_h {
+  height: 90px;
+}
+.lui_portal_header_simple_frame{
+  position: absolute;
+  background-color: #760001;
+}
+.lui_portal_header_simple_frame .lui_portal_header_simple_content .lui_portal_header_text {
+  margin-top: 0;
+  padding: 5px;
+  color: #fff;
+  line-height: 20px;
+  cursor: pointer;
+}
+.lui_portal_header_simple_frame .lui_portal_header_simple_content .lui_portal_header_text_over{
+  color: $primary-color;
+  background-color: #fff;
+}
+.lui_portal_header_simple_frame .lui_portal_header_simple_content .lui_portal_header_icon_arrow {
+  width: 0;
+  background-image: none;
+}
+.lui_portal_header_simple_frame .lui_portal_header_text_over .lui_portal_header_icon_arrow {
+  -webkit-transform: rotate(180deg);
+     -moz-transform: rotate(180deg);
+      -ms-transform: rotate(180deg);
+       -o-transform: rotate(180deg);
+          transform: rotate(180deg);
+}
+.lui_portal_header_simple_frame .lui_portal_header_hitch .lui_icon_hitch{
+  background-position: -64px 0;
+}
+.lui_portal_header_simple_frame .lui_portal_header_text_over .lui_icon_s_collect{
+  background-position: -16px -32px;
+}
+
+.lui_portal_header_simple_frame .lui_portal_header_simple_menu_wrapper {
+  padding: 10px 15px;
+  width: auto;
+  height: 40px;
+  background-color: $primary-color;
+}
+.lui_portal_header_simple_frame .lui_portal_header_simple_switch{
+  margin: 5px 250px 0 160px;
+}
+.lui_portal_header_simple_frame .lui_portal_header_simple_logo{
+  margin-top: -5px;
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+.lui_portal_header_simple_frame .lui_portal_header_simple_logo .lui_portal_header_logo_div{
+  width: 145px;
+  height: 40px;
+  line-height: 40px;
+}
+
+.tTempalte .lui_portal_header_simple_frame .lui_portal_header_simple_search,
+.lui_portal_quick .lui_portal_header_simple_frame .lui_portal_header_simple_search{
+  right: 0;
+}
+.lui_portal_header_simple_frame .lui_portal_header_simple_search .lui_portal_header_search_include{
+  margin-top: 0;
+  font-size: 0;
+}
+.lui_portal_header_simple_frame .lui_portal_header_simple_search .lui_portal_header_search_input{
+  margin-right: 0;
+  width: 185px;
+  display: inline-block;
+  vertical-align: middle;
+  border-top-left-radius: 40px;
+  border-bottom-left-radius: 40px;
+  border: 1px solid transparent;
+  background-color: $alter-color;
+  background-color: rgba(0,0,0,.2);
+}
+.lui_portal_header_simple_frame .lui_portal_header_simple_search .lui_portal_header_search_input input {
+  border: 0;
+  width: 92%;
+  color: #fff;
+  font-size: 14px;
+  height: 20px;
+  line-height: 20px;
+  border: 0;
+  padding: 4px 4%;
+  border-top-left-radius: 40px;
+  border-bottom-left-radius: 40px;
+  background-color: transparent;
+}
+.lui_portal_header_simple_frame .lui_portal_header_simple_search .lui_portal_header_search_btn {
+  width: auto;
+  height: auto;
+  line-height: 20px;
+  padding: 0;
+  cursor: pointer;
+  margin-right: 4px;
+  display: inline-block;
+  vertical-align: top;
+  border: 0;
+  background-color: transparent;
+}
+.lui_portal_header_simple_frame .lui_portal_header_simple_search .lui_portal_header_search_btn input {
+  margin-left: 0;
+  padding: 0 5px;
+  min-width: 40px;
+  height: 28px;
+  line-height: 28px;
+  color: #fff;
+  font-size: 14px;
+  border: 1px solid transparent;
+  background-color: $alter-color;
+  background-color: rgba(0,0,0,.2);
+  border-radius: 40px;
+  cursor: pointer;
+  position: static;
+  transition-duration: .3s;
+}
+.lui_portal_header_simple_frame .lui_portal_header_simple_search .lui_portal_header_search_btn:hover input{
+  color: #fff;
+  background-color: #760001;
+}
+.lui_portal_header_simple_frame .lui_portal_header_simple_search .lui_portal_header_search_btn.search_btn_icon {
+  margin-right: 0;
+}
+.lui_portal_header_simple_frame .lui_portal_header_simple_search .lui_portal_header_search_btn.search_btn_icon input {
+  min-width: 24px;
+  width: auto;
+  font-size: 0;
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+  background-image: url(../images/icons/icon-search-white.png);
+  background-repeat: no-repeat;
+  background-position: 50%;
+  background-size: 16px auto;
+}
+
+.lui_portal_header_simple_frame .lui_portal_header_menu_item_frame{
+  height: 30px;
+}
+.lui_portal_header_simple_frame .lui_portal_header_menu_item_div,
+.lui_portal_header_simple_frame .lui_portal_header_menu_item_current{
+  height: 30px;
+  line-height: 30px;
+  border: 0;
+  position: relative;
+}
+.lui_portal_header_simple_frame .lui_portal_header_menu_item_div .lui_portal_header_menu_item_c,
+.lui_portal_header_simple_frame .lui_portal_header_menu_item_current .lui_portal_header_menu_item_c{
+  margin-top: 0;
+  padding: 0 8px;
+  height: 30px;
+  line-height: 30px;
+  color: #fff;
+  font-size: 16px;
+  border-radius: 40px;
+  background-color: transparent;
+  transition-duration: .3s;
+}
+.lui_portal_header_simple_frame .lui_portal_header_menu_item_hover .lui_portal_header_menu_item_c,
+.lui_portal_header_simple_frame .lui_portal_header_menu_item_current .lui_portal_header_menu_item_c,
+.lui_portal_header_simple_frame .lui_portal_header_menu_item_current:hover .lui_portal_header_menu_item_c {
+  color: $primary-color;
+  background-color: #f9e3e3;
+}
+
+.lui_portal_header_simple_frame .lui_portal_header_menu_item_l{
+  margin-left: 2px;
+  margin-right: 2px;
+}
+.lui_portal_header_simple_frame .lui_portal_header_menu_item_line{
+  background-image: none;
+  width: 0;
+}
+.lui_portal_header_simple_frame .lui_portal_header_menu_item_left,
+.lui_portal_header_simple_frame .lui_portal_header_menu_item_right{
+  width: 16px;
+  height: 30px;
+  background: url(../images/icons/icon-arrow.png) no-repeat 0 50%;
+  background-size: auto 16px;
+  transition: background-color .3s;
+}
+.lui_portal_header_simple_frame .lui_portal_header_menu_item_left{
+  background-position: 0 50%;
+}
+.lui_portal_header_simple_frame .lui_portal_header_menu_item_right{
+  background-position: -16px 50%;
+}
+.lui_portal_header_simple_frame .lui_portal_header_menu_item_left:hover,
+.lui_portal_header_simple_frame .lui_portal_header_menu_item_right:hover{
+  opacity: .75;
+  filter: alpha(opacity=75);
+  background-color: $alter-color;
+}
+@media screen and (-webkit-min-device-pixel-ratio: 2){
+  .lui_portal_header_simple_frame .lui_portal_header_simple_search .lui_portal_header_search_btn.search_btn_icon input {
+    background-image: url(../images/icons/icon-search-white@2x.png);
+  }
+  .lui_portal_header_simple_frame .lui_portal_header_menu_item_left,
+  .lui_portal_header_simple_frame .lui_portal_header_menu_item_right{
+    background-image: url(../images/icons/icon-arrow@2x.png);
+  }
+}
+
+	/* 简洁多页签页眉 Ends */
+
+/* 页眉 Ends
+   ========================================================================== */
+
+
+/* 左侧栏导航栏 Starts
+   ========================================================================== */
+.lui_list_left_sidebar_frame,
+.lui_portal_quick .lui_list_left_sidebar_frame {
+  background-color: #821d26;
+}
+.lui_list_left_sidebar_innerframe > div{
+  color: #fff;
+  background-color: transparent!important;
+}
+.lui_list_left_sidebar_frame{
+  min-height: inherit;
+}
+.lui_list_left_sidebar_frame .lui_person_usertitle {
+  padding: 10px;
+  text-align: center;
+  color: #fff;
+  background-color: transparent;
+}
+.lui_list_left_sidebar_frame .lui_person_usertitle > .clr {
+  padding-top: 10px;
+}
+.lui_list_left_sidebar_frame .lui_person_usertitle .com_author{
+  color: inherit;
+}
+.com_author:hover{
+  color: inherit;
+  text-decoration: underline;
+}
+.lui_list_left_sidebar_frame .lui_person_userpic {
+  margin: 0 auto 5px;
+  background-color: rgba(255, 255, 255, .1);
+  position: relative;
+}
+.lui_list_left_sidebar_frame .lui_person_userpic,
+.lui_list_left_sidebar_frame .lui_person_userpic > img,
+.lui_list_left_sidebar_frame .lui_person_usermask {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  border: 0;
+}
+.lui_list_left_sidebar_frame .lui_person_usermask{
+  line-height: 80px;
+  color: rgba(255, 255, 255, .85);
+  position: absolute;
+  top: 0;
+  background-color: rgba(0, 0, 0, .65);
+  transition-duration: .3s;
+}
+.lui_list_left_sidebar_frame .lui_person_usermask:after{
+  content: '';
+  width: 22px;
+  height: 22px;
+  background: url(../images/portal/person_usermask_edit.png) no-repeat 50%;
+  display: block;
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+.lui_list_left_sidebar_frame .lui_person_usertitle .lui_person_dept {
+  text-align: center;
+  padding: 0 10px;
+  color: #fff;
+}
+
+.lui_list_left_sidebar_frame .lui_list_create_frame{
+  background-color: transparent;
+}
+.lui_list_left_sidebar_frame .lui-navtitle-card .lui-navtitle-card-head{
+  border: 0;
+}
+
+.lui_list_left_sidebar_frame .lui_accordionpanel_frame{
+  border-radius: 0;
+  border: 0;
+  background-color: transparent;
+  box-shadow: none;
+}
+.lui_list_left_sidebar_frame .lui_accordionpanel_content_frame{
+  margin-bottom: 0;
+}
+.lui_list_left_sidebar_frame .lui_accordionpanel_content_c{
+  margin: 0;
+  padding: 0;
+}
+.lui_list_left_sidebar_frame .lui_accordionpanel_header_l{
+  border-radius: 0;
+  border-top: 1px solid $alter-color;
+  border-bottom: 1px solid $alter-color;
+  background-color: $alter-color;
+}
+.lui_list_left_sidebar_frame .lui_accordionpanel_header_l:hover {
+  border-top-color: $alter-color;
+  border-bottom-color: $alter-color;
+  background-color: $primary-color;
+}
+.lui_list_left_sidebar_frame .lui_accordionpanel_content_l{
+  margin-top: -1px;
+}
+.lui_list_left_sidebar_frame .lui_accordionpanel_nav_c{
+  padding-top: 9px;
+  padding-bottom: 9px;
+  height: 20px;
+  border-top: 0;
+  position: relative;
+}
+.lui_list_left_sidebar_frame .lui_accordionpanel_nav_c .lui_accordionpanel_nav_text,
+.lui_list_left_sidebar_frame .lui_accordionpanel_nav_c .lui_tabpanel_navs_item_title{
+  font-size: inherit;
+}
+.lui_list_left_sidebar_frame .lui_accordionpanel_nav_c .lui_accordionpanel_nav_text{
+  padding: 0 0 0 15px;
+}
+
+.lui_list_left_sidebar_frame .lui_portlet_operation {
+  margin-bottom: 0;
+  width: auto;
+  color: #fff;
+  font-size: 14px;
+  border: 0;
+  background-color: transparent;
+}
+.lui_list_left_sidebar_frame .lui_portlet_operation:hover{
+  color: #feddd1;
+  background-color: transparent;
+  text-decoration: underline;
+}
+.lui_list_left_sidebar_frame .lui_accordionpanel_content_c .lui_panel_content_inside > div {
+  padding: 0;
+}
+
+.lui_list_left_sidebar_frame .lui_list_nav_list li a {
+  padding: 8px 15px 8px 11px;
+  color: #fff;
+  border-radius: 0;
+  border-left: 4px solid transparent;
+  opacity: 1;
+  filter: alpha(opacity=100);
+}
+.lui_list_left_sidebar_frame .lui_list_nav_list li a:hover,
+.lui_list_left_sidebar_frame .lui_list_nav_list li a:active,
+.lui_list_left_sidebar_frame .lui_list_nav_list li a.active,
+.lui_list_left_sidebar_frame .lui_list_nav_list li.lui_list_nav_selected a,
+.lui_list_left_sidebar_frame .lui_list_nav_list li.lui_list_nav_selected a:hover {
+  color: $primary-color;
+  font-weight: normal;
+  border-left-color: $primary-color;
+  background-color: #feeed1;
+  text-shadow: 1px 1px 1px rgba(0,0,0,.15);
+  opacity: 1;
+  filter: alpha(opacity=100);
+}
+
+.lui_list_left_sidebar_frame .lui_list_nav_frame{
+  border: 0;
+}
+
+.lui_list_left_sidebar_frame .lui_dataview_cate{}
+.lui_list_left_sidebar_frame .lui_dataview_cate .lui_dataview_cate_item{
+  margin: 1px 0;
+}
+.lui_list_left_sidebar_frame .lui_dataview_cate .lui_dataview_cate_item_txt{
+  padding: 8px 15px 8px 11px;
+  line-height: 20px;
+  color: #fff;
+  border-left: 4px solid transparent;
+  opacity: 1;
+  filter: alpha(opacity=100);
+}
+.lui_list_left_sidebar_frame .lui_dataview_cate .lui_icon_on .lui_dataview_cate_item_txt {
+  color: $primary-color;
+  border-left-color: $primary-color;
+  background-color: #feeed1;
+  text-shadow: 1px 1px 1px rgba(0,0,0,.15);
+  opacity: 1;
+  filter: alpha(opacity=100);
+}
+
+.lui_list_left_sidebar_frame .lui_dataview_cate .lui_dataview_cate_item_sign {
+  width: 10px;
+  height: 10px;
+  display: block;
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  margin-top: -5px;
+}
+.lui_accordionpanel_frame .lui_dataview_cate .lui_dataview_cate_item_sign .lui_dataview_cate_item_sign_mtr1,
+.lui_accordionpanel_frame .lui_dataview_cate .lui_dataview_cate_item_sign .lui_dataview_cate_item_sign_mtr2{
+	margin-top: 0;
+  border-width: 5px;
+  top: 0;
+}
+.lui_list_left_sidebar_frame .lui_dataview_cate .lui_dataview_cate_item_sign .lui_dataview_cate_item_sign_mtr1{
+	border-left-color: #fff;
+}
+.lui_list_left_sidebar_frame .lui_dataview_cate .lui_dataview_cate_item_sign .lui_dataview_cate_item_sign_mtr2{
+	border-left-color: #821d26;
+}
+.lui_list_left_sidebar_frame .lui_dataview_cate .lui_icon_on .lui_dataview_cate_item_sign .lui_dataview_cate_item_sign_mtr1{
+	border-left-color: $primary-color;
+}
+.lui_list_left_sidebar_frame .lui_dataview_cate .lui_icon_on .lui_dataview_cate_item_sign .lui_dataview_cate_item_sign_mtr2{
+	border-left-color: #feeed1;
+}
+
+.lui_list_left_sidebar_frame .lui_menu_frame_ver .lui_menu_item{
+  margin-bottom: 1px;
+}
+.lui_list_left_sidebar_frame .lui_menu_frame_ver .lui_item{
+  height: 20px;
+  padding: 8px 15px 8px 11px;
+  color: #fff;
+  border-left: 4px solid transparent;
+  transition: none;
+  opacity: 1;
+  filter: alpha(opacity=100);
+  position: relative;
+}
+.lui_list_left_sidebar_frame .lui_menu_frame_ver .lui_item.lui_icon_on {
+  color: $primary-color;
+  font-weight: normal;
+  border-left-color: $primary-color;
+  background-color: #feeed1;
+  text-shadow: 1px 1px 1px rgba(0,0,0,.15);
+  opacity: 1;
+  filter: alpha(opacity=100);
+}
+.lui_list_left_sidebar_frame .lui_menu_frame_ver .lui_icon_s{
+  position: relative;
+  top: 1px;
+}
+.lui_list_left_sidebar_frame .lui_menu_frame_ver .lui_item_sign,
+.lui_list_left_sidebar_frame .lui_menu_frame_ver .lui_item_sign:after{
+  margin: 0;
+  position: absolute;
+  top: 50%;
+  margin-top: -5px;
+}
+.lui_list_left_sidebar_frame .lui_menu_frame_ver .lui_item_sign{
+  border-left-color: #fff;
+  right: -5px;
+}
+.lui_list_left_sidebar_frame .lui_menu_frame_ver .lui_item_sign:after{
+  border-left-color: #821d26;
+  right: -3px;
+}
+.lui_list_left_sidebar_frame .lui_menu_frame_ver .lui_icon_on .lui_item_sign{
+  border-left-color: $primary-color;
+}
+.lui_list_left_sidebar_frame .lui_menu_frame_ver .lui_icon_on .lui_item_sign:after{
+  border-left-color: #feeed1;
+}
+
+/* 左侧栏导航栏 Ends
+   ========================================================================== */
+
+
+
+/* portal.css Ends ++++++++++++++++++++++++++++++++++++++++ */
+
+/* v15 主题包样式修改 */
+.lui_list_left_sidebar_frame .lui_dataview_cate .lui_dataview_cate_item.lui_icon_on_select .lui_dataview_cate_item_sign .lui_dataview_cate_item_sign_mtr1{
+	border-left-color: $primary-color;
+}
+.lui_list_left_sidebar_frame .lui_dataview_cate .lui_dataview_cate_item.lui_icon_on_select .lui_dataview_cate_item_sign .lui_dataview_cate_item_sign_mtr2{
+	border-left-color: #feeed1;
+}
+.lui_list_left_sidebar_frame .lui_dataview_cate .lui_dataview_cate_item.lui_icon_on_select .lui_dataview_cate_item_txt{
+  padding: 8px 15px 8px 11px;
+  line-height: 20px;
+  color: $primary-color;
+  border-left: 4px solid $primary-color;
+  opacity: 1;
+  filter: alpha(opacity=100);
+}
+
+/* 强制不换行-经典页眉下搜索不掉下来 */
+.lui_portal_header_menu_search .lui_portal_header_search_include {
+	white-space: nowrap;
+}
+
+// 页脚
+.lui_portal_footer_frame{
+  background-color: #f8f8f8;
+  color:#666;
+}
+.lui_portal_footer_content{
+  color:#666;
+}
+.lui_portal_footer_b_info{
+  margin-top: 13px;
+}

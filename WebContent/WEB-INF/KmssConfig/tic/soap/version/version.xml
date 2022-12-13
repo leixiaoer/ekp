@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<version xmlns="http://www.example.org/version-config" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.example.org/version-config ../../../version.xsd">
+	<modifies>
+		<modify>
+			<description>#165221 修复 tic模块中，接口调用tic-soap函数接口（api调用）失败</description>
+			<author>黄海</author>
+			<revision-time>2022-05-20</revision-time>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#118947 修复 soap函数配置缓存清理优化</description>
+			<author>黄伟强</author>
+			<revision-time>2020-09-15</revision-time>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#112544 修复 TIC配置soap时配置WSS-TOKEN登录方式的用户名和密码，保存后没有</description>
+			<author>黄伟强</author>
+			<revision-time>2020-07-21</revision-time>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#111570 修复 soap函数解析不出参数类型，导致转换函数无法配置映射</description>
+			<author>黄伟强</author>
+			<revision-time>2020-07-09</revision-time>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#97485 修复 [质量改进06-IE8兼容问题］[TIC] 在IE8浏览器下，新建服务，提交出现错误</description>
+			<author>熊浩林</author>
+			<revision-time>2020-06-24</revision-time>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#104316 优化 优化Tic日志</description>
+			<author>何建华</author>
+			<revision-time>2020-04-30</revision-time>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#100750 修复 TIC-SOAP中，当包含命名空间时使用xpath报错</description>
+			<author>黄伟强</author>
+			<revision-time>2020-03-31</revision-time>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#100765 修复 IE下，保存SOAP函数，xml信息里面的命名空间定义少了一个</description>
+			<author>黄伟强</author>
+			<revision-time>2020-03-31</revision-time>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#100390 修复 soap函数中，在表单配置完成后，返回的数据不能回写到表单中</description>
+			<author>黄伟强</author>
+			<revision-time>2020-03-31</revision-time>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#100036 优化 蓝钉初始化fdKey重复问题</description>
+			<author>何建华</author>
+			<revision-time>2020-03-27</revision-time>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#89508 优化 jdbc函数新增fd_enviroment_id筛选值</description>
+			<author>何建华</author>
+			<revision-time>2020-03-02</revision-time>
+			<relation>
+				<relation-module>tic/core</relation-module>
+			</relation>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#94021 修复 tic自动创建的转换函数，在表单中使用时字段返回值不正确</description>
+			<author>黄伟强</author>
+			<revision-time>2020-01-16</revision-time>
+			<relation>
+				<relation-module>tic/core</relation-module>
+			</relation>
+			<baseline>V15.0.3.R.20200117</baseline>
+		</modify>
+		<modify>
+			<description>#91313 修复 通过API调用，根据fdKey查找函数的时候报错</description>
+			<author>黄伟强</author>
+			<revision-time>2019-12-17</revision-time>
+			<relation>
+				<relation-module>tic/core</relation-module>
+			</relation>
+			<baseline>V15.0.3.R.20200117</baseline>
+		</modify>
+		<modify>
+			<description>#82187 修复 函数在编辑页面，提交后，点击返回，然后再提交，然后在列表页面没有找到这个转换函数了</description>
+			<author>黄伟强</author>
+			<revision-time>2019-09-30</revision-time>
+			<relation>
+				<relation-module>tic/core</relation-module>
+			</relation>
+			<baseline>V15.0.2.R.20191108</baseline>
+		</modify>
+		<modify>
+			<description>#80412 修复 在SOAP中，出参字段的明细表信息，映射流程表单明细后，返回参数值回写到明细表不成功</description>
+			<author>何建华</author>
+			<revision-time>2019-09-05</revision-time>
+			<baseline>V15.0.1.R.20190906</baseline>
+		</modify>
+		<modify>
+			<description>#80734 修复 TIC中去除旧的公式</description>
+			<author>黄伟强</author>
+			<revision-time>2019-09-05</revision-time>
+			<baseline>V15.0.1.R.20190906</baseline>
+		</modify>
+		<modify>
+			<description>#79910 修复 JDBC的原始函数打不开，如图</description>
+			<author>何建华</author>
+			<revision-time>2019-09-05</revision-time>
+			<baseline>V15.0.1.R.20190906</baseline>
+		</modify>
+		<modify>
+			<description>#77392 修复 对原始函数查询后，保存查询记录时输入标题为：{"LoginName":"admin"}时，标题只显示：{</description>
+			<author>黄伟强</author>
+			<revision-time>2019-07-23</revision-time>
+			<baseline>V15.0.1.R.20190906</baseline>
+		</modify>
+		<modify>
+			<description>#77451 修复 在SOAP新建服务时，在保存并新建按钮中点击第二次时会报提交失败（建议此保存并新建按钮取消，存在意义不大）</description>
+			<author>黄伟强</author>
+			<revision-time>2019-07-16</revision-time>
+			<baseline>V15.0.1.R.20190906</baseline>
+		</modify>
+		<modify>
+			<description>#65220 新增 TIC组件</description>
+			<author>何建华</author>
+			<revision-time>2019-07-11</revision-time>
+			<relation>
+				<relation-module>component/dbop</relation-module>
+				<relation-module>core</relation-module>
+				<relation-module>tic/core</relation-module>
+			</relation>
+			<baseline>V15.0.0.R.20190712</baseline>
+		</modify>
+		<modify>
+			<description>#65220 新增 TIC组件</description>
+			<author>何建华</author>
+			<revision-time>2019-04-10</revision-time>
+			<relation>
+				<relation-module>component/dbop</relation-module>
+				<relation-module>core</relation-module>
+				<relation-module>tic/core</relation-module>
+			</relation>
+			<baseline>V15.0.0.B3.20190412</baseline>
+		</modify>
+	</modifies>
+</version>

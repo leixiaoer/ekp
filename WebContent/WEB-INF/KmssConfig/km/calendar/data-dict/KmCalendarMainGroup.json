@@ -1,0 +1,33 @@
+{
+    "global":     {
+        "modelName": "com.landray.kmss.km.calendar.model.KmCalendarMainGroup",
+        "messageKey": "km-calendar:table.kmCalendarMainGroup",
+        "displayProperty": "fdName",
+        "serviceBean": "KmCalendarMainGroupService",
+        "table": "Km_CalendarMain_Group",
+        "url": ""
+    },
+    "attrs":     {
+        "fdId":         {
+            "propertyType": "id",
+            "generator": {"type": "assigned"}
+        },
+        "fdGroup":         {
+            "propertyType": "model",
+            "messageKey": "km-calendar:kmCalendarMainGroup.fdGroup",
+            "type": "com.landray.kmss.km.calendar.model.KmCalendarPersonGroup",
+            "column": "fd_group",
+            "notNull": "false",
+            "validate": "false"
+        },
+        "fdMainList":         {
+            "propertyType": "list",
+            "messageKey": "km-calendar:kmCalendarMainGroup.fdMainList",
+            "column": "fd_main_group_id",
+            "type": "com.landray.kmss.km.calendar.model.KmCalendarMain",
+            "table": "km_calendar_mg",
+            "elementColumn": "fd_calendar_main_id",
+            "readOnly": "false"
+        }
+    }
+}

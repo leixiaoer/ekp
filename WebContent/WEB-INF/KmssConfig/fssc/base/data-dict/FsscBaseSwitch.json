@@ -1,0 +1,45 @@
+{
+    "global":     {
+        "modelName": "com.landray.kmss.fssc.base.model.FsscBaseSwitch",
+        "messageKey": "fssc-base:table.fsscBaseSwitch",
+        "table": "fssc_base_switch",
+        "url": "/fssc/base/fssc_base_switch/fsscBaseSwitch.do?method=view&fdId=${fdId}",
+        "displayProperty": "fdProperty",
+        "serviceBean": "fsscBaseSwitchService",
+        "canLogShow": "1"
+    },
+    "attrs":     {
+        "fdId":         {
+            "propertyType": "id",
+            "generator": {"type": "assigned"}
+        },
+        "fdValue":         {
+            "propertyType": "simple",
+            "type": "String",
+            "length": "3000",
+            "defaultValue": "",
+            "messageKey": "fssc-base:fsscBaseSwitch.fdValue",
+            "column": "fd_value",
+            "notNull": "false",
+            "validate": "true",
+            "canSearch": "true",
+            "canRelation": "true",
+            "canDisplay": "true",
+            "readOnly": "false"
+        },
+        "fdProperty":         {
+            "propertyType": "simple",
+            "type": "String",
+            "length": "50",
+            "defaultValue": "",
+            "messageKey": "fssc-base:fsscBaseSwitch.fdProperty",
+            "column": "fd_property",
+            "notNull": "false",
+            "validate": "true",
+            "canSearch": "true",
+            "canRelation": "true",
+            "canDisplay": "true",
+            "readOnly": "false"
+        }
+    }
+}

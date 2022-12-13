@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<description xmlns="http://www.example.org/description-config" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.example.org/description-config ../../../description.xsd">
+	<module>
+		<module-name>文件存储</module-name>
+		<module-path>sys/filestore</module-path>
+		<baseline>V15.0.4.R.20200410</baseline>
+		<source-md5>62d4a7c8a3c6d973e49477d351b8f0a7</source-md5>
+		<is-custom>否</is-custom>
+		<serial-num>39</serial-num>
+	</module>
+</description>

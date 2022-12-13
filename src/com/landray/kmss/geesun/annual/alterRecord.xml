@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<alterRecords>
+	<fields id="com.landray.kmss.tcl.leave.model.TclLeaveEmployee">
+		<simpleField name="fdTotalRemainHours" text="tcl-leave:tclLeaveEmployee.fdTotalRemainHours"/>
+		<simpleField name="fdTotalRemainDays" text="tcl-leave:tclLeaveEmployee.fdTotalRemainDays"/>
+		<simpleField name="fdLastRemainHours" text="tcl-leave:tclLeaveEmployee.fdLastRemainHours"/>
+		<simpleField name="fdRemainTxHours" text="tcl-leave:tclLeaveEmployee.fdRemainTxHours"/>
+		<simpleField name="fdTxHours" text="tcl-leave:tclLeaveEmployee.fdTxHours"/>
+		<dateField name="fdLeaveDate" dateType="date" text="tcl-leave:tclLeaveEmployee.fdLeaveDate"/>
+		<dateField name="fdEntryDate" dateType="date" text="tcl-leave:tclLeaveEmployee.fdEntryDate"/>
+		<simpleField name="fdIsAbnormal" text="tcl-leave:tclLeaveEmployee.fdIsAbnormal"/>
+		<simpleField name="fdWorkPlace" text="tcl-leave:tclLeaveEmployee.fdWorkPlace"/>
+		<simpleField name="fdWorkContract" text="tcl-leave:tclLeaveEmployee.fdWorkContract"/>
+		<simpleField name="fdLastRemainDays" text="tcl-leave:tclLeaveEmployee.fdLastRemainDays"/>
+		<simpleField name="fdRemainTxDays" text="tcl-leave:tclLeaveEmployee.fdRemainTxDays"/>
+		<simpleField name="fdTxDays" text="tcl-leave:tclLeaveEmployee.fdTxDays"/>
+		<simpleField name="fdLoginName" text="tcl-leave:tclLeaveEmployee.fdLoginName"/>
+		<simpleField name="fdEmployeeDept" text="tcl-leave:tclLeaveEmployee.fdEmployeeDept"/>
+		<simpleField name="fdEmployeeName" text="tcl-leave:tclLeaveEmployee.fdEmployeeName"/>
+	</fields>
+	
+</alterRecords>

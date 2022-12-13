@@ -1,0 +1,368 @@
+﻿@charset "utf-8";
+*{
+	padding: 0;
+	margin: 0;
+}
+
+ol, ul {
+	list-style: none;
+}
+
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+address, caption, cite, code, dfn, em, strong, th, var {
+	font-weight: normal;
+	font-style: normal;
+}
+.calendarButton {
+	text-align:center;
+	height: 3.8rem;
+	line-height: 3.8rem;
+	display: table-cell;
+	color: #37AEE9;
+	font-size: 2rem;
+	min-width: 4rem;
+	height: 100%;
+	cursor: pointer;
+	background-color: #f7f7f7; 
+	width:4rem;
+}
+
+.leftBar {
+	width: 46px;
+	height: 46px;
+	text-align: center;
+	overflow: hidden;
+	border-radius: 50%;
+	float:left;
+	left: 0.8rem;
+	top:1.4rem;
+}
+.leftBar .muiProcessImg{width:46px;height:46px;}
+
+.progress{
+	width: 46px;
+	height: 46px;
+	border-radius: 50%;
+	background: #3fa9f5;
+	position: absolute;
+	right: 16px;
+	top: 8px;
+}
+
+.progress .pie_left,.progress .left{
+	clip: rect(0,23px,auto,0);
+}
+
+.progress .pie_right,.progress .right{
+	clip: rect(0,auto,auto,23px);
+}
+
+.progress .pie_left, .progress .pie_right {
+	width: 46px;
+	height: 46px;
+	position: absolute;
+	top: 0;
+	left: 0;
+}
+
+.progress .left, .progress .right {
+	width: 46px;
+	height: 46px;
+	background: #dde8ed;
+	border-radius: 50%;
+	position: absolute;
+	top: 0;
+	left: 0;
+}
+
+.progress .mask {
+	width: 40px;
+	height: 40px;
+	border-radius: 50%;
+	left: 3px;
+	top: 3px;
+	background: #FFF;
+	position: absolute;
+	text-align: center;
+	line-height: 40px;
+	font-size: 1.2rem;
+	color: #4285f4;
+}
+
+.progress .mask span {
+	font-weight: bold;
+}
+.progress .mask > .mui{ font-size: 2rem;}
+.progress .mask .mui.mui-taskClose{
+	margin: 12px auto 0;
+	width: 16px;
+	height: 16px;
+	line-height: 16px;
+	border-radius: 2px;
+	background-color: #3fa9f5;
+	display: block;
+}
+.muiTaskImg{
+	width: 3.2rem;
+	height: 3.2rem;
+	border-radius: 50%;
+}
+
+.rightContainer{
+	position: relative;
+	/* margin-left: 5.4rem; */
+}
+
+.rightContainer .contentContainer{
+	margin-right: 55px;
+}
+
+h4.muiSubject{
+	/*margin-right:30px;
+	padding-top: 2px;
+	max-height: 3.8rem;
+    line-height:1.9rem;
+    min-height:3.8rem;
+	font-size: 1.6rem;
+	font-weight: normal;
+	overflow: hidden;
+	text-overflow:ellipsis;
+	word-wrap:break-all;
+	word-break:break-word;
+	display: -webkit-box;
+	-webkit-line-clamp: 2;
+	-webkit-box-orient: vertical;
+	-webkit-box-pack: center;*/
+
+	margin-bottom: 0.5rem;
+	font-size: 1.7rem;
+	line-height: 2rem;
+	color: #333333;
+	font-weight: normal;
+	overflow:hidden;
+	text-overflow: ellipsis;
+	word-break:break-all;
+	word-wrap:break-word;
+	-webkit-line-clamp: 2;
+	display: -webkit-box;
+	-webkit-box-orient: vertical;
+					box-orient: vertical;
+	-webkit-box-pack: center;
+					box-pack: center;
+	/* -webkit-box-align:start;
+					box-align:start; */
+}
+
+.taskIcoList{
+	margin-top: 10px;
+	zoom:1;
+}
+.taskIcoList:after{
+	content: 'clear';
+	clear: both;
+	display: block;
+	line-height: 0;
+	visibility: hidden;
+}
+
+.taskIcoList>li {
+	color: #999999;
+	margin-right: 3px;
+	font-size: 1.3rem;
+	line-height: 1.6rem;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	float: left;
+}
+
+.taskIcoList > li > span{
+	line-height: 1.4rem;
+	word-wrap: break-all;
+	word-break: break-word;
+}
+.taskIcoList>li.muiTaskPersons{}
+.taskIcoList>li.muiTaskPersons span{
+	vertical-align:middle;
+	line-height: 1;
+}
+.taskIcoList>li.muiTaskPersons span:not(:last-child){
+	margin-right: 1.5rem;
+}
+.taskIcoList>li .mui {
+	margin-right: .2rem;
+	height: 1.6rem;
+  line-height: 1.6rem;
+  vertical-align: top;
+  font-size: 1.2rem;
+  top: .1rem;
+}
+
+.taskIcoList .muiTaskStatusTag,
+.taskIcoList .overday {
+	color: #fff;
+	border-radius: 0.9rem;
+	padding: 0px 4px;
+	min-width: 40px;
+	display: block;
+	height: 1.6rem;
+	line-height: 1.6rem;
+	text-align: center;
+	vertical-align:top;
+}
+.taskIcoList .overday{ background-color: #FD8641;}
+
+.muiSubject>.overday,
+.muiTaskStatusTag {
+	font-size: 1rem;
+	border-radius: 2px;
+	position: relative;
+	top: -2px;
+}
+.muiSubject>.overday {
+	padding: 2px 4px;
+	margin-right: 1rem;
+}
+.muiTaskStatusTag {
+	padding: 2px 4px;
+	margin-right: 0.5rem;
+}
+
+@media screen and (-webkit-min-device-pixel-ratio: 2) {
+	.muiTaskStatusTag,
+	.muiSubject>.overday {
+		position: relative;
+		border: 0 !important;
+	}
+	.muiSubject>.overday:before,
+	.muiTaskStatusTag:before {
+		content: "";
+		width: 200%;
+		height: 200%;
+		position: absolute;
+		top: 0;
+		left: 0;
+		-webkit-transform: scale(0.5);
+						transform: scale(0.5);
+		-webkit-transform-origin: 0 0;
+						transform-origin: 0 0;
+		padding: 1px;
+		border-radius: 0.3rem;
+		-webkit-box-sizing: border-box;
+						box-sizing: border-box;
+	}
+	.muiTaskStatusTag.muiTaskProgress:before {
+		border: 1px solid #68CE67;
+	}
+	.muiTaskStatusTag.muiTaskInactive:before {
+		border: 1px solid #F29A5F;
+	}
+	.muiTaskStatusTag.muiTaskTerminate:before {
+		border: 1px solid #F29A5F;
+	}
+	.muiTaskStatusTag.muiTaskOverrule:before {
+		border: 1px solid #F56B6B;
+	}
+	.muiTaskStatusTag.muiTaskClose:before {
+		border: 1px solid #999;
+	}
+	.muiTaskStatusTag.muiTaskComplete:before {
+		border: 1px solid #37AEE9;
+	}
+	.muiSubject>.overday:before {
+		border: 1px solid #F56B6B;
+	}
+}
+
+.muiTaskStatusTag.muiTaskProgress{ /*进行中*/
+	background-color: #eefaee;
+	border: 1px solid #68CE67;
+	color: #68CE67;
+}
+.muiTaskStatusTag.muiTaskInactive{ /*未启动*/
+	background-color: #fff4ed;
+	border: 1px solid #F29A5F;
+	color: #F29A5F;
+}
+.muiTaskStatusTag.muiTaskTerminate{ /*暂停*/
+	background-color: #fff4ed;
+	border: 1px solid #F29A5F;
+	color: #F29A5F;
+}
+.muiTaskStatusTag.muiTaskOverrule{  /*驳回*/
+	background-color:#fff0ee;;
+	border: 1px solid #F56B6B;
+	color:#F56B6B;
+}
+.muiTaskStatusTag.muiTaskClose{ /*已结项*/
+	background-color: #f5f4f3;
+	border: 1px solid #999;
+	color: #999;
+}
+.muiTaskStatusTag.muiTaskComplete {  /*完成*/
+	background-color:#eaf6fc;
+	border: 1px solid #37AEE9;
+	color: #37AEE9;
+}
+.muiSubject>.overday {
+	background-color: #fff0ee;
+	border: 1px solid #F56B6B;
+	color: #F56B6B;
+}
+
+.muiTaskListItem{
+	padding:1.2rem 1rem;
+	border-bottom: 1px solid #e2e2e2;
+	background: #fff;
+	position: relative;
+	min-height: 4rem;
+	overflow:hidden;
+}
+.muiTaskListItem:first-child{ border-top: 0;}
+
+.muiTaskMore{
+	position: absolute;
+	left: 36px;
+	top:48px;
+	color: white;
+	width: 2rem;
+	height: 1rem;
+	text-align: center;
+	background-color: #3fa9f5;
+	border-radius: 1rem;
+	overflow: hidden;
+}
+
+.muiTaskMore .mui{
+	line-height:1;
+	font-size:1.4rem;
+	position: relative;
+	top:-.6rem;
+}
+@media (device-width:375px) and (-webkit-min-device-pixel-ratio:2){/* 兼容iphone 6 */
+	.muiTaskMore{width:2.2rem;height:1.2rem;}
+}
+@media (device-width:414px) and (-webkit-min-device-pixel-ratio:3.0){/* 兼容iphone6 plus */
+	.muiTaskMore{width:2.2rem;height:1.2rem;}
+}
+
+.muiCalendarContainer .muiListNoData{
+	background-color: #F8F8F8;
+}
+
+
+// .taskAppointInfo:after {
+//   content: '';
+//   display: table;
+//   visibility: hidden;
+//   clear: both;
+// }
+.taskAppointInfo>li {
+	display: inline-block;
+	font-size: 1.3rem;
+	color: #666;
+	padding-right: 1.5rem;
+}

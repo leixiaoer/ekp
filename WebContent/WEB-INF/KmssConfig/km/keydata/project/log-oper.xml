@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<log-oper>
+	<logset>
+	 	 <oper
+            id="kmProjectMainOperLog"
+            extends="BaseOperLog"
+            model="com.landray.kmss.km.keydata.project.model.KmProjectMain"
+            action="/km/keydata/project/km_project_main/kmProjectMain.do">
+            <query 
+                method="listChildren"
+                logPoint="Base_UrlParam;Action_FindAll"
+                messageKey="button.list">
+            </query>
+            <query 
+                method="enableAll|disableAll|updateAvailable"
+                logPoint="Base_UrlParam;updateAvailable">
+            </query>
+            <query 
+                method="showUsed"
+                logPoint="Base_UrlParam;showUsed"
+                messageKey="button.view">
+            </query>
+        </oper>
+        
+        <oper
+            id="kmProjectCategoryOperLog"
+            extends="BaseOperLog"
+            model="com.landray.kmss.km.keydata.project.model.KmProjectCategory"
+            action="/km/keydata/project/km_project_category/kmProjectCategory.do">
+        </oper> 
+	</logset>
+</log-oper>

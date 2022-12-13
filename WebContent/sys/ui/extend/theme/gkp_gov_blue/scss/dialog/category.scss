@@ -1,0 +1,246 @@
+@import './../lib/vars.scss';
+@import './../lib/mixins.scss';
+
+.lui_category_headerL {}
+
+.lui_category_header .lui_category_qsearch .lui_category_search_box {
+    position: relative;
+    display: inline-block;
+    margin-right: 1px;
+    padding-left: 0;
+    padding-right: 24px;
+    width: 200px;
+    height: 24px;
+    border: 1px solid #d9d9d9;
+}
+
+.lui_category_search_box input {
+    width: 96%;
+    height: auto;
+    line-height: 20px;
+    padding: 2px 2%;
+    color: #7d7d7d;
+    border: 1px solid #ccc;
+    outline: none;
+    font-family: Microsoft YaHei, Geneva, "sans-serif", SimSun;
+}
+
+.lui_category_header .lui_category_qsearch input {
+    border: 0;
+    border-top-left-radius: 4px;
+    border-bottom-left-radius: 4px;
+    width: 96%;
+}
+
+.lui_category_header .lui_category_qsearch a {
+    margin-left: 0;
+    position: absolute;
+    right: 0px;
+    top: 0px;
+    display: inline-block;
+    border: none;
+    text-indent: -9999em;
+    width: 24px;
+    height: 24px;
+    border-top-right-radius: 4px;
+    border-bottom-right-radius: 4px;
+    background: url(../images/category/search_btn.png) no-repeat 50%;
+}
+
+.lui_category_header .lui_category_qsearch a:hover {
+    background-color: #f8f8f8;
+    background-image: url(../images/category/search_btn_on.png);
+}
+
+.lui_category_frame {
+    border-color: #d9d9d9;
+}
+
+.lui_category_frame .lui_category_frame_item {
+    float: left;
+    width: 234px;
+    /* height: 280px; */
+    border: 0;
+    border-right: 1px solid #d9d9d9;
+    background-color: #fff;
+    overflow-x: hidden;
+    overflow-y: auto;
+    padding-top: 0;
+    display: inline-block;
+}
+
+.lui_category_content {
+    padding: 8px 0;
+}
+
+.lui_category_content .lui_category_item_category {
+    width: 16px;
+    height: 16px;
+    margin-top: 6px;
+    background-image: url(../images/category/category.png);
+}
+
+.lui_category_content .lui_category_item_template {
+    width: 16px;
+    height: 16px;
+    margin-top: 6px;
+    background-image: url(../images/category/template.png);
+}
+
+.lui_category_content li {
+    border: 0;
+    padding: 0 5px;
+    transition: all .3s ease-in-out;
+    border-left: 2px solid #fff;
+    height: 30px;
+    padding-left: 12px;
+}
+
+.lui_category_content li.lui_category_li_on,
+.lui_category_content li:hover {
+    margin: 0;
+    border: 0;
+    color: $primary-color;
+    background-color: #f4f4f4;
+    border-left: 2px solid $primary-color;
+}
+
+.lui_category_content li.lui_category_li_on {
+    background-color: #f4f4f4;
+}
+
+.lui_category_content li.lui_category_li_on .lui_category_itemLink_single {
+    color: $primary-color;
+}
+
+.lui_category_content li .lui_category_itemLink_single {
+    width: 90%;
+    height: 26px;
+    margin: 1px;
+    padding: 0 4px;
+    line-height: 26px;
+    color: #333;
+    display: block;
+    float: left;
+    position: relative;
+}
+
+.lui_category_qsearch_content table tr td span {
+    padding: 3px 8px;
+    width: 325px;
+    cursor: pointer;
+    border: 1px solid #f7f7f7;
+}
+
+.lui_category_qsearch_content table span:hover {
+    color: $primary-color;
+    text-decoration: none;
+}
+
+.lui_category_qsearch_content table tr td.lui_category_qsearch_selected span {
+    color: $primary-color;
+    border: 1px solid #d9d9d9;
+    background-color: #fff;
+}
+
+.lui_category_qsearch_content .lui_category_qsearch_close {
+    width: 20px;
+    height: 20px;
+    position: absolute;
+    right: 5px;
+    top: 5px;
+    cursor: pointer;
+    background-repeat: no-repeat;
+    background-position: 50%;
+    transition: all .3s ease-in-out;
+}
+
+.lui_category_qsearch_content .lui_category_qsearch_close.lui_icon_s_close_x:hover {
+    background-image: url(../icon/s-on/close_x.png);
+    background-color: $primary-color;
+}
+
+.lui_category_gcategory_select_box select {
+    width: 200px;
+    height: 24px;
+    padding: 2px 5px;
+    color: #999;
+    vertical-align: middle;
+    outline: none;
+    -webkit-appearance: none;
+}
+
+/*左右滑动按钮*/
+.lui_category_frame .lui_category_aleft,
+.lui_category_frame .lui_category_aright {
+    width: 27px;
+    cursor: not-allowed;
+    background-color: #ecf0f1;
+    background-repeat: no-repeat;
+    background-position: 50%;
+    transition-duration: .3s;
+}
+
+.lui_category_frame .lui_category_aleft {
+    border-top-left-radius: 4px;
+    border-bottom-left-radius: 4px;
+    border-right: 1px solid #d9d9d9;
+    background-image: url(../images/category/hotpic_nav_prev.png);
+    float: left;
+}
+
+.lui_category_frame .lui_category_aright {
+    border-top-right-radius: 4px;
+    border-bottom-right-radius: 4px;
+    border-left: 1px solid #d9d9d9;
+    background-image: url(../images/category/hotpic_nav_next.png);
+    float: right;
+}
+
+.lui_category_frame .lui_category_aleft.validity,
+.lui_category_frame .lui_category_aright.validity {
+    cursor: pointer;
+}
+
+.lui_category_frame .lui_category_aleft.validity:hover,
+.lui_category_frame .lui_category_aright.validity:hover {
+    background-color: $primary-color;
+}
+
+.lui_category_frame .lui_category_aleft.validity {
+    background: #ecf0f1 url(../images/category/hotpic_nav_prev.png) no-repeat 50%;
+}
+
+.lui_category_frame .lui_category_aleft.validity:hover {
+    background-image: url(../images/category/hotpic_nav_prev_on.png);
+}
+
+.lui_category_frame .lui_category_aright.validity {
+    background: #ecf0f1 url(../images/category/hotpic_nav_next.png) no-repeat 50%;
+}
+
+.lui_category_frame .lui_category_aright.validity:hover {
+    background-image: url(../images/category/hotpic_nav_next_on.png);
+}
+
+@media screen and (-webkit-min-device-pixel-ratio:2) {
+    .lui_category_content .lui_category_item_category {
+        background-image: url(../images/category/category@2x.png);
+        background-size: 16px 16px;
+    }
+
+    .lui_category_content .lui_category_item_template {
+        background-image: url(../images/category/template@2x.png);
+        background-size: 16px 16px
+    }
+
+    .lui_category_header .lui_category_qsearch a {
+        background-image: url(../images/category/search_btn@2x.png);
+        background-size: 16px 16px;
+    }
+
+    .lui_category_header .lui_category_qsearch a:hover {
+        background-image: url(../images/category/search_btn_on@2x.png);
+        background-size: 16px 16px;
+    }
+}

@@ -1,0 +1,23 @@
+@import './lib/vars.scss';
+@import './lib/mixins.scss';
+
+// .lui_icon_l_icon_more {
+//     background-image: url(../icon/l/icon_more.png);
+// }
+
+// .lui_icon_on .lui_icon_l_icon_more {
+//     background-image: url(../icon/l-on/icon_more.png);
+// }
+
+/*大图标*/
+// 图标
+@for $i from 1 through 89 {
+
+    // .lui_icon_l_icon_#{$i} {
+    //     background-image:url(../icon/l/icon_#{$i}.png);
+    // }
+
+    // .lui_icon_on .lui_icon_l_icon_89 {
+    //     background-image:url(../icon/l-on/icon_#{$i}.png);
+    // }
+}

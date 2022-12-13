@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans
+	xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.0.xsd">
+	
+	<!-- 权限计算服务 -->
+	<bean id="sysFormRightService" 
+		class="com.landray.kmss.sys.lbpmservice.taglib.right.SysFormRightService">
+	</bean>
+	
+	<bean
+		id="auditNoteDataShowByHandler"
+		class="com.landray.kmss.sys.lbpmservice.taglib.auditnote.AuditNoteDataShowByHandler" scope="prototype"/>
+	<bean
+		id="auditNoteDataShowByHandlerFormula"
+		class="com.landray.kmss.sys.lbpmservice.taglib.auditnote.AuditNoteDataShowByHandlerFormula" scope="prototype"/>
+	<bean
+		id="auditNoteDataShowByNode"
+		class="com.landray.kmss.sys.lbpmservice.taglib.auditnote.AuditNoteDataShowByNode" scope="prototype"/>
+	<bean
+		id="auditNoteDataShowByNodeTable"
+		class="com.landray.kmss.sys.lbpmservice.taglib.auditnote.AuditNoteDataShowByNodeTable" scope="prototype"/>
+	<bean
+		id="auditNoteDataShowByPreference"
+		class="com.landray.kmss.sys.lbpmservice.taglib.auditnote.AuditNoteDataShowByPreferenceExtend" scope="prototype"/>
+		
+	<bean
+		id="auditNoteStyleDefaultOnlyHandler"
+		class="com.landray.kmss.sys.lbpmservice.taglib.auditnote.AuditNoteStyleDefaultOnlyHandler" scope="prototype"/>
+	<bean
+		id="auditNoteStyleDefaultOnlyHandler2"
+		class="com.landray.kmss.sys.lbpmservice.taglib.auditnote.AuditNoteStyleDefaultOnlyHandler2" scope="prototype"/>
+	<bean
+		id="auditNoteStyleDefaultOnlyHandlerDate"
+		class="com.landray.kmss.sys.lbpmservice.taglib.auditnote.AuditNoteStyleDefaultOnlyHandlerDate" scope="prototype"/>		
+	<bean
+		id="auditNoteStyleDefaultPostHandler"
+		class="com.landray.kmss.sys.lbpmservice.taglib.auditnote.AuditNoteStyleDefaultPostHandler" scope="prototype"/>	
+	<bean
+		id="auditNoteStyleDefaultDeptPostHandler"
+		class="com.landray.kmss.sys.lbpmservice.taglib.auditnote.AuditNoteStyleDefaultDeptPostHandler" scope="prototype"/>
+	<bean
+		id="auditNoteStyleDefaultDeptHandler"
+		class="com.landray.kmss.sys.lbpmservice.taglib.auditnote.AuditNoteStyleDefaultDeptHandler" scope="prototype"/>
+	<bean
+		id="auditNoteStyleDefaultShowOnlyHandler"
+		class="com.landray.kmss.sys.lbpmservice.taglib.auditnote.AuditNoteStyleDefaultShowOnlyHandler" scope="prototype"/>
+	<bean
+		id="auditNoteStyleCustom"
+		class="com.landray.kmss.sys.lbpmservice.taglib.auditnote.AuditNoteStyleCustom" scope="prototype"/>
+	<bean
+		id="auditNoteDataShowByHandlerAndNote"
+		class="com.landray.kmss.sys.lbpmservice.taglib.auditnote.AuditNoteDataShowByHandlerAndNote" scope="prototype"/>
+</beans>

@@ -1,0 +1,1467 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans
+	xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.0.xsd">
+	<bean
+		name="/fssc/base/fssc_base_company_group/fsscBaseCompanyGroup.do"
+		class="com.landray.kmss.fssc.base.actions.FsscBaseCompanyGroupAction"
+		lazy-init="true"
+		parent="KmssBaseAction">
+		<property
+			name="formType"
+			value="com.landray.kmss.fssc.base.forms.FsscBaseCompanyGroupForm" />
+		<property name="forwards">
+			<map>
+				<entry
+					key="data"
+					value="/fssc/base/fssc_base_company_group/fsscBaseCompanyGroup_data.jsp" />
+				<entry
+					key="edit"
+					value="/fssc/base/fssc_base_company_group/fsscBaseCompanyGroup_edit.jsp" />
+				<entry
+					key="view"
+					value="/fssc/base/fssc_base_company_group/fsscBaseCompanyGroup_view.jsp" />
+			</map>
+		</property>
+	</bean>
+	<bean
+		name="/fssc/base/fssc_base_company_group/fsscBaseCompanyGroupData.do"
+		class="com.landray.kmss.fssc.base.actions.FsscBaseCompanyGroupDataAction"
+		lazy-init="true"
+		parent="KmssBaseAction">
+		<property
+			name="formType"
+			value="com.landray.kmss.fssc.base.forms.FsscBaseCompanyGroupForm" />
+		<property name="forwards">
+			<map>
+				<entry
+					key="fdGroup"
+					value="/fssc/base/fssc_base_company_group/fsscBaseCompanyGroup_dialog_fdGroup.jsp" />
+			</map>
+		</property>
+	</bean>
+	<bean
+		name="/fssc/base/fssc_base_company/fsscBaseCompany.do"
+		class="com.landray.kmss.fssc.base.actions.FsscBaseCompanyAction"
+		lazy-init="true"
+		parent="KmssBaseAction">
+		<property
+			name="formType"
+			value="com.landray.kmss.fssc.base.forms.FsscBaseCompanyForm" />
+		<property name="forwards">
+			<map>
+				<entry
+					key="data"
+					value="/fssc/base/fssc_base_company/fsscBaseCompany_data.jsp" />
+				<entry
+					key="edit"
+					value="/fssc/base/fssc_base_company/fsscBaseCompany_edit.jsp" />
+				<entry
+					key="view"
+					value="/fssc/base/fssc_base_company/fsscBaseCompany_view.jsp" />
+			</map>
+		</property>
+	</bean>
+	<bean
+		name="/fssc/base/fssc_base_company/fsscBaseCompanyData.do"
+		class="com.landray.kmss.fssc.base.actions.FsscBaseCompanyDataAction"
+		lazy-init="true"
+		parent="KmssBaseAction">
+		<property
+			name="formType"
+			value="com.landray.kmss.fssc.base.forms.FsscBaseCompanyForm" />
+		<property name="forwards">
+			<map>
+				<entry
+					key="fdCompany"
+					value="/fssc/base/fssc_base_company/fsscBaseCompany_dialog_fdCompany.jsp" />
+			</map>
+		</property>
+	</bean>
+	<bean
+		name="/fssc/base/fssc_base_cost_type/fsscBaseCostType.do"
+		class="com.landray.kmss.fssc.base.actions.FsscBaseCostTypeAction"
+		lazy-init="true"
+		parent="KmssBaseAction">
+		<property
+			name="formType"
+			value="com.landray.kmss.fssc.base.forms.FsscBaseCostTypeForm" />
+		<property name="forwards">
+			<map>
+				<entry
+					key="data"
+					value="/fssc/base/fssc_base_cost_type/fsscBaseCostType_data.jsp" />
+				<entry
+					key="edit"
+					value="/fssc/base/fssc_base_cost_type/fsscBaseCostType_edit.jsp" />
+				<entry
+					key="view"
+					value="/fssc/base/fssc_base_cost_type/fsscBaseCostType_view.jsp" />
+			</map>
+		</property>
+	</bean>
+	<bean
+		name="/fssc/base/fssc_base_cost_type/fsscBaseCostTypeData.do"
+		class="com.landray.kmss.fssc.base.actions.FsscBaseCostTypeDataAction"
+		lazy-init="true"
+		parent="KmssBaseAction">
+		<property
+			name="formType"
+			value="com.landray.kmss.fssc.base.forms.FsscBaseCostTypeForm" />
+		<property name="forwards">
+			<map>
+				<entry
+					key="fdType"
+					value="/fssc/base/fssc_base_cost_type/fsscBaseCostType_dialog_fdType.jsp" />
+			</map>
+		</property>
+	</bean>
+	<bean
+		name="/fssc/base/fssc_base_cost_center/fsscBaseCostCenter.do"
+		class="com.landray.kmss.fssc.base.actions.FsscBaseCostCenterAction"
+		lazy-init="true"
+		parent="KmssBaseAction">
+		<property
+			name="formType"
+			value="com.landray.kmss.fssc.base.forms.FsscBaseCostCenterForm" />
+		<property name="forwards">
+			<map>
+				<entry
+					key="data"
+					value="/fssc/base/fssc_base_cost_center/fsscBaseCostCenter_data.jsp" />
+				<entry
+					key="edit"
+					value="/fssc/base/fssc_base_cost_center/fsscBaseCostCenter_edit.jsp" />
+				<entry
+					key="view"
+					value="/fssc/base/fssc_base_cost_center/fsscBaseCostCenter_view.jsp" />
+			</map>
+		</property>
+	</bean>
+	<bean
+		name="/fssc/base/fssc_base_cost_center/fsscBaseCostCenterData.do"
+		class="com.landray.kmss.fssc.base.actions.FsscBaseCostCenterDataAction"
+		lazy-init="true"
+		parent="KmssBaseAction">
+		<property
+			name="formType"
+			value="com.landray.kmss.fssc.base.forms.FsscBaseCostCenterForm" />
+		<property name="forwards">
+			<map>
+				<entry
+					key="fdParent"
+					value="/fssc/base/fssc_base_cost_center/fsscBaseCostCenter_dialog_fdParent.jsp" />
+			</map>
+		</property>
+	</bean>
+	<bean
+		name="/fssc/base/fssc_base_erp_person/fsscBaseErpPerson.do"
+		class="com.landray.kmss.fssc.base.actions.FsscBaseErpPersonAction"
+		lazy-init="true"
+		parent="KmssBaseAction">
+		<property
+			name="formType"
+			value="com.landray.kmss.fssc.base.forms.FsscBaseErpPersonForm" />
+		<property name="forwards">
+			<map>
+				<entry
+					key="data"
+					value="/fssc/base/fssc_base_erp_person/fsscBaseErpPerson_data.jsp" />
+				<entry
+					key="edit"
+					value="/fssc/base/fssc_base_erp_person/fsscBaseErpPerson_edit.jsp" />
+				<entry
+					key="view"
+					value="/fssc/base/fssc_base_erp_person/fsscBaseErpPerson_view.jsp" />
+			</map>
+		</property>
+	</bean>
+	<bean
+		name="/fssc/base/fssc_base_budget_scheme/fsscBaseBudgetScheme.do"
+		class="com.landray.kmss.fssc.base.actions.FsscBaseBudgetSchemeAction"
+		lazy-init="true"
+		parent="KmssBaseAction">
+		<property
+			name="formType"
+			value="com.landray.kmss.fssc.base.forms.FsscBaseBudgetSchemeForm" />
+		<property name="forwards">
+			<map>
+				<entry
+					key="data"
+					value="/fssc/base/fssc_base_budget_scheme/fsscBaseBudgetScheme_data.jsp" />
+				<entry
+					key="edit"
+					value="/fssc/base/fssc_base_budget_scheme/fsscBaseBudgetScheme_edit.jsp" />
+				<entry
+					key="view"
+					value="/fssc/base/fssc_base_budget_scheme/fsscBaseBudgetScheme_view.jsp" />
+			</map>
+		</property>
+	</bean>
+	<bean
+		name="/fssc/base/fssc_base_budget_scheme/fsscBaseBudgetSchemeData.do"
+		class="com.landray.kmss.fssc.base.actions.FsscBaseBudgetSchemeDataAction"
+		lazy-init="true"
+		parent="KmssBaseAction">
+		<property
+			name="formType"
+			value="com.landray.kmss.fssc.base.forms.FsscBaseBudgetSchemeForm" />
+		<property name="forwards">
+			<map>
+				<entry
+					key="fdCategory"
+					value="/fssc/base/fssc_base_budget_scheme/fsscBaseBudgetScheme_dialog_fdCategory.jsp" />
+			</map>
+		</property>
+	</bean>
+	<bean
+		name="/fssc/base/fssc_base_budget_item_com/fsscBaseBudgetItemCom.do"
+		class="com.landray.kmss.fssc.base.actions.FsscBaseBudgetItemComAction"
+		lazy-init="true"
+		parent="KmssBaseAction">
+		<property
+			name="formType"
+			value="com.landray.kmss.fssc.base.forms.FsscBaseBudgetItemComForm" />
+		<property name="forwards">
+			<map>
+				<entry
+					key="data"
+					value="/fssc/base/fssc_base_budget_item_com/fsscBaseBudgetItemCom_data.jsp" />
+				<entry
+					key="edit"
+					value="/fssc/base/fssc_base_budget_item_com/fsscBaseBudgetItemCom_edit.jsp" />
+				<entry
+					key="view"
+					value="/fssc/base/fssc_base_budget_item_com/fsscBaseBudgetItemCom_view.jsp" />
+			</map>
+		</property>
+	</bean>
+	<bean
+		name="/fssc/base/fssc_base_budget_item_com/fsscBaseBudgetItemComData.do"
+		class="com.landray.kmss.fssc.base.actions.FsscBaseBudgetItemComDataAction"
+		lazy-init="true"
+		parent="KmssBaseAction">
+		<property
+			name="formType"
+			value="com.landray.kmss.fssc.base.forms.FsscBaseBudgetItemComForm" />
+		<property name="forwards">
+			<map>
+				<entry
+					key="fdParent"
+					value="/fssc/base/fssc_base_budget_item_com/fsscBaseBudgetItemCom_dialog_fdParent.jsp" />
+			</map>
+		</property>
+	</bean>
+	<bean
+		name="/fssc/base/fssc_base_accounts_com/fsscBaseAccountsCom.do"
+		class="com.landray.kmss.fssc.base.actions.FsscBaseAccountsComAction"
+		lazy-init="true"
+		parent="KmssBaseAction">
+		<property
+			name="formType"
+			value="com.landray.kmss.fssc.base.forms.FsscBaseAccountsComForm" />
+		<property name="forwards">
+			<map>
+				<entry
+					key="data"
+					value="/fssc/base/fssc_base_accounts_com/fsscBaseAccountsCom_data.jsp" />
+				<entry
+					key="edit"
+					value="/fssc/base/fssc_base_accounts_com/fsscBaseAccountsCom_edit.jsp" />
+				<entry
+					key="view"
+					value="/fssc/base/fssc_base_accounts_com/fsscBaseAccountsCom_view.jsp" />
+			</map>
+		</property>
+	</bean>
+	<bean
+		name="/fssc/base/fssc_base_accounts_com/fsscBaseAccountsComData.do"
+		class="com.landray.kmss.fssc.base.actions.FsscBaseAccountsComDataAction"
+		lazy-init="true"
+		parent="KmssBaseAction">
+		<property
+			name="formType"
+			value="com.landray.kmss.fssc.base.forms.FsscBaseAccountsComForm" />
+		<property name="forwards">
+			<map>
+				<entry
+					key="fdAccount"
+					value="/fssc/base/fssc_base_accounts_com/fsscBaseAccountsCom_dialog_fdAccount.jsp" />
+			</map>
+		</property>
+	</bean>
+	<bean
+		name="/fssc/base/fssc_base_project/fsscBaseProject.do"
+		class="com.landray.kmss.fssc.base.actions.FsscBaseProjectAction"
+		lazy-init="true"
+		parent="KmssBaseAction">
+		<property
+			name="formType"
+			value="com.landray.kmss.fssc.base.forms.FsscBaseProjectForm" />
+		<property name="forwards">
+			<map>
+				<entry
+					key="data"
+					value="/fssc/base/fssc_base_project/fsscBaseProject_data.jsp" />
+				<entry
+					key="edit"
+					value="/fssc/base/fssc_base_project/fsscBaseProject_edit.jsp" />
+				<entry
+					key="view"
+					value="/fssc/base/fssc_base_project/fsscBaseProject_view.jsp" />
+			</map>
+		</property>
+	</bean>
+	<bean
+		name="/fssc/base/fssc_base_project/fsscBaseProjectData.do"
+		class="com.landray.kmss.fssc.base.actions.FsscBaseProjectDataAction"
+		lazy-init="true"
+		parent="KmssBaseAction">
+		<property
+			name="formType"
+			value="com.landray.kmss.fssc.base.forms.FsscBaseProjectForm" />
+		<property name="forwards">
+			<map>
+				<entry
+					key="project"
+					value="/fssc/base/fssc_base_project/fsscBaseProject_dialog_project.jsp" />
+			</map>
+		</property>
+	</bean>
+	<bean
+		name="/fssc/base/fssc_base_inner_order/fsscBaseInnerOrder.do"
+		class="com.landray.kmss.fssc.base.actions.FsscBaseInnerOrderAction"
+		lazy-init="true"
+		parent="KmssBaseAction">
+		<property
+			name="formType"
+			value="com.landray.kmss.fssc.base.forms.FsscBaseInnerOrderForm" />
+		<property name="forwards">
+			<map>
+				<entry
+					key="data"
+					value="/fssc/base/fssc_base_inner_order/fsscBaseInnerOrder_data.jsp" />
+				<entry
+					key="edit"
+					value="/fssc/base/fssc_base_inner_order/fsscBaseInnerOrder_edit.jsp" />
+				<entry
+					key="view"
+					value="/fssc/base/fssc_base_inner_order/fsscBaseInnerOrder_view.jsp" />
+			</map>
+		</property>
+	</bean>
+	<bean
+		name="/fssc/base/fssc_base_inner_order/fsscBaseInnerOrderData.do"
+		class="com.landray.kmss.fssc.base.actions.FsscBaseInnerOrderDataAction"
+		lazy-init="true"
+		parent="KmssBaseAction">
+		<property
+			name="formType"
+			value="com.landray.kmss.fssc.base.forms.FsscBaseInnerOrderForm" />
+		<property name="forwards">
+			<map>
+				<entry
+					key="fdParent"
+					value="/fssc/base/fssc_base_inner_order/fsscBaseInnerOrder_fdParent.jsp" />
+			</map>
+		</property>
+	</bean>
+	<bean
+		name="/fssc/base/fssc_base_wbs/fsscBaseWbs.do"
+		class="com.landray.kmss.fssc.base.actions.FsscBaseWbsAction"
+		lazy-init="true"
+		parent="KmssBaseAction">
+		<property
+			name="formType"
+			value="com.landray.kmss.fssc.base.forms.FsscBaseWbsForm" />
+		<property name="forwards">
+			<map>
+				<entry
+					key="data"
+					value="/fssc/base/fssc_base_wbs/fsscBaseWbs_data.jsp" />
+				<entry
+					key="edit"
+					value="/fssc/base/fssc_base_wbs/fsscBaseWbs_edit.jsp" />
+				<entry
+					key="view"
+					value="/fssc/base/fssc_base_wbs/fsscBaseWbs_view.jsp" />
+			</map>
+		</property>
+	</bean>
+	<bean
+		name="/fssc/base/fssc_base_wbs/fsscBaseWbsData.do"
+		class="com.landray.kmss.fssc.base.actions.FsscBaseWbsDataAction"
+		lazy-init="true"
+		parent="KmssBaseAction">
+		<property
+			name="formType"
+			value="com.landray.kmss.fssc.base.forms.FsscBaseWbsForm" />
+		<property name="forwards">
+			<map>
+				<entry
+					key="fdParent"
+					value="/fssc/base/fssc_base_wbs/fsscBaseWbs_fdParent.jsp" />
+			</map>
+		</property>
+	</bean>
+	<bean
+		name="/fssc/base/fssc_base_supplier/fsscBaseSupplier.do"
+		class="com.landray.kmss.fssc.base.actions.FsscBaseSupplierAction"
+		lazy-init="true"
+		parent="KmssBaseAction">
+		<property
+			name="formType"
+			value="com.landray.kmss.fssc.base.forms.FsscBaseSupplierForm" />
+		<property name="forwards">
+			<map>
+				<entry
+					key="data"
+					value="/fssc/base/fssc_base_supplier/fsscBaseSupplier_data.jsp" />
+				<entry
+					key="edit"
+					value="/fssc/base/fssc_base_supplier/fsscBaseSupplier_edit.jsp" />
+				<entry
+					key="view"
+					value="/fssc/base/fssc_base_supplier/fsscBaseSupplier_view.jsp" />
+				<entry
+					key="importResult"
+					value="/fssc/base/resource/jsp/fsscBaseImport_result.jsp" />
+			</map>
+		</property>
+	</bean>
+	<bean
+		name="/fssc/base/fssc_base_supplier/fsscBaseSupplierAccount.do"
+		class="com.landray.kmss.fssc.base.actions.FsscBaseSupplierAccountAction"
+		lazy-init="true"
+		parent="KmssBaseAction">
+		<property
+			name="formType"
+			value="com.landray.kmss.fssc.base.forms.FsscBaseSupplierAccountForm" />
+		<property name="forwards">
+			<map>
+				<entry
+					key="edit"
+					value="/fssc/base/fssc_base_supplier_account/fsscBaseSupplierAccount_edit.jsp" />
+				<entry
+					key="view"
+					value="/fssc/base/fssc_base_supplier_account/fsscBaseSupplierAccount_view.jsp" />
+			</map>
+		</property>
+	</bean>
+	<bean
+		name="/fssc/base/fssc_base_cash_flow/fsscBaseCashFlow.do"
+		class="com.landray.kmss.fssc.base.actions.FsscBaseCashFlowAction"
+		lazy-init="true"
+		parent="KmssBaseAction">
+		<property
+			name="formType"
+			value="com.landray.kmss.fssc.base.forms.FsscBaseCashFlowForm" />
+		<property name="forwards">
+			<map>
+				<entry
+					key="data"
+					value="/fssc/base/fssc_base_cash_flow/fsscBaseCashFlow_data.jsp" />
+				<entry
+					key="edit"
+					value="/fssc/base/fssc_base_cash_flow/fsscBaseCashFlow_edit.jsp" />
+				<entry
+					key="view"
+					value="/fssc/base/fssc_base_cash_flow/fsscBaseCashFlow_view.jsp" />
+			</map>
+		</property>
+	</bean>
+	<bean
+		name="/fssc/base/fssc_base_cash_flow/fsscBaseCashFlowData.do"
+		class="com.landray.kmss.fssc.base.actions.FsscBaseCashFlowDataAction"
+		lazy-init="true"
+		parent="KmssBaseAction">
+		<property
+			name="formType"
+			value="com.landray.kmss.fssc.base.forms.FsscBaseCashFlowForm" />
+		<property name="forwards">
+			<map>
+				<entry
+					key="fdParent"
+					value="/fssc/base/fssc_base_cash_flow/fsscBaseCashFlow_fdParent.jsp" />
+			</map>
+		</property>
+	</bean>
+	<bean
+		name="/fssc/base/fssc_base_voucher_type/fsscBaseVoucherType.do"
+		class="com.landray.kmss.fssc.base.actions.FsscBaseVoucherTypeAction"
+		lazy-init="true"
+		parent="KmssBaseAction">
+		<property
+			name="formType"
+			value="com.landray.kmss.fssc.base.forms.FsscBaseVoucherTypeForm" />
+		<property name="forwards">
+			<map>
+				<entry
+					key="data"
+					value="/fssc/base/fssc_base_voucher_type/fsscBaseVoucherType_data.jsp" />
+				<entry
+					key="edit"
+					value="/fssc/base/fssc_base_voucher_type/fsscBaseVoucherType_edit.jsp" />
+				<entry
+					key="view"
+					value="/fssc/base/fssc_base_voucher_type/fsscBaseVoucherType_view.jsp" />
+			</map>
+		</property>
+	</bean>
+	<bean
+		name="/fssc/base/fssc_base_voucher_type/fsscBaseVoucherTypeData.do"
+		class="com.landray.kmss.fssc.base.actions.FsscBaseVoucherTypeDataAction"
+		lazy-init="true"
+		parent="KmssBaseAction">
+		<property
+			name="formType"
+			value="com.landray.kmss.fssc.base.forms.FsscBaseVoucherTypeForm" />
+		<property name="forwards">
+			<map>
+				<entry
+					key="selectVoucherType"
+					value="/fssc/base/fssc_base_voucher_type/fsscBaseVoucherType_selectVoucherType.jsp" />
+			</map>
+		</property>
+	</bean>
+	<bean
+		name="/fssc/base/fssc_base_pay_way/fsscBasePayWay.do"
+		class="com.landray.kmss.fssc.base.actions.FsscBasePayWayAction"
+		lazy-init="true"
+		parent="KmssBaseAction">
+		<property
+			name="formType"
+			value="com.landray.kmss.fssc.base.forms.FsscBasePayWayForm" />
+		<property name="forwards">
+			<map>
+				<entry
+					key="data"
+					value="/fssc/base/fssc_base_pay_way/fsscBasePayWay_data.jsp" />
+				<entry
+					key="edit"
+					value="/fssc/base/fssc_base_pay_way/fsscBasePayWay_edit.jsp" />
+				<entry
+					key="view"
+					value="/fssc/base/fssc_base_pay_way/fsscBasePayWay_view.jsp" />
+			</map>
+		</property>
+	</bean>
+	<bean
+		name="/fssc/base/fssc_base_pay_way/fsscBasePayWayData.do"
+		class="com.landray.kmss.fssc.base.actions.FsscBasePayWayDataAction"
+		lazy-init="true"
+		parent="KmssBaseAction">
+		<property
+			name="formType"
+			value="com.landray.kmss.fssc.base.forms.FsscBasePayWayForm" />
+		<property name="forwards">
+			<map>
+				<entry
+					key="fdPayWay"
+					value="/fssc/base/fssc_base_pay_way/fsscBasePayWay_dialog_fdPayWay.jsp" />
+			</map>
+		</property>
+	</bean>
+	<bean
+		name="/fssc/base/fssc_base_pay_bank/fsscBasePayBank.do"
+		class="com.landray.kmss.fssc.base.actions.FsscBasePayBankAction"
+		lazy-init="true"
+		parent="KmssBaseAction">
+		<property
+			name="formType"
+			value="com.landray.kmss.fssc.base.forms.FsscBasePayBankForm" />
+		<property name="forwards">
+			<map>
+				<entry
+					key="data"
+					value="/fssc/base/fssc_base_pay_bank/fsscBasePayBank_data.jsp" />
+				<entry
+					key="edit"
+					value="/fssc/base/fssc_base_pay_bank/fsscBasePayBank_edit.jsp" />
+				<entry
+					key="view"
+					value="/fssc/base/fssc_base_pay_bank/fsscBasePayBank_view.jsp" />
+			</map>
+		</property>
+	</bean>
+	<bean
+		name="/fssc/base/fssc_base_pay_bank/fsscBasePayBankData.do"
+		class="com.landray.kmss.fssc.base.actions.FsscBasePayBankDataAction"
+		lazy-init="true"
+		parent="KmssBaseAction">
+		<property
+			name="formType"
+			value="com.landray.kmss.fssc.base.forms.FsscBasePayBankForm" />
+		<property name="forwards">
+			<map>
+				<entry
+					key="fdBank"
+					value="/fssc/base/fssc_base_pay_bank/fsscBasePayBank_dialog_fdBank.jsp" />
+			</map>
+		</property>
+	</bean>
+	<bean
+		name="/fssc/base/fssc_base_tax_rate/fsscBaseTaxRate.do"
+		class="com.landray.kmss.fssc.base.actions.FsscBaseTaxRateAction"
+		lazy-init="true"
+		parent="KmssBaseAction">
+		<property
+			name="formType"
+			value="com.landray.kmss.fssc.base.forms.FsscBaseTaxRateForm" />
+		<property name="forwards">
+			<map>
+				<entry
+					key="data"
+					value="/fssc/base/fssc_base_tax_rate/fsscBaseTaxRate_data.jsp" />
+				<entry
+					key="edit"
+					value="/fssc/base/fssc_base_tax_rate/fsscBaseTaxRate_edit.jsp" />
+				<entry
+					key="view"
+					value="/fssc/base/fssc_base_tax_rate/fsscBaseTaxRate_view.jsp" />
+			</map>
+		</property>
+	</bean>
+	<bean
+		name="/fssc/base/fssc_base_tax_rate/fsscBaseTaxRateData.do"
+		class="com.landray.kmss.fssc.base.actions.FsscBaseTaxRateDataAction"
+		lazy-init="true"
+		parent="KmssBaseAction">
+		<property
+			name="formType"
+			value="com.landray.kmss.fssc.base.forms.FsscBaseTaxRateForm" />
+		<property name="forwards">
+			<map>
+				<entry
+					key="getTaxRate"
+					value="/fssc/base/fssc_base_tax_rate/fsscBaseTaxRate_dialog_getTaxRate.jsp" />
+			</map>
+		</property>
+	</bean>
+	<bean
+		name="/fssc/base/fssc_base_currency/fsscBaseCurrency.do"
+		class="com.landray.kmss.fssc.base.actions.FsscBaseCurrencyAction"
+		lazy-init="true"
+		parent="KmssBaseAction">
+		<property
+			name="formType"
+			value="com.landray.kmss.fssc.base.forms.FsscBaseCurrencyForm" />
+		<property name="forwards">
+			<map>
+				<entry
+					key="data"
+					value="/fssc/base/fssc_base_currency/fsscBaseCurrency_data.jsp" />
+				<entry
+					key="edit"
+					value="/fssc/base/fssc_base_currency/fsscBaseCurrency_edit.jsp" />
+				<entry
+					key="view"
+					value="/fssc/base/fssc_base_currency/fsscBaseCurrency_view.jsp" />
+				<entry
+					key="editOnly"
+					value="/fssc/base/fssc_base_currency/fsscBaseCurrency_editOnly.jsp" />
+			</map>
+		</property>
+	</bean>
+	<bean
+		name="/fssc/base/fssc_base_currency/fsscBaseCurrencyData.do"
+		class="com.landray.kmss.fssc.base.actions.FsscBaseCurrencyDataAction"
+		lazy-init="true"
+		parent="KmssBaseAction">
+		<property
+			name="formType"
+			value="com.landray.kmss.fssc.base.forms.FsscBaseCurrencyForm" />
+		<property name="forwards">
+			<map>
+				<entry
+					key="fdCurrency"
+					value="/fssc/base/fssc_base_currency/fsscBaseCurrency_dialog_fdCurrency.jsp" />
+			</map>
+		</property>
+	</bean>
+	<bean
+		name="/fssc/base/fssc_base_exchange_rate/fsscBaseExchangeRate.do"
+		class="com.landray.kmss.fssc.base.actions.FsscBaseExchangeRateAction"
+		lazy-init="true"
+		parent="KmssBaseAction">
+		<property
+			name="formType"
+			value="com.landray.kmss.fssc.base.forms.FsscBaseExchangeRateForm" />
+		<property name="forwards">
+			<map>
+				<entry
+					key="data"
+					value="/fssc/base/fssc_base_exchange_rate/fsscBaseExchangeRate_data.jsp" />
+				<entry
+					key="edit"
+					value="/fssc/base/fssc_base_exchange_rate/fsscBaseExchangeRate_edit.jsp" />
+				<entry
+					key="view"
+					value="/fssc/base/fssc_base_exchange_rate/fsscBaseExchangeRate_view.jsp" />
+			</map>
+		</property>
+	</bean>
+	<bean
+		name="/fssc/base/fssc_base_expense_item/fsscBaseExpenseItem.do"
+		class="com.landray.kmss.fssc.base.actions.FsscBaseExpenseItemAction"
+		lazy-init="true"
+		parent="KmssBaseAction">
+		<property
+			name="formType"
+			value="com.landray.kmss.fssc.base.forms.FsscBaseExpenseItemForm" />
+		<property name="forwards">
+			<map>
+				<entry
+					key="data"
+					value="/fssc/base/fssc_base_expense_item/fsscBaseExpenseItem_data.jsp" />
+				<entry
+					key="edit"
+					value="/fssc/base/fssc_base_expense_item/fsscBaseExpenseItem_edit.jsp" />
+				<entry
+					key="view"
+					value="/fssc/base/fssc_base_expense_item/fsscBaseExpenseItem_view.jsp" />
+			</map>
+		</property>
+	</bean>
+	<bean
+		name="/fssc/base/fssc_base_expense_item/fsscBaseExpenseItemData.do"
+		class="com.landray.kmss.fssc.base.actions.FsscBaseExpenseItemDataAction"
+		lazy-init="true"
+		parent="KmssBaseAction">
+		<property
+			name="formType"
+			value="com.landray.kmss.fssc.base.forms.FsscBaseExpenseItemForm" />
+		<property name="forwards">
+			<map>
+				<entry
+					key="fdParent"
+					value="/fssc/base/fssc_base_expense_item/fsscBaseExpenseItem_dialog_fdParent.jsp" />
+			</map>
+		</property>
+	</bean>
+	<bean
+		name="/fssc/base/fssc_base_standard_scheme/fsscBaseStandardScheme.do"
+		class="com.landray.kmss.fssc.base.actions.FsscBaseStandardSchemeAction"
+		lazy-init="true"
+		parent="KmssBaseAction">
+		<property
+			name="formType"
+			value="com.landray.kmss.fssc.base.forms.FsscBaseStandardSchemeForm" />
+		<property name="forwards">
+			<map>
+				<entry
+					key="data"
+					value="/fssc/base/fssc_base_standard_scheme/fsscBaseStandardScheme_data.jsp" />
+				<entry
+					key="edit"
+					value="/fssc/base/fssc_base_standard_scheme/fsscBaseStandardScheme_edit.jsp" />
+				<entry
+					key="view"
+					value="/fssc/base/fssc_base_standard_scheme/fsscBaseStandardScheme_view.jsp" />
+			</map>
+		</property>
+	</bean>
+	<bean
+		name="/fssc/base/fssc_base_standard/fsscBaseStandard.do"
+		class="com.landray.kmss.fssc.base.actions.FsscBaseStandardAction"
+		lazy-init="true"
+		parent="KmssBaseAction">
+		<property
+			name="formType"
+			value="com.landray.kmss.fssc.base.forms.FsscBaseStandardForm" />
+		<property name="forwards">
+			<map>
+				<entry
+					key="data"
+					value="/fssc/base/fssc_base_standard/fsscBaseStandard_data.jsp" />
+				<entry
+					key="edit"
+					value="/fssc/base/fssc_base_standard/fsscBaseStandard_edit.jsp" />
+				<entry
+					key="view"
+					value="/fssc/base/fssc_base_standard/fsscBaseStandard_view.jsp" />
+			</map>
+		</property>
+	</bean>
+	<bean
+		name="/fssc/base/fssc_base_area/fsscBaseArea.do"
+		class="com.landray.kmss.fssc.base.actions.FsscBaseAreaAction"
+		lazy-init="true"
+		parent="KmssBaseAction">
+		<property
+			name="formType"
+			value="com.landray.kmss.fssc.base.forms.FsscBaseAreaForm" />
+		<property name="forwards">
+			<map>
+				<entry
+					key="data"
+					value="/fssc/base/fssc_base_area/fsscBaseArea_data.jsp" />
+				<entry
+					key="edit"
+					value="/fssc/base/fssc_base_area/fsscBaseArea_edit.jsp" />
+				<entry
+					key="view"
+					value="/fssc/base/fssc_base_area/fsscBaseArea_view.jsp" />
+			</map>
+		</property>
+	</bean>
+	<bean
+		name="/fssc/base/fssc_base_area/fsscBaseAreaData.do"
+		class="com.landray.kmss.fssc.base.actions.FsscBaseAreaDataAction"
+		lazy-init="true"
+		parent="KmssBaseAction">
+		<property
+			name="formType"
+			value="com.landray.kmss.fssc.base.forms.FsscBaseAreaForm" />
+		<property name="forwards">
+			<map>
+				<entry
+					key="fdArea"
+					value="/fssc/base/fssc_base_area/fsscBaseArea_dialog_fdArea.jsp" />
+				<entry
+					key="listCity"
+					value="/fssc/base/fssc_base_area/fsscBaseArea_listCity.jsp" />
+			</map>
+		</property>
+	</bean>
+	<bean
+		name="/fssc/base/fssc_base_level/fsscBaseLevel.do"
+		class="com.landray.kmss.fssc.base.actions.FsscBaseLevelAction"
+		lazy-init="true"
+		parent="KmssBaseAction">
+		<property
+			name="formType"
+			value="com.landray.kmss.fssc.base.forms.FsscBaseLevelForm" />
+		<property name="forwards">
+			<map>
+				<entry
+					key="data"
+					value="/fssc/base/fssc_base_level/fsscBaseLevel_data.jsp" />
+				<entry
+					key="edit"
+					value="/fssc/base/fssc_base_level/fsscBaseLevel_edit.jsp" />
+				<entry
+					key="view"
+					value="/fssc/base/fssc_base_level/fsscBaseLevel_view.jsp" />
+			</map>
+		</property>
+	</bean>
+	<bean
+		name="/fssc/base/fssc_base_level/fsscBaseLevelData.do"
+		class="com.landray.kmss.fssc.base.actions.FsscBaseLevelDataAction"
+		lazy-init="true"
+		parent="KmssBaseAction">
+		<property
+			name="formType"
+			value="com.landray.kmss.fssc.base.forms.FsscBaseLevelForm" />
+		<property name="forwards">
+			<map>
+				<entry
+					key="fdLevel"
+					value="/fssc/base/fssc_base_level/fsscBaseLevel_dialog_fdLevel.jsp" />
+			</map>
+		</property>
+	</bean>
+	<bean
+		name="/fssc/base/fssc_base_vehicle/fsscBaseVehicle.do"
+		class="com.landray.kmss.fssc.base.actions.FsscBaseVehicleAction"
+		lazy-init="true"
+		parent="KmssBaseAction">
+		<property
+			name="formType"
+			value="com.landray.kmss.fssc.base.forms.FsscBaseVehicleForm" />
+		<property name="forwards">
+			<map>
+				<entry
+					key="data"
+					value="/fssc/base/fssc_base_vehicle/fsscBaseVehicle_data.jsp" />
+				<entry
+					key="edit"
+					value="/fssc/base/fssc_base_vehicle/fsscBaseVehicle_edit.jsp" />
+				<entry
+					key="view"
+					value="/fssc/base/fssc_base_vehicle/fsscBaseVehicle_view.jsp" />
+			</map>
+		</property>
+	</bean>
+	<bean
+		name="/fssc/base/fssc_base_vehicle/fsscBaseVehicleData.do"
+		class="com.landray.kmss.fssc.base.actions.FsscBaseVehicleDataAction"
+		lazy-init="true"
+		parent="KmssBaseAction">
+		<property
+			name="formType"
+			value="com.landray.kmss.fssc.base.forms.FsscBaseVehicleForm" />
+		<property name="forwards">
+			<map>
+				<entry
+					key="fdVehicle"
+					value="/fssc/base/fssc_base_vehicle/fsscBaseVehicle_dialog_fdVehicle.jsp" />
+			</map>
+		</property>
+	</bean>
+	<bean
+		name="/fssc/base/fssc_base_berth/fsscBaseBerth.do"
+		class="com.landray.kmss.fssc.base.actions.FsscBaseBerthAction"
+		lazy-init="true"
+		parent="KmssBaseAction">
+		<property
+			name="formType"
+			value="com.landray.kmss.fssc.base.forms.FsscBaseBerthForm" />
+		<property name="forwards">
+			<map>
+				<entry
+					key="data"
+					value="/fssc/base/fssc_base_berth/fsscBaseBerth_data.jsp" />
+				<entry
+					key="edit"
+					value="/fssc/base/fssc_base_berth/fsscBaseBerth_edit.jsp" />
+				<entry
+					key="view"
+					value="/fssc/base/fssc_base_berth/fsscBaseBerth_view.jsp" />
+			</map>
+		</property>
+	</bean>
+	<bean
+		name="/fssc/base/fssc_base_berth/fsscBaseBerthData.do"
+		class="com.landray.kmss.fssc.base.actions.FsscBaseBerthDataAction"
+		lazy-init="true"
+		parent="KmssBaseAction">
+		<property
+			name="formType"
+			value="com.landray.kmss.fssc.base.forms.FsscBaseBerthForm" />
+		<property name="forwards">
+			<map>
+				<entry
+					key="fdBerth"
+					value="/fssc/base/fssc_base_berth/fsscBaseBerth_dialog_fdBerth.jsp" />
+			</map>
+		</property>
+	</bean>
+	<bean
+		name="/fssc/base/fssc_base_special_item/fsscBaseSpecialItem.do"
+		class="com.landray.kmss.fssc.base.actions.FsscBaseSpecialItemAction"
+		lazy-init="true"
+		parent="KmssBaseAction">
+		<property
+			name="formType"
+			value="com.landray.kmss.fssc.base.forms.FsscBaseSpecialItemForm" />
+		<property name="forwards">
+			<map>
+				<entry
+					key="data"
+					value="/fssc/base/fssc_base_special_item/fsscBaseSpecialItem_data.jsp" />
+				<entry
+					key="edit"
+					value="/fssc/base/fssc_base_special_item/fsscBaseSpecialItem_edit.jsp" />
+				<entry
+					key="view"
+					value="/fssc/base/fssc_base_special_item/fsscBaseSpecialItem_view.jsp" />
+			</map>
+		</property>
+	</bean>
+	<bean
+		name="/fssc/base/fssc_base_special_item/fsscBaseSpecialItemData.do"
+		class="com.landray.kmss.fssc.base.actions.FsscBaseSpecialItemDataAction"
+		lazy-init="true"
+		parent="KmssBaseAction">
+		<property
+			name="formType"
+			value="com.landray.kmss.fssc.base.forms.FsscBaseSpecialItemForm" />
+		<property name="forwards">
+			<map>
+				<entry
+					key="fdSpecialItem"
+					value="/fssc/base/fssc_base_special_item/fsscBaseSpecialItem_dialog_fdSpecialItem.jsp" />
+			</map>
+		</property>
+	</bean>
+	<bean
+		name="/fssc/base/fssc_base_account/fsscBaseAccount.do"
+		class="com.landray.kmss.fssc.base.actions.FsscBaseAccountAction"
+		lazy-init="true"
+		parent="KmssBaseAction">
+		<property
+			name="formType"
+			value="com.landray.kmss.fssc.base.forms.FsscBaseAccountForm" />
+		<property name="forwards">
+			<map>
+				<entry
+					key="data"
+					value="/fssc/base/fssc_base_account/fsscBaseAccount_data.jsp" />
+				<entry
+					key="edit"
+					value="/fssc/base/fssc_base_account/fsscBaseAccount_edit.jsp" />
+				<entry
+					key="view"
+					value="/fssc/base/fssc_base_account/fsscBaseAccount_view.jsp" />
+				<entry
+					key="listMobile"
+					value="/fssc/mobile/fssc_mobile_account/fsscMobileAccountData.jsp" />
+				<entry
+					key="editMobile"
+					value="/fssc/mobile/fssc_mobile_account/fsscMobileAccount_edit.jsp" />
+			</map>
+		</property>
+	</bean>
+	<bean
+		name="/fssc/base/fssc_base_account/fsscBaseAccountData.do"
+		class="com.landray.kmss.fssc.base.actions.FsscBaseAccountDataAction"
+		lazy-init="true"
+		parent="KmssBaseAction">
+		<property
+			name="formType"
+			value="com.landray.kmss.fssc.base.forms.FsscBaseAccountForm" />
+		<property name="forwards">
+			<map>
+				<entry
+					key="fdAccount"
+					value="/fssc/base/fssc_base_account/fsscBaseAccount_dialog_fdAccount.jsp" />
+			</map>
+		</property>
+	</bean>
+	<bean
+		name="/fssc/base/fssc_base_budget_item/fsscBaseBudgetItem.do"
+		class="com.landray.kmss.fssc.base.actions.FsscBaseBudgetItemAction"
+		lazy-init="true"
+		parent="KmssBaseAction">
+		<property
+			name="formType"
+			value="com.landray.kmss.fssc.base.forms.FsscBaseBudgetItemForm" />
+		<property name="forwards">
+			<map>
+				<entry
+					key="data"
+					value="/fssc/base/fssc_base_budget_item/fsscBaseBudgetItem_data.jsp" />
+				<entry
+					key="edit"
+					value="/fssc/base/fssc_base_budget_item/fsscBaseBudgetItem_edit.jsp" />
+				<entry
+					key="view"
+					value="/fssc/base/fssc_base_budget_item/fsscBaseBudgetItem_view.jsp" />
+			</map>
+		</property>
+	</bean>
+	<bean
+		name="/fssc/base/fssc_base_budget_item/fsscBaseBudgetItemData.do"
+		class="com.landray.kmss.fssc.base.actions.FsscBaseBudgetItemDataAction"
+		lazy-init="true"
+		parent="KmssBaseAction">
+		<property
+			name="formType"
+			value="com.landray.kmss.fssc.base.forms.FsscBaseBudgetItemForm" />
+		<property name="forwards">
+			<map>
+				<entry
+					key="fdCostProjecrt"
+					value="/fssc/base/fssc_base_budget_item/fsscBaseBudgetItem_dialog_fdCostProjecrt.jsp" />
+			</map>
+		</property>
+	</bean>
+	<bean
+		name="/fssc/base/fssc_base_accounts/fsscBaseAccounts.do"
+		class="com.landray.kmss.fssc.base.actions.FsscBaseAccountsAction"
+		lazy-init="true"
+		parent="KmssBaseAction">
+		<property
+			name="formType"
+			value="com.landray.kmss.fssc.base.forms.FsscBaseAccountsForm" />
+		<property name="forwards">
+			<map>
+				<entry
+					key="data"
+					value="/fssc/base/fssc_base_accounts/fsscBaseAccounts_data.jsp" />
+				<entry
+					key="edit"
+					value="/fssc/base/fssc_base_accounts/fsscBaseAccounts_edit.jsp" />
+				<entry
+					key="view"
+					value="/fssc/base/fssc_base_accounts/fsscBaseAccounts_view.jsp" />
+			</map>
+		</property>
+	</bean>
+	<bean
+		name="/fssc/base/fssc_base_accounts/fsscBaseAccountsData.do"
+		class="com.landray.kmss.fssc.base.actions.FsscBaseAccountsDataAction"
+		lazy-init="true"
+		parent="KmssBaseAction">
+		<property
+			name="formType"
+			value="com.landray.kmss.fssc.base.forms.FsscBaseAccountsForm" />
+		<property name="forwards">
+			<map>
+				<entry
+					key="fdAccount"
+					value="/fssc/base/fssc_base_accounts/fsscBaseAccounts_dialog_fdAccount.jsp" />
+			</map>
+		</property>
+	</bean>
+	<bean
+		name="/fssc/base/fssc_base_item_field/fsscBaseItemField.do"
+		class="com.landray.kmss.fssc.base.actions.FsscBaseItemFieldAction"
+		lazy-init="true"
+		parent="KmssBaseAction">
+		<property
+			name="formType"
+			value="com.landray.kmss.fssc.base.forms.FsscBaseItemFieldForm" />
+		<property name="forwards">
+			<map>
+				<entry
+					key="data"
+					value="/fssc/base/fssc_base_item_field/fsscBaseItemField_data.jsp" />
+				<entry
+					key="edit"
+					value="/fssc/base/fssc_base_item_field/fsscBaseItemField_edit.jsp" />
+				<entry
+					key="view"
+					value="/fssc/base/fssc_base_item_field/fsscBaseItemField_view.jsp" />
+			</map>
+		</property>
+	</bean>
+	<bean
+		name="/fssc/base/fssc_base_item_budget/fsscBaseItemBudget.do"
+		class="com.landray.kmss.fssc.base.actions.FsscBaseItemBudgetAction"
+		lazy-init="true"
+		parent="KmssBaseAction">
+		<property
+			name="formType"
+			value="com.landray.kmss.fssc.base.forms.FsscBaseItemBudgetForm" />
+		<property name="forwards">
+			<map>
+				<entry
+					key="data"
+					value="/fssc/base/fssc_base_item_budget/fsscBaseItemBudget_data.jsp" />
+				<entry
+					key="edit"
+					value="/fssc/base/fssc_base_item_budget/fsscBaseItemBudget_edit.jsp" />
+				<entry
+					key="view"
+					value="/fssc/base/fssc_base_item_budget/fsscBaseItemBudget_view.jsp" />
+			</map>
+		</property>
+	</bean>
+	<bean
+		name="/fssc/base/fssc_base_switch/fsscBaseSwitch.do"
+		class="com.landray.kmss.fssc.base.actions.FsscBaseSwitchAction"
+		lazy-init="true"
+		parent="KmssBaseAction">
+		<property
+			name="formType"
+			value="com.landray.kmss.fssc.base.forms.FsscBaseSwitchForm" />
+		<property name="forwards">
+			<map>
+				<entry
+					key="edit"
+					value="/fssc/base/fssc_base_switch/fsscBaseSwitch_edit.jsp" />
+				<entry
+					key="view"
+					value="/fssc/base/fssc_base_switch/fsscBaseSwitch_view.jsp" />
+				<entry
+					key="selectModule"
+					value="/fssc/base/fssc_base_switch/fsscBaseSwitch_selectModule.jsp" />
+			</map>
+		</property>
+	</bean>
+	<bean
+		name="/fssc/base/fssc_base_business/fsscBaseBusiness.do"
+		class="com.landray.kmss.fssc.base.actions.FsscBaseBusinessAction"
+		lazy-init="true"
+		parent="KmssBaseAction">
+		<property
+			name="formType"
+			value="com.landray.kmss.fssc.base.forms.FsscBaseBusinessForm" />
+		<property name="forwards">
+			<map>
+				<entry
+					key="importResult"
+					value="/fssc/base/resource/jsp/fsscBaseImport_result.jsp" />
+				<entry
+					key="importResultDetail"
+					value="/fssc/base/resource/jsp/fsscBaseImport_resultDetail.jsp" />
+			</map>
+		</property>
+	</bean>
+	<bean
+		name="/fssc/base/fssc_base_payment/fsscBasePayment.do"
+		class="com.landray.kmss.fssc.base.actions.FsscBasePaymentAction"
+		lazy-init="true"
+		parent="KmssBaseAction">
+		<property
+			name="formType"
+			value="com.landray.kmss.fssc.base.forms.FsscBasePaymentForm" />
+		<property name="forwards">
+			<map>
+				<entry
+					key="data"
+					value="/fssc/base/fssc_base_payment/fsscBasePayment_data.jsp" />
+				<entry
+					key="edit"
+					value="/fssc/base/fssc_base_payment/fsscBasePayment_edit.jsp" />
+				<entry
+					key="view"
+					value="/fssc/base/fssc_base_payment/fsscBasePayment_view.jsp" />
+			</map>
+		</property>
+	</bean>
+	<bean
+		name="/fssc/base/fssc_base_erp_person/fsscBaseErpPersonData.do"
+		class="com.landray.kmss.fssc.base.actions.FsscBaseErpPersonDataAction"
+		lazy-init="true"
+		parent="KmssBaseAction">
+		<property
+			name="formType"
+			value="com.landray.kmss.fssc.base.forms.FsscBaseErpPersonForm" />
+		<property name="forwards">
+			<map>
+				<entry
+					key="fdERPPerson"
+					value="/fssc/base/fssc_base_erp_person/fsscBaseErpPerson_dialog_fdERPPerson.jsp" />
+			</map>
+		</property>
+	</bean>
+	<bean
+		name="/fssc/base/fssc_base_supplier/fsscBaseSupplierData.do"
+		class="com.landray.kmss.fssc.base.actions.FsscBaseSupplierDataAction"
+		lazy-init="true"
+		parent="KmssBaseAction">
+		<property
+			name="formType"
+			value="com.landray.kmss.fssc.base.forms.FsscBaseSupplierForm" />
+		<property name="forwards">
+			<map>
+				<entry
+					key="getSupplier"
+					value="/fssc/base/fssc_base_supplier/fsscBaseSupplier_dialog_getSupplier.jsp" />
+			</map>
+		</property>
+	</bean>
+	<bean
+		name="/fssc/base/fssc_base_supplier_account/fsscBaseSupplierAccountData.do"
+		class="com.landray.kmss.fssc.base.actions.FsscBaseSupplierAccountDataAction"
+		lazy-init="true"
+		parent="KmssBaseAction">
+		<property
+			name="formType"
+			value="com.landray.kmss.fssc.base.forms.FsscBaseSupplierAccountForm" />
+		<property name="forwards">
+			<map>
+				<entry
+					key="getSupplierAccount"
+					value="/fssc/base/fssc_base_supplier_account/fsscBaseSupplierAccount_dialog_getSupplierAccount.jsp" />
+			</map>
+		</property>
+	</bean>
+	<bean
+		name="/fssc/base/fssc_base_passport/fsscBasePassport.do"
+		class="com.landray.kmss.fssc.base.actions.FsscBasePassportAction"
+		lazy-init="true"
+		parent="KmssBaseAction">
+		<property
+			name="formType"
+			value="com.landray.kmss.fssc.base.forms.FsscBasePassportForm" />
+		<property name="forwards">
+			<map>
+				<entry
+					key="data"
+					value="/fssc/base/fssc_base_passport/fsscBasePassport_data.jsp" />
+				<entry
+					key="edit"
+					value="/fssc/base/fssc_base_passport/fsscBasePassport_edit.jsp" />
+				<entry
+					key="view"
+					value="/fssc/base/fssc_base_passport/fsscBasePassport_view.jsp" />
+			</map>
+		</property>
+	</bean>
+	<bean
+		name="/fssc/base/fssc_base_item_account/fsscBaseItemAccount.do"
+		class="com.landray.kmss.fssc.base.actions.FsscBaseItemAccountAction"
+		lazy-init="true"
+		parent="KmssBaseAction">
+		<property
+			name="formType"
+			value="com.landray.kmss.fssc.base.forms.FsscBaseItemAccountForm" />
+		<property name="forwards">
+			<map>
+				<entry
+					key="data"
+					value="/fssc/base/fssc_base_item_account/fsscBaseItemAccount_data.jsp" />
+				<entry
+					key="edit"
+                    			value="/fssc/base/fssc_base_item_account/fsscBaseItemAccount_edit.jsp"/>
+				<entry
+					key="view"
+                    			value="/fssc/base/fssc_base_item_account/fsscBaseItemAccount_view.jsp"/>
+			</map>
+		</property>
+	</bean>
+	<bean
+		name="/fssc/base/fssc_base_input_tax/fsscBaseInputTax.do"
+		class="com.landray.kmss.fssc.base.actions.FsscBaseInputTaxAction"
+		lazy-init="true"
+		parent="KmssBaseAction">
+		<property
+			name="formType"
+			value="com.landray.kmss.fssc.base.forms.FsscBaseInputTaxForm" />
+		<property name="forwards">
+			<map>
+				<entry
+					key="data"
+					value="/fssc/base/fssc_base_input_tax/fsscBaseInputTax_data.jsp" />
+				<entry
+					key="edit"
+					value="/fssc/base/fssc_base_input_tax/fsscBaseInputTax_edit.jsp" />
+				<entry
+					key="view"
+					value="/fssc/base/fssc_base_input_tax/fsscBaseInputTax_view.jsp" />
+				<entry
+					key="getInputTax"
+					value="/fssc/base/fssc_base_input_tax/fsscBaseInputTax_dialog_getInputTax.jsp" />
+			</map>
+		</property>
+	</bean>
+	<bean 
+        name="/fssc/base/fssc_base_material_type/fsscBaseMaterialType.do" 
+        class="com.landray.kmss.fssc.base.actions.FsscBaseMaterialTypeAction" 
+        lazy-init="true"
+		parent="KmssBaseAction">
+		<property
+			name="formType"
+			value="com.landray.kmss.fssc.base.forms.FsscBaseMaterialTypeForm" />
+        <property name="forwards">
+           	<map>
+				<entry
+					key="data"
+					value="/fssc/base/fssc_base_material_type/fsscBaseMaterialType_data.jsp" />
+				<entry
+					key="edit"
+					value="/fssc/base/fssc_base_material_type/fsscBaseMaterialType_edit.jsp" />
+				<entry
+					key="view"
+					value="/fssc/base/fssc_base_material_type/fsscBaseMaterialType_view.jsp" />
+			</map>
+		</property>
+     </bean>
+     <bean
+        name="/fssc/base/fssc_base_material_type/fsscBaseMaterialTypeData.do" 
+        class="com.landray.kmss.fssc.base.actions.FsscBaseMaterialTypeDataAction" 
+            lazy-init="true"
+			parent="KmssBaseAction">
+		<property
+			name="formType"
+			value="com.landray.kmss.fssc.base.forms.FsscBaseMaterialTypeForm" />
+        <property name="forwards">
+           	<map>
+				<entry
+					key="selectType"
+					value="/fssc/base/fssc_base_material_type/fsscBaseMaterialType_dialog_selectType.jsp" />
+			</map>
+		</property>
+    </bean>
+    <bean
+           name="/fssc/base/fssc_base_material_info/fsscBaseMaterialInfo.do" 
+           class="com.landray.kmss.fssc.base.actions.FsscBaseMaterialInfoAction" 
+           lazy-init="true"
+		parent="KmssBaseAction">
+		<property
+		name="formType"
+		value="com.landray.kmss.fssc.base.forms.FsscBaseMaterialInfoForm" />
+		<property name="forwards">
+          	<map>
+			<entry
+				key="data"
+				value="/fssc/base/fssc_base_material_info/fsscBaseMaterialInfo_data.jsp" />
+			<entry
+				key="edit"
+				value="/fssc/base/fssc_base_material_info/fsscBaseMaterialInfo_edit.jsp" />
+				<entry
+				key="view"
+				value="/fssc/base/fssc_base_material_info/fsscBaseMaterialInfo_view.jsp" />
+		</map>
+		</property>
+	</bean>
+    <bean
+         name="/fssc/base/fssc_base_portlet/fsscBasePortlet.do" 
+         class="com.landray.kmss.fssc.base.actions.FsscBasePortletAction" 
+         lazy-init="true"
+		parent="KmssBaseAction">
+		<property
+		name="formType"
+		value="" />
+    </bean>
+    <bean
+            name="/fssc/base/fssc_base_material_info/fsscBaseMaterialInfoData.do" 
+            class="com.landray.kmss.fssc.base.actions.FsscBaseMaterialInfoDataAction" 
+            lazy-init="true"
+			parent="KmssBaseAction">
+			<property
+			name="formType"
+			value="com.landray.kmss.fssc.base.forms.FsscBaseMaterialInfoForm" />
+			<property name="forwards">
+           	<map>
+				<entry
+					key="selectMaterial"
+					value="/fssc/base/fssc_base_material_info/fsscBaseMaterialInfo_dialog_selectMaterial.jsp" />
+            </map>
+            </property>
+    </bean>
+    <bean 
+        class="com.landray.kmss.fssc.base.actions.FsscBaseAuthorizeAction" 
+        parent="KmssBaseAction" 
+        name="/fssc/base/fssc_base_authorize/fsscBaseAuthorize.do" 
+        lazy-init="true">
+        <property 
+            name="formType" 
+            value="com.landray.kmss.fssc.base.forms.FsscBaseAuthorizeForm"/>
+        <property 
+            name="forwards">
+            <map>
+                <entry 
+                    key="data" 
+                    value="/fssc/base/fssc_base_authorize/fsscBaseAuthorize_data.jsp"/>
+                <entry 
+                    key="edit" 
+                    value="/fssc/base/fssc_base_authorize/fsscBaseAuthorize_edit.jsp"/>
+                <entry 
+                    key="view" 
+                    value="/fssc/base/fssc_base_authorize/fsscBaseAuthorize_view.jsp"/>
+                <entry 
+                    key="selectAuthorize" 
+                    value="/fssc/base/fssc_base_authorize/fsscBaseAuthorize_selectAuthorize.jsp"/>
+            </map>
+        </property>
+    </bean>
+    <bean 
+        class="com.landray.kmss.fssc.base.actions.FsscBaseAuthorizeMobileAction" 
+        parent="KmssBaseAction" 
+        name="/fssc/mobile/fssc_mobile_authorize/fsscMobileAuthorize.do" 
+        lazy-init="true">
+        <property 
+            name="formType" 
+            value="com.landray.kmss.fssc.base.forms.FsscBaseAuthorizeForm"/>
+        <property 
+            name="forwards">
+            <map>
+                <entry 
+                    key="data" 
+                    value="/fssc/mobile/fssc_base_authorize/data.jsp"/>
+                <entry 
+                    key="edit" 
+                    value="/fssc/mobile/fssc_base_authorize/edit.jsp"/>
+                <entry 
+                    key="view" 
+                    value="/fssc/mobile/fssc_base_authorize/view.jsp"/>
+            </map>
+        </property>
+    </bean>
+    <bean
+         name="/fssc/base/fssc_base_data/fsscBaseData.do" 
+         class="com.landray.kmss.fssc.base.actions.FsscBaseDataAction"
+         lazy-init="true"
+		parent="KmssBaseAction">
+		<property
+		name="formType"
+		value="" />
+    </bean>
+</beans>

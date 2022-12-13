@@ -1,0 +1,472 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configs
+	xmlns="http://www.example.org/design-config"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.example.org/design-config ../../design.xsd ">
+	
+	<module
+		messageKey="km-oitems:module.km.oitems"
+		urlPrefix="/km/oitems/"
+		defaultValidator="roleValidator(role=ROLE_KMOITEMS_DEFAULT)">
+		<roles>
+			ROLE_KMOITEMS_REPORTING_ADMIN;
+			ROLE_KM_KMOITEMS_BASE_ADMIN;
+			ROLE_KMOITEMS_GOODS_ADMIN;
+			ROLE_KMOITEMS_DEFAULT;
+			ROLE_KMOITEMS_BUDGER_READER;
+			ROLE_KMOITEMS_BUDGER_DELETE;
+			ROLE_KMOITEMS_BUDGER_CREATE_PERSON;
+			ROLE_KMOITEMS_BUDGER_CREATE_DEPT;
+			ROLE_KMOITEMS_BUDGER_RECEIVE;	
+			ROLE_KMOITEMS_BUDGER_PRINT;
+			ROLE_KMOITEMS_GOODSCATEGORY_MAINTAINER;ROLE_KMOITEMS_BACKSTAGE_MANAGER;
+			ROLE_KMOITEMS_TRANSPORT_EXPORT	
+		</roles>
+		<request
+			path="tree.jsp*"
+			defaultValidator="roleValidator(role=ROLE_KMOITEMS_BACKSTAGE_MANAGER)"/>
+		<!-- 用品类别-->
+		<request
+			path="km_oitems_manage/kmOitemsManage.do*"
+			validatorParameter="recid=fdId,model=com.landray.kmss.km.oitems.model.KmOitemsManage,adminRoleName=ROLE_KMOITEMS_GOODSCATEGORY_MAINTAINER">
+			<!-- 保存 -->
+			<query
+				queryString="method=add"
+				validator="sysSimpleCategoryEditorValidator(recid=parentId)" />
+			<!-- 阅读 -->
+			<query
+				queryString="method=view"
+				validator="sysSimpleCategoryReaderValidator()"/>
+			<!-- 编辑和删除 -->
+			<query
+				queryString="method=edit|update|delete"
+				validator="sysSimpleCategoryEditorValidator()" />
+			<query
+				queryString="method=copy"
+				validator="sysSimpleCategoryEditorValidator(recid=fdCopyId)" />
+		</request>
+		<!-- 用品清单-->
+		<request
+			path="km_oitems_listing/km_oitems_manage_tree.jsp"
+			validatorParameter="recid=fdId,model=com.landray.kmss.km.oitems.model.KmOitemsListing"
+			defaultValidator="roleValidator(role=ROLE_KM_KMOITEMS_BASE_ADMIN)">
+		</request>
+		<!-- 入库管理-->
+		<request
+			path="km_oitems_listing/kmOitemsListing.do*"
+			validatorParameter="recid=fdId,model=com.landray.kmss.km.oitems.model.KmOitemsListing"
+			defaultValidator="roleValidator(role=ROLE_KMOITEMS_DEFAULT)">
+			<query
+				queryString="method=checkOitemsList"
+				validator="roleValidator(role=ROLE_KMOITEMS_DEFAULT)|roleValidator(role=ROLE_KMOITEMS_GOODS_ADMIN)|roleValidator(role=ROLE_KM_KMOITEMS_BASE_ADMIN)" />
+ 
+			<query
+				queryString="method=view|add|deleteall"
+				validator="roleValidator(role=ROLE_KMOITEMS_GOODS_ADMIN)|roleValidator(role=ROLE_KM_KMOITEMS_BASE_ADMIN)" />
+			<query
+				queryString="method=delete|edit"
+				validator="roleValidator(role=ROLE_KM_KMOITEMS_BASE_ADMIN)|[roleValidator(role=ROLE_KMOITEMS_GOODS_ADMIN)&amp;kmOitemsManageValidator(recid=fdId,searchParam=1)]" />
+			<query
+				queryString="method=showStockCount|showRecordList|list|importOitems|saveExcel|recordList"
+				validator="roleValidator(role=ROLE_KMOITEMS_GOODS_ADMIN)|roleValidator(role=ROLE_KM_KMOITEMS_BASE_ADMIN)" />
+			<query
+				queryString="method=showInCount|inCount|showOutCount|outCount|receiveCount|inCountExport|outCountExport|receiveCountExport"
+				validator="roleValidator(role=ROLE_KMOITEMS_REPORTING_ADMIN)|roleValidator(role=ROLE_KM_KMOITEMS_BASE_ADMIN)" />
+		</request>
+		<request
+			path="km_oitems_warehousing_record/kmOitemsWarehousingRecord*">
+			<query
+				queryString="method=add|save"
+				validator="roleValidator(role=ROLE_KM_KMOITEMS_BASE_ADMIN)|[roleValidator(role=ROLE_KMOITEMS_GOODS_ADMIN)&amp;kmOitemsManageValidator(recid=fdOitemsId)]" />
+		</request>
+		<request
+			path="km_oitems_listing/km_oitems_stock_tree.jsp*" 
+			defaultValidator="roleValidator(role=ROLE_KMOITEMS_GOODS_ADMIN)|roleValidator(role=ROLE_KM_KMOITEMS_BASE_ADMIN)" >		
+		</request>
+		
+		<request
+			path="km_oitems_templet/kmOitemsTemplet.do*"
+			validatorParameter="recid=fdId,model=com.landray.kmss.km.oitems.model.KmOitemsTemplet">
+		    <query
+				queryString="method=add"
+				validator="roleValidator(role=ROLE_KM_KMOITEMS_BASE_ADMIN)" />
+			<query
+				queryString="method=edit|update"
+				validator="authFieldValidator(type=SYS_EDITOR)" />
+			<query
+				queryString="method=getTemp"
+				validator="roleValidator(role=ROLE_KMOITEMS_BUDGER_CREATE_PERSON)|roleValidator(role=ROLE_KMOITEMS_BUDGER_CREATE_DEPT)" />
+		</request>
+		<request
+			path="km_oitems_listing/kmOitemsListing.do*"
+			validatorParameter="recid=fdId,model=com.landray.kmss.km.oitems.model.KmOitemsListing"
+			defaultValidator="roleValidator(role=ROLE_KM_KMOITEMS_BASE_ADMIN)">
+		</request>
+		
+		<request
+			path="km_oitems_budger_application/kmOitemsBudgerApplication.do*" validatorParameter="recid=fdId,model=com.landray.kmss.km.oitems.model.KmOitemsBudgerApplication">
+			<!-- 在模板树下新建 -->
+			<!-- 新建 -->
+			<!-- <query
+				queryString="method=add|save|saveadd"
+				validator="roleValidator(role=ROLE_KMOITEMS_BUDGER_CREATE_PERSON)|roleValidator(role=ROLE_KMOITEMS_BUDGER_CREATE_DEPT)|roleValidator(role=ROLE_KM_KMOITEMS_BASE_ADMIN)" /> -->
+			
+				<!-- 个人新建 -->
+			<query
+				queryString="method=add|save|saveadd&amp;type=person"
+				validator="roleValidator(role=ROLE_KMOITEMS_BUDGER_CREATE_PERSON)" />
+				
+			<!-- 部门新建 -->
+			<query
+				queryString="method=add|save|saveadd&amp;type=dept"
+				validator="roleValidator(role=ROLE_KMOITEMS_BUDGER_CREATE_DEPT)" />
+				
+			<query
+				queryString="method=add|save|saveadd"
+				validator="kmOitemsBudgerApplicationValidator(fdTemplateId=fdTemplateId)" />
+			
+			
+			<!-- 领用 -->
+			<query
+				queryString="method=receive"
+				validator="roleValidator(role=ROLE_KMOITEMS_BUDGER_RECEIVE)|roleValidator(role=ROLE_KM_KMOITEMS_BASE_ADMIN)" />
+			<!-- 阅读 -->
+			<query
+				queryString="method=view"
+				validator="authFieldValidator(type=SYS_READER)|roleValidator(role=ROLE_KM_KMOITEMS_BASE_ADMIN)" />
+			<query
+				queryString="method=print"
+				validator="roleValidator(role=ROLE_KMOITEMS_BUDGER_PRINT)&amp;fieldValueValidator(fieldproperty=docStatus,except=10)" />
+			<!-- 编辑 -->
+			<query
+				queryString="method=edit|update"
+				validator="fieldValueValidator(fieldproperty=docStatus,value=10)|authFieldValidator(type=SYS_EDITOR)" />
+			<!-- 删除 -->
+			<query
+				queryString="method=delete"
+				validator="fieldValueValidator(fieldproperty=docStatus,value=10)&amp;authFieldValidator(type=creator)|roleValidator(role=ROLE_KMOITEMS_BUDGER_DELETE)" />
+			<!-- 删除所有 -->
+			<query
+				queryString="method=deleteall"
+				validator="roleValidator(role=ROLE_KMOITEMS_BUDGER_DELETE)" />		
+		</request>
+		<!--月统计报表 -->
+		<request
+			path="km_oitems_month_report/kmOitemsMonthReport*"
+			validatorParameter="recid=fdId,model=com.landray.kmss.km.oitems.model.KmOitemsMonthReport">
+			<!-- 阅读 -->
+			<query
+				queryString="method=view"
+				validator="roleValidator(role=ROLE_KMOITEMS_REPORTING_ADMIN)|roleValidator(role=ROLE_KM_KMOITEMS_BASE_ADMIN)" />
+			<!-- 删除 -->
+			<query
+				queryString="method=delete"
+				validator="roleValidator(role=ROLE_KM_KMOITEMS_BASE_ADMIN)" />
+			<!-- 删除所有 -->
+			<query
+				queryString="method=deleteall"
+				validator="roleValidator(role=ROLE_KM_KMOITEMS_BASE_ADMIN)" />	
+		</request>
+		<!--月统计报表明细 -->
+		<request
+			path="km_oitems_report_listing/kmOitemsReportListing*"
+			validatorParameter="recid=fdId,model=com.landray.kmss.km.oitems.model.KmOitemsReportListing">
+		</request>
+		<request
+			path="/km_oitems_listing_ui/index.jsp*" 
+			defaultValidator="roleValidator(role=ROLE_KM_KMOITEMS_BASE_ADMIN)|roleValidator(role=ROLE_KMOITEMS_GOODS_ADMIN)">
+		</request>
+		<request
+			path="/km_oitems_month_report_ui/index.jsp*"
+			defaultValidator="roleValidator(role=ROLE_KM_KMOITEMS_BASE_ADMIN)|roleValidator(role=ROLE_KMOITEMS_REPORTING_ADMIN)">
+		</request>
+		
+		<!-- 文档过滤器 -->
+		<filters
+			modelName="com.landray.kmss.km.oitems.model.KmOitemsBudgerApplication">
+			<filter
+				type="creator"
+				expression="authFieldFilter(field=docCreator.fdId)" />
+			<filter
+				type="SYS_READER"
+				expression="roleFilter(role=ROLE_KMOITEMS_BUDGER_READER)" />
+			<!-- <filter
+				type="SYS_READER"
+				expression="roleFilter(role=ROLE_KM_KMOITEMS_BASE_ADMIN)" /> -->
+			<filter
+				type="SYS_READER"
+				expression="authFieldFilter(field=authAllReaders.fdId)" />	
+			<filter
+				type="SYS_READER"
+				expression="flagFieldFilter(field=authReaderFlag,value=1)" />
+			<filter
+				type="SYS_EDITOR"
+				expression="authFieldFilter(field=authAllEditors.fdId)" />
+			<filter
+				type="SYS_EDITOR"
+				expression="roleFilter(role=ROLE_KM_KMOITEMS_BASE_ADMIN)" />
+		</filters>
+		<!-- 用品过滤器 -->
+		<filters
+			modelName="com.landray.kmss.km.oitems.model.KmOitemsListing">
+			<filter 
+                type="readOitems" 
+                expression="kmOitemsManageFilter()"/>
+			<filter
+				type="SYS_READER"
+				expression="authFieldFilter(field=authAllReaders.fdId)" />	
+			<filter
+				type="SYS_READER"
+				expression="oitemsFlagFieldFilter(field=authReaderFlag,value=1)" />	
+			<filter
+				type="SYS_EDITOR"
+				expression="roleFilter(role=ROLE_KM_KMOITEMS_BASE_ADMIN)" />
+		</filters>
+		<filters
+			modelName="com.landray.kmss.km.oitems.model.KmOitemsTemplet">
+			<filter
+				type="SYS_READER"
+				expression="authFieldFilter(field=authAllReaders.fdId)" />	
+			<filter
+				type="SYS_READER"
+				expression="oitemsFlagFieldFilter(field=authReaderFlag,value=1)" />	
+			<filter
+				type="SYS_EDITOR"
+				expression="authFieldFilter(field=authAllEditors.fdId)" />
+			<filter
+				type="SYS_EDITOR"
+				expression="roleFilter(role=ROLE_KM_KMOITEMS_BASE_ADMIN)" />
+			<filter
+				type="SYS_EDITOR"
+				expression="roleFilter(role=ROLE_KM_KMOITEMS_BASE_ADMIN)" />	
+		</filters>
+		<!-- 用品类别过滤 -->
+		<filters
+			modelName="com.landray.kmss.km.oitems.model.KmOitemsManage">
+			<filter
+				type="SYS_READER"
+				expression="authFieldFilter(field=authAllReaders.fdId)" />	
+			<!-- <filter
+				type="SYS_READER"
+				expression="oitemsFlagFieldFilter(field=authReaderFlag,value=1)" />	 -->
+			<filter
+				type="SYS_EDITOR"
+				expression="authFieldFilter(field=authAllEditors.fdId)" />
+		</filters>
+	</module>
+	<module urlPrefix="/sys/transport/">
+		<request path="sys_transport_export/SysTransportExport*">
+			<query validator="roleValidator(role=ROLE_KMOITEMS_TRANSPORT_EXPORT)"
+				queryString="fdModelName=com.landray.kmss.km.oitems.model.KmOitemsBudgerApplication" />
+			<query validator="roleValidator(role=ROLE_KMOITEMS_TRANSPORT_EXPORT)"
+				queryString="fdModelName=com.landray.kmss.km.oitems.model.KmOitemsListing" />
+		</request>	
+	</module>
+	<!-- 通用流程模板设置目录下 替换处理人和 批量修改特权人 -->
+	<module urlPrefix="/sys/lbpmservice/">
+		<request 
+			path="support/lbpm_template/lbpmTemplate*">
+			<query
+				queryString="method=updateAuditor|updateTemplateAuditor|updateCategoryAuditor|doUpdateAuditor&amp;fdModelName=com.landray.kmss.km.oitems.model.KmOitemsTemplet"
+				validator="roleValidator(role=ROLE_KMOITEMS_BACKSTAGE_MANAGER)" />
+		</request>
+		<request 
+			path="support/lbpm_template/lbpmPrivileger*">
+			<query
+				queryString="method=updatePrivileger|doUpdatePrivileger&amp;fdModelName=com.landray.kmss.km.oitems.model.KmOitemsTemplet"
+				validator="roleValidator(role=ROLE_KMOITEMS_BACKSTAGE_MANAGER)" />
+		</request>
+	</module>
+	<!-- 批量修改权限 -->
+	<module urlPrefix="/sys/right/">
+		<request path="rightCateChange*">
+			<query
+				queryString="method=cateRightEdit&amp;cateModelName=com.landray.kmss.km.oitems.model.KmOitemsTemplet"
+				validator="roleValidator(role=ROLE_KM_KMOITEMS_BASE_ADMIN)|roleValidator(role=ROLE_KMOITEMS_BACKSTAGE_MANAGER)|roleValidator(role=ROLE_KMOITEMS_GOODSCATEGORY_MAINTAINER)" />
+		</request>
+		<request path="rightDocChange*">
+			<query
+				queryString="method=docRightEdit&amp;modelName=com.landray.kmss.km.oitems.model.KmOitemsListing"
+				validator="roleValidator(role=ROLE_KMOITEMS_GOODS_ADMIN)|roleValidator(role=ROLE_KM_KMOITEMS_BASE_ADMIN)" />
+		</request>
+	</module>
+	<!-- 列表自定义权限 -->
+	<module urlPrefix="/sys/profile/">
+		<request 
+			path="listShow/sys_listShow/sysListShow*">
+			<query
+				queryString="modelName=com.landray.kmss.km.oitems.model.KmOitemsBudgerApplication"
+				validator="roleValidator(role=ROLE_KMOITEMS_DEFAULT)&amp;roleValidator(role=ROLE_KMOITEMS_BACKSTAGE_MANAGER)&amp;roleValidator(role=ROLE_KM_KMOITEMS_BASE_ADMIN)" />
+		</request>
+	</module>
+	
+	<module 
+		urlPrefix="/sys/workflow/">
+		<request
+			path="sys_wf_common_template/sysWfCommonTemplate*">			
+			<query
+				queryString="fdModelName=com.landray.kmss.km.oitems.model.KmOitemsTemplet"
+				validator="roleValidator(role=ROLE_KM_KMOITEMS_BASE_ADMIN)"/>					
+		</request>
+	</module>
+	<!-- 全文检索 -->
+	<module
+		messageKey=""
+		urlPrefix="/sys/ftsearch/">
+		<request path="searchBuilder*">
+			<query
+				queryString="modelName=com.landray.kmss.km.oitems.model.KmOitemsBudgerApplication"
+				validator="roleValidator(role=ROLE_KMOITEMS_DEFAULT)" />
+		</request>
+		<request path="searchBuilder*">
+			<query
+				queryString="modelName=com.landray.kmss.km.oitems.model.KmOitemsListing"
+				validator="roleValidator(role=ROLE_KMOITEMS_DEFAULT)" />
+		</request>
+	</module>
+	<!-- 通用编号规则设置权限 -->
+	<module urlPrefix="/sys/number/">
+		<request path="sys_number_main/sysNumberMain*">
+			<query queryString="modelName=com.landray.kmss.km.oitems.model.KmOitemsBudgerApplication"
+				validator="roleValidator(role=ROLE_KM_KMOITEMS_BASE_ADMIN)" />
+		</request>
+	</module>
+	<quartz
+		cronExpression="0 0 5 * * ?"
+		jobService="kmOitemsShoppingTrolleyService"
+		jobMethod="deleteShoppingTrolley"
+		messageKey="km-oitems:kmOitems.ShoppingTrolley.quartz"
+		description="km-oitems:kmOitems.ShoppingTrolley.quartz.description" />
+	
+	<search
+		modelName="com.landray.kmss.km.oitems.model.KmOitemsBudgerApplication"
+		messageKey="km-oitems:kmOitems.tree.modelName1"
+		resultProperties="docSubject;fdApplyor;fdReason;docCreator;docCreateTime;" />
+		
+	<search
+		modelName="com.landray.kmss.km.oitems.model.KmOitemsListing"
+		messageKey="km-oitems:kmOitems.tree.modelName1" />
+		
+	<ftSearch 
+		modelName="com.landray.kmss.km.oitems.model.KmOitemsBudgerApplication"
+		boost="2.0"
+		timeField="fdLastModifiedTime">
+		<luceneField
+			name="subject"
+			property="docSubject" 
+			type="text"/>  <!-- 检索标题,只需要修改property，不需改name -->
+		<luceneField
+			name="content"
+			property="fdReason"
+			type="text" />  <!-- 检索内容,只需要修改property，不需改name -->
+		<luceneField
+			name="creator"
+			property="docCreator.fdName"
+			type="text" />  <!-- 检索创建人,只需要修改property，不需改name -->
+		<luceneField
+			name="createTime"
+			property="docCreateTime"
+			type="keyword" />  <!-- 检索创建时间,只需要修改property，不需改name -->
+	</ftSearch>
+	<ftSearch  
+		modelName="com.landray.kmss.km.oitems.model.KmOitemsListing"
+		boost="2.0"
+		timeField="docCreateTime">
+		<luceneField
+			name="subject"
+			property="fdName" 
+			type="text"/>  <!-- 检索标题,只需要修改property，不需改name -->
+		<luceneField
+			name="category"
+			property="fdCategory.fdHierarchyId"
+			type="Text" />
+		<luceneField
+			name="creator"
+			property="docCreator.fdName"
+			type="text" />  <!-- 检索创建人,只需要修改property，不需改name -->
+		<luceneField
+			name="createTime"
+			property="docCreateTime"
+			type="keyword" />  <!-- 检索创建时间,只需要修改property，不需改name -->
+	</ftSearch>
+	<treeNodes type="myjob">
+		<treeNode messageKey="km-oitems:kmOitems.tree.modelName1">
+			<treeNode messageKey="km-oitems:kmOitems.tree.my.submit">
+				<treeNode
+					messageKey="status.draft"
+					url="/km/oitems/km_oitems_budger_application/kmOitemsBudgerApplication.do?method=list&amp;docStatus=draft&amp;myDoc=true&amp;type=all">
+				</treeNode>
+				<treeNode
+					messageKey="status.examine"
+					url="/km/oitems/km_oitems_budger_application/kmOitemsBudgerApplication.do?method=list&amp;type=all&amp;docStatus=wait&amp;myDoc=true">
+				</treeNode>
+				<treeNode
+					messageKey="status.publish"
+					url="/km/oitems/km_oitems_budger_application/kmOitemsBudgerApplication.do?method=list&amp;type=all&amp;docStatus=publish&amp;myDoc=true">
+				</treeNode>
+				<treeNode
+					messageKey="status.refuse"
+					url="/km/oitems/km_oitems_budger_application/kmOitemsBudgerApplication.do?method=list&amp;type=all&amp;docStatus=refuse&amp;myDoc=true">
+				</treeNode>
+				<treeNode
+					messageKey="status.discard"
+					url="/km/oitems/km_oitems_budger_application/kmOitemsBudgerApplication.do?method=list&amp;type=all&amp;docStatus=discard&amp;myDoc=true">
+				</treeNode>
+			</treeNode>
+			<treeNode messageKey="km-oitems:kmOitems.tree.my.examine">
+				<treeNode
+					messageKey="km-oitems:kmOitems.tree.wait"
+					url="/km/oitems/km_oitems_budger_application/kmOitemsBudgerApplication.do?method=list&amp;flowType=unExecuted">
+				</treeNode>
+				<treeNode
+					messageKey="km-oitems:kmOitems.tree.already"
+					url="/km/oitems/km_oitems_budger_application/kmOitemsBudgerApplication.do?method=list&amp;flowType=executed">
+				</treeNode>
+			</treeNode>
+		</treeNode>
+	</treeNodes>
+
+	<!-- 办公物品配置 -->
+	<treeNodes type="config">
+		<treeNode messageKey="km-oitems:kmOitems.tree.modelName">
+			<treeNode
+				messageKey="km-oitems:kmOitems.tree.baseset1"
+				url="/km/oitems/km_oitems_manage/kmOitemsManage.do?method=list" />
+			<treeNode
+				messageKey="km-oitems:kmOitemsListing.kmOitemsListing"
+				url="/km/oitems/km_oitems_listing/km_oitems_manage_tree.jsp" />
+			<treeNode
+				messageKey="km-oitems:kmOitems.tree.baseset2"
+				url="/km/oitems/km_oitems_templet/kmOitemsTemplet.do?method=edit&amp;fdModelName=com.landray.kmss.km.oitems.model.KmOitemsTemplet&amp;fdKey=kmOitemsTemplet&amp;type=person" />
+			<treeNode
+				messageKey="km-oitems:kmOitems.tree.baseset3"
+				url="/km/oitems/km_oitems_templet/kmOitemsTemplet.do?method=edit&amp;fdModelName=com.landray.kmss.km.oitems.model.KmOitemsTemplet&amp;fdKey=kmOitemsTemplet&amp;type=dept" />
+			<treeNode
+				messageKey="km-oitems:kmOitems.tree.baseset4"
+				url="/sys/workflow/sys_wf_common_template/sysWfCommonTemplate.do?method=list&amp;fdModelName=com.landray.kmss.km.oitems.model.KmOitemsTemplet&amp;fdKey=kmOitemsTemplet" />
+		</treeNode>
+	</treeNodes>
+	<!-- 主页配置 -->
+	<homePage
+		urlPrefix="km/oitems"
+		url="/sys/portal/page.jsp#j_start=/km/oitems/index.jsp&amp;j_target=_iframe" 
+		messageKey="km-oitems:kmOitems.tree.modelName" 
+		config="/moduleindex_notopic.jsp?nav=/km/oitems/tree.jsp" />
+		
+	<flowDef
+		modelName="com.landray.kmss.km.oitems.model.KmOitemsBudgerApplication"
+		templateModelName="com.landray.kmss.km.oitems.model.KmOitemsTemplet"
+		key="kmOitemsTemplet"
+		templatePropertyName="fdTemplate"
+		moduleMessageKey="km-oitems:kmOitems.tree.modelName"
+		type="oa" />
+		
+	<profileConfig
+        key="km/oitems"	 
+		messageKey="{km-oitems:module.km.oitems}" 
+		url="/sys/profile/moduleindex.jsp?nav=/km/oitems/tree.jsp" 
+		icon="km_oitems"
+		type="ekp"
+		description="{km-oitems:kmOitems.profileCfg.description}"
+		order="201"/>	
+</configs>

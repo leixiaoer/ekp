@@ -1,0 +1,212 @@
+{
+	"data": [
+	{
+		"fdName" : "督办管理主页面",
+		"fdUrl" : "/km/supervise__and__/km/supervise/index.jsp__and__/km/supervise/km_supervise_main/supervise_audit.jsp"
+	},
+	{
+		"fdName" : "督办事项新建、编辑、查看页面",
+		"fdUrl" : "/km/supervise/km_supervise_main/kmSuperviseMain.do?method=add__and__/km/supervise/km_supervise_main/kmSuperviseMain.do?method=add&modelName=com.landray.kmss.km.imeeting.model.KmImeetingSummary__and__/km/supervise/km_supervise_main/kmSuperviseMain.do?method=add&modelName=com.landray.kmss.km.imeeting.model.KmImeetingMain__and__/km/supervise/km_supervise_main/kmSuperviseMain.do?method=view__and__/km/supervise/km_supervise_main/kmSuperviseMain.do?method=edit"
+	},
+	{
+		"fdName" : "任务指派页面",
+		"fdUrl" : "/km/supervise/km_supervise_main_plan/kmSuperviseMainPlan.do?method=add"
+	},
+	{
+		"fdName" : "任务反馈新建页面",
+		"fdUrl" : "/km/supervise/km_supervise_back/kmSuperviseBack.do?method=add&fdType=0"
+	},
+	{
+		"fdName" : "汇总反馈新建页面",
+		"fdUrl" : "/km/supervise/km_supervise_back/kmSuperviseBack.do?method=add&fdType=1"
+	},
+	{
+		"fdName" : "督办反馈查看页面",
+		"fdUrl" : "/km/supervise/km_supervise_back/kmSuperviseBack.do?method=view"
+	},
+	{
+		"fdName" : "督办变更页面",
+		"fdUrl" : "/km/supervise/km_supervise_main/kmSuperviseMain.do?method=changeSupervise"
+	},
+	{
+		"fdName" : "督办办结新建页面",
+		"fdUrl" : "/km/supervise/km_supervise_main_finish/kmSuperviseMainFinish.do?method=add"
+	},
+	{
+		"fdName" : "督办办结查看页面",
+		"fdUrl" : "/km/supervise/km_supervise_main_finish/kmSuperviseMainFinish.do?method=view"
+	},
+	{
+		"fdName" : "督办终止新建页面",
+		"fdUrl" : "/km/supervise/km_supervise_main_stop/kmSuperviseMainStop.do?method=add"
+	},
+	{
+		"fdName" : "督办终止查看页面",
+		"fdUrl" : "/km/supervise/km_supervise_main_stop/kmSuperviseMainStop.do?method=view"
+	},
+	{
+		"fdName" : "类别设置",
+		"fdUrl" : "/sys/category/sys_category_main/sysCategoryMain_tree.jsp?modelName=com.landray.kmss.km.supervise.model.KmSuperviseTemplet&mainModelName=com.landray.kmss.km.supervise.model.KmSuperviseMain&templateName=docTemplate&authReaderNoteFlag=2"
+	},
+	{
+		"fdName" : "类别设置新建、编辑页面",
+		"fdUrl" : "/sys/category/sys_category_main/sysCategoryMain.do?method=add&fdModelName=com.landray.kmss.km.supervise.model.KmSuperviseTemplet__and__/sys/category/sys_category_main/sysCategoryMain.do?method=edit&mainModelName=com.landray.kmss.km.supervise.model.KmSuperviseMain"
+	},
+	{
+		"fdName" : "立项模板",
+		"fdUrl" : "/km/supervise/km_supervise_templet/index.jsp?ower=1&fdType=10"
+	},
+	{
+		"fdName" : "立项模板新建、编辑、查看页面",
+		"fdUrl" : "/km/supervise/km_supervise_templet/kmSuperviseTemplet.do?method=add&fdType=10__and__/km/supervise/km_supervise_templet/kmSuperviseTemplet.do?method=edit__and__/km/supervise/km_supervise_templet/kmSuperviseTemplet.do?method=view"
+	},
+	{
+		"fdName" : "督办变更模板",
+		"fdUrl" : "/km/supervise/km_supervise_templet/index.jsp?ower=1&fdType=70"
+	},
+	{
+		"fdName" : "督办变更模板新建、编辑、查看页面",
+		"fdUrl" : "/km/supervise/km_supervise_templet/kmSuperviseTemplet.do?method=add&fdType=70__and__/km/supervise/km_supervise_templet/kmSuperviseTemplet.do?method=edit__and__/km/supervise/km_supervise_templet/kmSuperviseTemplet.do?method=view"
+	},
+	{
+		"fdName" : "制定计划模板",
+		"fdUrl" : "/km/supervise/km_supervise_templet/index.jsp?ower=1&fdType=20"
+	},
+	{
+		"fdName" : "制定计划模板新建、编辑、查看页面",
+		"fdUrl" : "/km/supervise/km_supervise_templet/kmSuperviseTemplet.do?method=add&fdType=20__and__/km/supervise/km_supervise_templet/kmSuperviseTemplet.do?method=edit__and__/km/supervise/km_supervise_templet/kmSuperviseTemplet.do?method=view"
+	},
+	{
+		"fdName" : "任务反馈模板",
+		"fdUrl" : "/km/supervise/km_supervise_templet/index.jsp?ower=1&fdType=30"
+	},
+	{
+		"fdName" : "任务反馈模板新建、编辑、查看页面",
+		"fdUrl" : "/km/supervise/km_supervise_templet/kmSuperviseTemplet.do?method=add&fdType=30__and__/km/supervise/km_supervise_templet/kmSuperviseTemplet.do?method=edit__and__/km/supervise/km_supervise_templet/kmSuperviseTemplet.do?method=view"
+	},
+	{
+		"fdName" : "汇总反馈模板",
+		"fdUrl" : "/km/supervise/km_supervise_templet/index.jsp?ower=1&fdType=40"
+	},
+	{
+		"fdName" : "汇总反馈模板新建、编辑、查看页面",
+		"fdUrl" : "/km/supervise/km_supervise_templet/kmSuperviseTemplet.do?method=add&fdType=40__and__/km/supervise/km_supervise_templet/kmSuperviseTemplet.do?method=edit__and__/km/supervise/km_supervise_templet/kmSuperviseTemplet.do?method=view"
+	},
+	{
+		"fdName" : "督办终止模板",
+		"fdUrl" : "/km/supervise/km_supervise_templet/index.jsp?ower=1&fdType=50"
+	},
+	{
+		"fdName" : "督办终止模板新建、编辑、查看页面",
+		"fdUrl" : "/km/supervise/km_supervise_templet/kmSuperviseTemplet.do?method=add&fdType=50__and__/km/supervise/km_supervise_templet/kmSuperviseTemplet.do?method=edit__and__/km/supervise/km_supervise_templet/kmSuperviseTemplet.do?method=view"
+	},
+	{
+		"fdName" : "督办办结模板",
+		"fdUrl" : "/km/supervise/km_supervise_templet/index.jsp?ower=1&fdType=60"
+	},
+	{
+		"fdName" : "督办办结模板新建、编辑、查看页面",
+		"fdUrl" : "/km/supervise/km_supervise_templet/kmSuperviseTemplet.do?method=add&fdType=60__and__/km/supervise/km_supervise_templet/kmSuperviseTemplet.do?method=edit__and__/km/supervise/km_supervise_templet/kmSuperviseTemplet.do?method=view"
+	},
+	{
+		"fdName" : "通用编号规则",
+		"fdUrl" : "/sys/number/sys_number_main/index.jsp?modelName=com.landray.kmss.km.supervise.model.KmSuperviseMain"
+	},
+	{
+		"fdName" : "通用编号规则新建、编辑、查看页面",
+		"fdUrl" : "/sys/number/sys_number_main/sysNumberMain.do?method=add&modelName=com.landray.kmss.km.supervise.model.KmSuperviseMain__and__/sys/number/sys_number_main/sysNumberMain.do?method=edit&modelName=com.landray.kmss.km.supervise.model.KmSuperviseMain__and__/sys/number/sys_number_main/sysNumberMain.do?method=view&modelName=com.landray.kmss.km.supervise.model.KmSuperviseMain"
+	},
+	{
+		"fdName" : "通用表单模板",
+		"fdUrl" : "/sys/xform/sys_form_common_template/index.jsp?fdModelName=com.landray.kmss.km.supervise.model.KmSuperviseTemplet&fdMainModelName=com.landray.kmss.km.supervise.model.KmSuperviseMain"
+	},
+	{
+		"fdName" : "通用表单模板新建、编辑、查看页面",
+		"fdUrl" : "/sys/xform/sys_form_common_template/sysFormCommonTemplate.do?method=add&fdModelName=com.landray.kmss.km.supervise.model.KmSuperviseTemplet&fdMainModelName=com.landray.kmss.km.supervise.model.KmSuperviseMain__and__/sys/xform/sys_form_common_template/sysFormCommonTemplate.do?method=view&fdModelName=com.landray.kmss.km.supervise.model.KmSuperviseTemplet&fdMainModelName=com.landray.kmss.km.supervise.model.KmSuperviseMain__and__/sys/xform/sys_form_common_template/sysFormCommonTemplate.do?method=edit&fdModelName=com.landray.kmss.km.supervise.model.KmSuperviseTemplet&fdMainModelName=com.landray.kmss.km.supervise.model.KmSuperviseMain"
+	},
+	{
+		"fdName" : "表单映射数据",
+		"fdUrl" : "/sys/xform/base/sys_form_db_table/index.jsp?fdTemplateModel=com.landray.kmss.km.supervise.model.KmSuperviseTemplet&fdModelName=com.landray.kmss.km.supervise.model.KmSuperviseMain"
+	},
+	{
+		"fdName" : "表单映射数据编辑、查看页面",
+		"fdUrl" : "/sys/xform/base/sys_form_db_table/sysFormDbTable.do?method=view&fdModelName=com.landray.kmss.km.supervise.model.KmSuperviseMain&fdFormType=common&fdTemplateModel=com.landray.kmss.km.supervise.model.KmSuperviseTemplet__and__/sys/xform/base/sys_form_db_table/sysFormDbTable.do?method=edit"
+	},
+	{
+		"fdName" : "搜索设置",
+		"fdUrl" : "/sys/search/sys_search_main/index.jsp?fdModelName=com.landray.kmss.km.supervise.model.KmSuperviseMain"
+	},
+	{
+		"fdName" : "搜索设置新建、编辑、查看页面",
+		"fdUrl" : "/sys/search/sys_search_main/sysSearchMain.do?method=add&fdModelName=com.landray.kmss.km.supervise.model.KmSuperviseMain&fdTemplateModelName=__and__/sys/search/sys_search_main/sysSearchMain.do?method=view&fdModelName=com.landray.kmss.km.supervise.model.KmSuperviseMain&fdTemplateModelName=__and__/sys/search/sys_search_main/sysSearchMain.do?method=edit&fdModelName=com.landray.kmss.km.supervise.model.KmSuperviseMain&fdTemplateModelName="
+	},
+	{
+		"fdName" : "列表自定义",
+		"fdUrl" : "/sys/profile/listShow/sys_listshow_category/index.jsp?modelName=com.landray.kmss.km.supervise.model.KmSuperviseMain"
+	},
+	{
+		"fdName" : "紧急程度",
+		"fdUrl" : "/km/supervise/km_supervise_urgency/index.jsp"
+	},
+	{
+		"fdName" : "紧急程度新建、编辑、查看页面",
+		"fdUrl" : "/km/supervise/km_supervise_urgency/kmSuperviseUrgency.do?method=add__and__/km/supervise/km_supervise_urgency/kmSuperviseUrgency.do?method=edit__and__/km/supervise/km_supervise_urgency/kmSuperviseUrgency.do?method=view"
+	},
+	{
+		"fdName" : "督办级别",
+		"fdUrl" : "/km/supervise/km_supervise_level/index.jsp"
+	},
+	{
+		"fdName" : "督办级别新建、编辑、查看页面",
+		"fdUrl" : "/km/supervise/km_supervise_level/kmSuperviseLevel.do?method=add__and__/km/supervise/km_supervise_level/kmSuperviseLevel.do?method=view__and__/km/supervise/km_supervise_level/kmSuperviseLevel.do?method=edit"
+	},
+	{
+		"fdName" : "督办预警",
+		"fdUrl" : "/sys/appconfig/sys_appconfig/sysAppConfig.do?method=edit&modelName=com.landray.kmss.km.supervise.model.KmSuperviseWarnConfig"
+	},
+	{
+		"fdName" : "功能开关",
+		"fdUrl" : "/sys/appconfig/sys_appconfig/sysAppConfig.do?method=edit&modelName=com.landray.kmss.km.supervise.model.KmSuperviseParamConfig"
+	},
+	{
+		"fdName" : "统计图表",
+		"fdUrl" : "/dbcenter/echarts/application/dbEchartsNavTree.do?method=treeIndex&mainModelName=com.landray.kmss.km.supervise.model.KmSuperviseTemplet&modelName=com.landray.kmss.dbcenter.echarts.application.model.DbEchartsNavTreeChart"
+	},
+	{
+		"fdName" : "统计图表新建、编辑、查看页面",
+		"fdUrl" : "/dbcenter/echarts/application/dbEchartsNavTreeChart.do?method=add&modelName=com.landray.kmss.km.supervise.model.KmSuperviseTemplet__and__/dbcenter/echarts/application/dbEchartsNavTreeChart.do?method=edit__and__/dbcenter/echarts/application/dbEchartsNavTreeChart.do?method=view"
+	},
+	{
+		"fdName" : "统计列表",
+		"fdUrl" : "/dbcenter/echarts/application/dbEchartsNavTree.do?method=treeIndex&mainModelName=com.landray.kmss.km.supervise.model.KmSuperviseTemplet&modelName=com.landray.kmss.dbcenter.echarts.application.model.DbEchartsNavTreeTable"
+	},
+	{
+		"fdName" : "统计列表新建、编辑、查看页面",
+		"fdUrl" : "/dbcenter/echarts/application/dbEchartsNavTreeTable.do?method=add&modelName=com.landray.kmss.km.supervise.model.KmSuperviseTemplet__and__/dbcenter/echarts/application/dbEchartsNavTreeTable.do?method=edit__and__/dbcenter/echarts/application/dbEchartsNavTreeTable.do?method=view"
+	},
+	{
+		"fdName" : "自定义数据",
+		"fdUrl" : "/dbcenter/echarts/application/dbEchartsNavTree.do?method=treeIndex&mainModelName=com.landray.kmss.km.supervise.model.KmSuperviseTemplet&modelName=com.landray.kmss.dbcenter.echarts.application.model.DbEchartsNavTreeCustom"
+	},
+	{
+		"fdName" : "自定义数据新建、编辑、查看页面",
+		"fdUrl" : "/dbcenter/echarts/application/dbEchartsNavTreeCustom.do?method=add&modelName=com.landray.kmss.km.supervise.model.KmSuperviseTemplet__and__/dbcenter/echarts/application/dbEchartsNavTreeCustom.do?method=edit__and__/dbcenter/echarts/application/dbEchartsNavTreeCustom.do?method=view"
+	},
+	{
+		"fdName" : "导航树展示",
+		"fdUrl" : "/dbcenter/echarts/application/navTree/tree_show_index.jsp?mainModelName=com.landray.kmss.km.supervise.model.KmSuperviseTemplet"
+	},
+	{
+		"fdName" : "导航树展示新建、编辑、查看页面",
+		"fdUrl" : "/dbcenter/echarts/application/dbEchartsNavTreeShow.do?method=add&serviceModelName=com.landray.kmss.km.supervise.model.KmSuperviseTemplet__and__/dbcenter/echarts/application/dbEchartsNavTreeShow.do?method=edit__and__/dbcenter/echarts/application/dbEchartsNavTreeShow.do?method=view"
+	},
+	{
+		"fdName" : "文档维护",
+		"fdUrl" : "/km/supervise/km_supervise_main/kmSuperviseMain.do?method=manageList&nodeType=CATEGORY"
+	},
+	{
+		"fdName" : "回收站",
+		"fdUrl" : "/km/supervise/km_supervise_main/sysRecycleBox.jsp"
+	}
+	]
+}

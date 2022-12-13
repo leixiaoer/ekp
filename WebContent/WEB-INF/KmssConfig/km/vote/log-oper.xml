@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<log-oper>
+	<logset>
+	 	<oper
+            id="kmVoteCommentOperLog"
+            extends="BaseOperLog"
+            model="com.landray.kmss.km.vote.model.KmVoteComment"
+            action="/km/vote/km_vote_comment/kmVoteComment.do">
+            <query 
+                method="viewComment"
+                logPoint="Base_UrlParam;Action_Find"
+                messageKey="button.view">
+            </query>
+        </oper>
+         
+        <oper
+            id="kmVoteMainOperLog"
+            extends="BaseOperLog"
+            model="com.landray.kmss.km.vote.model.KmVoteMain"
+            action="/km/vote/km_vote_main/kmVoteMain.do">
+            <query 
+                method="getLatestVote|portlet"
+                logPoint="Base_UrlParam;Action_FindAll"
+                messageKey="button.list">
+            </query>
+            <query 
+                method="participatedVote"
+                logPoint="participatedVote"
+                messageKey="km-vote:button.submitVote">
+            </query>
+            <query 
+                method="remindVote"
+                logPoint="Base_UrlParam;remindVote"
+                messageKey="km-vote:button.remindVote">
+            </query>
+            <query 
+                method="saveDraft"
+                logPoint="Service_Add"
+                messageKey="km-vote:button.saveVote">
+            </query>
+            <query 
+                method="terminateVote"
+                logPoint="Base_UrlParam;terminateVote"
+                messageKey="km-vote:button.terminateVote">
+            </query>
+            <query 
+                method="viewResult|viewitem"
+                logPoint="Base_UrlParam;Action_Find"
+                messageKey="km-vote:button.viewResult">
+            </query>
+        </oper>
+        
+        <oper
+            id="kmVoteMainItemOperLog"
+            extends="BaseOperLog"
+            model="com.landray.kmss.km.vote.model.KmVoteMainItem"
+            action="/km/vote/km_vote_main_item/kmVoteMainItem.do">
+            <!-- <query 
+                method="uploadOptionImage"
+                logPoint="Base_UrlParam;Action_Find"
+                messageKey="km-vote:kmVote.upload.image">
+            </query> -->
+        </oper>
+        
+        <oper
+            id="kmVoteCategoryOperLog"
+            extends="BaseOperLog"
+            model="com.landray.kmss.km.vote.model.KmVoteCategory"
+            action="/km/vote/km_vote_category/kmVoteCategory.do">
+        </oper>
+        
+        <oper
+            id="kmVoteMainIndexOperLog"
+            extends="BaseOperLog"
+            model="com.landray.kmss.km.vote.model.KmVoteMain"
+            action="/km/vote/km_vote_main/kmVoteMainIndex.do">
+            <query 
+                method="listChildren|manageList"
+                logPoint="Base_UrlParam;Action_FindAll"
+                messageKey="button.list">
+            </query>
+        </oper>
+        
+        <oper
+            id="kmVoteRecordOperLog"
+            extends="BaseOperLog"
+            model="com.landray.kmss.km.vote.model.KmVoteRecord"
+            action="/km/vote/km_vote_record/kmVoteRecord.do">
+            <query 
+                method="exportVotedDetailExcel"
+                logPoint="Base_UrlParam;Action_FindAll"
+                messageKey="km-vote:button.exportExcel">
+            </query>
+            <query 
+                method="viewVotedDetail"
+                logPoint="Base_UrlParam;Action_FindAll"
+                messageKey="km-vote:button.viewVoted">
+            </query>
+            <query 
+                method="queryRecord"
+                logPoint="Base_UrlParam;Action_FindAll"
+                messageKey="button.list">
+            </query>
+        </oper>
+	</logset>
+</log-oper>

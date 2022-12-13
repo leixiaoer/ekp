@@ -1,0 +1,424 @@
+
+div.orgChart a
+{
+    color: black;
+    text-decoration: none;
+}
+div.orgChart a:hover
+{
+    color: black;
+    text-decoration: underline;
+}
+img.star
+{
+    width: 16px;
+    height: 16px;
+}
+
+#worldMap{
+}
+
+div.orgChart
+{
+    border: 0px solid #cccccc;
+    background-color: #ffffff;
+    margin: 10px;
+    padding: 10px;
+    width: 95%;
+}
+div.orgChart h2
+{
+    margin: 0px;
+    font-size: 1em;
+    border-bottom: none;
+}
+div.orgChart ul
+{
+    list-style: none;
+    margin: 4px;
+    padding: 0px;
+    font-size: 0.8em;
+    text-align: left;
+}
+div.orgChart ul.stack, div.orgChart ul.stack ul
+{
+    text-align: center;
+}
+div.orgChart table
+{
+    width: 100%;
+}
+div.orgChart tr.lines td.line {
+    width: 136px;
+    height: 20px;
+}
+div.orgChart tr.lines.x td.line { 
+     /* 解决32位火狐边线丢失问题 */
+    height: 21px; 
+}
+div.orgChart tr.lines td.top {
+    border-top: 1px solid #cdcdcd;
+}
+@-moz-document url-prefix() {
+  div.orgChart tr.lines td.top {
+    border-top-width: 2px;
+  }
+} /* 针对 Firebox Hack */
+
+
+div.orgChart tr.lines td.left
+{
+    border-right: 1px solid #cdcdcd;
+}
+div.orgChart tr.lines td.right
+{
+    border-left: 1px solid #cdcdcd;
+}
+div.orgChart td.node {
+	padding: 0px 15px;
+}
+
+div.orgChart td {
+    text-align: center;
+    vertical-align: top;
+}
+div.orgChart.person_type div.node{
+    width: 150px;
+    height: 68px;
+}
+div.orgChart div.node {
+    cursor: default;
+    display: inline-block;
+    padding: 0 0px;
+    width: 160px;
+    height: 68px;
+    background-color: #FFFFFF;
+    line-height: 1.3em;
+    border-radius: 4px;
+    box-shadow: 0px 0px 4px 0px rgba(0,0,0,0.3);
+    -moz-border-radius: 4px;
+    -moz-box-shadow: 0px 0px 4px 0px rgba(0,0,0,0.3);
+    -webkit-border-radius: 4px;
+    -webkit-box-shadow: 0px 0px 4px 0px rgba(0,0,0,0.3);
+    position: relative;
+}
+.personDiv {
+    width: 150px;
+    height: 68px;
+}
+.personDiv>div {
+    padding: 14px 0 0 8px;
+}
+.personDiv>div.optExpand {
+    padding: 0;
+}
+.taskDiv{
+    width: 160px;
+    height: 68px;
+}
+.weightsDiv{
+    width: 160px;
+    height: 68px;
+}
+
+.taskName {
+    vertical-align: middle;
+    font-family: "Microsoft YaHei","Segoe UI", "Lucida Grande", Helvetica, Arial, "SimSun", "Tahoma", sans-serif;
+    color: #333;
+    font-size: 12px;
+    text-align: left;
+    overflow: hidden;
+    display: block;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    margin-bottom: 7px;
+    line-height: 14px;
+    font-weight: normal;
+}
+.taskPerson {
+    font-family: "Microsoft YaHei","Segoe UI", "Lucida Grande", Helvetica, Arial, "SimSun", "Tahoma", sans-serif;
+    color: #666;
+    font-size: 12px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    line-height: 14px;
+    text-align: left;
+    font-weight: normal;
+}
+.personDiv .taskName{
+	width: 60px!important;
+}
+.firstPersonName {
+    display: block;
+    margin-bottom: 5px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+.taskPersonName {
+    font-size: 12px;
+    line-height: 12px;
+    color: #333;
+    font-weight: normal;
+    text-align: left;
+    padding-left: 10px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    height: 30px;
+}
+.taskPersonName.single .firstPersonName {
+    margin-top: 8px;
+}
+.taskName span{
+	line-height:22px;
+	cursor: pointer;
+}
+.taskDiv.divShowD>div.optExpand {
+    padding: 0;
+}
+.weightsDiv.divShowD>div.optExpand {
+    padding: 0;
+}
+.optExpand{
+    width: 100%;
+    vertical-align: middle!important;
+    height: 10px;
+    line-height:10px;
+    position: absolute;
+    bottom: 0;
+}
+.selected .optExpand {
+    bottom: -1px;
+}
+.optExpand img{
+	cursor:pointer;
+    margin-top: 0px;
+    width: 100%;
+}
+.statusDiv {
+    font-size: 12px;
+}
+.statusDiv>img {
+    position: relative;
+    bottom: -3px;
+    margin-left: 4px;
+    margin-right: 2px;
+}
+.statusDiv>select {
+    margin-left: 6px;
+}
+.scaleDiv>img {
+    margin-right: 4px;
+}
+.taskHead {
+    float: left;
+    width: 30px;
+    height: 30px;
+}
+.taskHead img {
+    height: 30px;
+    width: 30px;
+	border-radius:50%;
+}
+
+.taskStatus {
+    text-align: center;
+    padding-left: 5px;
+    margin-bottom: 4px;
+    font-family: "Microsoft YaHei","Segoe UI", "Lucida Grande", Helvetica, Arial, "SimSun", "Tahoma", sans-serif;
+    font-size:10px;
+    color:#333;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    word-break: keep-all;
+    white-space: nowrap;
+}
+.taskProgress{
+	vertical-align: middle!important;
+	text-align:center;
+	padding-left: 5px;
+    border-left-color: Black; 
+	font-family: "Microsoft YaHei","Segoe UI", "Lucida Grande", Helvetica, Arial, "SimSun", "Tahoma", sans-serif;
+    color:#333;
+    font-size: 12px;
+    line-height: 12px;
+    font-weight: normal;
+}
+.weightsDiv.divShowD>div:after,
+.personDiv.divShowD>div:after,
+.taskDiv.divShowD>div:after {
+    content: '';
+    display: table;
+    visibility: hidden;
+    clear: both;
+}
+.taskDiv.divShowD>div {
+    padding: 14px 0 0 10px;
+    padding-bottom: 0;
+}
+.weightsDiv.divShowD>div {
+    padding: 14px 0 0 10px;
+    padding-bottom: 0;
+}
+.taskLeftArea {
+    width: 70%;
+    float: left;
+}
+.personDiv .taskLeftArea {
+    width: 65%;
+}
+.taskRightArea {
+    width: 30%;
+    float: left;
+    position: relative;
+}
+.personDiv .taskRightArea {
+    width: 35%;
+}
+/*
+.taskRightArea:after {
+    content: '';
+    position: absolute;
+    left: 3px;
+    top: -5px;
+    width: 1px;
+    height: 45px;
+    background-image:-webkit-linear-gradient(top, transparent 0%, #cccccc 30%, #cccccc 80%, transparent 100%);
+    background-image:linear-gradient(top, transparent 0%, #cccccc 30%, #cccccc 80%, transparent 100%);
+    background-repeat: repeat-y;
+}
+*/
+.taskProgress span{
+	font-family:微软雅黑;
+	 font-size:15px;
+	 font-weight:bold;
+	 color:#333;
+}
+
+div.orgChart div.hasChildren
+{
+    background-color: #ffffff;
+}
+div.orgChart.interactive div.hasChildren
+{
+    cursor: pointer;
+}
+div.orgChart div.node.hover
+{
+    background-color: white;
+}
+div.orgChart div.adjunct.node
+{
+    position: absolute;
+    margin-top: 8px;
+    margin-left: -110px;
+    width: 80px;
+    height: 40px;
+    background-color: #efefef;
+}
+div.orgChart div.adjunct-link
+{
+    display: inline-block;
+    position: absolute;
+    margin-left: -20px;
+    margin-top: 25px;
+    width: 20px;
+    border: 1px dashed black;
+}
+
+.divShowD {
+    cursor: pointer;
+    background-color: #FFFFFF;
+    -moz-border-radius: 4px;
+    -webkit-border-radius: 4px;
+    border-radius: 4px; /*IE 7 AND 8 DO NOT SUPPORT BORDER RADIUS*/
+    -moz-box-shadow: 0px 0px 5px rgba(221, 221, 221, 0.6);
+    -webkit-box-shadow: 0px 0px 5px rgba(221, 221, 221, 0.6);
+    box-shadow: 0px 0px 10px rgba(221, 221, 221, 0.6); /*IE 7 AND 8 DO NOT SUPPORT BLUR PROPERTY OF SHADOWS*/
+    background: url(../images/task-line.png) 120px center no-repeat;
+}
+.personDiv.divShowD {
+    background: url(../images/task-line.png) 107px center no-repeat;
+}
+.selected.divShowD {
+    -moz-box-shadow: none;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+}
+.personDiv.divShowD.selected,
+.taskDiv.divShowD.selected,
+.weightsDiv.divShowD.selected {
+    border: 1px solid #37AEE9;
+    box-shadow: 0px 0px 5px rgba(55, 174, 233, 0.2);
+    -moz-box-shadow: 0px 0px 5px rgba(55, 174, 233, 0.2);
+    -webkit-box-shadow: 0px 0px 10px rgba(55, 174, 233, 0.2);
+}
+.headrow-bradius {
+    -moz-border-top-left-radius: 4px;
+    -moz-border-top-right-radius: 4px;
+    -webkit-border-top-left-radius: 4px;
+    -webkit-border-top-right-radius: 4px;
+    border-top-left-radius: 4px; /*IE 7 AND 8 DO NOT SUPPORT BORDER RADIUS*/
+    border-top-right-radius: 4px; /*IE 7 AND 8 DO NOT SUPPORT BORDER RADIUS*/
+}
+
+.modal-body
+{
+    background-color: #f7f7f7;
+}
+.topNoTdLeft
+{
+    font-family: 微软雅黑;
+    font-size: 14px;
+    font-weight: bold;
+    color: #333;
+}
+.topNoTdRight {
+    font-family: 微软雅黑;
+    font-size: 14px;
+    color: #555;
+    word-wrap: break-word;
+}
+#orgChartFieldset {
+    width: 80% !important;
+   }
+div.content {
+    margin: 0px 0px 0px 0px !important;
+}
+.detailInfo {
+    right: -240px;
+    top: -12px;
+    border: 1px solid #ccc;
+    background-color: #fff;
+}
+.detailInfo>div {
+    font-size: 12px;
+    color: #666;
+    font-family: "Microsoft YaHei","Segoe UI", "Lucida Grande", Helvetica, Arial, "SimSun", "Tahoma", sans-serif;
+    -moz-border-radius: 1px;
+    -webkit-border-radius: 1px;
+    border-radius: 1px; /*IE 7 AND 8 DO NOT SUPPORT BORDER RADIUS*/
+    -moz-box-shadow: 0px 0px 5px rgba(221, 221, 221, 0.6);
+    -webkit-box-shadow: 0px 0px 5px rgba(221, 221, 221, 0.6);
+    box-shadow: 0px 0px 10px rgba(221, 221, 221, 0.6);
+    font-weight: normal;
+    padding: 5px;
+    width: 210px;
+    text-align: left;
+    line-height: 20px;
+}
+
+.detailInfo {
+    display: none;
+}
+.taskDiv.divShowD div:nth-child(3).detailInfo{
+    display: block;
+}
+.personDiv.divShowD div:nth-child(3).detailInfo{
+    display: block;
+}
+.weightsDiv.divShowD div:nth-child(3).detailInfo{
+    display: block;
+}

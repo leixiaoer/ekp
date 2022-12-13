@@ -1,0 +1,257 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configs
+	xmlns="http://www.example.org/design-config"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.example.org/design-config ../../design.xsd ">
+	<module
+		messageKey="km-vote:module.km.vote"
+		urlPrefix="/km/vote/"
+		defaultValidator="roleValidator(role=ROLE_KMVOTE_DEFAULT)">
+		<roles>
+			ROLE_KMVOTE_DEFAULT
+		</roles>
+		<areaRoles>
+			ROLE_KMVOTEMAIN_READER;
+			ROLE_KMVOTECATEGORY_ADMIN;
+			ROLE_KMVOTEMAIN_CREATE;
+			ROLE_KMVOTEMAIN_EDIT;
+			ROLE_KMVOTEMAIN_DELETE;
+			ROLE_KMVOTEMAIN_REMIND;
+			ROLE_KMVOTEMAIN_TERMINATE;
+			ROLE_KMVOTEMAIN_COMMENT_DEL;
+			ROLE_KMVOTEMAIN_BACKSTAGE_MANAGER
+		</areaRoles>
+		<request
+			path="tree_config.jsp*"
+			defaultValidator="roleValidator(role=ROLE_KMVOTEMAIN_BACKSTAGE_MANAGER)"/>
+		<request
+			path="km_vote_category/kmVoteCategory*"
+			validatorParameter="recid=fdId,model=com.landray.kmss.km.vote.model.KmVoteCategory,adminRoleName=ROLE_KMVOTECATEGORY_ADMIN">
+			
+			<!-- 保存 -->
+			<query
+				queryString="method=add"
+				validator="sysSimpleCategoryEditorValidator(recid=parentId)" />
+			<!-- 阅读 -->
+			<query
+				queryString="method=view"
+				validator="sysSimpleCategoryReaderValidator()" />
+			<!-- 编辑和删除 -->
+			<query
+				queryString="method=edit|update|delete"
+				validator="sysSimpleCategoryEditorValidator()" />
+			<query
+				queryString="method=copy"
+				validator="sysSimpleCategoryEditorValidator(recid=fdCopyId)" />
+		</request>
+		<request
+			path="km_vote_main/kmVoteMain*"
+			validatorParameter="recid=fdId,model=com.landray.kmss.km.vote.model.KmVoteMain,cateModel=com.landray.kmss.km.vote.model.KmVoteCategory,adminRoleName=ROLE_KMVOTECATEGORY_ADMIN">
+			<query
+				queryString="method=view"
+				validator="authFieldValidator(type=SYS_READER,isArea=true)|authSimpleCategoryEditorValidator(property=fdVoteCategory)" />
+		
+			<query
+				queryString="method=viewResult"
+				validator="authFieldValidator(type=voterViewResult)&amp;fieldValueValidator(fieldproperty=fdVoterViewFlag,value=true)
+				|fieldValueValidator(fieldproperty=fdIsVoted,value=true)&amp;fieldValueValidator(fieldproperty=fdVoterViewFlag,value=true)
+				|fieldValueValidator(fieldproperty=fdAuthVoteFlag,value=true)&amp;fieldValueValidator(fieldproperty=fdVoterViewFlag,value=true)
+				|authFieldValidator(type=otherViewResult)&amp;fieldValueValidator(fieldproperty=fdOtherViewFlag,value=true)&amp;fieldValueValidator(fieldproperty=fdVoterViewFlag,value=false)
+				|authFieldValidator(type=creator)" />
+				
+			<query
+				queryString="method=participatedVote|updateVote"
+				validator="authFieldValidator(type=partVote)" />
+			<query
+				queryString="method=submitVote"
+				validator="authFieldValidator(type=partVote)&amp;fieldValueValidator(fieldproperty=fdVoteStatus,value=0)&amp;fieldValueValidator(fieldproperty=fdIsVoted,value=false)" />	
+			<query
+				queryString="method=add&amp;fdCategoryId=*"
+				validator="areaRoleValidator(role=ROLE_KMVOTEMAIN_CREATE)&amp;authSimpleCategoryReaderValidator(cateId=fdCategoryId)" />
+					
+			<query
+				queryString="method=save|saveadd|saveDraft"
+				validator="areaRoleValidator(role=ROLE_KMVOTEMAIN_CREATE)&amp;authSimpleCategoryReaderValidator(cateId=fdCategoryId)" />
+			<query
+				queryString="method=edit|update|editVoter"
+				validator="authFieldValidator(type=creator)&amp;fieldValueValidator(fieldproperty=fdVoteStatus,value=0;1;10)|fieldValueValidator(fieldproperty=fdVoteStatus,value=0;1;10)&amp;areaRoleValidator(role=ROLE_KMVOTEMAIN_EDIT)&amp;[areaRoleValidator(role=ROLE_KMVOTECATEGORY_ADMIN)|authSimpleCategoryEditorValidator(property=fdVoteCategory)]" />
+
+			<!-- 文档中的删除 -->
+			<query
+				queryString="method=delete"
+				validator="fieldValueValidator(fieldproperty=docStatus,value=10)&amp;authFieldValidator(type=creator)|areaRoleValidator(role=ROLE_KMVOTEMAIN_DELETE)&amp;[areaRoleValidator(role=ROLE_KMVOTECATEGORY_ADMIN)|authSimpleCategoryEditorValidator(property=fdVoteCategory)]" />
+			<query
+				queryString="method=deleteall"
+				validator="roleValidator(role=ROLE_KMVOTEMAIN_DELETE)&amp;[roleValidator(role=ROLE_KMVOTECATEGORY_ADMIN)|authSimpleCategoryEditorValidator(cateId=categoryId)]" />
+
+			<query
+				queryString="method=terminateVote|updateVote"
+				validator="areaRoleValidator(role=ROLE_KMVOTEMAIN_TERMINATE)|authFieldValidator(type=creator)" />
+			<query
+				queryString="method=remindVote|updateVote"
+				validator="areaRoleValidator(role=ROLE_KMVOTEMAIN_REMIND)|authFieldValidator(type=creator)" />
+			<!-- 维护界面 -->
+			<query
+				queryString="method=manageList"
+				validator="roleValidator(role=ROLE_KMVOTECATEGORY_ADMIN)|authSimpleCategoryEditorValidator(cateId=categoryId)" />
+			
+		</request>
+		<request
+			path="km_vote_comment/kmVoteComment*"
+			validatorParameter="recid=fdId,model=com.landray.kmss.km.vote.model.KmVoteComment">
+			<query
+				queryString="method=delete"
+				validator="authFieldValidator(type=creator)|areaRoleValidator(role=ROLE_KMVOTEMAIN_COMMENT_DEL)" />
+			
+		</request>
+		<request
+			path="km_vote_record/kmVoteRecord*"
+			validatorParameter="recid=fdMainId,model=com.landray.kmss.km.vote.model.KmVoteMain,cateModel=com.landray.kmss.km.vote.model.KmVoteCategory,adminRoleName=ROLE_KMVOTECATEGORY_ADMIN">
+			<!-- 投票明细 -->
+			<query
+				queryString="method=viewVotedDetail|exportVotedDetailExcel|viewPersonDetail"
+				validator="authFieldValidator(type=creator)&amp;fieldValueValidator(fieldproperty=fdVoteStatus,value=0;2)|fieldValueValidator(fieldproperty=fdVoteStatus,value=0;2)&amp;[areaRoleValidator(role=ROLE_KMVOTECATEGORY_ADMIN)|authSimpleCategoryEditorValidator(property=fdVoteCategory)]" />
+		</request>
+		<filters
+			modelName="com.landray.kmss.km.vote.model.KmVoteMain">
+			<filter
+				type="creator"
+				expression="authFieldFilter(field=docCreator.fdId)" />
+
+			<!-- 可参与投票过滤器 -->
+			<filter
+				type="partVote"
+				expression="authFieldFilter(field=fdVoters.fdId)" />
+			<filter
+				type="partVote"
+				expression="flagFieldFilter(field=fdAuthVoteFlag,value=1)" />
+
+			<!-- 可查看投票结果过滤器 -->
+			<filter
+				type="voterViewResult"
+				expression="authFieldFilter(field=fdVoters.fdId)" />
+			<filter
+				type="otherViewResult"
+				expression="authFieldFilter(field=fdViewer.fdId)" />
+
+			<filter
+				type="SYS_READER"
+				expression="roleFilter(role=ROLE_KMVOTEMAIN_READER)" />
+			<filter
+				type="SYS_READER"
+				expression="authFieldFilter(field=fdVoters.fdId;fdViewer.fdId;docCreator.fdId)" />
+			<filter
+				type="SYS_READER"
+				expression="flagFieldFilter(field=fdAuthVoteFlag,value=1)" />
+		</filters>
+		<filters
+			modelName="com.landray.kmss.km.vote.model.KmVoteComment">
+			<filter
+				type="creator"
+				expression="authFieldFilter(field=docCreator.fdId)" />
+		</filters>	
+	</module>
+	<!-- 批量修改权限 -->
+	<module urlPrefix="/sys/right/">
+		<request path="rightCateChange*">
+			<query
+				queryString="method=cateRightEdit&amp;cateModelName=com.landray.kmss.km.vote.model.KmVoteCategory"
+				validator="roleValidator(role=ROLE_KMVOTECATEGORY_ADMIN)|roleValidator(role=ROLE_KMVOTEMAIN_BACKSTAGE_MANAGER)" />
+		</request>
+	</module>
+	<!-- 全文检索 -->
+	<module
+		messageKey=""
+		urlPrefix="/sys/ftsearch/">
+		<request path="searchBuilder*">
+			<query
+				queryString="modelName=com.landray.kmss.km.vote.model.KmVoteMain"
+				validator="roleValidator(role=ROLE_KMVOTE_DEFAULT)" />
+		</request>
+	</module>
+	<!-- 参数设置 -->
+	<module messageKey="" urlPrefix="/sys/appconfig/">
+		<request path="sys_appconfig/sysAppConfig*">
+			<query
+				queryString="modelName=com.landray.kmss.km.vote.model.KmVoteConfig"
+				validator="roleValidator(role=ROLE_KMVOTEMAIN_BACKSTAGE_MANAGER)" />
+		</request>
+	</module>
+	<portlet
+		moduleKey="km-vote:tree.voteManagement"
+		messageKey="km-vote:kmVoteMain.newVote"
+		contentURL="/km/vote/km_vote_main/kmVoteMain.do?method=getLatestVote&amp;fdCategoryId=!{cateid}"
+		moreURL="/km/vote#cri.q=fdVoteCategory:!{cateid};fdVoteStatus:0"
+		cateBean="kmVoteCategoryTreeService" />
+	<!-- 定时任务 
+	<quartz
+		messageKey="km-vote:kmVoteMain.VoteToDoQuartz"
+		jobService="kmVoteMainService"
+		jobMethod="updateVoteToDo"
+		enable="true"
+		cronExpression="0 0 * * * ?"
+		runType="SINGLENODE"
+		description="km-vote:kmVote.quartz.description" />
+-->
+	<!--搜索机制-->
+	<search
+		messageKey="km-vote:tree.voteSearch"
+		modelName="com.landray.kmss.km.vote.model.KmVoteMain"
+		resultProperties="docSubject;fdVoteCategory;fdVoteNum;fdEffectTime;fdExpireTime;docCreator;docCreateTime" />
+	<!-- 全文检索 -->
+	<ftSearch
+		modelName="com.landray.kmss.km.vote.model.KmVoteMain"
+		boost="2.0"
+		timeField="fdLastModifiedTime"> <!-- 更新时间 -->
+		<luceneField
+			name="subject"
+			property="docSubject"
+			type="Text" />  <!-- 检索标题,只需要修改property，不需改name -->
+		<luceneField
+			name="content"
+			property="fdDescription"
+			type="Text" />  <!-- 检索内容,只需要修改property，不需改name -->
+		<luceneField
+			name="category"
+			property="fdVoteCategory.fdId"
+			type="Text" />
+		<luceneField
+			name="creator"
+			property="docCreator.fdName"
+			type="Text" />  <!-- 检索创建人,只需要修改property，不需改name -->
+		<luceneField
+			name="createTime"
+			property="docCreateTime"
+			type="keyword" />  <!-- 检索创建时间,只需要修改property，不需改name -->
+	</ftSearch>
+
+	<!-- 投票管理配置 -->
+	<treeNodes type="config">
+		<treeNode messageKey="km-vote:tree.voteManagement">
+		<treeNode
+			messageKey="km-vote:tree.votecategorySetting"
+			url="/km/vote/km_vote_category/kmVoteCategory.do?method=list" />
+		</treeNode>
+	</treeNodes>
+<!--	<homePage-->
+<!--		urlPrefix="km/vote"-->
+<!--		url="/moduleindex.jsp?nav=/km/vote/tree.jsp&amp;main=%2Fkm%2Fvote%2Fkm_vote_main%2FkmVoteMain.do%3Fmethod%3Dlist%26voteStatus%3D0%26s_path%3D!%7Bmessage(km-vote%3Alabel.voteStatus.voting)%7D"-->
+<!--		messageKey="km-vote:tree.voteManagement"-->
+<!--		config="/moduleindex_notopic.jsp?nav=/km/vote/tree_config.jsp" />-->
+<!--	 投票主页配置 -->
+	<homePage
+		urlPrefix="km/vote"
+		url="/sys/portal/page.jsp#j_start=/km/vote/index.jsp&amp;j_target=_iframe"  
+		messageKey="km-vote:module.km.vote"
+		config="/moduleindex_notopic.jsp?nav=/km/vote/tree_config.jsp" />
+	<profileConfig
+		key="km/vote"
+		messageKey="{km-vote:module.km.vote}" 
+		url="/sys/profile/moduleindex.jsp?nav=/km/vote/tree_config.jsp" 
+		icon="km_vote"
+		description="{km-vote:kmVote.profileCfg.description}"
+		type="ekp"
+		order="307"/>
+
+
+</configs>

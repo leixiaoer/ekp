@@ -1,0 +1,17 @@
+<div id='basicInfoView' data-dojo-type="dojox/mobile/View">
+	<div class="basicInfoHeader" data-dojo-type="mui/header/Header" data-dojo-props="height:'4rem'">
+		<div class="basicInfoHeaderBack" onclick="backToDocView('${param.cardId}')">
+			<i class="mui mui-back"></i>
+			<span class="personHeaderReturnTxt">返回</span>
+		</div>
+		<div class="basicInfoHeaderTitle">选择盘点任务</div>
+		<div></div>
+	</div>
+	<div id="scroll" data-dojo-type="mui/list/StoreScrollableView">
+	    <ul id="_filterDataList"
+	    	data-dojo-type="mui/list/JsonStoreList" 
+	    	data-dojo-mixins="km/asset/mobile/js/list/AssetTaskRadioItemList"
+	    	data-dojo-props="url:'{url}', lazy:false">
+		</ul>
+	</div>
+</div>

@@ -1,0 +1,312 @@
+@charset "UTF-8";
+.prompt_container {
+  width: auto;
+  text-align: center;
+  position: relative;
+  padding-top: 0;
+  /* 防止外边框折叠 */
+}
+
+#auditNoteTable .prompt_container {
+  padding-top: 1px;
+}
+
+.prompt_frame {
+  margin: 40px auto;
+  background-color: #fff;
+  width: 400px;
+  font-size: 12px;
+  border: 1px solid #d9d9d9;
+  -ms-box-shadow: 0 2px 8px -2px rgba(0, 0, 0, 0.125);
+  -o-box-shadow: 0 2px 8px -2px rgba(0, 0, 0, 0.125);
+  box-shadow: 0 2px 8px -2px rgba(0, 0, 0, 0.125);
+}
+
+.prompt_frame .barmsg {
+  background: #89b6ff;
+  height: 4px;
+  font-size: 1px;
+  color: #89b6ff;
+  border: none;
+}
+
+.prompt_frame .errtrace {
+  text-align: left;
+  margin: 0;
+  padding: 10px;
+}
+
+.prompt_container .msgtitle,
+.errortitle {
+  width: auto;
+  color: #0C3E6C;
+  font-size: 18px;
+  font-weight: normal;
+  margin: 6px 10px 2px 0;
+  padding-bottom: 6px;
+}
+
+.prompt_frame .msgcontent {
+  padding-top: 10px;
+  font-size: 12px;
+}
+
+.prompt_frame .msgcontent:after,
+.prompt_frame .msgcontent:before {
+  content: '';
+  display: table;
+  visibility: hidden;
+}
+
+.prompt_frame .msgcontent:after {
+  clear: both;
+}
+
+.prompt_frame .msgcontent > div {
+  float: none;
+  display: table-cell;
+}
+
+.prompt_frame .msgcontent .msgtip {
+  margin-left: 0;
+}
+
+.prompt_frame .msgtip ul {
+  list-style: disc;
+  margin: 0;
+  padding-left: 18px;
+}
+
+.prompt_frame .msgtip ul li {
+  margin-bottom: 2px;
+}
+
+.prompt_container .prompt_frame .msgtitle,
+.prompt_container .prompt_frame .errortitle {
+  margin: 0;
+  padding: 0;
+  width: auto;
+  color: #545555;
+  font-size: 18px;
+  font-weight: normal;
+  border-bottom: 0;
+}
+
+.prompt_frame .showMoreError_plus {
+  position: relative;
+  top: 6px;
+  left: 4px;
+  float: left;
+  display: block;
+  width: 11px;
+  height: 15px;
+  cursor: pointer;
+  margin-right: 10px;
+}
+
+.prompt_frame .btnmsg_l {
+  float: right;
+  padding: 0;
+  background: none;
+  margin: 0 5px;
+}
+
+.prompt_frame .btnmsg_r {
+  float: none;
+  height: auto;
+  padding: 0;
+  background: none;
+}
+
+.prompt_frame .btnmsg {
+  margin: 0;
+  padding: 0 12px;
+  height: 26px;
+  line-height: 26px;
+  border: 1px solid #d9d9d9;
+  background: #fff;
+  color: #666;
+  font-weight: normal;
+  -webkit-transition: all .2s ease-in-out;
+  transition: all .2s ease-in-out;
+  cursor: pointer;
+  box-sizing: content-box;
+}
+
+.prompt_frame .btnmsg:hover {
+  color: #fff;
+  border-color: #0C3E6C;
+  background-color: #0C3E6C;
+}
+
+.prompt_frame .prompt_content_inside {
+  margin: 0;
+  padding-top: 40px;
+  padding-bottom: 40px;
+  word-wrap: break-word;
+  text-align: left;
+  color: #999;
+  margin-top: 0px !important;
+}
+
+.prompt_frame .prompt_content_inside .errorlist {
+  position: relative;
+  top: 3px;
+}
+
+.prompt_frame .prompt_content_inside .msglist {
+  color: black;
+}
+
+.prompt_frame .prompt_content_inside .prompt_title {
+  font-size: 14px;
+}
+
+.prompt_frame .prompt_content_inside .links > a {
+  color: #0C3E6C;
+}
+
+.prompt_frame .prompt_content_inside .links > a:hover {
+  color: #346ac3;
+  text-decoration: underline;
+}
+
+.prompt_frame .prompt_content_timer {
+  display: block;
+  color: #adadad;
+  padding: 2px 0 0;
+  font-size: 12px;
+}
+
+.prompt_frame .prompt_content_error,
+.prompt_frame .prompt_content_success {
+  margin: 0;
+  float: left;
+  width: 22%;
+  height: 160px;
+  background-color: transparent;
+  background-repeat: no-repeat;
+  background-position: 100% 50%;
+  background-size: 62px auto;
+}
+
+.prompt_frame .prompt_content_error {
+  background-image: url(../images/prompt/prompt_warning.png);
+}
+
+.prompt_frame .prompt_content_success {
+  background-image: url(../images/prompt/prompt_success.png);
+}
+
+@media screen and (-webkit-min-device-pixel-ratio: 2) {
+  .prompt_frame .prompt_content_error {
+    background-image: url(../images/prompt/prompt_warning@2x.png);
+  }
+  .prompt_frame .prompt_content_success {
+    background-image: url(../images/prompt/prompt_success@2x.png);
+  }
+}
+
+.prompt_frame .prompt_content_right {
+  float: right;
+  margin: 0;
+  width: 75%;
+  min-height: 120px;
+}
+
+.prompt_frame .prompt_buttons {
+  padding: 0;
+  text-align: center;
+  position: absolute;
+  right: 2px;
+  bottom: 6px;
+}
+
+.prompt_frame .prompt_buttons .prompt_buttons_button {
+  float: left;
+  min-width: 81px;
+  height: 25px;
+  margin-left: 10px;
+  margin-top: 4px;
+  color: #fff;
+  font-size: 14px;
+  text-align: center;
+  line-height: 25px;
+  border: 1px solid #0C3E6C;
+  background-color: #0C3E6C;
+  -webkit-transition: all .3s ease-in-out;
+  transition: all .3s ease-in-out;
+  display: block;
+}
+
+.prompt_frame .prompt_buttons .prompt_buttons_button:hover {
+  border-color: #092b4a;
+  background-color: #092b4a;
+}
+
+.prompt_frame .success_dot {
+  background: url(../images/prompt/dot.png) no-repeat;
+  display: block;
+  height: 12px;
+  width: 12px;
+  float: left;
+  position: relative;
+  top: 7px;
+  margin-right: 5px;
+}
+
+/*@简版错误提示*/
+.prompt_frame_simple {
+  margin: 5px 0;
+  padding: 5px;
+  background-color: #fff5d8;
+  border: 1px solid #e0a385;
+}
+
+.prompt_frame_simple table {
+  padding: 0 !important;
+  margin: 0 auto;
+}
+
+.prompt_frame_simple td.caution_msg {
+  text-align: center;
+  font-size: 12px;
+  border: 0;
+  margin: 0 !important;
+  padding: 0 2px !important;
+  line-height: 18px;
+  vertical-align: middle;
+  font-weight: bold;
+}
+
+.prompt_frame_simple td .caution_msg_title .errortitle {
+  color: #ea4335 !important;
+  font-weight: bolder;
+  font-size: 12px;
+  border: none;
+  padding: 0;
+  margin: 0;
+  width: auto;
+}
+
+.prompt_frame_simple .showMoreError_plus {
+  position: relative;
+  float: left;
+  display: block;
+  width: 11px;
+  height: 19px;
+  background: url(../images/prompt/plus.png) no-repeat 0 50%;
+  cursor: pointer;
+  margin-right: 10px;
+}
+
+.prompt_frame .prompt_tips .success_dot {
+  float: none;
+  display: inline-block;
+  top: 0;
+  vertical-align: middle;
+}
+
+.prompt_frame .prompt_tips .msglist {
+  vertical-align: middle;
+}

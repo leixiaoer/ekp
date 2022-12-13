@@ -1,0 +1,92 @@
+{
+    "global":     {
+        "modelName": "com.landray.kmss.km.oitems.model.KmOitemsReportListing",
+        "messageKey": "km-oitems:table.kmOitemsReportListing",
+        "displayProperty": "fdId",
+        "serviceBean": "kmOitemsReportListingService",
+        "table": "km_oitems_report_listing",
+        "url": "/km/oitems/km_oitems_report_listing/kmOitemsReportListing.do?method=view&fdId=${fdId}"
+    },
+    "attrs":     {
+        "fdId":         {
+            "propertyType": "id",
+            "generator": {"type": "assigned"}
+        },
+        "fdCount":         {
+            "propertyType": "simple",
+            "messageKey": "km-oitems:kmOitemsReportListing.fdCount",
+            "type": "Long",
+            "column": "fd_count",
+            "notNull": "true",
+            "length": "8",
+            "validate": "true"
+        },
+        "fdCategory":         {
+            "propertyType": "simple",
+            "messageKey": "km-oitems:kmOitemsReportListing.fdCategory",
+            "type": "String",
+            "column": "fd_category",
+            "notNull": "true",
+            "length": "36",
+            "validate": "true"
+        },
+        "fdName":         {
+            "propertyType": "simple",
+            "messageKey": "km-oitems:kmOitemsReportListing.fdName",
+            "type": "String",
+            "column": "fd_name",
+            "notNull": "true",
+            "length": "36",
+            "validate": "true"
+        },
+        "fdReferencePrice":         {
+            "propertyType": "simple",
+            "messageKey": "km-oitems:kmOitemsReportListing.fdReferencePrice",
+            "type": "Double",
+            "column": "fd_reference_price",
+            "notNull": "true",
+            "length": "36",
+            "validate": "true"
+        },
+        "fdUnit":         {
+            "propertyType": "simple",
+            "messageKey": "km-oitems:kmOitemsReportListing.fdUnit",
+            "type": "String",
+            "column": "fd_unit",
+            "notNull": "true",
+            "length": "36",
+            "validate": "true"
+        },
+        "fdAmount":         {
+            "propertyType": "simple",
+            "messageKey": "km-oitems:kmOitemsReportListing.fdAmount",
+            "type": "Double",
+            "column": "fd_amount",
+            "notNull": "true",
+            "length": "36",
+            "validate": "true"
+        },
+        "docCreator":         {
+            "propertyType": "model",
+            "messageKey": "km-oitems:kmOitemsReportListing.docCreator",
+            "type": "com.landray.kmss.sys.organization.model.SysOrgElement",
+            "column": "doc_creator_id",
+            "notNull": "false",
+            "validate": "false"
+        },
+        "fdMonthReport":         {
+            "propertyType": "model",
+            "messageKey": "km-oitems:kmOitemsReportListing.fdMonthReport",
+            "type": "com.landray.kmss.km.oitems.model.KmOitemsMonthReport",
+            "column": "fd_month_report_id",
+            "notNull": "false",
+            "validate": "false"
+        },
+        "docDept":         {
+            "propertyType": "model",
+            "messageKey": "sys-doc:sysDocBaseInfo.docDept",
+            "type": "com.landray.kmss.sys.organization.model.SysOrgElement",
+            "column": "doc_dept_id"
+        }
+    }
+}

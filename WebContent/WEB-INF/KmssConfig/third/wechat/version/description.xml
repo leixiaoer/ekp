@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<description xmlns="http://www.example.org/description-config" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.example.org/description-config ../../../description.xsd">
+	<module>
+		<module-name>微信对接服务</module-name>
+		<module-path>third/wechat</module-path>
+		<baseline>V15.0.4.R.20200410</baseline>
+		<source-md5>3668c3fb797c0d56899db641ca3425fd</source-md5>
+		<is-custom>否</is-custom>
+		<serial-num>4</serial-num>
+	</module>
+</description>

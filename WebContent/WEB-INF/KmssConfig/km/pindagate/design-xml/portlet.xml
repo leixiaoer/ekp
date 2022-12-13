@@ -1,0 +1,981 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<root xmlns="http://www.landray.com.cn/schema/lui" xmlns:degign="http://www.landray.com.cn/schema/design"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="
+	http://www.landray.com.cn/schema/lui
+	../../../sys/ui/lui.xsd
+	http://www.landray.com.cn/schema/design
+	../../../design-xml.xsd">
+	
+	<!-- 我的调查  简单列表-->  
+	<portlet 
+		id="km.pindagate.participant.my.classic"
+		name="{km-pindagate:kmPindagateMain.porlet.pindagate.my}" 
+		module="{km-pindagate:module.km.pindagate}" 
+	 	description="{portlet.list.desc1}">
+	 	<source  format="sys.ui.classic" type="AjaxJson" >
+			<code>
+			<![CDATA[
+				{
+					"url":"/km/pindagate/km_pindagate_main/kmPindagateMainPortlet.do?method=listPortlet&fdCategoryId=!{cateid}&rowsize=!{rowsize}&scope=!{scope}&type=my&dataview=classic"
+				}
+			]]>    
+			</code>
+				<example>
+					<code>
+						<![CDATA[
+						[
+						{"text":"2020年IT及流程优化意见调查","creator":"张小雨","created":"2019/2/2"},
+						{"text":"组织能力调研问卷","creator":"张小雨","created":"2019/2/2"},
+						{"text":"2020年深圳区域集中体检满意度调查","creator":"张小雨","created":"2019/2/2"},
+						{"text":"产品文化衫码数调查","creator":"张小雨","created":"2019/2/2"},
+						{"text":"两天双月湾出游调查","creator":"张小雨","created":"2019/2/2"},
+						{"text":"现办公网络状态及新办公区网络调查问卷","creator":"张小雨","created":"2019/2/2"},
+						{"text":"2020敬业度满意度调查问卷","creator":"张小雨","created":"2019/2/2"},
+						{"text":"2020优秀员工候选人资料收集","creator":"张小雨","created":"2019/2/2"},
+						{"text":"OA系统用户使用体验调查问卷","creator":"张小雨","created":"2019/2/2"},
+						{"text":"财务服务需求调查问卷","creator":"张小雨","created":"2019/2/2"},
+						{"text":"2020母亲节“最佳征文”投票","creator":"张小雨","created":"2019/2/2"}]
+						]]>
+					</code>
+				</example>
+		</source>
+		 <vars>
+			<var name="{km-pindagate:kmPindagateMain.porlet.publishDate}" key="scope" kind="enumValue" default="no">
+                {  "values":[{ "text":"{portlet.var.date.oneMonth}", "value":"month"},
+                             { "text":"{portlet.var.date.threeMonths}", "value":"season"},
+                             { "text":"{portlet.var.date.halfAYear}", "value":"halfYear"},
+                             { "text":"{portlet.var.date.oneYear}", "value":"year"},
+                             { "text":"{portlet.var.date.unlimited}", "value":"no"}],
+                  "showType":"radio"
+                 }
+	        </var>
+	        <var name="{portlet.rowsize}" key="rowsize" kind="rowsize" />
+	        <var
+				name="{portlet.cate}"
+				key="cateid"
+				kind="sys.category">
+				{"model":"com.landray.kmss.km.pindagate.model.KmPindagateTemplate","name":"{button.select}"}
+			</var>
+		</vars>
+		<operations>
+		    <operation
+				name="{operation.create}"
+				type="create"
+				href="/km/pindagate/km_pindagate_main/kmPindagateMain.do?method=add" />
+			<operation
+				name="{operation.more}"
+				type="more"
+				href="/km/pindagate/#cri.q=categoryId:!{cateid}" />
+	    </operations>
+	 </portlet>
+	 
+	 <!--所有调查 简单列表-->  
+	<portlet 
+		id="km.pindagate.participant.all.classic"
+		name="{km-pindagate:kmPindagateMain.porlet.pindagate.all}" 
+		module="{km-pindagate:module.km.pindagate}" 
+	 	description="{portlet.list.desc1}">
+	 	<source  format="sys.ui.classic" type="AjaxJson" >
+			<code>
+			<![CDATA[
+				{
+					"url":"/km/pindagate/km_pindagate_main/kmPindagateMainPortlet.do?method=listPortlet&fdCategoryId=!{cateid}&rowsize=!{rowsize}&scope=!{scope}&type=all&dataview=classic"
+				}
+			]]>    
+			</code>
+				<example>
+					<code>
+						<![CDATA[
+						[
+						{"text":"2020年IT及流程优化意见调查","creator":"张小雨","created":"2019/2/2"},
+						{"text":"组织能力调研问卷","creator":"张小雨","created":"2019/2/2"},
+						{"text":"2020年深圳区域集中体检满意度调查","creator":"张小雨","created":"2019/2/2"},
+						{"text":"产品文化衫码数调查","creator":"张小雨","created":"2019/2/2"},
+						{"text":"两天双月湾出游调查","creator":"张小雨","created":"2019/2/2"},
+						{"text":"现办公网络状态及新办公区网络调查问卷","creator":"张小雨","created":"2019/2/2"},
+						{"text":"2020敬业度满意度调查问卷","creator":"张小雨","created":"2019/2/2"},
+						{"text":"2020优秀员工候选人资料收集","creator":"张小雨","created":"2019/2/2"},
+						{"text":"OA系统用户使用体验调查问卷","creator":"张小雨","created":"2019/2/2"},
+						{"text":"财务服务需求调查问卷","creator":"张小雨","created":"2019/2/2"},
+						{"text":"2020母亲节“最佳征文”投票","creator":"张小雨","created":"2019/2/2"}]
+						]]>
+					</code>
+				</example>
+		</source>
+		 <vars>
+			<var name="{km-pindagate:kmPindagateMain.porlet.publishDate}" key="scope" kind="enumValue" default="no">
+                {  "values":[{ "text":"{portlet.var.date.oneMonth}", "value":"month"},
+                             { "text":"{portlet.var.date.threeMonths}", "value":"season"},
+                             { "text":"{portlet.var.date.halfAYear}", "value":"halfYear"},
+                             { "text":"{portlet.var.date.oneYear}", "value":"year"},
+                             { "text":"{portlet.var.date.unlimited}", "value":"no"}],
+                  "showType":"radio"
+                 }
+	        </var>
+	        <var name="{portlet.rowsize}" key="rowsize" kind="rowsize" />
+	           <var
+				name="{portlet.cate}"
+				key="cateid"
+				kind="sys.category">
+				{"model":"com.landray.kmss.km.pindagate.model.KmPindagateTemplate","name":"{button.select}"}
+			</var>
+		</vars>
+		<operations>
+		    <operation
+				name="{operation.create}"
+				type="create"
+				href="/km/pindagate/km_pindagate_main/kmPindagateMain.do?method=add" />
+			<operation
+				name="{operation.more}"
+				type="more"
+				href="/km/pindagate/#cri.q=categoryId:!{cateid}" />
+	    </operations>
+	 </portlet>
+	
+	<!-- 我参与的调查,可配置表头格式 -->
+	<portlet
+		id="km.pindagate.participant.my.listtable"
+		name="{km-pindagate:kmPindagateMain.porlet.pindagate.my}"
+		module="{km-pindagate:module.km.pindagate}"
+		description="{portlet.list.desc2}">
+		<source format="sys.ui.listtable" type="AjaxJson">
+			<code>
+			<![CDATA[
+				{
+					"url":"/km/pindagate/km_pindagate_main/kmPindagateMainPortlet.do?method=listPortlet&fdCategoryId=!{cateid}&rowsize=!{rowsize}&scope=!{scope}&type=my&dataview=listtable"
+				}
+			]]>
+			</code>
+				<example>
+					<code>
+						<![CDATA[
+						{
+    "columns": [
+        {
+            "title": "任务名称",
+            "property": "docSubject"
+        },
+        {
+            "title": "状态",
+            "property": "status",
+            "headerStyle": "width:55px"
+        },
+        {
+            "title": "开始时间",
+            "property": "startime",
+            "headerStyle": "width:55px"
+        },
+        {
+            "title": "结束时间",
+            "property": "endtime",
+            "headerStyle": "width:55px"
+        }
+    ],
+    "datas": [
+        [
+            {
+                "col": "docSubject",
+                "value": "2020年IT及流程优化意见调查"
+            },
+            {
+                "col": "status",
+                "value": "调查中"
+            },
+            {
+                "col": "startime",
+                "value": "2019/2/2 18:00"
+            },
+            {
+                "col": "endtime",
+                "value": "不限"
+            }
+        ],
+        [
+            {
+                "col": "docSubject",
+                "value": "组织能力调研问卷"
+            },
+            {
+                "col": "status",
+                "value": "调查中"
+            },
+            {
+                "col": "startime",
+                "value": "2019/2/2 18:00"
+            },
+            {
+                "col": "endtime",
+                "value": "不限"
+            }
+        ],
+        [
+            {
+                "col": "docSubject",
+                "value": "2020年深圳区域集中体检满意度调查"
+            },
+            {
+                "col": "status",
+                "value": "调查中"
+            },
+            {
+                "col": "startime",
+                "value": "2019/2/2 18:00"
+            },
+            {
+                "col": "endtime",
+                "value": "不限"
+            }
+        ],
+        [
+            {
+                "col": "docSubject",
+                "value": "2020敬业度满意度调查问卷"
+            },
+            {
+                "col": "status",
+                "value": "已结束"
+            },
+            {
+                "col": "startime",
+                "value": "2019/2/2 18:00"
+            },
+            {
+                "col": "endtime",
+                "value": "2019/3/8 18:00"
+            }
+        ],
+        [
+            {
+                "col": "docSubject",
+                "value": "2020优秀员工候选人资料收集"
+            },
+            {
+                "col": "status",
+                "value": "已结束"
+            },
+            {
+                "col": "startime",
+                "value": "2019/2/2 18:00"
+            },
+            {
+                "col": "endtime",
+                "value": "2019/3/8 18:00"
+            }
+        ],
+        [
+            {
+                "col": "docSubject",
+                "value": "OA系统用户使用体验调查问卷"
+            },
+            {
+                "col": "status",
+                "value": "已结束"
+            },
+            {
+                "col": "startime",
+                "value": "2019/2/2 18:00"
+            },
+            {
+                "col": "endtime",
+                "value": "2019/3/8 18:00"
+            }
+        ],
+        [
+            {
+                "col": "docSubject",
+                "value": "财务服务需求调查问卷"
+            },
+            {
+                "col": "status",
+                "value": "已结束"
+            },
+            {
+                "col": "startime",
+                "value": "2019/2/2 18:00"
+            },
+            {
+                "col": "endtime",
+                "value": "2019/3/8 18:00"
+            }
+        ],
+        [
+            {
+                "col": "docSubject",
+                "value": "行政服务需求调查问卷"
+            },
+            {
+                "col": "status",
+                "value": "已结束"
+            },
+            {
+                "col": "startime",
+                "value": "2019/2/1 18:00"
+            },
+            {
+                "col": "endtime",
+                "value": "2019/3/8 18:00"
+            }
+        ],
+        [
+            {
+                "col": "docSubject",
+                "value": "2020年择优需求调查问卷"
+            },
+            {
+                "col": "status",
+                "value": "调查中"
+            },
+            {
+                "col": "startime",
+                "value": "2019/2/1 18:00"
+            },
+            {
+                "col": "endtime",
+                "value": "2019/3/8 18:00"
+            }
+        ],
+        [
+            {
+                "col": "docSubject",
+                "value": "组织能力调研问卷"
+            },
+            {
+                "col": "status",
+                "value": "调查中"
+            },
+            {
+                "col": "startime",
+                "value": "2019/2/2 18:00"
+            },
+            {
+                "col": "endtime",
+                "value": "不限"
+            }
+        ],
+        [
+            {
+                "col": "docSubject",
+                "value": "OA组织能力调研问卷"
+            },
+            {
+                "col": "status",
+                "value": "已结束"
+            },
+            {
+                "col": "startime",
+                "value": "2019/2/2 18:00"
+            },
+            {
+                "col": "endtime",
+                "value": "不限"
+            }
+        ],
+        [
+            {
+                "col": "docSubject",
+                "value": "2020年OA组织能力调研问卷"
+            },
+            {
+                "col": "status",
+                "value": "已结束"
+            },
+            {
+                "col": "startime",
+                "value": "2019/2/2 18:00"
+            },
+            {
+                "col": "endtime",
+                "value": "不限"
+            }
+        ]
+    ]
+}
+						]]>
+					</code>
+				</example>
+		</source>
+		<vars>
+			<var name="{km-pindagate:kmPindagateMain.porlet.publishDate}" key="scope" kind="enumValue" default="no">
+                {  "values":[{ "text":"{portlet.var.date.oneMonth}", "value":"month"},
+                             { "text":"{portlet.var.date.threeMonths}", "value":"season"},
+                             { "text":"{portlet.var.date.halfAYear}", "value":"halfYear"},
+                             { "text":"{portlet.var.date.oneYear}", "value":"year"},
+                             { "text":"{portlet.var.date.unlimited}", "value":"no"}],
+                  "showType":"radio"
+                 }
+	        </var>
+	        <var name="{portlet.rowsize}" key="rowsize" kind="rowsize" />
+	           <var
+				name="{portlet.cate}"
+				key="cateid"
+				kind="sys.category">
+				{"model":"com.landray.kmss.km.pindagate.model.KmPindagateTemplate","name":"{button.select}"}
+			</var>
+		</vars>
+		<operations>
+		    <operation
+				name="{operation.create}"
+				type="create"
+				href="/km/pindagate/km_pindagate_main/kmPindagateMain.do?method=add" />
+			<operation
+				name="{operation.more}"
+				type="more"
+				href="/km/pindagate/#cri.q=categoryId:!{cateid}" />
+	    </operations>
+	</portlet>
+	
+	<!-- 所有调查,可配置表头格式 -->
+	<portlet
+		id="km.pindagate.participant.all.listtable"
+		name="{km-pindagate:kmPindagateMain.porlet.pindagate.all}"
+		module="{km-pindagate:module.km.pindagate}"
+		description="{portlet.list.desc2}">
+		<source format="sys.ui.listtable" type="AjaxJson">
+			<code>
+			<![CDATA[
+				{
+					"url":"/km/pindagate/km_pindagate_main/kmPindagateMainPortlet.do?method=listPortlet&fdCategoryId=!{cateid}&rowsize=!{rowsize}&scope=!{scope}&type=all&dataview=listtable"
+				}
+			]]>
+			</code>
+				<example>
+					<code>
+						<![CDATA[
+						{
+    "columns": [
+        {
+            "title": "任务名称",
+            "property": "docSubject"
+        },
+        {
+            "title": "状态",
+            "property": "status",
+            "headerStyle": "width:55px"
+        },
+        {
+            "title": "开始时间",
+            "property": "startime",
+            "headerStyle": "width:55px"
+        },
+        {
+            "title": "结束时间",
+            "property": "endtime",
+            "headerStyle": "width:55px"
+        }
+    ],
+    "datas": [
+        [
+            {
+                "col": "docSubject",
+                "value": "2020年IT及流程优化意见调查"
+            },
+            {
+                "col": "status",
+                "value": "调查中"
+            },
+            {
+                "col": "startime",
+                "value": "2019/2/2 18:00"
+            },
+            {
+                "col": "endtime",
+                "value": "不限"
+            }
+        ],
+        [
+            {
+                "col": "docSubject",
+                "value": "组织能力调研问卷"
+            },
+            {
+                "col": "status",
+                "value": "调查中"
+            },
+            {
+                "col": "startime",
+                "value": "2019/2/2 18:00"
+            },
+            {
+                "col": "endtime",
+                "value": "不限"
+            }
+        ],
+        [
+            {
+                "col": "docSubject",
+                "value": "2020年深圳区域集中体检满意度调查"
+            },
+            {
+                "col": "status",
+                "value": "调查中"
+            },
+            {
+                "col": "startime",
+                "value": "2019/2/2 18:00"
+            },
+            {
+                "col": "endtime",
+                "value": "不限"
+            }
+        ],
+        [
+            {
+                "col": "docSubject",
+                "value": "2020敬业度满意度调查问卷"
+            },
+            {
+                "col": "status",
+                "value": "已结束"
+            },
+            {
+                "col": "startime",
+                "value": "2019/2/2 18:00"
+            },
+            {
+                "col": "endtime",
+                "value": "2019/3/8 18:00"
+            }
+        ],
+        [
+            {
+                "col": "docSubject",
+                "value": "2020优秀员工候选人资料收集"
+            },
+            {
+                "col": "status",
+                "value": "已结束"
+            },
+            {
+                "col": "startime",
+                "value": "2019/2/2 18:00"
+            },
+            {
+                "col": "endtime",
+                "value": "2019/3/8 18:00"
+            }
+        ],
+        [
+            {
+                "col": "docSubject",
+                "value": "OA系统用户使用体验调查问卷"
+            },
+            {
+                "col": "status",
+                "value": "已结束"
+            },
+            {
+                "col": "startime",
+                "value": "2019/2/2 18:00"
+            },
+            {
+                "col": "endtime",
+                "value": "2019/3/8 18:00"
+            }
+        ],
+        [
+            {
+                "col": "docSubject",
+                "value": "财务服务需求调查问卷"
+            },
+            {
+                "col": "status",
+                "value": "已结束"
+            },
+            {
+                "col": "startime",
+                "value": "2019/2/2 18:00"
+            },
+            {
+                "col": "endtime",
+                "value": "2019/3/8 18:00"
+            }
+        ],
+        [
+            {
+                "col": "docSubject",
+                "value": "行政服务需求调查问卷"
+            },
+            {
+                "col": "status",
+                "value": "已结束"
+            },
+            {
+                "col": "startime",
+                "value": "2019/2/1 18:00"
+            },
+            {
+                "col": "endtime",
+                "value": "2019/3/8 18:00"
+            }
+        ],
+        [
+            {
+                "col": "docSubject",
+                "value": "2020年择优需求调查问卷"
+            },
+            {
+                "col": "status",
+                "value": "调查中"
+            },
+            {
+                "col": "startime",
+                "value": "2019/2/1 18:00"
+            },
+            {
+                "col": "endtime",
+                "value": "2019/3/8 18:00"
+            }
+        ],
+        [
+            {
+                "col": "docSubject",
+                "value": "组织能力调研问卷"
+            },
+            {
+                "col": "status",
+                "value": "调查中"
+            },
+            {
+                "col": "startime",
+                "value": "2019/2/2 18:00"
+            },
+            {
+                "col": "endtime",
+                "value": "不限"
+            }
+        ],
+        [
+            {
+                "col": "docSubject",
+                "value": "OA组织能力调研问卷"
+            },
+            {
+                "col": "status",
+                "value": "已结束"
+            },
+            {
+                "col": "startime",
+                "value": "2019/2/2 18:00"
+            },
+            {
+                "col": "endtime",
+                "value": "不限"
+            }
+        ],
+        [
+            {
+                "col": "docSubject",
+                "value": "2020年OA组织能力调研问卷"
+            },
+            {
+                "col": "status",
+                "value": "已结束"
+            },
+            {
+                "col": "startime",
+                "value": "2019/2/2 18:00"
+            },
+            {
+                "col": "endtime",
+                "value": "不限"
+            }
+        ]
+    ]
+}
+						]]>
+					</code>
+				</example>
+		</source>
+		<vars>
+			<var name="{km-pindagate:kmPindagateMain.porlet.publishDate}" key="scope" kind="enumValue" default="no">
+                {  "values":[{ "text":"{portlet.var.date.oneMonth}", "value":"month"},
+                             { "text":"{portlet.var.date.threeMonths}", "value":"season"},
+                             { "text":"{portlet.var.date.halfAYear}", "value":"halfYear"},
+                             { "text":"{portlet.var.date.oneYear}", "value":"year"},
+                             { "text":"{portlet.var.date.unlimited}", "value":"no"}],
+                  "showType":"radio"
+                 }
+	        </var>
+	        <var name="{portlet.rowsize}" key="rowsize" kind="rowsize" />
+	         <var
+				name="{portlet.cate}"
+				key="cateid"
+				kind="sys.category">
+				{"model":"com.landray.kmss.km.pindagate.model.KmPindagateTemplate","name":"{button.select}"}
+			</var>
+		</vars>
+		<operations>
+		    <operation
+				name="{operation.create}"
+				type="create"
+				href="/km/pindagate/km_pindagate_main/kmPindagateMain.do?method=add" />
+			<operation
+				name="{operation.more}"
+				type="more"
+				href="/km/pindagate/#cri.q=categoryId:!{cateid}" />
+	    </operations>
+	</portlet>
+
+<!-- 以下为支持cloud数据源 -->
+<!-- 我的调查  简单列表-->  
+	<portlet 
+		id="km.pindagate.participant.my.classic"
+		name="{km-pindagate:kmPindagateMain.porlet.pindagate.my}" 
+		module="{km-pindagate:module.km.pindagate}" 
+	 	description="{portlet.list.desc1}"
+	 	forSystem="cloud" varExtend="km.pindagate.participant.my.classic">
+	 	<source id="km-pindagate.participantMyClassic" format="data.list" type="json" >
+			<code>
+			<![CDATA[
+				{
+					"url":"/data/km-pindagate/kmPindagateMainPortlet/listPortlet?fdCategoryId=!{cateid}&rowsize=!{rowsize}&scope=!{scope}&type=my&dataview=classic"
+				}
+			]]>    
+			</code>
+			<example>
+				<code>
+					<![CDATA[
+					[{"text":"【文化布道师大赛】请选出您心目中的文化布道师！","href":"http://java.landray.com.cn/km/pindagate/km_pindagate_response/kmPindagateResponse.do?method=add&pindageteId=167e950b0d5f91128c6d2cd481a860cc","statusInfo":"已结束","statusColor":"primary","cateName":"调查管理","cateHref":"http://java.landray.com.cn/sys/portal/page.jsp#j_start=%2Fkm%2Fpindagate.index&j_target=_iframe&j_path=%2FjoinMine&join=mine","creator":{"fdName":"营销能力中心"},"created":1557132149164},{"text":"飞鹰训练营V25—培训整体评估 ","href":"http://java.landray.com.cn/km/pindagate/km_pindagate_response/kmPindagateResponse.do?method=add&pindageteId=16b8ddd8d98a9f7a431af6d428d847f9","statusInfo":"已结束","statusColor":"primary","cateName":"调查管理","cateHref":"http://java.landray.com.cn/sys/portal/page.jsp#j_start=%2Fkm%2Fpindagate.index&j_target=_iframe&j_path=%2FjoinMine&join=mine","creator":{"fdName":"产品研发中心"},"created":1557132149163},{"text":"【水滴学院】2019雏鹰训练营-学员学籍卡 ","href":"http://java.landray.com.cn/km/pindagate/km_pindagate_response/kmPindagateResponse.do?method=add&pindageteId=16bdf8db93f42061633b9d6414b8b5a9","statusInfo":"已结束","statusColor":"primary","cateName":"调查管理","cateHref":"http://java.landray.com.cn/sys/portal/page.jsp#j_start=%2Fkm%2Fpindagate.index&j_target=_iframe&j_path=%2FjoinMine&join=mine","creator":{"fdName":"产品研发中心"},"created":1557132149162},{"text":"邀你开脑洞：关于“愿力阿里”分享会，你怎么想？","href":"http://java.landray.com.cn/km/pindagate/km_pindagate_response/kmPindagateResponse.do?method=add&pindageteId=16699a4b001f0e7c45ed7864457b5df0","statusInfo":"调查中","statusColor":"primary","cateName":"调查管理","cateHref":"http://java.landray.com.cn/sys/portal/page.jsp#j_start=%2Fkm%2Fpindagate.index&j_target=_iframe&j_path=%2FjoinMine&join=mine","creator":{"fdName":"产品研发中心"},"created":1557132149162},{"text":"第四季度IT服务满意度调查 ","href":"http://java.landray.com.cn/km/pindagate/km_pindagate_response/kmPindagateResponse.do?method=add&pindageteId=13bdb22a8d799211e6aea574c6ea3f59","statusInfo":"调查中","statusColor":"primary","cateName":"调查管理","cateHref":"http://java.landray.com.cn/sys/portal/page.jsp#j_start=%2Fkm%2Fpindagate.index&j_target=_iframe&j_path=%2FjoinMine&join=mine","creator":{"fdName":"产品研发中心"},"created":1557132149161}]
+					]]>
+				</code>
+			</example>
+		</source>
+		<operations>
+		    <operation
+				name="{operation.create}"
+				type="create"
+				href="/km/pindagate/km_pindagate_main/kmPindagateMain.do?method=add" />
+			<operation
+				name="{operation.more}"
+				type="more"
+				mobileHref="/km/pindagate/mobile"
+				href="/km/pindagate/#cri.q=categoryId:!{cateid}" />
+	    </operations>
+	 </portlet>
+	 <!-- 我的调查  简单列表 new-->
+	<portlet
+			id="km.pindagate.participant.my.classic.new"
+			name="{km-pindagate:kmPindagateMain.porlet.pindagate.my.new}"
+			module="{km-pindagate:module.km.pindagate}"
+			description="{portlet.list.desc1}"
+			forSystem="cloud" varExtend="km.pindagate.participant.my.classic">
+		<source id="km-pindagate.participantMyClassic.new" format="data.fieldlist" type="json" >
+			<code>
+				<![CDATA[
+				{
+					"url":"/data/km-pindagate/kmPindagateMainPortlet/listPortlet?fdCategoryId=!{cateid}&rowsize=!{rowsize}&scope=!{scope}&type=my&dataview=classic&isNew=true"
+				}
+			]]>
+			</code>
+			<example>
+				<code>
+					<![CDATA[
+						[{"text":"【文化布道师大赛】请选出您心目中的文化布道师！","href":"http://java.landray.com.cn/km/pindagate/km_pindagate_response/kmPindagateResponse.do?method=add&pindageteId=167e950b0d5f91128c6d2cd481a860cc","cateName":{"text":"调查管理","href":"http://java.landray.com.cn/sys/portal/page.jsp#j_start=%2Fkm%2Fpindagate.index&j_target=_iframe&j_path=%2FjoinMine&join=mine"},"creator":{"fdName":"营销能力中心"},"created":{"text":1557132149164}},{"text":"飞鹰训练营V25—培训整体评估 ","href":"http://java.landray.com.cn/km/pindagate/km_pindagate_response/kmPindagateResponse.do?method=add&pindageteId=16b8ddd8d98a9f7a431af6d428d847f9","cateName":{"text":"调查管理","href":"http://java.landray.com.cn/sys/portal/page.jsp#j_start=%2Fkm%2Fpindagate.index&j_target=_iframe&j_path=%2FjoinMine&join=mine"},"creator":{"fdName":"产品研发中心"},"created":{"text":1557132149163}},{"text":"【水滴学院】2019雏鹰训练营-学员学籍卡 ","href":"http://java.landray.com.cn/km/pindagate/km_pindagate_response/kmPindagateResponse.do?method=add&pindageteId=16bdf8db93f42061633b9d6414b8b5a9","cateName":{"text":"调查管理","href":"http://java.landray.com.cn/sys/portal/page.jsp#j_start=%2Fkm%2Fpindagate.index&j_target=_iframe&j_path=%2FjoinMine&join=mine"},"creator":{"fdName":"产品研发中心"},"created":{"text":1557132149162}},{"text":"邀你开脑洞：关于“愿力阿里”分享会，你怎么想？","href":"http://java.landray.com.cn/km/pindagate/km_pindagate_response/kmPindagateResponse.do?method=add&pindageteId=16699a4b001f0e7c45ed7864457b5df0","cateName":{"text":"调查管理","href":"http://java.landray.com.cn/sys/portal/page.jsp#j_start=%2Fkm%2Fpindagate.index&j_target=_iframe&j_path=%2FjoinMine&join=mine"},"creator":{"fdName":"产品研发中心"},"created":{"text":1557132149162}},{"text":"第四季度IT服务满意度调查 ","href":"http://java.landray.com.cn/km/pindagate/km_pindagate_response/kmPindagateResponse.do?method=add&pindageteId=13bdb22a8d799211e6aea574c6ea3f59","cateName":{"text":"调查管理","href":"http://java.landray.com.cn/sys/portal/page.jsp#j_start=%2Fkm%2Fpindagate.index&j_target=_iframe&j_path=%2FjoinMine&join=mine"},"creator":{"fdName":"产品研发中心"},"created":{"text":1557132149161}}]
+					]]>
+				</code>
+			</example>
+			<dataFields>
+				<code>
+					<![CDATA[
+						{
+						"base": {
+						"label": "基础信息",
+						"items": []
+						},
+						"info": {
+						"label": "辅助信息",
+						"items": [
+						{"key": "created", "text": "创建时间", "type": "timestamp"},
+						{"key": "creator", "text": "作者", "type": "person"},
+						{"key": "cateName", "text": "分类", "type": "string"}
+						]
+						},
+						"tag": {
+						"label": "标签",
+						"items": []
+						}
+						}
+					]]>
+				</code>
+			</dataFields>
+		</source>
+		<operations>
+			<operation
+					name="{operation.create}"
+					type="create"
+					href="/km/pindagate/km_pindagate_main/kmPindagateMain.do?method=add" />
+			<operation
+					name="{operation.more}"
+					type="more"
+					mobileHref="/km/pindagate/mobile"
+					href="/km/pindagate/#cri.q=categoryId:!{cateid}" />
+		</operations>
+	</portlet>
+	<!--所有调查 简单列表-->  
+	<portlet 
+		id="km.pindagate.participant.all.classic"
+		name="{km-pindagate:kmPindagateMain.porlet.pindagate.all}" 
+		module="{km-pindagate:module.km.pindagate}" 
+	 	description="{portlet.list.desc1}"
+	 	forSystem="cloud" varExtend="km.pindagate.participant.all.classic">
+	 	<source id="km-pindagate.participantAllClassic" format="data.list" type="json" >
+			<code>
+			<![CDATA[
+				{
+					"url":"/data/km-pindagate/kmPindagateMainPortlet/listPortlet?fdCategoryId=!{cateid}&rowsize=!{rowsize}&scope=!{scope}&type=all&dataview=classic"
+				}
+			]]>    
+			</code>
+			<example>
+				<code>
+					<![CDATA[
+					[{"text":"2019.9.7-8两天双月湾出游调查","href":"http://java.landray.com.cn/km/pindagate/km_pindagate_response/kmPindagateResponse.do?method=add&pindageteId=16ce1ec757fb11aae5a2d904eafb18ab","statusInfo":"已结束","statusColor":"primary","cateName":"调查管理","cateHref":"http://java.landray.com.cn/sys/portal/page.jsp#j_start=%2Fkm%2Fpindagate.index&j_target=_iframe&j_path=%2FjoinAll","creator":{"fdName":"产品研发中心"},"created":1557132149164},{"text":"产品文化衫颜色调查","href":"http://java.landray.com.cn/km/pindagate/km_pindagate_response/kmPindagateResponse.do?method=add&pindageteId=16c4c9b913bd27c5a260e2b410eba0be","statusInfo":"已结束","statusColor":"primary","cateName":"调查管理","cateHref":"http://java.landray.com.cn/sys/portal/page.jsp#j_start=%2Fkm%2Fpindagate.index&j_target=_iframe&j_path=%2FjoinAll","creator":{"fdName":"产品研发中心"},"created":1557132149163},{"text":"【水滴学院】2019雏鹰训练营-学员学籍卡 ","href":"http://java.landray.com.cn/km/pindagate/km_pindagate_response/kmPindagateResponse.do?method=add&pindageteId=16bdf8db93f42061633b9d6414b8b5a9","statusInfo":"已结束","statusColor":"primary","cateName":"调查管理","cateHref":"http://java.landray.com.cn/sys/portal/page.jsp#j_start=%2Fkm%2Fpindagate.index&j_target=_iframe&j_path=%2FjoinAll","creator":{"fdName":"产品研发中心"},"created":1557132149162},{"text":"邀你开脑洞：关于“愿力阿里”分享会，你怎么想？","href":"http://java.landray.com.cn/km/pindagate/km_pindagate_response/kmPindagateResponse.do?method=add&pindageteId=16699a4b001f0e7c45ed7864457b5df0","statusInfo":"调查中","statusColor":"primary","cateName":"调查管理","cateHref":"http://java.landray.com.cn/sys/portal/page.jsp#j_start=%2Fkm%2Fpindagate.index&j_target=_iframe&j_path=%2FjoinAll","creator":{"fdName":"产品研发中心"},"created":1557132149162},{"text":"第四季度IT服务满意度调查 ","href":"http://java.landray.com.cn/km/pindagate/km_pindagate_response/kmPindagateResponse.do?method=add&pindageteId=13bdb22a8d799211e6aea574c6ea3f59","statusInfo":"调查中","statusColor":"primary","cateName":"调查管理","cateHref":"http://java.landray.com.cn/sys/portal/page.jsp#j_start=%2Fkm%2Fpindagate.index&j_target=_iframe&j_path=%2FjoinAll","creator":{"fdName":"产品研发中心"},"created":1557132149161}]
+					]]>
+				</code>
+			</example>
+		</source>
+		<operations>
+		    <operation
+				name="{operation.create}"
+				type="create"
+				href="/km/pindagate/km_pindagate_main/kmPindagateMain.do?method=add" />
+			<operation
+				name="{operation.more}"
+				type="more"
+				mobileHref="/km/pindagate/mobile"
+				href="/km/pindagate/#cri.q=categoryId:!{cateid}" />
+	    </operations>
+	 </portlet>
+	 <!--所有调查 简单列表 new-->
+	<portlet
+			id="km.pindagate.participant.all.classic.new"
+			name="{km-pindagate:kmPindagateMain.porlet.pindagate.all.new}"
+			module="{km-pindagate:module.km.pindagate}"
+			description="{portlet.list.desc1}"
+			forSystem="cloud" varExtend="km.pindagate.participant.all.classic">
+		<source id="km-pindagate.participantAllClassic.new" format="data.fieldlist" type="json" >
+			<code>
+				<![CDATA[
+				{
+					"url":"/data/km-pindagate/kmPindagateMainPortlet/listPortlet?fdCategoryId=!{cateid}&rowsize=!{rowsize}&scope=!{scope}&type=all&dataview=classic&isNew=true"
+				}
+			]]>
+			</code>
+			<example>
+				<code>
+					<![CDATA[
+						[{"text":"2019.9.7-8两天双月湾出游调查","href":"http://java.landray.com.cn/km/pindagate/km_pindagate_response/kmPindagateResponse.do?method=add&pindageteId=16ce1ec757fb11aae5a2d904eafb18ab","statusInfo":{"text":"已结束","color":"primary"},"cateName":{"text":"调查管理","href":"http://java.landray.com.cn/sys/portal/page.jsp#j_start=%2Fkm%2Fpindagate.index&j_target=_iframe&j_path=%2FjoinAll"},"creator":{"fdName":"产品研发中心"},"created":{"text":1557132149164}},{"text":"产品文化衫颜色调查","href":"http://java.landray.com.cn/km/pindagate/km_pindagate_response/kmPindagateResponse.do?method=add&pindageteId=16c4c9b913bd27c5a260e2b410eba0be","statusInfo":{"text":"已结束","color":"primary"},"cateName":{"text":"调查管理","href":"http://java.landray.com.cn/sys/portal/page.jsp#j_start=%2Fkm%2Fpindagate.index&j_target=_iframe&j_path=%2FjoinAll"},"creator":{"fdName":"产品研发中心"},"created":{"text":1557132149163}},{"text":"【水滴学院】2019雏鹰训练营-学员学籍卡 ","href":"http://java.landray.com.cn/km/pindagate/km_pindagate_response/kmPindagateResponse.do?method=add&pindageteId=16bdf8db93f42061633b9d6414b8b5a9","statusInfo":{"text":"已结束","color":"primary"},"cateName":{"text":"调查管理","href":"http://java.landray.com.cn/sys/portal/page.jsp#j_start=%2Fkm%2Fpindagate.index&j_target=_iframe&j_path=%2FjoinAll"},"creator":{"fdName":"产品研发中心"},"created":{"text":1557132149162}},{"text":"邀你开脑洞：关于“愿力阿里”分享会，你怎么想？","href":"http://java.landray.com.cn/km/pindagate/km_pindagate_response/kmPindagateResponse.do?method=add&pindageteId=16699a4b001f0e7c45ed7864457b5df0","statusInfo":{"text":"调查中","color":"primary"},"cateName":{"text":"调查管理","href":"http://java.landray.com.cn/sys/portal/page.jsp#j_start=%2Fkm%2Fpindagate.index&j_target=_iframe&j_path=%2FjoinAll"},"creator":{"fdName":"产品研发中心"},"created":{"text":1557132149162}},{"text":"第四季度IT服务满意度调查 ","href":"http://java.landray.com.cn/km/pindagate/km_pindagate_response/kmPindagateResponse.do?method=add&pindageteId=13bdb22a8d799211e6aea574c6ea3f59","statusInfo":{"text":"调查中","color":"primary"},"cateName":{"text":"调查管理","href":"http://java.landray.com.cn/sys/portal/page.jsp#j_start=%2Fkm%2Fpindagate.index&j_target=_iframe&j_path=%2FjoinAll"},"creator":{"fdName":"产品研发中心"},"created":{"text":1557132149161}}]
+					]]>
+				</code>
+			</example>
+			<dataFields>
+				<code>
+					<![CDATA[
+						{
+						"base": {
+						"label": "基础信息",
+						"items": [
+						{"key": "statusInfo", "text": "状态"}
+						]
+						},
+						"info": {
+						"label": "辅助信息",
+						"items": [
+						{"key": "created", "text": "创建时间", "type": "timestamp"},
+						{"key": "creator", "text": "作者", "type": "person"},
+						{"key": "cateName", "text": "分类", "type": "string"}
+						]
+						},
+						"tag": {
+						"label": "标签",
+						"items": []
+						}
+						}
+					]]>
+				</code>
+			</dataFields>
+		</source>
+		<operations>
+			<operation
+					name="{operation.create}"
+					type="create"
+					href="/km/pindagate/km_pindagate_main/kmPindagateMain.do?method=add" />
+			<operation
+					name="{operation.more}"
+					type="more"
+					mobileHref="/km/pindagate/mobile"
+					href="/km/pindagate/#cri.q=categoryId:!{cateid}" />
+		</operations>
+	</portlet>
+	<!-- 我参与的调查,可配置表头格式 -->
+	<portlet
+		id="km.pindagate.participant.my.listtable"
+		name="{km-pindagate:kmPindagateMain.porlet.pindagate.my.table}"
+		module="{km-pindagate:module.km.pindagate}"
+		description="{portlet.list.desc2}"
+		forSystem="cloud" varExtend="km.pindagate.participant.my.listtable">
+		<source id="km-pindagate.participantMyListtable" format="data.table" type="json">
+			<code>
+			<![CDATA[
+				{
+					"url":"/data/km-pindagate/kmPindagateMainPortlet/listPortlet?fdCategoryId=!{cateid}&rowsize=!{rowsize}&scope=!{scope}&type=my&dataview=listtable"
+				}
+			]]>
+			</code>
+			<example>
+				<code>
+					<![CDATA[
+					{"columns":[{"property":"fdId","renderType":"hidden"},{"property":"docSubject","title":"问卷主题","align":"left"},{"property":"docStatus","title":"状态"},{"property":"docStartTime","title":"调查开始时间"},{"property":"docFinishedTime","title":"调查结束时间"}],"data":[{"href":null,"cells":[{"col":"fdId","value":"16b2129279fede88abdb8674bf5995c3"},{"col":"docSubject","value":"知识协同的重要性","href":"/km/pindagate/km_pindagate_response/kmPindagateResponse.do?method=add&pindageteId=16b2129279fede88abdb8674bf5995c3"},{"col":"docStatus","value":"已反馈"},{"col":"docStartTime","value":"2019-06-04"},{"col":"docFinishedTime","value":"2019-06-04"}]},{"href":null,"cells":[{"col":"fdId","value":"16b21272308da5df603b485491cb5dad"},{"col":"docSubject","value":"协同管理的认识","href":"/km/pindagate/km_pindagate_response/kmPindagateResponse.do?method=add&pindageteId=16b21272308da5df603b485491cb5dad"},{"col":"docStatus","value":"已反馈"},{"col":"docStartTime","value":"2019-06-04"},{"col":"docFinishedTime","value":"2019-06-05"}]},{"href":null,"cells":[{"col":"fdId","value":"16281c2aacf5d41544408204ccea8cb6"},{"col":"docSubject","value":"娱乐调查","href":"/km/pindagate/km_pindagate_response/kmPindagateResponse.do?method=add&pindageteId=16281c2aacf5d41544408204ccea8cb6"},{"col":"docStatus","value":"32"},{"col":"docStartTime","value":"2018-04-01"},{"col":"docFinishedTime","value":"2018-04-30"}]},{"href":null,"cells":[{"col":"fdId","value":"1620ea58769a779ac70cae34d5e816cb"},{"col":"docSubject","value":"“习武堂”讲课内容的满意度调查","href":"/km/pindagate/km_pindagate_response/kmPindagateResponse.do?method=add&pindageteId=1620ea58769a779ac70cae34d5e816cb"},{"col":"docStatus","value":"已反馈"},{"col":"docStartTime","value":"2018-03-22"},{"col":"docFinishedTime","value":"不限"}]},{"href":null,"cells":[{"col":"fdId","value":"16107472763205c012740604e27adaae"},{"col":"docSubject","value":"\"知识讲堂\"授课内容满意度的调查","href":"/km/pindagate/km_pindagate_response/kmPindagateResponse.do?method=add&pindageteId=16107472763205c012740604e27adaae"},{"col":"docStatus","value":"已反馈"},{"col":"docStartTime","value":"2018-01-18"},{"col":"docFinishedTime","value":"不限"}]},{"href":null,"cells":[{"col":"fdId","value":"160fcd0fa89bcd60395cdd54fd8a8f27"},{"col":"docSubject","value":"关于新版EKP/OA使用情况满意度的调查","href":"/km/pindagate/km_pindagate_response/kmPindagateResponse.do?method=add&pindageteId=160fcd0fa89bcd60395cdd54fd8a8f27"},{"col":"docStatus","value":"已反馈"},{"col":"docStartTime","value":"2018-01-16"},{"col":"docFinishedTime","value":"不限"}]},{"href":null,"cells":[{"col":"fdId","value":"160c950c7fab71ac364a76e43689f342"},{"col":"docSubject","value":"水滴学院的“习武堂”满意度的调查","href":"/km/pindagate/km_pindagate_response/kmPindagateResponse.do?method=add&pindageteId=160c950c7fab71ac364a76e43689f342"},{"col":"docStatus","value":"32"},{"col":"docStartTime","value":"2018-01-06"},{"col":"docFinishedTime","value":"2018-01-06"}]}]}
+					]]>
+				</code>
+			</example>
+		</source>
+		<operations>
+		    <operation
+				name="{operation.create}"
+				type="create"
+				href="/km/pindagate/km_pindagate_main/kmPindagateMain.do?method=add" />
+			<operation
+				name="{operation.more}"
+				type="more"
+				mobileHref="/km/pindagate/mobile"
+				href="/km/pindagate/#cri.q=categoryId:!{cateid}" />
+	    </operations>
+	</portlet>
+	<!-- 所有调查,可配置表头格式 -->
+	<portlet
+		id="km.pindagate.participant.all.listtable"
+		name="{km-pindagate:kmPindagateMain.porlet.pindagate.all.table}"
+		module="{km-pindagate:module.km.pindagate}"
+		description="{portlet.list.desc2}"
+		forSystem="cloud" varExtend="km.pindagate.participant.all.listtable">
+		<source id="km-pindagate.participantAllListtable" format="data.table" type="json">
+			<code>
+			<![CDATA[
+				{
+					"url":"/data/km-pindagate/kmPindagateMainPortlet/listPortlet?fdCategoryId=!{cateid}&rowsize=!{rowsize}&scope=!{scope}&type=all&dataview=listtable"
+				}
+			]]>
+			</code>
+			<example>
+				<code>
+					<![CDATA[
+					{"columns":[{"property":"fdId","renderType":"hidden"},{"property":"docSubject","title":"问卷主题","align":"left"},{"property":"docStatus","title":"状态"},{"property":"docStartTime","title":"调查开始时间"},{"property":"docFinishedTime","title":"调查结束时间"}],"data":[{"href":null,"cells":[{"col":"fdId","value":"16b2129279fede88abdb8674bf5995c3"},{"col":"docSubject","value":"知识协同的重要性","href":"/km/pindagate/km_pindagate_response/kmPindagateResponse.do?method=add&pindageteId=16b2129279fede88abdb8674bf5995c3"},{"col":"docStatus","value":"已反馈"},{"col":"docStartTime","value":"2019-06-04"},{"col":"docFinishedTime","value":"2019-06-04"}]},{"href":null,"cells":[{"col":"fdId","value":"16b21272308da5df603b485491cb5dad"},{"col":"docSubject","value":"协同管理的认识","href":"/km/pindagate/km_pindagate_response/kmPindagateResponse.do?method=add&pindageteId=16b21272308da5df603b485491cb5dad"},{"col":"docStatus","value":"已反馈"},{"col":"docStartTime","value":"2019-06-04"},{"col":"docFinishedTime","value":"2019-06-05"}]},{"href":null,"cells":[{"col":"fdId","value":"16281c2aacf5d41544408204ccea8cb6"},{"col":"docSubject","value":"娱乐调查","href":"/km/pindagate/km_pindagate_response/kmPindagateResponse.do?method=add&pindageteId=16281c2aacf5d41544408204ccea8cb6"},{"col":"docStatus","value":"32"},{"col":"docStartTime","value":"2018-04-01"},{"col":"docFinishedTime","value":"2018-04-30"}]},{"href":null,"cells":[{"col":"fdId","value":"1620ea58769a779ac70cae34d5e816cb"},{"col":"docSubject","value":"“习武堂”讲课内容的满意度调查","href":"/km/pindagate/km_pindagate_response/kmPindagateResponse.do?method=add&pindageteId=1620ea58769a779ac70cae34d5e816cb"},{"col":"docStatus","value":"已反馈"},{"col":"docStartTime","value":"2018-03-22"},{"col":"docFinishedTime","value":"不限"}]},{"href":null,"cells":[{"col":"fdId","value":"16107472763205c012740604e27adaae"},{"col":"docSubject","value":"\"知识讲堂\"授课内容满意度的调查","href":"/km/pindagate/km_pindagate_response/kmPindagateResponse.do?method=add&pindageteId=16107472763205c012740604e27adaae"},{"col":"docStatus","value":"已反馈"},{"col":"docStartTime","value":"2018-01-18"},{"col":"docFinishedTime","value":"不限"}]},{"href":null,"cells":[{"col":"fdId","value":"160fcd0fa89bcd60395cdd54fd8a8f27"},{"col":"docSubject","value":"关于新版EKP/OA使用情况满意度的调查","href":"/km/pindagate/km_pindagate_response/kmPindagateResponse.do?method=add&pindageteId=160fcd0fa89bcd60395cdd54fd8a8f27"},{"col":"docStatus","value":"已反馈"},{"col":"docStartTime","value":"2018-01-16"},{"col":"docFinishedTime","value":"不限"}]},{"href":null,"cells":[{"col":"fdId","value":"160c950c7fab71ac364a76e43689f342"},{"col":"docSubject","value":"水滴学院的“习武堂”满意度的调查","href":"/km/pindagate/km_pindagate_response/kmPindagateResponse.do?method=add&pindageteId=160c950c7fab71ac364a76e43689f342"},{"col":"docStatus","value":"32"},{"col":"docStartTime","value":"2018-01-06"},{"col":"docFinishedTime","value":"2018-01-06"}]}]}
+					]]>
+				</code>
+			</example>
+		</source>
+		<operations>
+		    <operation
+				name="{operation.create}"
+				type="create"
+				href="/km/pindagate/km_pindagate_main/kmPindagateMain.do?method=add" />
+			<operation
+				name="{operation.more}"
+				type="more"
+				mobileHref="/km/pindagate/mobile"
+				href="/km/pindagate/#cri.q=categoryId:!{cateid}" />
+	    </operations>
+	</portlet>
+</root>

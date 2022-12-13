@@ -1,0 +1,224 @@
+<?xml version="1.0"?>
+<beans
+	xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.0.xsd">
+	<bean
+		id="kmVoteRecordDao"
+		parent="KmssAuthBaseDao"
+		class="com.landray.kmss.km.vote.dao.hibernate.KmVoteRecordDaoImp">
+		<property
+			name="modelName"
+			value="com.landray.kmss.km.vote.model.KmVoteRecord" />
+	</bean>
+	<bean
+		id="kmVoteRecordTarget"
+		parent="KmssBaseTarget"
+		class="com.landray.kmss.km.vote.service.spring.KmVoteRecordServiceImp">
+		<property
+			name="baseDao">
+			<ref
+				local="kmVoteRecordDao" />
+		</property>
+		<property
+			name="kmVoteCommentService">
+			<ref
+				bean="kmVoteCommentService" />
+		</property>
+	</bean>
+	<bean
+		id="kmVoteRecordService"
+		parent="KmssBaseService">
+		<property
+			name="target">
+			<ref
+				local="kmVoteRecordTarget" />
+		</property>
+		
+	</bean>
+	<!-- 评论开始 -->
+	<bean
+		id="kmVoteCommentDao"
+		parent="KmssAuthBaseDao"
+		class="com.landray.kmss.km.vote.dao.hibernate.KmVoteCommentDaoImp">
+		<property
+			name="modelName"
+			value="com.landray.kmss.km.vote.model.KmVoteComment" />
+	</bean>
+	<bean
+		id="kmVoteCommentTarget"
+		parent="KmssBaseTarget"
+		class="com.landray.kmss.km.vote.service.spring.KmVoteCommentServiceImp">
+		<property
+			name="baseDao">
+			<ref
+				local="kmVoteCommentDao" />
+		</property>
+	</bean>
+	<bean
+		id="kmVoteCommentService"
+		parent="KmssBaseService">
+		<property
+			name="target">
+			<ref
+				local="kmVoteCommentTarget" />
+		</property>
+	</bean>
+
+	<!-- 评论结束 -->
+	<bean
+		id="kmVoteMainDao"
+		parent="KmssAuthAreaBaseDao"
+		class="com.landray.kmss.km.vote.dao.hibernate.KmVoteMainDaoImp">
+		<property
+			name="modelName"
+			value="com.landray.kmss.km.vote.model.KmVoteMain" />
+	</bean>
+	<bean
+		id="kmVoteMainTarget"
+		parent="KmssBaseTarget"
+		class="com.landray.kmss.km.vote.service.spring.KmVoteMainServiceImp">
+		<property
+			name="baseDao">
+			<ref
+				local="kmVoteMainDao" />
+		</property>
+		<property
+			name="kmVoteCommentService">
+			<ref
+				bean="kmVoteCommentService" />
+		</property>
+		<property
+			name="sysOrgCoreService">
+			<ref
+				bean="sysOrgCoreService" />
+		</property>
+		<property
+			name="kmVoteMainItemService">
+			<ref
+				local="kmVoteMainItemService" />
+		</property>
+		<property
+			name="sysNotifyMainCoreService">
+			<ref
+				bean="sysNotifyMainCoreService" />
+		</property>
+		<property name="kmVoteRecordService">
+			<ref bean="kmVoteRecordService"/>
+		</property>
+		<property name="kmVoteCategoryService">
+			<ref bean="kmVoteCategoryService"/>
+		</property>
+	</bean>
+	<bean
+		id="kmVoteMainService"
+		parent="KmssBaseService">
+		<property
+			name="target">
+			<ref
+				local="kmVoteMainTarget" />
+		</property>
+	</bean>
+
+	<bean
+		id="kmVoteMainItemDao"
+		parent="KmssAuthBaseDao"
+		class="com.landray.kmss.km.vote.dao.hibernate.KmVoteMainItemDaoImp">
+		<property
+			name="modelName"
+			value="com.landray.kmss.km.vote.model.KmVoteMainItem" />
+	</bean>
+	<bean
+		id="kmVoteMainItemTarget"
+		parent="KmssBaseTarget"
+		class="com.landray.kmss.km.vote.service.spring.KmVoteMainItemServiceImp">
+		<property
+			name="baseDao">
+			<ref
+				local="kmVoteMainItemDao" />
+		</property>
+		<property name="sysAttMainService">
+			<ref bean="sysAttMainService"/>
+		</property>
+	</bean>
+	<bean
+		id="kmVoteMainItemService"
+		parent="KmssBaseService">
+		<property
+			name="target">
+			<ref
+				local="kmVoteMainItemTarget" />
+		</property>
+	</bean>
+
+	<bean
+		id="kmVoteCategoryDao"
+		parent="KmssAuthAreaBaseDao"
+		class="com.landray.kmss.km.vote.dao.hibernate.KmVoteCategoryDaoImp">
+		<property
+			name="modelName"
+			value="com.landray.kmss.km.vote.model.KmVoteCategory" />
+	</bean>
+	<bean
+		id="kmVoteCategoryTarget"
+		parent="KmssBaseTarget"
+		class="com.landray.kmss.km.vote.service.spring.KmVoteCategoryServiceImp">
+		<property
+			name="baseDao">
+			<ref
+				local="kmVoteCategoryDao" />
+		</property>
+	</bean>
+	<bean
+		id="kmVoteCategoryService"
+		parent="KmssBaseService">
+		<property
+			name="target">
+			<ref
+				local="kmVoteCategoryTarget" />
+		</property>
+	</bean>
+
+	<!-- 树 -->
+	<bean
+		id="kmVoteCategoryTreeService"
+		class="com.landray.kmss.km.vote.service.spring.KmVoteCategoryTreeServiceImp">
+		<property
+			name="kmVoteCategoryService">
+			<ref
+				local="kmVoteCategoryService" />
+		</property>
+	</bean>
+
+	<!-- 全文检索 -->
+	<bean
+		id="kmVoteProxyCreator"
+		class="org.springframework.aop.framework.autoproxy.BeanNameAutoProxyCreator">
+		<property
+			name="beanNames">
+			<value>kmVoteMainDao</value><!-- 要查找的dao -->
+		</property>
+		<property
+			name="interceptorNames">
+			<list>
+				<value>luceneCreateAdvisor</value> <!-- 以下参数固定不变 -->
+				<value>luceneSaveAdvisor</value>
+				<value>luceneDeleteAdvisor</value>
+				<value>docKeyWriteAdvice</value>
+			</list>
+		</property>
+	</bean>
+
+    <!-- 门户部件-热门最新-投票-service -->
+    <bean
+		id="kmVoteMainPortletService"
+		class="com.landray.kmss.km.vote.service.spring.KmVoteMainPortletService">
+		<property name="kmVoteMainService">
+		    <ref local="kmVoteMainService"/>
+		</property>
+		<property
+			name="baseDao">
+			<ref local="kmVoteMainDao" />
+		</property>
+	</bean>
+</beans>

@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<plugin xmlns="http://www.example.org/plugin-config" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.example.org/plugin-config ../../../plugin.xsd ">
+	
+	<extension-point id="com.landray.kmss.km.pindagate.bridge">
+
+		<item name="publisher">
+
+			<param name="tmodelName" required="true" kind="string">
+				<description>
+					调查对象modelName
+				</description>
+			</param>
+			
+			<param name="smodelName"  kind="string">
+				<description>
+					调查对象辅助modelName,非必填
+				</description>
+			</param>
+			
+			<param name="service" required="true" kind="string">
+				<description>
+					新建调查时候初始化表单数据调用的service,通过getBean获取
+				</description>
+			</param>
+			
+			
+			<param name="method" required="true" kind="string">
+				<description>
+					新建调查时候初始化表单数据调用的service里面的方法名
+				</description>
+			</param>
+			
+			<description>其他模块针对某个文档发起的调查的扩展点</description>
+			
+		</item>
+		
+		
+		<item name="listHQLInfo">
+
+			<param name="unid" required="true" kind="unid">
+				<description>
+					唯一key值，不可重复
+				</description>
+			</param>
+			
+			<param name="service" required="true" kind="string">
+				<description>
+					查看调查列表数据调用的封装hql的service,通过getBean获取
+				</description>
+			</param>
+			
+			
+			<param name="method" required="true" kind="string">
+				<description>
+					查看调查列表数据时调用的service里面的方法名，参数列表为(HQLInfo hqlInfo, HttpServletRequest request)
+				</description>
+			</param>
+			
+			<description>查看调查列表数据的扩展点</description>
+			
+		</item>
+		<description>其他模块针对某个文档发起的调查的扩展点</description>
+		
+	</extension-point> 
+</plugin> 

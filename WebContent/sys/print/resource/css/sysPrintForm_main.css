@@ -1,0 +1,7 @@
+@charset "UTF-8";
+
+.auditNote_show_p{
+	display: inline !important;
+	word-break: break-word;
+	white-space: pre-wrap;
+}

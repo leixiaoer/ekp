@@ -1,0 +1,75 @@
+{
+    "global":     {
+        "modelName": "com.landray.kmss.km.asset.model.KmAssetApplyBuy",
+        "messageKey": "km-asset:table.kmAssetApplyBuy",
+        "displayProperty": "docSubject",
+        "extendClass": "com.landray.kmss.km.asset.model.KmAssetApplyBase",
+        "discriminatorValue": "com.landray.kmss.km.asset.model.KmAssetApplyBuy",
+        "serviceBean": "kmAssetApplyBuyService",
+        "table": "km_asset_apply_base",
+        "url": "/km/asset/km_asset_apply_buy/kmAssetApplyBuy.do?method=view&fdId=${fdId}"
+    },
+    "attrs":     {
+        "fdId":         {
+            "propertyType": "id",
+            "generator": {"type": "assigned"}
+        },
+        "fdIsPlan":         {
+            "propertyType": "simple",
+            "messageKey": "km-asset:kmAssetApplyBuy.fdIsPlan",
+            "type": "Boolean",
+            "column": "fd_is_plan",
+            "notNull": "false",
+            "length": "36",
+            "enumType": "km_asset_apply_buy_fd_is_plan",
+            "validate": "false",
+            "canLogShow":"1"
+        },
+        "fdTotalMoney":         {
+            "propertyType": "simple",
+            "messageKey": "km-asset:kmAssetApplyBuy.fdTotalMoney",
+            "type": "Double",
+            "column": "fd_total_money",
+            "notNull": "false",
+            "length": "36",
+            "validate": "false",
+            "canLogShow":"1"
+        },
+        "fdStyle":         {
+            "propertyType": "simple",
+            "messageKey": "km-asset:kmAssetApplyBuy.fdStyle",
+            "type": "Integer",
+            "column": "fd_style",
+            "notNull": "false",
+            "length": "36",
+            "enumType": "km_asset_apply_buy_fd_style",
+            "validate": "true",
+            "canLogShow":"1"
+        },
+        "fdMoneyIdea":         {
+            "propertyType": "simple",
+            "messageKey": "km-asset:kmAssetApplyBuy.fdMoneyIdea",
+            "type": "String",
+            "column": "fd_money_idea",
+            "notNull": "false",
+            "length": "1500",
+            "validate": "true",
+            "canLogShow":"1"
+        },
+        "kmAssetApplyBuyList":         {
+            "propertyType": "list",
+            "messageKey": "km-asset:table.kmAssetApplyBuyList",
+            "type": "com.landray.kmss.km.asset.model.KmAssetApplyBuyList",
+            "column": "km_asset_apply_buy_id",
+            "cascade": "all-delete-orphan",
+            "canDisplay": "false",
+            "table": "km_asset_apply_buy_list",
+            "canLogShow":"1"
+        }
+    },
+    "attachments": {"kmAssetApplyBuy":     {
+        "propertyType": "att",
+        "messageKey": "km-asset:kmAssetApplyBase.attachMent",
+        "canDisplay": "true"
+    }}
+}

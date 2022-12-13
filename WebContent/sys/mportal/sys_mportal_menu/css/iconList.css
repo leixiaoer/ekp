@@ -1,0 +1,92 @@
+/* sysMportalMenu_edit.jsp */
+.imgContainer {
+	background-color: #1d9d74;
+    width: 63px;
+    height: 39px;
+}
+.imgBox {
+	margin: 0 auto;
+    background-size: 100%;
+    width: 50px;
+    height: 42px;
+    margin-top: -10px;
+}
+
+/* sysMportalMenu_icon.jsp */
+/* 图标页签样式 */
+.mui-quick-entry-size {
+	height: 68px;
+	background-size: 100%;
+}
+.mui-quick-entry-01-icon {
+	background-image: url(../../../../sys/mportal/mobile/menu/img/quick-entry-01.png);
+}
+.mui-quick-entry-02-icon {
+	background-image: url(../../../../sys/mportal/mobile/menu/img/quick-entry-02.png);
+}
+.mui-quick-entry-03-icon {
+	background-image: url(../../../../sys/mportal/mobile/menu/img/quick-entry-03.png);
+}
+.mui-quick-entry-04-icon {
+	background-image: url(../../../../sys/mportal/mobile/menu/img/quick-entry-04.png);
+}
+.mui-quick-entry-05-icon {
+	background-image: url(../../../../sys/mportal/mobile/menu/img/quick-entry-05.png);
+}
+.mui-quick-entry-06-icon {
+	background-image: url(../../../../sys/mportal/mobile/menu/img/quick-entry-06.png);
+}
+.mui-quick-entry-07-icon {
+	background-image: url(../../../../sys/mportal/mobile/menu/img/quick-entry-07.png);
+}
+.mui-quick-entry-08-icon {
+	background-image: url(../../../../sys/mportal/mobile/menu/img/quick-entry-08.png);
+}
+.mui-quick-entry-09-icon {
+	background-image: url(../../../../sys/mportal/mobile/menu/img/quick-entry-09.png);
+}
+.mui-quick-entry-10-icon {
+	background-image: url(../../../../sys/mportal/mobile/menu/img/quick-entry-10.png);
+}
+.mui-quick-entry-11-icon {
+	background-image: url(../../../../sys/mportal/mobile/menu/img/quick-entry-11.png);
+}
+.mui-quick-entry-12-icon {
+	background-image: url(../../../../sys/mportal/mobile/menu/img/quick-entry-12.png);
+}
+.mui-quick-entry-13-icon {
+	background-image: url(../../../../sys/mportal/mobile/menu/img/quick-entry-13.png);
+}
+.mui-quick-entry-14-icon {
+	background-image: url(../../../../sys/mportal/mobile/menu/img/quick-entry-14.png);
+}
+.mui-quick-entry-15-icon {
+	background-image: url(../../../../sys/mportal/mobile/menu/img/quick-entry-15.png);
+}
+.mui-quick-entry-16-icon {
+	background-image: url(../../../../sys/mportal/mobile/menu/img/quick-entry-16.png);
+}
+.mui-quick-entry-17-icon {
+	background-image: url(../../../../sys/mportal/mobile/menu/img/quick-entry-17.png);
+}
+.mui-quick-entry-18-icon {
+	background-image: url(../../../../sys/mportal/mobile/menu/img/quick-entry-18.png);
+}
+.mui-quick-entry-19-icon {
+	background-image: url(../../../../sys/mportal/mobile/menu/img/quick-entry-19.png);
+}
+.mui-quick-entry-20-icon {
+	background-image: url(../../../../sys/mportal/mobile/menu/img/quick-entry-20.png);
+}
+.mui-quick-entry-21-icon {
+	background-image: url(../../../../sys/mportal/mobile/menu/img/quick-entry-21.png);
+}
+.mui-quick-entry-22-icon {
+	background-image: url(../../../../sys/mportal/mobile/menu/img/quick-entry-22.png);
+}
+.mui-quick-entry-23-icon {
+	background-image: url(../../../../sys/mportal/mobile/menu/img/quick-entry-23.png);
+}
+.mui-quick-entry-24-icon {
+	background-image: url(../../../../sys/mportal/mobile/menu/img/quick-entry-24.png);
+}

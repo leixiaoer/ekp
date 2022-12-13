@@ -1,0 +1,233 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<plugin 
+    xsi:schemaLocation="http://www.example.org/plugin-config ../../plugin.xsd" 
+    xmlns="http://www.example.org/plugin-config" 
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    
+    <!--监听费用表单的增删改查事件-->
+		<extension
+			point="com.landray.kmss.sys.xform.base.service.dataEvents"
+			model="com.landray.kmss.km.review.model.KmReviewMain">
+			<item
+				name="dataEvent">
+				<param
+					name="bean"
+					value="geesunBaseListenerFormService" />
+				<param
+					name="label"
+					value="{geesun-base:geesunBaseMain.listener.fy}" />
+			</item>
+			<item
+				name="dataEvent">
+				<param
+					name="bean"
+					value="geesunBaseBudgetListenerFormService" />
+				<param
+					name="label"
+					value="{geesun-base:geesunBaseMain.listener.ystz}" />
+			</item>
+		</extension>
+    
+    <extension point="com.landray.kmss.lbpm.engine.event"
+		model="com.landray.kmss.km.review.model.KmReviewMain">
+		<!--报销流程结束修改对应的预算状态-->
+		<item name="listener">
+			<param
+				name="unid"
+				value="geesunExpenseFinishEvent" />
+			<param
+				name="messageKey"
+				value="geesun-base:flow.event.finish" />
+			<param
+				name="eventTypes"
+				value="lbpmProcessFinishEvent" />
+			<param
+				name="listener"
+				value="geesunExpenseFinishEvent" />
+			<param
+				name="enforce"
+				value="true" />
+		</item>
+		
+		<!--报销流程废弃将占用金额释放-->
+		<item name="listener">
+			<param
+				name="unid"
+				value="geesunExpenseAbandonEvent" />
+			<param
+				name="messageKey"
+				value="geesun-base:flow.event.abandon" />
+			<param
+				name="eventTypes"
+				value="lbpmProcessAbandonedEvent;drafterAbandonEvent;lbpmHandlerAbandonEvent" />
+			<param
+				name="listener"
+				value="geesunExpenseAbandonEvent" />
+			<param
+				name="enforce"
+				value="true" />
+		</item>
+		
+		<!--报销流程驳回到起草节点将占用金额释放-->
+		<item name="listener">
+			<param
+				name="unid"
+				value="geesunExpenseEnterNodeEvent" />
+			<param
+				name="messageKey"
+				value="geesun-base:flow.event.node.enter.draft" />
+			<param
+				name="eventTypes"
+				value="enterNodeEvent" />
+			<param
+				name="listener"
+				value="geesunExpenseEnterNodeEvent" />
+			<param
+				name="enforce"
+				value="false" />
+		</item>
+		
+		<!--起草人撤回报销流程将占用金额释放-->
+		<item name="listener">
+			<param
+				name="unid"
+				value="geesunExpenseDraftorReturnEvent" />
+			<param
+				name="messageKey"
+				value="geesun-base:flow.event.draftor.return" />
+			<param
+				name="eventTypes"
+				value="drafterReturnEvent" />
+			<param
+				name="listener"
+				value="geesunExpenseDraftorReturnEvent" />
+			<param
+				name="enforce"
+				value="true" />
+		</item>
+		
+		<!--起草人提交报销流程将占用预算金额-->
+		<item name="listener">
+			<param
+				name="unid"
+				value="geesunExpenseDraftorSubmitEvent" />
+			<param
+				name="messageKey"
+				value="geesun-base:flow.event.draftor.submit" />
+			<param
+				name="eventTypes"
+				value="drafterSubmitEvent" />
+			<param
+				name="listener"
+				value="geesunExpenseDraftorSubmitEvent" />
+			<param
+				name="enforce"
+				value="true" />
+		</item>
+	</extension>
+	
+	<extension point="com.landray.kmss.lbpm.engine.event"
+		model="com.landray.kmss.km.review.model.KmReviewMain">
+	
+		<!--预算调整流程结束，将借出成本中心对应的金额转移到借入成本中心-->
+		<item name="listener">
+			<param
+				name="unid"
+				value="geesunBudgetAdjustFinishEvent" />
+			<param
+				name="messageKey"
+				value="{fssc-budget:fsscBudgetAdjustMain.finishEvent}" />
+			<param
+				name="eventTypes"
+				value="lbpmProcessFinishEvent" />
+			<param
+				name="listener"
+				value="geesunBudgetAdjustFinishEvent" />
+			<param
+				name="enforce"
+				value="true" />
+		</item>
+		<!--预算调整流程废弃将占用金额释放-->
+		<item name="listener">
+			<param
+				name="unid"
+				value="geesunBudgetAdjustAbandonedEvent" />
+			<param
+				name="messageKey"
+				value="{fssc-budget:fsscBudgetAdjustMain.abandonedEvent}" />
+			<param
+				name="eventTypes"
+				value="lbpmProcessAbandonedEvent;drafterAbandonEvent;lbpmHandlerAbandonEvent" />
+			<param
+				name="listener"
+				value="geesunBudgetAdjustAbandonedEvent" />
+			<param
+				name="enforce"
+				value="true" />
+		</item>
+		
+		<!--预算调整流程驳回到起草节点将占用金额释放-->
+		<item name="listener">
+			<param
+				name="unid"
+				value="geesunBudgetAdjustEnterNodeEvent" />
+			<param
+				name="messageKey"
+				value="{fssc-budget:fsscBudgetAdjustMain.draftNode.enterNodeEvent}" />
+			<param
+				name="eventTypes"
+				value="enterNodeEvent" />
+			<param
+				name="listener"
+				value="geesunBudgetAdjustEnterNodeEvent" />
+			<param
+				name="enforce"
+				value="false" />
+		</item>
+		
+		<!--起草人撤回预算调整流程将占用金额释放-->
+		<item name="listener">
+			<param
+				name="unid"
+				value="geesunBudgetAdjustDrafterReturnEvent" />
+			<param
+				name="messageKey"
+				value="{fssc-budget:fsscBudgetAdjustMain.drafterReturnEvent}" />
+			<param
+				name="eventTypes"
+				value="drafterReturnEvent" />
+			<param
+				name="listener"
+				value="geesunBudgetAdjustDrafterReturnEvent" />
+			<param
+				name="enforce"
+				value="true" />
+		</item>
+		<!--起草人提交预算调整流程重新将占用预算金额-->
+		<item name="listener">
+			<param
+				name="unid"
+				value="geesunBudgetAdjustDraftorSubmitEvent" />
+			<param
+				name="messageKey"
+				value="fssc-budget:fsscBudgetAdjustMain.draftor.submit" />
+			<param
+				name="eventTypes"
+				value="drafterSubmitEvent" />
+			<param
+				name="listener"
+				value="geesunBudgetAdjustDraftorSubmitEvent" />
+			<param
+				name="enforce"
+				value="true" />
+		</item>
+		
+	</extension>
+	
+	<extension point="com.landray.kmss.sys.formula">
+		<item name="function">
+			<param name="className" value="com.landray.kmss.geesun.base.formula.GeesunBaseGetFirstCharger"/>
+		</item>
+	</extension>
+
+</plugin>

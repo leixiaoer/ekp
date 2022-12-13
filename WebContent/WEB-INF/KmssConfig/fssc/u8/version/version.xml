@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<version xmlns="http://www.example.org/version-config" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.example.org/version-config ../../../version.xsd">
+	<modifies>
+		<modify>
+			<description>#132614 修复【服务问题单】会计科目核算属性勾选了人员，推送到u8时提示部门非法</description>
+			<author>余艳祥</author>
+			<revision-time>2021-01-28</revision-time>
+			<relation>
+				<relation-module>fssc/base</relation-module>
+			</relation>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#116356 新增 凭证中需要新增合同号字段，取值合同台账的编号</description>
+			<author>余艳祥</author>
+			<revision-time>2020-10-24</revision-time>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#93155 修复 U8凭证集成，凭证报文供应商编码未拼接</description>
+			<author>谢星星</author>
+			<revision-time>2020-04-20</revision-time>
+			<relation>
+				<relation-module>fssc/voucher</relation-module>
+			</relation>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#95043 修复 跨月、跨年账期被写死当前年、月份的问题</description>
+			<author>谢星星</author>
+			<revision-time>2020-02-07</revision-time>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#68034 新增 初始化费控V4代码</description>
+			<author>谢星星</author>
+			<revision-time>2019-06-03</revision-time>
+			<baseline>V15.0.0.R.20190712</baseline>
+		</modify>
+	</modifies>
+</version>

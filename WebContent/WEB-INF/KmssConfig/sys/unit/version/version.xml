@@ -1,0 +1,203 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<version xmlns="http://www.example.org/version-config" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.example.org/version-config ../../../version.xsd">
+	<modifies>
+		<modify>
+			<description>#159130 修复 当设置被删除的发文单位为默认单位时，新建发文页面还是会带出被删除的单位，保持公文会报错</description>
+			<author>魏泽钧</author>
+			<revision-time>2022-03-11</revision-time>
+			<relation>
+				<relation-module>km/imissive</relation-module>
+			</relation>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#158557 修复 【服务问题单】公文发文单位（未使用过的单位）校验</description>
+			<author>魏泽钧</author>
+			<revision-time>2022-01-21</revision-time>
+			<relation>
+				<relation-module>km/imissive</relation-module>
+			</relation>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#152823 修复 搜索单位时引发XSS攻击</description>
+			<author>潘永辉</author>
+			<revision-time>2021-11-04</revision-time>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#147490 修复 限制输入长度</description>
+			<author>王进府</author>
+			<revision-time>2021-09-03</revision-time>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#138707 修复 单位管理后台配置说明未翻译</description>
+			<author>王京</author>
+			<revision-time>2021-05-08</revision-time>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#136953 修复 分管领导被人为去掉部门后，分管领导设置列表页报500</description>
+			<author>潘永辉</author>
+			<revision-time>2021-04-29</revision-time>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#138705 修复 英文环境下没有英文名称时默认显示中文名称</description>
+			<author>潘永辉</author>
+			<revision-time>2021-04-29</revision-time>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#138080 修复 PC端分类没有层级</description>
+			<author>谭昌香</author>
+			<revision-time>2021-04-20</revision-time>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#135535 公文发文拟稿选择主送单位、抄送单位选择方式优化</description>
+			<author>谭昌香</author>
+			<revision-time>2021-04-08</revision-time>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#136323 修复 分管领导搜索栏随便输入什么搜索都显示数据</description>
+			<author>付昊</author>
+			<revision-time>2021-03-30</revision-time>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#133395 修复 IE8浏览器无法加载单位信息</description>
+			<author>潘永辉</author>
+			<revision-time>2021-02-25</revision-time>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#125186 修复 移动端分发、上报，选择主送单位与抄送单位，再去掉主送单位所选单位。提交后，主送单位被去掉的单位文书仍接收到了公文</description>
+			<author>苏琦</author>
+			<revision-time>2021-01-31</revision-time>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#122758 新增 单位管理机构组功能</description>
+			<author>郑操辉</author>
+			<revision-time>2020-10-30</revision-time>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#120158 修复 没有“公文管理_参数设置”角色权限时，新增单位取消默认选中“内部单位”</description>
+			<author>潘永辉</author>
+			<revision-time>2020-09-24</revision-time>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#119655 修复 公文单位设置多选问题</description>
+			<author>王书强</author>
+			<revision-time>2020-09-23</revision-time>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#117623 优化 移动端单位选择无法显示下级单位问题</description>
+			<author>朱湖强</author>
+			<revision-time>2020-08-31</revision-time>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#116387 修复 公文单位选择，如果单位分类有多级，选一级分类时则二级分类会直接显示在待选单位列表中了</description>
+			<author>潘永辉</author>
+			<revision-time>2020-08-28</revision-time>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#116011 修复 英文环境下新建公文选择单位，搜索按钮重叠</description>
+			<author>潘永辉</author>
+			<revision-time>2020-08-25</revision-time>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#113343 修复 收文文档，拥有创建收文权限用户，新建收文选择来文单位时，点击分类，控制台报错</description>
+			<author>苏琦</author>
+			<revision-time>2020-07-29</revision-time>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#112721 修复 公文功能，收文中的来文单位，选择“公文交换单位”点击“添加单位”，会出现报错页面</description>
+			<author>苏琦</author>
+			<revision-time>2020-07-27</revision-time>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#105717 修复 360极速模式下，单位选择框空白问题</description>
+			<author>朱湖强</author>
+			<revision-time>2020-06-17</revision-time>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#95483 修复 公文后台单位设置页面 复制单位没有英文翻译</description>
+			<author>郑操辉</author>
+			<revision-time>2020-03-30</revision-time>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#92855 新增 单位管理复制单位</description>
+			<author>郑操辉</author>
+			<revision-time>2020-03-30</revision-time>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#92609 优化 数据交换增加开关控制</description>
+			<author>朱湖强</author>
+			<revision-time>2020-03-27</revision-time>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#91521 新增 交换单位文书设置功能</description>
+			<author>朱湖强</author>
+			<revision-time>2020-03-27</revision-time>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#97493 修复 后台设置单位列表报错问题</description>
+			<author>朱湖强</author>
+			<revision-time>2020-03-01</revision-time>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#81529 新增 单位管理新增导出功能</description>
+			<author>蒋志广</author>
+			<revision-time>2019-12-09</revision-time>
+			<baseline>V15.0.3.R.20200117</baseline>
+		</modify>
+		<modify>
+			<description>#74801 新增 公文与数据交换中心对接单位相关设置</description>
+			<author>朱湖强</author>
+			<revision-time>2019-09-08</revision-time>
+			<relation>
+				<relation-module>sys/dec</relation-module>
+			</relation>
+			<baseline>V15.0.2.R.20191108</baseline>
+		</modify>
+		<modify>
+			<description>#80965 修复 分管领导人变更导致单位显示不正确问题</description>
+			<author>朱湖强</author>
+			<revision-time>2019-09-05</revision-time>
+			<baseline>V15.0.1.R.20190906</baseline>
+		</modify>
+		<modify>
+			<description>#79627 修复 单位快速排序报错问题</description>
+			<author>朱湖强</author>
+			<revision-time>2019-08-15</revision-time>
+			<baseline>V15.0.1.R.20190906</baseline>
+		</modify>
+		<modify>
+			<description>新增 单位管理</description>
+			<author>朱湖强</author>
+			<revision-time>2019-07-11</revision-time>
+			<relation>
+				<relation-module>km/imissive</relation-module>
+			</relation>
+			<baseline>V15.0.0.R.20190712</baseline>
+		</modify>
+	</modifies>
+</version>

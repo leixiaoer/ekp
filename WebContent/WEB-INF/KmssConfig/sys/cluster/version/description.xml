@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<description xmlns="http://www.example.org/description-config" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.example.org/description-config ../../../description.xsd">
+	<module>
+		<module-name>群集管理</module-name>
+		<module-path>sys/cluster</module-path>
+		<baseline>V15.0.4.R.20200410</baseline>
+		<source-md5>0e1966955c64b714900ec54786cd0a58</source-md5>
+		<is-custom>否</is-custom>
+		<serial-num>6</serial-num>
+	</module>
+</description>

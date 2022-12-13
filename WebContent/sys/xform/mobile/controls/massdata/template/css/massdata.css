@@ -1,0 +1,37 @@
+
+.massdata-table{
+	margin: 5px auto;
+}
+
+.massdata-table .massdata-table-thead{
+	background-color:#f6f6f6;
+	white-space : nowrap;
+}
+
+.massdata-table thead tr th{
+	padding : 8px;
+	border : 1px #d2d2d2 solid;
+	text-align : center;
+	min-width : 100px;
+}
+
+.massdata-table tbody tr td{
+	padding : 8px;
+	border : 1px #d2d2d2 solid;
+	text-align : left;
+}
+
+.massdata-paging{
+	text-align : center;
+}
+
+.massdata-paging span{
+	font-size: 20px;
+	margin: 8px 15px;
+	color: #e4e4e4;
+}
+
+.massdata-paging .active{
+	color : #1ba6eb;
+}
+

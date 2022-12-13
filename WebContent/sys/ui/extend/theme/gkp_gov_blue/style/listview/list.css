@@ -1,0 +1,103 @@
+@charset "UTF-8";
+/* 二级页面快速新建 Starts */
+.lui_list_create_frame {
+  padding: 10px;
+  background-color: transparent;
+}
+
+.lui_list_create_header_c {
+  height: auto;
+  position: relative;
+}
+
+.lui_list_create_header_trig {
+  display: none;
+}
+
+.lui_list_create_wrapper {
+  padding: 10px;
+}
+
+.lui_list_create_wrapper .lui_dataview_picmenu,
+.lui_list_create_wrapper .lui_dataview_picmenu_on {
+  width: auto;
+}
+
+.lui_list_create_wrapper h1 {
+  margin: 5px 0 0;
+  line-height: 20px;
+  color: #fff;
+  font-size: 14px;
+  font-weight: normal;
+}
+
+.lui_list_create_wrapper .lui_dataview_picmenulist_mod {
+  padding-bottom: 0;
+}
+
+.lui_list_create_wrapper_foot {
+  padding: 0 5px;
+}
+
+.lui_list_create_frame .lui_dataview_picmenu_left {
+  background-color: transparent;
+}
+
+.lui_list_create_frame .lui_dataview_picmenu_left .lui_dataview_picmenu_txt {
+  display: inline-block;
+  padding-left: 22px;
+  line-height: 18px;
+  padding-top: 0px;
+  color: #e4eef7;
+  background: url(../icon/s/list_create_frame_icon.png) no-repeat 0 0;
+  cursor: pointer;
+}
+
+.lui_list_create_frame .lui_dataview_picmenu_on .lui_dataview_picmenu_txt {
+  color: #fff;
+  background-image: url(../icon/s-on/list_create_frame_icon.png);
+}
+
+.lui_list_create_frame .lui_dataview_picmenu_content .lui_icon_l {
+  margin-bottom: 5px;
+  width: 80px;
+  height: 80px;
+  color: #0C3E6C;
+  background-size: auto;
+  background: #fff;
+}
+
+.lui_list_create_frame .lui_dataview_picmenu_content .lui_icon_l,
+.lui_list_create_frame .lui_dataview_picmenu_content .lui_icon_l .iconfont_nav {
+  line-height: 80px !important;
+}
+
+.lui_list_create_frame .lui_dataview_picmenulist_mod .lui_dataview_picmenu_content {
+  margin: 0;
+  padding: 0;
+  font-size: 0;
+  *white-space: -1px;
+  cursor: default;
+}
+
+.lui_list_create_frame .lui_dataview_picmenulist_mod .lui_dataview_picmenu_left {
+  /*--- 费控的借款模块丢失 暂时定死这个高度 ---*/
+  max-height: 105px;
+  height: auto;
+}
+
+.lui_list_create_frame .lui_dataview_picmenu_on .lui_icon_l {
+  background-color: #fff;
+}
+
+/*二级页面新建不带新建功能*/
+.lui_list_noCreate_frame .lui_list_create_frame .lui_dataview_picmenu_left .lui_dataview_picmenu_txt {
+  padding-left: 0;
+  background: none;
+}
+
+.lui_list_noCreate_frame .lui_list_create_frame .lui_dataview_picmenu_on .lui_dataview_picmenu_txt {
+  color: #e4eef7;
+}
+
+/* 二级页面快速新建 Ends */

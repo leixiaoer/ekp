@@ -1,0 +1,196 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<version xmlns="http://www.example.org/version-config" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.example.org/version-config ../../../version.xsd">
+	<modifies>
+		<modify>
+			<description>#161996 修复 jdbc函数，设置了搜索时，会在入参参数中出现2个重复的字段</description>
+			<author>黄伟强</author>
+			<revision-time>2022-04-14</revision-time>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#157618 修复 从TIC取数据时，表单控件不显示分页页数</description>
+			<author>黄伟强</author>
+			<revision-time>2022-01-24</revision-time>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>【tic】tic-业务集成-soap服务和函数列表，开启快编后，列表报600错误（关闭快编正常）</description>
+			<author>黄海</author>
+			<revision-time>2021-06-15</revision-time>
+			<relation>
+				<relation-module>core</relation-module>
+				<relation-module>sys/ui</relation-module>
+				<relation-module>sys/profile</relation-module>
+				<relation-module>tic/rest</relation-module>
+				<relation-module>tic/soap</relation-module>
+			</relation>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#123195 修复 JDBC增量同步失败</description>
+			<author>黄伟强</author>
+			<revision-time>2020-10-26</revision-time>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#121173 修复 在mysql数据库下，JDBC抽取结构，别名无法识别</description>
+			<author>黄伟强</author>
+			<revision-time>2020-10-10</revision-time>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#114665 修复 计划任务中，JDBC函数时，配置映射关系时，按钮点不动</description>
+			<author>黄伟强</author>
+			<revision-time>2020-08-15</revision-time>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#111435 修复 BAPI函数，打开帮助文档时，页面域名丢失了</description>
+			<author>黄伟强</author>
+			<revision-time>2020-07-09</revision-time>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#104316 优化 优化Tic日志</description>
+			<author>何建华</author>
+			<revision-time>2020-04-30</revision-time>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#100036 优化 蓝钉初始化fdKey重复问题</description>
+			<author>何建华</author>
+			<revision-time>2020-03-27</revision-time>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#99635 修复 JDBC函数没按组件过滤</description>
+			<author>黄伟强</author>
+			<revision-time>2020-03-26</revision-time>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#89508 优化 jdbc函数新增fd_enviroment_id筛选值</description>
+			<author>何建华</author>
+			<revision-time>2020-03-02</revision-time>
+			<relation>
+				<relation-module>tic/core</relation-module>
+			</relation>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#91313 修复 通过API调用，根据fdKey查找函数的时候报错</description>
+			<author>黄伟强</author>
+			<revision-time>2019-12-17</revision-time>
+			<relation>
+				<relation-module>tic/core</relation-module>
+			</relation>
+			<baseline>V15.0.3.R.20200117</baseline>
+		</modify>
+		<modify>
+			<description>#88597 修复 tib组件mysql数据库，sql语句INSTR包含中文报语法错误</description>
+			<author>何建华</author>
+			<revision-time>2019-11-22</revision-time>
+			<baseline>V15.0.3.R.20200117</baseline>
+		</modify>
+		<modify>
+			<description>#82974 Tic模块根路径配置成/，转换函数和原始Rest函数抽取json报错</description>
+			<author>黄伟强</author>
+			<revision-time>2019-10-11</revision-time>
+			<baseline>V15.0.2.R.20191108</baseline>
+		</modify>
+		<modify>
+			<description>#82187 修复 函数在编辑页面，提交后，点击返回，然后再提交，然后在列表页面没有找到这个转换函数了</description>
+			<author>黄伟强</author>
+			<revision-time>2019-09-30</revision-time>
+			<relation>
+				<relation-module>tic/core</relation-module>
+			</relation>
+			<baseline>V15.0.2.R.20191108</baseline>
+		</modify>
+		<modify>
+			<description>#81504 修复 在jdbc同步配置时，抽取sql失败</description>
+			<author>黄伟强</author>
+			<revision-time>2019-09-16</revision-time>
+			<baseline>V15.0.2.R.20191108</baseline>
+		</modify>
+		<modify>
+			<description>#78424 新增 REST计划任务同步功能</description>
+			<author>何建华</author>
+			<revision-time>2019-09-05</revision-time>
+			<baseline>V15.0.1.R.20190906</baseline>
+		</modify>
+		<modify>
+			<description>#81167 修复 TIC JDBC组件，对SQL都转成了大写，导致执行查不到结果</description>
+			<author>黄伟强</author>
+			<revision-time>2019-09-05</revision-time>
+			<baseline>V15.0.1.R.20190906</baseline>
+		</modify>
+		<modify>
+			<description>#80730 修复 在jdbc中，sql语句中带“+”，抽取时报错，无法抽取完成</description>
+			<author>黄伟强</author>
+			<revision-time>2019-09-05</revision-time>
+			<baseline>V15.0.1.R.20190906</baseline>
+		</modify>
+		<modify>
+			<description>#80698 修复 在计划任务时，jdbc中选择函数后，配置映射时预览会报错</description>
+			<author>黄伟强</author>
+			<revision-time>2019-09-05</revision-time>
+			<baseline>V15.0.1.R.20190906</baseline>
+		</modify>
+		<modify>
+			<description>#80700 修复 复杂sql生成的jdbc，执行同步时会失败，无法同步</description>
+			<author>黄伟强</author>
+			<revision-time>2019-09-05</revision-time>
+			<baseline>V15.0.1.R.20190906</baseline>
+		</modify>
+		<modify>
+			<description>#79841 修复 在业务集成中，只有JDBC时，新建函数页面打开空白</description>
+			<author>黄伟强</author>
+			<revision-time>2019-09-05</revision-time>
+			<relation>
+				<relation-module>tic/core</relation-module>
+			</relation>
+			<baseline>V15.0.1.R.20190906</baseline>
+		</modify>
+		<modify>
+			<description>#77909 修复 在JDBC进行查询保存后，重新打开查询记录并重新查询，保存时提示操作失败</description>
+			<author>黄伟强</author>
+			<revision-time>2019-07-23</revision-time>
+			<baseline>V15.0.1.R.20190906</baseline>
+		</modify>
+		<modify>
+			<description>#77392 修复 对原始函数查询后，保存查询记录时输入标题为：{"LoginName":"admin"}时，标题只显示：{</description>
+			<author>黄伟强</author>
+			<revision-time>2019-07-23</revision-time>
+			<baseline>V15.0.1.R.20190906</baseline>
+		</modify>
+		<modify>
+			<description>#77462 修复 在JDBC进行查询后，没有测试执行日志</description>
+			<author>黄伟强</author>
+			<revision-time>2019-07-17</revision-time>
+			<baseline>V15.0.1.R.20190906</baseline>
+		</modify>
+		<modify>
+			<description>#65220 新增 TIC组件</description>
+			<author>何建华</author>
+			<revision-time>2019-07-11</revision-time>
+			<relation>
+				<relation-module>component/dbop</relation-module>
+				<relation-module>core</relation-module>
+				<relation-module>tic/core</relation-module>
+			</relation>
+			<baseline>V15.0.0.R.20190712</baseline>
+		</modify>
+		<modify>
+			<description>#65220 新增 TIC组件</description>
+			<author>何建华</author>
+			<revision-time>2019-04-10</revision-time>
+			<relation>
+				<relation-module>core</relation-module>
+				<relation-module>component/dbop</relation-module>
+				<relation-module>tic/core</relation-module>
+			</relation>
+			<baseline>V15.0.0.B3.20190412</baseline>
+		</modify>
+	</modifies>
+</version>

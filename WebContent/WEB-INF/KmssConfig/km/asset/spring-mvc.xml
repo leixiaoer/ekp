@@ -1,0 +1,919 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans
+	xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.0.xsd">
+	<bean
+		name="/km/asset/km_asset_apply_buy/kmAssetApplyBuy.do"
+		class="com.landray.kmss.km.asset.actions.KmAssetApplyBuyAction"
+		lazy-init="true"
+		parent="KmssBaseAction">
+		<property
+			name="formType"
+			value="com.landray.kmss.km.asset.forms.KmAssetApplyBuyForm" />
+		<property name="forwards">
+			<map>
+				<entry
+					key="view"
+					value="/km/asset/km_asset_apply_buy_ui/kmAssetApplyBuy_view.jsp" />
+				<entry
+					key="print"
+					value="/km/asset/km_asset_apply_buy_ui/kmAssetApplyBuy_print.jsp" />
+				<entry
+					key="view.4m"
+					value="/km/asset/mobile/view.jsp?_formName=kmAssetApplyBuyForm" />
+				<entry
+					key="edit"
+					value="/km/asset/km_asset_apply_buy_ui/kmAssetApplyBuy_edit.jsp" />
+				<entry
+					key="list"
+					value="/km/asset/km_asset_apply_buy_ui/kmAssetApplyBuy_list.jsp" />
+				<entry
+					key="list.4m"
+					value="/km/asset/mobile/buy_asset/list.jsp" />				
+			</map>
+		</property>
+	</bean>
+	<bean
+		name="/km/asset/km_asset_apply_repair_expend/kmAssetApplyRepairExpend.do"
+		class="com.landray.kmss.km.asset.actions.KmAssetApplyRepairExpendAction"
+		lazy-init="true"
+		parent="KmssBaseAction">
+		<property
+			name="formType"
+			value="com.landray.kmss.km.asset.forms.KmAssetApplyRepairExpendForm" />
+		<property name="forwards">
+			<map>
+				<entry
+					key="view"
+					value="/km/asset/km_asset_apply_repair_expend/kmAssetApplyRepairExpend_view.jsp" />
+				<entry
+					key="view.4m"
+					value="/km/asset/mobile/view.jsp" />
+				<entry
+					key="edit"
+					value="/km/asset/km_asset_apply_repair_expend/kmAssetApplyRepairExpend_edit.jsp" />
+				<entry
+					key="list"
+					value="/km/asset/km_asset_apply_repair_expend/kmAssetApplyRepairExpend_list.jsp" />
+			</map>
+		</property>
+	</bean>
+	<bean
+		name="/km/asset/km_asset_apply_rent/kmAssetApplyRent.do"
+		class="com.landray.kmss.km.asset.actions.KmAssetApplyRentAction"
+		lazy-init="true"
+		parent="KmssBaseAction">
+		<property
+			name="formType"
+			value="com.landray.kmss.km.asset.forms.KmAssetApplyRentForm" />
+		<property name="forwards">
+			<map>
+				<entry
+					key="view"
+					value="/km/asset/km_asset_apply_rent_ui/kmAssetApplyRent_view.jsp" />
+				<entry
+					key="print"
+					value="/km/asset/km_asset_apply_rent_ui/kmAssetApplyRent_print.jsp" />
+				<entry
+					key="view.4m"
+					value="/km/asset/mobile/view.jsp?_formName=kmAssetApplyRentForm" />
+				<entry
+					key="edit"
+					value="/km/asset/km_asset_apply_rent_ui/kmAssetApplyRent_edit.jsp" />
+				<entry
+					key="list"
+					value="/km/asset/km_asset_apply_rent_ui/kmAssetApplyRent_list.jsp" />
+				<entry
+					key="list.4m"
+					value="/km/asset/mobile/rent_asset/list.jsp" />						
+			</map>
+		</property>
+	</bean>
+	<bean
+		name="/km/asset/km_asset_apply_divert_list/kmAssetApplyDivertList.do"
+		class="com.landray.kmss.km.asset.actions.KmAssetApplyDivertListAction"
+		lazy-init="true"
+		parent="KmssBaseAction">
+		<property
+			name="formType"
+			value="com.landray.kmss.km.asset.forms.KmAssetApplyDivertListForm" />
+		<property name="forwards">
+			<map>
+				<entry
+					key="view"
+					value="/km/asset/km_asset_apply_divert_list/kmAssetApplyDivertList_view.jsp" />
+				<entry
+					key="edit"
+					value="/km/asset/km_asset_apply_divert_list/kmAssetApplyDivertList_edit.jsp" />
+				<entry
+					key="list"
+					value="/km/asset/km_asset_apply_divert_list/kmAssetApplyDivertList_list.jsp" />
+			</map>
+		</property>
+	</bean>
+	<bean
+		name="/km/asset/km_asset_apply_buy_list/kmAssetApplyBuyList.do"
+		class="com.landray.kmss.km.asset.actions.KmAssetApplyBuyListAction"
+		lazy-init="true"
+		parent="KmssBaseAction">
+		<property
+			name="formType"
+			value="com.landray.kmss.km.asset.forms.KmAssetApplyBuyListForm" />
+		<property name="forwards">
+			<map>
+				<entry
+					key="view"
+					value="/km/asset/km_asset_apply_buy_list/kmAssetApplyBuyList_view.jsp" />
+				<entry
+					key="edit"
+					value="/km/asset/km_asset_apply_buy_list/kmAssetApplyBuyList_edit.jsp" />
+				<entry
+					key="list"
+					value="/km/asset/km_asset_apply_buy_list/kmAssetApplyBuyList_list.jsp" />
+			</map>
+		</property>
+	</bean>
+	<bean
+		name="/km/asset/km_asset_apply_return_list/kmAssetApplyReturnList.do"
+		class="com.landray.kmss.km.asset.actions.KmAssetApplyReturnListAction"
+		lazy-init="true"
+		parent="KmssBaseAction">
+		<property
+			name="formType"
+			value="com.landray.kmss.km.asset.forms.KmAssetApplyReturnListForm" />
+		<property name="forwards">
+			<map>
+				<entry
+					key="view"
+					value="/km/asset/km_asset_apply_return_list/kmAssetApplyReturnList_view.jsp" />
+				<entry
+					key="edit"
+					value="/km/asset/km_asset_apply_return_list/kmAssetApplyReturnList_edit.jsp" />
+				<entry
+					key="list"
+					value="/km/asset/km_asset_apply_return_list/kmAssetApplyReturnList_list.jsp" />
+			</map>
+		</property>
+	</bean>
+	<bean
+		name="/km/asset/km_asset_apply_stock_list/kmAssetApplyStockList.do"
+		class="com.landray.kmss.km.asset.actions.KmAssetApplyStockListAction"
+		lazy-init="true"
+		parent="KmssBaseAction">
+		<property
+			name="formType"
+			value="com.landray.kmss.km.asset.forms.KmAssetApplyStockListForm" />
+		<property name="forwards">
+			<map>
+				<entry
+					key="view"
+					value="/km/asset/km_asset_apply_stock_list/kmAssetApplyStockList_view.jsp" />
+				<entry
+					key="edit"
+					value="/km/asset/km_asset_apply_stock_list/kmAssetApplyStockList_edit.jsp" />
+				<entry
+					key="list"
+					value="/km/asset/km_asset_apply_stock_list/kmAssetApplyStockList_list.jsp" />
+				<entry
+					key="listdialog"
+					value="/km/asset/km_asset_apply_stock_list/kmAssetApplyStockList_listDialog.jsp" />
+			</map>
+		</property>
+	</bean>
+	<bean
+		name="/km/asset/km_asset_apply_divert/kmAssetApplyDivert.do"
+		class="com.landray.kmss.km.asset.actions.KmAssetApplyDivertAction"
+		lazy-init="true"
+		parent="KmssBaseAction">
+		<property
+			name="formType"
+			value="com.landray.kmss.km.asset.forms.KmAssetApplyDivertForm" />
+		<property name="forwards">
+			<map>
+				<entry
+					key="view"
+					value="/km/asset/km_asset_apply_divert_ui/kmAssetApplyDivert_view.jsp" />
+				<entry
+					key="print"
+					value="/km/asset/km_asset_apply_divert_ui/kmAssetApplyDivert_print.jsp" />
+				<entry
+					key="view.4m"
+					value="/km/asset/mobile/view.jsp?_formName=kmAssetApplyDivertForm" />
+				<entry
+					key="edit"
+					value="/km/asset/km_asset_apply_divert_ui/kmAssetApplyDivert_edit.jsp" />
+				<entry
+					key="list"
+					value="/km/asset/km_asset_apply_divert_ui/kmAssetApplyDivert_list.jsp" />
+				<entry
+					key="list.4m"
+					value="/km/asset/mobile/divert_asset/list.jsp" />					
+			</map>
+		</property>
+	</bean>
+	<bean
+		name="/km/asset/km_asset_apply_base/kmAssetApplyBase.do"
+		class="com.landray.kmss.km.asset.actions.KmAssetApplyBaseAction"
+		lazy-init="true"
+		parent="KmssBaseAction">
+		<property
+			name="formType"
+			value="com.landray.kmss.km.asset.forms.KmAssetApplyBaseForm" />
+		<property name="forwards">
+			<map>
+				<entry
+					key="view"
+					value="/km/asset/km_asset_apply_base/kmAssetApplyBase_view.jsp" />
+				<entry
+					key="edit"
+					value="/km/asset/km_asset_apply_base/kmAssetApplyBase_edit.jsp" />
+				<entry
+					key="list"
+					value="/km/asset/km_asset_apply_base/kmAssetApplyBase_list.jsp" />
+				<entry
+					key="listChildren"
+					value="/km/asset/km_asset_apply_base/kmAssetApplyBase_list.jsp" />
+				<entry
+					key="manageList"
+					value="/km/asset/km_asset_apply_base/kmAssetApplyBase_list.jsp" />
+			</map>
+		</property>
+	</bean>
+	<bean
+		name="/km/asset/km_asset_index/kmAssetIndex.do"
+		class="com.landray.kmss.km.asset.actions.KmAssetIndexAction"
+		lazy-init="true"
+		parent="KmssBaseAction">
+		<property
+			name="formType"
+			value="com.landray.kmss.km.asset.forms.KmAssetApplyBaseForm" />
+		<property name="forwards">
+			<map>
+				<entry
+					key="list"
+					value="/km/asset/km_asset_apply_base_ui/kmAssetBase_list.jsp" />
+				<entry
+					key="list.4m"
+					value="/km/asset/mobile/list.jsp" />
+			</map>
+		</property>
+	</bean>
+	<bean
+		name="/km/asset/km_asset_card_index/kmAssetCardIndex.do"
+		class="com.landray.kmss.km.asset.actions.KmAssetCardIndexAction"
+		lazy-init="true"
+		parent="KmssBaseAction">
+		<property
+			name="formType"
+			value="com.landray.kmss.km.asset.forms.KmAssetCardForm" />
+		<property name="forwards">
+			<map>
+				<entry
+					key="list"
+					value="/km/asset/km_asset_card_ui/kmAssetCard_list.jsp" />
+				<entry
+					key="list.4m"
+					value="/km/asset/mobile/list4card.jsp" />
+			</map>
+		</property>
+	</bean>
+	<bean
+		name="/km/asset/km_asset_apply_change_list/kmAssetApplyChangeList.do"
+		class="com.landray.kmss.km.asset.actions.KmAssetApplyChangeListAction"
+		lazy-init="true"
+		parent="KmssBaseAction">
+		<property
+			name="formType"
+			value="com.landray.kmss.km.asset.forms.KmAssetApplyChangeListForm" />
+		<property name="forwards">
+			<map>
+				<entry
+					key="view"
+					value="/km/asset/km_asset_apply_change_list/kmAssetApplyChangeList_view.jsp" />
+				<entry
+					key="edit"
+					value="/km/asset/km_asset_apply_change_list/kmAssetApplyChangeList_edit.jsp" />
+				<entry
+					key="list"
+					value="/km/asset/km_asset_apply_change_list/kmAssetApplyChangeList_list.jsp" />
+			</map>
+		</property>
+	</bean>
+	<bean
+		name="/km/asset/km_asset_apply_in_list/kmAssetApplyInList.do"
+		class="com.landray.kmss.km.asset.actions.KmAssetApplyInListAction"
+		lazy-init="true"
+		parent="KmssBaseAction">
+		<property
+			name="formType"
+			value="com.landray.kmss.km.asset.forms.KmAssetApplyInListForm" />
+		<property name="forwards">
+			<map>
+				<entry
+					key="view"
+					value="/km/asset/km_asset_apply_in_list/kmAssetApplyInList_view.jsp" />
+				<entry
+					key="edit"
+					value="/km/asset/km_asset_apply_in_list/kmAssetApplyInList_edit.jsp" />
+				<entry
+					key="list"
+					value="/km/asset/km_asset_apply_in_list/kmAssetApplyInList_list.jsp" />
+			</map>
+		</property>
+	</bean>
+	<bean
+		name="/km/asset/km_asset_apply_change/kmAssetApplyChange.do"
+		class="com.landray.kmss.km.asset.actions.KmAssetApplyChangeAction"
+		lazy-init="true"
+		parent="KmssBaseAction">
+		<property
+			name="formType"
+			value="com.landray.kmss.km.asset.forms.KmAssetApplyChangeForm" />
+		<property name="forwards">
+			<map>
+				<entry
+					key="view"
+					value="/km/asset/km_asset_apply_change_ui/kmAssetApplyChange_view.jsp" />
+				<entry
+					key="print"
+					value="/km/asset/km_asset_apply_change_ui/kmAssetApplyChange_print.jsp" />
+				<entry
+					key="view.4m"
+					value="/km/asset/mobile/view.jsp?_formName=kmAssetApplyChangeForm" />
+				<entry
+					key="edit"
+					value="/km/asset/km_asset_apply_change_ui/kmAssetApplyChange_edit.jsp" />
+				<entry
+					key="list"
+					value="/km/asset/km_asset_apply_change_ui/kmAssetApplyChange_list.jsp" />
+				<entry
+					key="list.4m"
+					value="/km/asset/mobile/change_asset/list.jsp" />					
+			</map>
+		</property>
+	</bean>
+	<bean
+		name="/km/asset/km_asset_card/kmAssetCard.do"
+		class="com.landray.kmss.km.asset.actions.KmAssetCardAction"
+		lazy-init="true"
+		parent="KmssBaseAction">
+		<property
+			name="formType"
+			value="com.landray.kmss.km.asset.forms.KmAssetCardForm" />
+		<property name="forwards">
+			<map>
+				<entry
+					key="view"
+					value="/km/asset/km_asset_card_ui/kmAssetCard_view.jsp" />
+				<entry
+					key="view.4m"
+					value="/km/asset/mobile/view4card.jsp" />
+				<entry
+					key="edit"
+					value="/km/asset/km_asset_card_ui/kmAssetCard_edit.jsp" />
+				<entry
+					key="list"
+					value="/km/asset/km_asset_card/kmAssetCard_list.jsp" />
+				<entry
+					key="list.4m"
+					value="/km/asset/mobile/list4card.jsp" />
+				<entry
+					key="listChildren"
+					value="/km/asset/km_asset_card/kmAssetCard_list.jsp" />
+				<entry
+					key="manageList"
+					value="/km/asset/km_asset_card/kmAssetCard_list.jsp" />
+				<entry
+					key="listdialog"
+					value="/km/asset/km_asset_card/kmAssetCard_list_dialog.jsp" />
+				<entry
+					key="importExcel"
+					value="/km/asset/km_asset_card/kmAssetCard_import.jsp" />
+				<entry
+					key="exportExcel"
+					value="/km/asset/km_asset_card/kmAssetCard_export.jsp" />
+				<entry
+					key="batchEdit"
+					value="/km/asset/km_asset_card/kmAssetCard_batch_edit.jsp" />
+				<entry
+					key="batchPrint"
+					value="/km/asset/km_asset_card/kmAssetCard_print.jsp" />
+				<entry
+					key="listCardlife"
+					value="/km/asset/mobile/listCardlife.jsp" />
+			</map>
+		</property>
+	</bean>
+	<bean
+		name="/km/asset/km_asset_address_cate/kmAssetAddressCate.do"
+		class="com.landray.kmss.km.asset.actions.KmAssetAddressCateAction"
+		lazy-init="true"
+		parent="KmssBaseAction">
+		<property
+			name="formType"
+			value="com.landray.kmss.km.asset.forms.KmAssetAddressCateForm" />
+		<property name="forwards">
+			<map>
+				<entry
+					key="edit"
+					value="/km/asset/km_asset_address_cate/kmAssetAddressCate_edit.jsp" />
+			</map>
+		</property>
+	</bean>
+	<bean
+		name="/km/asset/km_asset_address/kmAssetAddress.do"
+		class="com.landray.kmss.km.asset.actions.KmAssetAddressAction"
+		lazy-init="true"
+		parent="KmssBaseAction">
+		<property
+			name="formType"
+			value="com.landray.kmss.km.asset.forms.KmAssetAddressForm" />
+		<property name="forwards">
+			<map>
+				<entry
+					key="view"
+					value="/km/asset/km_asset_address/kmAssetAddress_view.jsp" />
+				<entry
+					key="edit"
+					value="/km/asset/km_asset_address/kmAssetAddress_edit.jsp" />
+				<entry
+					key="list"
+					value="/km/asset/km_asset_address/kmAssetAddress_list.jsp" />
+				<entry
+					key="listChildren"
+					value="/km/asset/km_asset_address/kmAssetAddress_list.jsp" />
+				<entry
+					key="showSelectAddress"
+					value="/km/asset/km_asset_address/showSelectAddress.jsp" />
+				<entry
+					key="singleSelectAddress"
+					value="/km/asset/km_asset_address/kmAssetAddress_singleList.jsp" />
+				<entry
+					key="importExcel"
+					value="/km/asset/km_asset_address/kmAssetAddress_import.jsp" />
+			</map>
+		</property>
+	</bean>
+	<bean
+		name="/km/asset/km_asset_config/kmAssetConfig.do"
+		class="com.landray.kmss.km.asset.actions.KmAssetConfigAction"
+		lazy-init="true"
+		parent="KmssBaseAction">
+		<property
+			name="formType"
+			value="com.landray.kmss.km.asset.forms.KmAssetConfigForm" />
+		<property name="forwards">
+			<map>
+				<entry
+					key="edit"
+					value="/km/asset/km_asset_config/kmAssetConfig_edit.jsp" />
+			</map>
+		</property>
+	</bean>
+	<bean
+		name="/km/asset/km_asset_apply_deal/kmAssetApplyDeal.do"
+		class="com.landray.kmss.km.asset.actions.KmAssetApplyDealAction"
+		lazy-init="true"
+		parent="KmssBaseAction">
+		<property
+			name="formType"
+			value="com.landray.kmss.km.asset.forms.KmAssetApplyDealForm" />
+		<property name="forwards">
+			<map>
+				<entry
+					key="view"
+					value="/km/asset/km_asset_apply_deal_ui/kmAssetApplyDeal_view.jsp" />
+				<entry
+					key="print"
+					value="/km/asset/km_asset_apply_deal_ui/kmAssetApplyDeal_print.jsp" />
+				<entry
+					key="view.4m"
+					value="/km/asset/mobile/view.jsp?_formName=kmAssetApplyDealForm" />
+				<entry
+					key="edit"
+					value="/km/asset/km_asset_apply_deal_ui/kmAssetApplyDeal_edit.jsp" />
+				<entry
+					key="list"
+					value="/km/asset/km_asset_apply_deal_ui/kmAssetApplyDeal_list.jsp" />
+				<entry
+					key="list.4m"
+					value="/km/asset/mobile/deal_asset/list.jsp" />					
+			</map>
+		</property>
+	</bean>
+	<bean
+		name="/km/asset/km_asset_apply_get/kmAssetApplyGet.do"
+		class="com.landray.kmss.km.asset.actions.KmAssetApplyGetAction"
+		lazy-init="true"
+		parent="KmssBaseAction">
+		<property
+			name="formType"
+			value="com.landray.kmss.km.asset.forms.KmAssetApplyGetForm" />
+		<property name="forwards">
+			<map>
+				<entry
+					key="view"
+					value="/km/asset/km_asset_apply_get_ui/kmAssetApplyGet_view.jsp" />
+				<entry
+					key="print"
+					value="/km/asset/km_asset_apply_get_ui/kmAssetApplyGet_print.jsp" />
+				<entry
+					key="view.4m"
+					value="/km/asset/mobile/view.jsp?_formName=kmAssetApplyGetForm" />
+				<entry
+					key="edit"
+					value="/km/asset/km_asset_apply_get_ui/kmAssetApplyGet_edit.jsp" />
+				<entry
+					key="list"
+					value="/km/asset/km_asset_apply_get_ui/kmAssetApplyGet_list.jsp" />
+				<entry
+					key="list.4m"
+					value="/km/asset/mobile/get_asset/list.jsp" />						
+			</map>
+		</property>
+	</bean>
+	<bean
+		name="/km/asset/km_asset_card_life/kmAssetCardLife.do"
+		class="com.landray.kmss.km.asset.actions.KmAssetCardLifeAction"
+		lazy-init="true"
+		parent="KmssBaseAction">
+		<property
+			name="formType"
+			value="com.landray.kmss.km.asset.forms.KmAssetCardLifeForm" />
+		<property name="forwards">
+			<map>
+				<entry
+					key="view"
+					value="/km/asset/km_asset_card_life/kmAssetCardLife_view.jsp" />
+				<entry
+					key="edit"
+					value="/km/asset/km_asset_card_life/kmAssetCardLife_edit.jsp" />
+				<entry
+					key="list"
+					value="/km/asset/km_asset_card_life/kmAssetCardLife_list.jsp" />
+			</map>
+		</property>
+	</bean>
+	<bean
+		name="/km/asset/km_asset_apply_return/kmAssetApplyReturn.do"
+		class="com.landray.kmss.km.asset.actions.KmAssetApplyReturnAction"
+		lazy-init="true"
+		parent="KmssBaseAction">
+		<property
+			name="formType"
+			value="com.landray.kmss.km.asset.forms.KmAssetApplyReturnForm" />
+		<property name="forwards">
+			<map>
+				<entry
+					key="view"
+					value="/km/asset/km_asset_apply_return_ui/kmAssetApplyReturn_view.jsp" />
+				<entry
+					key="print"
+					value="/km/asset/km_asset_apply_return_ui/kmAssetApplyReturn_print.jsp" />
+				<entry
+					key="view.4m"
+					value="/km/asset/mobile/view.jsp?_formName=kmAssetApplyReturnForm" />
+				<entry
+					key="edit"
+					value="/km/asset/km_asset_apply_return_ui/kmAssetApplyReturn_edit.jsp" />
+				<entry
+					key="list"
+					value="/km/asset/km_asset_apply_return_ui/kmAssetApplyReturn_list.jsp" />
+				<entry
+					key="list.4m"
+					value="/km/asset/mobile/return_asset/list.jsp" />					
+			</map>
+		</property>
+	</bean>
+	<bean
+		name="/km/asset/km_asset_apply_repair_list/kmAssetApplyRepairList.do"
+		class="com.landray.kmss.km.asset.actions.KmAssetApplyRepairListAction"
+		lazy-init="true"
+		parent="KmssBaseAction">
+		<property
+			name="formType"
+			value="com.landray.kmss.km.asset.forms.KmAssetApplyRepairListForm" />
+		<property name="forwards">
+			<map>
+				<entry
+					key="view"
+					value="/km/asset/km_asset_apply_repair_list/kmAssetApplyRepairList_view.jsp" />
+				<entry
+					key="edit"
+					value="/km/asset/km_asset_apply_repair_list/kmAssetApplyRepairList_edit.jsp" />
+				<entry
+					key="list"
+					value="/km/asset/km_asset_apply_repair_list/kmAssetApplyRepairList_list.jsp" />
+			</map>
+		</property>
+	</bean>
+	<bean
+		name="/km/asset/km_asset_apply_rent_list/kmAssetApplyRentList.do"
+		class="com.landray.kmss.km.asset.actions.KmAssetApplyRentListAction"
+		lazy-init="true"
+		parent="KmssBaseAction">
+		<property
+			name="formType"
+			value="com.landray.kmss.km.asset.forms.KmAssetApplyRentListForm" />
+		<property name="forwards">
+			<map>
+				<entry
+					key="view"
+					value="/km/asset/km_asset_apply_rent_list/kmAssetApplyRentList_view.jsp" />
+				<entry
+					key="edit"
+					value="/km/asset/km_asset_apply_rent_list/kmAssetApplyRentList_edit.jsp" />
+				<entry
+					key="list"
+					value="/km/asset/km_asset_apply_rent_list/kmAssetApplyRentList_list.jsp" />
+			</map>
+		</property>
+	</bean>
+	<bean
+		name="/km/asset/km_asset_apply_deal_list/kmAssetApplyDealList.do"
+		class="com.landray.kmss.km.asset.actions.KmAssetApplyDealListAction"
+		lazy-init="true"
+		parent="KmssBaseAction">
+		<property
+			name="formType"
+			value="com.landray.kmss.km.asset.forms.KmAssetApplyDealListForm" />
+		<property name="forwards">
+			<map>
+				<entry
+					key="view"
+					value="/km/asset/km_asset_apply_deal_list/kmAssetApplyDealList_view.jsp" />
+				<entry
+					key="edit"
+					value="/km/asset/km_asset_apply_deal_list/kmAssetApplyDealList_edit.jsp" />
+				<entry
+					key="list"
+					value="/km/asset/km_asset_apply_deal_list/kmAssetApplyDealList_list.jsp" />
+			</map>
+		</property>
+	</bean>
+	<bean
+		name="/km/asset/km_asset_apply_repair/kmAssetApplyRepair.do"
+		class="com.landray.kmss.km.asset.actions.KmAssetApplyRepairAction"
+		lazy-init="true"
+		parent="KmssBaseAction">
+		<property
+			name="formType"
+			value="com.landray.kmss.km.asset.forms.KmAssetApplyRepairForm" />
+		<property name="forwards">
+			<map>
+				<entry
+					key="view"
+					value="/km/asset/km_asset_apply_repair_ui/kmAssetApplyRepair_view.jsp" />
+				<entry
+					key="print"
+					value="/km/asset/km_asset_apply_repair_ui/kmAssetApplyRepair_print.jsp" />
+				<entry
+					key="view.4m"
+					value="/km/asset/mobile/view.jsp?_formName=kmAssetApplyRepairForm" />
+				<entry
+					key="edit"
+					value="/km/asset/km_asset_apply_repair_ui/kmAssetApplyRepair_edit.jsp" />
+				<entry
+					key="list"
+					value="/km/asset/km_asset_apply_repair_ui/kmAssetApplyRepair_list.jsp" />
+				<entry
+					key="list.4m"
+					value="/km/asset/mobile/repair_asset/list.jsp" />					
+				<entry
+					key="modify"
+					value="/km/asset/km_asset_apply_repair/kmAssetApplyRepair_modify.jsp" />
+			</map>
+		</property>
+	</bean>
+	<bean
+		name="/km/asset/km_asset_apply_stock/kmAssetApplyStock.do"
+		class="com.landray.kmss.km.asset.actions.KmAssetApplyStockAction"
+		lazy-init="true"
+		parent="KmssBaseAction">
+		<property
+			name="formType"
+			value="com.landray.kmss.km.asset.forms.KmAssetApplyStockForm" />
+		<property name="forwards">
+			<map>
+				<entry
+					key="view"
+					value="/km/asset/km_asset_apply_stock_ui/kmAssetApplyStock_view.jsp" />
+				<entry
+					key="print"
+					value="/km/asset/km_asset_apply_stock_ui/kmAssetApplyStock_print.jsp" />
+				<entry
+					key="view.4m"
+					value="/km/asset/mobile/view.jsp?_formName=kmAssetApplyStockForm" />
+				<entry
+					key="edit"
+					value="/km/asset/km_asset_apply_stock_ui/kmAssetApplyStock_edit.jsp" />
+				<entry
+					key="list"
+					value="/km/asset/km_asset_apply_stock_ui/kmAssetApplyStock_list.jsp" />
+				<entry
+					key="list.4m"
+					value="/km/asset/mobile/purchase_asset/list.jsp" />						
+			</map>
+		</property>
+	</bean>
+	<bean
+		name="/km/asset/km_asset_category/kmAssetCategory.do"
+		class="com.landray.kmss.km.asset.actions.KmAssetCategoryAction"
+		lazy-init="true"
+		parent="KmssBaseAction">
+		<property
+			name="formType"
+			value="com.landray.kmss.km.asset.forms.KmAssetCategoryForm" />
+		<property name="forwards">
+			<map>
+				<entry
+					key="view"
+					value="/km/asset/km_asset_category/kmAssetCategory_view.jsp" />
+				<entry
+					key="edit"
+					value="/km/asset/km_asset_category/kmAssetCategory_edit.jsp" />
+				<entry
+					key="list"
+					value="/km/asset/km_asset_category/kmAssetCategory_list.jsp" />
+			</map>
+		</property>
+	</bean>
+	<bean
+		name="/km/asset/km_asset_apply_in/kmAssetApplyIn.do"
+		class="com.landray.kmss.km.asset.actions.KmAssetApplyInAction"
+		lazy-init="true"
+		parent="KmssBaseAction">
+		<property
+			name="formType"
+			value="com.landray.kmss.km.asset.forms.KmAssetApplyInForm" />
+		<property name="forwards">
+			<map>
+				<entry
+					key="view"
+					value="/km/asset/km_asset_apply_in_ui/kmAssetApplyIn_view.jsp" />
+				<entry
+					key="print"
+					value="/km/asset/km_asset_apply_in_ui/kmAssetApplyIn_print.jsp" />
+				<entry
+					key="view.4m"
+					value="/km/asset/mobile/view.jsp?_formName=kmAssetApplyInForm" />
+				<entry
+					key="edit"
+					value="/km/asset/km_asset_apply_in_ui/kmAssetApplyIn_edit.jsp" />
+				<entry
+					key="list"
+					value="/km/asset/km_asset_apply_in_ui/kmAssetApplyIn_list.jsp" />
+				<entry
+					key="list.4m"
+					value="/km/asset/mobile/in_asset/list.jsp" />					
+			</map>
+		</property>
+	</bean>
+	<bean
+		name="/km/asset/km_asset_apply_template/kmAssetApplyTemplate.do"
+		class="com.landray.kmss.km.asset.actions.KmAssetApplyTemplateAction"
+		lazy-init="true"
+		parent="KmssBaseAction">
+		<property
+			name="formType"
+			value="com.landray.kmss.km.asset.forms.KmAssetApplyTemplateForm" />
+		<property name="forwards">
+			<map>
+				<entry
+					key="view"
+					value="/km/asset/km_asset_apply_template/kmAssetApplyTemplate_view.jsp" />
+				<entry
+					key="edit"
+					value="/km/asset/km_asset_apply_template/kmAssetApplyTemplate_edit.jsp" />
+				<entry
+					key="list"
+					value="/km/asset/km_asset_apply_template/kmAssetApplyTemplate_list.jsp" />
+				<entry
+					key="listChildren"
+					value="/km/asset/km_asset_apply_template/kmAssetApplyTemplate_list.jsp" />
+			</map>
+		</property>
+	</bean>
+	<bean
+		name="/km/asset/km_asset_apply_get_list/kmAssetApplyGetList.do"
+		class="com.landray.kmss.km.asset.actions.KmAssetApplyGetListAction"
+		lazy-init="true"
+		parent="KmssBaseAction">
+		<property
+			name="formType"
+			value="com.landray.kmss.km.asset.forms.KmAssetApplyGetListForm" />
+		<property name="forwards">
+			<map>
+				<entry
+					key="view"
+					value="/km/asset/km_asset_apply_get_list/kmAssetApplyGetList_view.jsp" />
+				<entry
+					key="edit"
+					value="/km/asset/km_asset_apply_get_list/kmAssetApplyGetList_edit.jsp" />
+				<entry
+					key="list"
+					value="/km/asset/km_asset_apply_get_list/kmAssetApplyGetList_list.jsp" />
+			</map>
+		</property>
+	</bean>
+	<bean
+		name="/km/asset/km_asset_apply_inventory/kmAssetApplyInventory.do"
+		class="com.landray.kmss.km.asset.actions.KmAssetApplyInventoryAction"
+		lazy-init="true"
+		parent="KmssBaseAction">
+		<property
+			name="formType"
+			value="com.landray.kmss.km.asset.forms.KmAssetApplyInventoryForm" />
+		<property name="forwards">
+			<map>
+				<entry
+					key="view"
+					value="/km/asset/km_asset_apply_inventory/kmAssetApplyInventory_view.jsp" />
+				<entry
+					key="view.4m"
+					value="/km/asset/mobile/view.jsp?_formName=kmAssetApplyInventoryForm" />
+				<entry
+					key="edit"
+					value="/km/asset/km_asset_apply_inventory/kmAssetApplyInventory_edit.jsp" />
+				<entry
+					key="edit.4m"
+					value="/km/asset/mobile/editInventory.jsp" />
+				<entry
+					key="data"
+					value="/km/asset/km_asset_apply_inventory/kmAssetApplyInventory_data.jsp" />
+				<entry
+					key="data.4m"
+					value="/km/asset/km_asset_apply_inventory/mobile/list.jsp" />
+			</map>
+		</property>
+	</bean>
+	<bean
+		name="/km/asset/km_asset_apply_task/kmAssetApplyTask.do"
+		class="com.landray.kmss.km.asset.actions.KmAssetApplyTaskAction"
+		lazy-init="true"
+		parent="KmssBaseAction">
+		<property
+			name="formType"
+			value="com.landray.kmss.km.asset.forms.KmAssetApplyTaskForm" />
+		<property name="forwards">
+			<map>
+				<entry
+					key="view"
+					value="/km/asset/km_asset_apply_task/kmAssetApplyTask_view.jsp" />
+				<entry
+					key="inventoryView"
+					value="/km/asset/km_asset_apply_task/kmAssetApplyTask_inventoryView.jsp" />
+				<entry
+					key="viewPersonnel"
+					value="/km/asset/mobile/viewPersonnel.jsp" />
+				<entry
+					key="inventoryView.4m"
+					value="/km/asset/mobile/viewTask.jsp" />
+				<entry
+					key="view.4m"
+					value="/km/asset/km_asset_apply_task/mobile/view.jsp" />
+				<entry
+					key="edit"
+					value="/km/asset/km_asset_apply_task/kmAssetApplyTask_edit.jsp" />
+				<entry
+					key="data"
+					value="/km/asset/km_asset_apply_task/kmAssetApplyTask_data.jsp" />
+				<entry
+					key="data.4m"
+					value="/km/asset/mobile/listTask.jsp" />
+				<entry
+					key="toNotify"
+					value="/km/asset/km_asset_apply_task/kmAssetApplyTask_notify.jsp" />
+			</map>
+		</property>
+	</bean>
+	<bean
+		name="/km/asset/km_asset_apply_task_detail/kmAssetApplyTaskDetail.do"
+		class="com.landray.kmss.km.asset.actions.KmAssetApplyTaskDetailAction"
+		lazy-init="true"
+		parent="KmssBaseAction">
+		<property
+			name="formType"
+			value="com.landray.kmss.km.asset.forms.KmAssetApplyTaskDetailForm" />
+		<property name="forwards">
+			<map>
+				<entry
+					key="view"
+					value="/km/asset/km_asset_apply_task_detail/kmAssetApplyTaskDetail_view.jsp" />
+				<entry
+					key="edit"
+					value="/km/asset/km_asset_apply_task_detail/kmAssetApplyTaskDetail_edit.jsp" />
+				<entry
+					key="list"
+					value="/km/asset/km_asset_apply_task_detail/kmAssetApplyTaskDetail_list.jsp" />
+				<entry
+					key="manageList"
+					value="/km/asset/km_asset_apply_task_detail/kmAssetApplyTaskDetail_manageList.jsp" />
+				<entry
+					key="manageList.4m"
+					value="/km/asset/mobile/listTaskCard.jsp" />
+			</map>
+		</property>
+	</bean>
+</beans>

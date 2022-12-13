@@ -1,0 +1,10 @@
+{
+	"id": "kmInstitutionListTiny",
+	"title": "规范制度二级页面列表",
+	"desc": "规范制度二级页面列表个性文件",
+	"jsList": [
+	    "/km/institution/mobile/resource/js/",
+	    "/sys/mobile/js/mui/list/DocItemListMixin.js",
+		"/sys/mobile/js/mui/list/item/DocItemMixin.js"
+	]
+}

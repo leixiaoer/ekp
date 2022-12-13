@@ -1,0 +1,62 @@
+body {background: #EBF1F7; }
+.clear {clear:both;}
+.pi_container{text-align:center; }
+.pi_box {border: #d5e8f5 2px solid; padding: 3px;background: #f3f8fc;width: 900px;margin:0 auto}
+.pi_box .pi_content {background: #fff;height:  auto!important;height: 760px;min-height: 760px;}
+.pi_question {width: 98%;padding: 10px 16px;border-bottom: 1px dotted #d5e8f5;}
+.pi_txtRed,.pi_txtStrong{color: #CA0C00;}
+.pi_txtStrong, .pi_txtTitle{font-weight: bolder;}
+.pi_txtTitle{color: #045695;font-size: 14px;}
+.pi_subjectExplain{font-style: italic;color:#92A4BE}
+.options_tb{border: 0px;width:100%;}
+.options_tb tr td{border: 0px;text-align: left;vertical-align: bottom;}
+.pi_menuEdit .pi_menuDele {position:absolute;top: 0px;cursor: pointer;}
+.pi_menuEdit {right: 30px;}
+.pi_menuDele {right: 0px;}
+/**************************/
+/*   *_otherAnswer.jsp    */
+/**************************/
+
+ul.answerDetailed{width: 98%;}
+ul.answerDetailed li{border:1px solid #8DB2E3;margin-bottom:10px;overflow:hidden;zoom:1}
+.dName{background-color:#8DB2E3;border:1px solid #fff;height:26px;font:14px/1.6em /*"宋体",*/Verdana,Arial,Helvetica,sans-serif;}
+.dName h1{padding-left:16px;font-weight:bold; float:left;color:#fff;}
+.dContent{margin:6px;text-align: left;}
+ul.answerDetailed li h1, .dDate{line-height:26px;height:26px;color:#fff;font-size:12px}
+/****************/
+/*   按钮面板    */
+/****************/
+#rigimg{overflow:hidden;}
+#toolControl{width:28px;height:68px;float:left;margin-top:10px;cursor:pointer}
+#toolControl a{color:#FFF;display:block;width:28px;height:68px}
+#toolControl span{color:#FFF;display:block;width:28px;height:62px;line-height:18px;text-align:center;padding-top:6px;font-size:12px;}
+.toolControlBlock{background:url(images/toolControl_close.png) no-repeat}
+.toolControlNone{background:url(images/toolControl_open.png) no-repeat}
+#toolControlBut{background:#EEEEEE;border:1px solid #C9C9C9;margin-left:28px}
+#toolControlBut ul{margin:10px ; padding:0px; list-style:none;}}
+#toolControlBut ul li{height:33px;text-align:center;margin-bottom:8px}
+#toolControlBut ul li a{display:block;line-height:33px;margin-left:3px;color:#FFF; text-decoration:none}
+.cTop{margin-bottom:0px!important;height:22px!important;text-align:left!important;border-top:1px solid #C9C9C9}
+.cTop a{color:#000!important;font-size:12px!important;line-height:22px!important}
+.butGreen{background:url(images/but_green.png) left top no-repeat;}
+.butGreen a{background:url(images/but_green.png) right top no-repeat;}
+.butRed{background:url(images/but_red.png) left top no-repeat;}
+.butRed a{background:url(images/but_red.png) right top no-repeat;}
+
+#dialog { width:100%; display: none; z-index: 5; text-align: center; margin-bottom: 10px;} 
+
+.pageLink{
+font-size: 14px;font-weight: bold;font-family:"Arial,Verdana";color:#045695; text-decoration:none;
+background-color: Transparent; border-style :none;cursor: pointer;
+}
+.pageLink1{
+font-size: 14px;font-weight: bold;font-family:"Arial,Verdana";color:#045695; text-decoration:none;
+background-color: Transparent; border-style :none;
+}
+.pageButtonSpan1{
+position:absolute;right:0px;bottom:0px;
+}
+
+.pageButtonSpan2{
+position:absolute;right:400px;bottom:0px;
+}

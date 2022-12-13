@@ -1,0 +1,95 @@
+{
+    "global":     {
+        "modelName": "com.landray.kmss.km.supervise.model.KmSuperviseDynamic",
+        "messageKey": "km-supervise:table.kmSuperviseDynamic",
+        "table": "km_supervise_dynamic",
+        "url": "/km/supervise/km_supervise_dynamic/kmSuperviseDynamic.do?method=view&fdId=${fdId}",
+        "displayProperty": "docSubject",
+        "serviceBean": "kmSuperviseDynamicService"
+    },
+    "attrs":     {
+        "fdId":         {
+            "propertyType": "id",
+            "generator": {"type": "assigned"}
+        },
+        "docSubject":         {
+            "propertyType": "simple",
+            "type": "String",
+            "length": "200",
+            "defaultValue": "",
+            "messageKey": "km-supervise:kmSuperviseDynamic.docSubject",
+            "column": "doc_subject",
+            "notNull": "false",
+            "validate": "true",
+            "canSearch": "true",
+            "canRelation": "true",
+            "canDisplay": "true",
+            "readOnly": "false"
+        },
+        "fdContent":         {
+            "propertyType": "simple",
+            "type": "String",
+            "length": "2000",
+            "defaultValue": "",
+            "messageKey": "km-supervise:kmSuperviseDynamic.fdContent",
+            "column": "fd_content",
+            "notNull": "true",
+            "validate": "true",
+            "canSearch": "true",
+            "canRelation": "true",
+            "canDisplay": "true",
+            "readOnly": "false"
+        },
+        "docCreateTime":         {
+            "propertyType": "simple",
+            "type": "DateTime",
+            "messageKey": "km-supervise:kmSuperviseDynamic.docCreateTime",
+            "column": "doc_create_time",
+            "notNull": "true",
+            "validate": "true",
+            "canSearch": "true",
+            "canRelation": "true",
+            "canDisplay": "true",
+            "readOnly": "false"
+        },
+        "docCreator":         {
+            "propertyType": "model",
+            "type": "com.landray.kmss.sys.organization.model.SysOrgPerson",
+            "messageKey": "km-supervise:kmSuperviseDynamic.docCreator",
+            "column": "doc_creator_id",
+            "notNull": "true",
+            "validate": "false",
+            "canSearch": "true",
+            "canRelation": "true",
+            "canDisplay": "true",
+            "readOnly": "true",
+            "dialogJS": "Dialog_Address(!{mulSelect}, '!{idField}','!{nameField}', ';',ORG_TYPE_PERSON);"
+        },
+        "fdSupervise":         {
+            "propertyType": "model",
+            "type": "com.landray.kmss.km.supervise.model.KmSuperviseMain",
+            "messageKey": "km-supervise:kmSuperviseDynamic.fdSupervise",
+            "column": "fd_supervise_id",
+            "notNull": "true",
+            "validate": "true",
+            "canSearch": "true",
+            "canRelation": "true",
+            "canDisplay": "true",
+            "readOnly": "false"
+        },
+        "fdStatus":         {
+            "propertyType": "simple",
+            "type": "String",
+            "column": "fd_status",
+            "length": "50",
+            "canDisplay": "false"
+        },
+        "fdProgress":         {
+            "propertyType": "simple",
+            "type": "String",
+            "column": "fd_progress",
+            "length": "50",
+            "canDisplay": "false"
+        }
+    }
+}

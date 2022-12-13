@@ -1,0 +1,182 @@
+{
+    "global":     {
+        "modelName": "com.landray.kmss.km.institution.model.KmInstitutionKnowledgeAbolish",
+        "messageKey": "km-institution:table.kmInstitutionKnowledgeAbolish",
+        "serviceBean": "kmInstitutionKnowledgeAbolishService",
+        "displayProperty": "docSubject",
+        "table": "km_inst_knowledge_abolish",
+        "extendClass": "com.landray.kmss.sys.doc.model.SysDocBaseInfo",
+        "url": "/km/institution/km_inst_knowledge_abolish/kmInstitutionKnowledgeAbolish.do?method=view&fdId=${fdId}"
+    },
+    "attrs":     {
+        "fdId":         {
+            "propertyType": "id",
+            "generator": {"type": "assigned"}
+        },
+        "docSubject":         {
+            "propertyType": "simple",
+            "messageKey": "km-institution:kmInstitution.docSubject",
+            "canSearch": "true",
+            "canRelation": "true",
+            "type": "String",
+            "column": "doc_subject",
+            "notNull": "true",
+            "unique": "false",
+            "length": "200",
+            "canDisplay": "true",
+            "canSubscribe": "true",
+            "validate": "true"
+        },
+        "docStatus":         {
+            "propertyType": "simple",
+            "messageKey": "sys-doc:sysDocBaseInfo.docStatus",
+            "type": "String",
+            "column": "doc_status",
+            "notNull": "true",
+            "unique": "false",
+            "length": "2",
+            "canDisplay": "true",
+            "enumType": "kmInstitutionKnowledge_docStaus",
+            "readOnly": "true"
+        },
+        "fdAbolishDescription":         {
+            "propertyType": "simple",
+            "messageKey": "km-institution:kmInstitutionKnowledge.fdAbolishDescription",
+            "type": "String",
+            "column": "fd_abolish_description",
+            "notNull": "false",
+            "unique": "false",
+            "canDisplay": "false",
+            "length": "2000",
+            "validate": "true",
+            "canLogShow": "1"
+        },
+        "fdAbolishTime":         {
+            "propertyType": "simple",
+            "messageKey": "km-institution:kmInstitution.fdAbolishTime",
+            "type": "DateTime",
+            "column": "fd_abolish_time",
+            "canRelation": "true",
+            "canSearch": "true",
+            "canDisplay": "true",
+            "notNull": "false"
+        },
+        "docCreator":         {
+            "propertyType": "model",
+            "messageKey": "sys-doc:sysDocBaseInfo.docCreator",
+            "type": "com.landray.kmss.sys.organization.model.SysOrgPerson",
+            "column": "doc_creator_id",
+            "notNull": "true",
+            "unique": "false",
+            "canSearch": "true",
+            "canDisplay": "true",
+            "readOnly": "true",
+            "dialogJS": "Dialog_Address(true,'!{idField}','!{nameField}',';',ORG_TYPE_PERSON);",
+            "canSubscribe": "true"
+        },
+        "fdAbolishDoc":         {
+            "propertyType": "model",
+            "messageKey": "km-institution:kmInstitution.fdAbolishDoc",
+            "type": "com.landray.kmss.km.institution.model.KmInstitutionKnowledge",
+            "column": "fd_abolish_doc_id",
+            "notNull": "false",
+            "canRelation": "false",
+            "canSearch": "false",
+            "canDisplay": "false"
+        },
+        "authAllReaders":         {
+            "propertyType": "list",
+            "messageKey": "km-institution:kmInstitutionKnowledge.authAllReaders",
+            "column": "fd_doc_id",
+            "type": "com.landray.kmss.sys.organization.model.SysOrgElement",
+            "elementColumn": "auth_other_reader_id",
+            "table": "km_inst_abolish_auth_areader",
+            "canDisplay": "false"
+        },
+        "authAllEditors":         {
+            "propertyType": "list",
+            "messageKey": "km-institution:kmInstitutionKnowledge.authAllEditors",
+            "column": "fd_doc_id",
+            "type": "com.landray.kmss.sys.organization.model.SysOrgElement",
+            "elementColumn": "auth_other_editor_id",
+            "table": "km_inst_abolish_auth_aeditor",
+            "canDisplay": "false"
+        },
+        "authAttDownloads":         {
+            "propertyType": "list",
+            "messageKey": "km-institution:kmInstitutionKnowledge.authAttDownloads",
+            "column": "fd_doc_id",
+            "type": "com.landray.kmss.sys.organization.model.SysOrgElement",
+            "elementColumn": "auth_att_download_id",
+            "table": "km_inst_abolish_attdl",
+            "canDisplay": "true"
+        },
+        "authAttCopys":         {
+            "propertyType": "list",
+            "messageKey": "km-institution:kmInstitutionKnowledge.authAttCopys",
+            "column": "fd_doc_id",
+            "type": "com.landray.kmss.sys.organization.model.SysOrgElement",
+            "elementColumn": "auth_att_copy_id",
+            "table": "km_inst_abolish_attcopy",
+            "canDisplay": "true"
+        },
+        "authAttPrints":         {
+            "propertyType": "list",
+            "messageKey": "km-institution:kmInstitutionKnowledge.authAttPrints",
+            "column": "fd_doc_id",
+            "type": "com.landray.kmss.sys.organization.model.SysOrgElement",
+            "elementColumn": "auth_att_print_id",
+            "table": "km_inst_abolish_attprint",
+            "canDisplay": "true"
+        },
+        "authReaders":         {
+            "propertyType": "list",
+            "messageKey": "sys-doc:sysDocBaseInfo.authReaders",
+            "column": "fd_doc_id",
+            "type": "com.landray.kmss.sys.organization.model.SysOrgElement",
+            "elementColumn": "fd_org_id",
+            "table": "km_inst_abolish_auth_readers",
+            "canDisplay": "true",
+            "readOnly": "true"
+        },
+        "authEditors":         {
+            "propertyType": "list",
+            "messageKey": "sys-doc:sysDocBaseInfo.authEditors",
+            "column": "fd_doc_id",
+            "type": "com.landray.kmss.sys.organization.model.SysOrgElement",
+            "table": "km_inst_abolish_auth_editors",
+            "elementColumn": "fd_org_id",
+            "canDisplay": "true",
+            "readOnly": "true"
+        },
+        "authOtherReaders":         {
+            "propertyType": "list",
+            "messageKey": "km-institution:kmInstitutionKnowledge.authOtherReaders",
+            "column": "fd_doc_id",
+            "type": "com.landray.kmss.sys.organization.model.SysOrgElement",
+            "elementColumn": "auth_other_reader_id",
+            "table": "km_inst_abolish_auth_oreader",
+            "canDisplay": "false"
+        },
+        "authOtherEditors":         {
+            "propertyType": "list",
+            "messageKey": "km-institution:kmInstitutionKnowledge.authOtherEditors",
+            "column": "fd_doc_id",
+            "type": "com.landray.kmss.sys.organization.model.SysOrgElement",
+            "elementColumn": "auth_other_editor_id",
+            "table": "km_inst_abolish_auth_oeditor",
+            "canDisplay": "false"
+        },
+        "docCreateTime":         {
+            "propertyType": "simple",
+            "messageKey": "sys-doc:sysDocBaseInfo.docCreateTime",
+            "type": "DateTime",
+            "column": "doc_create_time",
+            "notNull": "true",
+            "canSearch": "true",
+            "canRelation": "true",
+            "unique": "false",
+            "readOnly": "true"
+        }
+    }
+}

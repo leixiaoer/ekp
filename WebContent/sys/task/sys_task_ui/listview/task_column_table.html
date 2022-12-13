@@ -1,0 +1,67 @@
+var lv = layout.parent;
+var datas = lv.getData().datas;
+var columns = lv.getData().columns;
+{$
+<div class="lui_listview_body">
+	<div class="lui_listview_centerL">
+		<div class="lui_listview_centerR">
+			<div class="lui_listview_centerC">
+				<table width="100%" class="lui_listview_columntable_table" id="taskTable">
+					<thead data-lui-mark="column.table.header">$}
+						for (var i = 0; i < columns.length; i ++) {
+							var col = columns[i];
+							if(col.property=='pid'){
+							}else{
+								if(i==0){
+									{$<th style='text-align:left;width:20px;' class='{%col.headerClass%}' data-lui-mark-row-id='{%col.rowId%}' data-lui-mark-sort='{%col.sort%}' data-lui-mark-toggle-index='{%col.index%}'>{%col.title%}</th>$}
+								}else{
+									{$<th style='{%col.headerStyle%}' class='{%col.headerClass%}' data-lui-mark-row-id='{%col.rowId%}' data-lui-mark-sort='{%col.sort%}' data-lui-mark-toggle-index='{%col.index%}'>{%col.title%}</th>$}
+								}
+							}
+						}
+					{$</thead>
+					<tbody>$}
+						for (var i = 0; i < datas.length; i ++) {
+							var row = datas[i];
+							var ids = row[3].value;
+							ids=ids.slice(ids.indexOf(">")+1);
+							ids=ids.slice(0,ids.indexOf("<"));
+							var idArr = ids.split(":");
+							var hasChild = true;
+							if (row[11] && row[11].value){
+							    hasChild = row[11].value;
+								hasChild = hasChild.slice(hasChild.indexOf(">")+1);
+								hasChild = hasChild.slice(0,hasChild.indexOf("<"));
+							}
+							{$<tr data-lui-mark-id='{%lv.kvData[i]['rowId']%}' id='{% idArr[0] %}'  pid='{% idArr[1]%}'  oid="{% idArr[2] %}" hasChild="{% hasChild%}">$}		
+							for (var j = 0; j < row.length; j ++) {
+								var cell = row[j];
+								if(cell.col=='pid'){
+								}else{
+									if(j==0){
+										{$<td style='text-align:left;' class='{%cell.styleClass%}'>{%cell.value%}</td>$}
+									}else{
+										{$<td style='{%cell.style%}' class='{%cell.styleClass%}'>{%cell.value%}</td>$}
+									}
+								}
+								
+							}
+							{$</tr>$}
+						}
+						
+					{$</tbody>
+				</table>
+					
+	   	
+		
+			</div>
+		</div>
+	</div>
+	<div class="lui_listview_footL">
+		<div class="lui_listview_footR">
+			<div class="lui_listview_footC">
+			</div>
+		</div>
+	</div>
+</div>
+$}

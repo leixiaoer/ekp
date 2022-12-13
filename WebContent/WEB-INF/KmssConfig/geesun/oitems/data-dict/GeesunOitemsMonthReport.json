@@ -1,0 +1,91 @@
+{
+    "global":     {
+        "modelName": "com.landray.kmss.geesun.oitems.model.GeesunOitemsMonthReport",
+        "messageKey": "geesun-oitems:table.geesunOitemsMonthReport",
+        "displayProperty": "docSubject",
+        "serviceBean": "geesunOitemsMonthReportService",
+        "table": "geesun_oitems_month_report",
+        "url": "/geesun/oitems/geesun_oitems_month_report/geesunOitemsMonthReport.do?method=view&fdId=${fdId}"
+    },
+    "attrs":     {
+        "fdId":         {
+            "propertyType": "id",
+            "generator": {"type": "assigned"}
+        },
+        "docSubject":         {
+            "propertyType": "simple",
+            "messageKey": "geesun-oitems:geesunOitemsMonthReport.docSubject",
+            "type": "String",
+            "column": "doc_subject",
+            "notNull": "true",
+            "length": "200",
+            "validate": "true"
+        },
+        "docCreateTime":         {
+            "propertyType": "simple",
+            "messageKey": "geesun-oitems:geesunOitemsMonthReport.docCreateTime",
+            "type": "DateTime",
+            "column": "doc_create_time",
+            "notNull": "false",
+            "validate": "false"
+        },
+        "docAlterTime":         {
+            "propertyType": "simple",
+            "messageKey": "geesun-oitems:geesunOitemsMonthReport.docAlterTime",
+            "type": "DateTime",
+            "column": "doc_alter_time",
+            "notNull": "false",
+            "validate": "false"
+        },
+        "fdLastModifiedTime":         {
+            "propertyType": "simple",
+            "messageKey": "geesun-oitems:geesunOitemsMonthReport.fdLastModifiedTime",
+            "type": "DateTime",
+            "column": "fd_last_modified_time",
+            "notNull": "true",
+            "validate": "false",
+            "canDisplay": "false"
+        },
+        "fdType":         {
+            "propertyType": "simple",
+            "messageKey": "geesun-oitems:geesunOitemsMonthReport.fdType",
+            "type": "String",
+            "column": "fd_type",
+            "notNull": "false",
+            "length": "36",
+            "validate": "true"
+        },
+        "fdAmount":         {
+            "propertyType": "simple",
+            "messageKey": "geesun-oitems:geesunOitemsMonthReport.fdAmount",
+            "type": "Double",
+            "column": "fd_amount",
+            "notNull": "false",
+            "length": "36",
+            "validate": "true"
+        },
+        "docDept":         {
+            "propertyType": "model",
+            "messageKey": "geesun-oitems:geesunOitemsMonthReport.docDept",
+            "type": "com.landray.kmss.sys.organization.model.SysOrgElement",
+            "column": "doc_dept_id",
+            "notNull": "false",
+            "validate": "false"
+        },
+        "docCreator":         {
+            "propertyType": "model",
+            "messageKey": "geesun-oitems:geesunOitemsMonthReport.docCreator",
+            "type": "com.landray.kmss.sys.organization.model.SysOrgElement",
+            "column": "doc_creator_id",
+            "notNull": "false",
+            "validate": "false"
+        },
+        "geesunOitemsReportListing":         {
+            "propertyType": "list",
+            "type": "com.landray.kmss.geesun.oitems.model.GeesunOitemsReportListing",
+            "column": "fd_month_report_id",
+            "cascade": "all-delete-orphan",
+            "table": "geesun_oitems_report_listing"
+        }
+    }
+}

@@ -1,0 +1,124 @@
+@charset "UTF-8";
+/* 多标签-父标题 */
+.lui_tabpanel_title .lui_tabpanel_title_main {
+  color: #0C3E6C;
+}
+
+.lui_tabpanel_title .lui_tabpanel_title_icon {
+  color: #0C3E6C;
+  font-size: 18px;
+}
+
+.lui_panel_light_frame .lui_panel_title_subtitle {
+  color: #0C3E6C;
+}
+
+.tTemplate .lui_tabpanel_collapse_frame,
+.lui_portal_body .lui_tabpanel_collapse_frame, .lui_panel_vertical_frame {
+  border-radius: 4px;
+  background-color: #fff;
+  border: 1px solid #d5d5d5;
+}
+
+/*--- 分组多标签 Starts ---*/
+.lui_tabpanel_multiCollapse_selected .lui_tabpanel_multiCollapse_groupTitle {
+  color: #0C3E6C;
+  background-color: #f9fbfe;
+}
+
+/*--- 分组多标签 Ends ---*/
+/*--- 吸顶多标签 Ends ---*/
+.lui_tabpanel_sucktop_collapse_more_item:hover > .lui_tabpanel_collapse_navs_item_r > .lui_tabpanel_collapse_navs_item_c {
+  color: #0C3E6C;
+  border-top-color: #0C3E6C;
+}
+
+.lui_tabpanel_collapse_navs_list .lui_tabpanel_sucktop_navs_item_l:hover .lui_tabpanel_collapse_navs_item_c {
+  color: #0C3E6C;
+}
+
+.lui_tabpanel_sucktop_navs_list > li.lui_tabpanel_sucktop_navs_item_l.lui_tabpanel_sucktop_navs_item_selected .lui_tabpanel_sucktop_navs_item_c {
+  color: #0C3E6C;
+}
+
+.lui_tabpanel_sucktop_collapse_more_item:hover > .lui_tabpanel_sucktop_navs_item_r > .lui_tabpanel_sucktop_navs_item_c {
+  color: #0C3E6C;
+  border-top-color: #0C3E6C;
+}
+
+.lui_tabpanel_sucktop_navs_list .lui_tabpanel_sucktop_navs_item_l:hover .lui_tabpanel_sucktop_navs_item_c {
+  color: #0C3E6C;
+}
+
+/*--- 吸顶多标签 Ends ---*/
+/*--- 浅色垂直多标签 Ends ---*/
+.lui_tabpanel_vertical_light_navs_item_selected,
+.lui_tabpanel_vertical_light_navs_item_l:hover {
+  border-left-color: #0C3E6C;
+  color: #0C3E6C;
+}
+
+.lui_tabpanel_vertical_light_navs_item_selected .lui_tabpanel_vertical_light_navs_item_r .lui_tabpanel_navs_item_title {
+  color: #0C3E6C;
+}
+
+.lui_tabpanel_vertical_light_navs_item_l:hover .lui_tabpanel_vertical_light_navs_item_c:before,
+.lui_tabpanel_vertical_light_navs_item_selected .lui_tabpanel_vertical_light_navs_item_c:before {
+  background: #0C3E6C;
+}
+
+/*--- 浅色垂直多标签 Ends ---*/
+/*--- 折叠多标签 Ends ---*/
+.tTemplate .lui_tabpanel_collapse_navs_item_c:hover,
+.lui_portal_body .lui_tabpanel_collapse_navs_item_c:hover {
+  color: #0C3E6C;
+}
+
+.tTemplate .lui_tabpanel_collapse_navs_item_selected.lui_tabpanel_collapse_collapse_more_item .lui_tabpanel_collapse_navs_item_c,
+.lui_portal_body .lui_tabpanel_collapse_navs_item_selected.lui_tabpanel_collapse_collapse_more_item .lui_tabpanel_collapse_navs_item_c {
+  background-color: #0C3E6C;
+}
+
+.tTemplate .lui_tabpanel_collapse_navs_item_selected.lui_tabpanel_collapse_collapse_more_item .lui_tabpanel_collapse_navs_list .lui_tabpanel_collapse_navs_item_c,
+.lui_portal_body .lui_tabpanel_collapse_navs_item_selected.lui_tabpanel_collapse_collapse_more_item .lui_tabpanel_collapse_navs_list .lui_tabpanel_collapse_navs_item_c {
+  background-color: #fff;
+}
+
+.tTemplate .lui_tabpanel_collapse_collapse_more_item:hover > .lui_tabpanel_collapse_navs_item_r > .lui_tabpanel_collapse_navs_item_c,
+.lui_portal_body .lui_tabpanel_collapse_collapse_more_item:hover > .lui_tabpanel_collapse_navs_item_r > .lui_tabpanel_collapse_navs_item_c {
+  color: #0C3E6C;
+  border-top-color: #0C3E6C;
+  background-color: #fff;
+}
+
+.tTemplate .lui_tabpanel_collapse_navs_list .lui_tabpanel_collapse_navs_item_l:hover .lui_tabpanel_collapse_navs_item_c,
+.lui_portal_body .lui_tabpanel_collapse_navs_list .lui_tabpanel_collapse_navs_item_l:hover .lui_tabpanel_collapse_navs_item_c {
+  color: #0C3E6C;
+  background-color: #f8f8f8;
+}
+
+.tTemplate .lui_tabpanel_collapse_navs_list > li.lui_tabpanel_collapse_navs_item_l.lui_tabpanel_collapse_navs_item_selected .lui_tabpanel_collapse_navs_item_c,
+.lui_portal_body .lui_tabpanel_collapse_navs_list > li.lui_tabpanel_collapse_navs_item_l.lui_tabpanel_collapse_navs_item_selected .lui_tabpanel_collapse_navs_item_c {
+  color: #0C3E6C;
+}
+
+.tTemplate .lui_tabpanel_collapse_navs_item_selected .lui_tabpanel_collapse_navs_item_c,
+.lui_portal_body .lui_tabpanel_collapse_navs_item_selected .lui_tabpanel_collapse_navs_item_c {
+  color: #fff;
+  border-top-left-radius: 4px;
+  border-top-right-radius: 4px;
+  background-color: #0C3E6C;
+}
+
+.tTemplate .lui_tabpanel_collapse_collapse_more_item:hover > .lui_tabpanel_collapse_navs_item_r > .lui_tabpanel_collapse_navs_item_c,
+.lui_portal_body .lui_tabpanel_collapse_collapse_more_item:hover > .lui_tabpanel_collapse_navs_item_r > .lui_tabpanel_collapse_navs_item_c {
+  color: #0C3E6C;
+  border-top-color: #0C3E6C;
+}
+
+.tTemplate .lui_tabpanel_collapse_navs_list .lui_tabpanel_collapse_navs_item_l:hover .lui_tabpanel_collapse_navs_item_c,
+.lui_portal_body .lui_tabpanel_collapse_navs_list .lui_tabpanel_collapse_navs_item_l:hover .lui_tabpanel_collapse_navs_item_c {
+  color: #0C3E6C;
+}
+
+/*--- 折叠多标签 Ends ---*/

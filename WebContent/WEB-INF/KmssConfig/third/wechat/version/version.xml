@@ -1,0 +1,195 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<version xmlns="http://www.example.org/version-config" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.example.org/version-config ../version.xsd">
+	<modifies>
+		<modify>
+			<description>#124368 修复 微信入口页面脚本报错</description>
+			<author>熊浩淋</author>
+			<revision-time>2020-11-09</revision-time>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#118741 修复 无验证码明文爆破</description>
+			<author>黄伟强</author>
+			<revision-time>2020-09-10</revision-time>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#98453 修复 东方通TongWeb企业版6.1.5.15发布启动时报错，无法启动</description>
+			<author>黄伟强</author>
+			<revision-time>2020-03-11</revision-time>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#91481 优化 restservice接口文档说明使用单独的文件</description>
+			<author>陈亮</author>
+			<revision-time>2020-01-15</revision-time>
+			<baseline>V15.0.3.R.20200117</baseline>
+		</modify>
+		<modify>
+			<description>#69507 新增 webservice业务接口增加对应restapi能力支撑(微信对接服务)</description>
+			<author>chenl</author>
+			<revision-time>2019-04-28</revision-time>
+			<baseline>V15.0.0.R.20190712</baseline>
+		</modify>
+		<modify>
+			<description>新增 三员管理日志</description>
+			<author>蒋志广</author>
+			<revision-time>2019-01-17</revision-time>
+			<baseline>V15.0.0.B2.20190118</baseline>
+		</modify>
+		<modify>
+			<description>优化 合并悦工作服务号集成配置到悦工作平台中，悦工作服务号单点登录方式统一使用悦工作平台的单点登录方式</description>
+			<author>陈亮</author>
+			<revision-time>2018-01-11</revision-time>
+			<baseline>V14.0.0.B2.20180112</baseline>
+		</modify>
+		<modify>
+			<description>新增 待办多语言</description>
+			<author>黄伟强</author>
+			<revision-time>2017-09-02</revision-time>
+			<relation>
+				<relation-module>sys/notify</relation-module>
+			</relation>
+			<baseline>V13.5.0.R.20170915</baseline>
+		</modify>
+		<modify>
+			<description>移除 原LWE单点登录方法</description>
+			<author>周梓凡</author>
+			<revision-time>2017-03-02</revision-time>
+			<baseline>V13.0.0.R.20170310</baseline>
+		</modify>
+		<modify>
+			<description>优化 后台配置中心微信公众号的页面优化</description>
+			<author>崔文坚</author>
+			<revision-time>2017-02-27</revision-time>
+			<baseline>V13.0.0.R.20170310</baseline>
+		</modify>
+		<modify>
+			<description>修复 微信对接后台权限</description>
+			<author>周梓凡</author>
+			<revision-time>2017-02-20</revision-time>
+			<baseline>V13.0.0.R.20170310</baseline>
+		</modify>
+		<modify>
+			<description>修复 消息通知方式rtx根据配置实时生效</description>
+			<author>林秀贤</author>
+			<revision-time>2016-10-31</revision-time>
+			<relation>
+				<relation-module>sys/notify</relation-module>
+			</relation>
+			<baseline>V13.0.0.B3.20161230</baseline>
+		</modify>
+		<modify>
+			<description>优化 微信配置页面按钮大小调整</description>
+			<author>周梓凡</author>
+			<revision-time>2016-10-24</revision-time>
+			<baseline>V13.0.0.B3.20161230</baseline>
+		</modify>
+		<modify>
+			<description>修复 微信公众号后台配置中心权限控制</description>
+			<author>周梓凡</author>
+			<revision-time>2016-10-14</revision-time>
+			<baseline>V13.0.0.B3.20161230</baseline>
+		</modify>
+		<modify>
+			<description>修复 移除对消息推送jar的依赖</description>
+			<author>李衡</author>
+			<revision-time>2016-06-02</revision-time>
+			<relation>
+				<relation-module>core</relation-module>
+			</relation>
+			<baseline>V13.0.0.B2.20160930</baseline>
+		</modify>
+		<modify>
+			<description>新增 待办推送待审待阅勾选项和待办推送测试功能</description>
+			<author>柯珍明</author>
+			<revision-time>2015-11-24</revision-time>
+			<baseline>V12.0.7.R.20151203</baseline>
+		</modify>
+		<modify>
+			<description>优化 微信对接服务中消息推送的打印日志sysout改成log日志打印</description>
+			<author>陈园园</author>
+			<revision-time>2015-11-23</revision-time>
+			<baseline>V12.0.7.R.20151203</baseline>
+		</modify>
+		<modify>
+			<description>优化 对接企业号中查看附件的处理方式</description>
+			<author>柯珍明</author>
+			<revision-time>2015-10-13</revision-time>
+			<baseline>V12.0.7.R.20151203</baseline>
+		</modify>
+		<modify>
+			<description>优化 lwe传送wePublicId的方式改成cookie的方式，以便解决ekp为集群导致session传送wePublicId失效的问题</description>
+			<author>叶正平</author>
+			<revision-time>2015-10-10</revision-time>
+			<baseline>V12.0.7.R.20151203</baseline>
+		</modify>
+		<modify>
+			<description>修复 微信中移动端打开缺陷</description>
+			<author>柯珍明</author>
+			<revision-time>2015-06-03</revision-time>
+			<relation>
+				<relation-module>sys/attachment</relation-module>
+			</relation>
+			<baseline>V12.0.2.R.20150605</baseline>
+		</modify>
+		<modify>
+			<description>优化 将微信配置改为数据库保存方式。配置路径：全局设置&gt;微信组件。</description>
+			<author>陈园园</author>
+			<revision-time>2015-06-03</revision-time>
+			<baseline>V12.0.2.R.20150605</baseline>
+		</modify>
+		<modify>
+			<description>修复 微信接收待办页面变动</description>
+			<author>邱建华</author>
+			<revision-time>2015-01-12</revision-time>
+			<baseline>V12.0.0.R.20150325</baseline>
+		</modify>
+		<modify>
+			<description>修复 微信企业号接收待办问题</description>
+			<author>邱建华</author>
+			<revision-time>2015-01-07</revision-time>
+			<baseline>V12.0.0.B3.20150116</baseline>
+		</modify>
+		<modify>
+			<description>修复 微信对接模块找不到随机码，则只验证license</description>
+			<author>邱建华</author>
+			<revision-time>2014-12-25</revision-time>
+			<baseline>V12.0.0.B3.20150116</baseline>
+		</modify>
+		<modify>
+			<description>优化 附件转换机制</description>
+			<author>李显鹏</author>
+			<revision-time>2014-12-24</revision-time>
+			<relation>
+				<relation-module>sys/attachment</relation-module>
+				<relation-module>sys/filestore</relation-module>
+			</relation>
+			<baseline>V12.0.0.B3.20150116</baseline>
+		</modify>
+		<modify>
+			<description>修复 引用附件机制接口的编译错误</description>
+			<author>邱建华</author>
+			<revision-time>2014-11-03</revision-time>
+			<relation>
+				<relation-module>sys/attachment</relation-module>
+			</relation>
+			<baseline>V12.0.0.B2.20141114</baseline>
+		</modify>
+		<modify>
+			<description>修复 微信打开实现同步待办的系统的待办找不到路径</description>
+			<author>邱建华</author>
+			<revision-time>2014-10-30</revision-time>
+			<baseline>V12.0.0.B2.20141114</baseline>
+		</modify>
+		<modify>
+			<description>修复 微信安卓手机打不开附件问题</description>
+			<author>邱建华</author>
+			<revision-time>2014-08-30</revision-time>
+			<relation>
+				<relation-module>sys/attachment</relation-module>
+			</relation>
+			<baseline>V12.0.0.B1.20140905</baseline>
+		</modify>
+	</modifies>
+</version>

@@ -1,0 +1,60 @@
+{
+    "global":     {
+        "modelName": "com.landray.kmss.km.pindagate.model.KmPindagateStatisticHistory",
+        "messageKey": "km-pindagate:table.kmPindagateStatisticHistory",
+        "displayProperty": "fdActionId",
+        "table": "km_pindagate_statistic_history",
+        "url": "/km/pindagate/km_pindagate_statistic_history/kmPindagateStatisticHistory.do?method=view&fdId=${fdId}"
+    },
+    "attrs":     {
+        "fdId":         {
+            "propertyType": "id",
+            "generator": {"type": "assigned"}
+        },
+        "fdActionId":         {
+            "propertyType": "simple",
+            "messageKey": "km-pindagate:kmPindagateStatisticHistory.fdActionId",
+            "type": "String",
+            "column": "fd_action_id",
+            "notNull": "true",
+            "length": "36",
+            "validate": "true"
+        },
+        "fdResponseId":         {
+            "propertyType": "simple",
+            "messageKey": "km-pindagate:kmPindagateStatisticHistory.fdResponseId",
+            "type": "String",
+            "column": "fd_response_id",
+            "notNull": "false",
+            "length": "36",
+            "validate": "false"
+        },
+        "fdQuestionId":         {
+            "propertyType": "simple",
+            "messageKey": "km-pindagate:kmPindagateStatisticHistory.fdQuestionId",
+            "type": "String",
+            "column": "fd_question_id",
+            "notNull": "false",
+            "length": "36",
+            "validate": "false"
+        },
+        "fdOption":         {
+            "propertyType": "simple",
+            "messageKey": "km-pindagate:kmPindagateStatisticHistory.fdOption",
+            "type": "String",
+            "column": "fd_option",
+            "notNull": "false",
+            "length": "36",
+            "validate": "false"
+        },
+        "fdValue":         {
+            "propertyType": "simple",
+            "messageKey": "km-pindagate:kmPindagateStatisticHistory.fdvalue",
+            "type": "String",
+            "column": "fd_value",
+            "notNull": "false",
+            "length": "100",
+            "validate": "false"
+        }
+    }
+}

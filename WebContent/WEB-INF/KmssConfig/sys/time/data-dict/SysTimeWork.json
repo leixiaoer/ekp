@@ -1,0 +1,76 @@
+{
+    "global":     {
+        "modelName": "com.landray.kmss.sys.time.model.SysTimeWork",
+        "messageKey": "sys-time:table.sysTimeWork",
+        "serviceBean": "sysTimeWorkService",
+        "table": "sys_time_work",
+        "url": "/sys/time/sys_time_work/sysTimeWork.do?method=view&fdId=${fdId}"
+    },
+    "attrs":     {
+        "fdId":         {
+            "propertyType": "id",
+            "generator": {"type": "assigned"}
+        },
+        "fdWeekStartTime":         {
+            "propertyType": "simple",
+            "messageKey": "sys-time:sysTimeWork.fdWeekStartTime",
+            "type": "Long",
+            "column": "fd_week_start_time",
+            "notNull": "false",
+            "length": "1"
+        },
+        "fdWeekEndTime":         {
+            "propertyType": "simple",
+            "messageKey": "sys-time:sysTimeWork.fdWeekEndTime",
+            "type": "Long",
+            "column": "fd_week_end_time",
+            "notNull": "false",
+            "length": "1"
+        },
+        "hbmStartTime":         {
+            "propertyType": "simple",
+            "messageKey": "sys-time:sysTimeWork.hbmStartTime",
+            "type": "Long",
+            "column": "fd_start_time",
+            "notNull": "false",
+            "length": "19"
+        },
+        "hbmEndTime":         {
+            "propertyType": "simple",
+            "messageKey": "sys-time:sysTimeWork.hbmEndTime",
+            "type": "Long",
+            "column": "fd_end_time",
+            "notNull": "false",
+            "length": "19"
+        },
+        "docCreateTime":         {
+            "propertyType": "simple",
+            "messageKey": "sys-time:sysTimeWork.docCreateTime",
+            "type": "DateTime",
+            "column": "doc_create_time",
+            "notNull": "false"
+        },
+        "sysTimeArea":         {
+            "propertyType": "model",
+            "messageKey": "sys-time:sysTimeWork.sysTimeArea",
+            "type": "com.landray.kmss.sys.time.model.SysTimeArea",
+            "column": "fd_area_id",
+            "notNull": "false"
+        },
+      	"fdTimeWorkColor":         {
+            "propertyType": "simple",
+            "messageKey": "sys-time:sysTimeWork.fdTimeWorkColor",
+            "type": "String",
+            "column": "fd_time_work_color",
+            "notNull": "false",
+            "length": "19"
+        },
+        "docCreator":         {
+            "propertyType": "model",
+            "messageKey": "sys-time:sysTimeWork.docCreatorId",
+            "type": "com.landray.kmss.sys.organization.model.SysOrgElement",
+            "column": "doc_creator_id",
+            "notNull": "false"
+        }
+    }
+}

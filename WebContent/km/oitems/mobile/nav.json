@@ -1,0 +1,20 @@
+[ 
+
+	{
+		url : "/km/oitems/km_oitems_budger_application/kmOitemsBudgerApplicationIndex.do?method=list&q.mydoc=create",
+		text: "km-oitems:kmOitems.tree.my.submit"
+	},
+	{
+		url : "/km/oitems/km_oitems_budger_application/kmOitemsBudgerApplicationIndex.do?method=list&q.mydoc=approval",
+		text: "km-oitems:kmOitems.tree.my.approval",
+		headerTemplate : "/km/oitems/mobile/resource/js/header/WaitToDoPropertyTemplate.js"
+	},
+	{
+		url : "/km/oitems/km_oitems_budger_application/kmOitemsBudgerApplicationIndex.do?method=list&q.mydoc=approved",
+		text: "km-oitems:kmOitems.tree.my.approved"
+	},	
+	{ 
+		url : "/km/oitems/km_oitems_budger_application/kmOitemsBudgerApplicationIndex.do?method=list", 
+		text : "km-oitems:kmOitems.tree.my.all"
+	}
+]

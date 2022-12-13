@@ -1,0 +1,92 @@
+{
+    "global":     {
+        "modelName": "com.landray.kmss.geesun.oitems.model.GeesunOitemsReportListing",
+        "messageKey": "geesun-oitems:table.geesunOitemsReportListing",
+        "displayProperty": "fdId",
+        "serviceBean": "geesunOitemsReportListingService",
+        "table": "geesun_oitems_report_listing",
+        "url": "/geesun/oitems/geesun_oitems_report_listing/geesunOitemsReportListing.do?method=view&fdId=${fdId}"
+    },
+    "attrs":     {
+        "fdId":         {
+            "propertyType": "id",
+            "generator": {"type": "assigned"}
+        },
+        "fdCount":         {
+            "propertyType": "simple",
+            "messageKey": "geesun-oitems:geesunOitemsReportListing.fdCount",
+            "type": "Long",
+            "column": "fd_count",
+            "notNull": "true",
+            "length": "8",
+            "validate": "true"
+        },
+        "fdCategory":         {
+            "propertyType": "simple",
+            "messageKey": "geesun-oitems:geesunOitemsReportListing.fdCategory",
+            "type": "String",
+            "column": "fd_category",
+            "notNull": "true",
+            "length": "36",
+            "validate": "true"
+        },
+        "fdName":         {
+            "propertyType": "simple",
+            "messageKey": "geesun-oitems:geesunOitemsReportListing.fdName",
+            "type": "String",
+            "column": "fd_name",
+            "notNull": "true",
+            "length": "36",
+            "validate": "true"
+        },
+        "fdReferencePrice":         {
+            "propertyType": "simple",
+            "messageKey": "geesun-oitems:geesunOitemsReportListing.fdReferencePrice",
+            "type": "Double",
+            "column": "fd_reference_price",
+            "notNull": "true",
+            "length": "36",
+            "validate": "true"
+        },
+        "fdUnit":         {
+            "propertyType": "simple",
+            "messageKey": "geesun-oitems:geesunOitemsReportListing.fdUnit",
+            "type": "String",
+            "column": "fd_unit",
+            "notNull": "true",
+            "length": "36",
+            "validate": "true"
+        },
+        "fdAmount":         {
+            "propertyType": "simple",
+            "messageKey": "geesun-oitems:geesunOitemsReportListing.fdAmount",
+            "type": "Double",
+            "column": "fd_amount",
+            "notNull": "true",
+            "length": "36",
+            "validate": "true"
+        },
+        "docCreator":         {
+            "propertyType": "model",
+            "messageKey": "geesun-oitems:geesunOitemsReportListing.docCreator",
+            "type": "com.landray.kmss.sys.organization.model.SysOrgElement",
+            "column": "doc_creator_id",
+            "notNull": "false",
+            "validate": "false"
+        },
+        "fdMonthReport":         {
+            "propertyType": "model",
+            "messageKey": "geesun-oitems:geesunOitemsReportListing.fdMonthReport",
+            "type": "com.landray.kmss.geesun.oitems.model.GeesunOitemsMonthReport",
+            "column": "fd_month_report_id",
+            "notNull": "false",
+            "validate": "false"
+        },
+        "docDept":         {
+            "propertyType": "model",
+            "messageKey": "sys-doc:sysDocBaseInfo.docDept",
+            "type": "com.landray.kmss.sys.organization.model.SysOrgElement",
+            "column": "doc_dept_id"
+        }
+    }
+}

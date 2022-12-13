@@ -1,0 +1,608 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<version xmlns="http://www.example.org/version-config" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.example.org/version-config ../../../version.xsd">
+	<modifies>
+		<modify>
+			<description>#127231 修复 启用提单转授权，切换借款人，要更新关联申请单，根据借款人更换申请单，不仅仅是选择借款人还可以选择当前登录人的</description>
+			<author>孙佳敏</author>
+			<revision-time>2021-01-08</revision-time>
+			<relation>
+				<relation-module>fssc/fee</relation-module>
+			</relation>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#128275 新增 申请合计金额和核准金额合计大写</description>
+			<author>谢星星</author>
+			<revision-time>2020-12-24</revision-time>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#123584 修复 sonar问题检测</description>
+			<author>谢星星</author>
+			<revision-time>2020-12-08</revision-time>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#127586 修复 借款代码引用了移快报代码</description>
+			<author>谢星星</author>
+			<revision-time>2020-12-03</revision-time>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#124952 新增 微信卡包兼容微信公众号和企业微信</description>
+			<author>谢星星</author>
+			<revision-time>2020-11-24</revision-time>
+			<relation>
+				<relation-module>fssc/base</relation-module>
+			</relation>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#117691 新增 微信卡包模块</description>
+			<author>余艳祥</author>
+			<revision-time>2020-11-23</revision-time>
+			<relation>
+				<relation-module>fssc/mobile</relation-module>
+			</relation>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#125729 修复 jar包识别复杂二维码信息</description>
+			<author>谢星星</author>
+			<revision-time>2020-11-17</revision-time>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#125411 修复 高版本tomcat，选择弹框由于特殊字符空白的问题</description>
+			<author>谢星星</author>
+			<revision-time>2020-11-13</revision-time>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#103039 修复 系统所有选择弹框时，弹框要有显示选择的是什么</description>
+			<author>张慧慧</author>
+			<revision-time>2020-10-30</revision-time>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#104239 修复 推送凭证到K3时，成本中心、项目、供应商、客户、现金流、员工都推送不过去</description>
+			<author>余艳祥</author>
+			<revision-time>2020-10-24</revision-time>
+			<relation>
+				<relation-module>fssc/k3</relation-module>
+			</relation>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#122779 修复 移快报扫一扫兼容微信</description>
+			<author>谢星星</author>
+			<revision-time>2020-10-24</revision-time>
+			<relation>
+				<relation-module>fssc/base</relation-module>
+			</relation>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#116356 新增 凭证中需要新增合同号字段，取值合同台账的编号</description>
+			<author>余艳祥</author>
+			<revision-time>2020-10-24</revision-time>
+			<relation>
+				<relation-module>fssc/ledger</relation-module>
+			</relation>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#118180 新增 付款管理模块添加发票不能选到扫码和拍照发票，选择费用</description>
+			<author>余艳祥</author>
+			<revision-time>2020-10-10</revision-time>
+			<relation>
+				<relation-module>fssc/mobile</relation-module>
+			</relation>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#114040 修复 附件大于8M加密无法识别的问题</description>
+			<author>谢星星</author>
+			<revision-time>2020-10-10</revision-time>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>优化 携程组件CTrip修改为Ctrip</description>
+			<author>谢星星</author>
+			<revision-time>2020-10-10</revision-time>
+			<relation>
+				<relation-module>fssc/fee</relation-module>
+				<relation-module>fssc/ctrip</relation-module>
+			</relation>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#103001 修复 事前没有配置对应的报销分类，就无法申请转报销，是否可以弹框选择报销分类</description>
+			<author>张慧慧</author>
+			<revision-time>2020-09-25</revision-time>
+			<relation>
+				<relation-module>fssc/expense</relation-module>
+			</relation>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#116167 新增 列表页筛选项提取公共方法</description>
+			<author>余艳祥</author>
+			<revision-time>2020-09-18</revision-time>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#117691 新增 微信卡包相关接口</description>
+			<author>余艳祥</author>
+			<revision-time>2020-09-08</revision-time>
+			<relation>
+				<relation-module>fssc/ocr</relation-module>
+				<relation-module>fssc/mobile</relation-module>
+			</relation>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#113393 新增 预提相关接口</description>
+			<author>谢星星</author>
+			<revision-time>2020-09-07</revision-time>
+			<relation>
+				<relation-module>fssc/base</relation-module>
+				<relation-module>fssc/expense</relation-module>
+				<relation-module>fssc/voucher</relation-module>
+				<relation-module>fssc/ledger</relation-module>
+				<relation-module>fssc/payment</relation-module>
+				<relation-module>fssc/proapp</relation-module>
+				<relation-module>fssc/provision</relation-module>
+			</relation>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#113393 新增 预提相关接口</description>
+			<author>谢星星</author>
+			<revision-time>2020-09-07</revision-time>
+			<relation>
+				<relation-module>fssc/base</relation-module>
+				<relation-module>fssc/expense</relation-module>
+				<relation-module>fssc/voucher</relation-module>
+				<relation-module>fssc/ledger</relation-module>
+				<relation-module>fssc/payment</relation-module>
+				<relation-module>fssc/proapp</relation-module>
+				<relation-module>fssc/provision</relation-module>
+			</relation>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#115348 修复 报销没有根据记账公司自动过滤带出报销人的借款单</description>
+			<author>张慧慧</author>
+			<revision-time>2020-08-20</revision-time>
+			<relation>
+				<relation-module>fssc/expense</relation-module>
+				<relation-module>fssc/loan</relation-module>
+			</relation>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#115738 优化 合力中税验真，抽取公用方法</description>
+			<author>谢星星</author>
+			<revision-time>2020-08-20</revision-time>
+			<relation>
+				<relation-module>fssc/baiwang</relation-module>
+				<relation-module>fssc/expense</relation-module>
+				<relation-module>fssc/payment</relation-module>
+				<relation-module>fssc/mobile</relation-module>
+			</relation>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#88981优化 预算状态和标准状态悬浮提示</description>
+			<author>汪金满</author>
+			<revision-time>2020-08-01</revision-time>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#112897 修复 合同台账已付、未付、付款中计算错误的问题</description>
+			<author>谢星星</author>
+			<revision-time>2020-08-01</revision-time>
+			<relation>
+				<relation-module>fssc/ledger</relation-module>
+			</relation>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#110957 修复 审批 编辑主文档，事前接口增加事前台账新增接口</description>
+			<author>谢星星</author>
+			<revision-time>2020-07-21</revision-time>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#110890 新增 立项业务逻辑</description>
+			<author>汪金满</author>
+			<revision-time>2020-07-09</revision-time>
+			<relation>
+				<relation-module>fssc/base</relation-module>
+			</relation>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#110902 修复 OCR接口图片不允许超过8M，超过程序自动压缩图片</description>
+			<author>谢星星</author>
+			<revision-time>2020-07-10</revision-time>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#106143 修复 当开关设置选中中行、招商，移除模块会出来中行、招行字段</description>
+			<author>谢星星</author>
+			<revision-time>2020-07-02</revision-time>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#105239 新增 报销辅助信息</description>
+			<author>王兵</author>
+			<revision-time>2020-05-13</revision-time>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#102375 修复 PC端发票明细改造之后，导致移动端填写的报销单发票信息没有回写到PC端的发票明细中去</description>
+			<author>张慧慧</author>
+			<revision-time>2020-05-06</revision-time>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#103989 修复 报销增加选择未报费用功能</description>
+			<author>汪金满</author>
+			<revision-time>2020-04-27</revision-time>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#90464 新增 新版移快报</description>
+			<author>谢星星</author>
+			<revision-time>2020-04-19</revision-time>
+			<relation>
+				<relation-module>fssc/baiwang</relation-module>
+				<relation-module>fssc/base</relation-module>
+				<relation-module>fssc/expense</relation-module>
+				<relation-module>fssc/fee</relation-module>
+				<relation-module>fssc/ledger</relation-module>
+				<relation-module>fssc/mobile</relation-module>
+				<relation-module>fssc/ocr</relation-module>
+			</relation>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#101070 新增 首页新增已处理人、当前处理人筛选条件</description>
+			<author>谢星星</author>
+			<revision-time>2020-04-02</revision-time>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#100713 新增 提示标签</description>
+			<author>谢星星</author>
+			<revision-time>2020-03-31</revision-time>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#99229 修复 电信电子发票无法识别导致验重失效问题</description>
+			<author>谢星星</author>
+			<revision-time>2020-03-17</revision-time>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#90464 新增 获取移快报记一笔的未报费用</description>
+			<author>钟彩霞</author>
+			<revision-time>2020-03-14</revision-time>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#90412 新增 发票上传后是否自动验真</description>
+			<author>谢星星</author>
+			<revision-time>2020-01-02</revision-time>
+			<baseline>V15.0.3.R.20200117</baseline>
+		</modify>
+		<modify>
+			<description>#87576 修复 报销节点进入事件付款状态赋值错误的问题</description>
+			<author>谢星星</author>
+			<revision-time>2019-12-27</revision-time>
+			<baseline>V15.0.3.R.20200117</baseline>
+		</modify>
+		<modify>
+			<description>#90408 修复 数字格式化小数位数传值无效的问题</description>
+			<author>谢星星</author>
+			<revision-time>2019-12-27</revision-time>
+			<baseline>V15.0.3.R.20200117</baseline>
+		</modify>
+		<modify>
+			<description>#91726 修复 按日标准一直显示超标</description>
+			<author>汪金满</author>
+			<revision-time>2019-12-25</revision-time>
+			<baseline>V15.0.3.R.20200117</baseline>
+		</modify>
+		<modify>
+			<description>#90407 将发票pdf识别放入common包</description>
+			<author>谢星星</author>
+			<revision-time>2019-12-19</revision-time>
+			<baseline>V15.0.3.R.20200117</baseline>
+		</modify>
+		<modify>
+			<description>#91004 新增 not in构造语句</description>
+			<author>谢星星</author>
+			<revision-time>2019-12-16</revision-time>
+			<baseline>V15.0.3.R.20200117</baseline>
+		</modify>
+		<modify>
+			<description>#88340 修复 基础数据不显示显示银行配置</description>
+			<author>钟彩霞</author>
+			<revision-time>2019-11-25</revision-time>
+			<baseline>V15.0.3.R.20200117</baseline>
+		</modify>
+		<modify>
+			<description>#87286 新增 报销增加关闭事前申请功能</description>
+			<author>谢星星</author>
+			<revision-time>2019-11-18</revision-time>
+			<baseline>V15.0.3.R.20200117</baseline>
+		</modify>
+		<modify>
+			<description>#74105 新增 基础数据新增银行开关</description>
+			<author>钟彩霞</author>
+			<revision-time>2019-10-14</revision-time>
+			<baseline>V15.0.2.R.20191108</baseline>
+		</modify>
+		<modify>
+			<description>#80576 修复 月次标准的相关问题</description>
+			<author>汪金满</author>
+			<revision-time>2019-09-30</revision-time>
+			<baseline>V15.0.2.R.20191108</baseline>
+		</modify>
+		<modify>
+			<description>#83223 新增 k3对接</description>
+			<author>余艳祥</author>
+			<revision-time>2019-09-29</revision-time>
+			<baseline>V15.0.2.R.20191108</baseline>
+		</modify>
+		<modify>
+			<description>#80374 新增 预算执行台账 by xiexx</description>
+			<author>谢星星</author>
+			<revision-time>2019-08-29</revision-time>
+			<baseline>V15.0.2.R.20191108</baseline>
+		</modify>
+		<modify>
+			<description>#80205 优化 报销增加行程是否独立配置项</description>
+			<author>汪金满</author>
+			<revision-time>2019-08-24</revision-time>
+			<baseline>V15.0.2.R.20191108</baseline>
+		</modify>
+		<modify>
+			<description>#79102 新增 通用明细导入功能</description>
+			<author>汪金满</author>
+			<revision-time>2019-08-16</revision-time>
+			<baseline>V15.0.1.R.20190906</baseline>
+		</modify>
+		<modify>
+			<description>#74791 移动端我的发票功能完善</description>
+			<author>汪金满</author>
+			<revision-time>2019-08-07</revision-time>
+			<baseline>V15.0.1.R.20190906</baseline>
+		</modify>
+		<modify>
+			<description>#78925 修复 弹出框报js错误</description>
+			<author>汪金满</author>
+			<revision-time>2019-08-07</revision-time>
+			<baseline>V15.0.1.R.20190906</baseline>
+		</modify>
+		<modify>
+			<description>#78483 新增 合同台账使用记录接口</description>
+			<author>余艳祥</author>
+			<revision-time>2019-08-07</revision-time>
+			<baseline>V15.0.1.R.20190906</baseline>
+		</modify>
+		<modify>
+			<description>#74829 新增 物资台账对外接口</description>
+			<author>谢星星</author>
+			<revision-time>2019-08-05</revision-time>
+			<baseline>V15.0.1.R.20190906</baseline>
+		</modify>
+		<modify>
+			<description>#76913 新增 合同/付款条件的更新接口</description>
+			<author>余艳祥</author>
+			<revision-time>2019-08-04</revision-time>
+			<baseline>V15.0.1.R.20190906</baseline>
+		</modify>
+		<modify>
+			<description>#79069 新增 付款/预付款的公共接口</description>
+			<author>钟彩霞</author>
+			<revision-time>2019-08-02</revision-time>
+			<baseline>V15.0.1.R.20190906</baseline>
+		</modify>
+		<modify>
+			<description>#78670 修复 获取业务模式</description>
+			<author>钟彩霞</author>
+			<revision-time>2019-07-26</revision-time>
+			<baseline>V15.0.1.R.20190906</baseline>
+		</modify>
+		<modify>
+			<description>#78264 优化 移动端增加搜索功能</description>
+			<author>汪金满</author>
+			<revision-time>2019-07-24</revision-time>
+			<baseline>V15.0.1.R.20190906</baseline>
+		</modify>
+		<modify>
+			<description>#76384 修复 前一个报价玩删除后一个供应商的报价待办</description>
+			<author>谢星星</author>
+			<revision-time>2019-07-23</revision-time>
+			<baseline>V15.0.1.R.20190906</baseline>
+		</modify>
+		<modify>
+			<description>#76146 修复 下发时无法选择到公司的问题</description>
+			<author>汪金满</author>
+			<revision-time>2019-07-19</revision-time>
+			<baseline>V15.0.1.R.20190906</baseline>
+		</modify>
+		<modify>
+			<description>#74780 修复 移动端扫码后带出发票状态</description>
+			<author>汪金满</author>
+			<revision-time>2019-07-18</revision-time>
+			<baseline>V15.0.1.R.20190906</baseline>
+		</modify>
+		<modify>
+			<description>#74780 优化 移动端扫发票后自动计算金额</description>
+			<author>汪金满</author>
+			<revision-time>2019-07-18</revision-time>
+			<baseline>V15.0.1.R.20190906</baseline>
+		</modify>
+		<modify>
+			<description>#76329 新增 供应商组织架构虚拟部门查询接口</description>
+			<author>谢星星</author>
+			<revision-time>2019-07-17</revision-time>
+			<baseline>V15.0.1.R.20190906</baseline>
+		</modify>
+		<modify>
+			<description>#77765 修复 移动端报销关联事前的问题</description>
+			<author>汪金满</author>
+			<revision-time>2019-07-17</revision-time>
+			<baseline>V15.0.1.R.20190906</baseline>
+		</modify>
+		<modify>
+			<description>#65630 修复 弹出框选择完成后未回写到表单的问题</description>
+			<author>汪金满</author>
+			<revision-time>2019-07-16</revision-time>
+			<baseline>V15.0.1.R.20190906</baseline>
+		</modify>
+		<modify>
+			<description>#77079 新增 取消选定增加事件触发</description>
+			<author>谢星星</author>
+			<revision-time>2019-07-15</revision-time>
+			<baseline>V15.0.1.R.20190906</baseline>
+		</modify>
+		<modify>
+			<description>#65630 修复 多余的引用导致编译报错</description>
+			<author>汪金满</author>
+			<revision-time>2019-07-11</revision-time>
+			<baseline>V15.0.0.R.20190712</baseline>
+		</modify>
+		<modify>
+			<description>#77079 修复 弹框选择出现空值的问题</description>
+			<author>汪金满</author>
+			<revision-time>2019-07-11</revision-time>
+			<baseline>V15.0.0.R.20190712</baseline>
+		</modify>
+		<modify>
+			<description>#74851 新增 领用申请关联需求，发布后使用预算</description>
+			<author>谢星星</author>
+			<revision-time>2019-07-10</revision-time>
+			<baseline>V15.0.0.R.20190712</baseline>
+		</modify>
+		<modify>
+			<description>#74850 新增 领用关联采购申请逻辑</description>
+			<author>谢星星</author>
+			<revision-time>2019-07-09</revision-time>
+			<baseline>V15.0.0.R.20190712</baseline>
+		</modify>
+		<modify>
+			<description>#74850 优化 将预算图标样式抽取成css文件</description>
+			<author>谢星星</author>
+			<revision-time>2019-07-08</revision-time>
+			<baseline>V15.0.0.R.20190712</baseline>
+		</modify>
+		<modify>
+			<description>#74849 新增 库存列表展现接口定义</description>
+			<author>谢星星</author>
+			<revision-time>2019-07-04</revision-time>
+			<baseline>V15.0.0.R.20190712</baseline>
+		</modify>
+		<modify>
+			<description>#74871 新增 采购列表查询接口</description>
+			<author>谢星星</author>
+			<revision-time>2019-07-04</revision-time>
+			<baseline>V15.0.0.R.20190712</baseline>
+		</modify>
+		<modify>
+			<description>#74782 优化 事前申请移动端根据配置展现</description>
+			<author>汪金满</author>
+			<revision-time>2019-07-03</revision-time>
+			<baseline>V15.0.0.R.20190712</baseline>
+		</modify>
+		<modify>
+			<description>#74848 新增 供应商报价信息接口</description>
+			<author>谢星星</author>
+			<revision-time>2019-07-03</revision-time>
+			<baseline>V15.0.0.R.20190712</baseline>
+		</modify>
+		<modify>
+			<description>#74848 新增 采购申请对外接口</description>
+			<author>谢星星</author>
+			<revision-time>2019-07-02</revision-time>
+			<baseline>V15.0.0.R.20190712</baseline>
+		</modify>
+		<modify>
+			<description>#74847 新增 节点进入事件，新增供应商信息</description>
+			<author>谢星星</author>
+			<revision-time>2019-07-02</revision-time>
+			<baseline>V15.0.0.R.20190712</baseline>
+		</modify>
+		<modify>
+			<description>#75673 优化 新版本流程右侧显示</description>
+			<author>谢星星</author>
+			<revision-time>2019-06-25</revision-time>
+			<baseline>V15.0.0.R.20190712</baseline>
+		</modify>
+		<modify>
+			<description>#74836 新增 存在库存提示确认框，取消不提交，确认提交</description>
+			<author>谢星星</author>
+			<revision-time>2019-06-21</revision-time>
+			<baseline>V15.0.0.R.20190712</baseline>
+		</modify>
+		<modify>
+			<description>#65630 优化 优化弹框选择</description>
+			<author>汪金满</author>
+			<revision-time>2019-06-20</revision-time>
+			<baseline>V15.0.0.R.20190712</baseline>
+		</modify>
+		<modify>
+			<description>#74779 优化 添加移动端数据接口支持</description>
+			<author>汪金满</author>
+			<revision-time>2019-06-20</revision-time>
+			<baseline>V15.0.0.R.20190712</baseline>
+		</modify>
+		<modify>
+			<description>#74770 新增 发票识别对外接口</description>
+			<author>汪金满</author>
+			<revision-time>2019-06-19</revision-time>
+			<baseline>V15.0.0.R.20190712</baseline>
+		</modify>
+		<modify>
+			<description>#74829 新增 物资台账对外接口</description>
+			<author>谢星星</author>
+			<revision-time>2019-06-18</revision-time>
+			<baseline>V15.0.0.R.20190712</baseline>
+		</modify>
+		<modify>
+			<description>#68034 优化 sonar问题</description>
+			<author>谢星星</author>
+			<revision-time>2019-06-06</revision-time>
+			<baseline>V15.0.0.R.20190712</baseline>
+		</modify>
+		<modify>
+			<description>#74358 修复 驳回状态下，查看页面流程操作隐藏</description>
+			<author>谢星星</author>
+			<revision-time>2019-06-04</revision-time>
+			<baseline>V15.0.0.R.20190712</baseline>
+		</modify>
+		<modify>
+			<description>#72974 优化 报销发票明细选择</description>
+			<author>谢星星</author>
+			<revision-time>2019-06-03</revision-time>
+			<baseline>V15.0.0.R.20190712</baseline>
+		</modify>
+		<modify>
+			<description>#73927 修复 报销关联事前选择框的问题</description>
+			<author>汪金满</author>
+			<revision-time>2019-06-03</revision-time>
+			<baseline>V15.0.0.R.20190712</baseline>
+		</modify>
+		<modify>
+			<description>#68034 新增 初始化费控V4代码</description>
+			<author>谢星星</author>
+			<revision-time>2019-06-03</revision-time>
+			<baseline>V15.0.0.R.20190712</baseline>
+		</modify>
+	</modifies>
+</version>

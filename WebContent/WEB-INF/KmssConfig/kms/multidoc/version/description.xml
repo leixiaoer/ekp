@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<description xmlns="http://www.example.org/description-config" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.example.org/description-config ../../../description.xsd">
+	<module>
+		<module-name>KMS文档知识库</module-name>
+		<module-path>kms/multidoc</module-path>
+		<baseline>V15.0.4.R.20200410</baseline>
+		<source-md5>2c8a756341324249fcfec0d332aeb204</source-md5>
+		<is-custom>否</is-custom>
+		<serial-num>67</serial-num>
+	</module>
+</description>

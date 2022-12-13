@@ -1,0 +1,34 @@
+{
+    "global":     {
+        "modelName": "com.landray.kmss.km.asset.model.KmAssetApplyDivert",
+        "messageKey": "km-asset:table.kmAssetApplyDivert",
+        "displayProperty": "docSubject",
+        "extendClass": "com.landray.kmss.km.asset.model.KmAssetApplyBase",
+        "serviceBean": "kmAssetApplyDivertService",
+        "table": "km_asset_apply_base",
+        "discriminatorValue": "com.landray.kmss.km.asset.model.KmAssetApplyDivert",
+        "url": "/km/asset/km_asset_apply_divert/kmAssetApplyDivert.do?method=view&fdId=${fdId}"
+    },
+    "attrs":     {
+        "fdId":         {
+            "propertyType": "id",
+            "generator": {"type": "assigned"}
+        },
+        "fdItems":         {
+            "propertyType": "list",
+            "messageKey": "km-asset:table.kmAssetApplyDivertList",
+            "type": "com.landray.kmss.km.asset.model.KmAssetApplyDivertList",
+            "column": "fd_apply_divert_id",
+            "inverse": "true",
+            "canDisplay": "false",
+            "cascade": "all-delete-orphan",
+            "table": "km_asset_apply_divert_list",
+            "canLogShow":"1"
+        }
+    },
+    "attachments": {"attachment":     {
+        "propertyType": "att",
+        "messageKey": "km-asset:kmAssetApplyBase.attachMent",
+        "canDisplay": "true"
+    }}
+}

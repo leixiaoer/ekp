@@ -1,0 +1,61 @@
+{
+    "global":     {
+        "modelName": "com.landray.kmss.geesun.oitems.model.GeesunOitemsWarehousingRecordJoinList",
+        "messageKey": "geesun-oitems:geesunOitemsListing.num.price",
+        "displayProperty": "fdBrand",
+        "serviceBean": "geesunOitemsWarehousingRecordJoinListService",
+        "table": "geesun_oitems_warehousing_joinlist"
+    },
+    "attrs":     {
+        "fdId":         {
+            "propertyType": "id",
+            "generator": {"type": "assigned"}
+        },
+        "fdNumber":         {
+            "propertyType": "simple",
+            "messageKey": "",
+            "type": "Integer",
+            "column": "fd_number",
+            "notNull": "false",
+            "length": "12"
+        },
+        "fdCurNumber":         {
+            "propertyType": "simple",
+            "messageKey": "",
+            "type": "Integer",
+            "column": "fd_cur_number",
+            "notNull": "false",
+            "length": "12"
+        },
+        "fdPrice":         {
+            "propertyType": "simple",
+            "messageKey": "",
+            "type": "Double",
+            "column": "fd_price",
+            "notNull": "false",
+            "length": "12"
+        },
+        "fdBrand":         {
+            "propertyType": "simple",
+            "messageKey": "",
+            "type": "String",
+            "column": "fd_brand",
+            "notNull": "false",
+            "length": "200"
+        },
+        "geesunOitemsListing":         {
+            "propertyType": "model",
+            "messageKey": "",
+            "type": "com.landray.kmss.geesun.oitems.model.GeesunOitemsListing",
+            "column": "fd_listing_id",
+            "notNull": "false"
+        },
+        "docCreator":         {
+            "propertyType": "model",
+            "messageKey": "sys-doc:sysDocBaseInfo.docCreator",
+            "type": "com.landray.kmss.sys.organization.model.SysOrgElement",
+            "column": "doc_creator_id",
+            "notNull": "false"
+        }
+    }
+}

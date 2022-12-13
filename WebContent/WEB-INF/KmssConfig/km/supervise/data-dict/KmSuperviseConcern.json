@@ -1,0 +1,40 @@
+{
+    "global":     {
+        "modelName": "com.landray.kmss.km.supervise.model.KmSuperviseConcern",
+        "messageKey": "km-supervise:table.kmSuperviseConcern",
+        "table": "km_supervise_concern",
+        "url": "/km/supervise/km_supervise_concern/kmSuperviseConcern.do?method=view&fdId=${fdId}",
+        "serviceBean": "kmSuperviseConcernService"
+    },
+    "attrs":     {
+        "fdId":         {
+            "propertyType": "id",
+            "generator": {"type": "assigned"}
+        },
+        "fdPerson":         {
+            "propertyType": "model",
+            "type": "com.landray.kmss.sys.organization.model.SysOrgPerson",
+            "messageKey": "km-supervise:kmSuperviseConcern.fdPerson",
+            "column": "fd_person_id",
+            "notNull": "false",
+            "validate": "true",
+            "canSearch": "true",
+            "canRelation": "true",
+            "canDisplay": "true",
+            "readOnly": "false",
+            "dialogJS": "Dialog_Address(!{mulSelect}, '!{idField}','!{nameField}', ';',ORG_TYPE_PERSON);"
+        },
+        "fdSupervise":         {
+            "propertyType": "model",
+            "type": "com.landray.kmss.km.supervise.model.KmSuperviseMain",
+            "messageKey": "km-supervise:kmSuperviseConcern.fdSupervise",
+            "column": "fd_supervise_id",
+            "notNull": "true",
+            "validate": "true",
+            "canSearch": "true",
+            "canRelation": "true",
+            "canDisplay": "true",
+            "readOnly": "false"
+        }
+    }
+}

@@ -1,0 +1,104 @@
+{
+    "global":     {
+        "modelName": "com.landray.kmss.km.asset.model.KmAssetApplyInventory",
+        "messageKey": "km-asset:table.kmAssetApplyInventory",
+        "displayProperty": "docSubject",
+        "serviceBean": "kmAssetApplyInventoryService",
+        "table": "km_asset_apply_base",
+        "url": "/km/asset/km_asset_apply_inventory/kmAssetApplyInventory.do?method=view&fdId=${fdId}",
+        "extendClass": "com.landray.kmss.km.asset.model.KmAssetApplyBase",
+        "discriminatorValue": "com.landray.kmss.km.asset.model.KmAssetApplyInventory"
+    },
+    "attrs":     {
+        "fdId":         {
+            "propertyType": "id",
+            "generator": {"type": "assigned"}
+        },
+        "fdDescription":         {
+            "propertyType": "simple",
+            "messageKey": "km-asset:kmAssetApplyInventory.fdDescription",
+            "type": "String",
+            "column": "fd_description",
+            "notNull": "false",
+             "canDisplay": "false",
+            "length": "1500",
+            "validate": "true",
+            "canLogShow":"1"
+        },
+        "fdAssetStatus":         {
+            "propertyType": "simple",
+            "messageKey": "km-asset:kmAssetApplyInventory.fdAssetStatus",
+            "type": "String",
+            "column": "fd_asset_status",
+            "notNull": "false",
+            "length": "36",
+            "validate": "false",
+             "canDisplay": "false",
+            "canLogShow":"1"
+        },
+        "fdText":         {
+            "propertyType": "simple",
+            "messageKey": "km-asset:kmAssetApplyInventory.fdText",
+            "type": "String",
+            "column": "fd_text",
+            "notNull": "false",
+            "length": "500",
+            "validate": "false",
+             "canDisplay": "false",
+            "canLogShow":"1"
+        },
+        "fdAssetCard":         {
+            "propertyType": "model",
+            "messageKey": "km-asset:kmAssetApplyInventory.fdAssetCard",
+            "type": "com.landray.kmss.km.asset.model.KmAssetCard",
+            "column": "fd_asset_card",
+            "notNull": "false",
+            "validate": "false",
+            "canLogShow":"1"
+        },
+        "fdResponsiblePerson":         {
+            "propertyType": "model",
+            "messageKey": "km-asset:kmAssetApplyInventory.fdResponsiblePerson",
+            "type": "com.landray.kmss.sys.organization.model.SysOrgElement",
+            "column": "fd_responsible_person",
+            "notNull": "false",
+            "validate": "false",
+            "canLogShow":"1"
+        },
+        "docDept":         {
+            "propertyType": "model",
+            "messageKey": "km-asset:kmAssetApplyInventory.docDept",
+            "type": "com.landray.kmss.sys.organization.model.SysOrgElement",
+            "column": "doc_dept",
+            "notNull": "false",
+            "validate": "false",
+            "canLogShow":"1"
+        },
+        "fdAssetAddress":         {
+            "propertyType": "model",
+            "messageKey": "km-asset:kmAssetApplyInventory.fdAssetAddress",
+            "type": "com.landray.kmss.km.asset.model.KmAssetAddress",
+            "column": "fd_asset_address",
+            "notNull": "false",
+            "validate": "false",
+            "canLogShow":"1"
+        },
+        "fdDetail":         {
+        	"propertyType": "list",
+            "type": "com.landray.kmss.km.asset.model.KmAssetApplyInventoryDetail",
+            "inverse": "false",
+            "messageKey": "km-asset:kmAssetApplyInventory.fdDetail",
+            "column": "fd_inventory",
+            "notNull": "false",
+            "validate": "true",
+            "canDisplay": "true",
+            "readOnly": "false",
+            "cascade": "all-delete-orphan",
+            "table": "km_certificate_detail"
+        }
+    },
+    "attachments": {"attachment":     {
+        "propertyType": "att",
+        "messageKey": "km-asset:kmAssetApplyBase.attachMent"
+    }}
+}

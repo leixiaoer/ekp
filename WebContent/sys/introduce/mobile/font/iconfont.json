@@ -1,0 +1,23 @@
+{
+  "id": "2351635",
+  "name": "sysIntroduce",
+  "font_family": "sysintroducefont",
+  "css_prefix_text": "",
+  "description": "点赞",
+  "glyphs": [
+    {
+      "icon_id": "19664642",
+      "name": "icon_intr_praise_yellow",
+      "font_class": "icon_intr_praise_yellow",
+      "unicode": "e60c",
+      "unicode_decimal": 58892
+    },
+    {
+      "icon_id": "19664644",
+      "name": "icon_intr_praise_grey",
+      "font_class": "icon_intr_praise_grey",
+      "unicode": "e60d",
+      "unicode_decimal": 58893
+    }
+  ]
+}

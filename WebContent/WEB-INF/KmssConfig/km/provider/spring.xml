@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans
+	xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.0.xsd">
+	<bean
+		id="kmProviderCategoryDao"
+		parent="KmssAuthBaseDao"
+		class="com.landray.kmss.km.provider.dao.hibernate.KmProviderCategoryDaoImp">
+		<property
+			name="modelName"
+			value="com.landray.kmss.km.provider.model.KmProviderCategory" />
+	</bean>
+	<bean
+		id="kmProviderCategoryTarget"
+		parent="KmssBaseTarget"
+		class="com.landray.kmss.km.provider.service.spring.KmProviderCategoryServiceImp">
+		<property
+			name="baseDao">
+			<ref
+				local="kmProviderCategoryDao" />
+		</property>
+	</bean>
+	<bean
+		id="kmProviderCategoryService"
+		parent="KmssBaseService">
+		<property
+			name="target">
+			<ref
+				local="kmProviderCategoryTarget" />
+		</property>
+	</bean>
+
+	<bean
+		id="kmProviderMainDao"
+		parent="KmssAuthBaseDao"
+		class="com.landray.kmss.km.provider.dao.hibernate.KmProviderMainDaoImp">
+		<property
+			name="modelName"
+			value="com.landray.kmss.km.provider.model.KmProviderMain" />
+	</bean>
+	<bean
+		id="kmProviderMainTarget"
+		parent="KmssBaseTarget"
+		class="com.landray.kmss.km.provider.service.spring.KmProviderMainServiceImp">
+		<property
+			name="baseDao">
+			<ref
+				local="kmProviderMainDao" />
+		</property>
+	</bean>
+	<bean
+		id="kmProviderMainService"
+		parent="KmssBaseService">
+		<property
+			name="target">
+			<ref
+				local="kmProviderMainTarget" />
+		</property>
+	</bean>
+	
+	<bean
+		id="kmProviderKdsProvider"
+		class="com.landray.kmss.km.provider.keydata.KmProviderKdsProvider">
+		<property
+			name="kmProviderMainService">
+			<ref
+				local="kmProviderMainService" />
+		</property>
+	</bean>
+	
+	
+
+</beans>

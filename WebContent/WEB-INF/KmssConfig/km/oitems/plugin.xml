@@ -1,0 +1,271 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<plugin
+	xmlns="http://www.example.org/plugin-config"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.example.org/plugin-config ../../plugin.xsd ">
+	<extension
+		point="com.landray.kmss.sys.admin.transfer">
+		<item
+			name="config">
+			<param
+				name="unid"
+				value="com.landray.kmss.km.oitems.transfer.KmOitemsTransferTask" />
+			<param
+				name="name"
+				value="办公物品数据迁移" />
+			<param
+				name="path"
+				value="/km/oitems/" />
+			<param
+				name="check"
+				value="com.landray.kmss.km.oitems.transfer.KmOitemsTransferChecker" />
+			<param
+				name="upgrade"
+				value="com.landray.kmss.km.oitems.transfer.KmOitemsTransferTask" />
+			<param
+				name="description"
+				value="办公物品迁移，将物品表(km_oitems_listing)的历史数据迁移到新加的物品入库记录汇总表(km_oitems_warehousing_Joinlist)(特别注意：1、切记该操作只能在升级到有汇总表版本且汇总表还没有新建数据的时候执行   2、执行前先备份好数据库  3、执行前全部应用服务器需要停止用户访问   4、执行过程可能比较久，请耐心等待。建议：先在测试环境执行成功，才到生产环境执行)" />
+		</item>
+	</extension>
+		<extension
+		point="com.landray.kmss.sys.admin.transfer">
+		<item
+			name="config">
+			<param
+				name="unid"
+				value="com.landray.kmss.km.oitems.transfer.KmOitemsTask" />
+			<param
+				name="name"
+				value="办公物品数据迁移" />
+			<param
+				name="path"
+				value="/km/oitems/" />
+			<param
+				name="check"
+				value="com.landray.kmss.km.oitems.transfer.KmOitemsChecker" />
+			<param
+				name="upgrade"
+				value="com.landray.kmss.km.oitems.transfer.KmOitemsTask" />
+			<param
+				name="description"
+				value="办公物品迁移，1、物品分类已经修改为简单分类，为了原来的分类能正常显示和选择，需要执行该数据迁移；2、原来的申请单状态和领取状态是不同的字段，但是又在同一筛选器中显示，导致状态多选时数据不准确，需要执行该迁移" />
+		</item>
+	</extension>
+	<extension
+		point="com.landray.kmss.sys.admin.transfer">
+		<item
+			name="config">
+			<param
+				name="unid"
+				value="com.landray.kmss.km.oitems.transfer.KmOitemsWarehousingRecordJoinListTask" />
+			<param
+				name="name"
+				value="办公物品数据迁移" />
+			<param
+				name="path"
+				value="/km/oitems/" />
+			<param
+				name="check"
+				value="com.landray.kmss.km.oitems.transfer.KmOitemsWarehousingRecordJoinListTask" />
+			<param
+				name="upgrade"
+				value="com.landray.kmss.km.oitems.transfer.KmOitemsWarehousingRecordJoinListTask" />
+			<param
+				name="description"
+				value="LINUX应用服务器环境下的MYSQL数据库表名默认区分大小写,此任务是将km_oitems_warehousing_Joinlist的数据迁移到km_oitems_warehousing_joinlist中(特别注意：1、切记该操作只能在升级到有汇总表版本且汇总表还没有新建数据的时候执行   2、执行前先备份好数据库  3、执行前全部应用服务器需要停止用户访问   4、执行过程可能比较久，请耐心等待。建议：先在测试环境执行成功，才到生产环境执行)" />
+		</item>
+	</extension>
+	<extension
+		point="com.landray.kmss.sys.admin.transfer">
+		<item
+			name="config">
+			<param
+				name="unid"
+				value="com.landray.kmss.km.oitems.transfer.KmOitemsListingTask" />
+			<param
+				name="name"
+				value="【办公物品管理】用品信息数据迁移" />
+			<param
+				name="path"
+				value="/km/oitems/" />
+			<param
+				name="check"
+				value="com.landray.kmss.km.oitems.transfer.KmOitemsListingTask" />
+			<param
+				name="upgrade"
+				value="com.landray.kmss.km.oitems.transfer.KmOitemsListingTask" />
+			<param
+				name="description"
+				value="修复fd_reference_price的小数位精度" />
+		</item>
+	</extension>
+	<extension point="com.landray.kmss.sys.mobile.config">
+		<item name="info">
+			<param name="name" value="{km-oitems:module.km.oitems}" />
+			<param name="modelName" value="com.landray.kmss.km.oitems.model.KmOitemsBudgerApplication" />
+			<param name="defaultUrl" value="/km/oitems/mobile/nav.json" />
+		</item>
+	</extension>
+	<extension point="com.landray.kmss.sys.mobile.compress" model="*">
+		<item name="js-pkg">
+			<param name="name" value="mui-oitems-list.js" />
+			<param name="targetFile" value="/km/oitems/mobile/resource/js/mui-oitems-list.js" />
+			<param name="tinyId" value="oitems-list" />
+		</item>
+	</extension>
+		<!-- 表单关联控件可选模块扩展点实现 -->
+	<extension point="com.landray.kmss.sys.xform.base.service.controls.relevance" model="*">
+		<item name="node">
+			<param name="modelName" value="com.landray.kmss.km.oitems.model.KmOitemsBudgerApplication" />
+			<param name="templateModelName" value="com.landray.kmss.km.oitems.model.KmOitemsTemplet" />
+			<param name="key" value="kmOitemsBudger" />
+			<param name="templatePropertyName" value="fdTemplate" />
+			<param name="moduleMessageKey" value="km-oitems:kmOitems.tree.modelName" />
+		</item>
+	</extension>
+	
+	<!--办公用品一键选择分类扩展点实现 -->
+	<extension point="com.landray.kmss.sys.person.categoryUrl" model="com.landray.kmss.km.oitems.model.KmOitemsListing" >
+		<item name="categoryUrl">
+			<param name="addUrl" value="/km/oitems/km_oitems_listing/kmOitemsListing.do?method=add&amp;categoryId={0}" />
+			<param name="templateModel" value="com.landray.kmss.km.oitems.model.KmOitemsManage" />
+		</item>
+	</extension>
+	
+	<extension
+		point="com.landray.kmss.sys.listshow.listShowConfig"
+		model="com.landray.kmss.km.oitems.model.KmOitemsBudgerApplication">
+		<item
+			name="listShowConfig">
+			<param
+				name="name"
+				value="km-oitems:kmOitems.tree.my.all" />
+			<param
+				name="model"
+				value="com.landray.kmss.km.oitems.model.KmOitemsBudgerApplication" />
+			<param
+				name="page"
+				value="/listAll" />
+				<param
+				name="default"
+				value="docSubject;fdTemplate.fdTempletType;docCreator.fdName;docCreateTime;fdOutTime;docStatus;nodeName;handlerName" />
+			<param
+				name="customized"
+				value="fdTemplate.fdTempletType;km-oitems:kmOitems.tree.application.type,fdOutTime;km-oitems:kmOitemsBudgerApplication.fdOutTime,nodeName;km-oitems:sysWfNode.processingNode.currentProcess,handlerName;km-oitems:sysWfNode.processingNode.currentProcessor" />
+		</item>
+	</extension> 
+		<extension
+		point="com.landray.kmss.sys.listshow.listShowConfig"
+		model="com.landray.kmss.km.oitems.model.KmOitemsBudgerApplication">
+		<item
+			name="listShowConfig">
+			<param
+				name="name"
+				value="km-oitems:kmOitems.tree.my.submit" />
+			<param
+				name="model"
+				value="com.landray.kmss.km.oitems.model.KmOitemsBudgerApplication" />
+			<param
+				name="page"
+				value="/listCreate" />
+				<param
+				name="default"
+				value="docSubject;fdTemplate.fdTempletType;docCreator.fdName;docCreateTime;fdOutTime;docStatus;nodeName;handlerName" />
+			<param
+				name="customized"
+				value="fdTemplate.fdTempletType;km-oitems:kmOitems.tree.application.type,fdOutTime;km-oitems:kmOitemsBudgerApplication.fdOutTime,nodeName;km-oitems:sysWfNode.processingNode.currentProcess,handlerName;km-oitems:sysWfNode.processingNode.currentProcessor" />
+		</item>
+	</extension>
+	<extension
+		point="com.landray.kmss.sys.listshow.listShowConfig"
+		model="com.landray.kmss.km.oitems.model.KmOitemsBudgerApplication">
+		<item
+			name="listShowConfig">
+			<param
+				name="name"
+				value="km-oitems:kmOitems.tree.my.approval" />
+			<param
+				name="model"
+				value="com.landray.kmss.km.oitems.model.KmOitemsBudgerApplication" />
+			<param
+				name="page"
+				value="/listApproval" />
+				<param
+				name="default"
+				value="docSubject;fdTemplate.fdTempletType;docCreator.fdName;docCreateTime;fdOutTime;docStatus;nodeName;handlerName" />
+			<param
+				name="customized"
+				value="fdTemplate.fdTempletType;km-oitems:kmOitems.tree.application.type,fdOutTime;km-oitems:kmOitemsBudgerApplication.fdOutTime,nodeName;km-oitems:sysWfNode.processingNode.currentProcess,handlerName;km-oitems:sysWfNode.processingNode.currentProcessor" />
+		</item>
+	</extension>
+	<extension
+		point="com.landray.kmss.sys.listshow.listShowConfig"
+		model="com.landray.kmss.km.oitems.model.KmOitemsBudgerApplication">
+		<item
+			name="listShowConfig">
+			<param
+				name="name"
+				value="km-oitems:kmOitems.tree.my.approved" />
+			<param
+				name="model"
+				value="com.landray.kmss.km.oitems.model.KmOitemsBudgerApplication" />
+			<param
+				name="page"
+				value="/listApproved" />
+				<param
+				name="default"
+				value="docSubject;fdTemplate.fdTempletType;docCreator.fdName;docCreateTime;fdOutTime;docStatus;nodeName;handlerName" />
+			<param
+				name="customized"
+				value="fdTemplate.fdTempletType;km-oitems:kmOitems.tree.application.type,fdOutTime;km-oitems:kmOitemsBudgerApplication.fdOutTime,nodeName;km-oitems:sysWfNode.processingNode.currentProcess,handlerName;km-oitems:sysWfNode.processingNode.currentProcessor" />
+		</item>
+	</extension>
+	<!-- 办公用品启动子流程  -->
+	<extension
+		point="com.landray.kmss.sys.workflow.support.oa.subprocess"
+		model="*">		
+		<item
+			name="subprocess">
+			<param
+				name="modelName"
+				value="com.landray.kmss.km.oitems.model.KmOitemsBudgerApplication" />
+			<param
+				name="cateBean"
+				value="kmOitemsTempletTreeService" />
+			<param
+				name="createParam"
+				value="templateId=!{cateid}" />
+		</item>
+	</extension>
+	
+	<!-- 授权属性显示扩展  -->
+	<extension
+		point="com.landray.kmss.sys.right.change.display">		
+		<item
+			name="config">
+			<param
+				name="modelName"
+				value="com.landray.kmss.km.oitems.model.KmOitemsManage" />
+			<param
+				name="provider"
+				value="com.landray.kmss.km.oitems.right.KmOitemsManageProvider" />
+		</item>
+	</extension>
+	<!-- 用品申请单编号规则 -->
+	<extension 
+        point="com.landray.kmss.sys.number.config" 
+        model="*">
+        <item 
+            name="extend">
+            <param 
+                name="modelName" 
+                value="com.landray.kmss.km.oitems.model.KmOitemsBudgerApplication"/>
+            <param 
+                name="templatePropertyName" 
+                value="fdTemplate"/>
+            <param 
+                name="moduleName" 
+                value="{km-oitems:module.km.oitems}"/>
+        </item>
+    </extension>
+</plugin>

@@ -1,0 +1,3515 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<version xmlns="http://www.example.org/version-config" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.example.org/version-config ../version.xsd">
+	<modifies>
+		<modify>
+			<description>#166052 修复 参与的列表优化未参加的不显示</description>
+			<author>熊翅辉</author>
+			<revision-time>2022-05-31</revision-time>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#153017 优化 TransactionUtils.beginTransaction 和 TransactionUtils.beginNewTransaction</description>
+			<author>黄海</author>
+			<revision-time>2022-05-05</revision-time>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#159641 修复 门户部件数据源增加缓存机制</description>
+			<author>苏琦</author>
+			<revision-time>2022-04-27</revision-time>
+			<relation>
+				<relation-module>sys/portal</relation-module>
+			</relation>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#163597 修复 有默认权限的用户可以看到所有调查问卷</description>
+			<author>潘永辉</author>
+			<revision-time>2022-04-27</revision-time>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#160940 修复 修改后，进度条和下面的按钮有部分的边界重合了</description>
+			<author>郜静然</author>
+			<revision-time>2022-04-24</revision-time>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#161447 修复 设置省市区校验在移动端无法翻页</description>
+			<author>熊翅辉</author>
+			<revision-time>2022-03-17</revision-time>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#161102 修复 调查问卷中在预览问卷中编辑保存题目文字会出现样式代码</description>
+			<author>苏琦</author>
+			<revision-time>2022-03-15</revision-time>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#161293 修复 调查管理选择原因无边框</description>
+			<author>熊翅辉</author>
+			<revision-time>2022-03-15</revision-time>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#161234 修复 矩阵填空题进度无反应</description>
+			<author>熊翅辉</author>
+			<revision-time>2022-03-15</revision-time>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#159822 修复 调查管理模块填写问卷时，图片过大会遮挡关闭按钮</description>
+			<author>郜静然</author>
+			<revision-time>2022-03-07</revision-time>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#157643 新增 mk数据源接口</description>
+			<author>林宇超</author>
+			<revision-time>2022-02-18</revision-time>
+			<relation>
+				<relation-module>sys/portal</relation-module>
+			</relation>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#158746 修复 调查管理问卷的填空题，查看全部信息，不显示“仅显示其他或原因”</description>
+			<author>潘永辉</author>
+			<revision-time>2022-01-26</revision-time>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#156748 修复 sqlserver数据库打开调查报错</description>
+			<author>张颖</author>
+			<revision-time>2022-01-19</revision-time>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#156686 修复 培训课程模板管理的培训活动被评分后，培训课程模板的详情页关联的培训列表没有显示得分</description>
+			<author>张颖</author>
+			<revision-time>2021-12-27</revision-time>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#155327 修复 调查问卷结果统计无数据</description>
+			<author>熊翅辉</author>
+			<revision-time>2021-12-08</revision-time>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#155254 修复 复制的题目更改顺序后混乱</description>
+			<author>熊翅辉</author>
+			<revision-time>2021-12-08</revision-time>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#154466 修复 调查管理移动端列表页的倒计时在点击调查后返回没有刷新</description>
+			<author>潘永辉</author>
+			<revision-time>2021-12-06</revision-time>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#154127 修复 调查管理问卷中附件的查看权限</description>
+			<author>王进府</author>
+			<revision-time>2021-11-22</revision-time>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#154162 修复 调查关联移动端底部显示多余按钮</description>
+			<author>苏琦</author>
+			<revision-time>2021-11-22</revision-time>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#152654 修复 预览问卷关联失效</description>
+			<author>熊翅辉</author>
+			<revision-time>2021-11-08</revision-time>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#152012 修复 修复更新统计数据时查询参数过大导致异常</description>
+			<author>潘永辉</author>
+			<revision-time>2021-10-29</revision-time>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#144574 修复 英文环境调查中的问卷倒计时显示异常</description>
+			<author>潘永辉</author>
+			<revision-time>2021-10-29</revision-time>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#148262 修复 调查问卷结果导出excel后，打开报错</description>
+			<author>熊翅辉</author>
+			<revision-time>2021-09-09</revision-time>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#147979 优化 更新统计状态为调查中问卷的调查结果</description>
+			<author>王进府</author>
+			<revision-time>2021-09-03</revision-time>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#147569 修复 调查问卷提醒问题，提醒次数和提醒默认值</description>
+			<author>王进府</author>
+			<revision-time>2021-08-26</revision-time>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#146986 优化 调查问卷结果导出报错</description>
+			<author>熊翅辉</author>
+			<revision-time>2021-08-19</revision-time>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#146860 修复 调查结果导出excel，文档中是空的</description>
+			<author>熊翅辉</author>
+			<revision-time>2021-08-13</revision-time>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#146450 修复 sonar检测问题</description>
+			<author>林宇超</author>
+			<revision-time>2021-08-11</revision-time>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#146266 修复 移动端调查问卷填写完成后，无法进行下一页</description>
+			<author>熊翅辉</author>
+			<revision-time>2021-08-09</revision-time>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#146066 修复 选最后一项不显示其他调查内容, 必须加载完所有页数</description>
+			<author>熊翅辉</author>
+			<revision-time>2021-08-05</revision-time>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#145909 修复 微信扫码填写时，填写第一题就可以提交了</description>
+			<author>熊翅辉</author>
+			<revision-time>2021-08-05</revision-time>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#145551 修复 调查管理题目设置横向排列，实际调查还是竖向的</description>
+			<author>熊翅辉</author>
+			<revision-time>2021-07-27</revision-time>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#145461修复 删除调查的标题图片后无法再上传</description>
+			<author>潘永辉</author>
+			<revision-time>2021-07-26</revision-time>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#145108 修复 已参与过的调查不出现在我已参与的视图中</description>
+			<author>熊翅辉</author>
+			<revision-time>2021-07-23</revision-time>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#144338 #144239 修复 题目模板关联出错</description>
+			<author>熊翅辉</author>
+			<revision-time>2021-07-15</revision-time>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#140720 修复 【服务问题单】调查管理多行输入窗口被输入法遮挡</description>
+			<author>郜静然</author>
+			<revision-time>2021-06-03</revision-time>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#140297 修复 SQL参数化</description>
+			<author>苏琦</author>
+			<revision-time>2021-05-28</revision-time>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#139976 修复 用户多选菜单设置了横向排列，但是实际发布调查后却是纵向排列，预览问卷的时候排列还是正确的</description>
+			<author>王京</author>
+			<revision-time>2021-05-19</revision-time>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#139030 修复 调查报告后，点击查看详情进行审批，提交后页面不会自动关闭</description>
+			<author>王京</author>
+			<revision-time>2021-05-14</revision-time>
+			<relation>
+				<relation-module>core</relation-module>
+			</relation>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#139043 修复【服务问题单】调查管理在移动端翻页后不显示图片</description>
+			<author>王进府</author>
+			<revision-time>2021-05-07</revision-time>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#138942 #138949 优化 调整不参与调查时输入框的高度，隐藏调查结果数据分析页的移动二维码</description>
+			<author>潘永辉</author>
+			<revision-time>2021-05-06</revision-time>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#134514 修复 填空题含英文字符;，调查问卷查看页，;后面文字未显示</description>
+			<author>王进府</author>
+			<revision-time>2021-04-28</revision-time>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#138394 修复 【服务问题单】调查管理序号换行</description>
+			<author>王进府</author>
+			<revision-time>2021-04-26</revision-time>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#137959 修复 矩阵答题答案保存的数据没有按题目顺序时，题目与答案没有正确对应</description>
+			<author>曹勇</author>
+			<revision-time>2021-04-22</revision-time>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#136411 修复 暂存调查，移动端打开，预览问卷，控制台报错，点击下一页也无效</description>
+			<author>王京</author>
+			<revision-time>2021-04-15</revision-time>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#137011 修复 问卷调查-调查结果导出为空和参与人员答卷分析 无法导出</description>
+			<author>王京</author>
+			<revision-time>2021-04-15</revision-time>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#137763 修复 统计调查结果页面点击查看按钮，新开页签title异常</description>
+			<author>潘永辉</author>
+			<revision-time>2021-04-15</revision-time>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#137739 修复 调查管理，多选非必填题目，移动端勾选后再取消选项，点击下一页或提交会提示必须勾选</description>
+			<author>苏琦</author>
+			<revision-time>2021-04-15</revision-time>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#136838 修复 设置题目时多次选择题目，提交后只保存了第一次选择的</description>
+			<author>潘永辉</author>
+			<revision-time>2021-03-29</revision-time>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#136808 优化 参与调查者可查看问卷属性信息</description>
+			<author>潘永辉</author>
+			<revision-time>2021-03-29</revision-time>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#136200 修复 调查问卷，矩阵评分题，参与人员答卷分析导excel的平均分计算不对</description>
+			<author>王京</author>
+			<revision-time>2021-03-25</revision-time>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#132131 修复 新建调查选择填空题，选择转换与校验--小数，区间设置0-100，但是移动端进行调查填写100.6没有做校验</description>
+			<author>苏琦</author>
+			<revision-time>2021-03-24</revision-time>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#135913 修复 问卷题目字符转义后显示不正确</description>
+			<author>潘永辉</author>
+			<revision-time>2021-03-20</revision-time>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#134277 修复 调查管理复制题目后保存丢失</description>
+			<author>潘永辉</author>
+			<revision-time>2021-03-08</revision-time>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#134145 修复 调查管理，参与人员答卷分析导出excel表格填空题数据错乱</description>
+			<author>潘永辉</author>
+			<revision-time>2021-03-03</revision-time>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#134000 修复 英文语言环境调查问卷的结束时间有问题</description>
+			<author>王京</author>
+			<revision-time>2021-03-01</revision-time>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#132655 修复 新建调查问卷富文本标题报错(报非法值错误)</description>
+			<author>潘永辉</author>
+			<revision-time>2021-02-26</revision-time>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#133109 修复 调查问卷结束后，导出信息，后台报错，导出的EXCLE文件空白没有内容</description>
+			<author>潘永辉</author>
+			<revision-time>2021-02-26</revision-time>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#133698 修复 新建调查选择超多调理人员时，点击”开始调查“时报错</description>
+			<author>潘永辉</author>
+			<revision-time>2021-02-25</revision-time>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#134169 修复 移动端微信扫二维码答题，第一次扫码，会出现不显示“下一页”的情况</description>
+			<author>潘永辉</author>
+			<revision-time>2021-02-25</revision-time>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#133556 修复 调查管理添加的表格填空题设置行标题超过8行后，查看参与人员答卷分析报错</description>
+			<author>王京</author>
+			<revision-time>2021-02-22</revision-time>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#133030 #133046 修复 移动端多选题修复选项数量限制无效</description>
+			<author>潘永辉</author>
+			<revision-time>2021-02-05</revision-time>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#131565 修复 新建调查管理，各题目设置关联配置，移动端答题后，参与人员答卷分析页面样式异常</description>
+			<author>潘永辉</author>
+			<revision-time>2021-02-01</revision-time>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#131632 修复 调查管理，重新提交页面脚本报错</description>
+			<author>潘永辉</author>
+			<revision-time>2021-01-27</revision-time>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#132550 修复 题目RTF域中插入图片，在试卷预览时图片正常显示，但PC端答题时图片不显示</description>
+			<author>潘永辉</author>
+			<revision-time>2021-01-25</revision-time>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#131630 修复 修改问卷属性后，之前选择的通知方式丢失</description>
+			<author>苏琦</author>
+			<revision-time>2021-01-20</revision-time>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#130465 修复 调查管理设置题目关联，无法显示“下一页”按钮</description>
+			<author>潘永辉</author>
+			<revision-time>2021-01-11</revision-time>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#130897 修复 调查管理题目勾选自动添加其他选项，格式显示异常</description>
+			<author>潘永辉</author>
+			<revision-time>2021-01-07</revision-time>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#126648 修复 调查管理模块数据字典表缺少字段描述</description>
+			<author>王雄峰</author>
+			<revision-time>2020-12-30</revision-time>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#125717 修复 调查管理中在问题中添加了“选择原因”，填写人也填写了选择原因，但在调查结果查看和导出的表格中都没有显示</description>
+			<author>潘永辉</author>
+			<revision-time>2020-12-13</revision-time>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#124814 优化 移动端显示调查的题目序号会自动换行</description>
+			<author>王京</author>
+			<revision-time>2020-11-11</revision-time>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#119898 优化 多个项目出现调查统计结果为空的情况并添加debug打印日志</description>
+			<author>王书强</author>
+			<revision-time>2020-10-27</revision-time>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#115934 修复 首页无状态，切换导航条后就显示状态了</description>
+			<author>纪斌杰</author>
+			<revision-time>2020-10-27</revision-time>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#123147 修复 移动端，提交用手机输入法的下一步，导致报错</description>
+			<author>潘永辉</author>
+			<revision-time>2020-10-24</revision-time>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#112431修复 自定义html代码。样式显示后无法操作的问题</description>
+			<author>王京</author>
+			<revision-time>2020-10-20</revision-time>
+			<relation>
+				<relation-module>core</relation-module>
+			</relation>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#121704 修复 用户拒绝调查后未删除待办</description>
+			<author>潘永辉</author>
+			<revision-time>2020-10-08</revision-time>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#119020 新建调查管理，参与人员默认语言为英语时，接收的待办信息存在资源文件未解析的情况</description>
+			<author>刘水军</author>
+			<revision-time>2020-09-29</revision-time>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#118418 修复【调查管理】去掉多余的debugger信息</description>
+			<author>王京</author>
+			<revision-time>2020-09-22</revision-time>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#119770 优化 调查问卷单选题选择选项横向排列时选项左对齐</description>
+			<author>潘永辉</author>
+			<revision-time>2020-09-17</revision-time>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#119010 新建调查管理，设置题目关联时，关联题目名称过长时，样式需要优化</description>
+			<author>刘水军</author>
+			<revision-time>2020-09-17</revision-time>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#115794 修复 问卷调查，查看结果页面事务报错</description>
+			<author>潘永辉</author>
+			<revision-time>2020-08-25</revision-time>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#115794 修复 问卷调查，查看结果页面事务报错</description>
+			<author>潘永辉</author>
+			<revision-time>2020-08-24</revision-time>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#116690【 查看已结束调查文档。提示报错。</description>
+			<author>刘水军</author>
+			<revision-time>2020-08-24</revision-time>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#118170 修复 移动端调查非必填问题</description>
+			<author>苏琦</author>
+			<revision-time>2020-09-03</revision-time>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#115710 修复 调查管理模块调查问卷设置发送提醒，产生待阅，不去阅读，用户直接填写问卷后，该待阅不会消失</description>
+			<author>钟清学</author>
+			<revision-time>2020-08-21</revision-time>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#115911 调查开始之后新增调查结果可阅读者，刷新了参与人员答卷分析数据</description>
+			<author>刘水军</author>
+			<revision-time>2020-08-21</revision-time>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#114054日文模式下，新建调查管理，新建矩阵多选题时，点击增加矩阵问题与矩阵选项报错</description>
+			<author>刘水军</author>
+			<revision-time>2020-08-14</revision-time>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#111742 修复 调查结果页签，选择调查中，查看问卷一，页面样式请优化下</description>
+			<author>苏琦</author>
+			<revision-time>2020-08-04</revision-time>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#113576 修复 调查管理题目分类没有导出初始化数据的功能</description>
+			<author>潘永辉</author>
+			<revision-time>2020-08-03</revision-time>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#113509 修复 调查管理-问答题必答题无日文翻译</description>
+			<author>林剑文</author>
+			<revision-time>2020-08-03</revision-time>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#111969 修复 调查管理选第一题点下一页会空白</description>
+			<author>林剑文</author>
+			<revision-time>2020-07-21</revision-time>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#111734 修复 移动端，参加调查，马上参与调查，答题页面中出现样式问题。具体看图</description>
+			<author>梅瑞鹏</author>
+			<revision-time>2020-07-21</revision-time>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#111599 修复 新建调查，待审状态，调查题目带出了字符</description>
+			<author>梅瑞鹏</author>
+			<revision-time>2020-07-21</revision-time>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#111738 修复 pc端，矩阵填空题，查看页（答题页）线条显示有点乱</description>
+			<author>苏琦</author>
+			<revision-time>2020-07-19</revision-time>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#99465 修复 一道一道设置选项关联，全部按正确步骤选了进度条不是100%</description>
+			<author>詹垒</author>
+			<revision-time>2020-07-13</revision-time>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#110372 修复 调查管理中修改正在调查中的时间范围，重新提交后会把已调查人员重新写入到参与人员信息的未调查人员中</description>
+			<author>孙佳</author>
+			<revision-time>2020-07-07</revision-time>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#110333 优化 暂存的调查可以通过扫描二维码参与调差</description>
+			<author>孙佳</author>
+			<revision-time>2020-07-01</revision-time>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#108905 修复 表格填空题加评分题，导出结果的评分题错位显示</description>
+			<author>梅瑞鹏</author>
+			<revision-time>2020-07-01</revision-time>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#106782 修复 h1专项：题目输入h1，题目会被更改</description>
+			<author>梅瑞鹏</author>
+			<revision-time>2020-06-20</revision-time>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#106228 优化 多语言优化</description>
+			<author>郑鑫</author>
+			<revision-time>2020-06-17</revision-time>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#108619 修复 矩阵填空题，非必填项没有填入内容后，在调查结果界面答案对应错乱</description>
+			<author>钟清学</author>
+			<revision-time>2020-06-16</revision-time>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#108358 修复 调查管理模块导出调查结果返回空白页</description>
+			<author>林剑文</author>
+			<revision-time>2020-06-15</revision-time>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#101225 修复 右侧按钮重叠了</description>
+			<author>梅瑞鹏</author>
+			<revision-time>2020-06-13</revision-time>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#76591 修复 调查列表页面，使用了列表自定义字段，点击查看按钮显示的二维码不全</description>
+			<author>潘永辉</author>
+			<revision-time>2020-06-09</revision-time>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#106360 修复 调查结果点击查看更多信息页面报错</description>
+			<author>潘永辉</author>
+			<revision-time>2020-06-09</revision-time>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#107853 修复 V15调查管理模块，问卷题目标题在RTF中插入图片，预览的时候能显示，参加调查的时候无法显示</description>
+			<author>徐斌</author>
+			<revision-time>2020-06-05</revision-time>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#107122 修复 调查管理，配置了分页标记的调查，在移动端作答的数据在参与人员统计分析里面缺失</description>
+			<author>梅瑞鹏</author>
+			<revision-time>2020-05-30</revision-time>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#102231 修复 问卷调查添加分布错乱和显示信息有错</description>
+			<author>林剑文</author>
+			<revision-time>2020-05-29</revision-time>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#104958 修复 问卷调查添加分布错乱和显示信息有错</description>
+			<author>林剑文</author>
+			<revision-time>2020-05-29</revision-time>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#105891 修复 矩阵填空题且问题选项是12个时，调查结果导出的excel为空白</description>
+			<author>钟清学</author>
+			<revision-time>2020-05-20</revision-time>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#104887 修复 填写完调查数据后，提交，提示身份证号那里没有填写</description>
+			<author>林剑文</author>
+			<revision-time>2020-05-15</revision-time>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#104677 修复 调查管理，设置题目关联，被关联题目在移动端显示空白</description>
+			<author>何景锋</author>
+			<revision-time>2020-05-13</revision-time>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#104692 修复 调查管理结果统计报错</description>
+			<author>叶正平</author>
+			<revision-time>2020-05-08</revision-time>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#104480 新建题目移动顺序，点击关联显示当前题目错误</description>
+			<author>李芳敏</author>
+			<revision-time>2020-05-07</revision-time>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#102742 优化 多人参与调查导致线程卡死</description>
+			<author>钟清学</author>
+			<revision-time>2020-04-30</revision-time>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#101749 修复 调查关联增加分页符导致关联异常</description>
+			<author>郑鑫</author>
+			<revision-time>2020-04-26</revision-time>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#101935 修复 参与人员答卷分析格式问题</description>
+			<author>郑鑫</author>
+			<revision-time>2020-04-14</revision-time>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#99017 优化 Demo部门对我们原来的英文翻译做了一些优化调整，需要合并到V15产品里</description>
+			<author>陈尉建</author>
+			<revision-time>2020-04-09</revision-time>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#101459 修复 多次调查“参与人员答卷分析”提交时间未更新问题</description>
+			<author>郑鑫</author>
+			<revision-time>2020-04-08</revision-time>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#101016 修复 移动端题目跳转问题</description>
+			<author>郑鑫</author>
+			<revision-time>2020-03-31</revision-time>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#100045 修复 题目上下移动排序后，内容出错</description>
+			<author>郑鑫</author>
+			<revision-time>2020-03-31</revision-time>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#95462 新增 集团分级授权下，拥有场所XXXX_阅读文档权限的用户不能通过url访问其他场所的文档</description>
+			<author>叶正平</author>
+			<revision-time>2020-03-18</revision-time>
+			<relation>
+				<relation-module>core</relation-module>
+				<relation-module>sys/authorization</relation-module>
+			</relation>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#99331 修复 调查管理评分题出现乱码</description>
+			<author>郑鑫</author>
+			<revision-time>2020-03-18</revision-time>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#94277 新增 帮助中心部署</description>
+			<author>谭伟铭</author>
+			<revision-time>2020-03-16</revision-time>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#97320 优化 调查管理门户样例不可跳转</description>
+			<author>谭伟铭</author>
+			<revision-time>2020-03-16</revision-time>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#96449 优化 调查管理门户样例</description>
+			<author>谭伟铭</author>
+			<revision-time>2020-03-16</revision-time>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#98207 修复 填空题的省市区勾选默认值不填保存，重新编辑有问题</description>
+			<author>郑鑫</author>
+			<revision-time>2020-03-12</revision-time>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#97334 修复 IE8，新增关联选项，点击无反应</description>
+			<author>郑鑫</author>
+			<revision-time>2020-03-12</revision-time>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#97923 修复 调查管理参与调查人群组问题</description>
+			<author>郑鑫</author>
+			<revision-time>2020-03-09</revision-time>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#92952 修复 表格填空题增加空格点击报错</description>
+			<author>郑鑫</author>
+			<revision-time>2020-03-04</revision-time>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#93603 修复 更改调查人数后，点击更新统计数据，调查结果数据分析的数据未更新</description>
+			<author>郑鑫</author>
+			<revision-time>2020-03-04</revision-time>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#94397 优化 调查管理多语言优化</description>
+			<author>郑鑫</author>
+			<revision-time>2020-03-04</revision-time>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#94422 修复 回归测试问题修复</description>
+			<author>郑鑫</author>
+			<revision-time>2020-03-04</revision-time>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#97815 修复 集团分级授权下“问卷题目分类设置”分类的的控制问题</description>
+			<author>郑鑫</author>
+			<revision-time>2020-03-03</revision-time>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#97496 修复 问卷说明如果有超链接，在移动端不会自动换行</description>
+			<author>郑鑫</author>
+			<revision-time>2020-02-28</revision-time>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#95948 新增 单项填空题</description>
+			<author>郑鑫</author>
+			<revision-time>2020-02-28</revision-time>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#94416 优化 沟通协作底部开发新版展开页签</description>
+			<author>谭伟铭</author>
+			<revision-time>2020-02-24</revision-time>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#89474 新增 增加题目关联逻辑</description>
+			<author>郑鑫</author>
+			<revision-time>2020-02-24</revision-time>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#95834 修复 从移动端待办进入调查管理的待审页面，点击通过，页面空白</description>
+			<author>郑鑫</author>
+			<revision-time>2020-02-24</revision-time>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#94101 优化 进入模块，点击“后台配置”目录，请求的url需要显示在地址栏中</description>
+			<author>钟清学</author>
+			<revision-time>2020-02-15</revision-time>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#94869 修复 复制调查修改调查类型后仍发通知给原调查人员</description>
+			<author>郑鑫</author>
+			<revision-time>2020-01-20</revision-time>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#92108 修复 打开统计查看页报错</description>
+			<author>郑鑫</author>
+			<revision-time>2020-01-20</revision-time>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#91410 修复 多人重复调查，矩阵类型的数据不会更新</description>
+			<author>何协殷</author>
+			<revision-time>2020-01-13</revision-time>
+			<baseline>V15.0.3.R.20200117</baseline>
+		</modify>
+		<modify>
+			<description>#93175 修复 矩阵填空题只有一题，填写值后去掉可以提交</description>
+			<author>郑鑫</author>
+			<revision-time>2020-01-07</revision-time>
+			<baseline>V15.0.3.R.20200117</baseline>
+		</modify>
+		<modify>
+			<description>#92172 优化 调查管理多语言未翻译问题</description>
+			<author>谭伟铭</author>
+			<revision-time>2020-01-06</revision-time>
+			<baseline>V15.0.3.R.20200117</baseline>
+		</modify>
+		<modify>
+			<description>#92988 修复 二维码扫码调查仅显示数据，没有显示样式</description>
+			<author>郑鑫</author>
+			<revision-time>2020-01-03</revision-time>
+			<baseline>V15.0.3.R.20200117</baseline>
+		</modify>
+		<modify>
+			<description>#91119 修复 更改调查人数后，点击更新统计数据，调查结果数据分析的数据未更新</description>
+			<author>何协殷</author>
+			<revision-time>2019-12-30</revision-time>
+			<baseline>V15.0.3.R.20200117</baseline>
+		</modify>
+		<modify>
+			<description>#92119 修复 添加分页符，把上一个点复制，新建的时候，分页符被置到最后了</description>
+			<author>何协殷</author>
+			<revision-time>2019-12-30</revision-time>
+			<baseline>V15.0.3.R.20200117</baseline>
+		</modify>
+		<modify>
+			<description>#89472 新增 增加矩阵填空题</description>
+			<author>郑鑫</author>
+			<revision-time>2019-12-30</revision-time>
+			<baseline>V15.0.3.R.20200117</baseline>
+		</modify>
+		<modify>
+			<description>#89473 新增 增加表格填空题</description>
+			<author>郑鑫</author>
+			<revision-time>2019-12-30</revision-time>
+			<baseline>V15.0.3.R.20200117</baseline>
+		</modify>
+		<modify>
+			<description>#91173 移动端调查管理二级列表页UI优化</description>
+			<author>杨铮</author>
+			<revision-time>2019-12-26</revision-time>
+			<relation>
+				<relation-module>sys/mobile</relation-module>
+			</relation>
+			<baseline>V15.0.3.R.20200117</baseline>
+		</modify>
+		<modify>
+			<description>#91466 修复 列表页面字段有一个被截断</description>
+			<author>何协殷</author>
+			<revision-time>2019-12-20</revision-time>
+			<baseline>V15.0.3.R.20200117</baseline>
+		</modify>
+		<modify>
+			<description>#90376 修复 调查中的问卷点击更新统计之后的页面，执行【更新统计数据并查看结果】颜色默认要区别</description>
+			<author>何协殷</author>
+			<revision-time>2019-12-18</revision-time>
+			<baseline>V15.0.3.R.20200117</baseline>
+		</modify>
+		<modify>
+			<description>#76459 优化 调查结束后，相关交互优化</description>
+			<author>尹成</author>
+			<revision-time>2019-12-11</revision-time>
+			<baseline>V15.0.3.R.20200117</baseline>
+		</modify>
+		<modify>
+			<description>#90487 修复 移动端pc端同时提交无去重</description>
+			<author>郑鑫</author>
+			<revision-time>2019-12-13</revision-time>
+			<baseline>V15.0.3.R.20200117</baseline>
+		</modify>
+		<modify>
+			<description>#90026 修复 字体过多，会把提示撑开</description>
+			<author>郑鑫</author>
+			<revision-time>2019-12-13</revision-time>
+			<baseline>V15.0.3.R.20200117</baseline>
+		</modify>
+		<modify>
+			<description>#89604 修复 调查管理移动端多语言处理和翻译</description>
+			<author>郑鑫</author>
+			<revision-time>2019-12-13</revision-time>
+			<baseline>V15.0.3.R.20200117</baseline>
+		</modify>
+		<modify>
+			<description>#88832 优化 问卷开始调查后，希望能调整问卷的基本信息，如调查结果可阅读者等信息</description>
+			<author>郑鑫</author>
+			<revision-time>2019-12-10</revision-time>
+			<baseline>V15.0.3.R.20200117</baseline>
+		</modify>
+		<modify>
+			<description>#87033 优化 调查管理更新统计数据</description>
+			<author>何协殷</author>
+			<revision-time>2019-12-10</revision-time>
+			<baseline>V15.0.3.R.20200117</baseline>
+		</modify>
+		<modify>
+			<description>#90356 修复 调查结果页面点击“查看调查结果”跳转页面空白</description>
+			<author>何协殷</author>
+			<revision-time>2019-12-10</revision-time>
+			<baseline>V15.0.3.R.20200117</baseline>
+		</modify>
+		<modify>
+			<description>#88715 修复 pc端输入""，返回查看内容为空</description>
+			<author>郑鑫</author>
+			<revision-time>2019-11-27</revision-time>
+			<baseline>V15.0.3.R.20200117</baseline>
+		</modify>
+		<modify>
+			<description>#88289 修复 网上调查拷贝word中的文字保存后是乱码</description>
+			<author>何协殷</author>
+			<revision-time>2019-11-18</revision-time>
+			<baseline>V15.0.3.R.20200117</baseline>
+		</modify>
+		<modify>
+			<description>#88070 修复 移动端问答题的分号在调查结果页面没有正常显示</description>
+			<author>郑鑫</author>
+			<revision-time>2019-11-18</revision-time>
+			<baseline>V15.0.3.R.20200117</baseline>
+		</modify>
+		<modify>
+			<description>#87954 修复 集团分级下网上调查"删除传阅记录权限"部分问题</description>
+			<author>廖碧成</author>
+			<revision-time>2019-11-16</revision-time>
+			<baseline>V15.0.3.R.20200117</baseline>
+		</modify>
+		<modify>
+			<description>#87716 修复 移动端跳题与多选展示处理</description>
+			<author>郑鑫</author>
+			<revision-time>2019-11-12</revision-time>
+			<baseline>V15.0.3.R.20200117</baseline>
+		</modify>
+		<modify>
+			<description>#87596 优化 调查管理上下翻页的需求UI验收</description>
+			<author>郑鑫</author>
+			<revision-time>2019-11-12</revision-time>
+			<relation>
+				<relation-module>sys/mobile</relation-module>
+			</relation>
+			<baseline>V15.0.3.R.20200117</baseline>
+		</modify>
+		<modify>
+			<description>#53359 新增 移动门户快捷方式选择系统引入的时候没有任何EKP模块</description>
+			<author>钟清学</author>
+			<revision-time>2019-11-11</revision-time>
+			<baseline>V15.0.3.R.20200117</baseline>
+		</modify>
+		<modify>
+			<description>#87780 修复 问卷调查设置分页符，移动端编号应该跟着变化</description>
+			<author>郑鑫</author>
+			<revision-time>2019-11-08</revision-time>
+			<baseline>V15.0.3.R.20200117</baseline>
+		</modify>
+		<modify>
+			<description>#87479 优化 调查管理移动端多选题页面和逻辑整改</description>
+			<author>郑鑫</author>
+			<revision-time>2019-11-08</revision-time>
+			<baseline>V15.0.3.R.20200117</baseline>
+		</modify>
+		<modify>
+			<description>#87088 修复 已答完所有题目，仍提示请答完所有题目</description>
+			<author>郑鑫</author>
+			<revision-time>2019-11-05</revision-time>
+			<baseline>V15.0.2.R.20191108</baseline>
+		</modify>
+		<modify>
+			<description>#87531 优化 列表显示设置权限控制</description>
+			<author>朱湖强</author>
+			<revision-time>2019-11-08</revision-time>
+			<baseline>V15.0.3.R.20200117</baseline>
+		</modify>
+		<modify>
+			<description>#84623 修复 调查管理修改参与调查人员后计算平均分错误</description>
+			<author>郑鑫</author>
+			<revision-time>2019-10-28</revision-time>
+			<baseline>V15.0.2.R.20191108</baseline>
+		</modify>
+		<modify>
+			<description>#84004 修复 移动端点击“不限定范围”类型问卷，会跳过调查说明页面</description>
+			<author>何协殷</author>
+			<revision-time>2019-10-28</revision-time>
+			<baseline>V15.0.2.R.20191108</baseline>
+		</modify>
+		<modify>
+			<description>#84133 修复 前端页面不需要两个全选按钮</description>
+			<author>郑鑫</author>
+			<revision-time>2019-10-24</revision-time>
+			<baseline>V15.0.2.R.20191108</baseline>
+		</modify>
+		<modify>
+			<description>#84053 修复 调查页面附件图片查看无法关闭问题</description>
+			<author>林秀贤</author>
+			<revision-time>2019-10-21</revision-time>
+			<baseline>V15.0.2.R.20191108</baseline>
+		</modify>
+		<modify>
+			<description>#83842 修复 评分题显示差异问题</description>
+			<author>郑鑫</author>
+			<revision-time>2019-10-21</revision-time>
+			<baseline>V15.0.2.R.20191108</baseline>
+		</modify>
+		<modify>
+			<description>#83564 新增 后台配置优化，ekp各模块后台配置调整</description>
+			<author>钟清学</author>
+			<revision-time>2019-10-21</revision-time>
+			<relation>
+				<relation-module>sys/ui</relation-module>
+			</relation>
+			<baseline>V15.0.2.R.20191108</baseline>
+		</modify>
+		<modify>
+			<description>#77506 新增 南大通用Gbase 8t适配</description>
+			<author>叶正平</author>
+			<revision-time>2019-10-16</revision-time>
+			<relation>
+				<relation-module>core</relation-module>
+				<relation-module>sys/cluster</relation-module>
+				<relation-module>sys/number</relation-module>
+			</relation>
+			<baseline>V15.0.2.R.20191108</baseline>
+		</modify>
+		<modify>
+			<description>#80800 修复 允许用户重复调查，第二次进入问卷的时候，有值的默认置为已答</description>
+			<author>郑鑫</author>
+			<revision-time>2019-10-12</revision-time>
+			<baseline>V15.0.2.R.20191108</baseline>
+		</modify>
+		<modify>
+			<description>#82120 修复 不参与调查和设置和查看页面未翻译</description>
+			<author>何协殷</author>
+			<revision-time>2019-10-11</revision-time>
+			<baseline>V15.0.2.R.20191108</baseline>
+		</modify>
+		<modify>
+			<description>#83182 优化 培训活动中，调查管理页签中的内容国际化</description>
+			<author>刘庞</author>
+			<revision-time>2019-09-30</revision-time>
+			<baseline>V15.0.2.R.20191108</baseline>
+		</modify>
+		<modify>
+			<description>#76585 修复 调查明细查看页面左上角导航跳转完页面样式不对的问题</description>
+			<author>林宇超</author>
+			<revision-time>2019-09-29</revision-time>
+			<baseline>V15.0.2.R.20191108</baseline>
+		</modify>
+		<modify>
+			<description>#80531 修复 修改调查人员导致参与人数与参与人员不准确问题</description>
+			<author>林秀贤</author>
+			<revision-time>2019-09-05</revision-time>
+			<baseline>V15.0.1.R.20190906</baseline>
+		</modify>
+		<modify>
+			<description>#80884 优化 目录树文案和相关页面文案改动优化</description>
+			<author>陈尉建</author>
+			<revision-time>2019-09-03</revision-time>
+			<baseline>V15.0.1.R.20190906</baseline>
+		</modify>
+		<modify>
+			<description>#78348 新增 调查管理移动端增加上一页和下一页的按钮等功能</description>
+			<author>郑鑫</author>
+			<revision-time>2019-08-14</revision-time>
+			<relation>
+				<relation-module>sys/mobile</relation-module>
+			</relation>
+			<baseline>V15.0.1.R.20190906</baseline>
+		</modify>
+		<modify>
+			<description>#75552 修复 流程右侧审批部署</description>
+			<author>郑鑫</author>
+			<revision-time>2019-08-12</revision-time>
+			<baseline>V15.0.1.R.20190906</baseline>
+		</modify>
+		<modify>
+			<description>#77616 修复 sql盲注入</description>
+			<author>叶正平</author>
+			<revision-time>2019-07-30</revision-time>
+			<relation>
+				<relation-module>sys/category</relation-module>
+			</relation>
+			<baseline>V15.0.1.R.20190906</baseline>
+		</modify>
+		<modify>
+			<description>#78076 修复 新增题目页面，RTF域显示不全，窗口页面只显示一半</description>
+			<author>郑鑫</author>
+			<revision-time>2019-07-20</revision-time>
+			<baseline>V15.0.1.R.20190906</baseline>
+		</modify>
+		<modify>
+			<description>#75552 新增 流程右侧审批部署</description>
+			<author>郑鑫</author>
+			<revision-time>2019-07-18</revision-time>
+			<relation>
+				<relation-module>sys/lbpmext</relation-module>
+				<relation-module>sys/lbpmservice</relation-module>
+				<relation-module>sys/ui</relation-module>
+				<relation-module>sys/attachment</relation-module>
+				<relation-module>sys/authorization</relation-module>
+				<relation-module>km/relative</relation-module>
+			</relation>
+			<baseline>V15.0.1.R.20190906</baseline>
+		</modify>
+		<modify>
+			<description>#75552 新增 流程右侧审批部署</description>
+			<author>郑鑫</author>
+			<revision-time>2019-07-12</revision-time>
+			<relation>
+				<relation-module>sys/lbpmext</relation-module>
+				<relation-module>sys/lbpmservice</relation-module>
+				<relation-module>sys/ui</relation-module>
+				<relation-module>sys/attachment</relation-module>
+				<relation-module>sys/authorization</relation-module>
+				<relation-module>km/relative</relation-module>
+			</relation>
+			<baseline>V15.0.1.R.20190906</baseline>
+		</modify>
+		<modify>
+			<description>#73303 修复 评估尚未开始,已经在评估页签上显示状态为结束</description>
+			<author>朱飞</author>
+			<revision-time>2019-07-12</revision-time>
+			<baseline>V15.0.0.R.20190712</baseline>
+		</modify>
+		<modify>
+			<description>#76075 修复 调查管理模块复制问卷提交报错的问题</description>
+			<author>朱飞</author>
+			<revision-time>2019-07-12</revision-time>
+			<baseline>V15.0.0.R.20190712</baseline>
+		</modify>
+		<modify>
+			<description>#74246 修改 审批模式为“简单弹出框模式”时，新建页面提交按钮被放在更多里，不方便操作的问题</description>
+			<author>朱飞</author>
+			<revision-time>2019-07-12</revision-time>
+			<baseline>V15.0.0.R.20190712</baseline>
+		</modify>
+		<modify>
+			<description>#74116 修复 移动端调查问卷填写问答题后,填写的内容会被转拼音或笔画问题</description>
+			<author>林秀贤</author>
+			<revision-time>2019-06-06</revision-time>
+			<baseline>V15.0.0.R.20190712</baseline>
+		</modify>
+		<modify>
+			<description>#63830 修复 问卷设置-所有问卷，该列表页面，查找条件问卷状态和文档状态，有些选项未生效</description>
+			<author>黄泽凯</author>
+			<revision-time>2019-06-03</revision-time>
+			<baseline>V15.0.0.R.20190712</baseline>
+		</modify>
+		<modify>
+			<description>#73719 修复 普通用户参与调查页面无法查看题目附件问题</description>
+			<author>林秀贤</author>
+			<revision-time>2019-05-31</revision-time>
+			<baseline>V15.0.0.R.20190712</baseline>
+		</modify>
+		<modify>
+			<description>#51781 新增 调查评估接口</description>
+			<author>陈建林</author>
+			<revision-time>2019-05-28</revision-time>
+			<baseline>V15.0.0.R.20190712</baseline>
+		</modify>
+		<modify>
+			<description>#67974 优化 后台问卷模板列表增加排序号排序</description>
+			<author>林秀贤</author>
+			<revision-time>2019-04-28</revision-time>
+			<baseline>V15.0.0.R.20190712</baseline>
+		</modify>
+		<modify>
+			<description>#70631 修复 存在调查结束还能提交调查问卷，导致调查结果不准确的问题</description>
+			<author>胡永方</author>
+			<revision-time>2019-04-19</revision-time>
+			<baseline>V15.0.0.R.20190712</baseline>
+		</modify>
+		<modify>
+			<description>#67213 修复 模块管理员在问卷模板设置列表看不到批量修改权限按钮</description>
+			<author>黄泽凯</author>
+			<revision-time>2019-04-12</revision-time>
+			<baseline>V15.0.0.R.20190712</baseline>
+		</modify>
+		<modify>
+			<description>#39223 新增 调查管理问卷发起后可以添加调查参与人员</description>
+			<author>林秀贤</author>
+			<revision-time>2019-04-11</revision-time>
+			<baseline>V15.0.0.B3.20190412</baseline>
+		</modify>
+		<modify>
+			<description>#58800 新增 问卷被调查人可选择不参加调查,并填写不参加原因</description>
+			<author>林秀贤</author>
+			<revision-time>2019-04-11</revision-time>
+			<baseline>V15.0.0.B3.20190412</baseline>
+		</modify>
+		<modify>
+			<description>#69236 优化 调查问卷属性阅读权限调整及主文档调查结果附件权限问题修复</description>
+			<author>林秀贤</author>
+			<revision-time>2019-04-11</revision-time>
+			<baseline>V15.0.0.B3.20190412</baseline>
+		</modify>
+		<modify>
+			<description>#69140 修复 英文环境，参数设置提示1-100有误，应该为1-1000</description>
+			<author>何协殷</author>
+			<revision-time>2019-03-26</revision-time>
+			<baseline>V15.0.0.B3.20190412</baseline>
+		</modify>
+		<modify>
+			<description>#66380 去除 还有代码</description>
+			<author>陈尉建</author>
+			<revision-time>2019-03-26</revision-time>
+			<baseline>V15.0.0.B3.20190412</baseline>
+		</modify>
+		<modify>
+			<description>#67915 优化 调查管理中的每道题中其他选项、选择原因和问答题答案导出条数设置的数量增大为最多1000</description>
+			<author>何协殷</author>
+			<revision-time>2019-03-15</revision-time>
+			<baseline>V15.0.0.B3.20190412</baseline>
+		</modify>
+		<modify>
+			<description>#68515 修复 properties文件中注释有问题</description>
+			<author>黄泽凯</author>
+			<revision-time>2019-03-14</revision-time>
+			<baseline>V15.0.0.B3.20190412</baseline>
+		</modify>
+		<modify>
+			<description>#66736 修复 所有问卷中筛选项重整理</description>
+			<author>黄泽凯</author>
+			<revision-time>2019-01-17</revision-time>
+			<baseline>V15.0.0.B2.20190118</baseline>
+		</modify>
+		<modify>
+			<description>#66790 修复 fd_statistic_score 字段不能为空值，需要做数据库迁移处理</description>
+			<author>黄泽凯</author>
+			<revision-time>2019-01-17</revision-time>
+			<baseline>V15.0.0.B2.20190118</baseline>
+		</modify>
+		<modify>
+			<description>#66369 修复 调查问卷页面有滚动条时多选提示框呈现位置不准确问题</description>
+			<author>林秀贤</author>
+			<revision-time>2019-01-08</revision-time>
+			<baseline>V15.0.0.B2.20190118</baseline>
+		</modify>
+		<modify>
+			<description>#65392 优化 传阅和打印角色调整为普通角色</description>
+			<author>朱湖强</author>
+			<revision-time>2019-01-07</revision-time>
+			<baseline>V15.0.0.B2.20190118</baseline>
+		</modify>
+		<modify>
+			<description>#66131 新增 题目模板增加开关，开启后，可一键加载所有题目</description>
+			<author>陈尉建</author>
+			<revision-time>2019-01-02</revision-time>
+			<baseline>V15.0.0.B2.20190118</baseline>
+		</modify>
+		<modify>
+			<description>#65528 新增 门户窗口Porlet配置新增分类选择</description>
+			<author>黄泽凯</author>
+			<revision-time>2018-12-25</revision-time>
+			<baseline>V15.0.0.B2.20190118</baseline>
+		</modify>
+		<modify>
+			<description>#31401 优化 调查管理调查结果数据补充人员工号信息</description>
+			<author>黄泽凯</author>
+			<revision-time>2018-12-17</revision-time>
+			<baseline>V15.0.0.B2.20190118</baseline>
+		</modify>
+		<modify>
+			<description>#64677 修复 移动端参与调查问卷页面，选项无法显示</description>
+			<author>黄泽凯</author>
+			<revision-time>2018-12-01</revision-time>
+			<baseline>V15.0.0.B2.20190118</baseline>
+		</modify>
+		<modify>
+			<description>#64256 修复 设置调查类型为不限定范围 时，可访问调查问卷模块用户无权限访问</description>
+			<author>黄泽凯</author>
+			<revision-time>2018-12-01</revision-time>
+			<baseline>V15.0.0.B2.20190118</baseline>
+		</modify>
+		<modify>
+			<description>#63825 修复 问卷设置-所有问卷，选中状态，点击“所有问卷”，重新进入该页面，发现列表数据已更新，但状态未更新</description>
+			<author>黄泽凯</author>
+			<revision-time>2018-11-28</revision-time>
+			<baseline>V15.0.0.B2.20190118</baseline>
+		</modify>
+		<modify>
+			<description>#63768 修复 移动端，调查管理的预览问卷页面，应该为只读状态</description>
+			<author>黄泽凯</author>
+			<revision-time>2018-11-28</revision-time>
+			<baseline>V15.0.0.B2.20190118</baseline>
+		</modify>
+		<modify>
+			<description>#63767 修复 移动端，问卷属性页面，删除“返回”和“首页”功能按钮</description>
+			<author>黄泽凯</author>
+			<revision-time>2018-11-28</revision-time>
+			<baseline>V15.0.0.B2.20190118</baseline>
+		</modify>
+		<modify>
+			<description>修复 【调查管理】新建问卷，调查参与人员 进行导入缺陷</description>
+			<author>何协殷</author>
+			<revision-time>2018-09-03</revision-time>
+			<baseline>V15.0.0.B1.20181109</baseline>
+		</modify>
+		<modify>
+			<description>修复 移动端调查管理调查查看界面，问题的附件丢失</description>
+			<author>黄泽凯</author>
+			<revision-time>2018-08-31</revision-time>
+			<baseline>V15.0.0.B1.20181109</baseline>
+		</modify>
+		<modify>
+			<description>修复 安卓下Textarea部分区域不可见问题</description>
+			<author>周梓凡</author>
+			<revision-time>2018-08-27</revision-time>
+			<baseline>V15.0.0.B1.20181109</baseline>
+		</modify>
+		<modify>
+			<description>修复 列表数据过少时，二维码显示不全</description>
+			<author>周梓凡</author>
+			<revision-time>2018-08-22</revision-time>
+			<baseline>V15.0.0.B1.20181109</baseline>
+		</modify>
+		<modify>
+			<description>优化 调查按钮延迟加载</description>
+			<author>周梓凡</author>
+			<revision-time>2018-07-30</revision-time>
+			<baseline>V15.0.0.B1.20181109</baseline>
+		</modify>
+		<modify>
+			<description>修复 复制问卷时跳转页面无法找到</description>
+			<author>黄泽凯</author>
+			<revision-time>2018-07-30</revision-time>
+			<baseline>V15.0.0.B1.20181109</baseline>
+		</modify>
+		<modify>
+			<description>修复 有导出权限，导出时提示没权限</description>
+			<author>陈经纬</author>
+			<revision-time>2018-06-21</revision-time>
+			<baseline>V14.0.1.R.20180706</baseline>
+		</modify>
+		<modify>
+			<description>修复 E9，参加调查管理模块的调查问卷，矩阵评分题，选择之后，无法提交，系统判断没有选择</description>
+			<author>黄泽凯</author>
+			<revision-time>2018-06-08</revision-time>
+			<baseline>V14.0.1.R.20180706</baseline>
+		</modify>
+		<modify>
+			<description>修复 过滤多行文本敏感字符</description>
+			<author>黄泽凯</author>
+			<revision-time>2018-04-27</revision-time>
+			<baseline>V14.0.1.R.20180706</baseline>
+		</modify>
+		<modify>
+			<description>修复 uiue改造</description>
+			<author>黄泽凯</author>
+			<revision-time>2018-04-11</revision-time>
+			<baseline>V14.0.0.R.20180413</baseline>
+		</modify>
+		<modify>
+			<description>新增 调查管理新建页面新增批量导入调查对象功能</description>
+			<author>黄泽凯</author>
+			<revision-time>2018-04-11</revision-time>
+			<baseline>V14.0.0.R.20180413</baseline>
+		</modify>
+		<modify>
+			<description>修复 调查题目的问题选项上传图片移动端不展示</description>
+			<author>黄泽凯</author>
+			<revision-time>2018-04-10</revision-time>
+			<baseline>V14.0.0.R.20180413</baseline>
+		</modify>
+		<modify>
+			<description>修复 调查题目界面，当题目数&gt;=3时，最多只显示3个层级</description>
+			<author>黄泽凯</author>
+			<revision-time>2018-03-02</revision-time>
+			<baseline>V14.0.0.R.20180413</baseline>
+		</modify>
+		<modify>
+			<description>修复 调查结果数据分析导出，部门那一列取值错误</description>
+			<author>黄泽凯</author>
+			<revision-time>2018-03-02</revision-time>
+			<baseline>V14.0.0.R.20180413</baseline>
+		</modify>
+		<modify>
+			<description>修复 调查问卷暂存后调查问卷的属性（通知方式）未保存</description>
+			<author>黄泽凯</author>
+			<revision-time>2018-02-27</revision-time>
+			<baseline>V14.0.0.R.20180413</baseline>
+		</modify>
+		<modify>
+			<description>部署 【后台配置】资产管理等11个模块列表自定义模块部署</description>
+			<author>邵成成</author>
+			<revision-time>2018-02-26</revision-time>
+			<baseline>V14.0.0.R.20180413</baseline>
+		</modify>
+		<modify>
+			<description>优化 自定义设置页面，需要控制url，没有权限用户，通过url访问链接，不能打开设置页面。</description>
+			<author>邵成成</author>
+			<revision-time>2018-02-26</revision-time>
+			<baseline>V14.0.0.R.20180413</baseline>
+		</modify>
+		<modify>
+			<description>优化 调查管理，我已审列表，发布时间字段显示</description>
+			<author>邵成成</author>
+			<revision-time>2018-02-26</revision-time>
+			<baseline>V14.0.0.R.20180413</baseline>
+		</modify>
+		<modify>
+			<description>修复 调查页面，多选框不显示</description>
+			<author>黄泽凯</author>
+			<revision-time>2018-02-08</revision-time>
+			<baseline>V14.0.0.R.20180413</baseline>
+		</modify>
+		<modify>
+			<description>修复 发起人被剔除调查结果可阅读者权限后，还可查看问卷调查结果</description>
+			<author>黄泽凯</author>
+			<revision-time>2018-01-29</revision-time>
+			<baseline>V14.0.0.R.20180413</baseline>
+		</modify>
+		<modify>
+			<description>修复 was环境移动端打开调查文档页面报错</description>
+			<author>黄泽凯</author>
+			<revision-time>2018-01-18</revision-time>
+			<baseline>V14.0.0.R.20180413</baseline>
+		</modify>
+		<modify>
+			<description>修复 验收缺陷修复</description>
+			<author>黄泽凯</author>
+			<revision-time>2018-01-11</revision-time>
+			<baseline>V14.0.0.R.20180413</baseline>
+		</modify>
+		<modify>
+			<description>修复 流程管理、公文政务版、会议管理、调查管理、资产管理新增模板停用开关，发现有以下问题。</description>
+			<author>吴志斌</author>
+			<revision-time>2018-01-11</revision-time>
+			<baseline>V14.0.0.B2.20180112</baseline>
+		</modify>
+		<modify>
+			<description>新增 模板停用开关</description>
+			<author>胡耀华</author>
+			<revision-time>2018-01-11</revision-time>
+			<baseline>V14.0.0.B2.20180112</baseline>
+		</modify>
+		<modify>
+			<description>优化 后台文档维护功能改成新UI，并且增加筛选功能</description>
+			<author>张成才</author>
+			<revision-time>2018-01-11</revision-time>
+			<baseline>V14.0.0.B2.20180112</baseline>
+		</modify>
+		<modify>
+			<description>修复 调查管理移动端首页引入资源文件错误</description>
+			<author>黄泽凯</author>
+			<revision-time>2017-11-22</revision-time>
+			<baseline>V14.0.0.B2.20180112</baseline>
+		</modify>
+		<modify>
+			<description>优化 后台模板支持快速新建操作</description>
+			<author>黄泽凯</author>
+			<revision-time>2017-11-09</revision-time>
+			<baseline>V14.0.0.B1.20171110</baseline>
+		</modify>
+		<modify>
+			<description>修复 预览并编辑问答题目删除错位</description>
+			<author>黄泽凯</author>
+			<revision-time>2017-09-14</revision-time>
+			<baseline>V13.5.0.R.20170915</baseline>
+		</modify>
+		<modify>
+			<description>修复 问卷调查结束后无法查看提交内容</description>
+			<author>黄泽凯</author>
+			<revision-time>2017-09-14</revision-time>
+			<baseline>V13.5.0.R.20170915</baseline>
+		</modify>
+		<modify>
+			<description>新增 类别模板设置多语言支持</description>
+			<author>黄伟强</author>
+			<revision-time>2017-09-09</revision-time>
+			<relation>
+				<relation-module>core</relation-module>
+			</relation>
+			<baseline>V13.5.0.R.20170915</baseline>
+		</modify>
+		<modify>
+			<description>新增 待办多语言</description>
+			<author>黄伟强</author>
+			<revision-time>2017-09-02</revision-time>
+			<relation>
+				<relation-module>sys/notify</relation-module>
+			</relation>
+			<baseline>V13.5.0.R.20170915</baseline>
+		</modify>
+		<modify>
+			<description>修复 矩阵题目未上传图片时，移动端出错</description>
+			<author>黄泽凯</author>
+			<revision-time>2017-08-14</revision-time>
+			<baseline>V13.5.0.R.20170915</baseline>
+		</modify>
+		<modify>
+			<description>优化 文档权限交接功能优化</description>
+			<author>潘永辉</author>
+			<revision-time>2017-08-11</revision-time>
+			<baseline>V13.5.0.R.20170915</baseline>
+		</modify>
+		<modify>
+			<description>修复 新建调查管理报错</description>
+			<author>周梓凡</author>
+			<revision-time>2017-08-01</revision-time>
+			<baseline>V13.5.0.R.20170915</baseline>
+		</modify>
+		<modify>
+			<description>优化 左侧菜单增加选中效果</description>
+			<author>黄泽凯</author>
+			<revision-time>2017-07-06</revision-time>
+			<baseline>V13.5.0.R.20170915</baseline>
+		</modify>
+		<modify>
+			<description>修复 矩阵题目图片不能显示</description>
+			<author>黄泽凯</author>
+			<revision-time>2017-07-05</revision-time>
+			<baseline>V13.5.0.B2.20170707</baseline>
+		</modify>
+		<modify>
+			<description>修复 同一份调查问卷，A用户在PC端作答，B用户在移动端作答，参与人员答卷分析中看到针对评分题、矩阵评分题显示结果不一致</description>
+			<author>黄泽凯</author>
+			<revision-time>2017-07-05</revision-time>
+			<baseline>V13.5.0.B2.20170707</baseline>
+		</modify>
+		<modify>
+			<description>修复 分页符多余导致页码出错</description>
+			<author>黄泽凯</author>
+			<revision-time>2017-07-05</revision-time>
+			<baseline>V13.5.0.B2.20170707</baseline>
+		</modify>
+		<modify>
+			<description>修复 参与人答卷分析，题目数较多时，问题答案纵向显示</description>
+			<author>黄泽凯</author>
+			<revision-time>2017-07-05</revision-time>
+			<baseline>V13.5.0.B2.20170707</baseline>
+		</modify>
+		<modify>
+			<description>修复 移动端问卷时间结束后仍能提交问卷的缺陷</description>
+			<author>黄泽凯</author>
+			<revision-time>2017-07-05</revision-time>
+			<baseline>V13.5.0.B2.20170707</baseline>
+		</modify>
+		<modify>
+			<description>修复 linux+mysql导出问卷详情出错</description>
+			<author>周梓凡</author>
+			<revision-time>2017-05-10</revision-time>
+			<baseline>V13.5.0.B1.20170512</baseline>
+		</modify>
+		<modify>
+			<description>修复 矩阵选项删除后序号列不更新问题</description>
+			<author>周梓凡</author>
+			<revision-time>2017-03-22</revision-time>
+			<baseline>V13.5.0.B1.20170512</baseline>
+		</modify>
+		<modify>
+			<description>修复 多选题最多选项数的校验修复</description>
+			<author>崔文坚</author>
+			<revision-time>2017-03-09</revision-time>
+			<baseline>V13.0.0.R.20170310</baseline>
+		</modify>
+		<modify>
+			<description>修复 应用中心下进入各个业务模块，中间帧的字体可随主题包样式</description>
+			<author>陈经纬</author>
+			<revision-time>2017-03-08</revision-time>
+			<baseline>V13.0.0.R.20170310</baseline>
+		</modify>
+		<modify>
+			<description>修复 多选题`最多选择X题`文字描述有误</description>
+			<author>周梓凡</author>
+			<revision-time>2017-03-02</revision-time>
+			<baseline>V13.0.0.R.20170310</baseline>
+		</modify>
+		<modify>
+			<description>修复 预览问卷提交按钮样式问题</description>
+			<author>周梓凡</author>
+			<revision-time>2017-03-02</revision-time>
+			<baseline>V13.0.0.R.20170310</baseline>
+		</modify>
+		<modify>
+			<description>修复 IE11下预览问卷中删除题目后，点击保存报JS错误</description>
+			<author>周梓凡</author>
+			<revision-time>2017-02-24</revision-time>
+			<baseline>V13.0.0.R.20170310</baseline>
+		</modify>
+		<modify>
+			<description>修复 评分题评分值校验</description>
+			<author>周梓凡</author>
+			<revision-time>2017-02-20</revision-time>
+			<baseline>V13.0.0.R.20170310</baseline>
+		</modify>
+		<modify>
+			<description>修复 调查参与页面第二题开始附件区域无法自适应问题</description>
+			<author>周梓凡</author>
+			<revision-time>2017-02-20</revision-time>
+			<baseline>V13.0.0.R.20170310</baseline>
+		</modify>
+		<modify>
+			<description>修复 移动端rtf中的超链点击后不打开新页面</description>
+			<author>周梓凡</author>
+			<revision-time>2016-12-22</revision-time>
+			<baseline>V13.0.0.B3.20161230</baseline>
+		</modify>
+		<modify>
+			<description>修复 多语言问题修复</description>
+			<author>崔文坚</author>
+			<revision-time>2016-12-21</revision-time>
+			<baseline>V13.0.0.B3.20161230</baseline>
+		</modify>
+		<modify>
+			<description>新增 文档权限的工作交接</description>
+			<author>陈经纬</author>
+			<revision-time>2016-12-21</revision-time>
+			<relation>
+				<relation-module>sys/handover</relation-module>
+			</relation>
+			<baseline>V13.0.0.B3.20161230</baseline>
+		</modify>
+		<modify>
+			<description>修复 生成题目模板时，如果题中有换行符会报错</description>
+			<author>周梓凡</author>
+			<revision-time>2016-11-29</revision-time>
+			<baseline>V13.0.0.B3.20161230</baseline>
+		</modify>
+		<modify>
+			<description>修复 在没有项目名称的项目中批量修改权限报错</description>
+			<author>周梓凡</author>
+			<revision-time>2016-11-22</revision-time>
+			<baseline>V13.0.0.B3.20161230</baseline>
+		</modify>
+		<modify>
+			<description>修复 重新编辑单选题、多选题时横向排列选项信息丢失</description>
+			<author>周梓凡</author>
+			<revision-time>2016-11-22</revision-time>
+			<baseline>V13.0.0.B3.20161230</baseline>
+		</modify>
+		<modify>
+			<description>修复 钉一下配置修改</description>
+			<author>周梓凡</author>
+			<revision-time>2016-11-21</revision-time>
+			<relation>
+				<relation-module>third/ding</relation-module>
+				<relation-module>sys/profile</relation-module>
+			</relation>
+			<baseline>V13.0.0.B3.20161230</baseline>
+		</modify>
+		<modify>
+			<description>修复 移动端点击其他选项时未带出文本框</description>
+			<author>周梓凡</author>
+			<revision-time>2016-11-10</revision-time>
+			<baseline>V13.0.0.B3.20161230</baseline>
+		</modify>
+		<modify>
+			<description>修复 移动端查看调查结果没有人参与时给出提示</description>
+			<author>周梓凡</author>
+			<revision-time>2016-11-10</revision-time>
+			<baseline>V13.0.0.B3.20161230</baseline>
+		</modify>
+		<modify>
+			<description>修复 新建问卷添加题目，在预览问卷中编辑题目，页面报错</description>
+			<author>周梓凡</author>
+			<revision-time>2016-11-10</revision-time>
+			<baseline>V13.0.0.B3.20161230</baseline>
+		</modify>
+		<modify>
+			<description>优化 没有分类使用权限时新建题目模板给出友好提示</description>
+			<author>周梓凡</author>
+			<revision-time>2016-11-10</revision-time>
+			<baseline>V13.0.0.B3.20161230</baseline>
+		</modify>
+		<modify>
+			<description>修复 获取默认待办值接口调用调整</description>
+			<author>林秀贤</author>
+			<revision-time>2016-10-31</revision-time>
+			<relation>
+				<relation-module>sys/notify</relation-module>
+			</relation>
+			<baseline>V13.0.0.B3.20161230</baseline>
+		</modify>
+		<modify>
+			<description>优化 移动端调查结果选项颜色增加</description>
+			<author>周梓凡</author>
+			<revision-time>2016-10-24</revision-time>
+			<baseline>V13.0.0.B3.20161230</baseline>
+		</modify>
+		<modify>
+			<description>修复 调查柱状图横坐标定位过高问题</description>
+			<author>周梓凡</author>
+			<revision-time>2016-10-24</revision-time>
+			<baseline>V13.0.0.B3.20161230</baseline>
+		</modify>
+		<modify>
+			<description>修复 list列表页操作栏中的“删除”按钮调整命名为“批量删除”</description>
+			<author>潘永辉</author>
+			<revision-time>2016-10-20</revision-time>
+			<baseline>V13.0.0.B3.20161230</baseline>
+		</modify>
+		<modify>
+			<description>优化 后台配置中心由“后台管理”角色控制</description>
+			<author>朱湖强</author>
+			<revision-time>2016-10-17</revision-time>
+			<baseline>V13.0.0.B3.20161230</baseline>
+		</modify>
+		<modify>
+			<description>优化 插入题目表格列宽调整</description>
+			<author>周梓凡</author>
+			<revision-time>2016-10-14</revision-time>
+			<baseline>V13.0.0.B3.20161230</baseline>
+		</modify>
+		<modify>
+			<description>修复 选择模板题目标题太长时无法显示全</description>
+			<author>周梓凡</author>
+			<revision-time>2016-10-14</revision-time>
+			<baseline>V13.0.0.B3.20161230</baseline>
+		</modify>
+		<modify>
+			<description>修复 后台配置批量修改权限，添加联系人后不会换行显示</description>
+			<author>周梓凡</author>
+			<revision-time>2016-10-14</revision-time>
+			<baseline>V13.0.0.B3.20161230</baseline>
+		</modify>
+		<modify>
+			<description>修复 更多信息页面仅显示有答案复选框无效问题</description>
+			<author>周梓凡</author>
+			<revision-time>2016-10-14</revision-time>
+			<baseline>V13.0.0.B3.20161230</baseline>
+		</modify>
+		<modify>
+			<description>修复 网上调查文档维护批量修改权限无法选择人员</description>
+			<author>周梓凡</author>
+			<revision-time>2016-10-14</revision-time>
+			<baseline>V13.0.0.B3.20161230</baseline>
+		</modify>
+		<modify>
+			<description>修复 预览问卷附件显示区域不全问题</description>
+			<author>周梓凡</author>
+			<revision-time>2016-10-08</revision-time>
+			<baseline>V13.0.0.B3.20161230</baseline>
+		</modify>
+		<modify>
+			<description>修复 参与人员答卷分析页面其他选项显示具体内容，而不是“其他”二字</description>
+			<author>周梓凡</author>
+			<revision-time>2016-10-08</revision-time>
+			<baseline>V13.0.0.B3.20161230</baseline>
+		</modify>
+		<modify>
+			<description>优化 新增后台配置新ued</description>
+			<author>崔文坚</author>
+			<revision-time>2016-09-20</revision-time>
+			<baseline>V13.0.0.B2.20160930</baseline>
+		</modify>
+		<modify>
+			<description>修复 问卷题目分类设置页面的操作栏与新版后台配置操作栏不一致</description>
+			<author>崔文坚</author>
+			<revision-time>2016-09-20</revision-time>
+			<baseline>V13.0.0.B2.20160930</baseline>
+		</modify>
+		<modify>
+			<description>修复 题目选项无法上传bmp图片</description>
+			<author>周梓凡</author>
+			<revision-time>2016-09-13</revision-time>
+			<baseline>V13.0.0.B2.20160930</baseline>
+		</modify>
+		<modify>
+			<description>优化 批量修改权限中地址本样式调整</description>
+			<author>周梓凡</author>
+			<revision-time>2016-09-13</revision-time>
+			<baseline>V13.0.0.B2.20160930</baseline>
+		</modify>
+		<modify>
+			<description>修复 移动端问答题换行符丢失问题</description>
+			<author>周梓凡</author>
+			<revision-time>2016-08-19</revision-time>
+			<baseline>V13.0.0.B2.20160930</baseline>
+		</modify>
+		<modify>
+			<description>修复 更多信息中的换行符被过滤掉问题</description>
+			<author>周梓凡</author>
+			<revision-time>2016-08-19</revision-time>
+			<baseline>V13.0.0.B2.20160930</baseline>
+		</modify>
+		<modify>
+			<description>修复 调查内容更新后返回页面不正确</description>
+			<author>周梓凡</author>
+			<revision-time>2016-08-19</revision-time>
+			<baseline>V13.0.0.B2.20160930</baseline>
+		</modify>
+		<modify>
+			<description>修复 问答题内容过多时编辑模式下不会自适应高度</description>
+			<author>周梓凡</author>
+			<revision-time>2016-08-19</revision-time>
+			<baseline>V13.0.0.B2.20160930</baseline>
+		</modify>
+		<modify>
+			<description>修复 移动端多种题型丢失选择原因区域</description>
+			<author>周梓凡</author>
+			<revision-time>2016-08-19</revision-time>
+			<baseline>V13.0.0.B2.20160930</baseline>
+		</modify>
+		<modify>
+			<description>修复 预览问卷中题目序号错乱问题</description>
+			<author>周梓凡</author>
+			<revision-time>2016-08-19</revision-time>
+			<baseline>V13.0.0.B2.20160930</baseline>
+		</modify>
+		<modify>
+			<description>修复 预览保存不会实时更新表格内的数据</description>
+			<author>周梓凡</author>
+			<revision-time>2016-08-19</revision-time>
+			<baseline>V13.0.0.B2.20160930</baseline>
+		</modify>
+		<modify>
+			<description>修复 矩阵题目超过10题</description>
+			<author>周梓凡</author>
+			<revision-time>2016-08-19</revision-time>
+			<baseline>V13.0.0.B2.20160930</baseline>
+		</modify>
+		<modify>
+			<description>优化 修改调查结束时间校验</description>
+			<author>周梓凡</author>
+			<revision-time>2016-08-19</revision-time>
+			<baseline>V13.0.0.B2.20160930</baseline>
+		</modify>
+		<modify>
+			<description>修复 预览问卷显示选择原因</description>
+			<author>周梓凡</author>
+			<revision-time>2016-08-19</revision-time>
+			<baseline>V13.0.0.B2.20160930</baseline>
+		</modify>
+		<modify>
+			<description>修复 调查结果参与人页面当要求显示个数为0时报错</description>
+			<author>周梓凡</author>
+			<revision-time>2016-08-19</revision-time>
+			<baseline>V13.0.0.B2.20160930</baseline>
+		</modify>
+		<modify>
+			<description>优化 移动端调查提交不必限定在最后一页提交</description>
+			<author>周梓凡</author>
+			<revision-time>2016-08-19</revision-time>
+			<baseline>V13.0.0.B2.20160930</baseline>
+		</modify>
+		<modify>
+			<description>修复 安卓手机下虚拟键盘遮盖输入框问题</description>
+			<author>周梓凡</author>
+			<revision-time>2016-08-19</revision-time>
+			<baseline>V13.0.0.B2.20160930</baseline>
+		</modify>
+		<modify>
+			<description>优化 移动端调查提交不必限定在最后一页提交</description>
+			<author>周梓凡</author>
+			<revision-time>2016-08-08</revision-time>
+			<baseline>V13.0.0.B2.20160930</baseline>
+		</modify>
+		<modify>
+			<description>修复 前端页面提前了几秒显示调查已结束</description>
+			<author>周梓凡</author>
+			<revision-time>2016-08-08</revision-time>
+			<baseline>V13.0.0.B2.20160930</baseline>
+		</modify>
+		<modify>
+			<description>优化 移动端问卷调查翻页区域</description>
+			<author>周梓凡</author>
+			<revision-time>2016-08-08</revision-time>
+			<baseline>V13.0.0.B2.20160930</baseline>
+		</modify>
+		<modify>
+			<description>修复 移动端调查显示上一次调查答案</description>
+			<author>周梓凡</author>
+			<revision-time>2016-08-08</revision-time>
+			<baseline>V13.0.0.B2.20160930</baseline>
+		</modify>
+		<modify>
+			<description>修复 参与人员答卷分析页面权限控制</description>
+			<author>周梓凡</author>
+			<revision-time>2016-08-08</revision-time>
+			<baseline>V13.0.0.B2.20160930</baseline>
+		</modify>
+		<modify>
+			<description>修复 移动端当前时间取服务器端的</description>
+			<author>周梓凡</author>
+			<revision-time>2016-08-08</revision-time>
+			<baseline>V13.0.0.B2.20160930</baseline>
+		</modify>
+		<modify>
+			<description>移除 调查结果参与人员信息页面的二维码</description>
+			<author>周梓凡</author>
+			<revision-time>2016-07-11</revision-time>
+			<baseline>V13.0.0.B2.20160930</baseline>
+		</modify>
+		<modify>
+			<description>修复 导出统计精确到秒</description>
+			<author>周梓凡</author>
+			<revision-time>2016-07-11</revision-time>
+			<baseline>V13.0.0.B2.20160930</baseline>
+		</modify>
+		<modify>
+			<description>优化 问卷详情导出按提交时间排序且精确到分秒</description>
+			<author>周梓凡</author>
+			<revision-time>2016-07-11</revision-time>
+			<baseline>V13.0.0.B2.20160930</baseline>
+		</modify>
+		<modify>
+			<description>优化 移动端参与进度统计显示</description>
+			<author>周梓凡</author>
+			<revision-time>2016-07-11</revision-time>
+			<baseline>V13.0.0.B2.20160930</baseline>
+		</modify>
+		<modify>
+			<description>修复 调查后台管理插入问题明细显示语言问题</description>
+			<author>周梓凡</author>
+			<revision-time>2016-07-11</revision-time>
+			<baseline>V13.0.0.B2.20160930</baseline>
+		</modify>
+		<modify>
+			<description>修复 问卷详情页面多了一个逗号</description>
+			<author>周梓凡</author>
+			<revision-time>2016-07-11</revision-time>
+			<baseline>V13.0.0.B2.20160930</baseline>
+		</modify>
+		<modify>
+			<description>修复 非必填矩阵评分题被迫校验了的问题</description>
+			<author>周梓凡</author>
+			<revision-time>2016-07-01</revision-time>
+			<baseline>V13.0.0.B2.20160930</baseline>
+		</modify>
+		<modify>
+			<description>优化 移动端调查结果国际化</description>
+			<author>周梓凡</author>
+			<revision-time>2016-07-01</revision-time>
+			<baseline>V13.0.0.B2.20160930</baseline>
+		</modify>
+		<modify>
+			<description>修复 问卷结果导出的时候不导出没有作答问答题用户的信息</description>
+			<author>周梓凡</author>
+			<revision-time>2016-07-01</revision-time>
+			<baseline>V13.0.0.B2.20160930</baseline>
+		</modify>
+		<modify>
+			<description>修复 问卷分析页面去除打开移动端二维码</description>
+			<author>周梓凡</author>
+			<revision-time>2016-07-01</revision-time>
+			<baseline>V13.0.0.B2.20160930</baseline>
+		</modify>
+		<modify>
+			<description>修复 移动端时间显示换行问题</description>
+			<author>周梓凡</author>
+			<revision-time>2016-07-01</revision-time>
+			<baseline>V13.0.0.B2.20160930</baseline>
+		</modify>
+		<modify>
+			<description>优化 批量修改权限弹出框</description>
+			<author>周梓凡</author>
+			<revision-time>2016-07-01</revision-time>
+			<baseline>V13.0.0.B2.20160930</baseline>
+		</modify>
+		<modify>
+			<description>优化 移动端国际化</description>
+			<author>周梓凡</author>
+			<revision-time>2016-07-01</revision-time>
+			<baseline>V13.0.0.B2.20160930</baseline>
+		</modify>
+		<modify>
+			<description>修复 移动端问答题答案丢失问题</description>
+			<author>周梓凡</author>
+			<revision-time>2016-06-15</revision-time>
+			<relation>
+				<relation-module>sys/mobile</relation-module>
+			</relation>
+			<baseline>V13.0.0.B2.20160930</baseline>
+		</modify>
+		<modify>
+			<description>优化 移动端列表图像加载性能优化</description>
+			<author>林秀贤</author>
+			<revision-time>2016-06-14</revision-time>
+			<baseline>V13.0.0.B2.20160930</baseline>
+		</modify>
+		<modify>
+			<description>优化 移动端头像大小性能优化</description>
+			<author>林秀贤</author>
+			<revision-time>2016-06-12</revision-time>
+			<baseline>V13.0.0.B2.20160930</baseline>
+		</modify>
+		<modify>
+			<description>修复 编辑模式下调查通知方式总是强制取了admin.do的值</description>
+			<author>周梓凡</author>
+			<revision-time>2016-05-10</revision-time>
+			<baseline>V13.0.0.B2.20160930</baseline>
+		</modify>
+		<modify>
+			<description>修复 新建问卷题目模板时没有做题目行数不能为空校验</description>
+			<author>周梓凡</author>
+			<revision-time>2016-05-10</revision-time>
+			<baseline>V13.0.0.B2.20160930</baseline>
+		</modify>
+		<modify>
+			<description>修复 预览模式下编辑题目序号错乱问题</description>
+			<author>周梓凡</author>
+			<revision-time>2016-04-08</revision-time>
+			<baseline>V13.0.0.B1.20160429</baseline>
+		</modify>
+		<modify>
+			<description>优化 批量修改权限由模块角色控制，如果模块没配置则由全局分类的“类别维护人员角色”控制</description>
+			<author>周梓凡</author>
+			<revision-time>2016-04-08</revision-time>
+			<baseline>V13.0.0.B1.20160429</baseline>
+		</modify>
+		<modify>
+			<description>修复 匿名调查通过url可以查看到调查者信息</description>
+			<author>周梓凡</author>
+			<revision-time>2016-03-18</revision-time>
+			<baseline>V12.0.9.R.20160325</baseline>
+		</modify>
+		<modify>
+			<description>优化 可配置题头portlet排序、字段名称</description>
+			<author>周梓凡</author>
+			<revision-time>2016-03-18</revision-time>
+			<baseline>V12.0.9.R.20160325</baseline>
+		</modify>
+		<modify>
+			<description>优化 简单列表portlet按创建时间排序、移除 porlet中状态一列</description>
+			<author>周梓凡</author>
+			<revision-time>2016-03-07</revision-time>
+			<baseline>V12.0.9.R.20160325</baseline>
+		</modify>
+		<modify>
+			<description>优化 多选题超出限定数量的选项取消选中</description>
+			<author>周梓凡</author>
+			<revision-time>2016-01-13</revision-time>
+			<baseline>V12.0.8.R.20160114</baseline>
+		</modify>
+		<modify>
+			<description>修复 安卓微信开始调查按钮无反应</description>
+			<author>周梓凡</author>
+			<revision-time>2015-12-29</revision-time>
+			<baseline>V12.0.8.R.20160114</baseline>
+		</modify>
+		<modify>
+			<description>修复 重复参与情况下统计结果不精准问题</description>
+			<author>周梓凡</author>
+			<revision-time>2015-12-22</revision-time>
+			<baseline>V12.0.8.R.20160114</baseline>
+		</modify>
+		<modify>
+			<description>修复 预览删除题目后留下空白位置问题</description>
+			<author>周梓凡</author>
+			<revision-time>2015-12-22</revision-time>
+			<baseline>V12.0.8.R.20160114</baseline>
+		</modify>
+		<modify>
+			<description>优化 编辑题目时图片预览效果</description>
+			<author>周梓凡</author>
+			<revision-time>2015-12-22</revision-time>
+			<baseline>V12.0.8.R.20160114</baseline>
+		</modify>
+		<modify>
+			<description>修复 问卷题目分类权限问题</description>
+			<author>周梓凡</author>
+			<revision-time>2015-12-16</revision-time>
+			<baseline>V12.0.8.R.20160114</baseline>
+		</modify>
+		<modify>
+			<description>修复 移动端答题页面宽度限制</description>
+			<author>周梓凡</author>
+			<revision-time>2015-12-16</revision-time>
+			<baseline>V12.0.8.R.20160114</baseline>
+		</modify>
+		<modify>
+			<description>修复 移动端参与页面进入调查按钮点击无效</description>
+			<author>周梓凡</author>
+			<revision-time>2015-12-14</revision-time>
+			<baseline>V12.0.8.R.20160114</baseline>
+		</modify>
+		<modify>
+			<description>修复 调查结果四舍五入保留2位小数</description>
+			<author>周梓凡</author>
+			<revision-time>2015-12-14</revision-time>
+			<baseline>V12.0.8.R.20160114</baseline>
+		</modify>
+		<modify>
+			<description>新增 网上调查题型增加选择原因</description>
+			<author>周梓凡</author>
+			<revision-time>2015-12-14</revision-time>
+			<baseline>V12.0.8.R.20160114</baseline>
+		</modify>
+		<modify>
+			<description>修复 移动端调查结束后还可以看到开始调查按钮</description>
+			<author>周梓凡</author>
+			<revision-time>2015-12-14</revision-time>
+			<baseline>V12.0.8.R.20160114</baseline>
+		</modify>
+		<modify>
+			<description>修复 审批过程中看不到调查总人数</description>
+			<author>周梓凡</author>
+			<revision-time>2015-12-14</revision-time>
+			<baseline>V12.0.8.R.20160114</baseline>
+		</modify>
+		<modify>
+			<description>修复 调查模板查看页面注入</description>
+			<author>周梓凡</author>
+			<revision-time>2015-12-14</revision-time>
+			<baseline>V12.0.8.R.20160114</baseline>
+		</modify>
+		<modify>
+			<description>新增 移动端订一下功能</description>
+			<author>周梓凡</author>
+			<revision-time>2015-12-09</revision-time>
+			<relation>
+				<relation-module>third/ding</relation-module>
+			</relation>
+			<baseline>V12.0.8.R.20160114</baseline>
+		</modify>
+		<modify>
+			<description>修复 匿名调查时其它选项的名字仍旧显示问题</description>
+			<author>周梓凡</author>
+			<revision-time>2015-12-09</revision-time>
+			<baseline>V12.0.8.R.20160114</baseline>
+		</modify>
+		<modify>
+			<description>修复 没有人参与调查的情况下导出excel报错</description>
+			<author>周梓凡</author>
+			<revision-time>2015-11-27</revision-time>
+			<baseline>V12.0.7.R.20151203</baseline>
+		</modify>
+		<modify>
+			<description>修复 调查结果可阅读者查看调查中的问卷，点击“【更新统计数据并查看结果】”后提示无权限问题</description>
+			<author>周梓凡</author>
+			<revision-time>2015-11-27</revision-time>
+			<baseline>V12.0.7.R.20151203</baseline>
+		</modify>
+		<modify>
+			<description>修复 未调查/已调查人员中出现英文字母名字无法换行问题</description>
+			<author>周梓凡</author>
+			<revision-time>2015-11-27</revision-time>
+			<baseline>V12.0.7.R.20151203</baseline>
+		</modify>
+		<modify>
+			<description>修复 批量修改权限报错</description>
+			<author>周梓凡</author>
+			<revision-time>2015-11-27</revision-time>
+			<baseline>V12.0.7.R.20151203</baseline>
+		</modify>
+		<modify>
+			<description>修复 调用全局分类的地方，将类似url=../../xxx/yyy/... 改成url=/xxx/yyy/...</description>
+			<author>李启龙</author>
+			<revision-time>2015-11-11</revision-time>
+			<baseline>V12.0.7.R.20151203</baseline>
+		</modify>
+		<modify>
+			<description>新增 定时任务的详细描述</description>
+			<author>周梓凡</author>
+			<revision-time>2015-11-05</revision-time>
+			<baseline>V12.0.6.R.20151106</baseline>
+		</modify>
+		<modify>
+			<description>修复 列表页面列宽</description>
+			<author>周梓凡</author>
+			<revision-time>2015-11-03</revision-time>
+			<relation>
+				<relation-module>sys/ui</relation-module>
+			</relation>
+			<baseline>V12.0.6.R.20151106</baseline>
+		</modify>
+		<modify>
+			<description>修复 移动端矩阵题校验有误问题</description>
+			<author>周梓凡</author>
+			<revision-time>2015-10-28</revision-time>
+			<baseline>V12.0.6.R.20151106</baseline>
+		</modify>
+		<modify>
+			<description>修复 调查在拥有查看结果权限没有更新统计权限时无法查看结果</description>
+			<author>周梓凡</author>
+			<revision-time>2015-10-22</revision-time>
+			<baseline>V12.0.6.R.20151106</baseline>
+		</modify>
+		<modify>
+			<description>修复 调查人员存在同名用户时，已调查人员数据统计有误</description>
+			<author>周梓凡</author>
+			<revision-time>2015-10-22</revision-time>
+			<baseline>V12.0.6.R.20151106</baseline>
+		</modify>
+		<modify>
+			<description>修复 调查题目存在特殊字符时XSS问题</description>
+			<author>周梓凡</author>
+			<revision-time>2015-10-22</revision-time>
+			<baseline>V12.0.6.R.20151106</baseline>
+		</modify>
+		<modify>
+			<description>修复 旧数据统计结果有误</description>
+			<author>周梓凡</author>
+			<revision-time>2015-10-19</revision-time>
+			<baseline>V12.0.6.R.20151106</baseline>
+		</modify>
+		<modify>
+			<description>修复 调查问题选项描述过长显示省略号</description>
+			<author>周梓凡</author>
+			<revision-time>2015-09-22</revision-time>
+			<baseline>V12.0.6.R.20151106</baseline>
+		</modify>
+		<modify>
+			<description>修复 调查发布后不可编辑</description>
+			<author>周梓凡</author>
+			<revision-time>2015-09-22</revision-time>
+			<baseline>V12.0.6.R.20151106</baseline>
+		</modify>
+		<modify>
+			<description>优化 资源文件描述</description>
+			<author>周梓凡</author>
+			<revision-time>2015-09-08</revision-time>
+			<baseline>V12.0.5.R.20150911</baseline>
+		</modify>
+		<modify>
+			<description>修复 网上调查批量修改权限操作失败</description>
+			<author>周梓凡</author>
+			<revision-time>2015-09-08</revision-time>
+			<baseline>V12.0.5.R.20150911</baseline>
+		</modify>
+		<modify>
+			<description>修复 查看页面生成问卷模板弹窗关闭后整个页面被关闭问题</description>
+			<author>周梓凡</author>
+			<revision-time>2015-09-02</revision-time>
+			<baseline>V12.0.5.R.20150911</baseline>
+		</modify>
+		<modify>
+			<description>修复 调查状态更新定时器改为允许误点触发</description>
+			<author>周梓凡</author>
+			<revision-time>2015-08-05</revision-time>
+			<baseline>V12.0.4.R.20150807</baseline>
+		</modify>
+		<modify>
+			<description>优化 调查问卷倒计时样式，文字描述</description>
+			<author>周梓凡</author>
+			<revision-time>2015-08-04</revision-time>
+			<baseline>V12.0.4.R.20150807</baseline>
+		</modify>
+		<modify>
+			<description>优化 增加统计来源数据历史表(便于将来排查问题)</description>
+			<author>周梓凡</author>
+			<revision-time>2015-08-04</revision-time>
+			<baseline>V12.0.4.R.20150807</baseline>
+		</modify>
+		<modify>
+			<description>优化 移动端翻页提示用户体验</description>
+			<author>周梓凡</author>
+			<revision-time>2015-08-04</revision-time>
+			<baseline>V12.0.4.R.20150807</baseline>
+		</modify>
+		<modify>
+			<description>优化 分类设置中的文字描述</description>
+			<author>周梓凡</author>
+			<revision-time>2015-07-27</revision-time>
+			<baseline>V12.0.4.R.20150807</baseline>
+		</modify>
+		<modify>
+			<description>修复 匿名调查导出后看到了调查者信息问题</description>
+			<author>周梓凡</author>
+			<revision-time>2015-07-20</revision-time>
+			<baseline>V12.0.4.R.20150807</baseline>
+		</modify>
+		<modify>
+			<description>优化 参与问卷在不可作答的情况下路径链接可点击</description>
+			<author>周梓凡</author>
+			<revision-time>2015-07-20</revision-time>
+			<baseline>V12.0.4.R.20150807</baseline>
+		</modify>
+		<modify>
+			<description>新增 参与调查页面二维码</description>
+			<author>周梓凡</author>
+			<revision-time>2015-07-20</revision-time>
+			<baseline>V12.0.4.R.20150807</baseline>
+		</modify>
+		<modify>
+			<description>优化 调查增加倒计时</description>
+			<author>周梓凡</author>
+			<revision-time>2015-07-20</revision-time>
+			<baseline>V12.0.4.R.20150807</baseline>
+		</modify>
+		<modify>
+			<description>优化 增加后台配置角色</description>
+			<author>周梓凡</author>
+			<revision-time>2015-07-09</revision-time>
+			<baseline>V12.0.3.R.20150710</baseline>
+		</modify>
+		<modify>
+			<description>修复 搜索权限问题</description>
+			<author>周梓凡</author>
+			<revision-time>2015-07-09</revision-time>
+			<baseline>V12.0.3.R.20150710</baseline>
+		</modify>
+		<modify>
+			<description>修复 调查/未调查人员页签样式问题</description>
+			<author>周梓凡</author>
+			<revision-time>2015-07-01</revision-time>
+			<baseline>V12.0.3.R.20150710</baseline>
+		</modify>
+		<modify>
+			<description>修复 IE8下问卷模板预览问卷报错</description>
+			<author>周梓凡</author>
+			<revision-time>2015-07-01</revision-time>
+			<baseline>V12.0.3.R.20150710</baseline>
+		</modify>
+		<modify>
+			<description>修复 多选题选后全部取消也能提交问题</description>
+			<author>周梓凡</author>
+			<revision-time>2015-06-26</revision-time>
+			<baseline>V12.0.3.R.20150710</baseline>
+		</modify>
+		<modify>
+			<description>修复 网上调查X轴文字过长时看不清问题</description>
+			<author>周梓凡</author>
+			<revision-time>2015-06-19</revision-time>
+			<baseline>V12.0.3.R.20150710</baseline>
+		</modify>
+		<modify>
+			<description>新增 调查统计结果、调查审批</description>
+			<author>周梓凡</author>
+			<revision-time>2015-06-19</revision-time>
+			<baseline>V12.0.3.R.20150710</baseline>
+		</modify>
+		<modify>
+			<description>修复 模板中选出的题目附件权限问题</description>
+			<author>周梓凡</author>
+			<revision-time>2015-06-09</revision-time>
+			<baseline>V12.0.3.R.20150710</baseline>
+		</modify>
+		<modify>
+			<description>修复 矩阵多选题内容错位问题</description>
+			<author>周梓凡</author>
+			<revision-time>2015-06-04</revision-time>
+			<baseline>V12.0.2.R.20150605</baseline>
+		</modify>
+		<modify>
+			<description>优化 问卷题目图片样式</description>
+			<author>周梓凡</author>
+			<revision-time>2015-06-04</revision-time>
+			<baseline>V12.0.2.R.20150605</baseline>
+		</modify>
+		<modify>
+			<description>修复 参与调查的人为公共常用群组时，在我参与的筛选项中无法找到</description>
+			<author>周梓凡</author>
+			<revision-time>2015-06-04</revision-time>
+			<baseline>V12.0.2.R.20150605</baseline>
+		</modify>
+		<modify>
+			<description>#15488 修复 某些ie8版本下stringify缺陷导致的问题</description>
+			<author>周梓凡</author>
+			<revision-time>2015-06-04</revision-time>
+			<baseline>V12.0.3.R.20150710</baseline>
+		</modify>
+		<modify>
+			<description>优化 3级页面路径</description>
+			<author>周梓凡</author>
+			<revision-time>2015-06-04</revision-time>
+			<baseline>V12.0.2.R.20150605</baseline>
+		</modify>
+		<modify>
+			<description>优化 调查提醒文字描述</description>
+			<author>周梓凡</author>
+			<revision-time>2015-06-04</revision-time>
+			<baseline>V12.0.2.R.20150605</baseline>
+		</modify>
+		<modify>
+			<description>优化 excel导出文字提示</description>
+			<author>周梓凡</author>
+			<revision-time>2015-06-04</revision-time>
+			<baseline>V12.0.2.R.20150605</baseline>
+		</modify>
+		<modify>
+			<description>修复 标题图片查看页面无法显示问题</description>
+			<author>周梓凡</author>
+			<revision-time>2015-06-02</revision-time>
+			<baseline>V12.0.2.R.20150605</baseline>
+		</modify>
+		<modify>
+			<description>修复 问卷预览时图片移上去会闪烁问题</description>
+			<author>周梓凡</author>
+			<revision-time>2015-05-26</revision-time>
+			<baseline>V12.0.2.R.20150605</baseline>
+		</modify>
+		<modify>
+			<description>修复 标题存在双引号的情况下点击参与人员答卷分析按钮没反应</description>
+			<author>周梓凡</author>
+			<revision-time>2015-05-26</revision-time>
+			<baseline>V12.0.2.R.20150605</baseline>
+		</modify>
+		<modify>
+			<description>新增 操作成功后自动刷新列表</description>
+			<author>魏本源</author>
+			<revision-time>2015-05-20</revision-time>
+			<baseline>V12.0.2.R.20150605</baseline>
+		</modify>
+		<modify>
+			<description>优化 问卷属性图标</description>
+			<author>周梓凡</author>
+			<revision-time>2015-05-19</revision-time>
+			<baseline>V12.0.2.R.20150605</baseline>
+		</modify>
+		<modify>
+			<description>修复 新建题目rtf里有链接报错问题</description>
+			<author>周梓凡</author>
+			<revision-time>2015-05-07</revision-time>
+			<baseline>V12.0.1.R.20150508</baseline>
+		</modify>
+		<modify>
+			<description>优化 选择题目模板弹出框</description>
+			<author>周梓凡</author>
+			<revision-time>2015-05-07</revision-time>
+			<baseline>V12.0.1.R.20150508</baseline>
+		</modify>
+		<modify>
+			<description>修复 问卷题目模板设置查看界面，点击关闭按钮页面出现“当前页面处于编辑状态”的对话框</description>
+			<author>周梓凡</author>
+			<revision-time>2015-05-07</revision-time>
+			<baseline>V12.0.1.R.20150508</baseline>
+		</modify>
+		<modify>
+			<description>修复 IE下预览问卷主题乱码问题</description>
+			<author>周梓凡</author>
+			<revision-time>2015-04-29</revision-time>
+			<baseline>V12.0.1.R.20150508</baseline>
+		</modify>
+		<modify>
+			<description>修复 矩阵选项中的图片无法删除问题</description>
+			<author>周梓凡</author>
+			<revision-time>2015-04-28</revision-time>
+			<baseline>V12.0.1.R.20150508</baseline>
+		</modify>
+		<modify>
+			<description>修改 调查查看图片形式为弹出框</description>
+			<author>周梓凡</author>
+			<revision-time>2015-04-28</revision-time>
+			<relation>
+				<relation-module>sys/ui</relation-module>
+			</relation>
+			<baseline>V12.0.1.R.20150508</baseline>
+		</modify>
+		<modify>
+			<description>修复 多选题时如果超过可选择个数立即提示</description>
+			<author>周梓凡</author>
+			<revision-time>2015-04-28</revision-time>
+			<baseline>V12.0.1.R.20150508</baseline>
+		</modify>
+		<modify>
+			<description>修复 问卷设置、调查结果index页面未自动刷新页面</description>
+			<author>魏本源</author>
+			<revision-time>2015-03-25</revision-time>
+			<baseline>V12.0.0.R.20150325</baseline>
+		</modify>
+		<modify>
+			<description>修复 可阅读者可见他人草稿问题修正</description>
+			<author>林秀贤</author>
+			<revision-time>2015-03-20</revision-time>
+			<relation>
+				<relation-module>sys/right</relation-module>
+			</relation>
+			<baseline>V12.0.0.R.20150325</baseline>
+		</modify>
+		<modify>
+			<description>优化 调查页面的最多可选X项提示框增加自动关闭功能</description>
+			<author>林秀贤</author>
+			<revision-time>2015-03-19</revision-time>
+			<relation>
+				<relation-module>sys/ui</relation-module>
+			</relation>
+			<baseline>V12.0.0.R.20150325</baseline>
+		</modify>
+		<modify>
+			<description>修复 可见他人草稿问题处理</description>
+			<author>林秀贤</author>
+			<revision-time>2015-03-07</revision-time>
+			<baseline>V12.0.0.R.20150325</baseline>
+		</modify>
+		<modify>
+			<description>修复 审批页面下预览报错</description>
+			<author>周梓凡</author>
+			<revision-time>2015-03-05</revision-time>
+			<baseline>V12.0.0.R.20150325</baseline>
+		</modify>
+		<modify>
+			<description>修复 快速审批挡住了题目预览问题</description>
+			<author>周梓凡</author>
+			<revision-time>2015-03-05</revision-time>
+			<baseline>V12.0.0.R.20150325</baseline>
+		</modify>
+		<modify>
+			<description>修复 调查结果导出按钮报错</description>
+			<author>魏本源</author>
+			<revision-time>2015-03-02</revision-time>
+			<baseline>V12.0.0.R.20150325</baseline>
+		</modify>
+		<modify>
+			<description>优化 二级页面按钮操作栏翻页功能</description>
+			<author>王腾飞</author>
+			<revision-time>2015-01-16</revision-time>
+			<relation>
+				<relation-module>sys/ui</relation-module>
+			</relation>
+			<baseline>V12.0.0.B3.20150116</baseline>
+		</modify>
+		<modify>
+			<description>修复 待办发起人为空等问题修正</description>
+			<author>林秀贤</author>
+			<revision-time>2015-01-08</revision-time>
+			<baseline>V12.0.0.B3.20150116</baseline>
+		</modify>
+		<modify>
+			<description>新增 调查管理portlet</description>
+			<author>周梓凡</author>
+			<revision-time>2014-12-31</revision-time>
+			<baseline>V12.0.0.B3.20150116</baseline>
+		</modify>
+		<modify>
+			<description>修复 更新统计按钮创建者可见</description>
+			<author>周梓凡</author>
+			<revision-time>2014-12-25</revision-time>
+			<baseline>V12.0.0.B3.20150116</baseline>
+		</modify>
+		<modify>
+			<description>新增 工作交接注册服务</description>
+			<author>王腾飞</author>
+			<revision-time>2014-12-10</revision-time>
+			<relation>
+				<relation-module>sys/handover</relation-module>
+			</relation>
+			<baseline>V12.0.0.B3.20150116</baseline>
+		</modify>
+		<modify>
+			<description>修复 查看已调查人员在linux mysql环境下出错</description>
+			<author>周梓凡</author>
+			<revision-time>2014-10-31</revision-time>
+			<baseline>V12.0.0.B2.20141114</baseline>
+		</modify>
+		<modify>
+			<description>优化 表单输入框宽度规范化</description>
+			<author>魏本源</author>
+			<revision-time>2014-10-23</revision-time>
+			<baseline>V12.0.0.B2.20141114</baseline>
+		</modify>
+		<modify>
+			<description>修复 xform:text标签长度校验</description>
+			<author>魏本源</author>
+			<revision-time>2014-10-17</revision-time>
+			<baseline>V12.0.0.B2.20141114</baseline>
+		</modify>
+		<modify>
+			<description>新增 操作成功后自动刷新列表</description>
+			<author>魏本源</author>
+			<revision-time>2014-10-17</revision-time>
+			<baseline>V12.0.0.B2.20141114</baseline>
+		</modify>
+		<modify>
+			<description>修复 调查结束前提醒设置问题</description>
+			<author>周梓凡</author>
+			<revision-time>2014-10-16</revision-time>
+			<baseline>V12.0.0.B2.20141114</baseline>
+		</modify>
+		<modify>
+			<description>修复 项目不带项目名情况下，新建题目报404错误</description>
+			<author>周梓凡</author>
+			<revision-time>2014-10-09</revision-time>
+			<baseline>V12.0.0.B2.20141114</baseline>
+		</modify>
+		<modify>
+			<description>修复 调查新建页面，新增题目窗口，附件“上传”按钮和“浏览”按钮没有随皮肤样式走</description>
+			<author>周梓凡</author>
+			<revision-time>2014-09-26</revision-time>
+			<baseline>V12.0.0.B2.20141114</baseline>
+		</modify>
+		<modify>
+			<description>优化 调查结果图表信息</description>
+			<author>周梓凡</author>
+			<revision-time>2014-09-25</revision-time>
+			<baseline>V12.0.0.B2.20141114</baseline>
+		</modify>
+		<modify>
+			<description>修复 部分题目中"其他选项"勾选后无效问题</description>
+			<author>周梓凡</author>
+			<revision-time>2014-09-24</revision-time>
+			<baseline>V12.0.0.B2.20141114</baseline>
+		</modify>
+		<modify>
+			<description>优化 题目中插入图片失败提示语</description>
+			<author>周梓凡</author>
+			<revision-time>2014-09-24</revision-time>
+			<baseline>V12.0.0.B2.20141114</baseline>
+		</modify>
+		<modify>
+			<description>修复 chrome37下问卷模板页面中的弹出框失效问题</description>
+			<author>周梓凡</author>
+			<revision-time>2014-09-24</revision-time>
+			<baseline>V12.0.0.B2.20141114</baseline>
+		</modify>
+		<modify>
+			<description>修复 第一次进入模块时列表视图不加载</description>
+			<author>周梓凡</author>
+			<revision-time>2014-09-24</revision-time>
+			<baseline>V12.0.0.B2.20141114</baseline>
+		</modify>
+		<modify>
+			<description>修复 新建题目时，IE8下的一些JS错误</description>
+			<author>周梓凡</author>
+			<revision-time>2014-09-19</revision-time>
+			<baseline>V12.0.0.B2.20141114</baseline>
+		</modify>
+		<modify>
+			<description>修复 矩阵评分题统计数据错误</description>
+			<author>周梓凡</author>
+			<revision-time>2014-09-19</revision-time>
+			<baseline>V12.0.0.B2.20141114</baseline>
+		</modify>
+		<modify>
+			<description>优化 应用配置—维护文档下，操作“批量修改权限”的提示信息与模块二级页面的提示信息保持一致</description>
+			<author>周梓凡</author>
+			<revision-time>2014-09-17</revision-time>
+			<baseline>V12.0.0.B2.20141114</baseline>
+		</modify>
+		<modify>
+			<description>修复 完善文档维护目录相关功能以便维护者在此进行文档维护</description>
+			<author>易荣烽</author>
+			<revision-time>2014-08-28</revision-time>
+			<relation>
+				<relation-module>core</relation-module>
+				<relation-module>sys/category</relation-module>
+			</relation>
+			<baseline>V12.0.0.B1.20140905</baseline>
+		</modify>
+		<modify>
+			<description>修复 网上调查题目上的图片移上去会闪现</description>
+			<author>周梓凡</author>
+			<revision-time>2014-08-25</revision-time>
+			<baseline>V12.0.0.B1.20140905</baseline>
+		</modify>
+		<modify>
+			<description>修复 调查问卷设置了截止日期结果超过了截止日期后参与作答的红色待办消失，但是进入调查管理模块点击问卷仍可继续作答提交</description>
+			<author>周梓凡</author>
+			<revision-time>2014-08-25</revision-time>
+			<baseline>V12.0.0.B1.20140905</baseline>
+		</modify>
+		<modify>
+			<description>修复 调查主题中插入的图形过宽，在预览问卷时，窗口无法展现水平滚动条，导致无法看到完整的图片问题</description>
+			<author>周梓凡</author>
+			<revision-time>2014-08-25</revision-time>
+			<baseline>V12.0.0.B1.20140905</baseline>
+		</modify>
+		<modify>
+			<description>修复 创建带附件的题目时数据库生成了2条记录</description>
+			<author>周梓凡</author>
+			<revision-time>2014-07-08</revision-time>
+			<baseline>V11.0.3.R.20140801</baseline>
+		</modify>
+		<modify>
+			<description>优化 参与调查、调查结果页面样式</description>
+			<author>周梓凡</author>
+			<revision-time>2014-07-02</revision-time>
+			<baseline>V11.0.3.R.20140704</baseline>
+		</modify>
+		<modify>
+			<description>优化 调查结果使用静态页面(性能优化)</description>
+			<author>周梓凡</author>
+			<revision-time>2014-07-02</revision-time>
+			<baseline>V11.0.3.R.20140704</baseline>
+		</modify>
+		<modify>
+			<description>修复 新建题目模板带题目、题目带附件保存报错</description>
+			<author>魏本源</author>
+			<revision-time>2014-05-08</revision-time>
+			<baseline>V11.0.2.R.20140606</baseline>
+		</modify>
+		<modify>
+			<description>优化 查看版本信息页面</description>
+			<author>魏本源</author>
+			<revision-time>2014-04-09</revision-time>
+			<baseline>V11.0.1.R.20140506</baseline>
+		</modify>
+		<modify>
+			<description>优化 多选择题项目太长时调查结果页面展示</description>
+			<author>张乐志</author>
+			<revision-time>2014-02-27</revision-time>
+			<baseline>V11.0.1.R.20140506</baseline>
+		</modify>
+		<modify>
+			<description>修复 调查结果数据分析页面未显示相关的调查数据问题</description>
+			<author>张乐志</author>
+			<revision-time>2014-02-27</revision-time>
+			<baseline>V11.0.0.R.20140320</baseline>
+		</modify>
+		<modify>
+			<description>修复 复制其他人问卷时提交异常问题</description>
+			<author>张乐志</author>
+			<revision-time>2014-01-26</revision-time>
+			<baseline>V11.0.0.R.20140320</baseline>
+		</modify>
+		<modify>
+			<description>修复 多选题、矩阵多选题为非必填时不显示最多/最少选项提示</description>
+			<author>周梓凡</author>
+			<revision-time>2014-01-23</revision-time>
+			<baseline>V11.0.0.R.20140320</baseline>
+		</modify>
+		<modify>
+			<description>优化 查看结果相关按钮只要有权限即可见，新建问卷创建人默认加入调查结果可阅读者列表中。</description>
+			<author>张乐志</author>
+			<revision-time>2014-01-06</revision-time>
+			<baseline>V11.0.0.B1.20140107</baseline>
+		</modify>
+		<modify>
+			<description>修复 题目附件调整，答题内容分析时避免空指针异常</description>
+			<author>张乐志</author>
+			<revision-time>2013-12-24</revision-time>
+			<baseline>V11.0.0.B1.20140107</baseline>
+		</modify>
+		<modify>
+			<description>优化 避免其他页未答题就提交的情况，调整问卷题目已参与人和未参与人比例计算以当前题目实际答题为准进行计算</description>
+			<author>张乐志</author>
+			<revision-time>2013-12-16</revision-time>
+			<baseline>V11.0.0.B1.20140107</baseline>
+		</modify>
+		<modify>
+			<description>新增 增加“修改调查结果可阅读者”功能</description>
+			<author>张乐志</author>
+			<revision-time>2013-12-03</revision-time>
+			<baseline>V11.0.0.B1.20140107</baseline>
+		</modify>
+		<modify>
+			<description>修复 是否记录参与调查人员名单为否时，调整提示说明，屏蔽参与人员答卷分析，屏蔽参与人员信息，屏蔽调查结果分析页面中的“查看其他”页面上的调查人员信息，屏蔽问卷设置的“已（未）调查人员”页签</description>
+			<author>张乐志</author>
+			<revision-time>2013-12-03</revision-time>
+			<baseline>V11.0.0.B1.20140107</baseline>
+		</modify>
+		<modify>
+			<description>修复 调查结果列表仅显示有权限查看调查结果的问卷</description>
+			<author>张乐志</author>
+			<revision-time>2013-12-03</revision-time>
+			<baseline>V11.0.0.B1.20140107</baseline>
+		</modify>
+		<modify>
+			<description>优化 网上调查权限页签权限说明调整，问卷属性按钮增加权限控制，页面增加标题说明，暂存问卷后修改和删除问卷题目后预览问卷问题修复，题目模板保存并新建功能修复</description>
+			<author>张乐志</author>
+			<revision-time>2013-12-02</revision-time>
+			<baseline>V11.0.0.B1.20140107</baseline>
+		</modify>
+		<modify>
+			<description>修复 手动添加题目（非模板导入题目）附件时答卷无权限查看附件的问题</description>
+			<author>张乐志</author>
+			<revision-time>2013-11-25</revision-time>
+			<baseline>V11.0.0.B1.20140107</baseline>
+		</modify>
+		<modify>
+			<description>优化 添加提醒次数校验和提醒结束时间校验</description>
+			<author>魏本源</author>
+			<revision-time>2013-11-25</revision-time>
+			<baseline>V11.0.0.B1.20140107</baseline>
+		</modify>
+		<modify>
+			<description>修复 手动结束调查时更新调查终止日期</description>
+			<author>张乐志</author>
+			<revision-time>2013-11-04</revision-time>
+			<baseline>V11.0.0.B1.20140107</baseline>
+		</modify>
+		<modify>
+			<description>优化 新建问卷设置题目时增加分页符相关的提示信息，问卷还在调查中查看问卷结果时给予统计结果可能不一致提示</description>
+			<author>张乐志</author>
+			<revision-time>2013-10-21</revision-time>
+			<baseline>V11.0.0.B1.20140107</baseline>
+		</modify>
+		<modify>
+			<description>优化 调整问卷列表页面中点击我参与的或我创建的问卷在问卷调查结束后仍旧跳转到问卷属性页面</description>
+			<author>张乐志</author>
+			<revision-time>2013-10-14</revision-time>
+			<baseline>V11.0.0.B1.20140107</baseline>
+		</modify>
+		<modify>
+			<description>新增 问卷题目多选题选项中增加最多选项数功能</description>
+			<author>张乐志</author>
+			<revision-time>2013-10-14</revision-time>
+			<baseline>V11.0.0.B1.20140107</baseline>
+		</modify>
+		<modify>
+			<description>新增‘复制问卷’功能</description>
+			<author>张乐志</author>
+			<revision-time>2013-10-11</revision-time>
+			<baseline>V11.0.0.R.20140320</baseline>
+		</modify>
+		<modify>
+			<description>优化 问卷题目模板模块权限调整，问卷模块调整原'复制问卷'按钮名称为'生成题目模板'</description>
+			<author>张乐志</author>
+			<revision-time>2013-10-11</revision-time>
+			<baseline>V11.0.0.R.20140320</baseline>
+		</modify>
+		<modify>
+			<description>修复 删除题目选项报错的问题，问卷复制时弹出框取消选定报错的问题</description>
+			<author>张乐志</author>
+			<revision-time>2013-09-23</revision-time>
+			<baseline>V11.0.0.B1.20140107</baseline>
+		</modify>
+		<modify>
+			<description>修复 问答题编辑界面‘此题为必答题’多选框展示问题</description>
+			<author>张乐志</author>
+			<revision-time>2013-09-11</revision-time>
+			<baseline>V11.0.0.B1.20140107</baseline>
+		</modify>
+		<modify>
+			<description>优化 提高问卷调查结果页面和问卷调查结果分析页面的加载速度</description>
+			<author>张乐志</author>
+			<revision-time>2013-09-05</revision-time>
+			<baseline>V11.0.0.B1.20140107</baseline>
+		</modify>
+		<modify>
+			<description>优化 我参与的问卷列表仅显示调查中和调查结束的问卷</description>
+			<author>张乐志</author>
+			<revision-time>2013-09-02</revision-time>
+			<baseline>V11.0.0.B1.20140107</baseline>
+		</modify>
+		<modify>
+			<description>修复 调整网上调查访问列表权限问题</description>
+			<author>张乐志</author>
+			<revision-time>2013-08-29</revision-time>
+			<baseline>V11.0.0.B1.20140107</baseline>
+		</modify>
+		<modify>
+			<description>优化 在主页快捷方式新建调查时，先弹出框选择模板</description>
+			<author>朱湖强</author>
+			<revision-time>2013-08-13</revision-time>
+			<baseline>V11.0.0.B1.20140107</baseline>
+		</modify>
+		<modify>
+			<description>修复 调查数据导出为基础数据报错问题</description>
+			<author>朱湖强</author>
+			<revision-time>2013-07-30</revision-time>
+			<baseline>V11.0.0.B1.20140107</baseline>
+		</modify>
+		<modify>
+			<description>修复 谷歌和火狐下批量修改权限无法提交问题</description>
+			<author>朱湖强</author>
+			<revision-time>2013-07-29</revision-time>
+			<baseline>V11.0.0.B1.20140107</baseline>
+		</modify>
+		<modify>
+			<description>修复 问卷复制功能在谷歌和safari浏览器下不生效问题</description>
+			<author>朱湖强</author>
+			<revision-time>2013-07-29</revision-time>
+			<baseline>V11.0.0.B1.20140107</baseline>
+		</modify>
+		<modify>
+			<description>修复 修复问卷题目中的附件上传保存和查看问题</description>
+			<author>张乐志</author>
+			<revision-time>2013-07-26</revision-time>
+			<baseline>V11.0.0.B1.20140107</baseline>
+		</modify>
+		<modify>
+			<description>优化 网上调查权限问题</description>
+			<author>谭又豪</author>
+			<revision-time>2013-07-24</revision-time>
+			<baseline>V11.0.0.B1.20140107</baseline>
+		</modify>
+		<modify>
+			<description>优化 手动启动调查时删除调查开始的定时任务，避免收到重复待办</description>
+			<author>朱湖强</author>
+			<revision-time>2013-07-23</revision-time>
+			<baseline>V11.0.0.B1.20140107</baseline>
+		</modify>
+		<modify>
+			<description>修复 问卷复制选类别时不显示“取消选定”按钮，避免报错</description>
+			<author>朱湖强</author>
+			<revision-time>2013-07-04</revision-time>
+			<baseline>V10.0.3.R.20130712</baseline>
+		</modify>
+		<modify>
+			<description>修复 页面左边不对齐问题</description>
+			<author>朱湖强</author>
+			<revision-time>2013-07-03</revision-time>
+			<baseline>V10.0.3.R.20130712</baseline>
+		</modify>
+		<modify>
+			<description>修复 只允许参与一次的问卷，第一次参与时通过打开多个标签可以参与多次问题</description>
+			<author>朱湖强</author>
+			<revision-time>2013-05-16</revision-time>
+			<baseline>V10.0.2.R.20130608</baseline>
+		</modify>
+		<modify>
+			<description>优化 问卷调查答卷时增加延迟加载功能。</description>
+			<author>张乐志</author>
+			<revision-time>2013-04-22</revision-time>
+			<baseline>V10.0.2.R.20130608</baseline>
+		</modify>
+		<modify>
+			<description>修复 点击“保存并新建”后清空页面数据</description>
+			<author>魏本源</author>
+			<revision-time>2013-04-07</revision-time>
+			<baseline>V10.0.3.R.20130712</baseline>
+		</modify>
+		<modify>
+			<description>优化 实现单选、多选题的柱状图与饼状图选项答案的省略字数显示和鼠标悬浮时全显示</description>
+			<author>魏本源</author>
+			<revision-time>2013-04-03</revision-time>
+			<baseline>V10.0.2.R.20130608</baseline>
+		</modify>
+		<modify>
+			<description>修复 调查题目带分页标记时进行问卷复制报错的问题</description>
+			<author>魏本源</author>
+			<revision-time>2013-03-29</revision-time>
+			<baseline>V10.0.3.R.20130712</baseline>
+		</modify>
+		<modify>
+			<description>修复 新建调查时，提醒次数过多导致而数据库字段长度不够报错问题</description>
+			<author>朱湖强</author>
+			<revision-time>2013-03-28</revision-time>
+			<baseline>V10.0.1.R.20130328</baseline>
+		</modify>
+		<modify>
+			<description>优化 解决SQL注入的安全问题</description>
+			<author>李勇</author>
+			<revision-time>2013-01-22</revision-time>
+			<baseline>V10.0.1.R.20130328</baseline>
+		</modify>
+		<modify>
+			<description>修复 答卷分析中其他内容无法查看的问题</description>
+			<author>张乐志</author>
+			<revision-time>2013-01-11</revision-time>
+			<baseline>V10.0.1.R.20130328</baseline>
+		</modify>
+		<modify>
+			<description>修复 英文环境下无法进行问卷答卷和新建问卷。</description>
+			<author>张乐志</author>
+			<revision-time>2013-01-11</revision-time>
+			<baseline>V10.0.1.R.20130328</baseline>
+		</modify>
+		<modify>
+			<description>新增 在答卷页中增加问卷说明展示</description>
+			<author>张乐志</author>
+			<revision-time>2013-01-11</revision-time>
+			<baseline>V10.0.1.R.20130328</baseline>
+		</modify>
+		<modify>
+			<description>优化 是否记录调查人员名单选择否时不展示调查人员信息</description>
+			<author>张乐志</author>
+			<revision-time>2013-01-11</revision-time>
+			<baseline>V10.0.1.R.20130328</baseline>
+		</modify>
+		<modify>
+			<description>修复 使用试题模板或编辑试题引起的附件权限问题</description>
+			<author>李衡</author>
+			<revision-time>2012-12-27</revision-time>
+			<baseline>V10.0.1.R.20130328</baseline>
+		</modify>
+		<modify>
+			<description>优化 使用c:import替换jsp:include引入场所属性页面</description>
+			<author>汪俊锋</author>
+			<revision-time>2012-12-21</revision-time>
+			<baseline>V10.0.1.R.20130328</baseline>
+		</modify>
+		<modify>
+			<description>修复 点击类别试图，展现其下的调查问卷数据</description>
+			<author>魏本源</author>
+			<revision-time>2012-12-19</revision-time>
+			<baseline>V10.0.1.R.20130328</baseline>
+		</modify>
+		<modify>
+			<description>新增 增加调整文档权限和相关人员功能</description>
+			<author>张乐志</author>
+			<revision-time>2012-12-06</revision-time>
+			<baseline>V10.0.0.R.20121215</baseline>
+		</modify>
+		<modify>
+			<description>修复 网上调查题目中如果有分页符，复制题目模板报错</description>
+			<author>朱湖强</author>
+			<revision-time>2012-11-29</revision-time>
+			<baseline>V10.0.0.R.20121215</baseline>
+		</modify>
+		<modify>
+			<description>优化 取消问卷复制按钮的显示限制</description>
+			<author>魏本源</author>
+			<revision-time>2012-11-28</revision-time>
+			<baseline>V10.0.0.R.20121215</baseline>
+		</modify>
+		<modify>
+			<description>新增 加入集团分级机制</description>
+			<author>张乐志</author>
+			<revision-time>2012-11-26</revision-time>
+			<relation>
+				<relation-module>core</relation-module>
+				<relation-module>sys/category</relation-module>
+				<relation-module>sys/right</relation-module>
+				<relation-module>sys/authorization</relation-module>
+			</relation>
+			<baseline>V10.0.0.R.20121215</baseline>
+		</modify>
+		<modify>
+			<description>修复 模板中"替换流程处理人"按钮的权限控制和树节点模块设置中"导出excel参数设置"的权限控制</description>
+			<author>朱湖强</author>
+			<revision-time>2012-11-13</revision-time>
+			<baseline>V10.0.0.R.20121215</baseline>
+		</modify>
+		<modify>
+			<description>修复 删除编号前缀字段不兼容旧数据库的问题</description>
+			<author>仇兴</author>
+			<revision-time>2012-11-07</revision-time>
+			<baseline>V10.0.0.R.20121215</baseline>
+		</modify>
+		<modify>
+			<description>修复 由于定位不准，导致新建调查时，题目选项中的图片附件上传到一定个数就不能上传问题</description>
+			<author>朱湖强</author>
+			<revision-time>2012-10-26</revision-time>
+			<baseline>V10.0.0.R.20121215</baseline>
+		</modify>
+		<modify>
+			<description>移除 问卷模板设置中，移除“编号前缀”、“实施反馈人”字段</description>
+			<author>魏本源</author>
+			<revision-time>2012-10-18</revision-time>
+			<baseline>V10.0.0.R.20121215</baseline>
+		</modify>
+		<modify>
+			<description>修复 已调查和未调查人数显示不正确问题</description>
+			<author>朱湖强</author>
+			<revision-time>2012-10-12</revision-time>
+			<baseline>V10.0.0.R.20121215</baseline>
+		</modify>
+		<modify>
+			<description>修复 矩阵单选题图例中图片显示不正确</description>
+			<author>朱湖强</author>
+			<revision-time>2012-09-27</revision-time>
+			<baseline>V10.0.0.R.20121215</baseline>
+		</modify>
+		<modify>
+			<description>修复 网上调查提醒为矩阵时，提示信息重复</description>
+			<author>朱湖强</author>
+			<revision-time>2012-09-18</revision-time>
+			<baseline>V10.0.0.B2.20120923</baseline>
+		</modify>
+		<modify>
+			<description>优化 大字段加入延时加载</description>
+			<author>魏本源</author>
+			<revision-time>2012-09-05</revision-time>
+			<baseline>V10.0.0.B2.20120923</baseline>
+		</modify>
+		<modify>
+			<description>优化 附件attachment.js移动到附近机制里面去了</description>
+			<author>李勇</author>
+			<revision-time>2012-08-10</revision-time>
+			<relation>
+				<relation-module>sys/attachment</relation-module>
+			</relation>
+			<baseline>V10.0.0.B2.20120923</baseline>
+		</modify>
+		<modify>
+			<description>修复 调查结束提前提醒设置，进行提醒时间大于60分钟时，出现定时任务生成报错的问题。</description>
+			<author>庄为亮</author>
+			<revision-time>2012-06-28</revision-time>
+			<baseline>V10.0.0.B2.20120923</baseline>
+		</modify>
+		<modify>
+			<description>新增 在系统配置界面的参数设置（应用设置）中，增加网上调查增强版节点的配置</description>
+			<author>朱湖强</author>
+			<revision-time>2012-05-09</revision-time>
+			<baseline>V10.0.0.B1.20120522</baseline>
+		</modify>
+		<modify>
+			<description>修复 调查者参与调查时出现“您没有在该问卷调查范围内，不能参与调查！”的问题</description>
+			<author>庄为亮</author>
+			<revision-time>2012-05-04</revision-time>
+			<baseline>V10.0.0.B1.20120522</baseline>
+		</modify>
+		<modify>
+			<description>修复 调整资源名字显示，避免在统一分类模块的树节点中，跟流程管理模块名字显示重复的问题</description>
+			<author>朱湖强</author>
+			<revision-time>2012-04-27</revision-time>
+			<baseline>V10.0.0.B1.20120522</baseline>
+		</modify>
+		<modify>
+			<description>修改问卷说明字数较多是提交问卷报错问题</description>
+			<author>庄为亮</author>
+			<revision-time>2012-03-07</revision-time>
+			<baseline>V9.0.2.R.20120326</baseline>
+		</modify>
+		<modify>
+			<description>修改导入题目模板列表页面，题目名称过长时页面排版很丑的问题</description>
+			<author>庄为亮</author>
+			<revision-time>2012-02-16</revision-time>
+			<baseline>V9.0.2.R.20120326</baseline>
+		</modify>
+		<modify>
+			<description>修改应答页面题目附件无法找到的问题</description>
+			<author>庄为亮</author>
+			<revision-time>2012-02-16</revision-time>
+			<baseline>V9.0.2.R.20120326</baseline>
+		</modify>
+		<modify>
+			<description>网上调查翻页新需求改动</description>
+			<author>朱湖强</author>
+			<revision-time>2012-01-12</revision-time>
+			<baseline>V9.0.2.R.20120326</baseline>
+		</modify>
+		<modify>
+			<description>对于暂存功能对于统计功能影响的处理,调查时部分界面的调整</description>
+			<author>李衡</author>
+			<revision-time>2012-01-04</revision-time>
+			<baseline>V9.0.2.R.20120326</baseline>
+		</modify>
+		<modify>
+			<description>修改提交问卷时，已经做答的题目提示不能为空的问题</description>
+			<author>庄为亮</author>
+			<revision-time>2011-12-22</revision-time>
+			<baseline>EKP9.0.1.R.20111231</baseline>
+		</modify>
+		<modify>
+			<description>修改部分文字没翻译问题</description>
+			<author>庄为亮</author>
+			<revision-time>2011-11-08</revision-time>
+			<baseline>EKP9.0.1.R.20111231</baseline>
+		</modify>
+		<modify>
+			<description>修改题型名称支持国际化</description>
+			<author>庄为亮</author>
+			<revision-time>2011-11-02</revision-time>
+			<baseline>EKP9.0.1.R.20111231</baseline>
+		</modify>
+		<modify>
+			<description>修复对调查问卷进行“问卷复制”操作时报错</description>
+			<author>苏韶勇</author>
+			<revision-time>2011-10-21</revision-time>
+			<relation>
+				<relation-module>sys/attachment</relation-module>
+			</relation>
+			<baseline>EKP9.0.0.R.20111025</baseline>
+		</modify>
+		<modify>
+			<description>修复在“我参与的问卷”-“按问卷类型”目录下的类型上新建问卷报错</description>
+			<author>苏韶勇</author>
+			<revision-time>2011-10-20</revision-time>
+			<baseline>EKP9.0.0.R.20111025</baseline>
+		</modify>
+		<modify>
+			<description>修复查看调查结果里的“参与人员信息”，催办未调查者报错</description>
+			<author>苏韶勇</author>
+			<revision-time>2011-10-20</revision-time>
+			<baseline>EKP9.0.0.R.20111025</baseline>
+		</modify>
+		<modify>
+			<description>预览时"有关问题的说明或者问题回答提示"的图片显示不了</description>
+			<author>苏韶勇</author>
+			<revision-time>2011-10-20</revision-time>
+			<baseline>EKP9.0.0.R.20111025</baseline>
+		</modify>
+		<modify>
+			<description>修复批量修改权限时，应用到本类别下的子类及文档出错</description>
+			<author>苏韶勇</author>
+			<revision-time>2011-10-20</revision-time>
+			<baseline>EKP9.0.0.R.20111025</baseline>
+		</modify>
+		<modify>
+			<description>修改题目里的附件打不开的问题</description>
+			<author>苏韶勇</author>
+			<revision-time>2011-10-10</revision-time>
+			<baseline>EKP9.0.0.R.20111025</baseline>
+		</modify>
+		<modify>
+			<description>添加关闭数据库连接和关闭流动作</description>
+			<author>苏韶勇</author>
+			<revision-time>2011-09-06</revision-time>
+			<baseline>EKP9.0.0.R.20111025</baseline>
+		</modify>
+		<modify>
+			<description>1、修改当问卷设置了记录参与调查人名单时，调查结束后查看问卷属性报数组越界的错。2、将问卷属性中“已（未）参与人员名单”改为分页展现</description>
+			<author>庄为亮</author>
+			<revision-time>2011-08-31</revision-time>
+			<baseline>EKP9.0.0.R.20111025</baseline>
+		</modify>
+		<modify>
+			<description>修改已调查人员/未调查人员里面的“前页”按钮失效和页面跳转的bug</description>
+			<author>庄为亮</author>
+			<revision-time>2011-08-25</revision-time>
+			<baseline>EKP9.0.0.R.20111025</baseline>
+		</modify>
+		<modify>
+			<description>进入调查管理主页，右边视图链接到所有问卷</description>
+			<author>赵义洪</author>
+			<revision-time>2011-08-05</revision-time>
+			<baseline>EKP9.0.0.R.20111025</baseline>
+		</modify>
+		<modify>
+			<description>修改调查问卷暂存后从待办进入看不到提交按钮</description>
+			<author>庄为亮</author>
+			<revision-time>2011-08-04</revision-time>
+			<baseline>EKP9.0.0.R.20111025</baseline>
+		</modify>
+		<modify>
+			<description>修改饼状图比例显示有问题的bug</description>
+			<author>庄为亮</author>
+			<revision-time>2011-07-26</revision-time>
+			<baseline>EKP9.0.0.R.20111025</baseline>
+		</modify>
+		<modify>
+			<description>修改oracle环境下删除调查报错的缺陷</description>
+			<author>赵义洪</author>
+			<revision-time>2011-07-26</revision-time>
+			<baseline>EKP9.0.0.R.20111025</baseline>
+		</modify>
+		<modify>
+			<description>修改参与调查人数较多并且“调查开始时间”为空或者小于审批通过时间时，审批通过后问卷一直处于待审状态，需要等上较长时间才变为“调查中”的bug</description>
+			<author>庄为亮</author>
+			<revision-time>2011-07-25</revision-time>
+			<baseline>EKP9.0.0.R.20111025</baseline>
+		</modify>
+		<modify>
+			<description>修改题目中包含空格，保存后，空格都显示成问号的bug</description>
+			<author>庄为亮</author>
+			<revision-time>2011-07-13</revision-time>
+			<baseline>EKP9.0.0.B3.2011071501</baseline>
+		</modify>
+		<modify>
+			<description>修改流程审批通过后没有生成结束调查定时任务的bug</description>
+			<author>庄为亮</author>
+			<revision-time>2011-07-13</revision-time>
+			<baseline>EKP9.0.0.B3.2011071501</baseline>
+		</modify>
+		<modify>
+			<description>修改添加一个题目，不输入任何内容 直接关闭窗口后点击预览报错的bug</description>
+			<author>庄为亮</author>
+			<revision-time>2011-07-13</revision-time>
+			<baseline>EKP9.0.0.B3.2011071501</baseline>
+		</modify>
+		<modify>
+			<description>修改题目模板设置增加两个题目，点击“预览问卷”，删除一个题目保存再预览时保错的bug</description>
+			<author>庄为亮</author>
+			<revision-time>2011-07-13</revision-time>
+			<baseline>EKP9.0.0.B3.2011071501</baseline>
+		</modify>
+		<modify>
+			<description>修改调查问卷设置“允许同一用户进行多次调查”，调查时，仍只能提交一次的bug</description>
+			<author>庄为亮</author>
+			<revision-time>2011-07-12</revision-time>
+			<baseline>EKP9.0.0.B3.2011071501</baseline>
+		</modify>
+		<modify>
+			<description>修改删除题目附件后，保存问卷模板报错的bug</description>
+			<author>庄为亮</author>
+			<revision-time>2011-07-12</revision-time>
+			<baseline>EKP9.0.0.B3.2011071501</baseline>
+		</modify>
+		<modify>
+			<description>修改矩阵题结果显示图形设为饼状图后，调查结果显示的是柱状图的缺陷</description>
+			<author>庄为亮</author>
+			<revision-time>2011-07-12</revision-time>
+			<baseline>EKP9.0.0.B3.2011071501</baseline>
+		</modify>
+		<modify>
+			<description>调查结果导出和参与人员答卷分析结果导出优化</description>
+			<author>庄为亮</author>
+			<revision-time>2011-07-06</revision-time>
+			<baseline>EKP9.0.0.B3.2011071501</baseline>
+		</modify>
+		<modify>
+			<description>在“预览问卷”页面时，编辑题目进行新增图片。返回“预览问卷”页面，不能正常放大</description>
+			<author>赵义洪</author>
+			<revision-time>2011-06-02</revision-time>
+			<baseline>EKP9.0.0.B3.2011071501</baseline>
+		</modify>
+		<modify>
+			<description>请修改查看结果中“总需参与调查人数”的描述</description>
+			<author>赵义洪</author>
+			<revision-time>2011-06-02</revision-time>
+			<baseline>EKP9.0.0.B3.2011071501</baseline>
+		</modify>
+		<modify>
+			<description>请修改批量删除调查问卷时，提示会违反唯一约束。</description>
+			<author>赵义洪</author>
+			<revision-time>2011-06-02</revision-time>
+			<baseline>EKP9.0.0.B3.2011071501</baseline>
+		</modify>
+		<modify>
+			<description>“调查导出为Excel”页面，矩阵多选题显示长串地址。</description>
+			<author>赵义洪</author>
+			<revision-time>2011-06-02</revision-time>
+			<baseline>EKP9.0.0.B3.2011071501</baseline>
+		</modify>
+		<modify>
+			<description>优化调查结果导出excel时矩阵评分题出现异常的问题</description>
+			<author>赵义洪</author>
+			<revision-time>2011-06-01</revision-time>
+			<baseline>EKP9.0.0.B3.2011071501</baseline>
+		</modify>
+		<modify>
+			<description>优化调查结果导出excel功能</description>
+			<author>赵义洪</author>
+			<revision-time>2011-06-01</revision-time>
+			<baseline>EKP9.0.0.B3.2011071501</baseline>
+		</modify>
+		<modify>
+			<description>优化调查结果统计功能</description>
+			<author>赵义洪</author>
+			<revision-time>2011-06-01</revision-time>
+			<baseline>EKP9.0.0.B3.2011071501</baseline>
+		</modify>
+		<modify>
+			<description>修改删除调查活动报错的缺陷</description>
+			<author>赵义洪</author>
+			<revision-time>2011-05-31</revision-time>
+			<baseline>EKP9.0.0.B3.2011071501</baseline>
+		</modify>
+		<modify>
+			<description>修改调查管理流程显示页面不能查看更多的缺陷</description>
+			<author>赵义洪</author>
+			<revision-time>2011-05-27</revision-time>
+			<baseline>EKP9.0.0.B3.2011071501</baseline>
+		</modify>
+		<modify>
+			<description>修改调查管理部分页面展示</description>
+			<author>赵义洪</author>
+			<revision-time>2011-05-20</revision-time>
+			<baseline>EKP9.0.0.B3.2011071501</baseline>
+		</modify>
+		<modify>
+			<description>修改调查结果excel界面展示</description>
+			<author>赵义洪</author>
+			<revision-time>2011-05-20</revision-time>
+			<baseline>EKP9.0.0.B3.2011071501</baseline>
+		</modify>
+		<modify>
+			<description>优化查看未参与调查人员信息代码</description>
+			<author>赵义洪</author>
+			<revision-time>2011-05-20</revision-time>
+			<baseline>EKP9.0.0.B3.2011071501</baseline>
+		</modify>
+		<modify>
+			<description>设置调查管理“问卷属性”、“复制问卷”、“查看结果”、“传阅”、“修改调查结束时间”的权限</description>
+			<author>赵义洪</author>
+			<revision-time>2011-05-18</revision-time>
+			<baseline>EKP9.0.0.B3.2011071501</baseline>
+		</modify>
+		<modify>
+			<description>修改暂存问答题有内容但提交仍然提示没有内容的缺陷</description>
+			<author>赵义洪</author>
+			<revision-time>2011-05-18</revision-time>
+			<baseline>EKP9.0.0.B3.2011071501</baseline>
+		</modify>
+		<modify>
+			<description>修改调查结果详细信息界面内容错位的缺陷</description>
+			<author>赵义洪</author>
+			<revision-time>2011-05-18</revision-time>
+			<baseline>EKP9.0.0.B3.2011071501</baseline>
+		</modify>
+		<modify>
+			<description>修改导出调查结果到excel没有矩阵评分题的缺陷</description>
+			<author>赵义洪</author>
+			<revision-time>2011-05-18</revision-time>
+			<baseline>EKP9.0.0.B3.2011071501</baseline>
+		</modify>
+		<modify>
+			<description>修改批量修改问题模板权限报错的缺陷</description>
+			<author>赵义洪</author>
+			<revision-time>2011-05-16</revision-time>
+			<baseline>EKP9.0.0.B3.2011071501</baseline>
+		</modify>
+		<modify>
+			<description>修改评分题的分值可以输入字母的缺陷</description>
+			<author>赵义洪</author>
+			<revision-time>2011-05-16</revision-time>
+			<baseline>EKP9.0.0.B3.2011071501</baseline>
+		</modify>
+		<modify>
+			<description>修改IE6下预览问卷按钮没有皮肤的缺陷</description>
+			<author>赵义洪</author>
+			<revision-time>2011-05-16</revision-time>
+			<baseline>EKP9.0.0.B3.2011071501</baseline>
+		</modify>
+		<modify>
+			<description>修改矩阵多选题和矩阵多选题编辑时删除选项保错的缺陷</description>
+			<author>赵义洪</author>
+			<revision-time>2011-05-16</revision-time>
+			<baseline>EKP9.0.0.B3.2011071501</baseline>
+		</modify>
+		<modify>
+			<description>修改单选题在调查结果柱状图中显示选择原因的缺陷</description>
+			<author>赵义洪</author>
+			<revision-time>2011-05-16</revision-time>
+			<baseline>EKP9.0.0.B3.2011071501</baseline>
+		</modify>
+		<modify>
+			<description>修改单选题在调查结果柱状图中显示选择原因的缺陷</description>
+			<author>赵义洪</author>
+			<revision-time>2011-05-13</revision-time>
+			<baseline>EKP9.0.0.B3.2011071501</baseline>
+		</modify>
+		<modify>
+			<description>修改多选题在结果统计页面显示答案与实际提交答案不一致的缺陷</description>
+			<author>赵义洪</author>
+			<revision-time>2011-05-12</revision-time>
+			<baseline>EKP9.0.0.B3.2011071501</baseline>
+		</modify>
+		<modify>
+			<description>修改另存为题目模板显示成功实际却失败的缺陷</description>
+			<author>赵义洪</author>
+			<revision-time>2011-05-12</revision-time>
+			<baseline>EKP9.0.0.B3.2011071501</baseline>
+		</modify>
+		<modify>
+			<description>修改选择题目模板是无法选取题目的分页符的缺陷</description>
+			<author>赵义洪</author>
+			<revision-time>2011-05-11</revision-time>
+			<baseline>EKP9.0.0.B3.2011071501</baseline>
+		</modify>
+		<modify>
+			<description>修改调查结果中无法看到单选题的选择原因的缺陷</description>
+			<author>赵义洪</author>
+			<revision-time>2011-05-11</revision-time>
+			<baseline>EKP9.0.0.B3.2011071501</baseline>
+		</modify>
+		<modify>
+			<description>修改IE6下，在查看结果-参与人员信息的对话框中，点击“催办未调查者”时报脚本错误的bug</description>
+			<author>庄为亮</author>
+			<revision-time>2011-05-11</revision-time>
+			<baseline>EKP9.0.0.B3.2011071501</baseline>
+		</modify>
+		<modify>
+			<description>增加催办未调查者权限</description>
+			<author>庄为亮</author>
+			<revision-time>2011-05-10</revision-time>
+			<baseline>EKP9.0.0.B3.2011071501</baseline>
+		</modify>
+		<modify>
+			<description>修改普通用户点击流程结束状态的调查问卷显示无效链接的缺陷</description>
+			<author>赵义洪</author>
+			<revision-time>2011-05-09</revision-time>
+			<baseline>EKP9.0.0.B3.2011071501</baseline>
+		</modify>
+		<modify>
+			<description>修改IE6下选择题目点击确定按钮出现错误的缺陷</description>
+			<author>赵义洪</author>
+			<revision-time>2011-05-09</revision-time>
+			<baseline>EKP9.0.0.B3.2011071501</baseline>
+		</modify>
+		<modify>
+			<description>修改当选择50道题时加载很慢的缺陷</description>
+			<author>赵义洪</author>
+			<revision-time>2011-05-09</revision-time>
+			<baseline>EKP9.0.0.B3.2011071501</baseline>
+		</modify>
+		<modify>
+			<description>修改其他选项和选择原因字数限制无用的缺陷</description>
+			<author>赵义洪</author>
+			<revision-time>2011-05-09</revision-time>
+			<baseline>EKP9.0.0.B3.2011071501</baseline>
+		</modify>
+	</modifies>
+</version>

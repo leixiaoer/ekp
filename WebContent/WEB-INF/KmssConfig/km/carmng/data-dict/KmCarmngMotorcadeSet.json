@@ -1,0 +1,145 @@
+{
+    "global":     {
+        "modelName": "com.landray.kmss.km.carmng.model.KmCarmngMotorcadeSet",
+        "messageKey": "km-carmng:table.kmCarmngMotorcadeSet",
+        "displayProperty": "fdName",
+        "serviceBean": "kmCarmngMotorcadeSetService",
+        "table": "km_carmng_motorcade_set",
+        "url": "/km/carmng/km_carmng_motorcade_set/kmCarmngMotorcadeSet.do?method=edit&fdId=${fdId}"
+    },
+    "attrs":     {
+        "fdId":         {
+            "propertyType": "id",
+            "generator": {"type": "assigned"}
+        },
+        "fdOrder":         {
+            "propertyType": "simple",
+            "messageKey": "km-carmng:kmCarmngMotorcadeSet.fdOrder",
+            "type": "Integer",
+            "column": "fd_order",
+            "notNull": "false"
+        },
+        "fdName":         {
+            "propertyType": "simple",
+            "messageKey": "km-carmng:kmCarmngMotorcadeSet.fdName",
+            "type": "String",
+            "column": "fd_name",
+            "notNull": "false",
+            "length": "200"
+        },
+        "fdNotifyMinuterDriver":         {
+            "propertyType": "simple",
+            "messageKey": "km-carmng:kmCarmngInsuranceInfo.docModifier",
+            "type": "Integer",
+            "column": "fd_notify_minuter_driver",
+            "notNull": "false"
+        },
+        "fdNotifyMinuterDispatchers":         {
+            "propertyType": "simple",
+            "messageKey": "km-carmng:kmCarmngMotorcadeSet.fdNotifyMinuterDispatchers",
+            "type": "Integer",
+            "column": "fd_notify_minuter_dispatchers",
+            "notNull": "false"
+        },
+        "fdNotifyMinuterUser":         {
+            "propertyType": "simple",
+            "messageKey": "km-carmng:kmCarmngMotorcadeSet.fdNotifyMinuterUser",
+            "type": "Integer",
+            "column": "fd_notify_minuter_user",
+            "notNull": "false"
+        },
+        "fdNotifyType":         {
+            "propertyType": "simple",
+            "messageKey": "km-carmng:kmCarmngMotorcadeSet.fdNotifyType",
+            "type": "String",
+            "column": "fd_notify_type",
+            "notNull": "false",
+            "length": "100"
+        },
+        "fdRemark":         {
+            "propertyType": "simple",
+            "messageKey": "km-carmng:kmCarmngMotorcadeSet.fdRemark",
+            "type": "String",
+            "column": "fd_remark",
+            "notNull": "false",
+            "length": "2000"
+        },
+        "docCreateTime":         {
+            "propertyType": "simple",
+            "messageKey": "km-carmng:kmCarmngMotorcadeSet.docCreateTime",
+            "type": "DateTime",
+            "column": "doc_create_time",
+            "notNull": "false"
+        },
+        "fdDispatchers":         {
+            "propertyType": "model",
+            "messageKey": "km-carmng:kmCarmngMotorcadeSet.fdDispatchersId",
+            "type": "com.landray.kmss.sys.organization.model.SysOrgElement",
+            "column": "fd_dispatchers_id"
+        },
+        "fdRegister":         {
+            "propertyType": "model",
+            "messageKey": "km-carmng:kmCarmngMotorcadeSet.fdRegisterId",
+            "type": "com.landray.kmss.sys.organization.model.SysOrgElement",
+            "column": "fd_register_id"
+        },
+        "docCreator":         {
+            "propertyType": "model",
+            "messageKey": "km-carmng:kmCarmngMotorcadeSet.docCreatorId",
+            "type": "com.landray.kmss.sys.organization.model.SysOrgPerson",
+            "column": "doc_creator_id"
+        },
+        "authReaderFlag":         {
+            "propertyType": "simple",
+            "messageKey": "km-carmng:kmCarmngCategory.authReaderFlag",
+            "type": "Boolean",
+            "column": "auth_reader_flag",
+            "notNull": "false",
+            "length": "1",
+            "validate": "false",
+            "canDisplay": "false"
+        },
+        "authReaders":         {
+            "propertyType": "list",
+            "messageKey": "km-carmng:kmCarmngCategory.authReaders",
+            "column": "fd_doc_id",
+            "type": "com.landray.kmss.sys.organization.model.SysOrgElement",
+            "elementColumn": "auth_reader_id",
+            "table": "km_carmng_motorcade_reader",
+            "canDisplay": "false"
+        },
+        "authEditors":         {
+            "propertyType": "list",
+            "messageKey": "km-carmng:kmCarmngCategory.authEditors",
+            "column": "fd_doc_id",
+            "type": "com.landray.kmss.sys.organization.model.SysOrgElement",
+            "elementColumn": "auth_editor_id",
+            "table": "km_carmng_motorcade_editor",
+            "canDisplay": "false"
+        },
+        "authAllReaders":         {
+            "propertyType": "list",
+            "messageKey": "km-carmng:kmCarmngCategory.authAllReaders",
+            "column": "fd_doc_id",
+            "type": "com.landray.kmss.sys.organization.model.SysOrgElement",
+            "elementColumn": "auth_all_reader_id",
+            "table": "km_carmng_motorcade_areader",
+            "canDisplay": "false"
+        },
+        "authAllEditors":         {
+            "propertyType": "list",
+            "messageKey": "km-carmng:kmCarmngCategory.authAllEditors",
+            "column": "fd_doc_id",
+            "type": "com.landray.kmss.sys.organization.model.SysOrgElement",
+            "elementColumn": "auth_all_editor_id",
+            "table": "km_carmng_motorcade_aeditor",
+            "canDisplay": "false"
+        },
+        "isEffective":         {
+            "propertyType": "simple",
+            "messageKey": "km-carmng:kmCarmngMotorcadeSet.isEffective",
+            "type": "String",
+            "column": "fd_is_effective"
+        }
+    }
+}

@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<log-oper>
+	<logset>
+		<!-- 发票台账设置 -->
+        <oper
+        	id="fsscLedgerInvoiceOperLog"
+        	extends="BaseOperLog"
+        	model="com.landray.kmss.fssc.ledger.model.FsscLedgerInvoice"
+        	action="/fssc/ledger/fssc_ledger_invoice/fsscLedgerInvoice.do">
+        </oper>
+		<!-- 合同台账设置 -->
+        <oper
+        	id="fsscLedgerContractOperLog"
+        	extends="BaseOperLog"
+        	model="com.landray.kmss.fssc.ledger.model.FsscLedgerContract"
+        	action="/fssc/ledger/fssc_ledger_contract/fsscLedgerContract.do">
+        </oper>
+		<!-- 物资台账设置 -->
+        <oper
+        	id="fsscLedgerMaterialOperLog"
+        	extends="BaseOperLog"
+        	model="com.landray.kmss.fssc.ledger.model.FsscLedgerMaterial"
+        	action="/fssc/ledger/fssc_ledger_material/fsscLedgerMaterial.do">
+        </oper>
+	</logset>
+</log-oper>

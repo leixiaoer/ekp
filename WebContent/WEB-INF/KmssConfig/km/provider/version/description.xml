@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<description xmlns="http://www.example.org/description-config" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.example.org/description-config ../../../description.xsd">
+	<module>
+		<module-name>供应商管理</module-name>
+		<module-path>km/provider</module-path>
+		<baseline>V15.0.4.R.20200410</baseline>
+		<source-md5>a047d1e48b706e810846b7b52ab12ef5</source-md5>
+		<is-custom>否</is-custom>
+		<serial-num>6</serial-num>
+	</module>
+</description>

@@ -1,0 +1,84 @@
+{
+    "global":     {
+        "modelName": "com.landray.kmss.km.carmng.model.KmCarmngMaintenanceInfo",
+        "messageKey": "km-carmng:table.kmCarmngMaintenanceInfo",
+        "serviceBean": "kmCarmngMaintenanceInfoService",
+        "table": "km_carmng_maintenance_info",
+        "url": "/km/carmng/km_carmng_maintenance_info/kmCarmngMaintenanceInfo.do?method=view&fdId=${fdId}"
+    },
+    "attrs":     {
+        "fdId":         {
+            "propertyType": "id",
+            "generator": {"type": "assigned"}
+        },
+        "fdMaintenanceTime":         {
+            "propertyType": "simple",
+            "messageKey": "km-carmng:kmCarmngMaintenanceInfo.fdMaintenanceTime",
+            "type": "DateTime",
+            "column": "fd_maintenance_time",
+            "notNull": "false"
+        },
+        "fdMaintenanceFee":         {
+            "propertyType": "simple",
+            "messageKey": "km-carmng:kmCarmngMaintenanceInfo.fdMaintenanceFee",
+            "type": "Double",
+            "column": "fd_maintenance_fee",
+            "notNull": "false",
+            "length": "12"
+        },
+        "fdPersonId":         {
+            "propertyType": "simple",
+            "messageKey": "km-carmng:kmCarmngMaintenanceInfo.fdPersonId",
+            "type": "String",
+            "column": "fd_person_id",
+            "notNull": "false",
+            "length": "200"
+        },
+        "fdRepairFee":         {
+            "propertyType": "simple",
+            "messageKey": "km-carmng:kmCarmngMaintenanceInfo.fdRepairFee",
+            "type": "Double",
+            "column": "fd_repair_fee",
+            "notNull": "false",
+            "length": "12"
+        },
+        "fdRemark":         {
+            "propertyType": "simple",
+            "messageKey": "km-carmng:kmCarmngMaintenanceInfo.fdRemark",
+            "type": "String",
+            "column": "fd_remark",
+            "notNull": "false",
+            "length": "2000"
+        },
+        "docCreateTime":         {
+            "propertyType": "simple",
+            "messageKey": "km-carmng:kmCarmngMaintenanceInfo.docCreateTime",
+            "type": "DateTime",
+            "column": "doc_create_time",
+            "notNull": "false"
+        },
+        "fdPersonName":         {
+            "propertyType": "simple",
+            "messageKey": "km-carmng:kmCarmngMaintenanceInfo.fdPersonId",
+            "type": "String",
+            "column": "fd_person_name",
+            "length": "200"
+        },
+        "docCreator":         {
+            "propertyType": "model",
+            "messageKey": "km-carmng:kmCarmngMaintenanceInfo.docCreatorId",
+            "type": "com.landray.kmss.sys.organization.model.SysOrgElement",
+            "column": "doc_creator_id"
+        },
+        "fdVehiclesInfo":         {
+            "propertyType": "model",
+            "messageKey": "km-carmng:kmCarmngMaintenanceInfo.fdVehiclesInfoId",
+            "type": "com.landray.kmss.km.carmng.model.KmCarmngInfomation",
+            "column": "fd_vehicles_info_id"
+        }
+    },
+    "attachments": {"attachment":     {
+        "propertyType": "att",
+        "messageKey": "km-carmng:kmCarmngInsuranceInfo.attachment"
+    }}
+}

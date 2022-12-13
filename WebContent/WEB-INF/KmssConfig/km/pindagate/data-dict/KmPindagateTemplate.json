@@ -1,0 +1,216 @@
+{
+    "global":     {
+        "modelName": "com.landray.kmss.km.pindagate.model.KmPindagateTemplate",
+        "messageKey": "km-pindagate:table.kmPindagateTemplate",
+        "displayProperty": "fdName",
+        "serviceBean": "kmPindagateTemplateService",
+        "table": "km_pindagate_template",
+        "url": "/km/pindagate/km_pindagate_template/kmPindagateTemplate.do?method=view&fdId=${fdId}"
+    },
+    "attrs":     {
+        "fdId":         {
+            "propertyType": "id",
+            "generator": {"type": "assigned"}
+        },
+        "fdName":         {
+            "propertyType": "simple",
+            "messageKey": "km-pindagate:kmPindagateTemplate.fdName",
+            "type": "String",
+            "column": "fd_name",
+            "notNull": "true",
+            "length": "200",
+            "langSupport": "true",
+            "canLogShow":"1"
+        },
+        "fdOrder":         {
+            "propertyType": "simple",
+            "messageKey": "km-pindagate:kmPindagateTemplate.fdOrder",
+            "type": "Long",
+            "column": "fd_order",
+            "notNull": "false",
+            "length": "10",
+            "canLogShow":"1"
+        },
+        "docCreateTime":         {
+            "propertyType": "simple",
+            "messageKey": "km-pindagate:kmPindagateTemplate.docCreateTime",
+            "type": "DateTime",
+            "column": "doc_create_time",
+            "notNull": "true"
+        },
+        "fdIsAvailable":         {
+            "propertyType": "simple",
+            "messageKey": "km-pindagate:kmPindagateTemplate.fdIsAvailable",
+            "type": "Boolean",
+            "column": "fd_is_available",
+            "notNull": "false",
+            "unique": "false",
+            "defaultValue": "1"
+        },
+        "docCreator":         {
+            "propertyType": "model",
+            "messageKey": "km-pindagate:kmPindagateTemplate.docCreator",
+            "type": "com.landray.kmss.sys.organization.model.SysOrgPerson",
+            "column": "doc_creator_id",
+            "notNull": "true"
+        },
+        "authTmpReaders":         {
+            "propertyType": "list",
+            "messageKey": "km-pindagate:kmPindagateTemplate.authTmpReaders",
+            "column": "fd_template_id",
+            "type": "com.landray.kmss.sys.organization.model.SysOrgElement",
+            "elementColumn": "auth_reader_id",
+            "table": "km_pindagate_tmp_main_reader",
+            "canLogShow":"1"
+        },
+        "authTmpEditors":         {
+            "propertyType": "list",
+            "messageKey": "km-pindagate:kmPindagateTemplate.authTmpEditors",
+            "column": "fd_template_id",
+            "type": "com.landray.kmss.sys.organization.model.SysOrgElement",
+            "elementColumn": "auth_editor_id",
+            "table": "km_pindagate_tmp_main_editor",
+            "canLogShow":"1"
+        },
+        "authEditors":         {
+            "propertyType": "list",
+            "messageKey": "sys-right:right.edit.authEditors",
+            "column": "fd_template_id",
+            "type": "com.landray.kmss.sys.organization.model.SysOrgElement",
+            "elementColumn": "auth_editor_id",
+            "table": "km_pindagate_tmp_editor",
+            "canLogShow":"1"
+        },
+        "authOtherEditors":         {
+            "propertyType": "list",
+            "messageKey": "sys-right:right.edit.authOtherEditors",
+            "column": "fd_template_id",
+            "type": "com.landray.kmss.sys.organization.model.SysOrgElement",
+            "elementColumn": "auth_other_editor_id",
+            "table": "km_pindagate_tmp_oeditor",
+            "canDisplay": "false"
+        },
+        "authAllEditors":         {
+            "propertyType": "list",
+            "messageKey": "sys-right:right.edit.authAllEditors",
+            "column": "fd_template_id",
+            "type": "com.landray.kmss.sys.organization.model.SysOrgElement",
+            "elementColumn": "auth_all_editor_id",
+            "table": "km_pindagate_tmp_aeditor",
+            "canDisplay": "false"
+        },
+        "authReaders":         {
+            "propertyType": "list",
+            "messageKey": "sys-right:right.read.authReaders",
+            "column": "fd_template_id",
+            "type": "com.landray.kmss.sys.organization.model.SysOrgElement",
+            "elementColumn": "auth_reader_id",
+            "table": "km_pindagate_tmp_reader",
+            "canLogShow":"1"
+        },
+        "authOtherReaders":         {
+            "propertyType": "list",
+            "messageKey": "sys-right:right.read.authOtherReaders",
+            "column": "fd_template_id",
+            "type": "com.landray.kmss.sys.organization.model.SysOrgElement",
+            "elementColumn": "auth_other_reader_id",
+            "table": "km_pindagate_tmp_oreader",
+            "canDisplay": "false"
+        },
+        "authAllReaders":         {
+            "propertyType": "list",
+            "messageKey": "sys-right:right.read.authAllReaders",
+            "column": "fd_template_id",
+            "type": "com.landray.kmss.sys.organization.model.SysOrgElement",
+            "elementColumn": "auth_all_reader_id",
+            "table": "km_pindagate_tmp_areader",
+            "canDisplay": "false"
+        },
+        "authResearchers":         {
+            "propertyType": "list",
+            "messageKey": "km-pindagate:kmPindagateTemplate.authResearchers",
+            "column": "fd_template_id",
+            "type": "com.landray.kmss.sys.organization.model.SysOrgElement",
+            "elementColumn": "auth_researcher_id",
+            "table": "km_pindagate_tmp_researcher"
+        },
+        "fdLabelReaders":         {
+            "propertyType": "list",
+            "messageKey": "km-pindagate:kmPindagateTemplate.fdLabelReaders",
+            "column": "fd_template_id",
+            "type": "com.landray.kmss.sys.organization.model.SysOrgElement",
+            "elementColumn": "auth_lable_reader_id",
+            "table": "km_pindagate_tmp_lable_reader"
+        },
+        "fdPosts":         {
+            "propertyType": "list",
+            "messageKey": "km-pindagate:kmPindagateTemplate.fdPosts",
+            "column": "fd_template_id",
+            "type": "com.landray.kmss.sys.organization.model.SysOrgElement",
+            "elementColumn": "fd_post_id",
+            "table": "km_pindagate_tmp_post"
+        },
+        "fdFeedback":         {
+            "propertyType": "list",
+            "messageKey": "km-pindagate:kmPindagateTemplate.fdFeedback",
+            "column": "fd_template_id",
+            "type": "com.landray.kmss.sys.organization.model.SysOrgElement",
+            "elementColumn": "auth_feedback_id",
+            "table": "km_pindagate_tmp_feedback"
+        },
+        "authArea":         {
+            "propertyType": "model",
+            "messageKey": "sys-authorization:sysAuthArea.authArea",
+            "type": "com.landray.kmss.sys.authorization.model.SysAuthArea",
+            "column": "auth_area_id",
+            "notNull": "false",
+            "unique": "false",
+            "readOnly": "true"
+        },
+        "docCategory":         {
+            "propertyType": "model",
+            "messageKey": "km-pindagate:kmPindagateTemplate.docCategory",
+            "type": "com.landray.kmss.sys.category.model.SysCategoryMain",
+            "column": "fd_category_id",
+            "notNull": "true",
+            "canLogShow":"1"
+        },
+        "fdLableVisiable":         {
+            "propertyType": "simple",
+            "type": "Boolean",
+            "column": "fd_lable_visiable",
+            "length": "1"
+        },
+        "fdFeedbackModify":         {
+            "propertyType": "simple",
+            "messageKey": "km-pindagate:kmPindagateTemplate.fdFeedbackModify",
+            "type": "Boolean",
+            "column": "fd_feedback_modify",
+            "length": "1",
+            "notNull": "true"
+        },
+        "fdNumberPrefix":         {
+            "propertyType": "simple",
+            "messageKey": "km-pindagate:kmPindagateTemplate.fdNumberPrefix",
+            "type": "String",
+            "column": "fd_number_prefix",
+            "length": "200"
+        },
+        "authReaderFlag":         {
+            "propertyType": "simple",
+            "messageKey": "sys-right:right.read.authReaderFlag",
+            "canDisplay": "false",
+            "type": "Boolean",
+            "column": "auth_reader_flag",
+            "length": "1"
+        },
+        "docProperties":         {
+            "propertyType": "list",
+            "type": "com.landray.kmss.sys.category.model.SysCategoryProperty",
+            "column": "fd_template_id",
+            "elementColumn": "fd_property_id",
+            "table": "km_pindagate_tmp_property",
+            "canLogShow":"1"
+        }
+    }
+}

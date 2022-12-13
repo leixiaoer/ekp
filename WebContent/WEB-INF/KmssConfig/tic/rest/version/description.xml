@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<description xmlns="http://www.example.org/description-config" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.example.org/description-config ../../../description.xsd">
+	<module>
+		<module-name>集成中心_REST应用组件</module-name>
+		<module-path>tic/rest</module-path>
+		<baseline>V15.0.4.R.20200410</baseline>
+		<source-md5>ef7e8f3ce563134798ca0b5276e4d5aa</source-md5>
+		<is-custom>否</is-custom>
+		<serial-num>24</serial-num>
+	</module>
+</description>

@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<column-enums>
+	<type name="kmInstitutionKnowledge_docStaus">
+		<value-label>
+			<value>10</value>
+			<label-key>kmInstitution.status.draft</label-key>
+			<bundle>km-institution</bundle>
+		</value-label>
+		<value-label>
+			<value>20</value>
+			<label-key>kmInstitution.status.examine</label-key>
+			<bundle>km-institution</bundle>
+		</value-label>
+		<value-label>
+			<value>11</value>
+			<label-key>kmInstitution.status.refuse</label-key>
+			<bundle>km-institution</bundle>
+		</value-label>
+		<value-label>
+			<value>00</value>
+			<label-key>kmInstitution.status.discard</label-key>
+			<bundle>km-institution</bundle>
+		</value-label>
+		<value-label>
+			<value>30</value>
+			<label-key>kmInstitution.status.publish</label-key>
+			<bundle>km-institution</bundle>
+		</value-label>
+		<value-label>
+			<value>50</value>
+			<label-key>kmInstitution.status.abolishAndFiling</label-key>
+			<bundle>km-institution</bundle>
+		</value-label>
+	</type>
+</column-enums>

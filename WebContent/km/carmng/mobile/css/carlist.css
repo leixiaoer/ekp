@@ -1,0 +1,686 @@
+@charset "utf-8";
+/*车辆列表 Start*/
+.muiCarManageList{
+	border-bottom: 1px solid #e3e3e3;
+	position: relative;
+	list-style: none;
+	background-color: #fff;
+	padding: 1.2rem 1.2rem .8rem;
+}
+.muiCarManageList > a{
+	width: 100%;
+	display: table;
+	-webkit-box-sizing: border-box;
+	box-sizing: border-box;
+}
+.muiCarManageList .carManageIcon{
+	display: table-cell;
+	width: 7.5rem;
+	height: 6rem;
+	overflow: hidden;
+	position: relative;
+}
+.muiCarManageList .carManageIcon img,.muiCarManageList .carManageIcon i {
+	width: 7.5rem;
+	height: 6rem;
+}
+.muiCarManageList .muiCarManageStateTag {
+	padding: 0;
+	width: 90px;
+	height: 38px;
+	line-height: 59px;
+	text-align: center;
+	color: #fff;
+	font-size: 1.2rem;
+	background-color: rgba(91,201,31,0.9);
+	display: block;
+	-webkit-transform: rotate(-45deg);
+			transform: rotate(-45deg);
+	z-index: 5;
+	position: absolute;
+	left: -40px;
+	top: -14px;
+}
+.muiCarManageList .muiCarManageStateTag.repair{ background-color: rgba(242,125,98,0.9);}
+.muiCarManageList .muiCarManageStateTag.scrap{ background-color: rgba(192,192,192,0.9);}
+
+.muiCarManageList .carManageInfo{
+	display: table-cell;
+	padding-left: 1rem;
+	vertical-align: top;
+    width: calc(100% - 7.5rem);
+}
+.muiCarManageList .carManageInfo h3{
+	width: 80%;
+	margin: 0 0 1rem;
+	color: #333;
+	line-height: 2rem;
+	overflow: hidden;
+	font-size: 1.6rem;
+	font-weight: normal;
+	display: -webkit-box;
+	-ms-text-overflow: ellipsis;
+	-webkit-line-clamp: 1;
+	-webkit-box-orient: vertical;
+}
+.muiCarManageList > a:visited .carManageInfo h3{ color: #888;}
+.muiCarManageList .carManageInfo .carManageTip{
+	color: #5bc91f;
+	font-size: 1.4rem;
+	position: absolute;
+	right: 1.2rem;
+	top: 1.2rem;
+}
+.muiCarManageList .carManageDetail{
+	margin:.1rem 0;
+	color: #989898;
+	font-size: 1.2rem;
+}
+.muiCarManageList .carManageDetail > span {
+	padding-right: 1rem;
+	width: 50%;
+	line-height: 1;
+	display: inline-block;
+	overflow: hidden;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+	-webkit-box-sizing: border-box;
+					box-sizing: border-box;
+}
+.muiCarManageList .carManageDetail > span:last-child {
+	margin-right: 0;
+}
+.muiCarManageList .carManageDetail .mui{
+	margin-right: .3rem;
+	vertical-align: top;
+}
+.muiCarManageList .carManageDetail .mui-org{ font-size:1.5rem; line-height:1.5rem;}
+.muiCarManageList .carManageDetail .mui-org:before{ content:"\B159";}
+
+
+
+
+
+
+.muiCarList{margin-bottom: 1rem;margin-top: 1rem;table-layout: fixed;background: #fff;}
+.muiCarList a{ display: block; background:#fff; position: relative; overflow: hidden;}
+.muiCarListHeader{ border-bottom:1px solid #e2e2e2; font-size: 1.4rem; padding:0.8rem 1rem; display: table; width: 100%; box-sizing: border-box; -webkit-box-sizing: border-box;}
+.muiCarFigure{}
+.muiCarFigure img{ width: 1.6rem; height: 1.6rem; border-radius: 50%;}
+
+.muiCarLeft {
+	line-height: 1.6rem;
+	vertical-align: middle;
+	padding-left: 2.1rem;
+}
+.muiCarLeft:after{
+	content: '';
+	display: table;
+	visibility: hidden;
+	clear: both;
+}
+.muiCarRight {
+	display: table-cell;
+	text-align: right;
+	color: #888;
+}
+html.fontSize2 .muiCarRight,
+html.fontSize3 .muiCarRight,
+html.fontSize4 .muiCarRight{
+	display: block;
+}
+
+.muiCarLeft .muiCarFigure{
+	display: inline-block;
+	margin-left: -2.1rem;
+	float: left;
+}
+.muiCarLeft .muiCarTitle {
+	display: block;
+	word-wrap: break-word;
+	white-space: normal;
+	padding-right: 2.6rem;
+	text-align: left;
+}
+
+.muiCarList .muiCarnName em{ color:#333; margin:0 0.5rem;}
+.muiCarList .muiCarLeft span{ color:#333;}
+.muiCarList .muiCarListHeader{overflow: hidden;text-overflow:ellipsis;white-space: nowrap;}
+
+.muiCarListContent{ padding:0.8rem 1rem; padding-left: 3rem;}
+.muiCarListContent .muiCarTitle{font-size: 1.6rem;color:#333;font-weight: normal;padding-bottom: 0.5rem;}
+.muiCarListContent .muiCarTitle em{ color:#37aee9;}
+.muiCarListContent .muiCarInfo{font-size: 1.4rem;line-height: 1.6rem;padding: 0.2rem 0;}
+.muiFormContent.muiCarEditWrap,
+.muiAccordionPanel>div{ background:#eee;}
+.muiLbpmserviceAuditContainer{ background:#fff;}
+.muiAccordionPanelContent .muiSimple:last-child{ margin-bottom: 0;}
+.muiAccordionPanelContent .muiCarEditWrap .muiSimple:last-child>tbody>tr:last-child>td,
+.muiAccordionPanelContent .muiCarEditWrap .muiSimple:last-child>tr:last-child>td{
+	border-bottom:none;
+}
+
+.muiFormContent .mblEdgeToEdgeList{ border-top:none; border-bottom: none;}
+.muiFormContent .mblEdgeToEdgeList .muiCarList{ margin-bottom: 1rem;}
+.mblEdgeToEdgeList#km_carmng_list_CarmngItemListMixin_4,
+.mblEdgeToEdgeList#km_carmng_list_CarmngItemListMixin_5,
+.mblEdgeToEdgeList#km_carmng_list_CarmngItemListMixin_6{ background:#fff;} 
+
+/*--- 车牌号 ---*/
+.muiCarPlateNum{ display: table;}
+.muiCarPlateNum em{ display: table-cell; white-space: nowrap; word-break:normal;}
+.muiCarPlateNum span{ display: table-cell;}
+
+.muiDispatcherStatusTag{
+	width: 85px;
+	font-size: 1.2rem;
+	position: absolute;
+	right: -26px;
+	top: 5px;
+	padding: 5px 0px;
+	background-color: #6fc13a;
+	color: #fff;
+	text-align: center;
+	-webkit-transform: rotate(45deg);
+	-moz-transform: rotate(45deg);
+	-ms-transform: rotate(45deg);
+	-o-transform: rotate(45deg);
+}
+.muiDispatcherStatusTag.muiDispatcherUnhold{ background:#51b749; }
+.muiDispatcherStatusTag.muiDispatcherHold{ background:#f0ad4e; } 
+.muiDispatcherStatusTag.muiDispatcherHolding{ background:#5484ed; } 
+.muiDispatcherStatusTag.muiDispatcherDraft{ background:#c0c0c0; } 
+.muiDispatcherStatusTag.muiDispatcherRefuse{ background:#c0c0c0; } 
+.muiDispatcherStatusTag.muiDispatcherExamine{ background:#c0c0c0; }
+.muiDispatcherStatusTag.muiDispatcherDiscard{ background:#c0c0c0; } 
+.muiDispatcherStatusTag.muiDispatcherCancel{ background:#c0c0c0; } 
+
+/*----- 满意度列表 -----*/
+.muiRatingOff {
+	color: #bfbfbf !important;
+}
+
+.muiRatingOn {
+	color: #ffb535 !important;
+}
+
+.muiRating {
+	vertical-align: middle;
+	display: inline-block;
+}
+
+.muiRatingArea,.muiRatingValue {
+	height: 100%;
+	width: 100%;
+	text-align: left;
+	line-height: 2rem;
+}
+
+.muiRatingArea i,.muiRatingValue i {
+	font-size: 1.2rem;
+	width: 1.2rem;
+	padding: 0px;
+	margin: 0px;
+	text-align: center;
+}
+
+.muiRatingValue {
+	position: absolute;
+	top: 0rem;
+	left: 0rem;
+	overflow: hidden;
+	z-index: 10;
+	white-space: nowrap;
+}
+
+@-webkit-keyframes ratingScale{
+	0.1%{-webkit-transform:scale(1);}
+	50%{-webkit-transform:scale(1.5);}
+    100%{-webkit-transform:scale(1);}
+} 
+
+.muiRatingScale{
+	-webkit-animation-name: ratingScale;
+	-webkit-animation-duration: 0.2s;
+	-webkit-animation-fill-mode: both;
+	
+}
+
+.muiRatingHide{
+	visibility: hidden;
+}
+.muiCarRateInfo .muiCarRateTitle{color:#37aee9;font-size: 1.4rem;vertical-align: middle;line-height: 2rem;display: inline-block;}
+.muiCarRateInfo .muiCarRateTitle:after{ display:inline-block; content:"";border-right: 1px solid #e2e2e2;height:1.3rem; vertical-align:middle;margin:0 1rem;}
+
+/*----- 车辆管理 编辑、新建页面 -----*/
+.muiCarEditWrap{}
+.muiCarEditWrap .muiCar{ padding:0;border-bottom:none;}
+.muiSimple tr td{ border-bottom:1px solid #e2e2e2;}
+.muiSimple tr td .show_more{ color:#37aee9;}
+.muiSimple tr td .mui-tel{ color:#37aee9;}
+.muiCarEditWrap .muiSimple>tbody>tr:last-child>td,
+.muiCarEditWrap .muiSimple>tr:last-child>td{ border-bottom:1px solid #e2e2e2;}
+.muiCarEditWrap .muiSimple{ margin-bottom:1rem; background:#fff;}
+.muiCarEditWrap .muiSimple .muiTitle{color:#333;padding-left: 1rem;/* box-sizing: border-box; *//* -webkit-box-sizing: border-box; */}
+
+.muiCarEditWrap .muiFieldItem>div.muiFieldOpt{ color:#d4d4d4;}
+
+/*--- 行车路径 ---*/
+.muiTravelWay{padding:1rem 1rem 0;text-align: center;}
+.muiTravelWay ul{list-style: none;display: inline-block; padding-top:0.5rem;padding-bottom:3rem;padding-left:3rem;width:90%}
+.muiTravelWay ul li{position: relative;line-height: 1.8rem;padding-bottom: 1rem;text-align: left;border-left: 1px solid #e2e2e2;padding-left: 1rem;}
+.muiTravelWay ul li:before{display: inline-block;content:"";width:1rem;height:1rem;border-radius: 50%;background-color:#c7cfd7;position: absolute;left: -0.5rem;top: 0;}
+.muiTravelWay ul li:last-child:before{ background-color:#48bc9d;} /*- 起点 -*/
+.muiTravelWay ul li:first-child:before{ background-color:#37aee9;} /*- 终点 -*/
+.muiTravelWay ul li .optBtn .mui{ font-size: 2rem; position: absolute; right: 0; top:0; color:#ff5d7c}
+.muiTravelWay ul li:first-child .optBtn .mui{color:#aaa;}
+.muiTravelWay ul li:nth-child(2) .optBtn .mui{color:#37aee9;}
+.muiTravelWay ul li:last-child{ height:0;}
+
+.muiTravelWay ul li .dest{ position:relative; top:-0.5rem}
+.muiTravelWay ul li .detail{ position:relative; top:-0.5rem; color:#888; font-size:1.2rem;}
+
+.muiTravelWay ul li .dest .muiField{    
+	padding: 0;
+	min-width:auto;
+    width: auto;
+}
+
+.path_addopt{line-height: 3.5rem;margin-top:1.5rem;color:#37aee9}
+
+/*--- table格式 ---*/
+.muiTravelWay table { width:100%;}
+.muiTravelWay table:first-child { width:100%; margin-top:1rem;}
+.muiTravelWay table tr td{ border-bottom:none; width:100%;position: relative; line-height: 2.5rem; margin-bottom: 1rem;border-left:1px solid #e2e2e2; padding:1rem 0 0 0; padding-left: 1rem;}
+.muiTravelWay table td:before{display: inline-block;content:"";width:1rem;height:1rem;border-radius: 50%;background-color:#c7cfd7;position: absolute;left: -0.5rem;top: 0;}
+.muiTravelWay table tr:first-child td:before{background-color:#37aee9;}
+.muiTravelWay table tr:last-child td:before{background-color:#48bc9d;}
+.muiTravelWay .startAndendPath tr:last-child td:before{ background-color:#c7cfd7;} /*- 起点 -*/
+.muiTravelWay .startAndendPath tr:first-child td:before{ background-color:#37aee9;} /*- 终点 -*/
+.muiTravelWay table tr .dest{ position:relative;}
+.muiTravelWay table tr .detail{ position:relative; top:-0.5rem; color:#888; font-size:1.2rem;}
+.muiTravelWay table tr .optBtn .mui{ font-size: 2rem; position: absolute; right: 0; top:2rem; color:#ff5d7c}
+
+.muiTravelWay .muiFieldItem{ position: relative; top:-0.2rem; padding:0.5rem 0;}
+.muiTravelWay .muiFieldValue{padding-right: 8px}
+
+/*---- 行车行程单 -----*/
+.muiAccordionPanelContent{ display: block; opacity: 1; padding-left: 0;}/* 测试  */
+.muiTravelSheet{ background:#fff; margin-left: -1rem; text-align: center; font-size: 1.4rem; margin-bottom: 1rem;}
+.muiTravelSheet .travelSheetTitle{ font-weight: normal; font-size: 1.8rem; color:#333; border-bottom:1px dashed #e2e2e2; padding:1.2rem 0;}
+
+.travelSheetTime{display: table;width: 100%;/* padding:1rem 0; */border-bottom:1px dashed #e2e2e2;color:#888;margin: 1rem 0;}
+.travelSheetTime .travelSheetTimeItem {
+	display: table-cell;
+	padding-left: 1rem;
+}
+.travelSheetIcon{ display: table-cell; vertical-align: middle; font-size: 4rem; color:#888;}
+.travelSheetTime .title{ font-size: 1.6rem;}
+.travelSheetTime .time{color:#37aee9;font-size: 2.4rem;margin: 0.2rem 0;}
+.travelSheetTime .date{ margin-bottom:0.5rem}
+
+.travelSheetList{}
+.travelSheetList{list-style: none;display: inline-block;margin-top: 1rem;margin-bottom:4rem;text-align: left;}
+.travelSheetList li{position: relative;line-height: 1.8rem; padding-bottom: 1rem; border-left: 1px solid #e2e2e2;padding-left: 1rem;}
+.travelSheetList li:before{display: inline-block;content:"";width:1rem;height:1rem;border-radius: 50%;background-color:#c7cfd7;position: absolute;left: -0.5rem;top: 0;}
+.travelSheetList li:last-child:before{ background-color:#48bc9d;} /*- 起点 -*/
+.travelSheetList li:first-child:before{ background-color:#37aee9;} /*- 终点 -*/
+.travelSheetList li .optBtn .mui{ font-size: 2rem; position: absolute; right: 0; top:0; color:#ff5d7c}
+.travelSheetList li:first-child .optBtn .mui{color:#aaa;}
+.travelSheetList li:nth-child(2) .optBtn .mui{color:#37aee9;}
+.travelSheetList li:last-child{ height:0}
+
+.travelSheetList li .dest{ position:relative; top:-0.5rem}
+.travelSheetList li .detail{ position:relative; top:-0.5rem; color:#888; font-size:1.2rem;}
+.travelSheetList li .dest .muiField{    
+	padding: 0;
+	min-width:auto;
+    width: auto;
+}
+.travelSheetList .muiFieldValue{padding-right: 8px}
+
+/*---------- 车辆调度 车辆信息 -----------*/
+.muiCarInfoCard{}
+.muiCarInfoCard table{ width: 100%;}
+.muiCarInfoCard table td a{ display:table; padding: 1rem; box-sizing: border-box; -webkit-box-sizing: border-box; color:#333; font-size:1.4rem; width:100%;}
+.muiCarInfoCard .muiCarInfoBtn,
+.muiCarInfoCard .muiCarInfoDetail,
+.muiCarInfoCard .muiCarInfoContact{ display: table-cell; vertical-align: middle;}
+.muiCarInfoCard .muiCarInfoBtn{ color:#ff3d62; font-size: 2rem; text-align: left; padding-left: 1rem; width: 2rem;}
+
+.muiCarInfoCard .muiCarInfoDetail{padding:1rem 0;padding-left: 1rem;}
+.muiCarInfoCard .muiCarInfoDetai:after{ display:table; content:""; line-height:0;}
+.muiCarInfoCard .muiCarInfoImg{ float:left; vertical-align: top;}
+.muiCarInfoCard .muiCarInfoImg img{ width: 8rem; height: 6rem;}
+.muiCarInfoCard .muiCarInfoList{padding-left: 1rem;vertical-align: top;margin-left: 8rem;}
+.muiCarInfoCard .muiCarInfoList dl{text-align: left;}
+.muiCarInfoCard .muiCarInfoList dl dt{ font-size: 1.6rem; color:#333; margin-bottom: 0.5rem;}
+.muiCarInfoCard .muiCarInfoList dl dt em{ color:#37aee9; margin-left: 0.2rem;}
+.muiCarInfoCard .muiCarInfoList dl dd{ line-height: 1.8rem;}
+.muiCarInfoCard .muiCarInfoList dl dd em{ color:#888;}
+
+.muiCarInfoCard ul{ width: 100%;}
+.muiCarInfoCard ul li{ margin-top: 12px}
+.muiCarInfoCard ul li:first-child{ margin-top: 0}
+.muiCarInfoCard ul li:first-child a{border-top:none;}
+.muiCarInfoCard ul li a{ display:table; padding: 1rem; box-sizing: border-box; -webkit-box-sizing: border-box; color:#333; font-size:1.4rem; width:100%; border-top:1px solid #e2e2e2;}
+
+
+
+.muiCarInfoDetail{}
+.muiCarInfoCard .muiCarInfoContact{ text-align: center; width: 6rem;}
+.muiCarInfoCard .muiCarInfoContact:before{content:"";border-left: 1px solid #e2e2e2;height: 6rem;vertical-align: middle;position: relative;float: left;}
+.muiCarInfoCard .muiCarInfoContact .mui{font-size: 3rem;color:#37aee9;margin-top: 0.8rem;}
+.muiCarInfoCard .muiCarInfoContact p{ margin-top:0.5rem;}
+
+.muiCarInfoCardBar{text-align: center;padding: 1rem 0;font-size: 1.6rem;width: 100%;text-align: center!important;border-bottom: 1px solid #e2e2e2;}
+.muiCarInfoCardBar .mui{color:#37aee9;font-size: 1.8rem;/* margin-right: 0.5rem; */}
+
+.muiCarInfoCardBar .mblTabBarButtonLabel{ display: inline-block;}
+.muiCarInfoCardBar .mblTabBarButtonIconArea{display: inline-block;color:#37aee9;font-size: 1.8rem;/* margin-right: 0.5rem; */}
+
+/*----- 调度信息查看页 -----*/
+#cardDispatchInfoView .mblView{ margin-left: 0!important;}
+
+/*---------- 回车登记  选择列表 -----------*/
+.muiAccordionPanelContent{ padding-left: 0;}
+.muiAccordionPanelContent .muiCarSelectList{ margin-left: -1rem;}
+.muiCarSelectList{ background:#fff;}
+.muiCarSelectList li{border-bottom:1px solid #e2e2e2;padding: 0;display: table;width: 100%;}
+.muiCarSelectList a{color:#333;display: table;width:100%;padding:1rem;box-sizing: border-box;-webkit-box-sizing: border-box;}
+.muiCarSelectList .carName{ display:table-cell; padding-left: 1rem;}
+.muiCarSelectList .carOpt{display:table-cell;text-align: right; width: 8rem;}
+.muiCarSelectList .carOpt .mui{ color:#d5d5d5;}
+.muiCarSelectList .carOpt .carStatus{ color:#40cb8b;}
+
+/*---------- 回车登记 表格 ----------*/
+.muiSimple{ background:#fff;}
+.muiAccordionPanelContent .muiSimple{ }
+.muiSimple .muiCar{ padding:0;border-bottom:none;}
+.muiSimple>tbody>tr:last-child>td.muiCar, 
+.muiSimple>tr:last-child>td.muiCar{ border-bottom:none;}
+.muiSimple tr td{ border-bottom:1px solid #e2e2e2;}
+.muiSimple tr td .show_more{ color:#37aee9;}
+.muiSimple tr td .mui-tel{ color:#37aee9;}
+.muiSimple>tbody>tr:last-child>td,
+.muiSimple>tr:last-child>td{ border-bottom:1px solid #e2e2e2;}
+.muiSimple{ margin-bottom:1rem; background:#fff;}
+.muiSimple .muiTitle{color:#333;padding-left: 1rem;/* box-sizing: border-box; *//* -webkit-box-sizing: border-box; */}
+.viewTb .muiTitle{width:33%}
+
+
+.viewTb.muiSimple>tbody>tr>td{
+	line-height: normal;
+}
+.viewTb.muiSimple>tbody>tr>td:FIRST-CHILD{
+	padding-left: 1rem;
+}
+
+.detailTitle{
+	height: 3.5rem;
+	line-height: 3.5rem;
+	background-color:#fff;
+}
+
+.muiFieldItem>div.muiFieldOpt{ color:#d4d4d4;}
+
+/*---------- 满意度调查-点评弹框 ----------*/
+.muiCarDialog{}
+.muiDialogElement .muiDialogElementContainer.muiCarDialog{overflow: initial;margin-top: 2.3rem!important;}
+.muiCarDialogCloseBtn{position: absolute;top: -4.5rem;right:0;}
+.muiCarDialogCloseBtn:after{ content:""; display:inline-block; width:2px; height:2.3rem; background:#fff; position:absolute; right:1.5rem; top:3rem; }
+.muiCarDialogCloseBtn .mui{font-size: 4rem;color: #fff;}
+.muiCarDialogHeader{ background:url(./images/muiCarDialogHeader.jpg) no-repeat left top; background-size: cover; height: 13rem;}
+
+.muiCarDialogContent{ text-align: center;}
+.muiCarDialog .muiRating{ width: 10rem!important; margin:1rem auto;}
+.muiCarDialog .muiRatingArea i, .muiCarDialog .muiRatingValue i{ font-size: 2rem; width: 2rem;}
+.muiCarDialog .muiEvalLevel{ color:#888; padding:1rem 0; font-size: 1.6rem;}
+.muiCarDialog .muiEvalLevel span{ margin:0 0.5rem;}
+
+.muiEvalContent{margin:1rem 2rem 2rem;}
+.muiEvalContent textarea{ border:1px solid #c9c9c9; font-size:1.2rem; padding:0.5rem; height: 6rem; width: 100%; box-sizing: border-box; -webkit-box-sizing: border-box;}
+
+.muiCarDialogFooter{ height: 4.2rem; line-height: 4.2rem; border-top:1px solid #e2e2e2; text-align: center;}
+.muiCarDialogBtn{ font-size: 1.6rem; color:#37aee9;}
+
+/*---------- 点评 提交成功 ----------*/
+.evalDialog{ background:rgba(0,0,0,0.2); position: absolute; left: 0; right: 0; top:0; bottom:0;}
+.evalDialogContent{ background:#fff; width: 12rem; border-radius: 0.5rem; position: absolute; left: 50%; top:50%; transform: translateX(-50%) translateY(-50%); text-align: center;}
+.evalDialogContent .mui{ color:#37aee9; font-size: 4rem; margin:1.5rem 0 1rem;}
+.evalDialogContent p{ font-size: 1.6rem; padding:0 0 1rem;}
+
+/*在可视区域的宽度在 321px 和 431px 之间的时候被应用(小米2/三星  360px)*/
+@media screen and (min-width: 321px) and (max-width: 374px) {
+	.muiCarInfoCard .muiCarInfoImg img{}
+}
+
+/*在可视区域的宽度大于401px 的时候被应用(魅族mx3 432px)*/
+@media screen and (min-width: 375px) {
+	
+}
+
+.detailInfo{ border-bottom:1px solid #dbdbdb; color:#989898;}
+.detailInfo .mblListItem {
+	color: #262626;
+	vertical-align: middle;
+	font-size: 1.6rem;
+	padding-left: 1rem;
+	padding-right: 1rem;
+	height: 4rem;
+	line-height: 4rem;
+}
+.detailInfo .mblListItem {
+	border-bottom: none;
+}
+.detailInfo .mblListItemIcon{   margin-right:0.8rem;}
+.detailInfo .mui-picview{position:relative; top:2px;}
+.detailInfo .mblListItemRightIcon {
+	line-height: 1;
+	color: #b1b1b1;
+	position: absolute;
+	right: 1rem;
+	top: 50%;
+	margin-top: -.8rem;
+}
+.detailInfo_wrapper {
+	margin-top: 1rem;
+	margin-bottom: 1rem;
+	background: #fff;
+}
+.detailInfo_wrapper .detailInfo:last-child{ border-bottom:none;}
+.detailInfo .mblListItemIcon {
+	margin-top: 5px;
+	display: inline-block;
+	width: 2.6rem;
+	height: 2.6rem;
+	line-height: 2.6rem;
+	text-align: center;
+	color: #fff;
+	font-size: 1.6rem;
+	border-radius: 0.3rem;
+	background-color: #33b97e;
+}
+.detailInfo .mblListItemIcon:before {
+}
+.detailInfo .mui-bookViewDetail{ background-color:#f96a62;}
+
+@media screen (max-width: 319px) {
+   .detailInfo .mblListItem{ /* height:42px; line-height:42px; */}
+}
+@media screen (min-width: 321px) {
+   .detailInfo .mblListItemIcon.mui{ /*font-size:1rem;*/}
+}
+
+.oldMui .muiFormLocation .muiSelInputRight{
+	right:2rem
+}
+
+.oldMui .muiTravelWay table tr .optBtn .mui{
+	top:2.5rem;
+}
+
+.oldMui .muiFormLocation .muiFormRequired{
+	top:1px;
+}
+
+.carApplyItem{
+	padding-left: 1rem;
+	padding-right: 1rem;
+}
+
+.carApplyItem .muiProcessRight{
+	width:6.8rem!important;
+}
+
+.carApplyItem .muiProcessCreated{
+	margin-right: 0px!important;
+}
+/***********************/
+.muiEssence.muiProcessStatusBorder:before,
+.muiProcessStatusBorder:before,
+.muiProcessStatusBorder.muiProcessDiscard:before,
+.muiProcessStatusBorder.muiProcessDraft:before,
+.muiProcessStatusBorder.muiProcessExamine:before,
+.muiProcessStatusBorder.muiProcessRefuse:before,
+.muiProcessStatusBorder.muiProcessPublish:before,
+.muiEssence.muiProcessStatusBorder:before {
+	border: 0px;
+}
+.carManageInfo .carManageInfoTop .carManageSub,.carManageInfo .carManageInfoTop .carManageSta{
+	display: inline-block;
+}
+.carManageInfo .carManageInfoTop .carManageSub{
+	width: calc(100% - 7.6rem);
+    overflow: hidden;
+    text-overflow: ellipsis;
+    word-break: break-all;
+    
+    display: -webkit-box;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;
+    line-height: 2rem;
+    
+    float: left;
+}
+.carManageInfo .carManageInfoTop .carManageSta{
+	width: 7.6rem;
+	float: right;
+}
+.carManageInfo .carManageInfoTop {
+    position: relative;
+    padding: 0 0 .5rem;
+    zoom: 1;
+}
+.carManageInfo .carManageInfoTop:after{
+	content: " ";
+	display: block;
+	visibility: hidden;
+	height: 0;
+	clear: both;
+}
+.carManageInfo .carManageInfoBottom:before{
+	content: " ";
+	position: absolute;
+	z-index: 2;
+	left: 0;
+	right: 0;
+	top: 0;
+	border-top: .1rem solid #eee;
+	-webkit-transform-origin: 0 0;
+	transform-origin: 0 0;
+	-webkit-transform: scaleY(.5);
+	transform: scaleY(.5);
+}
+.carManageInfo .carManageInfoBottom{
+	position: relative;
+    padding: .5rem 0 0;
+}
+.carManageInfo .carManageInfoBottom > span{
+	display: inline-block;
+    width: 50%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+.carManageInfo .carManageInfoTop .carManageSta > span{
+	padding: .3rem .5rem;
+	border-radius: 4px;
+}
+.carManageInfo .carManageInfoTop .carManageSta .carManageSeatNumTag.SeatNumTag1{
+	background: #f1f6ff;
+	color:#4285f4;
+}
+.carManageInfo .carManageInfoTop .carManageSta .carManageSeatNumTag.SeatNumTag2{
+	background: #fdeeea;
+	color:#f27d62;
+}
+.carManageInfo .carManageInfoTop .carManageSta .carManageSeatNumTag.SeatNumTag3,.carManageInfo .carManageInfoTop .carManageSta .carManageStateTag{
+	background: #f8f8f8;
+	color:#999fb7;
+}
+.carManageInfo .carManageInfoTop .carManageSta .carManageStateTag{
+	margin: .3rem;
+}
+.muiCarListContentTop .muiCarListContentTopTitle{
+	overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    width: calc(100% - 5rem);
+    display: inline-block;
+}
+.muiCarListContentBottom.muiFontSizeS.muiFontColorMuted > span{
+	display: inline-block;
+    min-width: 50%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    max-width: 100%;
+}
+.muiCarListContentTop {
+	position: relative;
+	padding: 0 0 1rem;
+}
+.muiCarListContentBottom{
+	padding: 1rem 0 0;
+}
+.muiCarListContentTop:after{
+	content: " ";
+    position: absolute;
+    z-index: 2;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    border-top: .1rem solid #eee;
+    -webkit-transform-origin: 0 0;
+    transform-origin: 0 0;
+    -webkit-transform: scaleY(.5);
+    transform: scaleY(.5);
+}
+.muiCarListContentStatus{
+	float: right;
+}
+.muiCarListContentTopTitleBox .muiCarListContentStatus {
+    padding: .3rem .5rem;
+    border-radius: 4px;
+    float: right;
+}
+.muiCarListContentTopTitleBox .muiCarListContentStatusType0{
+	color: #F29A5F;
+	background-color: #fff4ed;
+}
+.muiCarListContentTopTitleBox .muiCarListContentStatusType1{
+	color: #68CE67;
+	background-color: #eefaee;
+}
+.muiCarListContentTopTitleBox .muiCarListContentStatusType2{
+	color: #F56B6B;
+	background-color: #fff0ee;
+}
+
+.muiSelInputRight {
+    position: absolute;
+    right: 1.5rem;
+    top: 1.6rem;
+    color: #d5d5d5;
+}

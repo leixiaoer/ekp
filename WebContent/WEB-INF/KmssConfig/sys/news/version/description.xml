@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<description xmlns="http://www.example.org/description-config" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.example.org/description-config ../../../description.xsd">
+	<module>
+		<module-name>新闻管理</module-name>
+		<module-path>sys/news</module-path>
+		<baseline>V15.0.4.R.20200410</baseline>
+		<source-md5>e147746ad9340ace05a1ae44f5e44d26</source-md5>
+		<is-custom>否</is-custom>
+		<serial-num>56</serial-num>
+	</module>
+</description>

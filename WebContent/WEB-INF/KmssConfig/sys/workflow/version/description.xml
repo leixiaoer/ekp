@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<description xmlns="http://www.example.org/description-config" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.example.org/description-config ../../../description.xsd">
+	<module>
+		<module-name>LBPM兼容引擎</module-name>
+		<module-path>sys/workflow</module-path>
+		<baseline>V15.0.4.R.20200410</baseline>
+		<source-md5>c30728413e94956c4c62531d328a7f61</source-md5>
+		<is-custom>否</is-custom>
+		<serial-num>1</serial-num>
+		<parallel-version>lbpm</parallel-version>
+	</module>
+</description>

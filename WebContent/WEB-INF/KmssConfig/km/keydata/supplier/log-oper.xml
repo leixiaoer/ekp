@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<log-oper>
+	<logset>
+	 	<oper
+            id="kmSupplierMainOperLog"
+            extends="BaseOperLog"
+            model="com.landray.kmss.km.keydata.supplier.model.KmSupplierMain"
+            action="/km/keydata/supplier/km_supplier_main/kmSupplierMain.do">
+            <query 
+                method="listChildren"
+                logPoint="Base_UrlParam;Action_FindAll"
+                messageKey="button.list">
+            </query>
+            <query 
+                method="enableAll|disableAll|updateAvailable"
+                logPoint="Base_UrlParam;updateAvailable">
+            </query>
+            <query 
+                method="showUsed2"
+                logPoint="Base_UrlParam;Action_Find"
+                messageKey="button.view">
+            </query>
+            <query 
+                method="showUsed"
+                logPoint="Base_UrlParam;showUsed"
+                messageKey="button.view">
+            </query>
+        </oper>
+        
+        <oper
+            id="kmSupplierCategoryOperLog"
+            extends="BaseOperLog"
+            model="com.landray.kmss.km.keydata.supplier.model.KmSupplierCategory"
+            action="/km/keydata/supplier/km_supplier_category/kmSupplierCategory.do">
+        </oper> 
+	</logset>
+</log-oper>

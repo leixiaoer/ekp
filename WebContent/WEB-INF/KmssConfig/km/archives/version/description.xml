@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<description xmlns="http://www.example.org/description-config" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.example.org/description-config ../../../description.xsd">
+	<module>
+		<module-name>档案管理</module-name>
+		<module-path>km/archives</module-path>
+		<baseline>V15.0.4.R.20200410</baseline>
+		<source-md5>e0fc986ff3b7ae169d946b36f11a73c2</source-md5>
+		<is-custom>否</is-custom>
+		<serial-num>50</serial-num>
+	</module>
+</description>

@@ -1,0 +1,1127 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<version xmlns="http://www.example.org/version-config" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.example.org/version-config ../version.xsd">
+	<modifies>
+		<modify>
+			<description>#159646 修改 【投票管理】门户部件数据源增加缓存机制</description>
+			<author>周文</author>
+			<revision-time>2022-05-30</revision-time>
+			<relation>
+				<relation-module>sys/portal</relation-module>
+			</relation>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#165377 修复 IOS手机通过KK或者钉钉，新建投票页面选择图片投票，上传图片不成功</description>
+			<author>潘永辉</author>
+			<revision-time>2022-05-20</revision-time>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#161640 修复 用户重复提交投票</description>
+			<author>熊翅辉</author>
+			<revision-time>2022-03-22</revision-time>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#158385 修复 新建投票后查看投票人员-页面报错</description>
+			<author>魏泽钧</author>
+			<revision-time>2022-02-11</revision-time>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#113874 修复 移动端投票显示的内容不全</description>
+			<author>潘永辉</author>
+			<revision-time>2020-08-06</revision-time>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#102114 优化 多语言翻译</description>
+			<author>郑鑫</author>
+			<revision-time>2020-06-10</revision-time>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#105038 修复 移动端阅读页面显示错乱的问题</description>
+			<author>洪泽铨</author>
+			<revision-time>2020-06-09</revision-time>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#106909 修复 投票中的文档，剩余时间显示不对</description>
+			<author>潘永辉</author>
+			<revision-time>2020-06-09</revision-time>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#105595 修复 投票管理，用户投票并评论之后，删除该用户的评论，会导致导出投票明细的excel无法打开</description>
+			<author>何景锋</author>
+			<revision-time>2020-05-15</revision-time>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#102154 修复 投票页面，输入评论区太小</description>
+			<author>纪斌杰</author>
+			<revision-time>2020-04-29</revision-time>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#103982 修复 V15投票管理，新建投票不设置投票人，暂存之后，无法提交</description>
+			<author>梅瑞鹏</author>
+			<revision-time>2020-04-28</revision-time>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#103413 修复 投票管理移动端设置不允许评论失效问题</description>
+			<author>钟清学</author>
+			<revision-time>2020-04-24</revision-time>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#92362 优化 EKP各业务模块帮助中心梳理及部署</description>
+			<author>谭伟铭</author>
+			<revision-time>2020-03-26</revision-time>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#95462 新增 集团分级授权下，拥有场所XXXX_阅读文档权限的用户不能通过url访问其他场所的文档</description>
+			<author>叶正平</author>
+			<revision-time>2020-03-18</revision-time>
+			<relation>
+				<relation-module>core</relation-module>
+				<relation-module>sys/authorization</relation-module>
+			</relation>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#94275 新增 帮助中心部署</description>
+			<author>谭伟铭</author>
+			<revision-time>2020-03-16</revision-time>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#95100 修复 发起人编辑投票，删除可投票人员，用户的待办不消失</description>
+			<author>尹成</author>
+			<revision-time>2020-03-10</revision-time>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#93463 新增 沟通协作模块门户样例数据部署</description>
+			<author>谭伟铭</author>
+			<revision-time>2020-03-07</revision-time>
+			<relation>
+				<relation-module>sys/portal</relation-module>
+			</relation>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#98421 修复 was环境下移动端投票首页无法显示问题</description>
+			<author>林秀贤</author>
+			<revision-time>2020-03-06</revision-time>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#98115 修复 当所有人员投票完成后，再去点击“查看投票人员”报错</description>
+			<author>谭昌香</author>
+			<revision-time>2020-03-06</revision-time>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#95095 优化 PC端及移动端部分字段需支持多语言</description>
+			<author>尹成</author>
+			<revision-time>2020-03-04</revision-time>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#96258 修复 会议管理移动端的日历日期未翻译</description>
+			<author>谭伟铭</author>
+			<revision-time>2020-03-04</revision-time>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#94404 优化 查看页底部页签优化</description>
+			<author>蒋志广</author>
+			<revision-time>2020-03-03</revision-time>
+			<relation>
+				<relation-module>sys/ui</relation-module>
+			</relation>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#94101 优化 进入模块，点击“后台配置”目录，请求的url需要显示在地址栏中</description>
+			<author>钟清学</author>
+			<revision-time>2020-02-15</revision-time>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#64162 优化 发起投票，投票方式多选，可限定最少选项数和最多选项数</description>
+			<author>尹成</author>
+			<revision-time>2020-02-14</revision-time>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#90299 修复 投票管理移动端评论没有换行的问题</description>
+			<author>郑伯宇</author>
+			<revision-time>2019-12-20</revision-time>
+			<baseline>V15.0.3.R.20200117</baseline>
+		</modify>
+		<modify>
+			<description>#90931 修复 投票管理在编辑可投票者后图片选项消失的问题</description>
+			<author>郑伯宇</author>
+			<revision-time>2019-12-12</revision-time>
+			<baseline>V15.0.3.R.20200117</baseline>
+		</modify>
+		<modify>
+			<description>#86740 修复 ios下的switch组件问题</description>
+			<author>何协殷</author>
+			<revision-time>2019-12-10</revision-time>
+			<baseline>V15.0.3.R.20200117</baseline>
+		</modify>
+		<modify>
+			<description>#87960 优化 移动性能体验</description>
+			<author>黎凯麟</author>
+			<revision-time>2019-12-09</revision-time>
+			<relation>
+				<relation-module>sys/mobile</relation-module>
+			</relation>
+			<baseline>V15.0.3.R.20200117</baseline>
+		</modify>
+		<modify>
+			<description>#87693 新增 投票管理模块部署分级权限</description>
+			<author>何协殷</author>
+			<revision-time>2019-12-03</revision-time>
+			<baseline>V15.0.3.R.20200117</baseline>
+		</modify>
+		<modify>
+			<description>#53359 新增 移动门户快捷方式选择系统引入的时候没有任何EKP模块</description>
+			<author>钟清学</author>
+			<revision-time>2019-11-11</revision-time>
+			<baseline>V15.0.3.R.20200117</baseline>
+		</modify>
+		<modify>
+			<description>#84350 优化 投票设置仅发起者可见，在移动端显示不友好</description>
+			<author>何协殷</author>
+			<revision-time>2019-10-28</revision-time>
+			<baseline>V15.0.2.R.20191108</baseline>
+		</modify>
+		<modify>
+			<description>#83564 新增 后台配置优化，ekp各模块后台配置调整</description>
+			<author>钟清学</author>
+			<revision-time>2019-10-21</revision-time>
+			<relation>
+				<relation-module>sys/ui</relation-module>
+			</relation>
+			<baseline>V15.0.2.R.20191108</baseline>
+		</modify>
+		<modify>
+			<description>#80884 优化 目录树文案和相关页面文案改动优化</description>
+			<author>陈尉建</author>
+			<revision-time>2019-09-10</revision-time>
+			<baseline>V15.0.2.R.20191108</baseline>
+		</modify>
+		<modify>
+			<description>#68744 优化 投票情况内容丰富，选择字数增加</description>
+			<author>黄泽凯</author>
+			<revision-time>2019-09-10</revision-time>
+			<baseline>V15.0.2.R.20191108</baseline>
+		</modify>
+		<modify>
+			<description>#64249 修改 列表页增加底部提示避免误解</description>
+			<author>彭伟聪</author>
+			<revision-time>2019-09-05</revision-time>
+			<baseline>V15.0.1.R.20190906</baseline>
+		</modify>
+		<modify>
+			<description>#79800 修复 浏览器语言为英文，ekp为中文，系统中的导出文件名是乱码的问题</description>
+			<author>林宇超</author>
+			<revision-time>2019-08-16</revision-time>
+			<baseline>V15.0.1.R.20190906</baseline>
+		</modify>
+		<modify>
+			<description>#75095 修复 投票管理标题提示字体不统一的问题</description>
+			<author>朱飞</author>
+			<revision-time>2019-08-02</revision-time>
+			<baseline>V15.0.1.R.20190906</baseline>
+		</modify>
+		<modify>
+			<description>#74230 修复 PC端投票结果查看页投票人数和占比显示换行且小数点未限制个数</description>
+			<author>林宇超</author>
+			<revision-time>2019-07-12</revision-time>
+			<baseline>V15.0.0.R.20190712</baseline>
+		</modify>
+		<modify>
+			<description>#73541 修复 导出投票明细到excel只能导出第一页15条</description>
+			<author>郑鑫</author>
+			<revision-time>2019-05-28</revision-time>
+			<baseline>V15.0.0.R.20190712</baseline>
+		</modify>
+		<modify>
+			<description>#73396 修复 直接发起投票和保存草稿再发起投票通知方式不同</description>
+			<author>郑鑫</author>
+			<revision-time>2019-05-20</revision-time>
+			<baseline>V15.0.0.R.20190712</baseline>
+		</modify>
+		<modify>
+			<description>#71987 新增 投票管理移动端增加评论功能</description>
+			<author>胡永方</author>
+			<revision-time>2019-05-05</revision-time>
+			<baseline>V15.0.0.R.20190712</baseline>
+		</modify>
+		<modify>
+			<description>#70902 修复 在火狐浏览器中门户最新投票列表投票状态显示不正确</description>
+			<author>林秀贤</author>
+			<revision-time>2019-04-23</revision-time>
+			<baseline>V15.0.0.R.20190712</baseline>
+		</modify>
+		<modify>
+			<description>#65707 优化 门户投票列表性能优化</description>
+			<author>林秀贤</author>
+			<revision-time>2018-12-21</revision-time>
+			<baseline>V15.0.0.B2.20190118</baseline>
+		</modify>
+		<modify>
+			<description>#65766 优化 投票管理修改可投票者点击提交按钮后，增加操作成功的提示</description>
+			<author>胡永方</author>
+			<revision-time>2019-01-07</revision-time>
+			<baseline>V15.0.0.B2.20190118</baseline>
+		</modify>
+		<modify>
+			<description>#65762 优化 投票管理去掉修改方式标题</description>
+			<author>胡永方</author>
+			<revision-time>2019-01-07</revision-time>
+			<baseline>V15.0.0.B2.20190118</baseline>
+		</modify>
+		<modify>
+			<description>#65759 优化 投票管理可投票者页面提交和关闭按钮位置交换</description>
+			<author>胡永方</author>
+			<revision-time>2019-01-07</revision-time>
+			<baseline>V15.0.0.B2.20190118</baseline>
+		</modify>
+		<modify>
+			<description>#65378 优化 没有修改可投票人权限不可通过URL访问</description>
+			<author>胡永方</author>
+			<revision-time>2019-01-07</revision-time>
+			<baseline>V15.0.0.B2.20190118</baseline>
+		</modify>
+		<modify>
+			<description>#65377 修复 投票明细的投票选项占比率因计算精度丢失导致的错误</description>
+			<author>胡永方</author>
+			<revision-time>2019-01-07</revision-time>
+			<baseline>V15.0.0.B2.20190118</baseline>
+		</modify>
+		<modify>
+			<description>#62988 新增 投票管理可以修改可投票人和投票明细结果增加图表显示</description>
+			<author>胡永方</author>
+			<revision-time>2019-01-07</revision-time>
+			<baseline>V15.0.0.B2.20190118</baseline>
+		</modify>
+		<modify>
+			<description>#64531 修复 极速门户下投票列表数据不显示及相关报错问题</description>
+			<author>林秀贤</author>
+			<revision-time>2018-12-12</revision-time>
+			<baseline>V15.0.0.B2.20190118</baseline>
+		</modify>
+		<modify>
+			<description>#64626 修复 会议管理移动端查看报错，日志见附件</description>
+			<author>彭伟聪</author>
+			<revision-time>2018-12-04</revision-time>
+			<baseline>V15.0.0.B2.20190118</baseline>
+		</modify>
+		<modify>
+			<description>#63738 修复 移动端发起的投票未关联到会议</description>
+			<author>彭伟聪</author>
+			<revision-time>2018-11-28</revision-time>
+			<baseline>V15.0.0.B2.20190118</baseline>
+		</modify>
+		<modify>
+			<description>修复 人员显示重复问题</description>
+			<author>郑超</author>
+			<revision-time>2018-11-07</revision-time>
+			<baseline>V15.0.0.B1.20181109</baseline>
+		</modify>
+		<modify>
+			<description>修复 会议卡片中新增了关联投票的模块类别，如果删除了投票的类别，会议卡片报错</description>
+			<author>陈尉建</author>
+			<revision-time>2018-11-05</revision-time>
+			<baseline>V15.0.0.B1.20181109</baseline>
+		</modify>
+		<modify>
+			<description>优化 投票管理查看投票明细，支持导出到EXCEL中</description>
+			<author>何协殷</author>
+			<revision-time>2018-10-30</revision-time>
+			<baseline>V15.0.0.B1.20181109</baseline>
+		</modify>
+		<modify>
+			<description>新增 投票机制化</description>
+			<author>周梓凡</author>
+			<revision-time>2018-10-17</revision-time>
+			<relation>
+				<relation-module>core</relation-module>
+			</relation>
+			<baseline>V15.0.0.B1.20181109</baseline>
+		</modify>
+		<modify>
+			<description>修复 签到情况、相关督办、相关投票内容为空时，统一3种提示样式</description>
+			<author>彭伟聪</author>
+			<revision-time>2018-09-28</revision-time>
+			<baseline>V15.0.0.B1.20181109</baseline>
+		</modify>
+		<modify>
+			<description>修复 iphone手机投票查看界面，单选按钮选项显示不整齐</description>
+			<author>黄泽凯</author>
+			<revision-time>2018-09-12</revision-time>
+			<baseline>V15.0.0.B1.20181109</baseline>
+		</modify>
+		<modify>
+			<description>优化 投票管理的移动端投票页面增加详情，默认显示3行，超出显示箭头，点击下拉才展示完整</description>
+			<author>何协殷</author>
+			<revision-time>2018-07-04</revision-time>
+			<baseline>V14.0.1.R.20180706</baseline>
+		</modify>
+		<modify>
+			<description>查看投票明细页面，右上角的【关闭】按钮调整为【返回】 by 何协殷</description>
+			<author>何协殷</author>
+			<revision-time>2018-05-29</revision-time>
+			<baseline>V14.0.1.R.20180706</baseline>
+		</modify>
+		<modify>
+			<description>修复 大范围发起投票后偶发无法收到待办</description>
+			<author>林秀贤</author>
+			<revision-time>2018-03-28</revision-time>
+			<baseline>V14.0.0.R.20180413</baseline>
+		</modify>
+		<modify>
+			<description>部署 资产管理等11个模块列表页导出</description>
+			<author>邵成成</author>
+			<revision-time>2018-02-26</revision-time>
+			<baseline>V14.0.0.R.20180413</baseline>
+		</modify>
+		<modify>
+			<description>新增 各个模块的文档维护界面新增筛选器，并且使用新UI</description>
+			<author>张成才</author>
+			<revision-time>2018-01-11</revision-time>
+			<baseline>V14.0.0.B2.20180112</baseline>
+		</modify>
+		<modify>
+			<description>修复 移动端kk投票总提示失败及投票选项呈现优化</description>
+			<author>林秀贤</author>
+			<revision-time>2017-12-08</revision-time>
+			<baseline>V14.0.0.B2.20180112</baseline>
+		</modify>
+		<modify>
+			<description>修复 门户投票组件配置分类参数无效</description>
+			<author>林秀贤</author>
+			<revision-time>2017-11-20</revision-time>
+			<baseline>V14.0.0.B2.20180112</baseline>
+		</modify>
+		<modify>
+			<description>修复 重新编辑投票后最多投票选项参数配置不准确</description>
+			<author>林秀贤</author>
+			<revision-time>2017-11-10</revision-time>
+			<baseline>V14.0.0.B1.20171110</baseline>
+		</modify>
+		<modify>
+			<description>修复 新建投票投票者选择部门的时候在移动端无法投票</description>
+			<author>林秀贤</author>
+			<revision-time>2017-11-07</revision-time>
+			<baseline>V14.0.0.B1.20171110</baseline>
+		</modify>
+		<modify>
+			<description>修复 移动端投票页面支持图片预览</description>
+			<author>林秀贤</author>
+			<revision-time>2017-09-14</revision-time>
+			<relation>
+				<relation-module>sys/mobile</relation-module>
+				<relation-module>sys/attachment</relation-module>
+			</relation>
+			<baseline>V13.5.0.R.20170915</baseline>
+		</modify>
+		<modify>
+			<description>新增 类别模板设置多语言支持</description>
+			<author>黄伟强</author>
+			<revision-time>2017-09-09</revision-time>
+			<relation>
+				<relation-module>core</relation-module>
+			</relation>
+			<baseline>V13.5.0.R.20170915</baseline>
+		</modify>
+		<modify>
+			<description>新增 待办多语言</description>
+			<author>黄伟强</author>
+			<revision-time>2017-09-02</revision-time>
+			<relation>
+				<relation-module>sys/notify</relation-module>
+			</relation>
+			<baseline>V13.5.0.R.20170915</baseline>
+		</modify>
+		<modify>
+			<description>修复 部分资源描述国际化处理</description>
+			<author>林秀贤</author>
+			<revision-time>2017-08-23</revision-time>
+			<baseline>V13.5.0.R.20170915</baseline>
+		</modify>
+		<modify>
+			<description>优化 部门字段支持显示层级结构，可以由系统提供统一接口（显示末级或显示层级，显示最近的几级）</description>
+			<author>潘永辉</author>
+			<revision-time>2017-08-19</revision-time>
+			<relation>
+				<relation-module>sys/organization</relation-module>
+			</relation>
+			<baseline>V13.5.0.R.20170915</baseline>
+		</modify>
+		<modify>
+			<description>新增 移动端支持发起投票</description>
+			<author>林秀贤</author>
+			<revision-time>2017-07-27</revision-time>
+			<baseline>V13.5.0.R.20170915</baseline>
+		</modify>
+		<modify>
+			<description>修复 投票管理详细内容字数过多提交报错</description>
+			<author>陈晓文</author>
+			<revision-time>2017-05-24</revision-time>
+			<baseline>V13.5.0.B2.20170707</baseline>
+		</modify>
+		<modify>
+			<description>修复 投票管理投票查看界面点评区域，投票人员头像大小不一致</description>
+			<author>陈晓文</author>
+			<revision-time>2017-05-15</revision-time>
+			<baseline>V13.5.0.B2.20170707</baseline>
+		</modify>
+		<modify>
+			<description>优化 投票管理移动化-查看和投票</description>
+			<author>陈晓文</author>
+			<revision-time>2017-05-11</revision-time>
+			<relation>
+				<relation-module>third/pda</relation-module>
+				<relation-module>sys/mobile</relation-module>
+			</relation>
+			<baseline>V13.5.0.B1.20170512</baseline>
+		</modify>
+		<modify>
+			<description>优化 投票管理左侧菜单增加选中效果</description>
+			<author>陈晓文</author>
+			<revision-time>2017-04-07</revision-time>
+			<relation>
+				<relation-module>sys/ui</relation-module>
+			</relation>
+			<baseline>V13.5.0.B1.20170512</baseline>
+		</modify>
+		<modify>
+			<description>优化 投票选项支持横向排列</description>
+			<author>朱湖强</author>
+			<revision-time>2017-03-17</revision-time>
+			<baseline>V13.5.0.B1.20170512</baseline>
+		</modify>
+		<modify>
+			<description>修复 应用中心下进入各个业务模块，中间帧的字体可随主题包样式</description>
+			<author>陈经纬</author>
+			<revision-time>2017-03-08</revision-time>
+			<baseline>V13.0.0.R.20170310</baseline>
+		</modify>
+		<modify>
+			<description>优化 评论区域头像显示过大</description>
+			<author>朱国荣</author>
+			<revision-time>2017-03-03</revision-time>
+			<baseline>V13.0.0.R.20170310</baseline>
+		</modify>
+		<modify>
+			<description>修复 发布后的投票要求可以对原投票内容进行编辑</description>
+			<author>朱国荣</author>
+			<revision-time>2017-03-03</revision-time>
+			<baseline>V13.0.0.R.20170310</baseline>
+		</modify>
+		<modify>
+			<description>修复 门户投票无法点击问题</description>
+			<author>朱湖强</author>
+			<revision-time>2017-03-02</revision-time>
+			<baseline>V13.0.0.R.20170310</baseline>
+		</modify>
+		<modify>
+			<description>优化 新建页面显示优化</description>
+			<author>朱湖强</author>
+			<revision-time>2017-02-23</revision-time>
+			<baseline>V13.0.0.R.20170310</baseline>
+		</modify>
+		<modify>
+			<description>修复 新建图片投票，新建填写2个选项，暂存草稿，然后重新编辑，添加选项，提交后发现添加的图片和修改过的图片都没有</description>
+			<author>朱国荣</author>
+			<revision-time>2017-02-13</revision-time>
+			<baseline>V13.0.0.R.20170310</baseline>
+		</modify>
+		<modify>
+			<description>优化 投票管理，模块主页筛选器类别一行没有间隔区分</description>
+			<author>朱国荣</author>
+			<revision-time>2017-01-06</revision-time>
+			<baseline>V13.0.0.R.20170310</baseline>
+		</modify>
+		<modify>
+			<description>优化 投票管理，新建投票页面投票类型和投票添加选项未翻译</description>
+			<author>朱国荣</author>
+			<revision-time>2017-01-06</revision-time>
+			<baseline>V13.0.0.R.20170310</baseline>
+		</modify>
+		<modify>
+			<description>优化 投票管理，查看投票页面投票结果未翻译</description>
+			<author>朱国荣</author>
+			<revision-time>2017-01-06</revision-time>
+			<baseline>V13.0.0.R.20170310</baseline>
+		</modify>
+		<modify>
+			<description>优化 IE8新建投票管理显示不友好</description>
+			<author>朱国荣</author>
+			<revision-time>2017-01-06</revision-time>
+			<baseline>V13.0.0.R.20170310</baseline>
+		</modify>
+		<modify>
+			<description>优化 投票例外人员权限优化（增加“仅发起人可见结果”设置项）</description>
+			<author>朱湖强</author>
+			<revision-time>2017-01-06</revision-time>
+			<baseline>V13.0.0.R.20170310</baseline>
+		</modify>
+		<modify>
+			<description>优化 投票组件门户展示；</description>
+			<author>朱湖强</author>
+			<revision-time>2017-01-06</revision-time>
+			<baseline>V13.0.0.R.20170310</baseline>
+		</modify>
+		<modify>
+			<description>修复 非投票发起人拥有编辑投票和分类维护权限时，仍不能编辑未截止的投票文档</description>
+			<author>朱国荣</author>
+			<revision-time>2016-11-23</revision-time>
+			<baseline>V13.0.0.B3.20161230</baseline>
+		</modify>
+		<modify>
+			<description>修复 list列表页操作栏中的“删除”按钮调整命名为“批量删除”</description>
+			<author>潘永辉</author>
+			<revision-time>2016-10-20</revision-time>
+			<baseline>V13.0.0.B3.20161230</baseline>
+		</modify>
+		<modify>
+			<description>优化 后台配置中心由“后台管理”角色控制</description>
+			<author>朱湖强</author>
+			<revision-time>2016-10-17</revision-time>
+			<baseline>V13.0.0.B3.20161230</baseline>
+		</modify>
+		<modify>
+			<description>优化 投票开始且投票未结束时，其他例如标题等字段不需编辑</description>
+			<author>朱国荣</author>
+			<revision-time>2016-10-12</revision-time>
+			<baseline>V13.0.0.B3.20161230</baseline>
+		</modify>
+		<modify>
+			<description>优化 投票查看页面展示的投票项默认带有序列号，当用户自定义投票选项时显示不友好</description>
+			<author>林秀贤</author>
+			<revision-time>2016-09-27</revision-time>
+			<baseline>V13.0.0.B2.20160930</baseline>
+		</modify>
+		<modify>
+			<description>优化 投票信息查看页面去除投票内容位置重复的投票标题</description>
+			<author>陈晓文</author>
+			<revision-time>2016-08-22</revision-time>
+			<baseline>V13.0.0.B2.20160930</baseline>
+		</modify>
+		<modify>
+			<description>修复 发起投票，默认勾选投票后可查看结果，投票截止时间已到后用户还未进行投票，此时用户既不能查看投票结果也不能参与投票</description>
+			<author>朱国荣</author>
+			<revision-time>2016-08-11</revision-time>
+			<baseline>V13.0.0.B2.20160930</baseline>
+		</modify>
+		<modify>
+			<description>修复 新建投票页面，投票截止时间字段去掉开始时间</description>
+			<author>朱国荣</author>
+			<revision-time>2016-08-11</revision-time>
+			<baseline>V13.0.0.B2.20160930</baseline>
+		</modify>
+		<modify>
+			<description>修复 部件“我参与的投票”改为“我已参与的投票”</description>
+			<author>朱国荣</author>
+			<revision-time>2016-08-11</revision-time>
+			<baseline>V13.0.0.B2.20160930</baseline>
+		</modify>
+		<modify>
+			<description>优化 新建投票页面，移除投票开始时间</description>
+			<author>朱国荣</author>
+			<revision-time>2016-07-06</revision-time>
+			<baseline>V13.0.0.B2.20160930</baseline>
+		</modify>
+		<modify>
+			<description>优化 发起图片投票，参与投票时，投票项的图片不可点击放大</description>
+			<author>李启龙</author>
+			<revision-time>2016-06-30</revision-time>
+			<baseline>V13.0.0.B2.20160930</baseline>
+		</modify>
+		<modify>
+			<description>优化 投票管理发起投票选定可投票者后，会出现通知方式，参与投票人员原先收到待阅通知请调整为红色待审通知</description>
+			<author>陈晓文</author>
+			<revision-time>2016-06-16</revision-time>
+			<baseline>V13.0.0.B2.20160930</baseline>
+		</modify>
+		<modify>
+			<description>修复 消息机制收到参与投票的邮件通知，去掉发布内容</description>
+			<author>陈晓文</author>
+			<revision-time>2016-05-26</revision-time>
+			<baseline>V13.0.0.B2.20160930</baseline>
+		</modify>
+		<modify>
+			<description>优化 新建投票页面，放大详细内容输入框，页面变形，先把输入框设置为不可放缩</description>
+			<author>朱国荣</author>
+			<revision-time>2016-04-26</revision-time>
+			<baseline>V13.0.0.B1.20160429</baseline>
+		</modify>
+		<modify>
+			<description>修复 当没有限制投票者时，催办投票后用户收不到催办信息，编辑可投票者之后，无法选择通知方式</description>
+			<author>朱国荣</author>
+			<revision-time>2016-04-12</revision-time>
+			<baseline>V13.0.0.B1.20160429</baseline>
+		</modify>
+		<modify>
+			<description>修复 打开新建和编辑页面报错</description>
+			<author>朱国荣</author>
+			<revision-time>2016-03-23</revision-time>
+			<baseline>V13.0.0.B1.20160429</baseline>
+		</modify>
+		<modify>
+			<description>修复 英文环境下，筛选器的分类导航未翻译</description>
+			<author>朱国荣</author>
+			<revision-time>2016-03-17</revision-time>
+			<baseline>V12.0.9.R.20160325</baseline>
+		</modify>
+		<modify>
+			<description>修复 投票标题为纯文字或者英文字母时会溢出页面</description>
+			<author>朱国荣</author>
+			<revision-time>2016-03-14</revision-time>
+			<baseline>V12.0.9.R.20160325</baseline>
+		</modify>
+		<modify>
+			<description>优化 投票管理门户窗口显示优化</description>
+			<author>朱国荣</author>
+			<revision-time>2016-03-08</revision-time>
+			<baseline>V12.0.9.R.20160325</baseline>
+		</modify>
+		<modify>
+			<description>修复 门户中展现的最新投票，参与投票后点击“我也投一票”，去掉跳转到view的效果</description>
+			<author>朱国荣</author>
+			<revision-time>2016-03-08</revision-time>
+			<baseline>V12.0.9.R.20160325</baseline>
+		</modify>
+		<modify>
+			<description>修复 新建投票页面，标题输入纯英文或者纯数字长度达到还剩几个字符提交保存不了</description>
+			<author>朱国荣</author>
+			<revision-time>2016-03-08</revision-time>
+			<baseline>V12.0.9.R.20160325</baseline>
+		</modify>
+		<modify>
+			<description>修复 门户中展现的最新投票，非投票参与人看到投票文档中后显示“投票”按钮，建议去掉</description>
+			<author>朱国荣</author>
+			<revision-time>2016-03-08</revision-time>
+			<baseline>V12.0.9.R.20160325</baseline>
+		</modify>
+		<modify>
+			<description>优化 门户窗口中新建投票，跳转到新建页面建议弹出分类选择框</description>
+			<author>朱国荣</author>
+			<revision-time>2016-03-08</revision-time>
+			<baseline>V12.0.9.R.20160325</baseline>
+		</modify>
+		<modify>
+			<description>修复 参与人参与投票并点评，模块管理员删除该点评内容，然后点击查看投票明细，页面报js错误</description>
+			<author>朱国荣</author>
+			<revision-time>2016-03-08</revision-time>
+			<baseline>V12.0.9.R.20160325</baseline>
+		</modify>
+		<modify>
+			<description>修复 新建投票页面，切换投票类型后，投票方式多选的选项未更新</description>
+			<author>朱国荣</author>
+			<revision-time>2016-03-02</revision-time>
+			<baseline>V12.0.9.R.20160325</baseline>
+		</modify>
+		<modify>
+			<description>优化 查看页面点击催办投票后页面直接关掉，不太友好，建议直接停留在当前页面</description>
+			<author>朱国荣</author>
+			<revision-time>2016-03-02</revision-time>
+			<baseline>V12.0.9.R.20160325</baseline>
+		</modify>
+		<modify>
+			<description>修复 投票分类查看页面和编辑页面字段显示不一致</description>
+			<author>朱国荣</author>
+			<revision-time>2016-03-02</revision-time>
+			<baseline>V12.0.9.R.20160325</baseline>
+		</modify>
+		<modify>
+			<description>修复 编辑投票文档，投票开始时间需垂直居中</description>
+			<author>朱国荣</author>
+			<revision-time>2016-03-02</revision-time>
+			<baseline>V12.0.9.R.20160325</baseline>
+		</modify>
+		<modify>
+			<description>修复 模块管理员无法删除所有投票</description>
+			<author>朱国荣</author>
+			<revision-time>2016-03-02</revision-time>
+			<baseline>V12.0.9.R.20160325</baseline>
+		</modify>
+		<modify>
+			<description>优化 在首页porlet显示，投票前面有空格</description>
+			<author>朱国荣</author>
+			<revision-time>2016-01-20</revision-time>
+			<baseline>V12.0.9.R.20160325</baseline>
+		</modify>
+		<modify>
+			<description>优化 投票，现在是能直接看到前面人的投票结果，建议在投票时不显示这个，只显示投票的选项</description>
+			<author>朱国荣</author>
+			<revision-time>2015-12-15</revision-time>
+			<baseline>V12.0.8.R.20160114</baseline>
+		</modify>
+		<modify>
+			<description>修复 新建投票，“投票后可见结果”，此项设置设置无效，无论是否勾选，投票后投票人都能看到结果</description>
+			<author>朱国荣</author>
+			<revision-time>2015-12-15</revision-time>
+			<baseline>V12.0.8.R.20160114</baseline>
+		</modify>
+		<modify>
+			<description>优化 投票在首页显示，如果已经投过的，建议直接写出已经投票的结果 勾选在选项上</description>
+			<author>朱国荣</author>
+			<revision-time>2015-12-11</revision-time>
+			<baseline>V12.0.8.R.20160114</baseline>
+		</modify>
+		<modify>
+			<description>修复 投票时间前后可以一致，这个不是很合理，请保持结束时间晚于开始时间</description>
+			<author>朱国荣</author>
+			<revision-time>2015-12-11</revision-time>
+			<baseline>V12.0.8.R.20160114</baseline>
+		</modify>
+		<modify>
+			<description>修复 投票管理在首页显示出现样式错误</description>
+			<author>朱国荣</author>
+			<revision-time>2015-12-10</revision-time>
+			<baseline>V12.0.8.R.20160114</baseline>
+		</modify>
+		<modify>
+			<description>修复 ie8下，新建页面样式需要调整左边留白</description>
+			<author>朱国荣</author>
+			<revision-time>2015-12-10</revision-time>
+			<baseline>V12.0.8.R.20160114</baseline>
+		</modify>
+		<modify>
+			<description>优化 参与投票页面，图片投票，要求点击图片也可以进行选择，不是非得点击勾选框</description>
+			<author>朱国荣</author>
+			<revision-time>2015-12-10</revision-time>
+			<baseline>V12.0.8.R.20160114</baseline>
+		</modify>
+		<modify>
+			<description>优化 分类设置提示请使用标准框架提示，和其他模块保持一致</description>
+			<author>朱国荣</author>
+			<revision-time>2015-12-10</revision-time>
+			<baseline>V12.0.8.R.20160114</baseline>
+		</modify>
+		<modify>
+			<description>修复 发起投票设置投票开始/截止时间，需要校验时间有效性</description>
+			<author>朱国荣</author>
+			<revision-time>2015-12-10</revision-time>
+			<baseline>V12.0.8.R.20160114</baseline>
+		</modify>
+		<modify>
+			<description>修复 ie8下，无法上传图片</description>
+			<author>朱国荣</author>
+			<revision-time>2015-12-02</revision-time>
+			<baseline>V12.0.7.R.20151203</baseline>
+		</modify>
+		<modify>
+			<description>优化 增加图片投票并优化样式</description>
+			<author>朱国荣</author>
+			<revision-time>2015-12-02</revision-time>
+			<baseline>V12.0.7.R.20151203</baseline>
+		</modify>
+		<modify>
+			<description>优化 投票主题 字符长度校验提示 ，请参考论坛中的实现，用标准校验框架</description>
+			<author>朱国荣</author>
+			<revision-time>2015-11-25</revision-time>
+			<baseline>V12.0.7.R.20151203</baseline>
+		</modify>
+		<modify>
+			<description>修复 投票中，投票人为空（所有人可投票），但是在我参与的投票中无显示</description>
+			<author>朱国荣</author>
+			<revision-time>2015-11-10</revision-time>
+			<baseline>V12.0.7.R.20151203</baseline>
+		</modify>
+		<modify>
+			<description>修复 在查看和编辑页面去除默认的上传图片</description>
+			<author>朱国荣</author>
+			<revision-time>2015-11-06</revision-time>
+			<baseline>V12.0.7.R.20151203</baseline>
+		</modify>
+		<modify>
+			<description>新增 投票管理，新增可配置到主页的porlet窗口，我发起的投票/我参与的投票/最新投票列表</description>
+			<author>朱国荣</author>
+			<revision-time>2015-11-05</revision-time>
+			<baseline>V12.0.6.R.20151106</baseline>
+		</modify>
+		<modify>
+			<description>修复 投票的定时任务点击查看报错</description>
+			<author>朱国荣</author>
+			<revision-time>2015-11-05</revision-time>
+			<baseline>V12.0.6.R.20151106</baseline>
+		</modify>
+		<modify>
+			<description>优化 定时任务增加功能描述信息</description>
+			<author>林秀贤</author>
+			<revision-time>2015-11-04</revision-time>
+			<baseline>V12.0.6.R.20151106</baseline>
+		</modify>
+		<modify>
+			<description>新增 新建投票，候选项支持上传图片和URL填写</description>
+			<author>朱国荣</author>
+			<revision-time>2015-11-04</revision-time>
+			<baseline>V12.0.6.R.20151106</baseline>
+		</modify>
+		<modify>
+			<description>修复 后台文档维护页面不能查询草稿文档问题修正</description>
+			<author>林秀贤</author>
+			<revision-time>2015-11-03</revision-time>
+			<relation>
+				<relation-module>core</relation-module>
+			</relation>
+			<baseline>V12.0.6.R.20151106</baseline>
+		</modify>
+		<modify>
+			<description>修复 投票查看页面评论内容换行及特殊字符显示问题修正</description>
+			<author>林秀贤</author>
+			<revision-time>2015-10-27</revision-time>
+			<baseline>V12.0.6.R.20151106</baseline>
+		</modify>
+		<modify>
+			<description>优化 查看页面投票内容换行问题优化</description>
+			<author>林秀贤</author>
+			<revision-time>2015-10-23</revision-time>
+			<baseline>V12.0.6.R.20151106</baseline>
+		</modify>
+		<modify>
+			<description>修复 【投票管理-优化】最新版本投票在前台显示的问题，当宽度不够时投票选项显示不友好</description>
+			<author>朱国荣</author>
+			<revision-time>2015-09-29</revision-time>
+			<baseline>V12.0.6.R.20151106</baseline>
+		</modify>
+		<modify>
+			<description>修复 类别列表中权限变更报错问题修正</description>
+			<author>林秀贤</author>
+			<revision-time>2015-08-03</revision-time>
+			<baseline>V12.0.4.R.20150807</baseline>
+		</modify>
+		<modify>
+			<description>修复 投票时会重复提交评论内容问题修正</description>
+			<author>林秀贤</author>
+			<revision-time>2015-08-03</revision-time>
+			<baseline>V12.0.4.R.20150807</baseline>
+		</modify>
+		<modify>
+			<description>修复 查看投票详细记录页面中特殊字符问题修正</description>
+			<author>林秀贤</author>
+			<revision-time>2015-07-27</revision-time>
+			<baseline>V12.0.4.R.20150807</baseline>
+		</modify>
+		<modify>
+			<description>优化 投票页面中添加结束时间倒计时</description>
+			<author>林秀贤</author>
+			<revision-time>2015-07-22</revision-time>
+			<baseline>V12.0.4.R.20150807</baseline>
+		</modify>
+		<modify>
+			<description>修复 投票查看页面特殊字符显示问题修正</description>
+			<author>林秀贤</author>
+			<revision-time>2015-07-13</revision-time>
+			<baseline>V12.0.4.R.20150807</baseline>
+		</modify>
+		<modify>
+			<description>优化 新建页面中多行文本输入框获取焦点后高度自动拉伸</description>
+			<author>林秀贤</author>
+			<revision-time>2015-07-09</revision-time>
+			<relation>
+				<relation-module>sys/ui</relation-module>
+			</relation>
+			<baseline>V12.0.3.R.20150710</baseline>
+		</modify>
+		<modify>
+			<description>新增 添加后台配置角色</description>
+			<author>林秀贤</author>
+			<revision-time>2015-07-09</revision-time>
+			<baseline>V12.0.3.R.20150710</baseline>
+		</modify>
+		<modify>
+			<description>移除 debugger调试信息</description>
+			<author>魏本源</author>
+			<revision-time>2015-07-09</revision-time>
+			<baseline>V12.0.3.R.20150710</baseline>
+		</modify>
+		<modify>
+			<description>修复 修改个人头像后,评论列表中的头像没有立即更新问题修正</description>
+			<author>林秀贤</author>
+			<revision-time>2015-07-07</revision-time>
+			<baseline>V12.0.3.R.20150710</baseline>
+		</modify>
+		<modify>
+			<description>修复 左侧导航去掉"所有分类"路径导航及相关问题修正</description>
+			<author>林秀贤</author>
+			<revision-time>2015-07-07</revision-time>
+			<baseline>V12.0.3.R.20150710</baseline>
+		</modify>
+		<modify>
+			<description>修复 新建投票页面弹出的分类选择框，点击取消按钮时界面显示问题修正</description>
+			<author>林秀贤</author>
+			<revision-time>2015-07-07</revision-time>
+			<baseline>V12.0.3.R.20150710</baseline>
+		</modify>
+		<modify>
+			<description>修复 投票时主题样式调整及新建时主题长度校验问题修正</description>
+			<author>林秀贤</author>
+			<revision-time>2015-06-03</revision-time>
+			<baseline>V12.0.2.R.20150605</baseline>
+		</modify>
+		<modify>
+			<description>修复 门户投票portlet窗口中“更多”超链接会跳转到主页问题修正</description>
+			<author>林秀贤</author>
+			<revision-time>2015-05-18</revision-time>
+			<baseline>V12.0.2.R.20150605</baseline>
+		</modify>
+		<modify>
+			<description>修复 发起投票页面的分类选择不生效及呈现问题修正</description>
+			<author>林秀贤</author>
+			<revision-time>2015-03-20</revision-time>
+			<baseline>V12.0.0.R.20150325</baseline>
+		</modify>
+		<modify>
+			<description>优化 投票页面的部分提示框增加自动关闭功能</description>
+			<author>林秀贤</author>
+			<revision-time>2015-03-19</revision-time>
+			<relation>
+				<relation-module>sys/ui</relation-module>
+			</relation>
+			<baseline>V12.0.0.R.20150325</baseline>
+		</modify>
+		<modify>
+			<description>修复 可见他人草稿问题处理</description>
+			<author>林秀贤</author>
+			<revision-time>2015-03-09</revision-time>
+			<baseline>V12.0.0.R.20150325</baseline>
+		</modify>
+		<modify>
+			<description>优化 二级页面按钮操作栏翻页功能</description>
+			<author>王腾飞</author>
+			<revision-time>2015-01-16</revision-time>
+			<relation>
+				<relation-module>sys/ui</relation-module>
+			</relation>
+			<baseline>V12.0.0.B3.20150116</baseline>
+		</modify>
+		<modify>
+			<description>修复 最新投票portlet的bug修正</description>
+			<author>林秀贤</author>
+			<revision-time>2015-01-08</revision-time>
+			<baseline>V12.0.0.B3.20150116</baseline>
+		</modify>
+		<modify>
+			<description>新增 工作交接注册服务</description>
+			<author>王腾飞</author>
+			<revision-time>2014-12-10</revision-time>
+			<relation>
+				<relation-module>sys/handover</relation-module>
+			</relation>
+			<baseline>V12.0.0.B3.20150116</baseline>
+		</modify>
+		<modify>
+			<description>优化 数据字典增加displayProperty属性</description>
+			<author>魏本源</author>
+			<revision-time>2014-12-09</revision-time>
+			<baseline>V12.0.0.B3.20150116</baseline>
+		</modify>
+		<modify>
+			<description>优化 全文搜索部署与修改</description>
+			<author>魏本源</author>
+			<revision-time>2014-10-30</revision-time>
+			<baseline>V12.0.0.B2.20141114</baseline>
+		</modify>
+		<modify>
+			<description>修复 xform:text标签长度校验</description>
+			<author>魏本源</author>
+			<revision-time>2014-10-17</revision-time>
+			<baseline>V12.0.0.B2.20141114</baseline>
+		</modify>
+		<modify>
+			<description>新增 操作成功后自动刷新列表</description>
+			<author>魏本源</author>
+			<revision-time>2014-10-17</revision-time>
+			<baseline>V12.0.0.B2.20141114</baseline>
+		</modify>
+		<modify>
+			<description>新增 全系统分类信息收集部署</description>
+			<author>魏本源</author>
+			<revision-time>2014-10-15</revision-time>
+			<baseline>V12.0.0.B2.20141114</baseline>
+		</modify>
+		<modify>
+			<description>修复 新增 模块UED改造</description>
+			<author>林秀贤</author>
+			<revision-time>2014-09-26</revision-time>
+			<relation>
+				<relation-module>sys/ui</relation-module>
+			</relation>
+			<baseline>V12.0.0.B2.20141114</baseline>
+		</modify>
+		<modify>
+			<description>修复 管理员工具箱导出设置页面多语言化</description>
+			<author>魏本源</author>
+			<revision-time>2014-04-30</revision-time>
+			<baseline>V11.0.1.R.20140506</baseline>
+		</modify>
+		<modify>
+			<description>修复 导入的数据在portlet看得到，进入模块列表看不到问题</description>
+			<author>朱湖强</author>
+			<revision-time>2014-03-31</revision-time>
+			<baseline>V11.0.1.R.20140506</baseline>
+		</modify>
+		<modify>
+			<description>新增 投票暂存功能</description>
+			<author>朱湖强</author>
+			<revision-time>2014-02-09</revision-time>
+			<baseline>V11.0.0.R.20140320</baseline>
+		</modify>
+		<modify>
+			<description>修复 我的投票（发起，参与）和按分类查询参数报错的问题</description>
+			<author>魏本源</author>
+			<revision-time>2013-03-13</revision-time>
+			<baseline>V10.0.1.R.20130328</baseline>
+		</modify>
+		<modify>
+			<description>优化 主页配置，新增窗口时，带出所选择模块或类别的路径而不是默认带出该模块的路径</description>
+			<author>朱湖强</author>
+			<revision-time>2012-05-31</revision-time>
+			<baseline>V10.0.0.B2.20120923</baseline>
+		</modify>
+		<modify>
+			<description>修复 多行文本框编辑时输入换行，显示的时候没换行的问题</description>
+			<author>朱湖强</author>
+			<revision-time>2012-04-27</revision-time>
+			<baseline>V10.0.0.B1.20120522</baseline>
+		</modify>
+		<modify>
+			<description>修正：编辑多选项的投票后，该投票会被重置为单选项投票；同时改为：在编辑状态下，“可投选项”为可编辑</description>
+			<author>朱湖强</author>
+			<revision-time>2011-12-23</revision-time>
+			<baseline>EKP9.0.1.R.20111231</baseline>
+		</modify>
+		<modify>
+			<description>修改全文检索配置，解决修改文档后搜索结果为还是旧的问题，更新后需重新检索</description>
+			<author>易荣烽</author>
+			<revision-time>2011-10-13</revision-time>
+			<baseline>EKP9.0.0.R.20111025</baseline>
+		</modify>
+		<modify>
+			<description>加入到模块配置列表里面</description>
+			<author>庄为亮</author>
+			<revision-time>2011-06-14</revision-time>
+			<baseline>EKP9.0.0.B3.2011071501</baseline>
+		</modify>
+		<modify>
+			<description>解决当投票选项输入html代码时，投票页面不能解析html代码的问题</description>
+			<author>zhuangwl</author>
+			<revision-time>2011-04-28</revision-time>
+			<baseline>EKP9.0.0.B3.2011071501</baseline>
+		</modify>
+	</modifies>
+</version>

@@ -1,0 +1,65 @@
+{
+    "global":     {
+        "modelName": "com.landray.kmss.km.asset.model.KmAssetApplyDeal",
+        "messageKey": "km-asset:table.kmAssetApplyDeal",
+        "displayProperty": "docSubject",
+        "serviceBean": "kmAssetApplyDealService",
+        "table": "km_asset_apply_base",
+        "url": "/km/asset/km_asset_apply_deal/kmAssetApplyDeal.do?method=view&fdId=${fdId}",
+        "extendClass": "com.landray.kmss.km.asset.model.KmAssetApplyBase",
+        "discriminatorValue": "com.landray.kmss.km.asset.model.KmAssetApplyDeal"
+    },
+    "attrs":     {
+        "fdId":         {
+            "propertyType": "id",
+            "generator": {"type": "assigned"}
+        },
+        "fdOldTotalMoney":         {
+            "propertyType": "simple",
+            "messageKey": "km-asset:kmAssetApplyDeal.fdOldTotalMoney",
+            "type": "Double",
+            "column": "fd_old_total_money",
+            "notNull": "false",
+            "length": "36",
+            "validate": "false",
+            "canSearch": "true",
+            "canLogShow":"1"
+        },
+        "fdNewTotalMoney":         {
+            "propertyType": "simple",
+            "messageKey": "km-asset:kmAssetApplyDeal.fdNewTotalMoney",
+            "type": "Double",
+            "column": "fd_new_total_money",
+            "notNull": "false",
+            "length": "36",
+            "validate": "false",
+            "canSearch": "true",
+            "canLogShow":"1"
+        },
+        "fdIsDealSubjoin":         {
+            "propertyType": "simple",
+            "messageKey": "km-asset:kmAssetApplyDeal.fdIsDealSubjoin",
+            "type": "Boolean",
+            "column": "fd_is_deal_subjoin",
+            "notNull": "false",
+            "length": "36",
+            "enumType": "common_yesno",
+            "validate": "false",
+            "canLogShow":"1"
+        },
+        "fdApplyDealList":         {
+            "propertyType": "list",
+            "messageKey": "km-asset:kmAssetApplyDeal.fdApplyDealList",
+            "type": "com.landray.kmss.km.asset.model.KmAssetApplyDealList",
+            "column": "fd_apply_deal_id",
+            "cascade": "all-delete-orphan",
+            "table": "km_asset_apply_deal_list",
+            "canLogShow":"1"
+        }
+    },
+    "attachments": {"attachment":     {
+        "propertyType": "att",
+        "messageKey": "km-asset:kmAssetApplyBase.attachMent",
+        "canDisplay": "true"
+    }}
+}

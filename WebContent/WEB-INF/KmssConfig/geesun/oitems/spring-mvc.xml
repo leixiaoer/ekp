@@ -1,0 +1,292 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans
+	xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.0.xsd">
+	<bean
+		name="/geesun/oitems/geesun_oitems_manage/geesunOitemsManage.do"
+		class="com.landray.kmss.geesun.oitems.actions.GeesunOitemsManageAction"
+		lazy-init="true"
+		parent="KmssBaseAction">
+		<property
+			name="formType"
+			value="com.landray.kmss.geesun.oitems.forms.GeesunOitemsManageForm" />
+		<property name="forwards">
+			<map>
+				<entry
+					key="view"
+					value="/geesun/oitems/geesun_oitems_manage/geesunOitemsManage_view.jsp" />
+				<entry
+					key="edit"
+					value="/geesun/oitems/geesun_oitems_manage/geesunOitemsManage_edit.jsp" />
+				<entry
+					key="list"
+					value="/geesun/oitems/geesun_oitems_manage/geesunOitemsManage_list.jsp" />
+			</map>
+		</property>
+	</bean>
+	<bean
+		name="/geesun/oitems/geesun_oitems_listing/geesunOitemsListing.do"
+		class="com.landray.kmss.geesun.oitems.actions.GeesunOitemsListingAction"
+		lazy-init="true"
+		parent="KmssBaseAction">
+		<property
+			name="formType"
+			value="com.landray.kmss.geesun.oitems.forms.GeesunOitemsListingForm" />
+		<property name="forwards">
+			<map>
+				<entry
+					key="view"
+					value="/geesun/oitems/geesun_oitems_listing_ui/geesunOitemsListing_view.jsp" />
+				<entry
+					key="edit"
+					value="/geesun/oitems/geesun_oitems_listing_ui/geesunOitemsListing_edit.jsp" />
+				<entry
+					key="list"
+					value="/geesun/oitems/geesun_oitems_listing_ui/geesunOitemsListing_list.jsp" />
+				<entry
+					key="recordList"
+					value="/geesun/oitems/geesun_oitems_listing/geesunOitemsListing_listRecord.jsp" />
+				<entry
+					key="recordListData"
+					value="/geesun/oitems/geesun_oitems_listing/geesunOitemsListing_listRecord_data.jsp" />
+				<entry
+					key="checkOitemsList"
+					value="/geesun/oitems/geesun_oitems_listing/geesunOitemsListing_checkOitemsList.jsp" />
+				<entry
+					key="checkOitemsList.4m"
+					value="/geesun/oitems/mobile/checkOitemsList.jsp" />
+				<entry
+					key="inCount"
+					value="/geesun/oitems/geesun_oitems_listing/geesunOitemsListing_inCountList.jsp" />
+				<entry
+					key="inCountData"
+					value="/geesun/oitems/geesun_oitems_listing/geesunOitemsListing_inCountList_data.jsp" />
+				<entry
+					key="outCount"
+					value="/geesun/oitems/geesun_oitems_listing/geesunOitemsListing_outCountList.jsp" />
+				<entry
+					key="outCountData"
+					value="/geesun/oitems/geesun_oitems_listing/geesunOitemsListing_outCountList_data.jsp" />
+				<entry
+					key="stockCount"
+					value="/geesun/oitems/geesun_oitems_listing/geesunOitemsListing_stockCountList.jsp" />
+				<entry
+					key="stockCountData"
+					value="/geesun/oitems/geesun_oitems_listing/geesunOitemsListing_stockCountList_data.jsp" />
+				<entry
+					key="receiveCount"
+					value="/geesun/oitems/geesun_oitems_listing/geesunOitemsListing_receiveCountList.jsp" />
+				<entry
+					key="receiveCountData"
+					value="/geesun/oitems/geesun_oitems_listing/geesunOitemsListing_receiveCountList_data.jsp" />
+				<entry
+					key="saveExcel"
+					value="/geesun/oitems/geesun_oitems_listing/geesun_oitems_listing_Upload.jsp" />
+				<entry
+					key="listChileren"
+					value="/geesun/oitems/geesun_oitems_listing_ui/geesunOitemsListing_set.jsp" />
+			</map>
+		</property>
+	</bean>
+	<bean
+		name="/geesun/oitems/geesun_oitems_warehousing_record/geesunOitemsWarehousingRecord.do"
+		class="com.landray.kmss.geesun.oitems.actions.GeesunOitemsWarehousingRecordAction"
+		lazy-init="true"
+		parent="KmssBaseAction">
+		<property
+			name="formType"
+			value="com.landray.kmss.geesun.oitems.forms.GeesunOitemsWarehousingRecordForm" />
+		<property name="forwards">
+			<map>
+				<entry
+					key="view"
+					value="/geesun/oitems/geesun_oitems_warehousing_record/geesunOitemsWarehousingRecord_view.jsp" />
+				<entry
+					key="edit"
+					value="/geesun/oitems/geesun_oitems_warehousing_record/geesunOitemsWarehousingRecord_edit.jsp" />
+				<entry
+					key="list"
+					value="/geesun/oitems/geesun_oitems_warehousing_record/geesunOitemsWarehousingRecord_list.jsp" />
+				<entry
+					key="listRecord"
+					value="/geesun/oitems/geesun_oitems_warehousing_record/geesunOitemsWarehousingRecord_listRecord.jsp" />
+			</map>
+		</property>
+	</bean>
+	<bean
+		name="/geesun/oitems/geesun_oitems_warehousing_record_joinlist/geesunOitemsWarehousingRecordJoinList.do"
+		class="com.landray.kmss.geesun.oitems.actions.GeesunOitemsWarehousingRecordJoinListAction"
+		lazy-init="true"
+		parent="KmssBaseAction">
+		<property
+			name="formType"
+			value="com.landray.kmss.geesun.oitems.forms.GeesunOitemsWarehousingRecordJoinListForm" />
+		<property name="forwards">
+			<map>
+				<entry
+					key="listRecord"
+					value="/geesun/oitems/geesun_oitems_warehousing_record_joinlist/geesunOitemsWarehousingRecordJoinList_listRecord.jsp" />
+				<entry
+					key="listRecord.4m"
+					value="/geesun/oitems/mobile/listRecord.jsp" />
+				<entry
+					key="list"
+					value="/geesun/oitems/geesun_oitems_warehousing_record_joinlist/geesunOitemsWarehousingRecordJoinList_list.jsp" />
+			</map>
+		</property>
+	</bean>
+	<bean
+		name="/geesun/oitems/geesun_oitems_budger_application/geesunOitemsBudgerApplication.do"
+		class="com.landray.kmss.geesun.oitems.actions.GeesunOitemsBudgerApplicationAction"
+		lazy-init="true"
+		parent="KmssBaseAction">
+		<property
+			name="formType"
+			value="com.landray.kmss.geesun.oitems.forms.GeesunOitemsBudgerApplicationForm" />
+		<property name="forwards">
+			<map>
+				<entry
+					key="view"
+					value="/geesun/oitems/geesun_oitems_budger_application_ui/geesunOitemsBudgerApplication_view.jsp" />
+				<entry
+					key="print"
+					value="/geesun/oitems/geesun_oitems_budger_application_ui/geesunOitemsBudgerApplication_print.jsp" />
+				<entry
+					key="view.4m"
+					value="/geesun/oitems/mobile/view.jsp" />
+				<entry
+					key="edit"
+					value="/geesun/oitems/geesun_oitems_budger_application_ui/geesunOitemsBudgerApplication_edit.jsp" />
+				<entry
+					key="edit.4m"
+					value="/geesun/oitems/mobile/edit.jsp" />
+				<entry
+					key="list"
+					value="/geesun/oitems/geesun_oitems_budger_application/geesunOitemsBudgerApplication_list.jsp" />
+				<entry
+					key="count"
+					value="/geesun/oitems/geesun_oitems_budger_application/geesunOitemsBudgerApplication_count.jsp" />
+			</map>
+		</property>
+	</bean>
+	<bean
+		name="/geesun/oitems/geesun_oitems_budger_application/geesunOitemsBudgerApplicationIndex.do"
+		class="com.landray.kmss.geesun.oitems.actions.GeesunOitemsBudgerApplicationIndexAction"
+		lazy-init="true"
+		parent="KmssBaseAction">
+		<property name="forwards">
+			<map>
+				<entry
+					key="list"
+					value="/geesun/oitems/geesun_oitems_budger_application_ui/geesunOitemsBudgerApplication_list.jsp" />
+				<entry
+					key="list.4m"
+					value="/geesun/oitems/mobile/list.jsp" />
+			</map>
+		</property>
+	</bean>
+	<bean
+		name="/geesun/oitems/geesun_oitems_shopping_trolley/geesunOitemsShoppingTrolley.do"
+		class="com.landray.kmss.geesun.oitems.actions.GeesunOitemsShoppingTrolleyAction"
+		lazy-init="true"
+		parent="KmssBaseAction">
+		<property
+			name="formType"
+			value="com.landray.kmss.geesun.oitems.forms.GeesunOitemsShoppingTrolleyForm" />
+		<property name="forwards">
+			<map>
+				<entry
+					key="view"
+					value="/geesun/oitems/geesun_oitems_shopping_trolley/geesunOitemsShoppingTrolley_view.jsp" />
+				<entry
+					key="edit"
+					value="/geesun/oitems/geesun_oitems_shopping_trolley/geesunOitemsShoppingTrolley_edit.jsp" />
+				<entry
+					key="list"
+					value="/geesun/oitems/geesun_oitems_shopping_trolley/geesunOitemsShoppingTrolley_list.jsp" />
+				<entry
+					key="listForApplication"
+					value="/geesun/oitems/geesun_oitems_shopping_trolley/geesunOitemsShoppingTrolley_application_list.jsp" />
+				<entry
+					key="listForDelete"
+					value="/geesun/oitems/geesun_oitems_shopping_trolley/geesunOitemsShoppingTrolley.do?method=list&amp;fdType=${param.fdType}" />
+				<entry
+					key="listForFdListingId"
+					value="/geesun/oitems/geesun_oitems_shopping_trolley/geesun_oitems_shopping_trolley_details_list.jsp" />
+				<entry
+					key="data"
+					value="/geesun/oitems/geesun_oitems_shopping_trolley/geesunOitemsShoppingTrolley_data.jsp" />
+				<entry
+					key="saveExcel"
+					value="/geesun/oitems/geesun_oitems_shopping_trolley/geesun_oitems_shopping_trolley_upload.jsp" />
+			</map>
+		</property>
+	</bean>
+	<bean
+		name="/geesun/oitems/geesun_oitems_templet/geesunOitemsTemplet.do"
+		class="com.landray.kmss.geesun.oitems.actions.GeesunOitemsTempletAction"
+		lazy-init="true"
+		parent="KmssBaseAction">
+		<property
+			name="formType"
+			value="com.landray.kmss.geesun.oitems.forms.GeesunOitemsTempletForm" />
+		<property name="forwards">
+			<map>
+				<entry
+					key="view"
+					value="/geesun/oitems/geesun_oitems_templet/geesunOitemsTemplet_view.jsp" />
+				<entry
+					key="edit"
+					value="/geesun/oitems/geesun_oitems_templet/geesunOitemsTemplet_edit.jsp" />
+				<entry
+					key="list"
+					value="/geesun/oitems/geesun_oitems_templet/geesunOitemsTemplet_list.jsp" />
+			</map>
+		</property>
+	</bean>
+	<bean
+		name="/geesun/oitems/geesun_oitems_month_report/geesunOitemsMonthReport.do"
+		class="com.landray.kmss.geesun.oitems.actions.GeesunOitemsMonthReportAction"
+		lazy-init="true"
+		parent="KmssBaseAction">
+		<property
+			name="formType"
+			value="com.landray.kmss.geesun.oitems.forms.GeesunOitemsMonthReportForm" />
+		<property name="forwards">
+			<map>
+				<entry
+					key="view"
+					value="/geesun/oitems/geesun_oitems_month_report_ui/geesunOitemsMonthReport_view.jsp" />
+				<entry
+					key="edit"
+					value="/geesun/oitems/geesun_oitems_month_report_ui/geesunOitemsMonthReport_edit.jsp" />
+				<entry
+					key="list"
+					value="/geesun/oitems/geesun_oitems_month_report_ui/geesunOitemsMonthReport_list.jsp" />
+			</map>
+		</property>
+	</bean>
+	<bean
+		name="/geesun/oitems/geesun_oitems_report_listing/geesunOitemsReportListing.do"
+		class="com.landray.kmss.geesun.oitems.actions.GeesunOitemsReportListingAction"
+		lazy-init="true"
+		parent="KmssBaseAction">
+		<property
+			name="formType"
+			value="com.landray.kmss.geesun.oitems.forms.GeesunOitemsReportListingForm" />
+		<property name="forwards">
+			<map>
+				<entry
+					key="view"
+					value="/geesun/oitems/geesun_oitems_report_listing/geesunOitemsReportListing_view.jsp" />
+				<entry
+					key="edit"
+					value="/geesun/oitems/geesun_oitems_report_listing/geesunOitemsReportListing_edit.jsp" />
+				<entry
+					key="list"
+					value="/geesun/oitems/geesun_oitems_report_listing/geesunOitemsReportListing_list.jsp" />
+			</map>
+		</property>
+	</bean>
+</beans>

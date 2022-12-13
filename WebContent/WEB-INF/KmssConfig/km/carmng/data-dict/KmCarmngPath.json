@@ -1,0 +1,48 @@
+{
+    "global":     {
+        "modelName": "com.landray.kmss.km.carmng.model.KmCarmngPath",
+        "messageKey": "km-carmng:kmCarmngDispatchersInfo.fdTravelPath",
+        "table": "km_carmng_path",
+         "serviceBean": "kmCarmngApplicationService",
+        "url": ""
+    },
+    "attrs":     {
+        "fdId":         {
+            "propertyType": "id",
+            "generator": {"type": "assigned"}
+        },
+        "fdDestination":         {
+            "propertyType": "simple",
+            "messageKey": "km-carmng:kmCarmngApplication.fdDestination",
+            "type": "String",
+            "column": "fd_des",
+            "notNull": "false",
+            "length": "200",
+            "canSearch": "true",
+            "validate": "true"
+        },
+        "fdDestinationCoordinate":         {
+            "propertyType": "simple",
+            "messageKey": "km-carmng:kmCarmngApplication.fdDestination",
+            "type": "String",
+            "column": "fd_des_coord",
+            "notNull": "false",
+            "length": "200",
+            "validate": "true"
+        },
+        "fdDestinationDetail":         {
+            "propertyType": "simple",
+            "messageKey": "km-carmng:kmCarmngApplication.fdDestination",
+            "type": "String",
+            "column": "fd_des_detail",
+            "notNull": "false",
+            "length": "100"
+        },
+         "fdAppLication":         {
+            "propertyType": "model",
+            "messageKey": "km-carmng:kmCarmngDispatchersInfo.fdApplicationIds",
+            "type": "com.landray.kmss.km.carmng.model.KmCarmngApplication",
+            "column": "fd_application_id"
+        },
+    }
+}

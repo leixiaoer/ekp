@@ -1,0 +1,170 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<version xmlns="http://www.example.org/version-config" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.example.org/version-config ../../../version.xsd">
+	<modifies>
+		<modify>
+			<description>#153017 优化 TransactionUtils.beginTransaction 和 TransactionUtils.beginNewTransaction</description>
+			<author>黄海</author>
+			<revision-time>2022-05-05</revision-time>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#140180 修复 SQL参数化</description>
+			<author>苏琦</author>
+			<revision-time>2021-05-28</revision-time>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>修复 导入EXCEL数据报错</description>
+			<author>黄泽凯</author>
+			<revision-time>2018-11-02</revision-time>
+			<baseline>V15.0.0.B1.20181109</baseline>
+		</modify>
+		<modify>
+			<description>优化 后端页面优化为新UI。</description>
+			<author>吴志斌</author>
+			<revision-time>2018-01-17</revision-time>
+			<baseline>V14.0.0.R.20180413</baseline>
+		</modify>
+		<modify>
+			<description>优化 后台文档维护功能改成新UI，并且增加筛选功能</description>
+			<author>张成才</author>
+			<revision-time>2018-01-11</revision-time>
+			<baseline>V14.0.0.B2.20180112</baseline>
+		</modify>
+		<modify>
+			<description>优化 应用配置-关键数据管理-调用关键数据的模块页面中文没翻译</description>
+			<author>陈尉建</author>
+			<revision-time>2017-09-11</revision-time>
+			<baseline>V13.5.0.R.20170915</baseline>
+		</modify>
+		<modify>
+			<description>新增 类别模板设置多语言支持</description>
+			<author>黄伟强</author>
+			<revision-time>2017-09-09</revision-time>
+			<relation>
+				<relation-module>core</relation-module>
+			</relation>
+			<baseline>V13.5.0.R.20170915</baseline>
+		</modify>
+		<modify>
+			<description>修复 计划工期和实际工期属性与数据字典不匹配导致导入失败</description>
+			<author>郑超</author>
+			<revision-time>2017-08-17</revision-time>
+			<baseline>V13.5.0.R.20170915</baseline>
+		</modify>
+		<modify>
+			<description>修复 编号机制访问权限泄漏问题</description>
+			<author>林秀贤</author>
+			<revision-time>2017-03-08</revision-time>
+			<relation>
+				<relation-module>sys/number</relation-module>
+			</relation>
+			<baseline>V13.0.0.R.20170310</baseline>
+		</modify>
+		<modify>
+			<description>修复 应用中心下进入各个业务模块，中间帧的字体可随主题包样式</description>
+			<author>陈经纬</author>
+			<revision-time>2017-03-08</revision-time>
+			<baseline>V13.0.0.R.20170310</baseline>
+		</modify>
+		<modify>
+			<description>修复 增加不支持移动端访问提示</description>
+			<author>林秀贤</author>
+			<revision-time>2017-03-01</revision-time>
+			<baseline>V13.0.0.R.20170310</baseline>
+		</modify>
+		<modify>
+			<description>修复 所有客户/无效的客户列表页面出现两个操作栏且样式不统一</description>
+			<author>黄伟强</author>
+			<revision-time>2017-01-17</revision-time>
+			<baseline>V13.0.0.R.20170310</baseline>
+		</modify>
+		<modify>
+			<description>修复 list列表页操作栏中的“删除”按钮调整命名为“批量删除”</description>
+			<author>潘永辉</author>
+			<revision-time>2016-10-20</revision-time>
+			<baseline>V13.0.0.B3.20161230</baseline>
+		</modify>
+		<modify>
+			<description>优化 后台配置中心由“后台管理”角色控制</description>
+			<author>朱湖强</author>
+			<revision-time>2016-10-17</revision-time>
+			<baseline>V13.0.0.B3.20161230</baseline>
+		</modify>
+		<modify>
+			<description>新增 后台配置新UED</description>
+			<author>崔文坚</author>
+			<revision-time>2016-09-21</revision-time>
+			<baseline>V13.0.0.B2.20160930</baseline>
+		</modify>
+		<modify>
+			<description>修复 在所有供应商列表页面，新建供应商，页面不会跳转到席间供应商页面 的问题</description>
+			<author>黄伟强</author>
+			<revision-time>2016-06-06</revision-time>
+			<baseline>V13.0.0.B2.20160930</baseline>
+		</modify>
+		<modify>
+			<description>修复 所有供应商的批量修改权限操作提交失败 的问题</description>
+			<author>黄伟强</author>
+			<revision-time>2016-06-06</revision-time>
+			<baseline>V13.0.0.B2.20160930</baseline>
+		</modify>
+		<modify>
+			<description>修复 【主数据-缺陷】其他模块类别设置下权限变更，提示没有权限访问</description>
+			<author>潘永辉</author>
+			<revision-time>2016-01-12</revision-time>
+			<baseline>V12.0.8.R.20160114</baseline>
+		</modify>
+		<modify>
+			<description>修复 打开主数据查看页面报错的问题</description>
+			<author>黄伟强</author>
+			<revision-time>2015-12-02</revision-time>
+			<baseline>V12.0.7.R.20151203</baseline>
+		</modify>
+		<modify>
+			<description>优化 关键数据定时任务增加描述字段，以场景语言来描述该任务的具体执行场景和动作</description>
+			<author>黄伟强</author>
+			<revision-time>2015-11-26</revision-time>
+			<relation>
+				<relation-module>core</relation-module>
+			</relation>
+			<baseline>V12.0.7.R.20151203</baseline>
+		</modify>
+		<modify>
+			<description>修复 主数据同步的时候，没区分有效无效 的问题</description>
+			<author>黄伟强</author>
+			<revision-time>2015-11-26</revision-time>
+			<baseline>V12.0.7.R.20151203</baseline>
+		</modify>
+		<modify>
+			<description>修复 当供应商邮编信息超出字段长度后同步失败的问题</description>
+			<author>黄伟强</author>
+			<revision-time>2015-11-25</revision-time>
+			<baseline>V12.0.7.R.20151203</baseline>
+		</modify>
+		<modify>
+			<description>移除 debugger调试信息</description>
+			<author>魏本源</author>
+			<revision-time>2015-07-09</revision-time>
+			<baseline>V12.0.3.R.20150710</baseline>
+		</modify>
+		<modify>
+			<description>修复 关键数据菜单加入到后台管理中</description>
+			<author>黄伟强</author>
+			<revision-time>2015-05-28</revision-time>
+			<baseline>V12.0.2.R.20150605</baseline>
+		</modify>
+		<modify>
+			<description>修复 可阅读者看不到主数据的问题</description>
+			<author>黄伟强</author>
+			<revision-time>2015-05-28</revision-time>
+			<baseline>V12.0.2.R.20150605</baseline>
+		</modify>
+		<modify>
+			<description>新增 关键数据组件</description>
+			<author>黄伟强</author>
+			<revision-time>2015-03-06</revision-time>
+			<baseline>V12.0.0.R.20150325</baseline>
+		</modify>
+	</modifies>
+</version>

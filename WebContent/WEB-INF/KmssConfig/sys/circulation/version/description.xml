@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<description xmlns="http://www.example.org/description-config" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.example.org/description-config ../../../description.xsd">
+	<module>
+		<module-name>传阅</module-name>
+		<module-path>sys/circulation</module-path>
+		<baseline>V15.0.4.R.20200410</baseline>
+		<source-md5>ee5f455ea3d6b9b36e2e6abe1e90b472</source-md5>
+		<is-custom>否</is-custom>
+		<serial-num>30</serial-num>
+	</module>
+</description>

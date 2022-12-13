@@ -1,0 +1,455 @@
+.error-input{
+	border: 1px solid red;
+}
+.error-header{
+	text-align: center;
+	font-size: 20px;
+	line-height: 30px;
+	font-weight: bold;
+}
+.matrixData-table td{
+	text-align: center;
+}
+.matrixData-table.tb_normal > tbody >tr > td{
+	border-color:#f0f0f0;
+	min-width: 200px;
+}
+.matrixData-table.tb_normal > tbody >tr:nth-child(2n) > td{
+	background: #f7f7f7;
+}
+.table_div{
+	width: 100%;
+	height: 450px;
+	padding: 20px 5px 50px 5px;
+	overflow-x: auto;
+}
+
+.matrix_content_header a{
+	margin: 0 5px;
+}
+.matrixData-table{
+	width: 100%;
+	padding: 20px 5px;
+	overflow-x: auto;
+}
+.matrixData-table.tb_normal > tbody >tr > td{
+	border-color:#f0f0f0;
+	min-width: 200px;
+}
+.matrixData-table.tb_normal > tbody >tr:nth-child(2n) > td{
+	background: #f7f7f7;
+}
+
+.matrixData-table.tb_normal > tbody >tr > td.matrixData-table-no{
+	min-width: 15px;
+}
+
+.matrixData-table.tb_normal > tbody >tr > td.matrixData-table-no-edit{
+	min-width: 35px;
+}
+
+.lui_matrix_card_wrap {}
+.lui_matrix_card_wrap .lui_listview_gridtable_table tr td{
+	border-bottom:none;
+}
+.lui_matrix_card_wrap .lui_listview_gridtable_table tr td:first-child .lui_matrix_card_item_inner{
+	margin-left:0;
+}
+.lui_matrix_card_wrap .lui_listview_gridtable_table tr td:nth-child(4) .lui_matrix_card_item_inner{
+	margin-left:0;
+}
+.lui_matrix_card_wrap .lui_listview_gridtable_table{
+	width:100%;
+	table-layout: fixed;
+}
+
+.lui_matrix_card_wrap ul {
+}
+.lui_matrix_card_wrap ul:after{
+  content:"";
+  display:table;
+  clear:both;
+}
+
+.lui_matrix_card_wrap  .lui_matrix_card_item_inner {
+  display: block;
+  border: 1px solid #e7e9ee;
+  margin: 0 10px 20px;
+  position: relative;
+  border-radius: 4px;
+  padding-left: 16px;
+  padding-right: 5px;
+}
+.lui_matrix_card_wrap .card_status {
+  display: inline-block;
+  padding-left: 15px;
+  padding-right: 10px;
+  position: absolute;
+  right: -1px;
+  top: -1px;
+  background: #4285f4;
+  border-radius: 0 4px 0 12px;
+  color: #fff;
+  line-height: 20px;
+}
+.lui_matrix_card_wrap .card_status.status_start {
+}
+.lui_matrix_card_wrap .card_status.status_disable {
+  background-color: #d3d3d3;
+}
+
+.lui_matrix_card_wrap .card_title {
+  margin: 16px 0;
+  margin-right: 0;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  padding-right: 10px;
+}
+.lui_matrix_card_wrap .card_title input{
+	margin-right:5px;
+	vertical-align:middle;
+}
+.lui_matrix_card_wrap .card_summary {
+  /* padding-left: 16px; */
+  margin-bottom: 10px;
+  height: 40px;
+  line-height: 20px;
+  font-size: 12px;
+  text-overflow: -o-ellipsis-lastline;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  line-clamp: 2;
+  -webkit-box-orient: vertical;
+}
+.lui_matrix_card_wrap .card_info {
+  color: #999;
+  font-size: 12px;
+  padding-bottom: 10px;
+}
+.lui_matrix_card_wrap .card_info em {
+  font-style: normal;
+}
+.lui_matrix_card_wrap .card_tip {
+  background:url(../image/bg-black.png);
+  width: 100%;
+  height: 30px;
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  border-bottom-left-radius: 4px;
+  border-bottom-right-radius: 4px;
+  display: none;
+}
+.lui_matrix_card_wrap  td:hover .card_tip{
+  display:inline-block;
+}
+.lui_matrix_card_wrap .card_tip:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+.lui_matrix_card_wrap .card_tip_item {
+  position: relative;
+  float: left;
+  width: 25%;
+  text-align: center;
+  height: 30px;
+  cursor: pointer;
+}
+.lui_matrix_card_wrap .card_icon {
+  display: inline-block;
+  width: 16px;
+  height: 16px;
+  background-repeat: no-repeat;
+  background-position: center;
+  vertical-align: -8px;
+  background-size:16px;
+}
+.lui_matrix_card_wrap .card_tip_txt {
+  display: inline-block;
+  line-height: 24px;
+  font-size: 12px;
+  color: #fff;
+  position: absolute;
+  white-space: nowrap;
+  top: 34px;
+  left: 0;
+  text-align: center;
+  right: 0;
+  display: none;
+}
+.lui_matrix_card_wrap .card_tip_item:hover .card_tip_txt{
+  display:block;
+}
+
+.lui_matrix_card_wrap .card_tip_txt i {
+  font-style: normal;
+}
+
+.lui_matrix_card_wrap .card_tip_txt .card_tip_txt_inner {
+  display: inline-block;
+  line-height: 24px;
+  background: #333333;
+  border-radius: 4px;
+  padding: 0 10px;
+  /* margin-top: -14px; */
+}
+
+.lui_matrix_card_wrap .card_tip_txt .card_tip_arrow {
+  position: absolute;
+  top: -6px;
+  left: 50%;
+  width: 0;
+  height: 0;
+  margin-left: -3px;
+  border: 3px solid transparent;
+  border-bottom-color: #333;
+}
+
+.lui_matrix_card_wrap .icon_baseinfo {
+  background-image: url(../image/icon_baseinfo_nor@2x.png);
+}
+.lui_matrix_card_wrap .icon_data {
+  background-image: url(../image/icon_data_nor@2x.png);
+}
+.lui_matrix_card_wrap .icon_field {
+  background-image: url(../image/icon_field_nor@2x.png);
+}
+.lui_matrix_card_wrap .icon_del {
+  background-image: url(../image/icon_del_nor@2x.png);
+}
+.lui_matrix_card_wrap .icon_disable {
+  background-image: url(../image/icon_disable@2x.png);
+}
+.lui_matrix_card_wrap .icon_start {
+  background-image: url(../image/icon_start@2x.png);
+}
+
+.lui_matrix_card_wrap .card_tip_item:hover .icon_baseinfo {
+  background-image: url(../image/icon_baseinfo_cur@2x.png);
+}
+.lui_matrix_card_wrap .card_tip_item:hover .icon_data {
+  background-image: url(../image/icon_data_cur@2x.png);
+}
+.lui_matrix_card_wrap .card_tip_item:hover .icon_field {
+  background-image: url(../image/icon_field_cur@2x.png);
+}
+.lui_matrix_card_wrap .card_tip_item:hover .icon_del {
+  background-image: url(../image/icon_del_cur@2x.png);
+}
+.lui_matrix_card_wrap .card_tip_item:hover .icon_disable {
+  background-image: url(../image/icon_disable_cur@2x.png);
+}
+.lui_matrix_card_wrap .card_tip_item:hover .icon_start {
+  background-image: url(../image/icon_start_cur@2x.png);
+}
+
+@media \0screen {
+  .lui_matrix_card_wrap .icon_baseinfo {
+    background-image: url(../image/icon_baseinfo_nor.png);
+  }
+  .lui_matrix_card_wrap .icon_data {
+    background-image: url(../image/icon_data_nor.png);
+  }
+  .lui_matrix_card_wrap .icon_field {
+    background-image: url(../image/icon_field_nor.png);
+  }
+  .lui_matrix_card_wrap .icon_del {
+    background-image: url(../image/icon_del_nor.png);
+  }
+  .lui_matrix_card_wrap .icon_disable {
+    background-image: url(../image/icon_disable.png);
+  }
+  .lui_matrix_card_wrap .icon_start {
+    background-image: url(../image/icon_start.png);
+  }
+
+  .lui_matrix_card_wrap .card_tip_item:hover .icon_baseinfo {
+    background-image: url(../image/icon_baseinfo_cur.png);
+  }
+  .lui_matrix_card_wrap .card_tip_item:hover .icon_data {
+    background-image: url(../image/icon_data_cur.png);
+  }
+  .lui_matrix_card_wrap .card_tip_item:hover .icon_field {
+    background-image: url(../image/icon_field_cur.png);
+  }
+  .lui_matrix_card_wrap .card_tip_item:hover .icon_del {
+    background-image: url(../image/icon_del_cur.png);
+  }
+  .lui_matrix_card_wrap .card_tip_item:hover .icon_disable {
+    background-image: url(../image/icon_disable_cur.png);
+  }
+  .lui_matrix_card_wrap .card_tip_item:hover .icon_start {
+    background-image: url(../image/icon_start_cur.png);
+  }
+}
+
+.lui_maxtrix_import_wrap {
+  text-align: center;
+}
+.lui_maxtrix_import_icon {
+  display: inline-block;
+  width: 170px;
+  height: 170px;
+  border: 1px dashed #666;
+  color: #666;
+  border-radius: 4px;
+  position: relative;
+  margin-bottom: 10px;
+  cursor: pointer;
+}
+.lui_maxtrix_import_icon.icon_excel{
+	background:url(../image/excel.png) no-repeat center;
+	position:relative;
+	z-index:2;
+}
+.lui_maxtrix_import_icon.icon_excel:hover:after{
+	content:"";
+	display:block;
+	position:absolute;
+	left:1px;
+	right:1px;
+	top:1px;
+	bottom:1px;
+	/* background: rgba(0, 0, 0, 0.38); */
+	background: url(../image/bg-black.png);
+}
+.lui_maxtrix_import_icon.icon_excel i{
+	display:block;
+	font-size:0;
+}
+.lui_maxtrix_import_icon.icon_excel i{
+	font-style:normal;
+	line-height: 170px;
+	color: #fff;
+	position: relative;
+	z-index: 2;
+}
+.lui_maxtrix_import_icon.icon_excel:hover i{
+	font-size: 20px;
+}
+.lui_maxtrix_import_icon.icon_add i {
+  display: inline-block;
+  width: 10px;
+  position: absolute;
+  left: 50%;
+  height: 10px;
+  top: 50%;
+  margin-top: -5px;
+  margin-left: -5px;
+}
+.lui_maxtrix_import_icon.icon_add i:before {
+  content: "";
+  display: inline-block;
+  width: 30px;
+  height: 4px;
+  background: #999;
+  position: absolute;
+  left: -10px;
+  top: 3px;
+  border-radius: 4px;
+}
+.lui_maxtrix_import_icon.icon_add i:after {
+  content: "";
+  display: inline-block;
+  width: 4px;
+  height: 30px;
+  background: #999;
+  position: absolute;
+  left: 3px;
+  top: -10px;
+  border-radius: 4px;
+}
+
+.lui_maxtrix_import_txt {
+  margin-bottom: 10px;
+}
+.lui_maxtrix_import_wrap .import_desc {
+  margin-bottom: 20px;
+  color: #999;
+}
+.lui_maxtrix_import_wrap .import_btnGroup {
+}
+.lui_maxtrix_import_wrap .import_btnGroup a {
+  cursor: pointer;
+  display: inline-block;
+  margin: 0 10px;
+  padding: 0 15px;
+  height: 36px;
+  line-height: 36px;
+  color: #fff;
+}
+.lui_maxtrix_import_wrap.lui_maxtrix_import_disable {
+}
+
+.lui_maxtrix_import_wrap.lui_maxtrix_import_disable .com_bgcolor_d {
+  filter: alpha(opacity=30);
+  -moz-opacity: 0.3;
+  -khtml-opacity: 0.3;
+  opacity: 0.3;
+  cursor: default;
+}
+
+.lui_maxtrix_success_wrap {
+  text-align: center;
+  padding: 100px 0;
+}
+.lui_maxtrix_success_wrap .lui_maxtrix_icon {
+  margin-bottom: 8px;
+  display: inline-block;
+}
+.lui_maxtrix_success_wrap .icon_success {
+  display: inline-block;
+  width: 48px;
+  height: 48px;
+  background: url(../image/icon_success.png);
+}
+
+.lui_maxtrix_fail_wrap {
+  text-align: center;
+  padding: 20px 0;
+}
+.lui_maxtrix_fail_wrap .lui_maxtrix_icon {
+  margin-bottom: 15px;
+  display: inline-block;
+}
+.lui_maxtrix_fail_wrap .icon_error {
+  display: inline-block;
+  width: 48px;
+  height: 48px;
+  background: url(../image/icon_error.png);
+}
+.lui_maxtrix_import_error{
+  width: 16px;
+  height: 16px;
+  background: url(../image/icon_error.png);
+  display: inline-block;
+  background-size: 16px;
+  margin-left: 5px;
+  vertical-align: middle;
+}
+.lui_maxtrix_import_success{
+  width: 16px;
+  height: 16px;
+  background: url(../image/icon_success.png);
+  display: inline-block;
+  background-size: 16px;
+  margin-left: 5px;
+  vertical-align: middle;
+}
+.lui_maxtrix_fail_wrap .lui_maxtrix_desc {
+  font-size: 14px;
+}
+.lui_maxtrix_fail_wrap .lui_maxtrix_desc em {
+  color: #e60000;
+  font-style: normal;
+  margin: 0 4px;
+}
+
+.txttitle{
+	margin: 20px 0;
+}

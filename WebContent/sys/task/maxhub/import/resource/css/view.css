@@ -1,0 +1,226 @@
+	.mhuiList{
+		list-style:none;
+		padding:0;
+	}
+	
+	.mhuiItemTask{
+		height:7.49rem;
+		border-bottom:1px solid #d5d5d5;
+		position:relative;
+	}
+	
+	.mhuiTaskTitle {
+		height:2.63rem;
+		line-height:2.63rem;
+		font-size: 1.875rem;
+		color: #333333;
+		letter-spacing: 0;
+		padding-top:1.15rem;
+		box-sizing:content-box;
+		width:85%;
+		overflow:hidden;
+		text-overflow:ellipsis;
+		white-space:nowrap;
+	}
+	
+	#taskView.taskTitle{
+		text-align:center;
+	}
+	
+	.mhuiTaskInfo{
+		margin-top:0.645rem;
+		font-family: PingFangSC-Medium;
+		font-size: 1.25rem;
+		color: #999999;
+		letter-spacing: 0;
+		display:flex;
+		height:2rem;
+		line-height:2rem;
+		width:90%;
+		
+		
+	}
+
+	.mhuiTaskInfo div{
+		padding-right:1rem;
+	}
+	.mhuiTaskInfo .performs{
+		max-width:40rem;
+		overflow:hidden;
+		text-overflow:ellipsis;
+		white-space:nowrap;
+	}
+	.TaskProgress{
+		position:absolute;
+		right:0;
+		top:50%;
+		margin-top:-2.5rem;
+		background:#EBE9E9;
+	
+		width:5rem;
+		height:5rem;
+		border-radius:50%;
+		
+		
+	}
+	.progressClip{
+ 		width:5rem;
+		height:5rem;
+		border:0.3rem solid #EBE9E9;
+		border-radius: 50%;
+		position:absolute;
+		clip:rect(0,5rem,5rem,2.5rem); 
+	}
+	.progressLeft{
+ 		width:5rem;
+		height:5rem;
+		border:0.3rem solid #40ABED;
+		border-radius:50%;
+		position:absolute;
+		left:-0.3rem;
+		top:-0.3rem;
+		clip:rect(0 ,2.5rem ,5rem , 0); 
+	}
+	.progressRight{
+ 		width:5rem;
+		height:5rem;
+		border:0.3rem solid #40ABED;
+		border-radius:50%;
+		position:absolute;
+		right:-0.3rem;
+		top:-0.3rem;
+		clip:rect(0, 5rem, 5rem, 2.5rem); 
+		
+	}
+	.progressValue{
+	 	width:4.4rem;
+		height:4.4rem;
+		background:#fff;
+		position:absolute;
+		border-radius:50%;
+		text-align:center;
+		line-height:4.4rem;
+		left:0.3rem;
+		top:0.3rem;
+		font-size:1.2rem; 
+	}
+	.rightHidden{
+		 width:0; 
+	}
+	.progressshow{
+		clip:auto;
+	}
+	 .addTask{
+	 	width:4.5rem;
+	 	height:4.5rem;
+	 	background:#e3e3e3;
+		position:fixed;
+		bottom:4rem;
+		border-radius:50%;
+		line-height:4.5rem;
+		text-align:center;
+		left:50%;
+		maring-left:-2.5rem;
+		 	
+	 }
+	 
+	 .taskTitle{
+	 	background-image: linear-gradient(-180deg, #7CBFFF 0%, #1768EF 100%);
+		box-shadow: 0 5px 12px 0 rgba(66,133,244,0.50), inset 0 -2px 2px 0 rgba(255,255,255,0.50);
+		border-radius: 8px;
+		height:6.25rem;
+		width:20.13rem;
+		line-height:6.25rem;
+		font-size:1.875rem;
+		margin:0 auto;
+		text-align:center;
+		margin-bottom:2.1rem;
+		overflow:hidden;
+	 }
+	 
+	 	.underTakerNode{
+			padding:0;margin:0;
+			height:78%;
+			overflow-y:scroll;
+		}
+
+		
+		.underTakerNode li{
+			list-style:none;
+			width:48%;
+			padding-left:2%;
+			font-size:1.475rem;
+			display:inline-block;
+			height:5rem;
+			line-height:5rem;
+			
+		}
+		
+		.underTakerNode li img{
+			border-radius:50%;
+			width:4rem;
+			height:4rem;
+			margin-left:2%;
+		}
+		
+		.underTakerNode li input{
+			width:1.4rem;
+			height:1.4rem;
+			margin-left:1%;
+		}
+		.underTakerNode li span{
+			padding-left:2%;
+		}
+		.taskList .mhuiList li:nth-child(1){
+			border-top:1px solid #d5d5d5;
+		}
+		.taskTitleBorder{
+			border:1px solid #FCFDFF;
+			border-radius:8px;
+			width:19.6rem;
+			height:5.8rem;
+			margin:0 auto;
+			margin-top:2px;
+			
+		}
+		.mhuiDialogToolbar{
+			font-family: PingFangSC-Medium;
+		}
+		.mhuiDialogToolbar :nth-child(2){
+			color:#4285F4;
+		}
+		
+		
+.noTaskImage{
+	width:13.25rem;
+	height:13.25rem;
+	margin:15rem auto;
+	position:relative;
+	background:url("../image/noTask.png") no-repeat top center;
+}
+.notImage{
+	position:absolute;
+	bottom:0;
+	font-size:1.5rem;
+	color:#999;
+	width:13.25rem;
+	text-align:center;
+}
+.noPersonImage{
+	background:url("../image/noPerson.png") no-repeat center center;
+	position:absolute;
+	width:100%;
+	height:100%;
+	top:0;
+	text-align:center;
+}
+
+.dialogPerfomBox{
+	position:relative;
+}
+.notperson{
+	position:absolute;
+	bottom:4rem;
+	width:100%;
+	color:#999;
+}

@@ -1,0 +1,667 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<root xmlns="http://www.landray.com.cn/schema/lui" xmlns:degign="http://www.landray.com.cn/schema/design"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="
+	http://www.landray.com.cn/schema/lui
+	../../../sys/ui/lui.xsd
+	http://www.landray.com.cn/schema/design
+	../../../design-xml.xsd">
+<!-- 所有车辆申请（可配置题头） -->
+<portlet
+		id="km.carmng.all"
+		name="{km-carmng:kmCarmngApplication.portlet.myFlow.all}"
+		module="{km-carmng:module.km.carmng}"
+		description="{km-carmng:portlet.listtable.desc}">
+		<source
+			format="sys.ui.listtable"
+			type="AjaxJson">
+			<code>
+			<![CDATA[
+				{
+					"url":"/km/carmng/km_carmng_application/kmCarmngApplicationPortlet.do?method=listPortlet&myFlow=all&kmCarmngMotorcadeId=!{cateid}&rowsize=!{rowsize}&scope=!{scope}"
+				}
+			]]>
+			</code>
+		</source>
+		<vars>
+		   <var name="{km-carmng:kmCarmngApplication.fdApplicationTime}" key="scope" kind="enumValue" default="no">
+                 {  "values":[{ "text":"{portlet.var.date.oneMonth}", "value":"month"},
+                              { "text":"{portlet.var.date.threeMonths}", "value":"season"},
+                              { "text":"{portlet.var.date.halfAYear}", "value":"halfYear"},
+                              { "text":"{portlet.var.date.oneYear}", "value":"year"},
+                              { "text":"{portlet.var.date.unlimited}", "value":"no"}],
+                   "showType":"radio"
+                  }
+            </var>
+		    <var name="{portlet.rowsize}" key="rowsize" kind="rowsize" />
+			<var name="{km-carmng:kmCarmngApplication.fdMotorcadeId}" key="cateid" kind="dialogJs" >
+		    	{"jsp":"/km/carmng/km_carmng_application/selectKmCarmngMotorcade.jsp"}
+		    </var>
+		</vars>
+		<operations>
+		   <operation
+				name="{operation.create}"
+				type="create"
+				href="/km/carmng/km_carmng_application/kmCarmngApplication.do?method=add" />
+			<operation
+				name="{operation.more}"
+				type="more"
+				href="/km/carmng/?categoryId=!{cateid}" />
+	    </operations>
+</portlet>
+<!-- 所有车辆申请（简单列表） -->
+<portlet
+		id="km.carmng.simpleList"
+		name="{km-carmng:kmCarmngApplication.portlet.myFlow.all}"
+		module="{km-carmng:module.km.carmng}"
+		description="{portlet.list.desc1}">
+		<source
+			format="sys.ui.classic"
+			type="AjaxJson">
+			<code>
+			<![CDATA[
+				{
+					"url":"/km/carmng/km_carmng_application/kmCarmngApplicationPortlet.do?method=listPortlet&myFlow=all&kmCarmngMotorcadeId=!{cateid}&rowsize=!{rowsize}&dataview=classic&scope=!{scope}"
+				}
+			]]>
+			</code>
+		</source>
+		<vars>
+		   <var name="{km-carmng:kmCarmngApplication.fdEndTime}" key="scope" kind="enumValue" default="no">
+                 {  "values":[{ "text":"{portlet.var.date.oneMonth}", "value":"month"},
+                              { "text":"{portlet.var.date.threeMonths}", "value":"season"},
+                              { "text":"{portlet.var.date.halfAYear}", "value":"halfYear"},
+                              { "text":"{portlet.var.date.oneYear}", "value":"year"},
+                              { "text":"{portlet.var.date.unlimited}", "value":"no"}],
+                   "showType":"radio"
+                  }
+            </var>
+		    <var name="{portlet.rowsize}" key="rowsize" kind="rowsize" />
+			<var name="{km-carmng:kmCarmngApplication.fdMotorcadeId}" key="cateid" kind="dialogJs" >
+		    	{"jsp":"/km/carmng/km_carmng_application/selectKmCarmngMotorcade.jsp"}
+		    </var>
+		</vars>
+		<operations>
+		   <operation
+				name="{operation.create}"
+				type="create"
+				href="/km/carmng/km_carmng_application/kmCarmngApplication.do?method=add" />
+			<operation
+				name="{operation.more}"
+				type="more"
+				href="/km/carmng/?categoryId=!{cateid}" />
+	    </operations>
+</portlet>
+<!-- 我审批的车辆申请 -->
+<portlet
+		id="km.carmng.myFlow"
+		name="{km-carmng:kmCarmngApplication.portlet.myFlow.involved}"
+		module="{km-carmng:module.km.carmng}"
+		description="{km-carmng:portlet.listtable.desc}">
+		<source
+			format="sys.ui.listtable"
+			type="AjaxJson">
+			<code>
+			<![CDATA[
+				{
+					"url":"/km/carmng/km_carmng_application/kmCarmngApplicationPortlet.do?method=listPortlet&rowsize=!{rowsize}&myFlow=!{myFlow}&scope=!{scope}"
+				}
+			]]>
+			</code>
+		</source>
+		<vars>
+		   <var name="{km-carmng:kmCarmngApplication.fdApplicationTime}" key="scope" kind="enumValue" default="no">
+                 {  "values":[{ "text":"{portlet.var.date.oneMonth}", "value":"month"},
+                              { "text":"{portlet.var.date.threeMonths}", "value":"season"},
+                              { "text":"{portlet.var.date.halfAYear}", "value":"halfYear"},
+                              { "text":"{portlet.var.date.oneYear}", "value":"year"},
+                              { "text":"{portlet.var.date.unlimited}", "value":"no"}],
+                   "showType":"radio"
+                  }
+            </var>
+		    <var name="{portlet.rowsize}" key="rowsize" kind="rowsize" />
+		    <var name="{km-carmng:kmCarmngApplication.portlet.myFlow.involved}" key="myFlow" kind="enumValue" default="unExecuted">
+			  {    "values":[{ "text":"{list.approval}", "value":"unExecuted" },{ "text":"{list.approved}", "value":"executed" }],
+	               "showType":"radio"
+                }
+			</var>
+		</vars>
+		<operations>
+		   <operation
+				name="{operation.create}"
+				type="create"
+				href="/km/carmng/km_carmng_application/kmCarmngApplication.do?method=add" />
+			<operation
+				name="{operation.more}"
+				type="more"
+				href="/km/carmng/#cri.q=mydoc:approval" />
+			
+	    </operations>
+</portlet>
+<!-- 我发起的车辆申请 -->
+<portlet
+		id="km.carmng.myFlow.approval"
+		name="{km-carmng:kmCarmngApplication.portlet.myFlow.create.my}"
+		module="{km-carmng:module.km.carmng}"
+		description="{km-carmng:portlet.listtable.desc}">
+		<source
+			format="sys.ui.listtable"
+			type="AjaxJson">
+			<code>
+			<![CDATA[
+				{
+					"url":"/km/carmng/km_carmng_application/kmCarmngApplicationPortlet.do?method=listPortlet&owner=true&status=!{status}&rowsize=!{rowsize}&scope=!{scope}"
+				}
+			]]>
+			</code>
+		</source>
+		<vars>
+		   <var name="{km-carmng:kmCarmngApplication.fdApplicationTime}" key="scope" kind="enumValue" default="no">
+                 {  "values":[{ "text":"{portlet.var.date.oneMonth}", "value":"month"},
+                              { "text":"{portlet.var.date.threeMonths}", "value":"season"},
+                              { "text":"{portlet.var.date.halfAYear}", "value":"halfYear"},
+                              { "text":"{portlet.var.date.oneYear}", "value":"year"},
+                              { "text":"{portlet.var.date.unlimited}", "value":"no"}],
+                   "showType":"radio"
+                  }
+            </var>
+		    <var name="{portlet.rowsize}" key="rowsize" kind="rowsize"/>
+		     <var name="{km-carmng:kmCarmngApplication.portlet.myFlow.create.my}" key="status" kind="enumValue" default="all">
+			  {    "values":[{ "text":"{km-carmng:kmCarmng.tree.wait}", "value":"20" },{ "text":"{km-carmng:kmCarmng.tree.already}", "value":"30" },{ "text":"{km-carmng:kmCarmng.tree.draft}", "value":"10" },{ "text":"{km-carmng:kmCarmng.tree.all}", "value":"all" }],
+	               "showType":"radio"
+                }
+			</var>
+		</vars>
+		<operations>
+		    <operation
+				name="{operation.create}"
+				type="create"
+				href="/km/carmng/km_carmng_application/kmCarmngApplication.do?method=add" />
+			<operation
+				name="{operation.more}"
+				type="more"
+				href="/km/carmng/#cri.q=mydoc:create" />
+	    </operations>
+</portlet>
+<!-- 以下为支持cloud数据源  -->
+<!-- 所有车辆申请（表格） -->
+<portlet
+		id="km.carmng.all"
+		name="{km-carmng:kmCarmngApplication.portlet.myFlow.all.table}"
+		module="{km-carmng:module.km.carmng}"
+		description="{km-carmng:portlet.listtable.desc}"
+		forSystem="cloud"
+		varExtend="km.carmng.all">
+		<source
+			id="km-carmng.all"
+			format="data.table"
+			type="json">
+			<code>
+			<![CDATA[
+				{
+					"url":"/data/km-carmng/kmCarmngApplicationPortlet/listPortlet?myFlow=all&kmCarmngMotorcadeId=!{cateid}&rowsize=!{rowsize}&scope=!{scope}"
+				}
+			]]>
+			</code>
+			<example>
+				<code>
+					<![CDATA[
+						{"columns":[{"property":"fdId","renderType":"hidden"},{"property":"docSubject","title":"用车目的"},{"property":"fdApplicationPath","title":"行程安排"},{"property":"docCreateTime","title":"创建时间"},{"property":"docStatus","title":"用车状态"},{"property":"docCreator.fdName","title":"联系人"},{"property":"handlerName","title":"当前处理人"}],"data":[{"href":null,"cells":[{"col":"fdId","value":"14e9a4b3410fe24159116cf4fd28d609"},{"col":"docSubject","value":"广发银行KMS培训交流","href":"/km/carmng/km_carmng_application/kmCarmngApplication.do?method=view&fdId=14e9a4b3410fe24159116cf4fd28d609"},{"col":"fdApplicationPath","value":"南海 - 深圳-南海"},{"col":"docCreateTime","value":"2015-07-17 12:34"},{"col":"docStatus","value":"出车"},{"col":"docCreator.fdName","value":"唐超"},{"col":"handlerName","value":"无"}]},{"href":null,"cells":[{"col":"fdId","value":"14e954f42c484ecbe6884e14663862f2"},{"col":"docSubject","value":"郑超申请用车","href":"/km/carmng/km_carmng_application/kmCarmngApplication.do?method=view&fdId=14e954f42c484ecbe6884e14663862f2"},{"col":"fdApplicationPath","value":"深圳市南山区学苑路南山智园A5栋7楼留仙大道旁 - 深圳市南山区学苑路南山智园A5栋7楼留仙大道旁"},{"col":"docCreateTime","value":"2015-07-16 13:21"},{"col":"docStatus","value":"出车"},{"col":"docCreator.fdName","value":"郑超"},{"col":"handlerName","value":"无"}]},{"href":null,"cells":[{"col":"fdId","value":"14e8ab815b441f9cb40b8b94edf95e0a"},{"col":"docSubject","value":"云南中烟到总部交流","href":"/km/carmng/km_carmng_application/kmCarmngApplication.do?method=view&fdId=14e8ab815b441f9cb40b8b94edf95e0a"},{"col":"fdApplicationPath","value":"总部 - 机场-总部-珠海"},{"col":"docCreateTime","value":"2015-07-14 11:59"},{"col":"docStatus","value":"出车"},{"col":"docCreator.fdName","value":"陈鹏"},{"col":"handlerName","value":"无"}]},{"href":null,"cells":[{"col":"fdId","value":"14e862bfbe2b94385e2909944f1a97d4"},{"col":"docSubject","value":"广发银行项目领导交流","href":"/km/carmng/km_carmng_application/kmCarmngApplication.do?method=view&fdId=14e862bfbe2b94385e2909944f1a97d4"},{"col":"fdApplicationPath","value":"南海 - 广州-南海"},{"col":"docCreateTime","value":"2015-07-13 14:48"},{"col":"docStatus","value":"通过"},{"col":"docCreator.fdName","value":"李尚志"},{"col":"handlerName","value":"无"}]}]}
+					]]>
+				</code>
+			</example>
+		</source>
+		<vars>
+			<var name="{km-carmng:kmCarmngApplication.fdMotorcadeId}" key="cateid" kind="tree" >
+		    	<![CDATA[
+		    		{
+		    			"url":"/data/sys-common/treexml?s_bean=kmCarmngMotorcadeSetTreeService&parentId=!{parentId}&portlet=true",
+		    			"dataType":"xml",
+		    			"canSelectCategory":true,
+		    			"model":"com.landray.kmss.km.carmng.model.KmCarmngMotorcadeSet",
+		    			"help":""
+		    		}
+		    	]]>
+		    </var>
+		</vars>
+		<operations>
+		   <operation
+				name="{operation.create}"
+				type="create"
+				mobileHref="/km/carmng/km_carmng_application/kmCarmngApplication.do?method=add"
+				href="/km/carmng/km_carmng_application/kmCarmngApplication.do?method=add" />
+			<operation
+				name="{operation.more}"
+				type="more"
+				mobileHref="/km/carmng/mobile"
+				href="/km/carmng/?categoryId=!{cateid}" />
+	    </operations>
+</portlet>
+<!-- 所有车辆申请（简单列表） -->
+<portlet
+		id="km.carmng.simpleList"
+		name="{km-carmng:kmCarmngApplication.portlet.myFlow.all}"
+		module="{km-carmng:module.km.carmng}"
+		description="{portlet.list.desc1}"
+		forSystem="cloud"
+		varExtend="km.carmng.simpleList">
+		<source
+			id="km-carmng.simpleList"
+			format="data.list"
+			type="json">
+			<code>
+			<![CDATA[
+				{
+					"url":"/data/km-carmng/kmCarmngApplicationPortlet/listPortlet?myFlow=all&kmCarmngMotorcadeId=!{cateid}&rowsize=!{rowsize}&dataview=classic&scope=!{scope}"
+				}
+			]]>
+			</code>
+			<example>
+				<code>
+					<![CDATA[
+						[{"text":"广发银行KMS培训交流","statusInfo":"出车中","statusColor":"success","creator":{"fdId":"12881d4f526f9bf5ea160fa4f3da37f3","fdName":"唐超","fdLoginName":"tangc","avatarUrl":"http://java.landray.com.cn/sys/person/image.jsp?personId=12881d4f526f9bf5ea160fa4f3da37f3"},"cateName":"别克商务车","cateHref":"/km/carmng/km_carmng_category/kmCarmngCategory.do?method=edit&fdModelName=com.landray.kmss.km.carmng.model.KmCarmngCategory&fdId=142db29192759148e04bd1a42619e588","infos":[{"title":"随车人数: 3","icon":{"name":"carAdd"}}],"created":"1566196676423","href":"/km/carmng/km_carmng_application/kmCarmngApplication.do?method=view&fdId=14e9a4b3410fe24159116cf4fd28d609"},{"text":"郑超申请用车","statusInfo":"出车中","statusColor":"success","creator":{"fdId":"1448b1ae82b2408c34f5db34d688781a","fdName":"郑超","fdLoginName":"weijw","avatarUrl":"http://java.landray.com.cn/sys/person/image.jsp?personId=1448b1ae82b2408c34f5db34d688781a"},"cateName":"别克商务车","cateHref":"/km/carmng","infos":[{"title":"随车人数: 4","icon":{"name":"carAdd"}}],"created":"1557297541658","href":"/km/carmng/km_carmng_application/kmCarmngApplication.do?method=view&fdId=14e954f42c484ecbe6884e14663862f2"},{"text":"云南中烟到总部交流","statusInfo":"待出车","statusColor":"warning","creator":{"fdId":"12c1b1d9f59c2147dad7c2f44b58a69e","fdName":"陈鹏","fdLoginName":"wangqiang","avatarUrl":"http://java.landray.com.cn/sys/person/image.jsp?personId=12c1b1d9f59c2147dad7c2f44b58a69e"},"cateName":"别克商务车","cateHref":"/km/carmng","infos":[{"title":"随车人数: 3","icon":{"name":"carAdd"}}],"created":"1540276731658","href":"/km/carmng/km_carmng_application/kmCarmngApplication.do?method=view&fdId=14e8ab815b441f9cb40b8b94edf95e0a"},{"text":"广发银行项目领导交流","statusInfo":"出车中","statusColor":"success","creator":{"fdId":"12881d4f526f9bf5ea160fa4f3da37f3","fdName":"李尚志","fdLoginName":"guowh","avatarUrl":"http://java.landray.com.cn/sys/person/image.jsp?personId=12881d4f526f9bf5ea160fa4f3da37f3"},"cateName":"别克商务车","cateHref":"/km/carmng","infos":[{"title":"随车人数: 4","icon":{"name":"carAdd"}}],"created":"1529649570921","href":"/km/carmng/km_carmng_application/kmCarmngApplication.do?method=view&fdId=14e862bfbe2b94385e2909944f1a97d4"}]
+					]]>
+				</code>
+			</example>
+		</source>
+		<vars>
+			<var name="{km-carmng:kmCarmngApplication.fdMotorcadeId}" key="cateid" kind="tree" >
+		    	<![CDATA[
+		    		{
+		    			"url":"/data/sys-common/treexml?s_bean=kmCarmngMotorcadeSetTreeService&parentId=!{parentId}&portlet=true",
+		    			"dataType":"xml",
+		    			"canSelectCategory":true,
+		    			"model":"com.landray.kmss.km.carmng.model.KmCarmngMotorcadeSet",
+		    			"help":""
+		    		}
+		    	]]>
+		    </var>
+		</vars>
+		<operations>
+		   <operation
+				name="{operation.create}"
+				type="create"
+				mobileHref="/km/carmng/km_carmng_application/kmCarmngApplication.do?method=add"
+				href="/km/carmng/km_carmng_application/kmCarmngApplication.do?method=add" />
+			<operation
+				name="{operation.more}"
+				type="more"
+				mobileHref="/km/carmng/mobile"
+				href="/km/carmng/?categoryId=!{cateid}" />
+	    </operations>
+</portlet>
+<!-- 所有车辆申请（简单列表） new-->
+<portlet
+		id="km.carmng.simpleList.new"
+		name="{km-carmng:kmCarmngApplication.portlet.myFlow.all.new}"
+		module="{km-carmng:module.km.carmng}"
+		description="{portlet.list.desc1}"
+		forSystem="cloud"
+		varExtend="km.carmng.simpleList">
+	<source
+			id="km-carmng.simpleList.new"
+			format="data.fieldlist"
+			type="json">
+		<code>
+			<![CDATA[
+			{
+				"url":"/data/km-carmng/kmCarmngApplicationPortlet/listPortlet?myFlow=all&kmCarmngMotorcadeId=!{cateid}&rowsize=!{rowsize}&dataview=classic&scope=!{scope}&isNew=true"
+			}
+		]]>
+		</code>
+		<example>
+			<code>
+				<![CDATA[
+					[{"text":"广发银行KMS培训交流","statusInfo":{"text":"出车中","color":"success"},"creator":{"fdId":"12881d4f526f9bf5ea160fa4f3da37f3","fdName":"唐超","fdLoginName":"tangc","avatarUrl":"http://java.landray.com.cn/sys/person/image.jsp?personId=12881d4f526f9bf5ea160fa4f3da37f3"},"cateName":{"text":"别克商务车","href":"/km/carmng/km_carmng_category/kmCarmngCategory.do?method=edit&fdModelName=com.landray.kmss.km.carmng.model.KmCarmngCategory&fdId=142db29192759148e04bd1a42619e588"},"infos":[{"title":"随车人数: 3","icon":{"name":"carAdd"}}],"created":{"text":"1566196676423"},"href":"/km/carmng/km_carmng_application/kmCarmngApplication.do?method=view&fdId=14e9a4b3410fe24159116cf4fd28d609"},{"text":"郑超申请用车","statusInfo":{"text":"出车中","color":"success"},"creator":{"fdId":"1448b1ae82b2408c34f5db34d688781a","fdName":"郑超","fdLoginName":"weijw","avatarUrl":"http://java.landray.com.cn/sys/person/image.jsp?personId=1448b1ae82b2408c34f5db34d688781a"},"cateName":{"text":"别克商务车","href":"/km/carmng"},"infos":[{"title":"随车人数: 4","icon":{"name":"carAdd"}}],"created":{"text":1557297541658},"href":"/km/carmng/km_carmng_application/kmCarmngApplication.do?method=view&fdId=14e954f42c484ecbe6884e14663862f2"},{"text":"云南中烟到总部交流","statusInfo":{"text":"待出车","color":"warning"},"creator":{"fdId":"12c1b1d9f59c2147dad7c2f44b58a69e","fdName":"陈鹏","fdLoginName":"wangqiang","avatarUrl":"http://java.landray.com.cn/sys/person/image.jsp?personId=12c1b1d9f59c2147dad7c2f44b58a69e"},"cateName":{"text":"别克商务车","href":"/km/carmng"},"infos":[{"title":"随车人数: 3","icon":{"name":"carAdd"}}],"created":{"text":1540276731658},"href":"/km/carmng/km_carmng_application/kmCarmngApplication.do?method=view&fdId=14e8ab815b441f9cb40b8b94edf95e0a"},{"text":"广发银行项目领导交流","statusInfo":{"text":"出车中","color":"success"},"creator":{"fdId":"12881d4f526f9bf5ea160fa4f3da37f3","fdName":"李尚志","fdLoginName":"guowh","avatarUrl":"http://java.landray.com.cn/sys/person/image.jsp?personId=12881d4f526f9bf5ea160fa4f3da37f3"},"cateName":{"text":"别克商务车","href":"/km/carmng"},"infos":[{"title":"随车人数: 4","icon":{"name":"carAdd"}}],"created":{"text":1529649570921},"href":"/km/carmng/km_carmng_application/kmCarmngApplication.do?method=view&fdId=14e862bfbe2b94385e2909944f1a97d4"}]
+				]]>
+			</code>
+		</example>
+		<dataFields>
+			<code>
+				<![CDATA[
+					 {
+					   "base": {
+					   "label": "基础信息",
+					   "items": [
+						{"key": "statusInfo", "text": "状态"}
+					   ]
+					   },
+					   "info": {
+					   "label": "辅助信息",
+					   "items": [
+						{"key": "created", "text": "创建时间", "type": "timestamp"},
+						{"key": "creator", "text": "作者", "type": "person"},
+						{"key": "cateName", "text": "分类", "type": "string"}
+					   ]
+					   },
+					   "tag": {
+					   "label": "标签",
+					   "items": []
+					   }
+					 }
+				]]>
+			</code>
+		</dataFields>
+	</source>
+	<vars>
+		<var name="{km-carmng:kmCarmngApplication.fdMotorcadeId}" key="cateid" kind="tree" >
+			<![CDATA[
+	    		{
+	    			"url":"/data/sys-common/treexml?s_bean=kmCarmngMotorcadeSetTreeService&parentId=!{parentId}&portlet=true",
+	    			"dataType":"xml",
+	    			"canSelectCategory":true,
+	    			"model":"com.landray.kmss.km.carmng.model.KmCarmngMotorcadeSet",
+	    			"help":""
+	    		}
+	    	]]>
+		</var>
+	</vars>
+	<operations>
+		<operation
+				name="{operation.create}"
+				type="create"
+				mobileHref="/km/carmng/km_carmng_application/kmCarmngApplication.do?method=add"
+				href="/km/carmng/km_carmng_application/kmCarmngApplication.do?method=add" />
+		<operation
+				name="{operation.more}"
+				type="more"
+				mobileHref="/km/carmng/mobile"
+				href="/km/carmng/?categoryId=!{cateid}" />
+	</operations>
+</portlet>
+<!-- 我审批的车辆申请(表格) -->
+<portlet
+		id="km.carmng.myFlow"
+		name="{km-carmng:kmCarmngApplication.portlet.myFlow.involved.table}"
+		module="{km-carmng:module.km.carmng}"
+		description="{km-carmng:portlet.listtable.desc}"
+		forSystem="cloud"
+		varExtend="km.carmng.myFlow">
+		<source
+			id="km-carmng.myFlow"
+			format="data.table"
+			type="json">
+			<code>
+			<![CDATA[
+				{
+					"url":"/data/km-carmng/kmCarmngApplicationPortlet/listPortlet?rowsize=!{rowsize}&myFlow=!{myFlow}&scope=!{scope}"
+				}
+			]]>
+			</code>
+			<example>
+				<code>
+					<![CDATA[
+						{"columns":[{"property":"fdId","renderType":"hidden"},{"property":"docSubject","title":"用车目的"},{"property":"fdApplicationPath","title":"行程安排"},{"property":"docCreateTime","title":"创建时间"},{"property":"docStatus","title":"用车状态"},{"property":"docCreator.fdName","title":"联系人"},{"property":"handlerName","title":"当前处理人"}],"data":[{"href":null,"cells":[{"col":"fdId","value":"14e9a4b3410fe24159116cf4fd28d609"},{"col":"docSubject","value":"广发银行KMS培训交流","href":"/km/carmng/km_carmng_application/kmCarmngApplication.do?method=view&fdId=14e9a4b3410fe24159116cf4fd28d609"},{"col":"fdApplicationPath","value":"南海 - 深圳-南海"},{"col":"docCreateTime","value":"2015-07-17 12:34"},{"col":"docStatus","value":"出车"},{"col":"docCreator.fdName","value":"唐超"},{"col":"handlerName","value":"无"}]},{"href":null,"cells":[{"col":"fdId","value":"14e954f42c484ecbe6884e14663862f2"},{"col":"docSubject","value":"郑超申请用车","href":"/km/carmng/km_carmng_application/kmCarmngApplication.do?method=view&fdId=14e954f42c484ecbe6884e14663862f2"},{"col":"fdApplicationPath","value":"深圳市南山区学苑路南山智园A5栋7楼留仙大道旁 - 深圳市南山区学苑路南山智园A5栋7楼留仙大道旁"},{"col":"docCreateTime","value":"2015-07-16 13:21"},{"col":"docStatus","value":"出车"},{"col":"docCreator.fdName","value":"郑超"},{"col":"handlerName","value":"无"}]},{"href":null,"cells":[{"col":"fdId","value":"14e8ab815b441f9cb40b8b94edf95e0a"},{"col":"docSubject","value":"云南中烟到总部交流","href":"/km/carmng/km_carmng_application/kmCarmngApplication.do?method=view&fdId=14e8ab815b441f9cb40b8b94edf95e0a"},{"col":"fdApplicationPath","value":"总部 - 机场-总部-珠海"},{"col":"docCreateTime","value":"2015-07-14 11:59"},{"col":"docStatus","value":"出车"},{"col":"docCreator.fdName","value":"陈鹏"},{"col":"handlerName","value":"无"}]},{"href":null,"cells":[{"col":"fdId","value":"14e862bfbe2b94385e2909944f1a97d4"},{"col":"docSubject","value":"广发银行项目领导交流","href":"/km/carmng/km_carmng_application/kmCarmngApplication.do?method=view&fdId=14e862bfbe2b94385e2909944f1a97d4"},{"col":"fdApplicationPath","value":"南海 - 广州-南海"},{"col":"docCreateTime","value":"2015-07-13 14:48"},{"col":"docStatus","value":"通过"},{"col":"docCreator.fdName","value":"李尚志"},{"col":"handlerName","value":"无"}]}]}
+					]]>
+				</code>
+			</example>
+		</source>
+		<operations>
+		   <operation
+				name="{operation.create}"
+				type="create"
+				mobileHref="/km/carmng/km_carmng_application/kmCarmngApplication.do?method=add"
+				href="/km/carmng/km_carmng_application/kmCarmngApplication.do?method=add" />
+			<operation
+				name="{operation.more}"
+				type="more"
+				mobileHref="/km/carmng/mobile"
+				href="/km/carmng/#cri.q=mydoc:approval" />
+			
+	    </operations>
+</portlet>
+<!-- 我发起的车辆申请(表格) -->
+<portlet
+		id="km.carmng.myFlow.approval"
+		name="{km-carmng:kmCarmngApplication.portlet.myFlow.create.my.table}"
+		module="{km-carmng:module.km.carmng}"
+		description="{km-carmng:portlet.listtable.desc}"
+		forSystem="cloud"
+		varExtend="km.carmng.myFlow.approval">
+		<source
+			id="km-carmng.myFlow.approval"
+			format="data.table"
+			type="json">
+			<code>
+			<![CDATA[
+				{
+					"url":"/data/km-carmng/kmCarmngApplicationPortlet/listPortlet?owner=true&status=!{status}&rowsize=!{rowsize}&scope=!{scope}"
+				}
+			]]>
+			</code>
+			<example>
+				<code>
+					<![CDATA[
+						{"columns":[{"property":"fdId","renderType":"hidden"},{"property":"docSubject","title":"用车目的"},{"property":"fdApplicationPath","title":"行程安排"},{"property":"docCreateTime","title":"创建时间"},{"property":"docStatus","title":"用车状态"},{"property":"docCreator.fdName","title":"联系人"},{"property":"handlerName","title":"当前处理人"}],"data":[{"href":null,"cells":[{"col":"fdId","value":"14e9a4b3410fe24159116cf4fd28d609"},{"col":"docSubject","value":"广发银行KMS培训交流","href":"/km/carmng/km_carmng_application/kmCarmngApplication.do?method=view&fdId=14e9a4b3410fe24159116cf4fd28d609"},{"col":"fdApplicationPath","value":"南海 - 深圳-南海"},{"col":"docCreateTime","value":"2015-07-17 12:34"},{"col":"docStatus","value":"出车"},{"col":"docCreator.fdName","value":"唐超"},{"col":"handlerName","value":"无"}]},{"href":null,"cells":[{"col":"fdId","value":"14e954f42c484ecbe6884e14663862f2"},{"col":"docSubject","value":"唐超申请用车","href":"/km/carmng/km_carmng_application/kmCarmngApplication.do?method=view&fdId=14e954f42c484ecbe6884e14663862f2"},{"col":"fdApplicationPath","value":"深圳市南山区学苑路南山智园A5栋7楼留仙大道旁 - 深圳市南山区学苑路南山智园A5栋7楼留仙大道旁"},{"col":"docCreateTime","value":"2015-07-16 13:21"},{"col":"docStatus","value":"出车"},{"col":"docCreator.fdName","value":"唐超"},{"col":"handlerName","value":"无"}]},{"href":null,"cells":[{"col":"fdId","value":"14e8ab815b441f9cb40b8b94edf95e0a"},{"col":"docSubject","value":"云南中烟到总部交流","href":"/km/carmng/km_carmng_application/kmCarmngApplication.do?method=view&fdId=14e8ab815b441f9cb40b8b94edf95e0a"},{"col":"fdApplicationPath","value":"总部 - 机场-总部-珠海"},{"col":"docCreateTime","value":"2015-07-14 11:59"},{"col":"docStatus","value":"出车"},{"col":"docCreator.fdName","value":"唐超"},{"col":"handlerName","value":"无"}]},{"href":null,"cells":[{"col":"fdId","value":"14e862bfbe2b94385e2909944f1a97d4"},{"col":"docSubject","value":"广发银行项目领导交流","href":"/km/carmng/km_carmng_application/kmCarmngApplication.do?method=view&fdId=14e862bfbe2b94385e2909944f1a97d4"},{"col":"fdApplicationPath","value":"南海 - 广州-南海"},{"col":"docCreateTime","value":"2015-07-13 14:48"},{"col":"docStatus","value":"通过"},{"col":"docCreator.fdName","value":"唐超"},{"col":"handlerName","value":"无"}]}]}
+					]]>
+				</code>
+			</example>
+		</source>
+		<operations>
+		    <operation
+				name="{operation.create}"
+				type="create"
+				mobileHref="/km/carmng/km_carmng_application/kmCarmngApplication.do?method=add"
+				href="/km/carmng/km_carmng_application/kmCarmngApplication.do?method=add" />
+			<operation
+				name="{operation.more}"
+				type="more"
+				mobileHref="/km/carmng/mobile"
+				href="/km/carmng/#cri.q=mydoc:create" />
+	    </operations>
+</portlet>
+<!-- 我审批的车辆申请(列表) -->
+<portlet
+		id="km.carmng.myFlow.simpleList"
+		name="{km-carmng:kmCarmngApplication.portlet.myFlow.involved}"
+		module="{km-carmng:module.km.carmng}"
+		description="{km-carmng:portlet.listtable.desc}"
+		forSystem="cloud"
+		varExtend="km.carmng.myFlow">
+		<source
+			id="km-carmng.myFlowSimpleList"
+			format="data.list"
+			type="json">
+			<code>
+			<![CDATA[
+				{
+					"url":"/data/km-carmng/kmCarmngApplicationPortlet/listPortlet?rowsize=!{rowsize}&myFlow=!{myFlow}&scope=!{scope}&dataview=classic"
+				}
+			]]>
+			</code>
+			<example>
+				<code>
+					<![CDATA[
+						[{"text":"广发银行KMS培训交流","statusInfo":"出车中","statusColor":"success","creator":{"fdId":"12881d4f526f9bf5ea160fa4f3da37f3","fdName":"唐超","fdLoginName":"tangc","avatarUrl":"http://java.landray.com.cn/sys/person/image.jsp?personId=12881d4f526f9bf5ea160fa4f3da37f3"},"cateName":"别克商务车","cateHref":"/km/carmng/km_carmng_category/kmCarmngCategory.do?method=edit&fdModelName=com.landray.kmss.km.carmng.model.KmCarmngCategory&fdId=142db29192759148e04bd1a42619e588","infos":[{"title":"随车人数: 3","icon":{"name":"carAdd"}}],"created":"1566196676423","href":"/km/carmng/km_carmng_application/kmCarmngApplication.do?method=view&fdId=14e9a4b3410fe24159116cf4fd28d609"},{"text":"郑超申请用车","statusInfo":"出车中","statusColor":"success","creator":{"fdId":"1448b1ae82b2408c34f5db34d688781a","fdName":"郑超","fdLoginName":"weijw","avatarUrl":"http://java.landray.com.cn/sys/person/image.jsp?personId=1448b1ae82b2408c34f5db34d688781a"},"cateName":"别克商务车","cateHref":"/km/carmng","infos":[{"title":"随车人数: 4","icon":{"name":"carAdd"}}],"created":"1557297541658","href":"/km/carmng/km_carmng_application/kmCarmngApplication.do?method=view&fdId=14e954f42c484ecbe6884e14663862f2"},{"text":"云南中烟到总部交流","statusInfo":"待出车","statusColor":"warning","creator":{"fdId":"12c1b1d9f59c2147dad7c2f44b58a69e","fdName":"陈鹏","fdLoginName":"wangqiang","avatarUrl":"http://java.landray.com.cn/sys/person/image.jsp?personId=12c1b1d9f59c2147dad7c2f44b58a69e"},"cateName":"别克商务车","cateHref":"/km/carmng","infos":[{"title":"随车人数: 3","icon":{"name":"carAdd"}}],"created":"1540276731658","href":"/km/carmng/km_carmng_application/kmCarmngApplication.do?method=view&fdId=14e8ab815b441f9cb40b8b94edf95e0a"},{"text":"广发银行项目领导交流","statusInfo":"出车中","statusColor":"success","creator":{"fdId":"12881d4f526f9bf5ea160fa4f3da37f3","fdName":"李尚志","fdLoginName":"guowh","avatarUrl":"http://java.landray.com.cn/sys/person/image.jsp?personId=12881d4f526f9bf5ea160fa4f3da37f3"},"cateName":"别克商务车","cateHref":"/km/carmng","infos":[{"title":"随车人数: 4","icon":{"name":"carAdd"}}],"created":"1529649570921","href":"/km/carmng/km_carmng_application/kmCarmngApplication.do?method=view&fdId=14e862bfbe2b94385e2909944f1a97d4"}]
+					]]>
+				</code>
+			</example>
+		</source>
+		<operations>
+		   <operation
+				name="{operation.create}"
+				type="create"
+				mobileHref="/km/carmng/km_carmng_application/kmCarmngApplication.do?method=add"
+				href="/km/carmng/km_carmng_application/kmCarmngApplication.do?method=add" />
+			<operation
+				name="{operation.more}"
+				type="more"
+				mobileHref="/km/carmng/mobile"
+				href="/km/carmng/#cri.q=mydoc:approval" />
+			
+	    </operations>
+</portlet>
+<!-- 我审批的车辆申请(列表) new-->
+<portlet
+		id="km.carmng.myFlow.simpleList.new"
+		name="{km-carmng:kmCarmngApplication.portlet.myFlow.involved.new}"
+		module="{km-carmng:module.km.carmng}"
+		description="{km-carmng:portlet.listtable.desc}"
+		forSystem="cloud"
+		varExtend="km.carmng.myFlow">
+	<source
+			id="km-carmng.myFlowSimpleList.new"
+			format="data.fieldlist"
+			type="json">
+		<code>
+			<![CDATA[
+			{
+				"url":"/data/km-carmng/kmCarmngApplicationPortlet/listPortlet?rowsize=!{rowsize}&myFlow=!{myFlow}&scope=!{scope}&dataview=classic&isNew=true"
+			}
+		]]>
+		</code>
+		<example>
+			<code>
+				<![CDATA[
+					[{"text":"广发银行KMS培训交流","statusInfo":{"text":"出车中","color":"success"},"creator":{"fdId":"12881d4f526f9bf5ea160fa4f3da37f3","fdName":"唐超","fdLoginName":"tangc","avatarUrl":"http://java.landray.com.cn/sys/person/image.jsp?personId=12881d4f526f9bf5ea160fa4f3da37f3"},"cateName":{"text":"别克商务车","href":"/km/carmng/km_carmng_category/kmCarmngCategory.do?method=edit&fdModelName=com.landray.kmss.km.carmng.model.KmCarmngCategory&fdId=142db29192759148e04bd1a42619e588"},"infos":[{"title":"随车人数: 3","icon":{"name":"carAdd"}}],"created":{"text":1566196676423},"href":"/km/carmng/km_carmng_application/kmCarmngApplication.do?method=view&fdId=14e9a4b3410fe24159116cf4fd28d609"},{"text":"郑超申请用车","statusInfo":{"text":"出车中","color":"success"},"creator":{"fdId":"1448b1ae82b2408c34f5db34d688781a","fdName":"郑超","fdLoginName":"weijw","avatarUrl":"http://java.landray.com.cn/sys/person/image.jsp?personId=1448b1ae82b2408c34f5db34d688781a"},"cateName":{"text":"别克商务车","href":"/km/carmng"},"infos":[{"title":"随车人数: 4","icon":{"name":"carAdd"}}],"created":{"text":1557297541658},"href":"/km/carmng/km_carmng_application/kmCarmngApplication.do?method=view&fdId=14e954f42c484ecbe6884e14663862f2"},{"text":"云南中烟到总部交流","statusInfo":{"text":"待出车","color":"warning"},"creator":{"fdId":"12c1b1d9f59c2147dad7c2f44b58a69e","fdName":"陈鹏","fdLoginName":"wangqiang","avatarUrl":"http://java.landray.com.cn/sys/person/image.jsp?personId=12c1b1d9f59c2147dad7c2f44b58a69e"},"cateName":{"text":"别克商务车","href":"/km/carmng"},"infos":[{"title":"随车人数: 3","icon":{"name":"carAdd"}}],"created":{"text":1540276731658},"href":"/km/carmng/km_carmng_application/kmCarmngApplication.do?method=view&fdId=14e8ab815b441f9cb40b8b94edf95e0a"},{"text":"广发银行项目领导交流","statusInfo":{"text":"出车中","color":"success"},"creator":{"fdId":"12881d4f526f9bf5ea160fa4f3da37f3","fdName":"李尚志","fdLoginName":"guowh","avatarUrl":"http://java.landray.com.cn/sys/person/image.jsp?personId=12881d4f526f9bf5ea160fa4f3da37f3"},"cateName":{"text":"别克商务车","href":"/km/carmng"},"infos":[{"title":"随车人数: 4","icon":{"name":"carAdd"}}],"created":{"text":1529649570921},"href":"/km/carmng/km_carmng_application/kmCarmngApplication.do?method=view&fdId=14e862bfbe2b94385e2909944f1a97d4"}]
+				]]>
+			</code>
+		</example>
+		<dataFields>
+			<code>
+				<![CDATA[
+					 {
+					   "base": {
+					   "label": "基础信息",
+					   "items": [
+						{"key": "statusInfo", "text": "状态"}
+					   ]
+					   },
+					   "info": {
+					   "label": "辅助信息",
+					   "items": [
+						{"key": "created", "text": "创建时间", "type": "timestamp"},
+						{"key": "creator", "text": "作者", "type": "person"},
+						{"key": "cateName", "text": "分类", "type": "string"}
+					   ]
+					   },
+					   "tag": {
+					   "label": "标签",
+					   "items": []
+					   }
+					 }
+				]]>
+			</code>
+		</dataFields>
+	</source>
+	<operations>
+		<operation
+				name="{operation.create}"
+				type="create"
+				mobileHref="/km/carmng/km_carmng_application/kmCarmngApplication.do?method=add"
+				href="/km/carmng/km_carmng_application/kmCarmngApplication.do?method=add" />
+		<operation
+				name="{operation.more}"
+				type="more"
+				mobileHref="/km/carmng/mobile"
+				href="/km/carmng/#cri.q=mydoc:approval" />
+
+	</operations>
+</portlet>
+<!-- 我发起的车辆申请(列表) -->
+<portlet
+		id="km.carmng.myFlow.approval.simpleList"
+		name="{km-carmng:kmCarmngApplication.portlet.myFlow.create.my}"
+		module="{km-carmng:module.km.carmng}"
+		description="{km-carmng:portlet.listtable.desc}"
+		forSystem="cloud"
+		varExtend="km.carmng.myFlow.approval">
+		<source
+			id="km-carmng.myFlowApprovalSimpleList"
+			format="data.list"
+			type="json">
+			<code>
+			<![CDATA[
+				{
+					"url":"/data/km-carmng/kmCarmngApplicationPortlet/listPortlet?owner=true&status=!{status}&rowsize=!{rowsize}&scope=!{scope}&dataview=classic"
+				}
+			]]>
+			</code>
+			<example>
+				<code>
+					<![CDATA[
+						[{"text":"广发银行KMS培训交流","statusInfo":"出车中","statusColor":"success","creator":{"fdId":"12881d4f526f9bf5ea160fa4f3da37f3","fdName":"唐超","fdLoginName":"tangc","avatarUrl":"http://java.landray.com.cn/sys/person/image.jsp?personId=12881d4f526f9bf5ea160fa4f3da37f3"},"cateName":"别克商务车","cateHref":"/km/carmng/km_carmng_category/kmCarmngCategory.do?method=edit&fdModelName=com.landray.kmss.km.carmng.model.KmCarmngCategory&fdId=142db29192759148e04bd1a42619e588","infos":[{"title":"随车人数: 3","icon":{"name":"carAdd"}}],"created":"1566196676423","href":"/km/carmng/km_carmng_application/kmCarmngApplication.do?method=view&fdId=14e9a4b3410fe24159116cf4fd28d609"},{"text":"唐超申请用车","statusInfo":"出车中","statusColor":"success","creator":{"fdId":"1448b1ae82b2408c34f5db34d688781a","fdName":"唐超","fdLoginName":"weijw","avatarUrl":"http://java.landray.com.cn/sys/person/image.jsp?personId=1448b1ae82b2408c34f5db34d688781a"},"cateName":"别克商务车","cateHref":"/km/carmng","infos":[{"title":"随车人数: 4","icon":{"name":"carAdd"}}],"created":"1557297541658","href":"/km/carmng/km_carmng_application/kmCarmngApplication.do?method=view&fdId=14e954f42c484ecbe6884e14663862f2"},{"text":"云南中烟到总部交流","statusInfo":"待出车","statusColor":"warning","creator":{"fdId":"12c1b1d9f59c2147dad7c2f44b58a69e","fdName":"唐超","fdLoginName":"wangqiang","avatarUrl":"http://java.landray.com.cn/sys/person/image.jsp?personId=12c1b1d9f59c2147dad7c2f44b58a69e"},"cateName":"别克商务车","cateHref":"/km/carmng","infos":[{"title":"随车人数: 3","icon":{"name":"carAdd"}}],"created":"1540276731658","href":"/km/carmng/km_carmng_application/kmCarmngApplication.do?method=view&fdId=14e8ab815b441f9cb40b8b94edf95e0a"},{"text":"广发银行项目领导交流","statusInfo":"出车中","statusColor":"success","creator":{"fdId":"12881d4f526f9bf5ea160fa4f3da37f3","fdName":"唐超","fdLoginName":"guowh","avatarUrl":"http://java.landray.com.cn/sys/person/image.jsp?personId=12881d4f526f9bf5ea160fa4f3da37f3"},"cateName":"别克商务车","cateHref":"/km/carmng","infos":[{"title":"随车人数: 4","icon":{"name":"carAdd"}}],"created":"1529649570921","href":"/km/carmng/km_carmng_application/kmCarmngApplication.do?method=view&fdId=14e862bfbe2b94385e2909944f1a97d4"}]
+					]]>
+				</code>
+			</example>
+		</source>
+		<operations>
+		    <operation
+				name="{operation.create}"
+				type="create"
+				mobileHref="/km/carmng/km_carmng_application/kmCarmngApplication.do?method=add"
+				href="/km/carmng/km_carmng_application/kmCarmngApplication.do?method=add" />
+			<operation
+				name="{operation.more}"
+				type="more"
+				mobileHref="/km/carmng/mobile"
+				href="/km/carmng/#cri.q=mydoc:create" />
+	    </operations>
+</portlet>
+<!-- 我发起的车辆申请(列表) new-->
+<portlet
+		id="km.carmng.myFlow.approval.simpleList.new"
+		name="{km-carmng:kmCarmngApplication.portlet.myFlow.create.my.new}"
+		module="{km-carmng:module.km.carmng}"
+		description="{km-carmng:portlet.listtable.desc}"
+		forSystem="cloud"
+		varExtend="km.carmng.myFlow.approval">
+	<source
+			id="km-carmng.myFlowApprovalSimpleList.new"
+			format="data.fieldlist"
+			type="json">
+		<code>
+			<![CDATA[
+			{
+				"url":"/data/km-carmng/kmCarmngApplicationPortlet/listPortlet?owner=true&status=!{status}&rowsize=!{rowsize}&scope=!{scope}&dataview=classic&isNew=true"
+			}
+		]]>
+		</code>
+		<example>
+			<code>
+				<![CDATA[
+					[{"text":"广发银行KMS培训交流","statusInfo":{"text":"出车中","color":"success"},"creator":{"fdId":"12881d4f526f9bf5ea160fa4f3da37f3","fdName":"唐超","fdLoginName":"tangc","avatarUrl":"http://java.landray.com.cn/sys/person/image.jsp?personId=12881d4f526f9bf5ea160fa4f3da37f3"},"cateName":{"text":"别克商务车","href":"/km/carmng/km_carmng_category/kmCarmngCategory.do?method=edit&fdModelName=com.landray.kmss.km.carmng.model.KmCarmngCategory&fdId=142db29192759148e04bd1a42619e588"},"infos":[{"title":"随车人数: 3","icon":{"name":"carAdd"}}],"created":{"text":1566196676423},"href":"/km/carmng/km_carmng_application/kmCarmngApplication.do?method=view&fdId=14e9a4b3410fe24159116cf4fd28d609"},{"text":"唐超申请用车","statusInfo":{"text":"出车中","color":"success"},"creator":{"fdId":"1448b1ae82b2408c34f5db34d688781a","fdName":"唐超","fdLoginName":"weijw","avatarUrl":"http://java.landray.com.cn/sys/person/image.jsp?personId=1448b1ae82b2408c34f5db34d688781a"},"cateName":{"text":"别克商务车","href":"/km/carmng"},"infos":[{"title":"随车人数: 4","icon":{"name":"carAdd"}}],"created":{"text":1557297541658},"href":"/km/carmng/km_carmng_application/kmCarmngApplication.do?method=view&fdId=14e954f42c484ecbe6884e14663862f2"},{"text":"云南中烟到总部交流","statusInfo":{"text":"待出车","color":"warning"},"creator":{"fdId":"12c1b1d9f59c2147dad7c2f44b58a69e","fdName":"唐超","fdLoginName":"wangqiang","avatarUrl":"http://java.landray.com.cn/sys/person/image.jsp?personId=12c1b1d9f59c2147dad7c2f44b58a69e"},"cateName":{"text":"别克商务车","href":"/km/carmng"},"infos":[{"title":"随车人数: 3","icon":{"name":"carAdd"}}],"created":{"text":1540276731658},"href":"/km/carmng/km_carmng_application/kmCarmngApplication.do?method=view&fdId=14e8ab815b441f9cb40b8b94edf95e0a"},{"text":"广发银行项目领导交流","statusInfo":{"text":"出车中","color":"success"},"creator":{"fdId":"12881d4f526f9bf5ea160fa4f3da37f3","fdName":"唐超","fdLoginName":"guowh","avatarUrl":"http://java.landray.com.cn/sys/person/image.jsp?personId=12881d4f526f9bf5ea160fa4f3da37f3"},"cateName":{"text":"别克商务车","href":"/km/carmng"},"infos":[{"title":"随车人数: 4","icon":{"name":"carAdd"}}],"created":{"text":1529649570921},"href":"/km/carmng/km_carmng_application/kmCarmngApplication.do?method=view&fdId=14e862bfbe2b94385e2909944f1a97d4"}]
+				]]>
+			</code>
+		</example>
+		<dataFields>
+			<code>
+				<![CDATA[
+					 {
+					   "base": {
+					   "label": "基础信息",
+					   "items": [
+						{"key": "statusInfo", "text": "状态"}
+					   ]
+					   },
+					   "info": {
+					   "label": "辅助信息",
+					   "items": [
+						{"key": "created", "text": "创建时间", "type": "timestamp"},
+						{"key": "creator", "text": "作者", "type": "person"},
+						{"key": "cateName", "text": "分类", "type": "string"}
+					   ]
+					   },
+					   "tag": {
+					   "label": "标签",
+					   "items": []
+					   }
+					 }
+				]]>
+			</code>
+		</dataFields>
+	</source>
+	<operations>
+		<operation
+				name="{operation.create}"
+				type="create"
+				mobileHref="/km/carmng/km_carmng_application/kmCarmngApplication.do?method=add"
+				href="/km/carmng/km_carmng_application/kmCarmngApplication.do?method=add" />
+		<operation
+				name="{operation.more}"
+				type="more"
+				mobileHref="/km/carmng/mobile"
+				href="/km/carmng/#cri.q=mydoc:create" />
+	</operations>
+</portlet>
+</root>

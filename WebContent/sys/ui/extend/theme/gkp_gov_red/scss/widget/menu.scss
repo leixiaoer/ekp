@@ -1,0 +1,162 @@
+@import './../lib/vars.scss';
+@import './../lib/mixins.scss';
+
+
+/* 纵向菜单 Starts
+	========================================================================== */
+.lui_menu_frame_ver .lui_item_txt {
+    font-size: inherit;
+}
+
+.lui_menu_frame_ver .lui_item_content div.lui_icon_s {
+    margin-right: 5px;
+}
+
+.lui_menu_frame_ver .lui_item {}
+
+.lui_menu_frame_ver .lui_item_sign {
+    border-color: transparent transparent transparent #c4c4c4;
+    border-style: dashed dashed dashed solid;
+    border-width: 5px;
+    height: 0;
+    position: absolute;
+    right: 0;
+    top: 50%;
+    margin-top: -5px;
+    width: 0;
+}
+
+.lui_menu_frame_ver .lui_item_sign:after {
+    display: inline-block;
+    content: '';
+    position: absolute;
+    top: -5px;
+    right: -3px;
+    border-top: transparent 5px dashed;
+    border-left: #fff 5px solid;
+    border-right: transparent 5px dashed;
+    border-bottom: transparent 5px dashed;
+    width: 0px;
+    height: 0px;
+}
+
+.lui_menu_frame_ver .lui_item.lui_icon_on {
+    color: #fff;
+    background-color: $primary-color;
+    opacity: 1;
+    filter: alpha(opacity=100);
+}
+
+.lui_menu_frame_ver .lui_icon_on .lui_item_sign {
+    border-left-color: #fff;
+}
+
+.lui_menu_frame_ver .lui_icon_on .lui_item_sign:after {
+    border-left-color: $primary-color;
+}
+
+.lui_menu_frame_ver_pop .lui_item.lui_icon_on {
+    color: $primary-color;
+    background-color: #f8f8f8;
+}
+
+.lui_menu_frame_ver_pop .lui_item .lui_item_txt {
+    font-size: inherit;
+}
+
+.lui_menu_frame_ver_pop .lui_item.lui_icon_on .lui_item_txt {
+    color: inherit;
+}
+
+.lui_menu_frame_ver_pop .lui_icon_on .lui_item_sign {
+    border-left-color: #ccc;
+}
+
+/* 纵向菜单 Ends
+        ========================================================================== */
+
+
+/* 路径导航 Starts
+        ========================================================================== */
+.lui_menu_frame_nav {}
+
+.lui_menu_frame_nav .lui_item_content .lui_icon_s_home {
+    margin: 0;
+    display: none;
+}
+
+.lui_menu_frame_nav .lui_item_content .lui_item_sign {
+    display: inline-block;
+    width: 0;
+    height: 0;
+    vertical-align: middle;
+    margin-left: 2px;
+    border-top: 4px dashed;
+    border-top: 4px solid \9;
+    border-right: 4px solid transparent;
+    border-left: 4px solid transparent;
+    transition-duration: .3s;
+    background-image: none;
+}
+
+.lui_menu_frame_nav .lui_item_stitch_class .lui_item_content .lui_item_sign {
+    -webkit-transform: rotate(180deg);
+    -moz-transform: rotate(180deg);
+    -ms-transform: rotate(180deg);
+    -o-transform: rotate(180deg);
+    transform: rotate(180deg);
+}
+
+.lui_menu_frame_nav .lui_item.lui_item_stitch_class {
+    border-top-left-radius: 4px;
+    border-top-right-radius: 4px;
+    background-color: #fff;
+    box-shadow: 0 0 7px rgba(0, 0, 0, .15);
+}
+
+.lui_menu_frame_nav .lui_item_txt:hover {
+    color: $primary-color;
+}
+
+.lui_menu_frame_nav .lui_item_txt {
+    font-size: 12px;
+    font-weight: normal;
+    position: static;
+    right: auto;
+}
+
+.lui_menu_frame_nav .lui_menu_item_last .lui_item_txt {
+    font-size: 12px;
+    font-weight: normal;
+}
+
+
+/*T型模板 二级页面面包屑样式优化 Starts*/
+.lui_list_body .lui_menu_frame_nav {
+    margin-bottom: 5px;
+}
+
+.lui_list_body.tTemplate .lui_menu_frame_nav {
+    height: 20px;
+    line-height: 20px;
+}
+
+.lui_list_body.tTemplate .lui_menu_frame_nav .lui_menu_item {
+    padding-top: 0;
+    padding-bottom: 0;
+}
+
+.lui_list_body.tTemplate .lui_menu_frame_nav .lui_item_content {
+    height: auto;
+    line-height: 20px;
+}
+
+.lui_list_body.tTemplate .lui_menu_frame_nav .lui_menu_content>div.lui_menu_item_split {
+    height: 14px;
+    background-position: 50%;
+}
+
+/*T型模板 二级页面面包屑样式优化 Ends*/
+
+/* 路径导航 Ends
+        ========================================================================== */

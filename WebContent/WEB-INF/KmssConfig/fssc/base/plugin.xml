@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<plugin 
+    xsi:schemaLocation="http://www.example.org/plugin-config ../../plugin.xsd" 
+    xmlns="http://www.example.org/plugin-config" 
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    
+    <extension-point id="com.landray.kmss.fssc.base.import.detail">
+    	<item  name="validate">
+    		<param  name="model" required="true" kind="string">
+				<description>当前导入的明细model</description>
+			</param>
+			<param  name="type" required="true" kind="string">
+				<description>校验的字段类型</description>
+			</param>
+			<param  name="service"  required="true"  kind="string">
+				<description>校验器在Spring容器中注册的id</description>
+			</param>
+			<description>
+				<![CDATA[
+					明细导入校验器定义
+				]]>
+			</description>
+		</item>
+		<description>
+			<![CDATA[
+				明细导入校验器定义
+			]]>
+		</description>
+    </extension-point>
+    
+    <extension point="com.landray.kmss.sys.formula" model="*">
+		<item name="function">
+			<param name="className" value="com.landray.kmss.fssc.base.formula.FsscCommonFormula" />
+		</item>
+		<item name="function">
+			<param name="className" value="com.landray.kmss.fssc.base.formula.FsscBaseGetFirstCharger" />
+		</item>
+		<item name="function">
+			<param name="className" value="com.landray.kmss.fssc.base.formula.FsscBaseGetSecondCharger" />
+		</item>
+		<item name="function">
+			<param name="className" value="com.landray.kmss.fssc.base.formula.FsscBaseGetManager" />
+		</item>
+	</extension>
+	<extension
+		point="com.landray.kmss.sys.webservice2">
+		<item name="registry">
+			<param name="serviceName" value="客商对外webservice接口" />
+			<param name="serviceClass"							
+				value="com.landray.kmss.fssc.base.webservice.IFsscBaseSupplierWebserviceService" />
+			<param name="serviceBean"
+				value="fsscBaseSupplierWebserviceService" />
+			<param name="serviceDoc"
+				value="/fssc/base/fssc_base_supplier_webservice/fsscBaseSupplier_webserviceHelp.jsp" />
+		</item>
+	</extension>
+</plugin>

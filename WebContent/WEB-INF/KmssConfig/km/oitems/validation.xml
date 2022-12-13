@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE form-validation PUBLIC "-//Apache Software Foundation//DTD Commons Validator Rules Configuration 1.1//EN" "http://jakarta.apache.org/commons/dtds/validator_1_1.dtd">
+
+<form-validation>
+
+	<formset>
+		<form name="kmOitemsManageForm">
+
+			<field property="fdName" depends="required">
+				<arg key="kmOitemsManage.fdName" bundle="km-oitems" position="0" />
+
+			</field>
+			<field property="fdOrder" depends="integer">
+				<arg key="kmOitemsManage.fdOrder" bundle="km-oitems" position="0" />
+			</field>
+
+		</form>
+
+		<form name="kmOitemsTempletForm">
+
+			<field property="fdName" depends="required">
+				<arg key="kmOitemsTemplet.fdName" bundle="km-oitems" position="0" />
+
+			</field>
+
+		</form>
+
+		<form name="kmOitemsGetApplicationForm">
+
+
+			<field property="docSubject" depends="required">
+				<arg key="kmOitemsGetApplication.docSubject" bundle="km-oitems"
+					position="0" />
+			</field>
+
+
+			<field property="fdApplicantsId" depends="required">
+				<arg key="kmOitemsBudgerApplication.fdApplicantsId" bundle="km-oitems"
+					position="0" />
+			</field>
+
+
+		</form>
+		<form name="kmOitemsBudgerApplicationForm">
+
+
+			<field property="docSubject" depends="required">
+				<arg key="kmOitemsBudgerApplication.docSubject" bundle="km-oitems"
+					position="0" />
+			</field>
+
+
+			<field property="fdApplicantsId" depends="required">
+				<arg key="kmOitemsBudgerApplication.fdApplicantsId" bundle="km-oitems"
+					position="0" />
+			</field>
+			
+			<field property="fdTemplateId" depends="required">
+				<arg key="table.kmOitemsTemplet" bundle="km-oitems"
+					position="0" />
+			</field>
+
+
+		</form>
+		<form name="kmOitemsWarehousingRecordForm">
+			<field property="fdPrice" depends="required">
+				<arg key="kmOitemsWarehousingRecord.fdPrice" bundle="km-oitems"
+					position="0" />
+			</field>
+			<field property="fdNumber" depends="required">
+				<arg key="kmOitemsWarehousingRecord.fdNumber" bundle="km-oitems"
+					position="0" />
+			</field>
+		</form>
+
+	</formset>
+</form-validation>

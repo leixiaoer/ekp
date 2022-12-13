@@ -1,0 +1,756 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<plugin
+	xmlns="http://www.example.org/plugin-config"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.example.org/plugin-config ../../plugin.xsd ">
+	
+	<!--任务统计拓展点 -->
+	<extension-point
+		id="com.landray.kmss.sys.task.analyze">
+		<item 
+			name="analyze">
+			<param 
+				name="type" 
+				required="true"
+				kind="unid">
+				<description>查询类型，要求唯一</description>
+			</param>
+			<param 
+				name="executor" 
+				kind="spring"
+				required="true"
+				basedOn="com.landray.kmss.sys.task.service.analyze.SysTaskAnalyzeExecutor">
+				<description>统计查询执行器，提供此种场景下报表数据的统计查询</description>
+			</param>
+			<param 
+				name="showForward" 
+				kind="string"
+				required="true">
+				<description>报表展现JSP，可以做数报表展现js的引入等等</description>
+			</param>
+			<param 
+				name="chartType" 
+				kind="string">
+				<description>解析器展现图表类型</description>
+			</param>
+			<param 
+				name="conditionJsp" 
+				kind="string">
+				<description>条件JSP</description>
+			</param>
+			<param 
+				name="conditionJsp4m" 
+				kind="string">
+				<description>移动端条件JSP</description>
+			</param>
+			<param 
+				name="extJs" 
+				kind="string">
+				<description>拓展JS</description>
+			</param>
+			
+			<description>报表统计查询定义</description>
+		</item>
+		<description>报表统计查询定义</description>
+	</extension-point>
+	
+	<extension
+		point="com.landray.kmss.sys.task.analyze">
+		<item name="analyze">
+			<param
+				name="type"
+				value="eval.analyze" />
+			<param 
+				name="executor" 
+				value="sysTaskEvalAnalyzeExecutor"/>
+			<param
+				name="chartType"
+				value="barLine" />
+			<param
+				name="conditionJsp"
+				value="/sys/task/sys_task_analyze/common/common_condition.jsp" />
+			<param
+				name="showForward"
+				value="evalAnalyze" />
+			<param
+				name="conditionJsp4m"
+				value="/sys/task/mobile/analyze/common/common_condition.jsp" />	
+		</item>
+	</extension>
+	
+	<extension
+		point="com.landray.kmss.sys.task.analyze">
+		<item name="analyze">
+			<param
+				name="type"
+				value="weight.analyze" />
+			<param 
+				name="executor" 
+				value="sysTaskWeightAnalyzeExecutor"/>
+			<param
+				name="chartType"
+				value="barLine" />
+			<param
+				name="conditionJsp"
+				value="/sys/task/sys_task_analyze/common/common_condition.jsp" />
+			<param
+				name="showForward"
+				value="weightAnalyze" />
+			<param
+				name="conditionJsp4m"
+				value="/sys/task/mobile/analyze/common/common_condition.jsp" />	
+		</item>
+	</extension>
+	
+	<extension
+		point="com.landray.kmss.sys.task.analyze">
+		<item name="analyze">
+			<param
+				name="type"
+				value="type.analyze" />
+			<param 
+				name="executor" 
+				value="sysTaskTypeAnalyzeExecutor"/>
+			<param
+				name="chartType"
+				value="barLine" />
+			<param
+				name="conditionJsp"
+				value="/sys/task/sys_task_analyze/common/common_condition.jsp" />
+			<param
+				name="showForward"
+				value="typeAnalyze" />
+			<param
+				name="conditionJsp4m"
+				value="/sys/task/mobile/analyze/common/common_condition.jsp" />	
+		</item>
+	</extension>
+	
+	<extension
+		point="com.landray.kmss.sys.task.analyze">
+		<item name="analyze">
+			<param
+				name="type"
+				value="trend.analyze" />
+			<param 
+				name="executor" 
+				value="sysTaskTrendAnalyzeExecutor"/>
+			<param
+				name="chartType"
+				value="barLine" />
+			<param
+				name="conditionJsp"
+				value="/sys/task/sys_task_analyze/trend_analyze/trendAnalyze_condition.jsp" />
+			<param
+				name="showForward"
+				value="trendAnalyze" />
+			<param
+				name="conditionJsp4m"
+				value="/sys/task/mobile/analyze/common/common_condition.jsp" />	
+		</item>
+	</extension>
+	
+	
+	<!-- BAM2支持 -->
+	<extension
+		point="com.landray.kmss.km.bam2.extend.work"
+		model="*">
+		<item
+			name="extendModel">
+			<param
+				name="modelName"
+				value="com.landray.kmss.sys.task.model.SysTaskMain" />
+			<param
+				name="bamName"
+				value="{sys-task:sysTaskMain.relatedTask}" />
+			<param
+				name="subjectField"
+				value="docSubject" />
+			<param
+				name="cateBean"
+				value="sysTaskGetCategoryService&amp;fdId=!{value}" />
+			<param
+				name="viewURL"
+				value="/sys/task/sys_task_main/sysTaskMain.do?method=view" />
+			<param
+				name="editURL"
+				value="/sys/task/sys_task_main/sysTaskMain.do?method=edit" />
+			<param
+				name="addURL"
+				value="/sys/task/sys_task_main/sysTaskMain.do?method=add" />
+			<param
+				name="listURL"
+				value="/sys/task/sys_task_main/sysTaskMain_list_content.jsp" />
+			<!-- bam2与产品集成新增参数 begin -->
+			<param
+				name="statusField"
+				value="fdStatus" />
+			<param
+				name="statusEnumsType"
+				value="sysTaskMain_fdStatue" />
+			<param
+				name="workFinishField"
+				value="fdWorkStatus" />
+			<!-- bam2与产品集成新增参数 end -->
+		</item>
+	</extension>
+	<extension
+		point="com.landray.kmss.third.pda.extend"
+		model="*">
+		<item
+			name="extend">
+			<param
+				name="modelName"
+				value="com.landray.kmss.sys.task.model.SysTaskMain" />
+			<param
+				name="extendJsp"
+				value="/sys/task/pda/extends.jsp" />
+			<param
+				name="createURL"
+				value="/sys/task/sys_task_main/sysTaskMain.do?method=add" />
+		</item>
+	</extension>
+	<extension
+		point="com.landray.kmss.third.pda.extend"
+		model="*">
+		<item
+			name="extend">
+			<param
+				name="modelName"
+				value="com.landray.kmss.sys.task.model.SysTaskOverrule" />
+			<param
+				name="extendJsp"
+				value="/sys/task/pda/overruleExtends.jsp" />
+		</item>
+	</extension>
+	<!-- 日程机制同步标签-->
+	<extension
+		point="com.landray.kmss.sys.agenda.label"
+		model="*">
+		<item
+			name="label">
+			<param
+				name="labelName"
+				value="{sys-task:module.sys.task}" />
+			<param
+				name="labelColor"
+				value="rgb(122, 231, 191)" />
+			<param
+				name="modelName"
+				value="com.landray.kmss.sys.task.model.SysTaskMain" />
+		</item>
+	</extension>
+
+	<extension
+		point="com.landray.kmss.km.keydata"
+		model="*">
+		<item
+			name="showKeydataUsed">
+			<param
+				name="name"
+				value="任务管理" />
+			<param
+				name="actionUrl"
+				value="/sys/task/showKeydataUsed.jsp?keydataId=${keydataId}" />
+			<param
+				name="formName"
+				value="sysTaskMainForm" />
+		</item>
+	</extension>
+
+	<extension
+		point="com.landray.kmss.sys.mobile.config">
+		<item
+			name="info">
+			<param
+				name="name"
+				value="{sys-task:module.sys.task}" />
+			<param
+				name="modelName"
+				value="com.landray.kmss.sys.task.model.SysTaskMain" />
+		</item>
+	</extension>
+	<!--数据列表权限迁移-->
+	<extension
+		point="com.landray.kmss.sys.admin.transfer">
+		<item
+			name="config">
+			<param
+				name="unid"
+				value="com.landray.kmss.sys.task.transfer.SysTaskAuthTransferTask" />
+			<param
+				name="name"
+				value="任务管理数据列表权限迁移" />
+			<param
+				name="path"
+				value="/sys/task/" />
+			<param
+				name="check"
+				value="com.landray.kmss.sys.task.transfer.SysTaskAuthTransferChecker" />
+			<param
+				name="upgrade"
+				value="com.landray.kmss.sys.task.transfer.SysTaskAuthTransferTask" />
+			<param
+				name="description"
+				value="对旧任务的权限数据进行迁移，启用新的权限规则" />
+		</item>
+		<item
+			name="config">
+			<param
+				name="unid"
+				value="com.landray.kmss.sys.task.transfer.SysTaskAuthTreeTransferTask" />
+			<param
+				name="name"
+				value="任务管理数据列表和任务树查看权限迁移" />
+			<param
+				name="path"
+				value="/sys/task/" />
+			<param
+				name="check"
+				value="com.landray.kmss.sys.task.transfer.SysTaskAuthTreeTransferChecker" />
+			<param
+				name="upgrade"
+				value="com.landray.kmss.sys.task.transfer.SysTaskAuthTreeTransferTask" />
+			<param
+				name="description"
+				value="任务层级超过三级时，最后一级任务负责人无法查看同一任务链上层级3以上的任务" />
+		</item>
+
+		<item
+			name="config">
+			<param
+				name="unid"
+				value="com.landray.kmss.sys.task.transfer.SysTaskProgressTransferTask" />
+			<param
+				name="name"
+				value="任务管理进度字段数据迁移" />
+			<param
+				name="path"
+				value="/sys/task/" />
+			<param
+				name="check"
+				value="com.landray.kmss.sys.task.transfer.SysTaskProgressTransferChecker" />
+			<param
+				name="upgrade"
+				value="com.landray.kmss.sys.task.transfer.SysTaskProgressTransferTask" />
+			<param
+				name="description"
+				value="新增数值型进度字段,将原字符型进度字段数据迁移至数值型进度字段中" />
+		</item>
+
+	</extension>
+
+	<extension
+		point="com.landray.kmss.sys.mobile.compress"
+		model="*">
+		<item
+			name="js-pkg">
+			<param
+				name="name"
+				value="mui-task.js" />
+			<param
+				name="targetFile"
+				value="/sys/task/mobile/resource/js/mui-task.js" />
+			<param
+				name="srcFold"
+				value="/sys/task/mobile/resource/js" />
+		</item>
+		<item
+			name="css-file">
+			<param
+				name="name"
+				value="mui-task-view.css" />
+			<param
+				name="targetFile"
+				value="/sys/task/mobile/resource/css/view.css" />
+		</item>
+		<item
+			name="css-file">
+			<param
+				name="name"
+				value="mui-task-edit.css" />
+			<param
+				name="targetFile"
+				value="/sys/task/mobile/resource/css/edit.css" />
+		</item>
+	</extension>
+
+
+	<!-- 微任务的扩展点部署 -->
+	<extension
+		point="com.landray.kmss.third.ywork.extend"
+		model="com.landray.kmss.sys.task.model.SysTaskMain">
+		<item
+			name="extend">
+			<param
+				name="modelName"
+				value="com.landray.kmss.sys.task.model.SysTaskMain" />
+			<param
+				name="title"
+				value="docSubject" />
+			<param
+				name="type"
+				value="2" />
+			<param
+				name="order"
+				value="5" />
+			<param
+				name="name"
+				value="sys-task:sysTaskMain.main" />
+			<param
+				name="creator"
+				value="docCreator" />
+			<param
+				name="createTime"
+				value="docCreateTime" />
+			<param
+				name="updateTime"
+				value="fdLastModifiedTime" />
+			<param
+				name="shareFields"
+				value="$docSubject$;$docContent$;$fdPlanCompleteDateTime$;$toSysOrgPerform.fdName$;$fdAppoint.fdName$;$toSysOrgCc.fdName$" />
+			<param
+				name="shareFieldMessage"
+				value="title;content;time;owner;designee;cc" />
+			<param
+				name="callbackFields"
+				value="participant:fdWeiXinExecutor;related:fdWeiXinRelevantPerson" />
+			<param
+				name="callbackStatus"
+				value="Integer.parseInt($fdStatus$)!=6" />
+		</item>
+	</extension>
+	<extension point="com.landray.kmss.sys.zone.doccount" >
+        <item name="doccount" >
+          	<param name="unid" value="sysTask" />
+            <param name="order" value="3"/>
+            <param name="title" value="{sys-task:module.sys.task.hr}" />
+            <param name="link" value="/sys/task/#j_path=/listPerform&amp;cri.q=flag:2" />
+            <param name="bean" value="sysTaskDocCountGetter"/>
+        </item>
+    </extension>
+    <!-- 表单关联控件模块扩展点 -->
+	<extension point="com.landray.kmss.sys.xform.base.service.controls.relevance" model="*">
+		<item name="node">
+			<param name="modelName" value="com.landray.kmss.sys.task.model.SysTaskMain" />
+			<param name="key" value="sysTask" />
+			<param name="moduleMessageKey" value="sys-task:module.sys.task" />
+		</item>
+	</extension>
+	
+	<extension
+		point="com.landray.kmss.sys.listshow.listShowConfig"
+		model="com.landray.kmss.sys.task.model.SysTaskMain">
+		<item
+			name="listShowConfig">
+			<param
+				name="name"
+				value="所有任务" />
+			<param
+				name="model"
+				value="com.landray.kmss.sys.task.model.SysTaskMain" />
+			<param
+				name="page"
+				value="all" />
+			<param
+				name="default"
+				value="docSubject;fdStatus;fdPastDue;fdProgress;sysTaskEvaluate;fdAppoint.fdName;toSysOrgPerform;fdPlanCompleteDateTime" />
+			<param
+				name="customized"
+				value="sysTaskEvaluate;sys-task:sysTaskMain.sysTaskEvaluate,toSysOrgPerform;sys-task:table.sysTaskMainPerform,fdPlanCompleteDateTime;sys-task:sysTaskMain.fdPlanCompleteTime" />
+		</item>
+	</extension>
+	<extension
+		point="com.landray.kmss.sys.listshow.listShowConfig"
+		model="com.landray.kmss.sys.task.model.SysTaskMain">
+		<item
+			name="listShowConfig">
+			<param
+				name="name"
+				value="我关注的" />
+			<param
+				name="model"
+				value="com.landray.kmss.sys.task.model.SysTaskMain" />
+			<param
+				name="page"
+				value="0" />
+			<param
+				name="default"
+				value="docSubject;fdStatus;fdPastDue;fdProgress;sysTaskEvaluate;fdAppoint.fdName;toSysOrgPerform;fdPlanCompleteDateTime" />
+			<param
+				name="customized"
+				value="sysTaskEvaluate;sys-task:sysTaskMain.sysTaskEvaluate,toSysOrgPerform;sys-task:table.sysTaskMainPerform,fdPlanCompleteDateTime;sys-task:sysTaskMain.fdPlanCompleteTime" />
+		</item>
+	</extension> 
+	<extension
+		point="com.landray.kmss.sys.listshow.listShowConfig"
+		model="com.landray.kmss.sys.task.model.SysTaskMain">
+		<item
+			name="listShowConfig">
+			<param
+				name="name"
+				value="我指派的" />
+			<param
+				name="model"
+				value="com.landray.kmss.sys.task.model.SysTaskMain" />
+			<param
+				name="page"
+				value="1" />
+			<param
+				name="default"
+				value="docSubject;fdStatus;fdPastDue;fdProgress;sysTaskEvaluate;fdAppoint.fdName;toSysOrgPerform;fdPlanCompleteDateTime" />
+			<param
+				name="customized"
+				value="sysTaskEvaluate;sys-task:sysTaskMain.sysTaskEvaluate,toSysOrgPerform;sys-task:table.sysTaskMainPerform,fdPlanCompleteDateTime;sys-task:sysTaskMain.fdPlanCompleteTime" />
+		</item>
+	</extension> 
+	<extension
+		point="com.landray.kmss.sys.listshow.listShowConfig"
+		model="com.landray.kmss.sys.task.model.SysTaskMain">
+		<item
+			name="listShowConfig">
+			<param
+				name="name"
+				value="我负责的" />
+			<param
+				name="model"
+				value="com.landray.kmss.sys.task.model.SysTaskMain" />
+			<param
+				name="page"
+				value="2" />
+			<param
+				name="default"
+				value="docSubject;fdStatus;fdPastDue;fdProgress;sysTaskEvaluate;fdAppoint.fdName;toSysOrgPerform;fdPlanCompleteDateTime" />
+			<param
+				name="customized"
+				value="sysTaskEvaluate;sys-task:sysTaskMain.sysTaskEvaluate,toSysOrgPerform;sys-task:table.sysTaskMainPerform,fdPlanCompleteDateTime;sys-task:sysTaskMain.fdPlanCompleteTime" />
+		</item>
+	</extension> 
+	<extension
+		point="com.landray.kmss.sys.listshow.listShowConfig"
+		model="com.landray.kmss.sys.task.model.SysTaskMain">
+		<item
+			name="listShowConfig">
+			<param
+				name="name"
+				value="抄送任务" />
+			<param
+				name="model"
+				value="com.landray.kmss.sys.task.model.SysTaskMain" />
+			<param
+				name="page"
+				value="3" />
+			<param
+				name="default"
+				value="docSubject;fdStatus;fdPastDue;fdProgress;sysTaskEvaluate;fdAppoint.fdName;toSysOrgPerform;fdPlanCompleteDateTime" />
+			<param
+				name="customized"
+				value="sysTaskEvaluate;sys-task:sysTaskMain.sysTaskEvaluate,toSysOrgPerform;sys-task:table.sysTaskMainPerform,fdPlanCompleteDateTime;sys-task:sysTaskMain.fdPlanCompleteTime" />
+		</item>
+	</extension>  
+
+	<extension
+		point="com.landray.kmss.sys.listshow.listShowConfig"
+		model="com.landray.kmss.sys.task.model.SysTaskAnalyze">
+		<item
+			name="listShowConfig">
+			<param
+				name="name"
+				value="负荷分析" />
+			<param
+				name="model"
+				value="com.landray.kmss.sys.task.model.SysTaskAnalyze" />
+			<param
+				name="page"
+				value="1" />
+			<param
+				name="default"
+				value="docSubject;fdStartDate;fdEndDate;docCreator.fdName;docCreateTime" />
+			<param
+				name="customized"
+				value="sysTaskEvaluate;sys-task:sysTaskMain.sysTaskEvaluate,toSysOrgPerform;sys-task:table.sysTaskMainPerform,fdPlanCompleteDateTime;sys-task:sysTaskMain.fdPlanCompleteTime" />
+		</item>
+	</extension>  
+	<extension
+		point="com.landray.kmss.sys.listshow.listShowConfig"
+		model="com.landray.kmss.sys.task.model.SysTaskAnalyze">
+		<item
+			name="listShowConfig">
+			<param
+				name="name"
+				value="满意度分析" />
+			<param
+				name="model"
+				value="com.landray.kmss.sys.task.model.SysTaskAnalyze" />
+			<param
+				name="page"
+				value="2" />
+			<param
+				name="default"
+				value="docSubject;fdStartDate;fdEndDate;docCreator.fdName;docCreateTime" />
+			<param
+				name="customized"
+				value="sysTaskEvaluate;sys-task:sysTaskMain.sysTaskEvaluate,toSysOrgPerform;sys-task:table.sysTaskMainPerform,fdPlanCompleteDateTime;sys-task:sysTaskMain.fdPlanCompleteTime" />
+		</item>
+	</extension>  
+	<extension
+		point="com.landray.kmss.sys.listshow.listShowConfig"
+		model="com.landray.kmss.sys.task.model.SysTaskAnalyze">
+		<item
+			name="listShowConfig">
+			<param
+				name="name"
+				value="类型分析" />
+			<param
+				name="model"
+				value="com.landray.kmss.sys.task.model.SysTaskAnalyze" />
+			<param
+				name="page"
+				value="4" />
+			<param
+				name="default"
+				value="docSubject;fdStartDate;fdEndDate;docCreator.fdName;docCreateTime" />
+			<param
+				name="customized"
+				value="sysTaskEvaluate;sys-task:sysTaskMain.sysTaskEvaluate,toSysOrgPerform;sys-task:table.sysTaskMainPerform,fdPlanCompleteDateTime;sys-task:sysTaskMain.fdPlanCompleteTime" />
+		</item>
+	</extension>  
+	<extension
+		point="com.landray.kmss.sys.listshow.listShowConfig"
+		model="com.landray.kmss.sys.task.model.SysTaskAnalyze">
+		<item
+			name="listShowConfig">
+			<param
+				name="name"
+				value="趋势分析" />
+			<param
+				name="model"
+				value="com.landray.kmss.sys.task.model.SysTaskAnalyze" />
+			<param
+				name="page"
+				value="5" />
+			<param
+				name="default"
+				value="docSubject;fdStartDate;fdEndDate;docCreator.fdName;docCreateTime" />
+			<param
+				name="customized"
+				value="sysTaskEvaluate;sys-task:sysTaskMain.sysTaskEvaluate,toSysOrgPerform;sys-task:table.sysTaskMainPerform,fdPlanCompleteDateTime;sys-task:sysTaskMain.fdPlanCompleteTime" />
+		</item>
+	</extension>
+	
+	<!-- 个人中心负责任务计数 -->
+	<extension point="com.landray.kmss.sys.portal">
+		<item name="stat">
+			<!-- 模块名称 -->
+			<param
+				name="moduleName"
+				value="sys-task:module.sys.task" />
+			<!-- 主文档全名称 -->
+			<param
+				name="modelName"
+				value="com.landray.kmss.sys.task.model.SysTaskMain" />
+			<param
+				name="url"
+				value="/sys/task/sys_task_main/sysTaskMainStat.do?method=showStat" />
+			<param name="icon" value="lui_iconfont_nav_sys_task" />
+			<param name="viewUrl" value="/sys/task/#j_path=%2FlistPerform&amp;flag=2" />
+		</item>
+	</extension>
+	<!-- 数据中台 -RTF -->
+	<extension point="com.landray.kmss.sys.xform.maindata.rtf">
+		<item name="config">
+			<!-- 主文档全名称 -->
+			<param
+				name="modelName"
+				value="com.landray.kmss.sys.task.model.SysTaskEvaluate" />
+			<param
+				name="fields"
+				value="docContent" />
+		</item>
+		<item name="config">
+			<!-- 主文档全名称 -->
+			<param
+				name="modelName"
+				value="com.landray.kmss.sys.task.model.SysTaskFeedback" />
+			<param
+				name="fields"
+				value="docContent" />
+		</item>
+		<item name="config">
+			<!-- 主文档全名称 -->
+			<param
+				name="modelName"
+				value="com.landray.kmss.sys.task.model.SysTaskMain" />
+			<param
+				name="fields"
+				value="docContent" />
+		</item>
+	</extension>
+	
+	<!-- 工作交接 -->
+	<extension point="com.landray.kmss.sys.handover.item">
+		<item name="config">
+			<!-- 主文档全名称 -->
+			<param
+				name="module"
+				value="com.landray.kmss.sys.task.model.SysTaskMain" />
+			<param
+				name="messageKey"
+				value="sys-task:module.sys.task" />
+			<param
+				name="handler"
+				value="com.landray.kmss.sys.task.handover.SysTaskHandler" />
+			<param
+				name="provider"
+				value="com.landray.kmss.sys.task.handover.SysTaskProvider" />
+		</item>
+	</extension>
+	
+	<!-- 下属工作 -->
+	<extension point="com.landray.kmss.sys.subordinate">
+		<item name="config">
+			<param
+				name="modelName"
+				value="com.landray.kmss.sys.task.model.SysTaskMain" />
+			<param
+				name="messageKey"
+				value="sys-task:table.sysTaskMain" />
+			<param
+				name="moduleMessageKey"
+				value="sys-task:module.sys.task" />
+			<param
+				name="type"
+				value="person" />
+			<param
+				name="provider"
+				value="com.landray.kmss.sys.task.subordinate.SysTaskMainProvider" />
+			<param
+				name="indexPath"
+				value="/sys/task/subordinate/sysTaskMain_index.jsp" />
+			<param
+				name="listPath"
+				value="/sys/task/sys_task_ui/sysTaskMain_list.jsp" />
+			<param
+				name="viewPath"
+				value="/sys/task/subordinate/sysTaskMain_view.jsp" />
+		</item>
+	</extension>
+	<extension
+		point="com.landray.kmss.third.im.kk.transfer">
+		<item
+			name="config">
+			<param
+				name="key"
+				value="task" />
+			<param
+				name="method"
+				value="getKKConfig" />
+			<param
+				name="service"
+				value="sysTaskMainService" />
+			<param
+				name="modelName"
+				value="com.landray.kmss.sys.task.model.SysTaskConfig" />
+		</item>
+	</extension>
+</plugin>

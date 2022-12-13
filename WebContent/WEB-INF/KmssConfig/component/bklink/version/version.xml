@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<version xmlns="http://www.example.org/version-config" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.example.org/version-config ../../../version.xsd">
+	<modifies>
+		<modify>
+			<description>#146610#146157 修复 模块编译和文档重名问题</description>
+			<author>李芳敏</author>
+			<revision-time>2021-08-16</revision-time>
+			<relation>
+				<relation-module>sys/simplecategory</relation-module>
+				<relation-module>kms/multidoc</relation-module>
+				<relation-module>kms/knowledge</relation-module>
+			</relation>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#142271 需求 数据断链模块SQL语句HardCode模式为参数化模式</description>
+			<author>林剑文</author>
+			<revision-time>2021-07-12</revision-time>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#78984 修复 软删除引起的存在引用关系的数据转移报错</description>
+			<author>叶正平</author>
+			<revision-time>2019-08-05</revision-time>
+			<baseline>V15.0.1.R.20190906</baseline>
+		</modify>
+		<modify>
+			<description>#76290 修复 安全漏洞报告，请产品评估处理</description>
+			<author>郑操辉</author>
+			<revision-time>2019-08-02</revision-time>
+			<baseline>V15.0.1.R.20190906</baseline>
+		</modify>
+		<modify>
+			<description>#78816 优化 开启回收站，删除分类下的全部数据提示信息</description>
+			<author>何景锋</author>
+			<revision-time>2019-07-31</revision-time>
+			<baseline>V15.0.1.R.20190906</baseline>
+		</modify>
+		<modify>
+			<description>修复 创建时间和创建者获取不到的时候显示为null的问题</description>
+			<author>陈建林</author>
+			<revision-time>2018-01-23</revision-time>
+			<baseline>V14.0.0.R.20180413</baseline>
+		</modify>
+		<modify>
+			<description>修复 多个被删除对象中，引用对象有0和不为0的数据时，因数组为空，引起js出错</description>
+			<author>黎凯麟</author>
+			<revision-time>2017-12-06</revision-time>
+			<baseline>V14.0.0.B2.20180112</baseline>
+		</modify>
+		<modify>
+			<description>修复 查看引用数据没有关闭按钮的问题</description>
+			<author>陈建林</author>
+			<revision-time>2016-10-19</revision-time>
+			<baseline>V13.0.0.B3.20161230</baseline>
+		</modify>
+		<modify>
+			<description>修复 点击返回按钮出错的问题</description>
+			<author>陈建林</author>
+			<revision-time>2016-10-09</revision-time>
+			<baseline>V13.0.0.B3.20161230</baseline>
+		</modify>
+		<modify>
+			<description>修复 数据端链有引用关系的报表分类时，全部转移至其他分类失败</description>
+			<author>李启龙</author>
+			<revision-time>2016-05-11</revision-time>
+			<baseline>V13.0.0.B2.20160930</baseline>
+		</modify>
+		<modify>
+			<description>修复 在后台 版块设置中删除某个版本，提示有引用关系，点击“转移并删除”引用关系和对象按钮报错</description>
+			<author>李启龙</author>
+			<revision-time>2016-03-03</revision-time>
+			<baseline>V12.0.9.R.20160325</baseline>
+		</modify>
+		<modify>
+			<description>新增 扩展配置供转移并删除后的后继操作</description>
+			<author>徐广敏</author>
+			<revision-time>2015-12-18</revision-time>
+			<baseline>V12.0.8.R.20160114</baseline>
+		</modify>
+		<modify>
+			<description>修复 分类转移并删除报错</description>
+			<author>朱湖强</author>
+			<revision-time>2015-12-10</revision-time>
+			<baseline>V12.0.8.R.20160114</baseline>
+		</modify>
+		<modify>
+			<description>优化 当引用数目为0时，不出现“转移至”的处理框</description>
+			<author>徐广敏</author>
+			<revision-time>2015-10-26</revision-time>
+			<baseline>V12.0.6.R.20151106</baseline>
+		</modify>
+		<modify>
+			<description>优化 类别删除体验</description>
+			<author>朱湖强</author>
+			<revision-time>2015-05-19</revision-time>
+			<baseline>V12.0.2.R.20150605</baseline>
+		</modify>
+		<modify>
+			<description>修复 目录模板删除时无法检测关联</description>
+			<author>龚一涛</author>
+			<revision-time>2014-07-15</revision-time>
+			<baseline>V11.0.3.R.20140801</baseline>
+		</modify>
+		<modify>
+			<description>修复 属性为列表类型的无法正确转移并删除的问题</description>
+			<author>易荣烽</author>
+			<revision-time>2013-11-15</revision-time>
+			<baseline>V11.0.0.B1.20140107</baseline>
+		</modify>
+		<modify>
+			<description>修复 多浏览器兼容：返回按钮不可用</description>
+			<author>张乐志</author>
+			<revision-time>2013-07-07</revision-time>
+			<baseline>V10.0.3.R.20130712</baseline>
+		</modify>
+		<modify>
+			<description>修复 删除公文时，显示的迁移文档数量不正确的问题</description>
+			<author>苏韶勇</author>
+			<revision-time>2012-10-08</revision-time>
+			<baseline>V10.0.0.R.20121215</baseline>
+		</modify>
+		<modify>
+			<description>修改类别迁移成功后返回页面为简单类别树页面，但实际应是全局类别树页面的缺陷</description>
+			<author>赵义洪</author>
+			<revision-time>2011-05-18</revision-time>
+			<baseline>EKP9.0.0.B3.2011071501</baseline>
+		</modify>
+	</modifies>
+</version>

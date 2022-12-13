@@ -1,0 +1,342 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<version xmlns="http://www.example.org/version-config" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.example.org/version-config ../../../version.xsd">
+	<modifies>
+		<modify>
+			<description>#139342 优化 移动端-查看视图支持显示业务标签</description>
+			<author>吴倩雯</author>
+			<revision-time>2021-12-21</revision-time>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#148165 修复 阅读记录，详细日志显示的总数不正确</description>
+			<author>苏运彬</author>
+			<revision-time>2021-10-08</revision-time>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#147562 修复 移动端阅读记录显示重复</description>
+			<author>苏运彬</author>
+			<revision-time>2021-10-08</revision-time>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#139973 修复 oracle数据库，阅读机制在移动端的阅读统计会不刷新</description>
+			<author>苏运彬</author>
+			<revision-time>2021-05-23</revision-time>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#138962 修复 移动端访问统计详细日志无法向上滚动</description>
+			<author>苏运彬</author>
+			<revision-time>2021-05-23</revision-time>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#131046 修复 访问统计记录数值与详细阅读日志记录对应不上</description>
+			<author>王京</author>
+			<revision-time>2021-03-24</revision-time>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#113476 修复 操作人搜索结果超过一屏时，无法滚动</description>
+			<author>叶正平</author>
+			<revision-time>2021-03-15</revision-time>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#134461 修复 公文导出HTML后，打开该文件页面一直闪动</description>
+			<author>蒋志广</author>
+			<revision-time>2021-03-05</revision-time>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#132394 修复 内置标签访问统计没有根据后台的设置，默认展开</description>
+			<author>吴倩雯</author>
+			<revision-time>2021-01-22</revision-time>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#126897 修复 访问统计移动端，名字过长需省略</description>
+			<author>苏运彬</author>
+			<revision-time>2020-11-28</revision-time>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#115645 新增 流程管理移动端新增查看访问统计</description>
+			<author>苏运彬</author>
+			<revision-time>2020-11-23</revision-time>
+			<relation>
+				<relation-module>sys/attachment</relation-module>
+				<relation-module>sys/print</relation-module>
+			</relation>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#117425 修复 政务版公文稿纸添加了“新审批操作”控件，文档在IE8下，无法加载</description>
+			<author>王逍</author>
+			<revision-time>2020-09-25</revision-time>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#112391 修复 ie9待审公文在标准审批模式打开下页面空白</description>
+			<author>林剑文</author>
+			<revision-time>2020-08-10</revision-time>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#112101 修复 访问统计页签下的阅读记录、打印记录、下载记录查看为空白页面</description>
+			<author>蒋志广</author>
+			<revision-time>2020-07-16</revision-time>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#105552 修复 sys_read_log表中的字段fd_reader_client_ip长度不够</description>
+			<author>钟清学</author>
+			<revision-time>2020-05-19</revision-time>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#93511 优化 维基知识库新版本流程通过之后的性能问题</description>
+			<author>代家宽</author>
+			<revision-time>2020-04-29</revision-time>
+			<relation>
+				<relation-module>kms/multidoc</relation-module>
+				<relation-module>kms/wiki</relation-module>
+				<relation-module>kms/knowledge</relation-module>
+				<relation-module>sys/ui</relation-module>
+			</relation>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#101908 修复 文档知识库文档查看界面，访问统计显示不合理部门显示太窄阅读人显示太宽会使下一页行距发生变化，影响用户体验</description>
+			<author>许远周</author>
+			<revision-time>2020-04-15</revision-time>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#97899 优化 阅读机制定时任务性能优化问题</description>
+			<author>钟清学</author>
+			<revision-time>2020-03-13</revision-time>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#94408 优化 流程管理模块文档底部页签展现部署</description>
+			<author>洪健</author>
+			<revision-time>2020-03-02</revision-time>
+			<relation>
+				<relation-module>sys/ui</relation-module>
+			</relation>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#50208 优化 阅读记录展现</description>
+			<author>陈建林</author>
+			<revision-time>2019-10-25</revision-time>
+			<baseline>V15.0.2.R.20191108</baseline>
+		</modify>
+		<modify>
+			<description>#80216 优化 阅读机制的sql语句导致有性能问题</description>
+			<author>叶正平</author>
+			<revision-time>2019-09-27</revision-time>
+			<baseline>V15.0.2.R.20191108</baseline>
+		</modify>
+		<modify>
+			<description>#80223 修复 人事流程流程查询阅读次数不显示</description>
+			<author>陈尉建</author>
+			<revision-time>2019-09-10</revision-time>
+			<baseline>V15.0.2.R.20191108</baseline>
+		</modify>
+		<modify>
+			<description>#68771 新增 新增下属工作组件，实现领导和上级领导查看下属工作/数据，可设置人员范围和业务范围</description>
+			<author>潘永辉</author>
+			<revision-time>2019-04-23</revision-time>
+			<relation>
+				<relation-module>sys/subordinate</relation-module>
+			</relation>
+			<baseline>V15.0.0.R.20190712</baseline>
+		</modify>
+		<modify>
+			<description>修复 阅读机制无法兼容db2的数据</description>
+			<author>叶正平</author>
+			<revision-time>2018-09-26</revision-time>
+			<baseline>V15.0.0.B1.20181109</baseline>
+		</modify>
+		<modify>
+			<description>优化 【文档页面的阅读数】和【访问统计里面的阅读记录数】在任何状态下，都直接取计算出的阅读统计结果</description>
+			<author>叶正平</author>
+			<revision-time>2018-09-20</revision-time>
+			<baseline>V15.0.0.B1.20181109</baseline>
+		</modify>
+		<modify>
+			<description>优化 阅读机制定时任务（统计文档阅读次数）SQL优化</description>
+			<author>潘永辉</author>
+			<revision-time>2018-03-22</revision-time>
+			<baseline>V14.0.0.R.20180413</baseline>
+		</modify>
+		<modify>
+			<description>修复 访问统计标签页快速切换显示不全</description>
+			<author>郑超</author>
+			<revision-time>2017-09-08</revision-time>
+			<relation>
+				<relation-module>sys/attachment</relation-module>
+				<relation-module>sys/print</relation-module>
+			</relation>
+			<baseline>V13.5.0.R.20170915</baseline>
+		</modify>
+		<modify>
+			<description>修复 下载记录显示字段列调整：文件标题、操作人、部门、下载时间、客户端IP</description>
+			<author>郑超</author>
+			<revision-time>2017-09-08</revision-time>
+			<baseline>V13.5.0.R.20170915</baseline>
+		</modify>
+		<modify>
+			<description>新增 打印记录和附件下载记录统计数量</description>
+			<author>郑超</author>
+			<revision-time>2017-09-08</revision-time>
+			<relation>
+				<relation-module>sys/attachment</relation-module>
+				<relation-module>sys/print</relation-module>
+			</relation>
+			<baseline>V13.5.0.R.20170915</baseline>
+		</modify>
+		<modify>
+			<description>新增 新增打印日志</description>
+			<author>郑超</author>
+			<revision-time>2017-09-08</revision-time>
+			<relation>
+				<relation-module>sys/attachment</relation-module>
+				<relation-module>sys/print</relation-module>
+			</relation>
+			<baseline>V13.5.0.R.20170915</baseline>
+		</modify>
+		<modify>
+			<description>新增 阅读机制中的组织架构信息增加多语言支持</description>
+			<author>黄伟强</author>
+			<revision-time>2017-07-04</revision-time>
+			<relation>
+				<relation-module>core</relation-module>
+			</relation>
+			<baseline>V13.5.0.B2.20170707</baseline>
+		</modify>
+		<modify>
+			<description>修复 文档阅读次数不统计流程中日志的问题</description>
+			<author>洪泽铨</author>
+			<revision-time>2017-03-22</revision-time>
+			<baseline>V13.5.0.B1.20170512</baseline>
+		</modify>
+		<modify>
+			<description>优化 阅读日志列表查询性能优化</description>
+			<author>李衡</author>
+			<revision-time>2017-03-09</revision-time>
+			<baseline>V13.0.0.R.20170310</baseline>
+		</modify>
+		<modify>
+			<description>修复 某些文档阅读数更新失败的问题</description>
+			<author>陈建林</author>
+			<revision-time>2016-12-02</revision-time>
+			<baseline>V13.0.0.B3.20161230</baseline>
+		</modify>
+		<modify>
+			<description>优化 阅读列表查询缓慢问题</description>
+			<author>李衡</author>
+			<revision-time>2016-11-02</revision-time>
+			<baseline>V13.0.0.B3.20161230</baseline>
+		</modify>
+		<modify>
+			<description>优化 阅读机制定时任务描述</description>
+			<author>周梓凡</author>
+			<revision-time>2015-11-27</revision-time>
+			<baseline>V12.0.7.R.20151203</baseline>
+		</modify>
+		<modify>
+			<description>修复 统计阅读数定时任务死锁问题</description>
+			<author>李衡</author>
+			<revision-time>2015-06-15</revision-time>
+			<baseline>V12.0.3.R.20150710</baseline>
+		</modify>
+		<modify>
+			<description>新增 只获取阅读人员记录接口</description>
+			<author>朱湖强</author>
+			<revision-time>2015-01-30</revision-time>
+			<baseline>V12.0.0.R.20150325</baseline>
+		</modify>
+		<modify>
+			<description>优化 阅读删除很慢问题</description>
+			<author>缪贵荣</author>
+			<revision-time>2014-12-30</revision-time>
+			<baseline>V12.0.0.B3.20150116</baseline>
+		</modify>
+		<modify>
+			<description>优化 初始化阅读统计的最后更新时间</description>
+			<author>李斌斌</author>
+			<revision-time>2014-03-18</revision-time>
+			<relation>
+				<relation-module>sys/admin</relation-module>
+			</relation>
+			<baseline>V11.0.0.R.20140320</baseline>
+		</modify>
+		<modify>
+			<description>优化 阅读机制的性能</description>
+			<author>汪俊锋</author>
+			<revision-time>2013-08-14</revision-time>
+			<baseline>V11.0.0.B1.20140107</baseline>
+		</modify>
+		<modify>
+			<description>修复 已阅人员排序问题</description>
+			<author>汪俊锋</author>
+			<revision-time>2013-06-25</revision-time>
+			<baseline>V10.0.3.R.20130712</baseline>
+		</modify>
+		<modify>
+			<description>修复 阅读机制的标签显示多浏览器支持</description>
+			<author>李衡</author>
+			<revision-time>2013-04-25</revision-time>
+			<relation>
+				<relation-module>core</relation-module>
+			</relation>
+			<baseline>V10.0.3.R.20130712</baseline>
+		</modify>
+		<modify>
+			<description>优化 SQL注入问题</description>
+			<author>邱建华</author>
+			<revision-time>2013-01-22</revision-time>
+			<baseline>V10.0.1.R.20130328</baseline>
+		</modify>
+		<modify>
+			<description>修改更新阅读次数的方法，减少查询提高性能</description>
+			<author>易荣烽</author>
+			<revision-time>2011-12-23</revision-time>
+			<baseline>EKP9.0.1.R.20111231</baseline>
+		</modify>
+		<modify>
+			<description>修改阅读次数点击率的描述</description>
+			<author>曹映辉</author>
+			<revision-time>2011-12-08</revision-time>
+			<baseline>EKP9.0.1.R.20111231</baseline>
+		</modify>
+		<modify>
+			<description>加上遗漏的messageKey</description>
+			<author>缪贵荣</author>
+			<revision-time>2011-11-17</revision-time>
+			<baseline>EKP9.0.1.R.20111231</baseline>
+		</modify>
+		<modify>
+			<description>机制字段加索引</description>
+			<author>李衡</author>
+			<revision-time>2011-11-07</revision-time>
+			<relation>
+				<relation-module>core</relation-module>
+			</relation>
+			<baseline>EKP9.0.1.R.20111231</baseline>
+		</modify>
+		<modify>
+			<description>合并流程审批记录和阅读机制，增加数据迁移工具，迁移过程注意备份sys_wf_read_log表中所有数据</description>
+			<author>曹映辉</author>
+			<revision-time>2011-09-19</revision-time>
+			<relation>
+				<relation-module>sys/workflow</relation-module>
+			</relation>
+			<baseline>EKP9.0.0.R.20111025</baseline>
+		</modify>
+	</modifies>
+</version>

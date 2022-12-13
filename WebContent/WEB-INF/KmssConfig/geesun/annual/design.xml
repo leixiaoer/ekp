@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configs 
+    xsi:schemaLocation="http://www.example.org/design-config ../../design.xsd " 
+    xmlns="http://www.example.org/design-config" 
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <module 
+        urlPrefix="/geesun/annual/" 
+        messageKey="geesun-annual:module.geesun.annual" 
+        defaultValidator="roleValidator(role=ROLE_GEESUNANNUAL_DEFAULT)">
+        <roles>ROLE_GEESUNANNUAL_DEFAULT;ROLE_GEESUNANNUAL_SETTING;ROLE_GEESUNANNUAL_ADMIN</roles>
+        <request 
+            path="tree.jsp*" 
+            defaultValidator="roleValidator(role=ROLE_GEESUNANNUAL_SETTING)"/>
+        <request 
+            path="geesun_annual_main/geesunAnnualMain.do*" 
+            validatorParameter="recid=fdId,model=com.landray.kmss.geesun.annual.model.GeesunAnnualMain" 
+            defaultValidator="roleValidator(role=ROLE_GEESUNANNUAL_DEFAULT;ROLE_GEESUNANNUAL_ADMIN)">
+            <query 
+                queryString="method=edit|update" 
+                validator="roleValidator(role=ROLE_GEESUNANNUAL_ADMIN)"/>
+            <query 
+                queryString="method=delete|deleteall" 
+                validator="roleValidator(role=ROLE_GEESUNANNUAL_ADMIN)"/>
+            <query 
+                queryString="method=add|save|saveadd" 
+                validator="roleValidator(role=ROLE_GEESUNANNUAL_ADMIN)"/>
+            <query 
+                queryString="method=view" 
+                validator="roleValidator(role=ROLE_GEESUNANNUAL_ADMIN)"/>
+        </request>
+        <request 
+            path="geesun_annual_use/geesunAnnualUse.do*" 
+            validatorParameter="recid=fdId,model=com.landray.kmss.geesun.annual.model.GeesunAnnualUse" 
+            defaultValidator="roleValidator(role=ROLE_GEESUNANNUAL_DEFAULT)">
+            <query 
+                queryString="method=edit|update" 
+                validator="roleValidator(role=ROLE_GEESUNANNUAL_SETTING)"/>
+            <query 
+                queryString="method=delete|deleteall" 
+                validator="roleValidator(role=ROLE_GEESUNANNUAL_SETTING)"/>
+            <query 
+                queryString="method=view" 
+                validator="roleValidator(role=ROLE_GEESUNANNUAL_DEFAULT)"/>
+        </request>
+        <request 
+            path="geesun_annual_alter/geesunAnnualAlter.do*" 
+            validatorParameter="recid=fdId,model=com.landray.kmss.geesun.annual.model.GeesunAnnualAlter" 
+            defaultValidator="roleValidator(role=ROLE_GEESUNANNUAL_DEFAULT)">
+            <query 
+                queryString="method=edit|update" 
+                validator="roleValidator(role=ROLE_GEESUNANNUAL_SETTING)"/>
+            <query 
+                queryString="method=delete|deleteall" 
+                validator="roleValidator(role=ROLE_GEESUNANNUAL_SETTING)"/>
+            <query 
+                queryString="method=view" 
+                validator="roleValidator(role=ROLE_GEESUNANNUAL_DEFAULT)"/>
+        </request>
+        <request 
+            path="geesun_annual_reset/geesunAnnualReset.do*" 
+            validatorParameter="recid=fdId,model=com.landray.kmss.geesun.annual.model.GeesunAnnualReset" 
+            defaultValidator="roleValidator(role=ROLE_GEESUNANNUAL_DEFAULT)">
+            <query 
+                queryString="method=edit|update" 
+                validator="roleValidator(role=ROLE_GEESUNANNUAL_SETTING)"/>
+            <query 
+                queryString="method=delete|deleteall" 
+                validator="roleValidator(role=ROLE_GEESUNANNUAL_SETTING)"/>
+            <query 
+                queryString="method=view" 
+                validator="roleValidator(role=ROLE_GEESUNANNUAL_DEFAULT)"/>
+        </request>
+    </module>
+    <module 
+        urlPrefix="/sys/transport/">
+        <request 
+            path="sys_transport_import/SysTransportImport*"/>
+        <request 
+            path="sys_transport_export/SysTransportExport*"/>
+    </module>
+    <module 
+        urlPrefix="/sys/transport/">
+        <request 
+            path="sys_transport_import/SysTransportImport*">
+            <query 
+                queryString="fdModelName=com.landray.kmss.geesun.annual.model.GeesunAnnualMain" 
+                validator="roleValidator(role=ROLE_GEESUNANNUAL_SETTING)"/>
+        </request>
+        <request 
+            path="sys_transport_export/SysTransportExport*">
+            <query 
+                queryString="fdModelName=com.landray.kmss.geesun.annual.model.GeesunAnnualMain" 
+                validator="roleValidator(role=ROLE_GEESUNANNUAL_SETTING)"/>
+        </request>
+    </module>
+    
+    <!-- 请休假ID设置 -->
+	<module urlPrefix="/sys/appconfig/">
+		<request 
+			path="sys_appconfig/sysAppConfig*">
+			<query
+				queryString="modelName=com.landray.kmss.geesun.annual.model.GeesunAnnualConfig"
+				validator="roleValidator(role=ROLE_GEESUNANNUAL_ADMIN)" />
+		</request>
+	</module>
+    
+    <!-- 定时检测是否存在未执行或者执行不成功的年假重置任务，并重新执行定时任务 -->
+	<quartz messageKey="geesun-annual:geesunAnnualMain.quartz.reset"
+			jobService="geesunAnnualMainService"
+			jobMethod="checkErrorResetLogQuartz"
+			cronExpression="0 0 17 * * ?" />
+    
+    <homePage 
+        messageKey="geesun-annual:module.geesun.annual" 
+        urlPrefix="geesun/annual" 
+        url="/geesun/annual/index.jsp" 
+        config="/moduleindex_notopic.jsp?nav=/geesun/annual/tree.jsp"/>
+        
+    <profileConfig 
+        key="geesun/annual" 
+        messageKey="{geesun-annual:module.geesun.annual}" 
+        url="/sys/profile/moduleindex.jsp?nav=/geesun/annual/tree.jsp" 
+        icon="km_comminfo" 
+        type="ekp" 
+        description="{geesun-annual:module.geesun.annual.description}"/>
+</configs>

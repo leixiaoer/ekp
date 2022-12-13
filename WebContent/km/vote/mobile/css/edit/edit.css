@@ -1,0 +1,129 @@
+@CHARSET "UTF-8";
+.muiFormContent{
+	padding: 0 0 0 1rem;
+}
+.lui_vote_tabpanel{position: relative;display:inline-block;cursor: pointer;color:#0f4e7a; padding-left: 4px; padding-right: 14px; font-size: 12px; border-radius:12px;height:24px;line-height:24px;}
+.lui_vote_tabpanel_on{color:#fff;background:#15a4fa; padding-left: 14px; padding-right: 14px;}
+.btn_del{cursor: pointer;width:16px;height:16px;}
+.lui_vote_tabpanel:first-child{ padding-left: 14px; padding-right: 4px;}
+.lui_vote_tabpanel.lui_vote_tabpanel_on:first-child{ padding-left: 14px; padding-right: 14px;}
+.lui_vote_tabpanel_switch{vertical-align: middle; height: 24px; border:1px solid #dfe0e6; display: inline-block; border-radius: 15px; padding:2px;}
+
+.muiVoteCate i{float:right;display:none;}
+/*** 上传图片 按钮 ***/
+.lui_vote_btn_pic{ float:left; cursor:pointer; width:58px; height:58px;color:#7d7d7d;border: 1px solid #ccc;  text-align:center;  text-align:center;margin-right:-1px}
+.lui_vote_btn_pic .icon_btnPic{ display:inline-block; width:24px; height:20px; margin-top:8px; margin-bottom: 5px;background:url(../../image/upload_img.png) no-repeat 0 0;}
+.lui_vote_btn_pic:hover .icon_btnPic{ background-position: -24px 0;}
+.vote_image_td .inputsgl{ height: 58px; width: 534px!important; padding-right: 20px; vertical-align: top;}
+.vote_image_td .inputsgl[readonly]{ cursor: not-allowed;}
+.lui_vote_btn_pic p{ font-size: 12px; margin-top: -12px; height: 20px; line-height: 20px;}
+
+.muiImageVote{
+	width:100%;
+}
+.muiImageVote .muiFieldOpt{display:none;}
+.mblSwDefaultShape {
+    width: 57px;
+}
+.muiVoteSwitch{vertical-align: middle;float: left;}
+.vote_image_item{ display:table;}
+.vote_image_item img{ position: absolute; left: 1px; top:1px; width:58px; height: 58px;}
+.vote_image_item .reuploadTip{  position: absolute;left: 0;bottom: 0;font-size: 12px;text-align: center;color: #fff;width: 60px;background: rgba(0,0,0,0.5);height: 20px;line-height: 20px;}
+
+.td_vote_index{ vertical-align: top;}
+.vote_image_btn_box{
+	display:tabel-cell;
+}
+
+.file {
+	position:absolute;
+	width:32px;
+	height:32px;
+	filter:alpha(opacity:0);
+	opacity: 0;
+	cursor: pointer;
+}
+
+
+.file:HOVER {cursor: pointer;}
+.add_item{ font-size: 1.2rem;;background:#fff; display:inline-block; margin:1rem; height: 26px; line-height: 26px; border:1px solid #15a4fa; color:#15a4fa; padding:0 8px; width: auto;}
+.add_item img{ display: none;}
+.add_item:before{ display: inline-block; content: ""; width: 16px; height: 16px; background:url(../../image/add_item.png) no-repeat 0 0; vertical-align: text-bottom; position: relative;}
+.add_item{ background: #15a4fa; color:#fff;}
+.add_item:before{ background-position: -16px 0;}
+
+.vote_word_td,.vote_image_td{padding:1rem 0;display: table !important;line-height:32px;width: 100%;border-bottom: 1px solid #e2e2e2;}
+tr:first-child .vote_word_td,
+tr:first-child .vote_image_td {
+	padding-top: 0;
+}
+.vote_word_td,.vote_image_td.muiDelIcon{
+	display: table-cell;
+    z-index: 1000;
+    color:red;
+}
+
+.muiUploadBtnIcon{
+	position: relative;
+  z-index: 100;
+	width:24px; 
+	height:20px;
+	background:url(../../image/upload_img.png) no-repeat 0 0;
+}
+.vote_image_item .muiField{display: table-cell;}
+.vote_image_item .muiFieldOpt{display:none;}
+#word_vote .muiFieldValue,#image_vote .muiFieldValue{
+	border-bottom: 1px solid #e2e2e2;
+}
+.muiUploadImagePreview{
+	position:relative;    
+	/*padding-top: 5px;
+	margin-top: 5px;
+  margin-left: 3rem;*/
+}
+#image_vote .muiSelInputRight,
+#word_vote .muiSelInputRight {
+	display: none;
+}
+.muiImageIcon{width: 40px;height: 40px;margin-bottom: 1rem;}
+.muiUploadImagePreview .muiImageIconDel {
+	position: absolute;
+    top: -0.3rem;
+    left: 3.1rem;
+    width: 1.2rem;
+    height: 1.2rem;
+    line-height: 1.6rem;
+    vertical-align: middle;
+    z-index: 5;
+    border-radius: 50%;
+    text-align: center;
+    background-color: #F56B6B;
+}
+.muiUploadImagePreview .muiImageIconDel i{
+	line-height: 1.7rem;
+    font-size: 0.8rem;
+    color: #FFFFFF;
+    position: relative;
+    top: -0.2rem;
+}
+.muiUploadImagePreview .muiImageIconDel i:before {
+	transform: scale(0.7);
+	-webkit-transform: scale(0.7);
+	display: inline-block;
+}
+.muivotePersons .muiCateFiledShow:empty:after,.muivoteExcPersons .muiCateFiledShow:empty:after {
+    content: attr(placeholder);
+    color: #A9A9A9;
+}
+.muiDelIcon.mui-delete {
+	display:table-cell;
+	color:#ff0000;
+}
+.vote_tr .muiFormRequired {
+	top: 0;
+}
+#image_vote .oldMui.muiFormEleWrap .muiInput,
+#word_vote .oldMui.muiFormEleWrap .muiInput {
+	height: 4rem;
+	margin-top:0.1rem;
+}

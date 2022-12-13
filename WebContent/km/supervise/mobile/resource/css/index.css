@@ -1,0 +1,879 @@
+.lui_supervisory_management_moblie_box {
+  width: 100%;
+  font-family: PingFangSC-Regular;
+  background: #f2f4f8;
+}
+.lui_supervisory_management_moblie_content {
+  margin: 0 auto;
+}
+.lui_font_family_bold {
+    padding: 0 1.25rem;
+    font-size: var(--muiFontSizeLA);
+    font-weight: bold;
+    background-color: #fff;
+}
+.lui_sm_mc_echart_box {
+  /* width: 375px; */
+  height: 303px;
+}
+.lui_sm_mc_card {
+  padding:15px 5px;
+  box-sizing: border-box;
+  margin-bottom: 10px;
+  background: #fff;
+}
+.lui_sm_mcs_title {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  font-size: 17px;
+  color: #333333;
+}
+.lui_sm_mcst_nav {
+  font-size: 14px;
+  color: #666666;
+  padding-right: 1.25rem;
+}
+.lui_sm_mcst_nav span {
+  margin-left: 10px;
+}
+.lui_sm_mcst_nav-active {
+  color: #4285f4;
+}
+.lui_sm_mcs_itemList {
+  padding-top: 5px;
+}
+.lui_sm_mcs_item {
+  text-align: center;
+  margin: 12px 0;
+  display:inline-block;
+  width:25%;
+  vertical-align: top;
+}
+.lui_sm_mcsi_bigText {
+  font-size: 31px;
+  background: linear-gradient(to bottom, #1b6ff5, #6ba4ff);
+  -webkit-background-clip: text;
+  color: transparent;
+}
+.lui_sm_mcsi_bigText-blue {
+  background: linear-gradient(to bottom, #1b6ff5, #6ba4ff);
+  -webkit-background-clip: text;
+  color: transparent;
+}
+.lui_sm_mcsi_bigText-orange {
+  background: linear-gradient(to bottom, #ff943e, #ffb57a);
+  -webkit-background-clip: text;
+  color: transparent;
+}
+.lui_sm_mcsi_bigText-red {
+  background: linear-gradient(to bottom, #f33333, #f37575);
+  -webkit-background-clip: text;
+  color: transparent;
+}
+.lui_sm_mcsi_smallText {
+  font-size: 14px;
+  color: #c9c9c9;
+}
+.lui_sm_mcs_itemName {
+  font-size: 12px;
+  color: #999999;
+  margin-top: 10px;
+  display: inline-block;
+}
+.lui_sm_mc_ri_title {
+  font-size: 17px;
+  margin-bottom: 10px;
+  color: #191f25;
+}
+.lui_sm_mc_rItem {
+  padding: 15px 0;
+}
+.lui_sm_mc_rItem:last-child {
+  padding-bottom: 0;
+}
+.lui_sm_mc_ri_text {
+  font-size: 12px;
+  color: #999999;
+}
+.lui_sm_mc_ri_icon {
+  font-size: 10px;
+  width: 50px;
+  height: 15px;
+  vertical-align: baseline;
+  color: #fff;
+  display: inline-block;
+}
+.lui_sm_mc_ri_icon-1 {
+  background: url("../images/1.png") no-repeat center;
+  background-size: contain;
+}
+.lui_sm_mc_ri_icon-2 {
+  background: url("../images/2.png") no-repeat center;
+  background-size: contain;
+}
+.lui_sm_mc_ri_icon-3 {
+  background: url("../images/3.png") no-repeat center;
+  background-size: contain;
+}
+.lui_sm_mc_ri_icon-4 {
+  background: url("../images/4.png") no-repeat center;
+  background-size: contain;
+}
+.lui_sm_mc_ri_icon-5 {
+  background: url("../images/5.png") no-repeat center;
+  background-size: contain;
+}
+.lui_sm_mc_ri_icon-6 {
+  background: url("../images/6.png") no-repeat center;
+  background-size: contain;
+}
+
+/* 页脚 starts */
+.lui_db_footer {
+  height: 50px;
+  background-color: #fff;
+  display: flex;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+.lui_db_footer_item {
+  -webkit-box-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+.lui_db_footer_item p {
+  font-size: 10px;
+  color: #999999;
+}
+.lui_db_footer_item.active p {
+  color: #4285f4;
+}
+.lui_db_footer_item_img {
+  width: 20px;
+  height: 20px;
+  margin-bottom: 5px;
+}
+.lui_db_footer_item_img.index {
+  background: url(../images/index.png) no-repeat center;
+  background-size: 20px;
+}
+.lui_db_footer_item_img.leader {
+  background: url(../images/leader.png) no-repeat center;
+  background-size: 20px;
+}
+.lui_db_footer_item_img.all {
+  background: url(../images/all.png) no-repeat center;
+  background-size: 20px;
+}
+.lui_db_footer_item_img.mine {
+  background: url(../images/mine.png) no-repeat center;
+  background-size: 20px;
+}
+.active .lui_db_footer_item_img.index {
+  background-image: url(../images/index-active.png);
+}
+.active .lui_db_footer_item_img.leader {
+  background-image: url(../images/leader-active.png);
+}
+.active .lui_db_footer_item_img.all {
+  background-image: url(../images/all-active.png);
+}
+.active .lui_db_footer_item_img.mine {
+  background-image: url(../images/mine-active.png);
+}
+/* 页脚 ends */
+
+/* 4.首页正常推进-个人 starts */
+.lui_db_body {
+  background: #f2f4f8;
+}
+.lui_db_tit {
+  font-size: 17px;
+  color: #333;
+  padding: 12px 16px;
+}
+.lui_db_mine {
+  background: #fff;
+  margin-bottom:10px;
+}
+.lui_db_mine_slide > div {
+  overflow: hidden;
+  padding-left: 1.2rem;
+}
+.lui_db_mine_slide_item {
+  float: left;
+  width: 28%;
+  height: 150px;
+  margin: 8px;
+  border-radius: 2px;
+  box-shadow: 0 0 30px 0 rgba(153,179,210,0.20);
+  border-radius: 4px;
+  font-family: "landray-number", fontnumber,-apple-system, SF UI Text, Arial, PingFang SC, Hiragino Sans GB, Microsoft YaHei, WenQuanYi Micro Hei, sans-serif;
+}
+.lui_db_mine_slide_item.active {
+  background: #4285f4;
+}
+.lui_db_mine_slide_item.active .lui_dmsi_num {
+  color: #fff;
+}
+.lui_db_mine_slide_item.active .lui_dmsi_desc {
+  color: #fff;
+  opacity: 0.8;
+}
+.lui_db_mine_slide_item.active .lui_dmsi_detail span {
+  color: #fff;
+}
+.lui_db_mine_slide_item .lui_dmsi_num {
+  font-size: 30px;
+  color: #4285f4;
+  text-align: center;
+  padding-top: 12px;
+  font-family: "landray-number", fontnumber,-apple-system, SF UI Text, Arial, PingFang SC, Hiragino Sans GB, Microsoft YaHei, WenQuanYi Micro Hei, sans-serif;
+}
+.lui_dmsi_desc {
+  font-size: 12px;
+  color: #3E4665;
+  text-align: center;
+  margin-bottom: 10px;
+}
+.lui_dmsi_detail {
+  border-top: 1px solid #F2F2F2;
+  font-family: "landray-number", fontnumber,-apple-system, SF UI Text, Arial, PingFang SC, Hiragino Sans GB, Microsoft YaHei, WenQuanYi Micro Hei, sans-serif;
+}
+.lui_db_mine_slide_item.active .lui_dmsi_detail{
+  border-top: 1px solid #F2F2F280;
+}
+.lui_dmsi_detail div {
+  overflow: hidden;
+}
+.lui_dmsi_detail span {
+  font-size: 12px;
+  color: #999FB7;
+  float: right;
+}
+.lui_dmsi_detail span:first-child {
+  float: left;
+}
+/* 我的督办 */
+.lui_asc_item_notice {
+    position: absolute;
+    top: 0;
+    right: 0;
+    border-radius: 3px;
+    text-align: center;
+    padding: .2rem .4rem;
+    font-size: 1.2rem;
+    color: #999999;
+    background-color: #F4F4F4;
+}
+.lui_asc_item_subject{
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    font-size: var(--muiFontSizeM);
+    line-height: 1.8rem;
+    color: #2A304A;
+    margin-bottom: .8rem;
+}
+.lui_asc_item_notice.warning {
+	color: #FF682B;
+    background-color: #FFefe9;
+}
+.lui_asc_item_notice.warning p {
+  color: #9b9b9b;
+}
+.lui_asc_item_notice.warning p:first-child {
+  color: #f33333;
+}
+.lui_asc_item .muiListNoData{
+	height:auto !important;
+	line-height: 0px !important;
+}
+.lui_asc_list .muiListNoData{
+	height:auto !important;
+	line-height:0px !important;
+	background: #fff;
+	padding:10px 0;
+}
+.lui_asc_item_title {
+  overflow: hidden;
+}
+.lui_db_dynamic {
+  padding-bottom: 35px;
+}
+.lui_db_dynamic_wrap {
+  background: #fff;
+}
+.lui_db_dynamic_item {
+    display: block;
+    padding: 1rem;
+    background-color: #fff;
+    box-shadow: 0 0 30px 0 rgba(153,179,210,0.20);
+    border-radius: 8px;
+    margin-bottom: 1rem;
+}
+.lui_db_dynamic_item_tit {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    font-size: var(--muiFontSizeM);
+    line-height: 1.8rem;
+    color: #2A304A;
+    margin-bottom: .8rem;
+}
+.lui_db_dynamic_item_flag {
+	position: absolute;
+    top: 0;
+    right: 0;
+    border-radius: 3px;
+    text-align: center;
+    padding: .2rem .4rem;
+    font-size: 1.2rem;
+    color: #999999;
+    background-color: #F4F4F4;
+}
+.lui_db_dynamic_item_desc {
+  font-size: 12px;
+  color: #999999;
+  display: -webkit-box;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    word-break: break-all;
+    word-wrap: break-word;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 1;
+}
+.lui_db_dynamic_item_date {
+  color: #999999;
+  font-size: 12px;
+}
+.item-active {
+  height: 32px;
+  line-height: 32px;
+  background: #ffdfd4;
+  border-radius: 2px;
+  margin-top: 10px;
+  color: #ff7a3e;
+  padding: 0 10px 0 6px;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: space-between;
+}
+.item-right-arrow {
+  width: 5px;
+  height: 5px;
+  border-top: 1px solid #ff7a3e;
+  border-right: 1px solid #ff7a3e;
+  transform: rotate(45deg);
+  margin-top: 12px;
+}
+/* 4.首页正常推进-个人 ends */
+
+/* 10.所有督办详情-计划反馈 starts */
+.lui_asc_tab {
+  padding-bottom: 50px;
+}
+.lui_asc_item_detail {
+  margin-bottom: 10px;
+  display: -webkit-box;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    word-break: break-all;
+    word-wrap: break-word;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+}
+.lui_db_detail .lui_asc_list {
+  padding: 0;
+}
+.lui_asc_item_detail span {
+  font-size: 14px;
+  color: #999;
+}
+.lui_asc_item_zip {
+  display: inline-block;
+  vertical-align: top;
+  width: 308px;
+  height: 60px;
+  background: #f2f4f8;
+  border-radius: 4px;
+}
+.lui_asc_item_arr {
+  width: 20px;
+  height: 20px;
+  background: url(../images/arr-down.png) no-repeat center;
+  background-size: 20px;
+  margin: 10px auto 0;
+}
+.lui_asc_item_arr_active{
+  transform: rotate(180deg);
+}
+.active .lui_asc_item_arr{
+  transform: rotate(180deg);
+}
+.lui_asc_tab .lui_asc_item {
+  margin-bottom: 0;
+}
+.lui_db_operation_item p {
+  font-size: 15px;
+  color: #4285f4;
+}
+.lui_db_operation_item.more p{
+  width: 20px;
+  height: 20px;
+  background: url(../images/more.png) no-repeat center;
+  background-size: 20px;
+}
+.lui_db_operation {
+  height: 50px;
+  background-color: #fff;
+  display: flex;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  border-top: 1px solid #e7e7e7;
+}
+.lui_db_operation_item {
+  position: relative;
+  -webkit-box-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+.lui_db_operation_item::before {
+  content: "";
+  width: 1px;
+  height: 14px;
+  background: #f2f4f8;
+  position: absolute;
+  left: 0;
+  top: 50%;
+  margin-top: -7px;
+}
+.lui_db_operation_item:first-child::before {
+  display: none;
+}
+.lui_db_operation_item.more::before {
+  content: "";
+  width: 1px;
+  height: 50px;
+  background: #f2f4f8;
+  position: absolute;
+  left: 0;
+  top: 7px;
+}
+.lui_asc_tab .lui_asc_item:first-child {
+  border-radius: 0;
+}
+/*.lui_asc_tab .lui_asc_item:first-child div {
+  border-bottom: 1px solid #e7e7e7;
+  margin-bottom: 0;
+  padding-bottom: 15px;
+}*/
+/* 10.所有督办详情-计划反馈 ends */
+
+/* 12.督办切换详情-批示 starts */
+.lui_asc_approve .lui_asc_item {
+  margin-bottom: 0;
+}
+.lui_asc_approve .lui_asc_item:first-child > div {
+  margin-bottom: 0;
+}
+.lui_asc_item_textarea {
+  border: 1px solid #f2f4f8;
+  border-radius: 4px;
+  padding: 10px 12px;
+  margin-bottom: 10px;
+}
+.lui_asc_item_textarea textarea {
+  width: 100%;
+  outline: none;
+  resize: none;
+  border: 0;
+}
+.lui_asc_item_btn {
+  background: #4285f4;
+  border-radius: 4px;
+  width: 60px;
+  height: 24px;
+  line-height: 24px;
+  color: #fff;
+  font-size: 14px;
+  text-align: center;
+  float: right;
+}
+.lui_asc_item_img {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  float: left;
+  background: #000;
+}
+.lui_asc_item_img img{
+	width: 100%;
+    height: 100%;
+    border-radius: 50%;
+}
+.lui_asc_item_desc {
+  margin-left: 43px;
+}
+.lui_asc_item_desc p {
+  font-size: 12px;
+  color: #999999;
+}
+.lui_asc_item_desc div {
+  margin-bottom: 10px;
+  overflow: hidden;
+}
+.lui_asc_item_desc div:first-child p {
+  font-size: 16px;
+  color: #333333;
+}
+.lui_asc_item_delete {
+  width: 20px;
+  height: 20px;
+  background: url(../images/del.png) no-repeat center;
+  background-size: 20px;
+  float: right;
+}
+.lui_asc_item_desc div:last-child p {
+  float: left;
+}
+.lui_db_oprMore {
+  width: 85px;
+  padding: 0 5px;
+  height: 90px;
+  border-radius: 4px;
+  background: #333;
+  position: fixed;
+  right: 10px;
+  bottom: 65px;
+}
+.lui_db_oprMore_item:first-child {
+  border-top: 0;
+}
+.lui_db_oprMore_item {
+  text-align: center;
+  font-size: 12px;
+  color: rgba(255, 255, 255, 0.6);
+  line-height: 29px;
+  height: 29px;
+  border-top: 1px solid rgba(102, 102, 102, 0.3);
+}
+.lui_db_oprMore::before {
+  content: "";
+  width: 0;
+  height: 0;
+  border: 6px solid transparent;
+  border-top-color: #333;
+  position: absolute;
+  bottom: -12px;
+  left: 50%;
+}
+/* 12.督办切换详情-批示 ends */
+
+/* 14.督办切换详情-其他详情 starts */
+.lui_asc_others .lui_asc_list {
+  background: #fff;
+  padding-bottom: 50px;
+}
+.lui_asc_others .lui_asc_item {
+  padding: 8px 16px;
+}
+.lui_asc_others .lui_asc_item_zip {
+  width: 278px;
+}
+.lui_asc_item_content {
+  box-shadow: 0 0 4px 0 rgba(0, 0, 0, 0.1);
+  border-radius: 2px;
+  padding: 10px 12px;
+}
+.lui_asc_item_content_title {
+  margin-bottom: 10px;
+}
+.lui_asc_item_content_title span {
+  font-size: 15px;
+  color: #191f25;
+}
+/* 14.督办切换详情-其他详情 ends */
+
+/* 18.督办计划-阶段反馈 starts */
+.lui_asc_feedback .lui_asc_item_text {
+  display: flex;
+}
+.lui_asc_feedback .lui_asc_item_text span:last-child {
+  flex: 1;
+}
+/* 18.督办计划-阶段反馈 ends */
+
+/* 21.反馈情况一览表 starts */
+/* 头部卡片样式 */
+.lui_db_flag_header {
+  margin: 20px 15px;
+  height: 62px;
+  background: #ffffff;
+  border: 1px solid #eaedf3;
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.04);
+  border-radius: 4px;
+  padding: 15px 10px;
+}
+.lui_db_flag_header_wrap ul {
+  list-style: none;
+}
+.lui_db_flag_header_item {
+  margin-bottom: 20px;
+}
+.lui_db_flag_header_item > div {
+  display: flex;
+}
+.lui_db_flag_header_item p {
+  display: flex;
+  align-items: center;
+  flex: 1;
+}
+.lui_db_flag_header_item i {
+  width: 12px;
+  height: 12px;
+  border-radius: 1px;
+  margin-right: 8px;
+}
+.lui_db_flag_header_item .blue i {
+  background: #4285f4;
+}
+.lui_db_flag_header_item .purple i {
+  background: #5856d6;
+}
+.lui_db_flag_header_item .red i {
+  background: #ff3b30;
+}
+.lui_db_flag_header_item .orange i {
+  background: #ff943e;
+}
+/* 内容卡片样式 */
+.lui_db_flag_content {
+  margin: 20px 15px;
+}
+.lui_db_flag_content ul {
+  list-style: none;
+}
+.lui_db_flag_content_item {
+  padding: 15px 0 0;
+  border-bottom: 1px solid #f2f4f8;
+}
+.lui_db_flag_content_item:last-child {
+  border-bottom: 0;
+}
+.lui_db_flag_content_item h3 {
+  font-size: 17px;
+  color: #191f25;
+  font-weight: normal;
+  margin-bottom: 10px;
+}
+.lui_db_flag_content_item span {
+  font-size: 14px;
+  color: #666666;
+}
+.lui_db_flag_content_item_wrap > div {
+  overflow: hidden;
+  margin-bottom: 7px;
+}
+.lui_db_flag_content_list {
+  margin: 2px 0;
+  margin-left: 74px;
+}
+.lui_db_flag_content_list > p {
+  display: flex;
+  align-items: flex-start;
+  margin-bottom: 10px;
+}
+.lui_db_flag_content_list i {
+  width: 12px;
+  height: 12px;
+  border-radius: 1px;
+  margin-right: 8px;
+  margin-top: 3px;
+}
+.lui_db_flag_content_list span {
+  flex: 1;
+}
+.lui_db_flag_content_item_tit {
+  float: left;
+}
+.lui_db_flag_content_list .blue i {
+  background: #4285f4;
+}
+.lui_db_flag_content_list .purple i {
+  background: #5856d6;
+}
+.lui_db_flag_content_list .red i {
+  background: #ff3b30;
+}
+.lui_db_flag_content_list .orange i {
+  background: #ff943e;
+}
+
+/* 21.反馈情况一览表 ends */
+
+/* 24.我的 starts */
+.lui_asc_item_sum {
+  padding: 8px 0;
+}
+.lui_asc_item_sum_wrap {
+  display: flex;
+  align-items: center;
+}
+.lui_asc_item_sum_img {
+  width: 36px;
+  height: 36px;
+  background: #000;
+  border-radius: 50%;
+  align-items: center;
+  margin-right: 16px;
+}
+.lui_asc_item_sum_detail {
+  position: relative;
+  flex: 1;
+}
+.lui_asc_item_sum_detail h3 {
+  font-size: 17px;
+  color: #333333;
+  font-weight: normal;
+  margin-bottom: 8px;
+}
+.lui_asc_item_sum_detail p {
+  font-size: 12px;
+  color: #999999;
+}
+.lui_asc_item_sum_detail i {
+  width: 6px;
+  height: 10px;
+  background: #999;
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+}
+/* 24.我的 ends */
+
+span>.gold {
+	color: gold;
+}
+
+.lui_supervise_create{
+	background:url(../images/icon_create_supervise.png) no-repeat center;
+	background-size:100%;
+}
+.lui_supervise_my_audit {
+	background:url(../images/icon_audit.png) no-repeat center;
+	background-size:100%;
+}
+.lui_supervise_my_manage {
+	background:url(../images/icon_manage.png) no-repeat center;
+	background-size:100%;
+}
+.lui_supervise_my_charge {
+	background:url(../images/icon_charge.png) no-repeat center;
+	background-size:100%;
+}
+.lui_supervise_my_undertake {
+	background:url(../images/icon_undertake.png) no-repeat center;
+	background-size:100%;
+}
+.lui_supervise_my_sup {
+	background:url(../images/icon_sup.png) no-repeat center;
+	background-size:100%;
+}
+.lui_supervise_my_create {
+	background:url(../images/icon_create.png) no-repeat center;
+	background-size:100%;
+}
+.lui_supervise_my_concern {
+	background:url(../images/icon_concern.png) no-repeat center;
+	background-size:100%;
+}
+.lui_sm_mcsi_Text_box {
+    font-family: "landray-number", fontnumber,-apple-system, SF UI Text, Arial, PingFang SC, Hiragino Sans GB, Microsoft YaHei, WenQuanYi Micro Hei, sans-serif;
+}
+.muiSuperviseItemNotice{
+	position: relative;
+}
+.muiSuperviseItemNotice > span{
+	display: block;
+    font-size: var(--muiFontSizeSS);
+    line-height: 1.6rem;
+    color: #999FB7;
+}
+.muiCardFooter {
+    display: -webkit-box;
+    border-top: 1px solid #e5e5e5;
+    background-color: #fcfcfc;
+}
+.muiCardFooter > button {
+    -webkit-box-flex: 1;
+    margin: 0;
+    padding: 1.2rem 1rem;
+    line-height: 20px;
+    text-align: center;
+    color: rgb(153, 153, 153);
+    font-size: 1.4rem;
+    vertical-align: middle;
+    outline: none;
+    border: 0;
+    -webkit-appearance: none;
+    background-color: transparent;
+    display: block;
+    position: relative;
+    overflow: hidden;
+    transition: all .2s ease;
+}
+.lui_db_mine_slide_item>div {
+    padding: 0 0.8rem;
+}
+
+.lui_dmsi_detail>div {
+    padding-top: 1rem;
+}
+.lui_dmsi_detail span:last-child {
+    font-family: "landray-number", fontnumber,-apple-system, SF UI Text, Arial, PingFang SC, Hiragino Sans GB, Microsoft YaHei, WenQuanYi Micro Hei, sans-serif;
+    color: #2A304A;
+    font-size: var(--muiFontSizeS);
+}
+.lui_asc_info_box{
+	    position: relative;
+}
+.lui_text_Att{
+  padding: 5px 25px;
+}

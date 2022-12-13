@@ -1,0 +1,118 @@
+{
+    "global":     {
+        "modelName": "com.landray.kmss.km.keydata.project.model.KmProjectMain",
+        "messageKey": "km-keydata-project:table.kmProjectMain",
+        "displayProperty": "fdName",
+        "serviceBean": "kmProjectMainService",
+        "extendClass": "com.landray.kmss.km.keydata.base.model.KmKeydataBase",
+        "table": "km_keydata_project_main",
+        "url": "/km/keydata/project/km_project_main/kmProjectMain.do?method=showUsed&fdId=${fdId}",
+        "discriminatorValue": "project"
+    },
+    "attrs":     {
+        "fdId":         {
+            "propertyType": "id",
+            "generator": {"type": "assigned"}
+        },
+        "fdPlanStart":         {
+            "propertyType": "simple",
+            "messageKey": "km-keydata-project:kmProjectMain.fdPlanStart",
+            "type": "DateTime",
+            "column": "fd_plan_start",
+            "notNull": "false",
+            "validate": "false"
+        },
+        "fdPlanEnd":         {
+            "propertyType": "simple",
+            "messageKey": "km-keydata-project:kmProjectMain.fdPlanEnd",
+            "type": "DateTime",
+            "column": "fd_plan_end",
+            "notNull": "false",
+            "validate": "false"
+        },
+        "fdInfactStart":         {
+            "propertyType": "simple",
+            "messageKey": "km-keydata-project:kmProjectMain.fdInfactStart",
+            "type": "DateTime",
+            "column": "fd_infact_start",
+            "notNull": "false",
+            "validate": "false"
+        },
+        "fdInfactEnd":         {
+            "propertyType": "simple",
+            "messageKey": "km-keydata-project:kmProjectMain.fdInfactEnd",
+            "type": "DateTime",
+            "column": "fd_infact_end",
+            "notNull": "false",
+            "validate": "false"
+        },
+        "fdPlanDays":         {
+            "propertyType": "simple",
+            "messageKey": "km-keydata-project:kmProjectMain.fdPlanDays",
+            "type": "Long",
+            "column": "fd_plan_days",
+            "notNull": "false",
+            "length": "10",
+            "validate": "true"
+        },
+        "fdInfactDays":         {
+            "propertyType": "simple",
+            "messageKey": "km-keydata-project:kmProjectMain.fdInfactDays",
+            "type": "Long",
+            "column": "fd_infact_days",
+            "notNull": "false",
+            "length": "10",
+            "validate": "true"
+        },
+        "fdStatus":         {
+            "propertyType": "simple",
+            "messageKey": "km-keydata-project:kmProjectMain.fdStatus",
+            "type": "String",
+            "column": "fd_status",
+            "notNull": "false",
+            "length": "20",
+            "validate": "true"
+        },
+        "fdExecutiveDept":         {
+            "propertyType": "model",
+            "messageKey": "km-keydata-project:kmProjectMain.fdExecutiveDept",
+            "type": "com.landray.kmss.sys.organization.model.SysOrgElement",
+            "column": "fd_executive_dept",
+            "notNull": "true",
+            "validate": "true"
+        },
+        "kmProjectCategory":         {
+            "propertyType": "model",
+            "messageKey": "km-keydata-project:kmProjectMain.fdCategoryName",
+            "type": "com.landray.kmss.km.keydata.project.model.KmProjectCategory",
+            "column": "fd_category_id",
+            "notNull": "true",
+            "unique": "true",
+            "dialogJS": "Dialog_SimpleCategory('com.landray.kmss.km.keydata.project.model.KmProjectCategory','!{idField}','!{nameField}',false,null,'00')",
+            "canSearch": "true",
+            "canRelation": "true",
+            "canDisplay": "true",
+            "canSubscribe": "true"
+        },
+        "fdProjectChargers":         {
+            "propertyType": "list",
+            "messageKey": "km-keydata-project:kmProjectMain.fdProjectChargers",
+            "column": "fd_project_id",
+            "type": "com.landray.kmss.sys.organization.model.SysOrgPerson",
+            "elementColumn": "fd_person_id",
+            "table": "km_keydata_project_chargers",
+            "inverse": "false",
+            "canDisplay": "true",
+            "notNull": "true",
+            "readOnly": "false",
+            "validate": "true",
+            "cascade": "none"
+        },
+        "docAlteror":         {
+            "propertyType": "model",
+            "messageKey": "km-keydata-project:kmProjectMain.docAlteror",
+            "type": "com.landray.kmss.sys.organization.model.SysOrgElement",
+            "column": "fd_charger"
+        }
+    }
+}

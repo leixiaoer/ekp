@@ -1,0 +1,243 @@
+{
+    "global":     {
+        "modelName": "com.landray.kmss.km.carmng.model.KmCarmngInfomation",
+        "messageKey": "km-carmng:table.kmCarmngInfomation",
+        "displayProperty": "docSubject",
+        "serviceBean": "kmCarmngInfomationService",
+        "table": "km_carmng_infomation",
+        "url": "/km/carmng/km_carmng_infomation/kmCarmngInfomation.do?method=view&fdId=${fdId}"
+    },
+    "attrs":     {
+        "fdId":         {
+            "propertyType": "id",
+            "generator": {"type": "assigned"}
+        },
+        "fdNo":         {
+            "propertyType": "simple",
+            "messageKey": "km-carmng:kmCarmngInfomation.fdNo",
+            "type": "String",
+            "column": "fd_no",
+            "notNull": "false",
+            "canSearch": "true",
+            "length": "200"
+        },
+        "docSubject":         {
+            "propertyType": "simple",
+            "messageKey": "km-carmng:kmCarmngInfomation.docSubject",
+            "type": "String",
+            "column": "doc_subject",
+            "notNull": "false",
+            "canSearch": "true",
+            "length": "200"
+        },
+        "fdSeatNumber":         {
+            "propertyType": "simple",
+            "messageKey": "km-carmng:kmCarmngInfomation.fdSeatNumber",
+            "type": "Integer",
+            "column": "fd_seat_number",
+            "canSearch": "true",
+            "notNull": "false"
+        },
+        "fdCardParameter":         {
+            "propertyType": "simple",
+            "messageKey": "km-carmng:kmCarmngInfomation.fdCardParameter",
+            "type": "String",
+            "column": "fd_card_parameter",
+            "notNull": "false",
+            "length": "100"
+        },
+        "fdDriverId":         {
+            "propertyType": "simple",
+            "messageKey": "km-carmng:kmCarmngInfomation.fdDriverId",
+            "type": "String",
+            "column": "fd_driver_id",
+            "notNull": "false",
+            "length": "36"
+        },
+        "fdDriverName":         {
+            "propertyType": "simple",
+            "messageKey": "km-carmng:kmCarmngInfomation.fdDriverName",
+            "type": "String",
+            "column": "fd_driver_name",
+            "canSearch": "true",
+            "notNull": "false",
+            "length": "200"
+        },
+        "fdFuelStandard":         {
+            "propertyType": "simple",
+            "messageKey": "km-carmng:kmCarmngInfomation.fdFuelStandard",
+            "type": "Double",
+            "column": "fd_fuel_standard",
+            "notNull": "false",
+            "length": "10"
+        },
+        "fdBuyTime":         {
+            "propertyType": "simple",
+            "messageKey": "km-carmng:kmCarmngInfomation.fdBuyTime",
+            "type": "DateTime",
+            "column": "fd_buy_time",
+            "canSearch": "true",
+            "notNull": "false"
+        },
+        "fdAnnuaCheckTime":         {
+            "propertyType": "simple",
+            "messageKey": "km-carmng:kmCarmngInfomation.fdAnnuaCheckTime",
+            "type": "DateTime",
+            "column": "fd_annua_check_time",
+            "canSearch": "true",
+            "notNull": "false"
+        },
+        "fdAnnuaCheckFrequency":         {
+            "propertyType": "simple",
+            "messageKey": "km-carmng:kmCarmngInfomation.fdAnnuaCheckFrequency",
+            "type": "String",
+            "column": "fd_annua_check_frequency",
+            "notNull": "false"
+        },
+        "fdInsutanceTime":         {
+            "propertyType": "simple",
+            "messageKey": "km-carmng:kmCarmngInfomation.fdInsutanceTime",
+            "type": "DateTime",
+            "column": "fd_insutance_time",
+            "canSearch": "true",
+            "notNull": "false"
+        },
+        "fdInsutanceComputer":         {
+            "propertyType": "simple",
+            "messageKey": "km-carmng:kmCarmngInfomation.fdInsutanceComputer",
+            "type": "String",
+            "column": "fd_insutance_computer",
+            "notNull": "false",
+            "length": "500"
+        },
+        "fdPassageMoney":         {
+            "propertyType": "simple",
+            "messageKey": "km-carmng:kmCarmngInfomation.fdPassageMoney",
+            "type": "String",
+            "column": "fd_passage_money",
+            "notNull": "false",
+            "length": "100"
+        },
+        "fdYearlongTicket":         {
+            "propertyType": "simple",
+            "messageKey": "km-carmng:kmCarmngInfomation.fdYearlongTicket",
+            "type": "String",
+            "column": "fd_yearlong_ticket",
+            "notNull": "false",
+            "length": "100"
+        },
+        "fdRelationPhone":         {
+            "propertyType": "simple",
+            "messageKey": "km-carmng:kmCarmngInfomation.fdRelationPhone",
+            "type": "String",
+            "column": "fd_relation_phone",
+            "notNull": "false",
+            "length": "100"
+        },
+        "docStatus":         {
+            "propertyType": "simple",
+            "messageKey": "km-carmng:kmCarmngInfomation.docStatus",
+            "type": "String",
+            "column": "doc_status",
+            "notNull": "false",
+            "canSearch": "true",
+            "length": "2",
+            "enumType": "kmCarmngInformation_status"
+        },
+        "fdVin":         {
+            "propertyType": "simple",
+            "messageKey": "km-carmng:kmCarmngInfomation.fdVin",
+            "type": "String",
+            "column": "fd_vin",
+            "notNull": "false",
+            "canSearch": "true",
+            "length": "30",
+        },
+        "fdEngineNumber":         {
+            "propertyType": "simple",
+            "messageKey": "km-carmng:kmCarmngInfomation.fdEngineNumber",
+            "type": "String",
+            "column": "fd_engine_number",
+            "notNull": "false",
+            "canSearch": "true",
+            "length": "50",
+        },
+        "fdRemark":         {
+            "propertyType": "simple",
+            "messageKey": "km-carmng:kmCarmngInfomation.fdRemark",
+            "type": "String",
+            "column": "fd_remark",
+            "notNull": "false",
+            "length": "2000",
+            "validate": "true"
+        },
+        "docCreateTime":         {
+            "propertyType": "simple",
+            "messageKey": "km-carmng:kmCarmngInfomation.docCreateTime",
+            "type": "DateTime",
+            "column": "doc_create_time",
+            "notNull": "false"
+        },
+        "fdNotifyBeforeDay":         {
+            "propertyType": "simple",
+            "messageKey": "km-carmng:kmCarmngInsuranceInfo.notify.before.day",
+            "type": "Integer",
+            "column": "fd_notify_before_day",
+            "notNull": "false",
+            "canSearch": "true",
+            "length": "10"
+        },
+        "fdIsNotify":         {
+            "propertyType": "simple",
+            "messageKey": "km-carmng:kmCarmngInfomation.isNotify.tip",
+            "type": "Boolean",
+            "column": "fd_is_notify",
+            "notNull": "true",
+            "length": "1"
+        },
+        "fdLastModifiedTime":         {
+            "propertyType": "simple",
+            "canDisplay": "false",
+            "type": "DateTime",
+            "messageKey": "km-carmng:kmCarmngInfomation.fdLastModifiedTime",
+            "column": "fd_last_modified_time",
+            "notNull": "true"
+        },
+        "docCreator":         {
+            "propertyType": "model",
+            "messageKey": "km-carmng:kmCarmngInfomation.docCreatorId",
+            "type": "com.landray.kmss.sys.organization.model.SysOrgElement",
+            "column": "doc_creator_id"
+        },
+        "fdMotorcade":         {
+            "propertyType": "model",
+            "messageKey": "km-carmng:kmCarmngInfomation.fdMotorcadeId",
+            "type": "com.landray.kmss.km.carmng.model.KmCarmngMotorcadeSet",
+            "canSearch": "true",
+            "column": "fd_motorcade_id"
+        },
+        "fdVehichesType":         {
+            "propertyType": "model",
+            "messageKey": "km-carmng:kmCarmngInfomation.fdVehichesType",
+            "type": "com.landray.kmss.km.carmng.model.KmCarmngCategory",
+            "column": "fd_vehiches_type"
+        },
+        "fdSysDriver":         {
+            "propertyType": "model",
+            "messageKey": "km-carmng:kmCarmngInfomation.fdSysDriver",
+            "type": "com.landray.kmss.sys.organization.model.SysOrgElement",
+            "column": "fd_sys_driver_id"
+        },
+        "fdNotifyPersons":         {
+            "propertyType": "list",
+            "type": "com.landray.kmss.sys.organization.model.SysOrgElement",
+            "column": "fd_carmng_info_id",
+            "elementColumn": "fd_notify_person_id",
+            "table": "km_carmng_info_notify"
+        }
+    },
+    "attachments": {"kmCarmngPic":     {
+        "propertyType": "att",
+        "messageKey": "km-carmng:kmCarmngInsuranceInfo.attachment"
+    }}
+}

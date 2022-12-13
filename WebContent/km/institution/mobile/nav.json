@@ -1,0 +1,20 @@
+[ 
+	{ 
+		url : "/km/institution/km_institution_knowledge/kmInstitutionKnowledgeIndex.do?method=listChildren&categoryId=&q.docStatus=30&orderby=fdIsTop%3BfdTopTime%3BdocPublishTime%3BdocAlterTime%3BdocCreateTime&ordertype=down", 
+		text : "km-institution:kmInstitutionKnowledge.list.all",
+		headerTemplate : "/km/institution/mobile/resource/js/header/AllInstitutionPropertyTemplate.js"
+	},
+	{ 
+		url : "/km/institution/km_institution_knowledge/kmInstitutionKnowledgeIndex.do?method=listChildren&categoryId=&q.mydoc=create&orderby=docPublishTime&ordertype=down", 
+		text : "km-institution:kmInstitutionKnowledge.list.create"
+	},
+	{ 
+		url : "/km/institution/km_institution_knowledge/kmInstitutionKnowledgeIndex.do?method=listChildren&categoryId=&q.mydoc=approval&orderby=docPublishTime&ordertype=down",
+		text : "list.approval",
+		headerTemplate : "/km/institution/mobile/resource/js/header/ApprovalInstitutionPropertyTemplate.js"
+	},
+	{ 
+		url : "/km/institution/km_institution_knowledge/kmInstitutionKnowledgeIndex.do?method=listChildren&categoryId=&q.mydoc=approved&orderby=fdIsTop%3BfdTopTime%3BdocPublishTime%3BdocAlterTime%3BdocCreateTime&ordertype=down", 
+		text : "list.approved"
+	}
+]

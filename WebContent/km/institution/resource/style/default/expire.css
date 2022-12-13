@@ -1,0 +1,13 @@
+/* 文档失效样式 */
+.rtf_docContent{ position:relative; min-height:200px;}
+.status_expire{ width:107px; height:107px; background:url(status_expire.png) no-repeat left top; position:absolute; right:20px; top:-30px;}
+.tips_expire{ color:#ff3400; text-align:left; font-size: 11pt;}
+.tips_expire .time{ margin-left:5px;}
+.lui_form_content_frame{ position:relative;}
+
+.status_expire_CN{ width:107px; height:107px; background:url(status_expire_CN.png) no-repeat left top; position:absolute; right:20px; top:-30px;}
+.status_expire_US{ width:107px; height:107px; background:url(status_expire_US.png) no-repeat left top; position:absolute; right:20px; top:-30px;}
+.status_expire_UK{ width:107px; height:107px; background:url(status_expire_US.png) no-repeat left top; position:absolute; right:20px; top:-30px;}
+.status_expire_HK{ width:107px; height:107px; background:url(status_expire_CN.png) no-repeat left top; position:absolute; right:20px; top:-30px;}
+.status_expire_TW{ width:107px; height:107px; background:url(status_expire_CN.png) no-repeat left top; position:absolute; right:20px; top:-30px;}
+.status_expire_JP{ width:107px; height:107px; background:url(status_expire_JP.png) no-repeat left top; position:absolute; right:20px; top:-30px;}

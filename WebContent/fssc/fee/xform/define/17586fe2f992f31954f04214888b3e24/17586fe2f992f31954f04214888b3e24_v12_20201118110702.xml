@@ -1,0 +1,19 @@
+<model >
+<extendSimpleProperty name="fd_3906f3ec0308fa" label="公司" type="String" defaultValue="1" /><extendSimpleProperty name="fd_3906f3ec0308fa_name" label="公司(名称)" type="String" defaultValue="1" />
+<extendSimpleProperty name="fd_38ff07a608d292" label="上级科目" type="String" businessType="inputText" length="200" readOnly="true" isMark="false" customElementProperties="" />
+<extendSubTableProperty name="fd_3906f1680fb968" label="明细表1" businessType="detailsTable" >
+<idProperty><generator type="assigned" /></idProperty>
+<extendElementProperty name="fd_org" label="人员" type="com.landray.kmss.sys.organization.model.SysOrgPerson" dialogJS="Dialog_Address(!{mulSelect}, '!{idField}','!{nameField}', ';',ORG_TYPE_PERSON);" customElementProperties="{&quot;orgType&quot;:&quot;ORG_TYPE_PERSON&quot;}" businessType="address" isMark="false" />
+<extendSimpleProperty name="fd_390b765296f29a" label="开始日期" type="Date" businessType="datetime" isMark="false" />
+<extendSimpleProperty name="fd_390b7653c9d72c" label="结束日期" type="Date" businessType="datetime" isMark="false" />
+<extendSimpleProperty name="fd_390b76567a4b2c" label="天数" type="String" /><extendSimpleProperty name="fd_390b76567a4b2c_name" label="天数" type="String" notNull="true" />
+<extendSimpleProperty name="fd_390a14f926cc92" label="币种汇率" type="String" defaultValue="1" /><extendSimpleProperty name="fd_390a14f926cc92_name" label="币种汇率(名称)" type="String" defaultValue="1" /><extendSimpleProperty name="fd_390a14f926cc92_cost_rate" label="币种汇率" type="String" defaultValue="1" /><extendSimpleProperty name="fd_390a14f926cc92_budget_rate" label="币种汇率" type="String" defaultValue="1" />
+<extendSimpleProperty name="fd_390a14f2422e26" label="申请金额" type="Double" businessType="inputText" length="16" isMark="false" customElementProperties="displayFormat={'displayFormat':'false'}" />
+<extendSimpleProperty name="fd_390b762ba0e642" label="本币金额" type="String" /><extendSimpleProperty name="fd_390b762ba0e642_name" label="本币金额" type="String" notNull="true" />
+<extendSimpleProperty name="fd_39078328c72fa4" label="交通工具" type="String" /><extendSimpleProperty name="fd_39078328c72fa4_name" label="交通工具(名称)" type="String" /><extendSimpleProperty name="fd_39078328c72fa4_vehicle_name" label="交通工具" type="String" /><extendSimpleProperty name="fd_39078328c72fa4_vehicle_id" label="交通工具" type="String" />
+<extendSimpleProperty name="fd_39078349193118" label="地域" type="String" /><extendSimpleProperty name="fd_39078349193118_name" label="地域(名称)" type="String" />
+<extendSimpleProperty name="fd_3906f3f3ec8212" label="成本中心" type="String" /><extendSimpleProperty name="fd_3906f3f3ec8212_name" label="成本中心(名称)" type="String" />
+<extendSimpleProperty name="fd_3907c3973e0808" label="城市" type="String" /><extendSimpleProperty name="fd_3907c3973e0808_name" label="城市(名称)" type="String" />
+</extendSubTableProperty>
+
+</model>

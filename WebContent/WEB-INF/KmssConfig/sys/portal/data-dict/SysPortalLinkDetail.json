@@ -1,0 +1,67 @@
+{
+    "global":     {
+        "modelName": "com.landray.kmss.sys.portal.model.SysPortalLinkDetail",
+        "messageKey": "sys-portal:table.sysPortalLinkDetail",
+        "displayProperty": "fdName",
+        "table": "sys_portal_link_detail"
+    },
+    "attrs":     {
+        "fdId":         {
+            "propertyType": "id",
+            "generator": {"type": "assigned"}
+        },
+        "fdName":         {
+            "propertyType": "simple",
+            "messageKey": "",
+            "type": "String",
+            "column": "fd_name",
+            "notNull": "false",
+            "length": "255",
+            "langSupport": "true"
+        },
+        "fdUrl":         {
+            "propertyType": "simple",
+            "messageKey": "",
+            "type": "String",
+            "column": "fd_url",
+            "notNull": "false",
+            "length": "900"
+        },
+        "fdTarget":         {
+            "propertyType": "simple",
+            "messageKey": "sys-portal:sysPortalLinkDetail.fdTarget",
+            "type": "String",
+            "column": "fd_target",
+            "notNull": "false",
+            "length": "36"
+        },
+        "fdIcon":         {
+            "propertyType": "simple",
+            "messageKey": "sys-portal:sysPortalLinkDetail.fdIcon",
+            "type": "String",
+            "column": "fd_icon",
+            "notNull": "false",
+            "length": "255"
+        },
+        "fdOrder":         {
+            "propertyType": "simple",
+            "messageKey": "sys-portal:sysPortalLinkDetail.fdOrder",
+            "type": "String",
+            "column": "fd_order",
+            "notNull": "false"
+        },
+        "sysPortalLink":         {
+            "propertyType": "model",
+            "messageKey": "",
+            "type": "com.landray.kmss.sys.portal.model.SysPortalLink",
+            "column": "fd_link_id",
+            "notNull": "false"
+        },
+        "fdSysLink":         {
+            "propertyType": "simple",
+            "type": "String",
+            "column": "fd_sys_link",
+            "length": "200"
+        }
+    }
+}

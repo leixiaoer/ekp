@@ -1,0 +1,129 @@
+{
+    "global":     {
+        "modelName": "com.landray.kmss.km.asset.model.KmAssetApplyInList",
+        "messageKey": "km-asset:table.kmAssetApplyInList",
+        "displayProperty": "fdName",
+        "serviceBean": "kmAssetApplyInListService",
+        "table": "km_asset_apply_in_list",
+        "url": "/km/asset/km_asset_apply_in_list/kmAssetApplyInList.do?method=view&fdId=${fdId}"
+    },
+    "attrs":     {
+        "fdId":         {
+            "propertyType": "id",
+            "generator": {"type": "assigned"}
+        },
+        "fdOrder":         {
+            "propertyType": "simple",
+            "messageKey": "km-asset:kmAssetApplyInList.fdOrder",
+            "type": "Integer",
+            "column": "fd_order",
+            "notNull": "false",
+            "length": "10",
+            "validate": "true"
+        },
+        "fdStockNo":         {
+            "propertyType": "simple",
+            "messageKey": "km-asset:kmAssetApplyInList.fdStockNo",
+            "type": "String",
+            "column": "fd_stock_no",
+            "notNull": "false",
+            "length": "36",
+            "validate": "true"
+        },
+        "fdName":         {
+            "propertyType": "simple",
+            "messageKey": "km-asset:kmAssetApplyInList.fdName",
+            "type": "String",
+            "column": "fd_name",
+            "notNull": "false",
+            "length": "200",
+            "validate": "true"
+        },
+        "fdStockAmount":         {
+            "propertyType": "simple",
+            "messageKey": "km-asset:kmAssetApplyInList.fdStockAmount",
+            "type": "Integer",
+            "column": "fd_stock_amount",
+            "notNull": "false",
+            "length": "4",
+            "validate": "true"
+        },
+        "fdReceiveAmount":         {
+            "propertyType": "simple",
+            "messageKey": "km-asset:kmAssetApplyInList.fdReceiveAmount",
+            "type": "Integer",
+            "column": "fd_receive_amount",
+            "notNull": "false",
+            "length": "4",
+            "validate": "true"
+        },
+        "fdStockDate":         {
+            "propertyType": "simple",
+            "messageKey": "km-asset:kmAssetApplyInList.fdStockDate",
+            "type": "DateTime",
+            "column": "fd_stock_date",
+            "notNull": "false",
+            "validate": "false"
+        },
+        "fdNo":         {
+            "propertyType": "simple",
+            "messageKey": "km-asset:kmAssetApplyInList.fdNo",
+            "type": "String",
+            "column": "fd_no",
+            "notNull": "false",
+            "length": "36",
+            "validate": "true"
+        },
+        "fdCode":         {
+            "propertyType": "simple",
+            "messageKey": "km-asset:kmAssetApplyInList.fdCode",
+            "type": "String",
+            "column": "fd_code",
+            "notNull": "false",
+            "length": "500",
+            "validate": "true"
+        },
+        "fdDeptCode":         {
+            "propertyType": "simple",
+            "messageKey": "km-asset:kmAssetApplyInList.fdDeptCode",
+            "type": "String",
+            "column": "fd_dept_code",
+            "notNull": "false",
+            "length": "36",
+            "validate": "true"
+        },
+        "fdInNum":         {
+            "propertyType": "simple",
+            "messageKey": "km-asset:kmAssetApplyInList.fdInNum",
+            "type": "Integer",
+            "column": "fd_in_num",
+            "notNull": "false",
+            "length": "4",
+            "validate": "true"
+        },
+        "fdAssetApplyIn":         {
+            "propertyType": "model",
+            "messageKey": "km-asset:table.kmAssetApplyIn",
+            "type": "com.landray.kmss.km.asset.model.KmAssetApplyIn",
+            "column": "fd_asset_apply_in",
+            "notNull": "false",
+            "validate": "true"
+        },
+        "fdStockList":         {
+            "propertyType": "model",
+            "messageKey": "km-asset:kmAssetApplyInList.fdStockList",
+            "type": "com.landray.kmss.km.asset.model.KmAssetApplyStockList",
+            "column": "fd_stock_list_id",
+            "notNull": "false",
+            "validate": "true"
+        },
+        "fdAssetCategory":         {
+            "propertyType": "model",
+            "messageKey": "km-asset:kmAssetApplyInList.fdAssetCategory",
+            "type": "com.landray.kmss.km.asset.model.KmAssetCategory",
+            "column": "fd_asset_category_id",
+            "notNull": "false",
+            "validate": "true"
+        }
+    }
+}

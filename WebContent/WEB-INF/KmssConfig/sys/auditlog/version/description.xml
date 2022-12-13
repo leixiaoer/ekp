@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<description xmlns="http://www.example.org/description-config" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.example.org/description-config ../../../description.xsd">
+	<module>
+		<module-name>EKP应用日志库</module-name>
+		<module-path>sys/auditlog</module-path>
+		<baseline>V15.0.4.R.20200410</baseline>
+		<source-md5>481c6ac75864812ccb77f0ec982e65fc</source-md5>
+		<is-custom>否</is-custom>
+		<serial-num>1</serial-num>
+	</module>
+</description>

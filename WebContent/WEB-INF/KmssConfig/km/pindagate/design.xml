@@ -1,0 +1,467 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configs
+	xmlns="http://www.example.org/design-config"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.example.org/design-config ../../design.xsd ">
+
+	<module
+		messageKey="km-pindagate:module.km.pindagate"
+		urlPrefix="/km/pindagate/"
+		defaultValidator="roleValidator(role=ROLE_KMPINDAGATE_DEFAULT)">
+		<roles>
+			ROLE_KMPINDAGATE_DEFAULT;
+			ROLE_KMPINDAGATE_PARAMETER_CONFIG;
+			ROLE_KMPINDAGATE_CIRCULATION_CREATE;
+		</roles>
+		<areaRoles>
+			ROLE_KMPINDAGATE_CREATE;
+			ROLE_KMPINDAGATE_READER;
+			ROLE_KMPINDAGATE_DELETE;
+			ROLE_KMPINDAGATE_RESULTREADER;
+			ROLE_KMPINDAGATE_UPDATESTATISTICRESULT;
+			ROLE_KMPINDAGATE_SET;
+			ROLE_KMPINDAGATE_PRESSABSEN;
+			ROLE_KMPINDAGATE_QUESTION_TMP_SET;
+			ROLE_KMPINDAGATE_CATEGORY_MAINTAINER;
+			ROLE_KMPINDAGATE_CHANGERIGHT;
+			ROLE_KMPINDAGATE_OPTALL;
+			ROLE_KMPINDAGATE_PINDAGATE_READER;
+			ROLE_KMPINDAGATE_BACKSTAGE_MANAGER;
+			ROLE_KMPINDAGATE_CIRCULATION_DELETE;
+			ROLE_KMPINDAGATE_TRANSPORT_EXPORT;
+			ROLE_KMPINDAGATE_ATTRIBUTE
+		</areaRoles>
+		<request
+			path="tree.jsp*"
+			defaultValidator="roleValidator(role=ROLE_KMPINDAGATE_BACKSTAGE_MANAGER)"/>
+		<!-- 问卷模板权限 -->
+		<request
+			path="km_pindagate_template/kmPindagateTemplate*"
+			validatorParameter="recid=fdId,model=com.landray.kmss.km.pindagate.model.KmPindagateTemplate,adminRoleName=ROLE_KMPINDAGATE_CATEGORY_MAINTAINER">
+			<!-- 保存 -->
+			<query
+				queryString="method=save|saveadd"
+				validator="authCategoryReaderValidator(cateid=fdCategoryId)" />
+			<!-- 编辑和删除 -->
+			<query
+				queryString="method=edit|update|delete"
+				validator="authFieldValidator(type=SYS_EDITOR)|authCategoryEditorValidator(property=docCategory)" />
+			<!-- 阅读 -->
+			<query
+				queryString="method=view"
+				validator="authFieldValidator(type=SYS_READER)|authCategoryEditorValidator(property=docCategory)" />
+			<!-- 删除所有 -->
+			<query
+				queryString="method=deleteall"
+				validator="authCategoryEditorValidator(cateid=parentId)" />
+		</request>	
+
+        <!-- 问卷权限 --> 
+		<request
+			path="km_pindagate_main/kmPindagateMain*"
+			validatorParameter="recid=fdId,model=com.landray.kmss.km.pindagate.model.KmPindagateMain,templatemodel=com.landray.kmss.km.pindagate.model.KmPindagateTemplate,cateModel=com.landray.kmss.km.pindagate.model.KmPindagateTemplate">
+			<!-- 在模板树下新建 -->		
+			<query
+				queryString="method=add&amp;fdTemplateId=*"
+				validator="areaRoleValidator(role=ROLE_KMPINDAGATE_CREATE)&amp;authCategoryReaderValidator(templateid=fdTemplateId)" />
+			<!-- 保存 -->
+			<query
+				queryString="method=save|saveadd"
+				validator="areaRoleValidator(role=ROLE_KMPINDAGATE_CREATE)" />
+			<!-- 阅读 -->
+			<query
+				queryString="method=view"
+				validator="authFieldValidator(type=SYS_READER,isArea=true)|authCategoryEditorValidator(property=kmPindagateTemplate)|authFieldValidator(type=readpindagate,model=com.landray.kmss.km.pindagate.model.KmPindagateMain,recid=fdId)" />
+			<!-- 编辑 -->
+			<query
+				queryString="method=edit|update"
+				validator="authFieldValidator(type=creator)&amp;fieldValueValidator(fieldproperty=docStatus,value=10;11)|authFieldValidator(type=SYS_EDITOR)&amp;fieldValueValidator(fieldproperty=docStatus,value=20;30)" />
+		    <!-- 删除问卷 -->
+		    <query
+				queryString="method=delete"
+				validator="fieldValueValidator(fieldproperty=docStatus,value=10)&amp;authFieldValidator(type=creator)|areaRoleValidator(role=ROLE_KMPINDAGATE_DELETE)&amp;[areaRoleValidator(role=ROLE_KMPINDAGATE_OPTALL)|authCategoryEditorValidator(property=kmPindagateTemplate,role=ROLE_KMPINDAGATE_CATEGORY_MAINTAINER)]" />
+		    <!-- 修改调查属性 -->
+		    <query
+				queryString="method=updateProValue|updatePropert"
+				validator="areaRoleValidator(role=ROLE_KMPINDAGATE_ATTRIBUTE)" />
+			<!-- 视图列表下批量删除问卷 -->
+			<query
+				queryString="method=deleteall"
+				validator="roleValidator(role=ROLE_KMPINDAGATE_DELETE)&amp;[roleValidator(role=ROLE_KMPINDAGATE_OPTALL)|roleValidator(role=ROLE_KMPINDAGATE_CATEGORY_MAINTAINER)|roleValidator(role=ROLE_SYSCATEGORY_MAINTAINER)|fieldValueValidator(field=nodeType,value=CATEGORY)&amp;authCategoryEditorValidator(cateid=categoryId)|fieldValueValidator(field=nodeType,value=TEMPLATE)&amp;authCategoryEditorValidator(templateid=categoryId)]" />
+			<!-- 单个文档中设置开始结束调查（创建人及角色） -->
+			<query
+				queryString="method=startIndagate|stopIndagate|updateIndagateEndTime"
+				validator="authFieldValidator(type=creator)|areaRoleValidator(role=ROLE_KMPINDAGATE_SET)" />
+			<!-- 视图列表开始结束调查 -->
+			<query
+				queryString="method=startIndagateAll|stopIndagateAll"
+				validator="areaRoleValidator(role=ROLE_KMPINDAGATE_SET)" />
+			<!-- 催办未调查者 -->
+			<query
+				queryString="method=pressAbsentAll"
+				validator="areaRoleValidator(role=ROLE_KMPINDAGATE_PRESSABSEN)" />
+			<!-- 更新统计并查看调查结果 -->
+			<query
+				queryString="method=resultsView&amp;flag=updateStatisticResult"
+				validator="areaRoleValidator(role=ROLE_KMPINDAGATE_UPDATESTATISTICRESULT)" />  
+			<!-- 查看调查结果 -->
+			<query
+				queryString="method=resultsView"
+				validator="authFieldValidator(type=readresult)" />  
+			<!-- 问卷模版保存 -->
+			<query
+				queryString="method=saveAsTemplate"
+				validator="areaRoleValidator(role=ROLE_KMPINDAGATE_QUESTION_TMP_SET)|authCategoryReaderValidator(cateid=fdCategoryId,model=com.landray.kmss.km.pindagate.model.KmPindagateMainTemp)" />
+			<!-- 问卷模版复制 -->
+			<query
+				queryString="method=copyAsTemplate"
+				validator="areaRoleValidator(role=ROLE_KMPINDAGATE_QUESTION_TMP_SET)" />
+			<!-- 问卷属性按钮权限 -->
+			<query
+				queryString="method=viewProperties"
+				validator="authFieldValidator(type=showproperty)" />
+		</request>
+	    
+	    <!-- 参与问卷权限 --> 
+	    <request
+			path="km_pindagate_response/kmPindagateResponse*"
+			validatorParameter="recid=fdId,model=com.landray.kmss.km.pindagate.model.KmPindagateResponse">
+			<query
+				queryString="method=add"
+				validator="authFieldValidator(type=readpindagate,model=com.landray.kmss.km.pindagate.model.KmPindagateMain,recid=pindageteId)|fieldValueValidator(fieldproperty=fdPindagateType,value=code,recid=pindageteId,model=com.landray.kmss.km.pindagate.model.KmPindagateMain)" />
+			<query 
+				queryString="method=resultsDetail"
+				validator="authFieldValidator(type=readresult,model=com.landray.kmss.km.pindagate.model.KmPindagateMain,recid=fdMainId)"/>	
+		</request>
+	    
+	    <!-- 问卷题目模板权限 -->
+		<request
+			path="km_pindagate_main_temp/kmPindagateMainTemp*"
+			validatorParameter="recid=fdId,model=com.landray.kmss.km.pindagate.model.KmPindagateMainTemp,adminRoleName=ROLE_KMPINDAGATE_QUESTION_TMP_SET">
+			<query
+				queryString="method=save|saveadd"
+				validator="authCategoryReaderValidator(cateid=fdCategoryId)" />
+			<query
+				queryString="method=edit|delete|update"
+				validator="authFieldValidator(type=SYS_EDITOR)|authCategoryEditorValidator(property=docCategory)" />
+			<query
+				queryString="method=deleteall"
+				validator="authCategoryEditorValidator(cateid=parentId)" />
+			<query
+				queryString="method=copy|view"
+				validator="authFieldValidator(type=SYS_READER)|authCategoryEditorValidator(property=docCategory)" />
+		</request>
+
+	    <!-- 参数配置
+		<request
+			path="km_pindagate_config/kmPindagateConfig*"
+			validatorParameter="recid=fdId,model=com.landray.kmss.km.pindagate.model.KmPindagateConfig,adminRoleName=ROLE_KMPINDAGATE_PARAMETER_CONFIG">
+			<query
+				queryString="method=edit|update"
+				validator="areaRoleValidator(role=ROLE_KMPINDAGATE_PARAMETER_CONFIG)" />
+		</request>
+		 -->
+	    <!-- 参数配置 -->
+
+		<!-- 问卷模板过滤器 -->
+		<filters
+			modelName="com.landray.kmss.km.pindagate.model.KmPindagateTemplate">
+			<filter
+				type="SYS_READER"
+				expression="roleFilter(role=ROLE_SYSCATEGORY_MAINTAINER)" />	
+			<filter
+				type="SYS_READER"
+				expression="roleFilter(role=ROLE_KMPINDAGATE_CATEGORY_MAINTAINER)" />				
+			<filter
+				type="SYS_READER"
+				expression="authFieldFilter(field=authAllReaders.fdId)" />
+			<filter
+				type="SYS_READER"
+				expression="flagFieldFilter(field=authReaderFlag,value=1)" />
+			<filter
+				type="SYS_EDITOR"
+				expression="roleFilter(role=ROLE_SYSCATEGORY_MAINTAINER)" />	
+			<filter
+				type="SYS_EDITOR"
+				expression="roleFilter(role=ROLE_KMPINDAGATE_CATEGORY_MAINTAINER)" />				
+			<filter
+				type="SYS_EDITOR"
+				expression="authFieldFilter(field=authAllEditors.fdId)" />
+		</filters>
+
+		<!-- 问卷过滤器 -->
+		<filters
+			modelName="com.landray.kmss.km.pindagate.model.KmPindagateMain">
+			<filter
+				type="creator"
+				expression="authFieldFilter(field=docCreator.fdId)" />
+			<!--阅读问卷属性-->
+			<filter
+				type="SYS_READER"
+				expression="roleFilter(role=ROLE_KMPINDAGATE_READER)" />
+			<filter
+				type="SYS_READER"
+				expression="authFieldFilter(field=docCreator.fdId)" />
+			<filter
+				type="SYS_READER"
+				expression="authFieldFilter(field=authAllReaders.fdId)" />
+			<filter 
+				type="SYS_READER" 
+				expression="authFieldFilter(field=authAllEditors.fdId)"/>
+			<!--编辑问卷属性-->
+			<filter
+				type="SYS_EDITOR"
+				expression="authFieldFilter(field=authAllEditors.fdId)" />
+			<filter
+				type="readpindagate"
+				expression="roleFilter(role=ROLE_KMPINDAGATE_PINDAGATE_READER)" />
+			<filter
+				type="readpindagate"
+				expression="flagFieldFilter(field=fdPindagateType,value='code')" />
+			<filter 
+				type="readpindagate" 
+				expression="authFieldFilter(field=indagateParticipants.fdId)"/>
+			<filter
+				type="readpindagate"
+				expression="authFieldFilter(field=docCreator.fdId)" />
+			<!--更新统计调查问卷-->
+			<filter
+				type="statisticresult"
+				expression="roleFilter(role=ROLE_KMPINDAGATE_UPDATESTATISTICRESULT)" />	
+			<!--阅读调查结果-->
+			<filter
+				type="readresult"
+				expression="roleFilter(role=ROLE_KMPINDAGATE_RESULTREADER)" />	
+			<filter
+				type="readresult"
+				expression="authFieldFilter(field=indagateResultReaders.fdId)" />
+			<filter
+				type="readresult"
+				expression="authFieldFilter(field=indagateResultNotifiers.fdId)" />	
+			<!--阅读问卷属性(废弃),由view代替-->
+			<filter 
+				type="showproperty" 
+				expression="authFieldFilter(field=docCreator.fdId)" />
+			<filter 
+				type="showproperty" 
+				expression="roleFilter(role=ROLE_KMPINDAGATE_READER)" />
+			<filter 
+				type="showproperty" 
+				expression="authFieldFilter(field=authReaders.fdId)" />
+		</filters>  
+		<!-- 问卷题目模板过滤器 -->
+		<filters
+			modelName="com.landray.kmss.km.pindagate.model.KmPindagateMainTemp">
+			<filter
+				type="SYS_READER"
+				expression="roleFilter(role=ROLE_KMPINDAGATE_QUESTION_TMP_SET)" />
+			<filter
+				type="SYS_READER"
+				expression="authFieldFilter(field=authAllReaders.fdId)" />
+			<filter
+				type="SYS_READER"
+				expression="flagFieldFilter(field=authReaderFlag,value=1)" />
+			<filter
+				type="SYS_EDITOR"
+				expression="roleFilter(role=ROLE_KMPINDAGATE_QUESTION_TMP_SET)" />
+			<filter  
+				type="SYS_EDITOR"
+				expression="authFieldFilter(field=authAllEditors.fdId)" />
+		</filters>
+
+	</module>
+	<module urlPrefix="/sys/transport/">
+		<request path="sys_transport_export/SysTransportExport*">
+			<query validator="roleValidator(role=ROLE_KMPINDAGATE_TRANSPORT_EXPORT)"
+				queryString="fdModelName=com.landray.kmss.km.pindagate.model.KmPindagateMain" />
+		</request>
+	</module>
+	<!-- 类别设置目录下 替换处理人和 批量修改特权人 -->
+	<module urlPrefix="/sys/lbpmservice/">
+		<request 
+			path="support/lbpm_template/lbpmTemplate*">
+			<query
+				queryString="method=updateAuditor|updateTemplateAuditor|updateCategoryAuditor|doUpdateAuditor&amp;fdModelName=com.landray.kmss.km.pindagate.model.KmPindagateTemplate"
+				validator="roleValidator(role=ROLE_KMPINDAGATE_BACKSTAGE_MANAGER)" />
+		</request>
+		<request 
+			path="support/lbpm_template/lbpmPrivileger*">
+			<query
+				queryString="method=updatePrivileger|doUpdatePrivileger&amp;fdModelName=com.landray.kmss.km.pindagate.model.KmPindagateTemplate"
+				validator="roleValidator(role=ROLE_KMPINDAGATE_BACKSTAGE_MANAGER)" />
+		</request>
+	</module>
+	<!-- 列表自定义权限 -->
+	<module urlPrefix="/sys/profile/">
+		<request 
+			path="listShow/sys_listShow/sysListShow*">
+			<query
+				queryString="modelName=com.landray.kmss.km.pindagate.model.KmPindagateMain" 
+				validator="roleValidator(role=ROLE_KMPINDAGATE_DEFAULT)&amp;roleValidator(role=ROLE_KMPINDAGATE_BACKSTAGE_MANAGER)&amp;roleValidator(role=ROLE_KMPINDAGATE_PARAMETER_CONFIG)" />
+		</request>
+	</module>
+	<!-- 全文检索 -->
+	<module
+		messageKey=""
+		urlPrefix="/sys/ftsearch/">
+		<request path="searchBuilder*">
+			<query
+				queryString="modelName=com.landray.kmss.km.pindagate.model.KmPindagateMain"
+				validator="roleValidator(role=ROLE_KMPINDAGATE_DEFAULT)" />
+		</request>
+	</module>
+	
+	<!-- 通用流程模板设置权限 -->
+	<module urlPrefix="/sys/workflow/">
+		<request path="sys_wf_common_template/sysWfCommonTemplate*">
+			<query
+				queryString="fdModelName=com.landray.kmss.km.pindagate.model.KmPindagateTemplate"
+				validator="roleValidator(role=ROLE_KMPINDAGATE_PARAMETER_CONFIG)" />
+		</request>
+		<request path="sys_wf_template/sysWfTemplate*">			
+			<query
+				queryString="method=updateTemplateAuditor|updateAuditor&amp;fdModelName=com.landray.kmss.km.pindagate.model.KmPindagateTemplate"
+				validator="authCategoryEditorValidator(cateid=cateid)" />
+		</request>
+	</module>
+	
+	<!-- 文档视图列表批量修改权限 -->
+	<module urlPrefix="/sys/right/">
+		<request path="rightDocChange*">
+			<query
+				queryString="method=docRightEdit&amp;modelName=com.landray.kmss.km.pindagate.model.KmPindagateMain"
+				validator="areaRoleValidator(role=ROLE_KMPINDAGATE_CHANGERIGHT)&amp;[roleValidator(role=ROLE_KMPINDAGATE_OPTALL)|authCategoryEditorValidator(cateId=categoryId,cateModel=com.landray.kmss.km.pindagate.model.KmPindagateTemplate,role=ROLE_KMPINDAGATE_CATEGORY_MAINTAINER)]" />
+		</request>
+		<request path="cchange_doc_right/cchange_doc_right.jsp">
+			<query
+				queryString="modelName=com.landray.kmss.km.pindagate.model.KmPindagateMain"
+				validator="roleValidator(role=ROLE_KMPINDAGATE_CHANGERIGHT)&amp;[fieldValueValidator(field=nodeType,value=CATEGORY)&amp;authCategoryEditorValidator(cateid=categoryId)|fieldValueValidator(field=nodeType,value=TEMPLATE)&amp;authCategoryEditorValidator(templateid=categoryId,model=com.landray.kmss.km.pindagate.model.KmPindagateMain,templatemodel=com.landray.kmss.km.pindagate.model.KmPindagateTemplate)|roleValidator(role=ROLE_KMPINDAGATE_OPTALL)|roleValidator(role=ROLE_KMPINDAGATE_CATEGORY_MAINTAINER)|roleValidator(role=ROLE_SYSCATEGORY_MAINTAINER)]" />
+		</request>
+		<request path="cchange_tmp_right/cchange_tmp_right.jsp*">
+			<query
+				queryString="modelName=com.landray.kmss.km.pindagate.model.KmPindagateMain"
+				validator="roleValidator(role=ROLE_KMPINDAGATE_CHANGERIGHT)&amp;[fieldValueValidator(field=nodeType,value=CATEGORY)&amp;authCategoryEditorValidator(cateid=categoryId)|fieldValueValidator(field=nodeType,value=TEMPLATE)&amp;authCategoryEditorValidator(templateid=categoryId,model=com.landray.kmss.km.pindagate.model.KmPindagateMain,templatemodel=com.landray.kmss.km.pindagate.model.KmPindagateTemplate)|roleValidator(role=ROLE_KMPINDAGATE_OPTALL)|roleValidator(role=ROLE_KMPINDAGATE_CATEGORY_MAINTAINER)|roleValidator(role=ROLE_SYSCATEGORY_MAINTAINER)]" />
+		</request>
+	</module>
+	
+	<!-- 传阅权限 -->
+	<module
+		messageKey=""
+		urlPrefix="/sys/circulation/">
+		<request path="sys_circulation_main/sysCirculationMain*">
+			<query
+				queryString="fdModelName=com.landray.kmss.km.pindagate.model.KmPindagateMain&amp;method=add|save|saveadd"
+				validator="roleValidator(role=ROLE_KMPINDAGATE_CIRCULATION_CREATE,recid=fdModelId,model=com.landray.kmss.km.pindagate.model.KmPindagateMain)&amp;fieldValueValidator(recid=fdModelId,model=com.landray.kmss.km.pindagate.model.KmPindagateMain,fieldproperty=docStatus,value=30;31;32)" />
+			<query
+				queryString="fdModelName=com.landray.kmss.km.pindagate.model.KmPindagateMain&amp;method=delete"
+				validator="areaRoleValidator(role=ROLE_KMPINDAGATE_CIRCULATION_DELETE,recid=fdModelId,model=com.landray.kmss.km.pindagate.model.KmPindagateMain)&amp;[authCategoryEditorValidator(property=kmPindagateTemplate,recid=fdModelId,model=com.landray.kmss.km.pindagate.model.KmPindagateMain)|areaRoleValidator(role=ROLE_KMPINDAGATE_OPTALL)|areaRoleValidator(role=ROLE_KMPINDAGATE_CATEGORY_MAINTAINER)|areaRoleValidator(role=ROLE_SYSCATEGORY_MAINTAINER)]" />
+			<query
+				queryString="fdModelName=com.landray.kmss.km.pindagate.model.KmPindagateMain"
+				validator="roleValidator(role=ROLE_KMPINDAGATE_DEFAULT)" />
+		</request>
+	</module>
+	
+	<quartz
+		messageKey="km-pindagate:kmPindagateResponse.updateStatisticsTiming"
+		jobService="kmPindagateResponseService"
+		jobMethod="updateStatisticsTiming"
+		enable="true"
+		cronExpression="0 0 3 ? * *"
+		runType="SINGLENODE"
+		description="km-pindagate:kmPindagateResponse.updateStatisticsTiming.description" />
+		
+	<ftSearch
+		modelName="com.landray.kmss.km.pindagate.model.KmPindagateMain"
+		boost="2.0"
+		timeField="fdLastModifiedTime">
+		<luceneField
+			name="subject"
+			property="docSubject"
+			type="Text" />
+		<luceneField
+			name="template"
+			property="kmPindagateTemplate.fdName"
+			type="Text" />
+		<luceneField
+			name="content"
+			property="fdQuestionExplain"
+			type="text" />
+		<luceneField
+            name="category"
+            property="kmPindagateTemplate.docCategory.fdHierarchyId"
+            type="Text" />
+		<luceneField
+			name="creator"
+			property="docCreator.fdName"
+			type="Text" />
+		<luceneField
+			name="createTime"
+			property="docCreateTime"
+			type="keyword" />
+	</ftSearch>
+	
+	<!-- 关联机制 -->
+	<relation
+		modelName="com.landray.kmss.km.pindagate.model.KmPindagateMain"
+		messageKey="km-pindagate:module.km.pindagate" />
+<treeNodes type="config">
+	<treeNode messageKey="km-pindagate:module.km.pindagate">
+		<treeNode messageKey="km-pindagate:kmPindagateMain.tree.category.set" 
+		url="/sys/category/sys_category_main/sysCategoryMain_tree.jsp?modelName=com.landray.kmss.km.pindagate.model.KmPindagateTemplate&amp;mainModelName=com.landray.kmss.km.pindagate.model.KmPindagateMain&amp;categoryName=docCategory&amp;templateName=kmPindagateTemplate">
+		</treeNode>		
+		<treeNode messageKey="km-pindagate:table.kmPindagateTemplate"
+         url="/sys/category/categorytree.jsp?modelName=com.landray.kmss.km.pindagate.model.KmPindagateTemplate&amp;url=/km/pindagate/km_pindagate_template/kmPindagateTemplate.do?method=listChildren%26parentId=%21%7Bvalue%7D"
+         target="2">
+         </treeNode>		
+		<treeNode messageKey="km-pindagate:kmPindagate.tree.common.template"
+		url="/sys/workflow/sys_wf_common_template/sysWfCommonTemplate.do?method=list&amp;fdModelName=com.landray.kmss.km.pindagate.model.KmPindagateTemplate&amp;fdKey=pindagateMain">		
+		</treeNode>
+		<treeNode messageKey="km-pindagate:kmPindagateMain.title.tree.category.set"
+		url="/km/pindagate/km_pindagate_main_temp/sysCategoryMain_tree.jsp?modelName=com.landray.kmss.km.pindagate.model.KmPindagateMainTemp">
+		</treeNode>
+		<treeNode messageKey="km-pindagate:kmPindagate.tree.question.template.set"
+		 url="/sys/category/categorytree.jsp?modelName=com.landray.kmss.km.pindagate.model.kmPindagateMainTemp&amp;url=/km/pindagate/km_pindagate_main_temp/kmPindagateMainTemp.do?method=listChildren%26parentId=%21%7Bvalue%7D%26ower=1%26orderby=fdId%26ordertype=down"
+         target="2">
+		</treeNode>
+		<treeNode messageKey="km-pindagate:kmPindagate.tree.parameter.config"
+		url="/km/pindagate/km_pindagate_config/kmPindagateConfig.do?method=edit">
+		</treeNode>
+	</treeNode>	
+</treeNodes>
+		
+	<homePage
+		urlPrefix="km/pindagate"
+		url="/sys/portal/page.jsp#j_start=/km/pindagate/index.jsp&amp;j_target=_iframe&amp;join=all"
+		messageKey="km-pindagate:module.km.pindagate"
+		config="/moduleindex_notopic.jsp?nav=/km/pindagate/tree.jsp" />
+		
+	<categoryMng
+		modelName="com.landray.kmss.km.pindagate.model.KmPindagateTemplate"
+		serviceName="kmPindagateTemplateTreeService"
+		messageKey="km-pindagate:kmPindagate.flow.tree.title"
+		adminRoleName="ROLE_KMPINDAGATE_CATEGORY_MAINTAINER" />
+		
+	<categoryMng
+		modelName="com.landray.kmss.km.pindagate.model.KmPindagateMainTemp"
+		serviceName="kmPindagateMainTempTreeService"
+		messageKey="km-pindagate:kmPindagate.temp.tree.title" 
+		adminRoleName="ROLE_KMPINDAGATE_QUESTION_TMP_SET" />
+
+	<!-- 网上调查流程配置 -->
+	<flowDef
+		modelName="com.landray.kmss.km.pindagate.model.KmPindagateMain"
+		templateModelName="com.landray.kmss.km.pindagate.model.KmPindagateTemplate"
+		key="pindagateMain"
+		templatePropertyName="kmPindagateTemplate"
+		moduleMessageKey="km-pindagate:kmPindagate.tree.title"
+		type="oa" />
+		
+	<profileConfig
+		key="km/pindagate"
+		messageKey="{km-pindagate:module.km.pindagate}" 
+		url="/sys/profile/moduleindex.jsp?nav=/km/pindagate/tree.jsp" 
+		icon="km_pindagate"
+		type="ekp"
+		description="{km-pindagate:kmPindagate.profileCfg.description}"
+		order="306" />				
+</configs>

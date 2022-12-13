@@ -1,0 +1,73 @@
+@charset "utf-8";
+@IMPORT url("../../../../../sys/mobile/css/themes/default/listview.css");
+div,li,h3,table,p,ul,li{ padding:0; margin:0;} em{ font-style:normal;}
+.muiShoppingTrolleyList{ background:#fff;}
+.muiShoppingTrolleyList li{ display:block; margin:0; border-bottom:1px solid #e3e3e3; padding:0; box-sizing:content-box; }
+.muiShoppingTrolleyList li:last-child{ display:block; border-bottom:0px;margin:0; padding:0; box-sizing:content-box; }
+.muiShoppingTrolleyList li>a{width:100%; display:table;}
+.muiShoppingTrolleyList li>a:visited .applyCardInfo h3{ color:#888;}
+
+.mblScrollableView .muiShoppingTrolleyList{ }
+.mblScrollableView .muiShoppingTrolleyList li a{
+	padding: 1rem .5rem;
+	-webkit-box-sizing:border-box;
+			box-sizing:border-box;
+}
+.mblScrollableView.muiApplyItem{ margin:0;}
+.applyCardIcon{ display:table-cell; width:7.5rem; height:5.1rem; overflow:hidden; position:relative; }
+.applyCardIcon>span{ display:block;}
+.applyCardIcon img{ width:7.5rem; height:6rem;}
+                                            
+.applyCardInfo{ display:table-cell; padding-left:0.6rem; vertical-align:top}
+.applyCardInfo h3{width:65%;float:left;margin: 0px 0px 0.8rem; color: #0c0c0c; line-height: 1.8rem; overflow: hidden; font-size: 1.4rem; 
+                   	font-weight: normal; display:-webkit-box; -ms-text-overflow: ellipsis; 
+                   	max-height: 3.6rem; min-height:3.2rem; -webkit-line-clamp: 2; -webkit-box-orient: vertical;}
+.applyCardInfo .price{ text-align: right; width: 35%;float: right;font-size: 1.4rem;font-weight: bold}
+  
+.applyDetail{ display:table; width:100%;}
+.applyDetail>div{ display:table-cell; padding:0; margin:0; vertical-align:bottom;}
+.applyDetail .code{ }
+.applyDetail .code span{ display:inline-block;color:#989898; font-size:1.2rem;}
+.applyDetail .code em{ font-size:1.6rem; color:#f15353; margin-right:0.2rem;}
+.applyDetail .num{ text-align:right; color:#989898; white-space:nowrap; font-size:1.2rem;padding-right: 8px}
+.applyDetail .num .mui{ font-size:1.6rem; line-height:1.6rem; margin-right:0.5rem; position:relative; top:-1px;}
+
+
+.muiAssetApplyItem ul li:first-child{padding:1.3rem 0 0.5rem}
+
+.muiApplyItem{ margin-top:0rem;}
+.muiApplyItem h3.title{ background:#f7f7f7; text-overflow:ellipsis; white-space:nowrap; border-top:1px solid #e5e5e5; 
+                        border-bottom:1px solid #e5e5e5; height:3.5rem; line-height:3.5rem; padding-left:1.3rem; color:#000;
+                         font-size:1.6rem;}
+.muiApplyItem .content{ background:#fff;padding-left:1.3rem}
+.muiApplyItem .attachContent{ background:#fff;}
+
+.muiToReceive{
+	border-color: #f27d62;
+	color: #f27d62;
+}
+
+.muiCateItem:active {
+	background-color: #dfe1e0;
+}
+
+.muiCateItem .muiCateSel {
+	position: relative;
+	font-size: 0.8rem;
+	line-height: 1.2rem;
+	text-align: center;
+}
+.muiCateSeled .muiCateSel::after {
+	position: absolute;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	content: '\2713';
+	color: white;
+}
+
+.muiCateSeled .muiCateSel{
+	background-color: #20A0FF;
+	border: 0.1rem solid #20A0FF;
+}

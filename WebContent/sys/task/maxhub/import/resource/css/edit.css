@@ -1,0 +1,251 @@
+		.mhui-template-body{
+			background:none !important ;
+		}
+		
+		.addTaskContent .addBoxTop{
+			display:flex;
+		
+		}
+		.addTaskContent .addBoxTop .qcode{
+			margin: 3.25rem  0 0 10.16rem;		
+		}
+		.addTaskContent .addBoxTop .qcode div{
+			width:18.75rem;
+			height:18.75rem;
+		
+		}
+		
+		.addTaskContent .addBoxTop .qcode p{
+			text-align:center;
+			font-size:1.675rem;
+			height:3.75rem;
+			line-height:3.75rem;
+		}
+		.addTaskContent .addBoxTop .taskInfo{
+			
+			min-height:22rem;
+			padding:3.25rem;
+		}
+		
+		.taskInfo .mhuiFormInput{
+			width:24rem;
+			height:3.5rem;
+			font-size:1.625rem;
+		}
+		
+		.taskInfo .mhuiTaskLabel{
+			font-size:1.625rem;
+			width:8rem;
+			display:inline-block;
+			padding-right:0.5rem;
+		}
+		
+		.taskInfo .mhuiFormSelector{
+			width:24rem;
+			height:3.5rem;
+			font-size:1.625rem;
+		}
+		
+		.taskInfo .mhuiFormItem{
+			padding-top:1.312rem;
+		}
+	
+		/* selector */
+		.mhuiCustomSelector{
+			position:relative;
+			display:table;	
+		}
+		.selectedNode{
+			border:1px solid #d5d5d5;
+		
+			background: #F2F6FC;
+			width:24rem;
+			height:3.5rem;
+			font-size:1.625rem;
+			line-height:3.5rem;
+			padding-left:0.5rem;
+			vertical-align:middle;
+			display:inline-block;
+			
+			/* background-image: url(./img/triangle_down.png);
+		    background-repeat: no-repeat;
+		    background-size: 2.3rem 2rem;
+		    background-position: 98% 50%; */
+		}
+		
+		.ListOptions{
+			width:24rem;
+			background:#FFF;
+			
+			position:relative;
+			padding:1rem 1.5rem;
+			border:1px solid #eee;
+			position:absolute;
+			top:3.8rem;
+			right:0;
+			z-index:1;
+			border-bottom-right-radius: 8px;
+			border-bottom-left-radius: 8px;
+			
+				
+		}
+		
+		.ListOptions li{
+			list-style:none;
+			font-size:1.625rem;
+			height:3rem;
+			line-height:3rem;
+			text-align:center;
+			cursor:pointer;
+		}
+		
+		.addBtnAttempt{
+			display:inline-block;
+		}
+		
+		.SelectorLabelText{
+			display:inline-block;
+			font-size:1.625rem;
+			height:3.5rem;
+			line-height:3.5rem;
+			width:8rem;
+			padding-right:0.5rem;
+			vertical-align:top;
+		}
+		
+		.taskContent{
+			display:inline-block;
+			position:relative;
+		
+		}
+		.performSubject{
+			width:68.75rem;
+			margin:0 auto;
+			font-size:1.5rem;
+		}
+		.addBoxRquire{
+			color:red;
+			font-size:1.5rem;
+		}
+		.addBoxBottom{
+			background: #F2F6FC;
+			border-radius: 8px;
+			width:68.75rem;
+			min-height:16.44rem;
+			margin:0 auto;
+			display:flex;
+			flex-wrap:wrap;
+		}
+		.underTakerList{
+			display:flex;
+			padding:0;
+			margin:0;
+			flex-wrap:wrap;
+		}
+		.underTakerList li{
+			list-style:none;
+			margin:1.44rem 0 0 1.44rem;
+			position:relative;
+		}
+		.underTakerList img{
+			border-radius:50%;
+			width:5rem;
+			height:5rem;
+		}
+		
+		.underTakerList .underTakerName{
+			text-align:center;
+			padding-top:1rem;
+			font-size:1.2rem;
+		}
+		.addUnderTakerBtn{
+			width:5rem;
+			height:5rem;
+
+		
+			border: 1px solid #D5D5D5;
+			border-radius:50%;
+
+			position:relative;
+		}
+		.addUnderTakerBtn .lineh,.addUnderTakerBtn .lineV{
+			width:1.88rem;
+			height:0.19rem;
+			background: #D5D5D5;
+			border-radius: 8px;
+			position:absolute;
+			top:50%;
+			left:50%;
+			margin-left:-0.94rem;
+		}
+		.addUnderTakerBtn .lineV{
+			transform: rotate(90deg);
+		}
+		
+		
+		
+		.underTakerNode{
+			padding:0;margin:0;
+			height:23rem;
+			overflow-y:scroll;
+		}
+		
+		.underTakerNode li{
+			list-style:none;
+			width:48%;
+			padding-left:2%;
+			font-size:1.475rem;
+			display:inline-block;
+			height:5rem;
+			line-height:5rem;
+			
+		}
+		
+		.underTakerNode li img{
+			border-radius:50%;
+			width:4rem;
+			height:4rem;
+			margin-left:2%;
+		}
+		
+		.underTakerNode li input{
+			width:1.4rem;
+			height:1.4rem;
+			margin-left:1%;
+		}
+		.underTakerNode li span{
+			padding-left:2%;
+		}
+		
+		.underTakerCancel{
+			opacity:0.3;
+			font-size:1.63rem;
+			position:absolute;
+			right:0;
+			top:0;
+		}
+		.SelectorValidate{
+			color:red;
+		}
+		.SelectorComment{
+			text-align:right;
+			padding-right:0.2rem;
+			color:red;
+			margin:0;
+		}
+		.addAttchmentBtn{
+			position:relative;
+			width:5rem;
+			height:5rem;
+			border:1px solid #D5D5D5;
+		}
+		.addAttchmentBtn div{
+			border: 1px solid #d5d5d5;
+		    width: 3rem;
+		    position: absolute;
+		    top: 2.5rem;
+		    left: 1rem;
+		}
+		.addAttchmentBtn .btnRow{
+			transform:rotate(90deg);
+		}

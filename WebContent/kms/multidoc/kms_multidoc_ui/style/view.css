@@ -1,0 +1,264 @@
+@CHARSET "UTF-8";
+
+/*@在线预览*/
+.readOnlineSign {
+	display: inline-block;
+	cursor: pointer;
+	padding: 5px 10px;
+	background-color: #e4f0fe;
+	margin: 3px;
+	width: 90%;
+	WORD-WRAP: break-word;
+	TABLE-LAYOUT: fixed;
+	word-break: break-all;
+}
+.unfoldOrRetract {
+	max-width: 20em;
+    display: inline-block;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    margin-bottom: -6px;	
+}
+.expand {
+	margin-left: 12px;
+	padding-left: 10px;
+	font-size: 13px;
+	text-decoration: underline;
+	background: url(images/doc_fold_arrow.png) no-repeat 0 5px;
+	cursor: pointer;
+}
+
+
+.tb_property {
+	margin: 10px;
+}
+
+.tb_property tr td {
+	padding: 6px 10px;
+}
+
+.tb_property tr td label {
+	margin: 4px 20px 4px 0;
+	line-height: 30px;
+}
+
+.lui_km_subjects {
+	color: #60afda;
+	font-size: 18px;
+	height: 20px;
+	float: left
+}
+
+.lui_form_content_frame .com_slideDown {
+	color: #3e9ece;
+}
+
+.lui_form_content_frame .lui_multidoc_titles {
+	color: #3e9ece;
+}
+
+.lui_multidoc_pro {
+	border-collapse: collapse;
+	background-color: #FFFFFF;
+	margin: 10px;
+	width: 700px;
+}
+
+.lui_multidoc_pro .td_normal_title {
+	text-align: center;
+}
+
+.td_normal_title {
+	text-align: center;
+}
+
+.com_author {
+	font-size: 14px;
+	margin-right: 1px !important;
+}
+
+#showAuthorDIV {
+	display:none;
+	position: fixed;
+	background: #FFFFFF;
+	box-shadow: 0 1px 4px 0 rgba(0,0,0,0.20);
+	border-radius: 1px;
+	padding: 5px;
+	z-index: 999;
+	word-break: break-all;
+	text-align: justify;
+}
+
+#showAuthorDIV > a {
+	color: #666666 !important;
+}
+
+#showAuthorDIV > a:hover {
+	color: #4285f4 !important;
+}
+
+.kms_doc_view .img_small_box {
+	height: 137px;
+	padding: 16px;
+	background: #fff;
+	margin-bottom: 13px;
+}
+
+.clrfix {
+	zoom: 1;
+}
+
+ul {
+	list-style: none;
+}
+
+div[name=rtf_docContent] ul{
+	padding-left:40px;
+	margin:auto;
+	list-style:disc;
+}
+	
+.img_small_box li {
+	float: left;
+}
+
+.lui_multidoc_tagEdit input {
+	margin-top: 5px;
+	width: 100%;
+	margin-bottom: 5px;
+}
+.lui_multidoc_tagEdit .tag_empty_tip{
+	color:red; 
+	display:none;
+}
+
+.lui_multidoc_tagEdit {
+	margin: 20px 30px;
+}
+
+.lui_multidoc_baseInfo_ul {
+	padding: 0px 4px 0px 6px;
+}
+
+.lui_multidoc_baseInfo_ul li {
+	padding: 4px 0;
+}
+
+.lui_multidoc_slideUp {
+	float: right;
+	padding-left: 17px;
+	font-size: 14px;
+	background: url(img/lui_multidoc_content_btn.png) no-repeat 0px 0;
+	cursor: pointer;
+}
+
+.lui_multidoc_slideDown {
+	float: right;
+	padding-left: 17px;
+	font-size: 14px;
+	background: url(img/lui_multidoc_content_btn.png) no-repeat 0 0;
+	cursor: pointer;
+}
+
+
+.lui_knowledge_reason_box {
+	padding: 10px;
+}
+
+.lui_knowledge_recover_title {
+	margin: 5px 0px 10px;
+}
+
+.noShowBorder{
+	border: #f0f0f0 2px solid;
+}
+.simdoc_ul{
+	list-style:square;
+	padding-left:1.5rem;
+	
+}
+.simdoc_li{
+	padding: 4px 0px;
+}
+
+.simdoc_a{
+	margin-right:5px;
+	word-break:break-all;	
+}
+.lui_form_subject {
+	word-wrap:break-word;
+}
+
+
+.lui_multidoc_form_content {
+	padding-left: 25px!important;
+	padding-right: 25px!important;	
+}
+
+
+.lui_upload_img_container {
+	padding: 0!important;
+    margin-right: 0!important;
+    border: none!important;
+}
+
+
+.lui_multidoc_description {
+	padding:10px 10px 0 0;
+	text-indent:0em;
+	word-break:break-all;
+}
+
+.lui_multidoc_header_text {
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.lui_upload_img_box {
+	width: 100%!important;
+	display: block!important;
+}
+.lui_knowledge_view_thumb {
+    background-color: #fff;
+    overflow: hidden;
+    margin: 0;
+    /* border-bottom: 1px solid #ebebeb; */
+    text-align: center;
+    margin-bottom: 5px;
+}
+.lui_knowledge_view_thumb>img {
+	width:100%;
+	max-height:225px;
+	padding: 0;
+	display: block;
+}
+
+.lui_knowledge_view_suspension{
+	margin-right: 3px;
+	overflow: hidden;
+	z-index: 9999;
+	position: absolute;
+	left:120px;
+	width: 850px;
+	text-align:center;
+	background: #ebebeb;
+	border-bottom-left-radius: 4px;
+	border-bottom-right-radius: 4px;
+	border-top-left-radius: 4px;	
+	border-top-right-radius: 4px;
+}
+.lui_knowledge_view_hidden_suspension{
+	  margin-right:3px;relative;
+	  font-weight:normal;
+	  width:90px;
+	  display:inline-block;
+	  white-space:nowrap;
+	  overflow:hidden;
+	  text-overflow:ellipsis;
+	  vertical-align:middle;
+}
+
+.lui_tabpanel_sucktop_content_c>div>div>div>div[data-lui-type='lui/panel!Content'] {
+    padding: 8px !important;
+}

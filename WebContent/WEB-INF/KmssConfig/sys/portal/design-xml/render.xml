@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<root xmlns="http://www.landray.com.cn/schema/lui" xmlns:degign="http://www.landray.com.cn/schema/design"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="
+	http://www.landray.com.cn/schema/lui
+	../../../sys/ui/lui.xsd
+	http://www.landray.com.cn/schema/design
+	../../../design-xml.xsd">
+	<!-- 自定义页面 -->
+	<render format="sys.ui.textMenu" id="sys.portal.menu"
+		name="门户页面菜单" type="Javascript"
+		for="module"
+		help="/sys/portal/header/menu-help.jsp">
+		<code src="/sys/portal/header/menu.js"/>
+	</render>
+	
+	<render format="sys.ui.textMenu" id="sys.portal.menu.anonymous"
+		name="匿名门户页面菜单" type="Javascript"
+		for="module"
+		help="/sys/portal/header/menu-help.jsp">
+		<code src="/sys/portal/template/anonymous/menu/menu.js"/>
+	</render>
+	
+	<!-- 二级树呈现 -->
+	<render format="sys.ui.treeMenu2" id="sys.portal.treeMenu2"
+		name="导航二级树呈现" type="Javascript"
+		for="portal" css="theme!list"
+		thumb="/sys/portal/render/tree2.jpg" help="">
+		<vars>
+			<var key="target" kind="enumType" name="{sys-ui:render.var.target}" default="_top">
+				{type:"sysUi_target", showType:"radio"}
+			</var>
+		</vars>
+		<code src="/sys/portal/render/tree2.js"/>
+	</render>
+	
+	<!-- 二级树形菜单门户风格2 -->
+	<render id="sys.ui.treeMenu2.portal2" name="{sys-ui:render.treeMenu2.portal}" 
+		type="Javascript" format="sys.ui.treeMenu2"
+		thumb="/sys/ui/extend/dataview/render/help/treemenu2-portal.jpg">
+		<vars>
+			<var key="target" kind="enumType" name="{sys-ui:render.var.target}" default="_blank">
+				{type:"sysUi_target", showType:"radio"}
+			</var>
+		</vars>
+		<code src="/sys/portal/render/treeMenu2.js"></code>
+	</render>
+	
+	<!-- 二级树形菜单门户风格3（为支持默认页眉门户页面下平铺显示系统导航菜单） -->
+	<render id="sys.ui.treeMenu2.portal3" name="{sys-portal:render.treeMenu2.portal3}" 
+		type="Javascript" format="sys.ui.treeMenu2" >
+		<code src="/sys/portal/render/treeMenu2_portal3.js"></code>
+	</render>	
+	
+	<render format="sys.ui.slide" id="sys.ui.slide.topic"
+		name="{sys-portal:render.slide.topic}" type="Javascript" css="theme!dataview"
+		thumb="/sys/ui/extend/dataview/render/help/slide.jpg"
+		help="/sys/ui/extend/dataview/render/help/slide-help.jsp">
+		<vars>
+			<var key="target" kind="enumType" name="{sys-ui:render.var.target}" default="_blank">
+				{type:"sysUi_target", showType:"radio"}
+			</var>
+			<var name="{sys-ui:render.var.tensile}" kind="enumValue" key="stretch" default="true">
+				{
+				"values":[{
+				"text":"{sys-ui:render.var.picwinsize}",
+				"value":"true"
+				}],
+				"showType":"checkbox"
+				}
+			</var>
+			<var key="showTitle" kind="enumValue" name="{sys-ui:render.var.yestitle}" default="true">
+				{
+					"values":[{
+					"text":"{sys-ui:render.var.yes}",
+					"value":"true"
+					}],
+					"showType":"checkbox"
+				}
+			</var>
+			<var key="SwitchingFrequency" kind="int" name="{sys-portal:render.var.SwitchingFrequency}" default="5000">
+			      {"help":"ms"}
+			</var>
+		</vars>
+		<code src="/sys/portal/sys_portal_topic/resource/sysPortalTopic_slide.js" />
+	</render>
+	<!-- 图标文本表格展现 -->
+	<render format="sys.ui.picMenu" id="sys.ui.picMenu.shortCut"
+		name="{sys-portal:render.picMenu.shortCut}" type="Javascript" css="theme!dataview"
+		thumb="/sys/portal/designer/images/picmenu-portlet-shortCut.png"
+		>
+		<vars>
+			<var name="{sys-ui:render.var.showmore}" kind="enumValue" key="showMore" default="true">
+				{
+				"values":[{
+				"text":"{sys-ui:render.var.displayover}",
+				"value":"true"
+				}],
+				"showType":"checkbox"
+				}
+			</var>
+			<var key="target" kind="enumType" name="{sys-ui:render.var.target}" default="_blank">
+				{type:"sysUi_target", showType:"radio"}
+			</var>
+		</vars>
+		<code src="/sys/portal/designer/js/picmenu.js" iconChange="false"
+			showMore="true" />
+	</render>	
+	<render id="sys.portal.navTree.app" name="{sys-portal:render.navTree.app}" 
+		type="Javascript" format="sys.ui.treeMenu2"
+		thumb="/sys/ui/extend/dataview/render/help/treemenu2-portal.jpg">
+		<code src="/sys/portal/render/navTree.js"></code>
+	</render>
+	
+	<render id="sys.render.echarts.app" name="{sys-portal:render.echarts.app}"
+			type="Javascript" format="sys.ui.treeMenu2"
+			thumb="/sys/ui/extend/dataview/render/help/treemenu2-portal.jpg">
+		<code src="/sys/portal/render/navEcharts.js"></code>
+	</render>
+	
+</root>

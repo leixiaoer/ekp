@@ -1,0 +1,564 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<version xmlns="http://www.example.org/version-config" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.example.org/version-config ../../../version.xsd">
+	<modifies>
+		<modify>
+			<description>#164458 修复 用户场所切换后，访问业务建模应用的文档提示无权限</description>
+			<author>谭昌香</author>
+			<revision-time>2022-05-12</revision-time>
+			<relation>
+				<relation-module>core</relation-module>
+			</relation>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#157476 修复 集团分级授权时，查看场所漫游用户设置异常</description>
+			<author>潘永辉</author>
+			<revision-time>2022-01-04</revision-time>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#140947 修复 修复获取管理员数量出错</description>
+			<author>潘永辉</author>
+			<revision-time>2021-06-02</revision-time>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#131596 新增 新增知识仓库标准版</description>
+			<author>李芳敏</author>
+			<revision-time>2021-03-08</revision-time>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#118286 修复 组织架构权限管理报错（was环境有问题）</description>
+			<author>钟清学</author>
+			<revision-time>2020-09-03</revision-time>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#114367 修复 角色分配页面存在安全问题</description>
+			<author>叶正平</author>
+			<revision-time>2020-08-06</revision-time>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#97775 修复【招聘管理】招聘首页，JS报错</description>
+			<author>徐斌</author>
+			<revision-time>2020-07-08</revision-time>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#92537 优化 场所设置时点击“增加所属组织”快捷键没有把所属组织显示到可漫游用户中</description>
+			<author>钟清学</author>
+			<revision-time>2020-04-16</revision-time>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#93769 新增 组织权限管理帮助中心部署</description>
+			<author>钟清学</author>
+			<revision-time>2020-03-09</revision-time>
+			<relation>
+				<relation-module>sys/organization</relation-module>
+			</relation>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#95296 优化 ie8浏览器，公共角色分配新建时，输入角色名回车报错</description>
+			<author>钟清学</author>
+			<revision-time>2020-02-18</revision-time>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#95376 修复 集团分级数据迁移，选择迁移业务数据；场所分配模式选择将所有的业务数据都分配到指定的场所 ；目标场所字段在迁移后变形</description>
+			<author>钟清学</author>
+			<revision-time>2020-02-17</revision-time>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#95379 修复 集团分级授权模块以下字段没有翻译</description>
+			<author>钟清学</author>
+			<revision-time>2020-02-12</revision-time>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#95007 修复 数据迁移已经选择了目标场所，开始迁移仍然提示目标场所 不能为空</description>
+			<author>钟清学</author>
+			<revision-time>2020-02-04</revision-time>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#92538 优化 新建角色时禁止通过回车提交</description>
+			<author>钟清学</author>
+			<revision-time>2020-01-13</revision-time>
+			<baseline>V15.0.3.R.20200117</baseline>
+		</modify>
+		<modify>
+			<description>#93180 优化 业务数据迁移“创建人为空则迁移到该场所”选择项带红星，但不选择也能执行数据迁移</description>
+			<author>钟清学</author>
+			<revision-time>2020-01-13</revision-time>
+			<baseline>V15.0.3.R.20200117</baseline>
+		</modify>
+		<modify>
+			<description>#92600 优化 修改场所的所属组织，需要重新切换组织可见性配置才生效</description>
+			<author>钟清学</author>
+			<revision-time>2020-01-08</revision-time>
+			<baseline>V15.0.3.R.20200117</baseline>
+		</modify>
+		<modify>
+			<description>#91634 优化 允许超管创建场所角色 by钟清学</description>
+			<author>钟清学</author>
+			<revision-time>2019-12-24</revision-time>
+			<baseline>V15.0.3.R.20200117</baseline>
+		</modify>
+		<modify>
+			<description>#65940 修复 组织权限管理集团分级授权“场所设置”增加导出为初始数据按钮</description>
+			<author>杨铮</author>
+			<revision-time>2019-12-04</revision-time>
+			<baseline>V15.0.3.R.20200117</baseline>
+		</modify>
+		<modify>
+			<description>#88040 修复 公共角色那里 ，设置分级角色，编辑页面不应该出现用户指派</description>
+			<author>叶正平</author>
+			<revision-time>2019-11-14</revision-time>
+			<baseline>V15.0.3.R.20200117</baseline>
+		</modify>
+		<modify>
+			<description>#87959 修复 在场所设置选择不允许场所创建创建角色，但是实际是可以创建的</description>
+			<author>钟清学</author>
+			<revision-time>2019-11-14</revision-time>
+			<baseline>V15.0.3.R.20200117</baseline>
+		</modify>
+		<modify>
+			<description>#84397 修复 集团分级授权环境，有2个权限管理角色，MessageKey为空时报错的问题</description>
+			<author>吴兵</author>
+			<revision-time>2019-11-14</revision-time>
+			<baseline>V15.0.3.R.20200117</baseline>
+		</modify>
+		<modify>
+			<description>#87537 修复 集团分级授权环境，选择分类后点击场所切换按钮没反应</description>
+			<author>钟清学</author>
+			<revision-time>2019-11-07</revision-time>
+			<baseline>V15.0.2.R.20191108</baseline>
+		</modify>
+		<modify>
+			<description>#83794 修复【服务问题单】权限管理，设置角色权限，无法选择继承角色</description>
+			<author>钟清学</author>
+			<revision-time>2019-10-17</revision-time>
+			<baseline>V15.0.2.R.20191108</baseline>
+		</modify>
+		<modify>
+			<description>#58814 修复 当前场所权限管理中新建的角色，继承角色待选列表应该展现公共角色分配中新建的分级权限角色</description>
+			<author>钟清学</author>
+			<revision-time>2019-09-03</revision-time>
+			<baseline>V15.0.1.R.20190906</baseline>
+		</modify>
+		<modify>
+			<description>#80657 修复 员工授权查询越权访问</description>
+			<author>叶正平</author>
+			<revision-time>2019-08-30</revision-time>
+			<baseline>V15.0.1.R.20190906</baseline>
+		</modify>
+		<modify>
+			<description>#78600 修复 开启了集团分级授权，创建了场所角色又没有指派用户的时候，查看这个模块的权限引用会报空指针异常</description>
+			<author>朱道标</author>
+			<revision-time>2019-08-05</revision-time>
+			<baseline>V15.0.1.R.20190906</baseline>
+		</modify>
+		<modify>
+			<description>#78664 修复 移动端在场所二新建流程，提交之后，流程会流转到场所一</description>
+			<author>王逍</author>
+			<revision-time>2019-07-30</revision-time>
+			<baseline>V15.0.1.R.20190906</baseline>
+		</modify>
+		<modify>
+			<description>#70795 新增 流程审批新增右侧审批模式</description>
+			<author>王逍</author>
+			<revision-time>2019-07-11</revision-time>
+			<baseline>V15.0.0.R.20190712</baseline>
+		</modify>
+		<modify>
+			<description>#74607 修复 用户切换场所，二级列表页的门户主题样式错乱</description>
+			<author>杨铮</author>
+			<revision-time>2019-07-10</revision-time>
+			<relation>
+				<relation-module>core</relation-module>
+				<relation-module>sys/ui</relation-module>
+			</relation>
+			<baseline>V15.0.0.R.20190712</baseline>
+		</modify>
+		<modify>
+			<description>#69610 修复 修改某个业务模块的一个权限的用户指派人，在后台产生的日志操作记录中，显示的不是角色名，而是其对应的资源文件</description>
+			<author>朱道标</author>
+			<revision-time>2019-06-28</revision-time>
+			<baseline>V15.0.0.R.20190712</baseline>
+		</modify>
+		<modify>
+			<description>#73467 修复 当门户管理参数配置项“用户漫游到其它场所的同时切换到该场所下的门户”开启后再关闭，配置项不生效</description>
+			<author>杨铮</author>
+			<revision-time>2019-05-27</revision-time>
+			<baseline>V15.0.0.R.20190712</baseline>
+		</modify>
+		<modify>
+			<description>#67271 修复 在一级场所的可漫游用户是空的 ，但是二级是有可漫游用户的，然后用户切换场所的时候一级、二级都不显示</description>
+			<author>朱道标</author>
+			<revision-time>2019-01-30</revision-time>
+			<baseline>V15.0.0.B3.20190412</baseline>
+		</modify>
+		<modify>
+			<description>#64738 优化 三员管理新增调试开关，允许初始化数据导入导出和组织架构基础数据导入导出</description>
+			<author>潘永辉</author>
+			<revision-time>2019-01-24</revision-time>
+			<baseline>V15.0.0.B3.20190412</baseline>
+		</modify>
+		<modify>
+			<description>#66514 修复 kms安全漏洞问题</description>
+			<author>张嘉韬</author>
+			<revision-time>2019-01-08</revision-time>
+			<baseline>V15.0.0.B2.20190118</baseline>
+		</modify>
+		<modify>
+			<description>#65962 修复 在公共角色分配-----分级权限中配置的文档权限，场所管理员无法编辑指派用户</description>
+			<author>叶正平</author>
+			<revision-time>2010-01-07</revision-time>
+			<baseline>V15.0.0.B2.20190118</baseline>
+		</modify>
+		<modify>
+			<description>修复 场所排序问题</description>
+			<author>蒋志广</author>
+			<revision-time>2018-10-29</revision-time>
+			<baseline>V15.0.0.B1.20181109</baseline>
+		</modify>
+		<modify>
+			<description>优化 模块场所数据隔离的配置优化（area-isolation.xml的配置），增加NONE配置项（开放所有数据）</description>
+			<author>潘永辉</author>
+			<revision-time>2017-12-29</revision-time>
+			<relation>
+				<relation-module>core</relation-module>
+			</relation>
+			<baseline>V14.0.0.B2.20180112</baseline>
+		</modify>
+		<modify>
+			<description>修复 集团分级授权-角色分类，英文模式下新建、编辑页面报错</description>
+			<author>潘永辉</author>
+			<revision-time>2017-12-28</revision-time>
+			<baseline>V14.0.0.B2.20180112</baseline>
+		</modify>
+		<modify>
+			<description>修复 场所数据迁移模块展现去除“全局分类”，根据所选的模块（属于全局分类的）自动迁移该模块的全局分类数据</description>
+			<author>潘永辉</author>
+			<revision-time>2017-11-28</revision-time>
+			<baseline>V14.0.0.B2.20180112</baseline>
+		</modify>
+		<modify>
+			<description>修复 属于场所分配的权限“角色分配文档”没有显示出来，不能链接查询来源哪个分配文档</description>
+			<author>潘永辉</author>
+			<revision-time>2017-11-28</revision-time>
+			<baseline>V14.0.0.B2.20180112</baseline>
+		</modify>
+		<modify>
+			<description>修复 集团分级数据迁移时，获取业务模块信息失败</description>
+			<author>潘永辉</author>
+			<revision-time>2017-11-08</revision-time>
+			<baseline>V14.0.0.B1.20171110</baseline>
+		</modify>
+		<modify>
+			<description>新增 场所可漫游用户设置功能</description>
+			<author>郑超</author>
+			<revision-time>2017-10-13</revision-time>
+			<baseline>V14.0.0.B1.20171110</baseline>
+		</modify>
+		<modify>
+			<description>优化 筛选器场所根据当前用户登录的场所获取</description>
+			<author>朱湖强</author>
+			<revision-time>2017-10-13</revision-time>
+			<baseline>V14.0.0.B1.20171110</baseline>
+		</modify>
+		<modify>
+			<description>修复 普通用户身份进入sys 组织权限中心&gt;&gt;权限管理，隐藏“权限查询”节点</description>
+			<author>潘永辉</author>
+			<revision-time>2017-08-16</revision-time>
+			<baseline>V13.5.0.R.20170915</baseline>
+		</modify>
+		<modify>
+			<description>新增 集团分级授权增加根据场景配置过滤简单分类</description>
+			<author>潘永辉</author>
+			<revision-time>2017-07-04</revision-time>
+			<baseline>V13.5.0.B2.20170707</baseline>
+		</modify>
+		<modify>
+			<description>优化 员工授权查询时，被删除的授权角色由原来的显示null优化为不显示</description>
+			<author>潘永辉</author>
+			<revision-time>2017-06-13</revision-time>
+			<baseline>V13.5.0.B2.20170707</baseline>
+		</modify>
+		<modify>
+			<description>修复 组织权限中心&gt;&gt;权限管理&gt;&gt;权限查询，“员工授权查询”“角色授权查询”字体大小不一</description>
+			<author>潘永辉</author>
+			<revision-time>2017-03-09</revision-time>
+			<baseline>V13.0.0.R.20170310</baseline>
+		</modify>
+		<modify>
+			<description>修复 普通用户进入后台配置中心&gt;&gt;组织权限中心，角色分配可见新建按钮，点击后提示无权限</description>
+			<author>潘永辉</author>
+			<revision-time>2017-03-02</revision-time>
+			<baseline>V13.0.0.R.20170310</baseline>
+		</modify>
+		<modify>
+			<description>修复 组织权限中心 中的"权限管理"和"集团分级授权"合并为原有的一棵树，保持为原有逻辑</description>
+			<author>潘永辉</author>
+			<revision-time>2017-02-25</revision-time>
+			<baseline>V13.0.0.R.20170310</baseline>
+		</modify>
+		<modify>
+			<description>修复 组织权限中心概览图中进入到系统权限页面，默认选中一个节点</description>
+			<author>潘永辉</author>
+			<revision-time>2017-02-25</revision-time>
+			<baseline>V13.0.0.R.20170310</baseline>
+		</modify>
+		<modify>
+			<description>优化 优化权限校验的细节</description>
+			<author>叶中奇</author>
+			<revision-time>2017-02-23</revision-time>
+			<baseline>V13.0.0.R.20170310</baseline>
+		</modify>
+		<modify>
+			<description>修复 系统权限列表页面报错时页面显示提示信息</description>
+			<author>潘永辉</author>
+			<revision-time>2017-02-05</revision-time>
+			<baseline>V13.0.0.R.20170310</baseline>
+		</modify>
+		<modify>
+			<description>修复 权限管理中多语言处理</description>
+			<author>陈经纬</author>
+			<revision-time>2016-12-23</revision-time>
+			<baseline>V13.0.0.B3.20161230</baseline>
+		</modify>
+		<modify>
+			<description>优化 将系统中接口HQLUtil.buildPreparedLogicIN 无别名参数的方法替换成带别名alias参数的buildPreparedLogicIN的接口以改善性能</description>
+			<author>李启龙</author>
+			<revision-time>2016-01-04</revision-time>
+			<relation>
+				<relation-module>core</relation-module>
+			</relation>
+			<baseline>V12.0.8.R.20160114</baseline>
+		</modify>
+		<modify>
+			<description>优化 组织场所同步定时任务增加描述字段，以场景语言来描述该任务的具体执行场景和动作</description>
+			<author>黄伟强</author>
+			<revision-time>2015-11-25</revision-time>
+			<baseline>V12.0.7.R.20151203</baseline>
+		</modify>
+		<modify>
+			<description>优化 后台权限管理列表显示权限类型列</description>
+			<author>朱湖强</author>
+			<revision-time>2015-03-09</revision-time>
+			<baseline>V12.0.0.R.20150325</baseline>
+		</modify>
+		<modify>
+			<description>修复 场所数据迁移执行后无返回结果问题</description>
+			<author>王书强</author>
+			<revision-time>2014-11-25</revision-time>
+			<baseline>V12.0.0.B3.20150116</baseline>
+		</modify>
+		<modify>
+			<description>优化 表单输入框宽度规范化</description>
+			<author>魏本源</author>
+			<revision-time>2014-10-23</revision-time>
+			<baseline>V12.0.0.B2.20141114</baseline>
+		</modify>
+		<modify>
+			<description>优化 数据字典messagekey与资源文件不匹配</description>
+			<author>魏本源</author>
+			<revision-time>2014-10-10</revision-time>
+			<baseline>V12.0.0.B2.20141114</baseline>
+		</modify>
+		<modify>
+			<description>修复 权限分配时，如果用户名中带有逗号则会保存为空的问题</description>
+			<author>易荣烽</author>
+			<revision-time>2014-06-03</revision-time>
+			<baseline>V11.0.2.R.20140606</baseline>
+		</modify>
+		<modify>
+			<description>修复 管理员工具箱导出设置页面多语言化</description>
+			<author>魏本源</author>
+			<revision-time>2014-04-30</revision-time>
+			<baseline>V11.0.1.R.20140506</baseline>
+		</modify>
+		<modify>
+			<description>新增 场所变更功能，可以修改分类及其文档的所属场所</description>
+			<author>汪俊锋</author>
+			<revision-time>2013-07-04</revision-time>
+			<relation>
+				<relation-module>sys/category</relation-module>
+				<relation-module>sys/simplecategory</relation-module>
+			</relation>
+			<baseline>V10.0.3.R.20130712</baseline>
+		</modify>
+		<modify>
+			<description>修复 国际化时语言选择为英文，部分展现内容为中文问题</description>
+			<author>李斌斌</author>
+			<revision-time>2013-06-13</revision-time>
+			<baseline>V10.0.3.R.20130712</baseline>
+		</modify>
+		<modify>
+			<description>优化 实现集团分级按功能和业务场景进行数据隔离</description>
+			<author>汪俊锋</author>
+			<revision-time>2013-05-15</revision-time>
+			<relation>
+				<relation-module>core</relation-module>
+				<relation-module>km/review</relation-module>
+				<relation-module>sys/category</relation-module>
+				<relation-module>sys/simplecategory</relation-module>
+			</relation>
+			<baseline>V10.0.2.R.20130608</baseline>
+		</modify>
+		<modify>
+			<description>修复 分级管理模式下普通权限维护者在无角色权限时，编辑角色报错的问题</description>
+			<author>汪俊锋</author>
+			<revision-time>2013-01-24</revision-time>
+			<baseline>V10.0.1.R.20130328</baseline>
+		</modify>
+		<modify>
+			<description>新增 Portal门户场所漫游接口</description>
+			<author>汪俊锋</author>
+			<revision-time>2013-01-24</revision-time>
+			<baseline>V10.0.1.R.20130328</baseline>
+		</modify>
+		<modify>
+			<description>优化 解决SQL注入的安全问题</description>
+			<author>邱建华</author>
+			<revision-time>2013-01-23</revision-time>
+			<baseline>V10.0.1.R.20130328</baseline>
+		</modify>
+		<modify>
+			<description>新增 招商局全文检索权限接口</description>
+			<author>汪俊锋</author>
+			<revision-time>2013-01-22</revision-time>
+			<relation>
+				<relation-module>core</relation-module>
+			</relation>
+			<baseline>V10.0.1.R.20130328</baseline>
+		</modify>
+		<modify>
+			<description>修复 权限关联关系问题</description>
+			<author>汪俊锋</author>
+			<revision-time>2013-01-17</revision-time>
+			<relation>
+				<relation-module>core</relation-module>
+				<relation-module>sys/category</relation-module>
+				<relation-module>sys/simplecategory</relation-module>
+				<relation-module>sys/right</relation-module>
+				<relation-module>sys/workflow</relation-module>
+				<relation-module>dbcenter/cko</relation-module>
+			</relation>
+			<baseline>V10.0.1.R.20130328</baseline>
+		</modify>
+		<modify>
+			<description>修复 license不支持集团分级导致admin.do的js问题</description>
+			<author>汪俊锋</author>
+			<revision-time>2013-01-09</revision-time>
+			<baseline>V10.0.1.R.20130328</baseline>
+		</modify>
+		<modify>
+			<description>优化 集团分级授权数据迁移，提高易用性</description>
+			<author>汪俊锋</author>
+			<revision-time>2013-01-08</revision-time>
+			<baseline>V10.0.1.R.20130328</baseline>
+		</modify>
+		<modify>
+			<description>新增 判断指定的业务数据类型是否处于集团分级管理模式的接口</description>
+			<author>汪俊锋</author>
+			<revision-time>2013-01-06</revision-time>
+			<baseline>V10.0.1.R.20130328</baseline>
+		</modify>
+		<modify>
+			<description>修复 场所过滤时判断权限校验是否开启的问题</description>
+			<author>汪俊锋</author>
+			<revision-time>2013-01-05</revision-time>
+			<baseline>V10.0.1.R.20130328</baseline>
+		</modify>
+		<modify>
+			<description>修复 权限分配中权限没有排序的问题，改为按拼音排序</description>
+			<author>汪俊锋</author>
+			<revision-time>2013-01-04</revision-time>
+			<baseline>V10.0.1.R.20130328</baseline>
+		</modify>
+		<modify>
+			<description>优化 场所接口参数和用户未设置默认场所时登录场所的设定</description>
+			<author>汪俊锋</author>
+			<revision-time>2012-12-21</revision-time>
+			<relation>
+				<relation-module>core</relation-module>
+			</relation>
+			<baseline>V10.0.1.R.20130328</baseline>
+		</modify>
+		<modify>
+			<description>新增 集团分级数据迁移工具</description>
+			<author>汪俊锋</author>
+			<revision-time>2012-11-16</revision-time>
+			<relation>
+				<relation-module>core</relation-module>
+			</relation>
+			<baseline>V10.0.0.R.20121215</baseline>
+		</modify>
+		<modify>
+			<description>新增 实现集团分级权限管理机制</description>
+			<author>汪俊锋</author>
+			<revision-time>2012-10-18</revision-time>
+			<relation>
+				<relation-module>core</relation-module>
+			</relation>
+			<baseline>V10.0.0.R.20121215</baseline>
+		</modify>
+		<modify>
+			<description>优化 调整了admin.do的显示位置</description>
+			<author>叶中奇</author>
+			<revision-time>2012-11-23</revision-time>
+			<relation>
+				<relation-module>core</relation-module>
+			</relation>
+			<baseline>V10.0.0.R.20121215</baseline>
+		</modify>
+		<modify>
+			<description>修改员工授权查询展现界面</description>
+			<author>李衡</author>
+			<revision-time>2011-10-18</revision-time>
+			<baseline>EKP9.0.0.R.20111025</baseline>
+		</modify>
+		<modify>
+			<description>角色名称、角色分类名称增加唯一校验</description>
+			<author>缪贵荣</author>
+			<revision-time>2011-10-09</revision-time>
+			<baseline>EKP9.0.0.R.20111025</baseline>
+		</modify>
+		<modify>
+			<description>角色加分类，系统权限按名称排序等</description>
+			<author>缪贵荣</author>
+			<revision-time>2011-09-29</revision-time>
+			<baseline>EKP9.0.0.R.20111025</baseline>
+		</modify>
+		<modify>
+			<description>调用新的系统初始化接口，返回初始化任务名称</description>
+			<author>易荣烽</author>
+			<revision-time>2011-09-19</revision-time>
+			<relation>
+				<relation-module>core</relation-module>
+			</relation>
+			<baseline>EKP9.0.0.R.20111025</baseline>
+		</modify>
+		<modify>
+			<description>修改角色配置展现,增加角色可维护者设置</description>
+			<author>李衡</author>
+			<revision-time>2011-09-15</revision-time>
+			<baseline>EKP9.0.0.R.20111025</baseline>
+		</modify>
+		<modify>
+			<description>优化了用户登录查询语句硬编码问题</description>
+			<author>缪贵荣</author>
+			<revision-time>2011-02-14</revision-time>
+			<relation>
+				<relation-module>core</relation-module>
+			</relation>
+			<baseline>EKP9.0.0.B1.2011033001</baseline>
+		</modify>
+	</modifies>
+</version>

@@ -1,0 +1,115 @@
+{
+    "global":     {
+        "modelName": "com.landray.kmss.geesun.oitems.model.GeesunOitemsShoppingTrolley",
+        "messageKey": "geesun-oitems:table.geesunOitemsShoppingTrolley",
+        "serviceBean": "geesunOitemsShoppingTrolleyService",
+        "table": "geesun_oitems_shopping_trolley",
+        "displayProperty": "fdName",
+        "url": "/geesun/oitems/geesun_oitems_shopping_trolley/geesunOitemsShoppingTrolley.do?method=view&fdId=${fdId}"
+    },
+    "attrs":     {
+        "fdId":         {
+            "propertyType": "id",
+            "generator": {"type": "assigned"}
+        },
+        "fdApplicationNumber":         {
+            "propertyType": "simple",
+            "messageKey": "geesun-oitems:geesunOitemsShoppingTrolley.fdApplicationNumber",
+            "type": "Integer",
+            "column": "fd_application_number",
+            "notNull": "false",
+            "length": "12"
+        },
+        "geesunOitemsListing":         {
+            "propertyType": "model",
+            "messageKey": "geesun-oitems:geesunOitemsShoppingTrolley.geesunOitemsListing",
+            "type": "com.landray.kmss.geesun.oitems.model.GeesunOitemsListing",
+            "column": "fd_listing_id",
+            "notNull": "false"
+        },
+        "geesunOitemsWarehousingRecordJoinList":         {
+            "propertyType": "model",
+            "messageKey": "geesun-oitems:geesunOitemsShoppingTrolley.geesunOitemsWarehousingRecordJoinList",
+            "column": "fd_warehousingjoinlist_id",
+            "type": "com.landray.kmss.geesun.oitems.model.GeesunOitemsWarehousingRecordJoinList",
+            "notNull": "false"
+        },
+        "fdApplicationId":         {
+            "propertyType": "simple",
+            "messageKey": "geesun-oitems:geesunOitemsShoppingTrolley.fdApplicationId",
+            "column": "fd_application_temp_id",
+            "type": "String",
+            "notNull": "false"
+        },
+        "fdNo":         {
+            "propertyType": "simple",
+            "messageKey": "geesun-oitems:geesunOitemsShoppingTrolley.fdNo",
+            "column": "fd_no",
+            "type": "String",
+            "notNull": "false",
+            "length": "100"
+        },
+        "fdName":         {
+            "propertyType": "simple",
+            "messageKey": "geesun-oitems:geesunOitemsShoppingTrolley.fdName",
+            "column": "fd_name",
+            "type": "String",
+            "notNull": "false",
+            "length": "200"
+        },
+        "fdCategoryName":         {
+            "propertyType": "simple",
+            "messageKey": "geesun-oitems:geesunOitemsShoppingTrolley.fdCategoryName",
+            "column": "fd_category_name",
+            "type": "String",
+            "notNull": "false"
+        },
+        "fdSpecification":         {
+            "propertyType": "simple",
+            "messageKey": "geesun-oitems:geesunOitemsShoppingTrolley.fdSpecification",
+            "column": "fd_specification",
+            "type": "String",
+            "notNull": "false",
+            "length": "100"
+        },
+        "fdBrand":         {
+            "propertyType": "simple",
+            "messageKey": "geesun-oitems:geesunOitemsShoppingTrolley.fdBrand",
+            "column": "fd_brand",
+            "type": "String",
+            "notNull": "false",
+            "length": "200"
+        },
+        "fdUnit":         {
+            "propertyType": "simple",
+            "messageKey": "geesun-oitems:geesunOitemsShoppingTrolley.fdUnit",
+            "column": "fd_unit",
+            "type": "String",
+            "notNull": "false",
+            "length": "100"
+        },
+        "fdAmount":         {
+            "propertyType": "simple",
+            "messageKey": "geesun-oitems:geesunOitemsShoppingTrolley.fdAmount",
+            "type": "Integer",
+            "column": "fd_amount",
+            "notNull": "false",
+            "length": "12"
+        },
+        "fdReferencePrice":         {
+            "propertyType": "simple",
+            "messageKey": "geesun-oitems:geesunOitemsShoppingTrolley.fdReferencePrice",
+            "type": "Double",
+            "column": "fd_reference_price",
+            "notNull": "false",
+            "length": "100"
+        },
+        "geesunOitemsBudgerApplication":         {
+            "propertyType": "model",
+            "messageKey": "geesun-oitems:geesunOitemsShoppingTrolley.geesunOitemsBudgerApplication",
+            "type": "com.landray.kmss.geesun.oitems.model.GeesunOitemsBudgerApplication",
+            "column": "fd_application_id",
+            "notNull": "false"
+        }
+    }
+}

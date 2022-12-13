@@ -1,0 +1,564 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans
+	xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.0.xsd">
+	<bean
+		name="/km/carmng/km_carmng_calendar/kmCarmngCalendarAction.do"
+		class="com.landray.kmss.km.carmng.actions.KmCarmngCalendarAction"
+		lazy-init="true"
+		parent="KmssBaseAction">
+		<property
+			name="formType"
+			value="com.landray.kmss.km.carmng.forms.KmCarmngApplicationForm" />
+	</bean>
+	<bean
+		name="/km/carmng/km_carmng_calendar/KmCarmngUseCalendar.do"
+		class="com.landray.kmss.km.carmng.actions.KmCarmngUseCalendarAction"
+		lazy-init="true"
+		parent="KmssBaseAction">
+		<property
+			name="formType"
+			value="com.landray.kmss.km.carmng.forms.KmCarmngApplicationForm" />
+	</bean>
+	<bean
+		name="/km/carmng/km_carmng_user_fee_info/kmCarmngUserFeeInfo.do"
+		class="com.landray.kmss.km.carmng.actions.KmCarmngUserFeeInfoAction"
+		lazy-init="true"
+		parent="KmssBaseAction">
+		<property
+			name="formType"
+			value="com.landray.kmss.km.carmng.forms.KmCarmngUserFeeInfoForm" />
+		<property name="forwards">
+			<map>
+				<entry
+					key="view"
+					value="/km/carmng/km_carmng_user_fee_info/kmCarmngUserFeeInfo_view.jsp" />
+				<entry
+					key="edit"
+					value="/km/carmng/km_carmng_user_fee_info/kmCarmngUserFeeInfo_edit.jsp" />
+				<entry
+					key="list"
+					value="/km/carmng/km_carmng_user_fee_info/kmCarmngUserFeeInfo_list.jsp" />
+				<entry
+					key="count"
+					value="/km/carmng/km_carmng_count/kmCarmngCount_out_list.jsp" />
+				<entry
+					key="useCount"
+					value="/km/carmng/km_carmng_count/kmCarmngCount_list.jsp" />
+				<entry
+					key="detail"
+					value="/km/carmng/km_carmng_count/kmCarmngCount_detail_list.jsp" />
+				<entry
+					key="queryOrgCount"
+					value="/km/carmng/km_carmng_count/kmCarmngCount_org_data.jsp" />
+				<entry
+					key="queryOrgDetail"
+					value="/km/carmng/km_carmng_count/kmCarmngCount_org_detail_data.jsp" />
+				<entry
+					key="queryDriverCount"
+					value="/km/carmng/km_carmng_count/kmCarmngCount_driver_data.jsp" />
+				<entry
+					key="queryCarFeeCount"
+					value="/km/carmng/km_carmng_count/kmCarmngCount_car_fee_data.jsp" />
+			</map>
+		</property>
+	</bean>
+	<bean
+		name="/km/carmng/km_carmng_infringe_info/kmCarmngInfringeInfo.do"
+		class="com.landray.kmss.km.carmng.actions.KmCarmngInfringeInfoAction"
+		lazy-init="true"
+		parent="KmssBaseAction">
+		<property
+			name="formType"
+			value="com.landray.kmss.km.carmng.forms.KmCarmngInfringeInfoForm" />
+		<property name="forwards">
+			<map>
+				<entry
+					key="viewo"
+					value="/km/carmng/km_carmng_infringe_info/kmCarmngInfringeInfo_view.jsp" />
+				<entry
+					key="edito"
+					value="/km/carmng/km_carmng_infringe_info/kmCarmngInfringeInfo_edit.jsp" />
+				<entry
+					key="view"
+					value="/km/carmng/km_carmng_infringeInfo_ui/kmCarmngInfringeInfo_view.jsp" />
+				<entry
+					key="edit"
+					value="/km/carmng/km_carmng_infringeInfo_ui/kmCarmngInfringeInfo_edit.jsp" />
+				<entry
+					key="list"
+					value="/km/carmng/km_carmng_infringe_info/kmCarmngInfringeInfo_list.jsp" />
+				<entry
+					key="count"
+					value="/km/carmng/km_carmng_count/kmCarmngCount_infringe_list.jsp" />
+			</map>
+		</property>
+	</bean>
+	<bean
+		name="/km/carmng/km_carmng_insurance_info/kmCarmngInsuranceInfo.do"
+		class="com.landray.kmss.km.carmng.actions.KmCarmngInsuranceInfoAction"
+		lazy-init="true"
+		parent="KmssBaseAction">
+		<property
+			name="formType"
+			value="com.landray.kmss.km.carmng.forms.KmCarmngInsuranceInfoForm" />
+		<property name="forwards">
+			<map>
+				<entry
+					key="viewo"
+					value="/km/carmng/km_carmng_insurance_info/kmCarmngInsuranceInfo_view.jsp" />
+				<entry
+					key="edito"
+					value="/km/carmng/km_carmng_insurance_info/kmCarmngInsuranceInfo_edit.jsp" />
+				<entry
+					key="view"
+					value="/km/carmng/km_carmng_insuranceInfo_ui/kmCarmngInsuranceInfo_view.jsp" />
+				<entry
+					key="edit"
+					value="/km/carmng/km_carmng_insuranceInfo_ui/kmCarmngInsuranceInfo_edit.jsp" />
+				<entry
+					key="list"
+					value="/km/carmng/km_carmng_insurance_info/kmCarmngInsuranceInfo_list.jsp" />
+			</map>
+		</property>
+	</bean>
+	<bean
+		name="/km/carmng/km_carmng_maintenance_info/kmCarmngMaintenanceInfo.do"
+		class="com.landray.kmss.km.carmng.actions.KmCarmngMaintenanceInfoAction"
+		lazy-init="true"
+		parent="KmssBaseAction">
+		<property
+			name="formType"
+			value="com.landray.kmss.km.carmng.forms.KmCarmngMaintenanceInfoForm" />
+		<property name="forwards">
+			<map>
+				<entry
+					key="view0"
+					value="/km/carmng/km_carmng_maintenance_info/kmCarmngMaintenanceInfo_view.jsp" />
+				<entry
+					key="edit0"
+					value="/km/carmng/km_carmng_maintenance_info/kmCarmngMaintenanceInfo_edit.jsp" />
+				<entry
+					key="view"
+					value="/km/carmng/km_carmng_maintenanceInfo_ui/kmCarmngMaintenanceInfo_view.jsp" />
+				<entry
+					key="edit"
+					value="/km/carmng/km_carmng_maintenanceInfo_ui/kmCarmngMaintenanceInfo_edit.jsp" />
+				<entry
+					key="list"
+					value="/km/carmng/km_carmng_maintenance_info/kmCarmngMaintenanceInfo_list.jsp" />
+				<entry
+					key="count"
+					value="/km/carmng/km_carmng_count/kmCarmngCount_maintenance_list.jsp" />
+			</map>
+		</property>
+	</bean>
+	<bean
+		name="/km/carmng/km_carmng_register_info/kmCarmngRegisterInfo.do"
+		class="com.landray.kmss.km.carmng.actions.KmCarmngRegisterInfoAction"
+		lazy-init="true"
+		parent="KmssBaseAction">
+		<property
+			name="formType"
+			value="com.landray.kmss.km.carmng.forms.KmCarmngRegisterInfoForm" />
+		<property name="forwards">
+			<map>
+				<entry
+					key="view"
+					value="/km/carmng/km_carmng_register_info/kmCarmngRegisterInfo_view.jsp" />
+				<entry
+					key="edit"
+					value="/km/carmng/km_carmng_register_info/kmCarmngRegisterInfo_edit.jsp" />
+				<entry
+					key="edit.4m"
+					value="/km/carmng/mobile/register/edit.jsp" />
+				<entry
+					key="view.4m"
+					value="/km/carmng/mobile/register/view.jsp" />
+				<entry
+					key="list"
+					value="/km/carmng/km_carmng_register_info/kmCarmngRegisterInfo_list.jsp" />
+			</map>
+		</property>
+	</bean>
+	<bean
+		name="/km/carmng/km_carmng_dispatchers_info/kmCarmngDispatchersInfo.do"
+		class="com.landray.kmss.km.carmng.actions.KmCarmngDispatchersInfoAction"
+		lazy-init="true"
+		parent="KmssBaseAction">
+		<property
+			name="formType"
+			value="com.landray.kmss.km.carmng.forms.KmCarmngDispatchersInfoForm" />
+		<property name="forwards">
+			<map>
+				<entry
+					key="view"
+					value="/km/carmng/km_carmng_dispatchers_info/kmCarmngDispatchersInfo_view.jsp" />
+				<entry
+					key="view.4m"
+					value="/km/carmng/mobile/dispatcher/view.jsp" />
+				<entry
+					key="edit"
+					value="/km/carmng/km_carmng_dispatchers_info/kmCarmngDispatchersInfo_edit.jsp" />
+				<entry
+					key="edit.4m"
+					value="/km/carmng/mobile/dispatcher/edit.jsp" />
+				<entry
+					key="list"
+					value="/km/carmng/km_carmng_dispatchers_info/kmCarmngDispatchersInfo_list.jsp" />
+				<entry
+					key="search"
+					value="/km/carmng/km_carmng_dispatchers_info/kmCarmngDispatchersInfo_search_list.jsp" />
+				<entry
+					key="listByMotorCade"
+					value="/km/carmng/km_carmng_dispatchers_info/kmCarmngDispatchersInfo_ByMotorCade_list.jsp" />
+			</map>
+		</property>
+	</bean>
+	<bean
+		name="/km/carmng/km_carmng_dispatchers_info_list/kmCarmngDispatchersInfoList.do"
+		class="com.landray.kmss.km.carmng.actions.KmCarmngDispatchersInfoListAction"
+		lazy-init="true"
+		parent="KmssBaseAction">
+		<property
+			name="formType"
+			value="com.landray.kmss.km.carmng.forms.KmCarmngDispatchersInfoListForm" />
+		<property name="forwards">
+			<map>
+				<entry
+					key="search"
+					value="/km/carmng/km_carmng_dispatchers_info_list/kmCarmngDispatchersInfo_search_list.jsp" />
+			</map>
+		</property>
+	</bean>
+	<bean
+		name="/km/carmng/km_carmng_application/kmCarmngApplication.do"
+		class="com.landray.kmss.km.carmng.actions.KmCarmngApplicationAction"
+		lazy-init="true"
+		parent="KmssBaseAction">
+		<property
+			name="formType"
+			value="com.landray.kmss.km.carmng.forms.KmCarmngApplicationForm" />
+		<property name="forwards">
+			<map>
+				<entry
+					key="viewo"
+					value="/km/carmng/km_carmng_application/kmCarmngApplication_view.jsp" />
+				<entry
+					key="view"
+					value="/km/carmng/km_carmng_ui/kmCarmngApplication_view.jsp" />
+				<entry
+					key="view.4m"
+					value="/km/carmng/mobile/view.jsp" />
+				<entry
+					key="edito"
+					value="/km/carmng/km_carmng_application/kmCarmngApplication_edit.jsp" />
+				<entry
+					key="edit"
+					value="/km/carmng/km_carmng_ui/kmCarmngApplication_edit.jsp" />
+				<entry
+					key="edit.4m"
+					value="/km/carmng/mobile/application/edit.jsp" />
+				<entry
+					key="list"
+					value="/km/carmng/km_carmng_application/kmCarmngApplication_list.jsp" />
+				<entry
+					key="listByDispatchers"
+					value="/km/carmng/km_carmng_application/kmCarmngApplication_listByDispatchers_list.jsp" />
+				<entry
+					key="listByDispatchersForInfo"
+					value="/km/carmng/km_carmng_application/kmCarmngApplication_listByDispatchersForInfo_list.jsp" />
+				<entry
+					key="print"
+					value="/km/carmng/km_carmng_application/kmCarmngApplication_print.jsp" />
+				<entry
+					key="listAppByIds"
+					value="/km/carmng/mobile/application/listApp.jsp" />
+			</map>
+		</property>
+	</bean>
+	<bean
+		name="/km/carmng/km_carmng_drivers_info/kmCarmngDriversInfo.do"
+		class="com.landray.kmss.km.carmng.actions.KmCarmngDriversInfoAction"
+		lazy-init="true"
+		parent="KmssBaseAction">
+		<property
+			name="formType"
+			value="com.landray.kmss.km.carmng.forms.KmCarmngDriversInfoForm" />
+		<property name="forwards">
+			<map>
+				<entry
+					key="view"
+					value="/km/carmng/km_carmng_drivers_info/kmCarmngDriversInfo_view.jsp" />
+				<entry
+					key="edit"
+					value="/km/carmng/km_carmng_drivers_info/kmCarmngDriversInfo_edit.jsp" />
+				<entry
+					key="list"
+					value="/km/carmng/km_carmng_drivers_info/kmCarmngDriversInfo_list.jsp" />
+			</map>
+		</property>
+	</bean>
+	<bean
+		name="/km/carmng/km_carmng_category/kmCarmngCategory.do"
+		class="com.landray.kmss.km.carmng.actions.KmCarmngCategoryAction"
+		lazy-init="true"
+		parent="KmssBaseAction">
+		<property
+			name="formType"
+			value="com.landray.kmss.km.carmng.forms.KmCarmngCategoryForm" />
+		<property name="forwards">
+			<map>
+				<entry
+					key="view"
+					value="/km/carmng/km_carmng_category/kmCarmngCategory_view.jsp" />
+				<entry
+					key="edit"
+					value="/km/carmng/km_carmng_category/kmCarmngCategory_edit.jsp" />
+				<entry
+					key="list"
+					value="/km/carmng/km_carmng_category/kmCarmngCategory_list.jsp" />
+			</map>
+		</property>
+	</bean>
+	<bean
+		name="/km/carmng/km_carmng_infomation/kmCarmngInfomation.do"
+		class="com.landray.kmss.km.carmng.actions.KmCarmngInfomationAction"
+		lazy-init="true"
+		parent="KmssBaseAction">
+		<property
+			name="formType"
+			value="com.landray.kmss.km.carmng.forms.KmCarmngInfomationForm" />
+		<property name="forwards">
+			<map>
+				<entry
+					key="viewo"
+					value="/km/carmng/km_carmng_infomation/kmCarmngInfomation_view.jsp" />
+				<entry
+					key="view"
+					value="/km/carmng/km_carmng_infomation_ui/kmCarmngInfomation_view.jsp" />
+				<entry
+					key="view.4m"
+					value="/km/carmng/mobile/view4car.jsp" />
+				<entry
+					key="edito"
+					value="/km/carmng/km_carmng_infomation/kmCarmngInfomation_edit.jsp" />
+				<entry
+					key="edit"
+					value="/km/carmng/km_carmng_infomation_ui/kmCarmngInfomation_edit.jsp" />
+				<entry
+					key="list"
+					value="/km/carmng/km_carmng_infomation/kmCarmngInfomation_list.jsp" />
+			</map>
+		</property>
+	</bean>
+	<bean
+		name="/km/carmng/km_carmng_motorcade_set/kmCarmngMotorcadeSet.do"
+		class="com.landray.kmss.km.carmng.actions.KmCarmngMotorcadeSetAction"
+		lazy-init="true"
+		parent="KmssBaseAction">
+		<property
+			name="formType"
+			value="com.landray.kmss.km.carmng.forms.KmCarmngMotorcadeSetForm" />
+		<property name="forwards">
+			<map>
+				<entry
+					key="view"
+					value="/km/carmng/km_carmng_motorcade_set/kmCarmngMotorcadeSet_view.jsp" />
+				<entry
+					key="viewo"
+					value="/km/carmng/km_carmng_motorcade_set_ui/kmCarmngMotorcadeSet_view.jsp" />
+				<entry
+					key="edit"
+					value="/km/carmng/km_carmng_motorcade_set/kmCarmngMotorcadeSet_edit.jsp" />
+				<entry
+					key="edito"
+					value="/km/carmng/km_carmng_motorcade_set_ui/kmCarmngMotorcadeSet_edit.jsp" />
+				<entry
+					key="list"
+					value="/km/carmng/km_carmng_motorcade_set/kmCarmngMotorcadeSet_list.jsp" />
+			</map>
+		</property>
+	</bean>
+	<bean
+		name="/km/carmng/km_carmng_application/kmCarmngApplicationIndex.do"
+		class="com.landray.kmss.km.carmng.actions.KmCarmngApplicationIndexAction"
+		lazy-init="true"
+		parent="KmssBaseAction">
+		<property
+			name="formType"
+			value="com.landray.kmss.km.carmng.forms.KmCarmngApplicationForm" />
+		<property name="forwards">
+			<map>
+				<entry
+					key="list"
+					value="/km/carmng/km_carmng_ui/kmCarmngApplication_list.jsp" />
+				<entry
+					key="list.4m"
+					value="/km/carmng/mobile/list.jsp" />
+				<entry
+					key="listByDispatchers"
+					value="/km/carmng/km_carmng_application/kmCarmngApplication_listByDispatchers_list.jsp" />
+				<entry
+					key="listByDispatchers.4m"
+					value="/km/carmng/mobile/application/list.jsp" />
+			</map>
+		</property>
+	</bean>
+	<bean
+		name="/km/carmng/km_carmng_infomation/kmCarmngInfomationIndex.do"
+		class="com.landray.kmss.km.carmng.actions.KmCarmngInfomationIndexAction"
+		lazy-init="true"
+		parent="KmssBaseAction">
+		<property
+			name="formType"
+			value="com.landray.kmss.km.carmng.forms.KmCarmngInfomationForm" />
+		<property name="forwards">
+			<map>
+				<entry
+					key="list"
+					value="/km/carmng/km_carmng_info_ui/kmCarmngInfomation_list.jsp" />
+				<entry
+					key="list.4m"
+					value="/km/carmng/mobile/list4car.jsp" />
+			</map>
+		</property>
+	</bean>
+	<bean
+		name="/km/carmng/km_carmng_infringe_info/kmCarmngInfringeInfoIndex.do"
+		class="com.landray.kmss.km.carmng.actions.KmCarmngInfringeInfoIndexAction"
+		lazy-init="true"
+		parent="KmssBaseAction">
+		<property
+			name="formType"
+			value="com.landray.kmss.km.carmng.forms.KmCarmngInfringeInfoForm" />
+		<property name="forwards">
+			<map>
+				<entry
+					key="list"
+					value="/km/carmng/km_carmng_infringeInfo_ui/kmCarmngInfringeInfo_list.jsp" />
+				<entry
+					key="listInfringe"
+					value="/km/carmng/mobile/listInfringeInfo.jsp" />
+			</map>
+		</property>
+	</bean>
+	<bean
+		name="/km/carmng/km_carmng_insurance_info/kmCarmngInsuranceInfoIndex.do"
+		class="com.landray.kmss.km.carmng.actions.KmCarmngInsuranceInfoIndexAction"
+		lazy-init="true"
+		parent="KmssBaseAction">
+		<property
+			name="formType"
+			value="com.landray.kmss.km.carmng.forms.KmCarmngInsuranceInfoForm" />
+		<property name="forwards">
+			<map>
+				<entry
+					key="list"
+					value="/km/carmng/km_carmng_insuranceInfo_ui/kmCarmngInsuranceInfo_list.jsp" />
+			</map>
+		</property>
+	</bean>
+	<bean
+		name="/km/carmng/km_carmng_maintenance_info/kmCarmngMaintenanceInfoIndex.do"
+		class="com.landray.kmss.km.carmng.actions.KmCarmngMaintenanceInfoIndexAction"
+		lazy-init="true"
+		parent="KmssBaseAction">
+		<property
+			name="formType"
+			value="com.landray.kmss.km.carmng.forms.KmCarmngMaintenanceInfoForm" />
+		<property name="forwards">
+			<map>
+				<entry
+					key="list"
+					value="/km/carmng/km_carmng_maintenanceInfo_ui/kmCarmngMaintenanceInfo_list.jsp" />
+			</map>
+		</property>
+	</bean>
+	<bean
+		name="/km/carmng/km_carmng_dispatchers_info/kmCarmngDispatchersInfoIndex.do"
+		class="com.landray.kmss.km.carmng.actions.KmCarmngDispatchersInfoIndexAction"
+		lazy-init="true"
+		parent="KmssBaseAction">
+		<property
+			name="formType"
+			value="com.landray.kmss.km.carmng.forms.KmCarmngDispatchersInfoForm" />
+		<property name="forwards">
+			<map>
+				<entry
+					key="list"
+					value="/km/carmng/km_carmng_dispatchers_info/kmCarmngDispatchersInfo_newList.jsp" />
+				<entry
+					key="list.4m"
+					value="/km/carmng/mobile/dispatcher/list.jsp" />
+			</map>
+		</property>
+	</bean>
+	<bean
+		name="/km/carmng/km_carmng_application/kmCarmngApplicationPortlet.do"
+		class="com.landray.kmss.km.carmng.actions.KmCarmngApplicationPortletAction"
+		lazy-init="true"
+		parent="KmssBaseAction">
+		<property name="forwards">
+			<map>
+				<entry
+					key="listPortlet"
+					value="/km/carmng/km_carmng_ui/kmCarmngApplicationPortlet_list.jsp" />
+			</map>
+		</property>
+	</bean>
+	<bean
+		name="/km/carmng/km_carmng_evaluation/kmCarmngEvaluation.do"
+		class="com.landray.kmss.km.carmng.actions.KmCarmngEvaluationAction"
+		lazy-init="true"
+		parent="KmssBaseAction">
+		<property
+			name="formType"
+			value="com.landray.kmss.km.carmng.forms.KmCarmngEvaluationForm" />
+		<property name="forwards">
+			<map>
+				<entry
+					key="view"
+					value="/km/carmng/km_carmng_evaluation/kmCarmngEvaluation_view.jsp" />
+				<entry
+					key="edit"
+					value="/km/carmng/km_carmng_evaluation/kmCarmngEvaluation_edit.jsp" />
+				<entry
+					key="list"
+					value="/km/carmng/km_carmng_evaluation/kmCarmngEvaluation_list.jsp" />
+				<entry
+					key="view.4m"
+					value="/km/carmng/mobile/evaluation/view.jsp" />
+				<entry
+					key="list.4m"
+					value="/km/carmng/mobile/evaluation/list.jsp" />
+			</map>
+		</property>
+	</bean>
+	
+	<bean 
+        name="/km/carmng/km_carmng_dispatchers_log/kmCarmngDispatchersLog.do" 
+        class="com.landray.kmss.km.carmng.actions.KmCarmngDispatchersLogAction" 
+        parent="KmssBaseAction" 
+        lazy-init="true">
+        <property 
+            name="formType" 
+            value="com.landray.kmss.km.carmng.forms.KmCarmngDispatchersLogForm"/>
+        <property 
+            name="forwards">
+            <map>
+            	<entry
+					key="dispatchersLog"
+					value="/km/carmng/km_carmng_dispatchers_log/kmCarmngDispatchersLog_list.jsp" />
+            </map>
+        </property>
+    </bean>
+    <bean
+    	name="kmCarmngApplicationPortletController"
+    	class="com.landray.kmss.km.carmng.actions.KmCarmngApplicationPortletController">
+    	<property name="kmCarmngApplicationService">
+    		<ref bean="kmCarmngApplicationService" />
+    	</property>
+    </bean>
+</beans>

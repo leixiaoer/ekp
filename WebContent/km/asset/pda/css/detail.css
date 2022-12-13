@@ -1,0 +1,22 @@
+#detailtb td.detail_wrap_td {
+	width:95%;
+	border: 0;
+	padding: 8px;
+	padding-bottom: 0;
+}
+#detailtb .detail_wrap_td .td_title {
+	width:40%;
+	border: none;
+	background-color: #E7EAEF;
+}
+#detailtb .detail_wrap_td .td_common {
+	width:60%;
+	border: none;
+	background-color: #F8F9FD;
+}
+#detailtb .detail_td_no {
+	background-color: #A6BBD5;
+	border: none;
+	padding: 5px;
+	color: #fff;
+}

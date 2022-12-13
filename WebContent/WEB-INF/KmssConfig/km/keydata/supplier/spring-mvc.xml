@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans
+	xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.0.xsd">
+	<bean
+		name="/km/keydata/supplier/km_supplier_main/kmSupplierMain.do"
+		class="com.landray.kmss.km.keydata.supplier.actions.KmSupplierMainAction"
+		lazy-init="true"
+		parent="KmssBaseAction">
+		<property
+			name="formType"
+			value="com.landray.kmss.km.keydata.supplier.forms.KmSupplierMainForm" />
+		<property name="forwards">
+			<map>
+				<entry
+					key="view"
+					value="/km/keydata/supplier/km_supplier_main/kmSupplierMain_view.jsp" />
+				<entry
+					key="edit"
+					value="/km/keydata/supplier/km_supplier_main/kmSupplierMain_edit.jsp" />
+				<entry
+					key="list"
+					value="/km/keydata/supplier/km_supplier_main/kmSupplierMain_list.jsp" />
+				<entry
+					key="listChildren"
+					value="/km/keydata/supplier/km_supplier_main/kmSupplierMain_list.jsp" />
+				<entry
+					key="showUsed"
+					value="/km/keydata/supplier/keydataUsed_view.jsp" />
+				<entry
+					key="showUsed.4m"
+					value="/third/pda/resource/jsp/mobile/warn.jsp" />
+			</map>
+		</property>
+	</bean>
+	<bean
+		name="/km/keydata/supplier/km_supplier_category/kmSupplierCategory.do"
+		class="com.landray.kmss.km.keydata.supplier.actions.KmSupplierCategoryAction"
+		lazy-init="true"
+		parent="KmssBaseAction">
+		<property
+			name="formType"
+			value="com.landray.kmss.km.keydata.supplier.forms.KmSupplierCategoryForm" />
+		<property name="forwards">
+			<map>
+				<entry
+					key="view"
+					value="/km/keydata/supplier/km_supplier_category/kmSupplierCategory_view.jsp" />
+				<entry
+					key="edit"
+					value="/km/keydata/supplier/km_supplier_category/kmSupplierCategory_edit.jsp" />
+				<entry
+					key="list"
+					value="/km/keydata/supplier/km_supplier_category/kmSupplierCategory_list.jsp" />
+			</map>
+		</property>
+	</bean>
+</beans>

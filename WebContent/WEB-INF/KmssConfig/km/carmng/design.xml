@@ -1,0 +1,698 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configs
+	xmlns="http://www.example.org/design-config"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.example.org/design-config ../../design.xsd ">
+	<!-- 权限控制 -->
+	<module
+	
+		messageKey="km-carmng:module.km.carmng"
+		defaultValidator="roleValidator(role=ROLE_KMCARMNG_DEFAULT)"
+		urlPrefix="/km/carmng/">
+		<roles>
+			ROLE_KMCARMNG_DEFAULT;
+			ROLE_KMCARMNG_SETTING;
+			ROLE_KMCARMNG_CARMANAGE;
+			ROLE_KMCARMNG_CHARGESTAT;
+			ROLE_KMCARMNG_CREATE;
+			ROLE_KMCARMNG_READER;
+			ROLE_KMCARMNG_EDITOR;
+			ROLE_KMCARMNG_DELETE;
+			ROLE_KMCARMNG_ATTEMPER;
+			ROLE_KMCARMNG_EVALUATION;
+			ROLE_KMCARMNG_MOTORCADE_ATTEMPER;
+			ROLE_KMCARMNG_REGISTER;
+			ROLE_KMCARMNG_USECARQUERY;
+			ROLE_KMCARMNG_PRINT;
+			ROLE_KMCARMNG_CALENDAR;
+			<!-- 后台管理  -->
+			ROLE_KMCARMNG_BACKSTAGE_MANAGER;
+			ROLE_KMCARMNG_MOTORCADE_SETTING;
+			ROLE_KMCARMNG_TRANSPORT_EXPORT
+		</roles>
+		<request
+			path="tree_config.jsp*"
+			defaultValidator="roleValidator(role=ROLE_KMCARMNG_BACKSTAGE_MANAGER)"/>
+		<!-- 用车日历url控制 -->
+		<request
+			path="km_carmng_calendar/kmCarmng_use_calendar.jsp*"
+			defaultValidator="roleValidator(role=ROLE_KMCARMNG_CALENDAR)"/>
+			
+		<!-- 调度记录url -->
+		<request
+			path="km_carmng_dispatchers_log/kmCarmngDispatchers_log.jsp*"
+			validatorParameter="recid=fdId,model=com.landray.kmss.km.carmng.model.KmCarmngDispatchersInfo"
+			defaultValidator="authFieldValidator(type=SYS_READER)&amp;[roleValidator(role=ROLE_KMCARMNG_MOTORCADE_ATTEMPER)|roleValidator(role=ROLE_KMCARMNG_ATTEMPER)]"/>
+			
+		<!-- pc端和移动端车辆列表 必须具备 后台管理+车辆信息管理 -->
+		<request path="mobile/km_carmng_carinfo/index.jsp*" defaultValidator="roleValidator(role=ROLE_KMCARMNG_CARMANAGE)&amp;roleValidator(role=ROLE_KMCARMNG_BACKSTAGE_MANAGER)"/>
+		<request path="km_carmng_info_ui/index2.jsp*" defaultValidator="roleValidator(role=ROLE_KMCARMNG_CARMANAGE)&amp;roleValidator(role=ROLE_KMCARMNG_BACKSTAGE_MANAGER)"/>
+			
+		<!-- 车队设置 -->
+		<request
+			path="km_carmng_motorcade_set/kmCarmngMotorcadeSet*"
+			validatorParameter="recid=fdId,model=com.landray.kmss.km.carmng.model.KmCarmngMotorcadeSet">
+			<query queryString="method=getFdMotorcade"
+				validator="roleValidator(role=ROLE_KMCARMNG_DEFAULT)"/>	
+			<query queryString="method=view"
+				validator="authFieldValidator(type=SYS_READER)"/>
+			<query queryString="method=add|deleteall"
+				validator="roleValidator(role=ROLE_KMCARMNG_MOTORCADE_SETTING)"/>	
+			<query
+				queryString="method=edit|delete"
+				validator="roleValidator(role=ROLE_KMCARMNG_MOTORCADE_SETTING)|authFieldValidator(type=SYS_EDITOR)" />
+		</request>
+		<!-- 驾驶员设置 -->
+		<request
+			path="km_carmng_drivers_info/kmCarmngDriversInfo*"
+			validatorParameter="recid=fdId,model=com.landray.kmss.km.carmng.model.KmCarmngDriversInfo"
+			defaultValidator="roleValidator(role=ROLE_KMCARMNG_SETTING)">	
+			<query queryString="method=view"
+				validator="roleValidator(role=ROLE_KMCARMNG_DEFAULT)"/>
+			<query queryString="method=add&amp;motorcadeId=*"
+				validator="roleValidator(role=ROLE_KMCARMNG_SETTING)|authFieldValidator(type=driveradd,recid=motorcadeId,model=com.landray.kmss.km.carmng.model.KmCarmngMotorcadeSet)"/>
+			<query queryString="method=add"
+				validator="roleValidator(role=ROLE_KMCARMNG_SETTING)"/>
+			<query queryString="method=save&amp;motorcadeId=*"
+				validator="roleValidator(role=ROLE_KMCARMNG_SETTING)|authFieldValidator(type=driveradd,recid=motorcadeId,model=com.landray.kmss.km.carmng.model.KmCarmngMotorcadeSet)"/>
+			<query queryString="method=save"
+				validator="roleValidator(role=ROLE_KMCARMNG_SETTING)"/>
+			<query queryString="method=update&amp;motorcadeId=*"
+				validator="roleValidator(role=ROLE_KMCARMNG_SETTING)|authFieldValidator(type=driveradd,recid=motorcadeId,model=com.landray.kmss.km.carmng.model.KmCarmngMotorcadeSet)"/>
+			<query queryString="method=update"
+				validator="roleValidator(role=ROLE_KMCARMNG_SETTING)"/>
+			<query queryString="method=edit&amp;motorcadeId=*"
+				validator="roleValidator(role=ROLE_KMCARMNG_SETTING)|authFieldValidator(type=driveradd,recid=motorcadeId,model=com.landray.kmss.km.carmng.model.KmCarmngMotorcadeSet)"/>
+			<query queryString="method=edit"
+				validator="roleValidator(role=ROLE_KMCARMNG_SETTING)"/>
+			<query queryString="method=delete&amp;motorcadeId=*"
+				validator="roleValidator(role=ROLE_KMCARMNG_SETTING)|authFieldValidator(type=driveradd,recid=motorcadeId,model=com.landray.kmss.km.carmng.model.KmCarmngMotorcadeSet)"/>
+			<query queryString="method=delete"
+				validator="roleValidator(role=ROLE_KMCARMNG_SETTING)"/>
+			<query queryString="method=list&amp;motorcadeId=*"
+				validator="authFieldValidator(type=SYS_READER,recid=motorcadeId,model=com.landray.kmss.km.carmng.model.KmCarmngMotorcadeSet)"/>
+			<query queryString="method=list"
+				validator="roleValidator(role=ROLE_KMCARMNG_SETTING)"/>
+			<query queryString="method=deleteall&amp;motorcadeId=*"
+				validator="roleValidator(role=ROLE_KMCARMNG_SETTING)|authFieldValidator(type=driveradd,recid=motorcadeId,model=com.landray.kmss.km.carmng.model.KmCarmngMotorcadeSet)"/>
+			<query queryString="method=deleteall"
+				validator="roleValidator(role=ROLE_KMCARMNG_SETTING)"/>
+		</request>
+		<request
+			path="km_carmng_evaluation/kmCarmngEvaluation*"
+			validatorParameter="recid=fdId,model=com.landray.kmss.km.carmng.model.KmCarmngEvaluation"
+			defaultValidator="roleValidator(role=ROLE_KMCARMNG_EVALUATION)">	
+			<query queryString="method=view"
+				validator="roleValidator(role=ROLE_KMCARMNG_DEFAULT)"/>
+			<query queryString="method=add|save|update"
+				validator="authFieldValidator(type=docCreator,recid=fdAppId,model=com.landray.kmss.km.carmng.model.KmCarmngApplication)"/>
+		</request>
+		<!-- 车辆类别设置 -->
+		<request
+			path="km_carmng_category/kmCarmngCategory*"
+			validatorParameter="recid=fdId,model=com.landray.kmss.km.carmng.model.KmCarmngCategory,adminRoleName=ROLE_KMCARMNG_SETTING"
+			defaultValidator="roleValidator(role=ROLE_KMCARMNG_SETTING)">		
+		</request>
+		<!-- 车辆信息设置 -->
+		<request
+			path="km_carmng_infomation/kmCarmngInfomation.do"
+			validatorParameter="recid=fdId,model=com.landray.kmss.km.carmng.model.KmCarmngInfomation"
+			defaultValidator="roleValidator(role=ROLE_KMCARMNG_CARMANAGE)">	
+			<query queryString="method=view|loadCarByIds"
+				validator="roleValidator(role=ROLE_KMCARMNG_DEFAULT)"/>	
+			<query queryString="method=add&amp;motorcadeId=*"
+				validator="roleValidator(role=ROLE_KMCARMNG_CARMANAGE)|authFieldValidator(type=driveradd,recid=motorcadeId,model=com.landray.kmss.km.carmng.model.KmCarmngMotorcadeSet)"/>
+			<query queryString="method=add"
+				validator="roleValidator(role=ROLE_KMCARMNG_CARMANAGE)"/>
+			<query queryString="method=update&amp;motorcadeId=*"
+				validator="roleValidator(role=ROLE_KMCARMNG_CARMANAGE)|authFieldValidator(type=driveradd,recid=motorcadeId,model=com.landray.kmss.km.carmng.model.KmCarmngMotorcadeSet)"/>
+			<query queryString="method=update"
+				validator="roleValidator(role=ROLE_KMCARMNG_CARMANAGE)"/>
+			<query queryString="method=edit&amp;motorcadeId=*"
+				validator="roleValidator(role=ROLE_KMCARMNG_CARMANAGE)|authFieldValidator(type=driveradd,recid=motorcadeId,model=com.landray.kmss.km.carmng.model.KmCarmngMotorcadeSet)"/>
+			<query queryString="method=edit"
+				validator="roleValidator(role=ROLE_KMCARMNG_CARMANAGE)"/>
+			<query queryString="method=delete&amp;motorcadeId=*"
+				validator="roleValidator(role=ROLE_KMCARMNG_CARMANAGE)|authFieldValidator(type=driveradd,recid=motorcadeId,model=com.landray.kmss.km.carmng.model.KmCarmngMotorcadeSet)"/>
+			<query queryString="method=delete"
+				validator="roleValidator(role=ROLE_KMCARMNG_CARMANAGE)"/>
+			<query queryString="method=save&amp;motorcadeId=*"
+				validator="roleValidator(role=ROLE_KMCARMNG_CARMANAGE)|authFieldValidator(type=driveradd,recid=motorcadeId,model=com.landray.kmss.km.carmng.model.KmCarmngMotorcadeSet)"/>
+			<query queryString="method=save"
+				validator="roleValidator(role=ROLE_KMCARMNG_CARMANAGE)"/>
+			<query queryString="method=list&amp;motorcadeId=*"
+				validator="roleValidator(role=ROLE_KMCARMNG_CARMANAGE)|authFieldValidator(type=SYS_READER,recid=motorcadeId,model=com.landray.kmss.km.carmng.model.KmCarmngMotorcadeSet)"/>
+			<query queryString="method=list"
+				validator="roleValidator(role=ROLE_KMCARMNG_CARMANAGE)"/>
+			<query queryString="method=deleteall&amp;motorcadeId=*"
+				validator="roleValidator(role=ROLE_KMCARMNG_CARMANAGE)|authFieldValidator(type=driveradd,recid=motorcadeId,model=com.landray.kmss.km.carmng.model.KmCarmngMotorcadeSet)"/>
+			<query queryString="method=deleteall"
+				validator="roleValidator(role=ROLE_KMCARMNG_CARMANAGE)"/>
+		</request>
+		<!-- 车辆违章 -->
+		<request
+			path="km_carmng_infringe_info/kmCarmngInfringeInfo.do"
+			defaultValidator="roleValidator(role=ROLE_KMCARMNG_CARMANAGE)">
+			<!-- 车辆违章信息 -->
+			<query
+				queryString="method=list|edit|delete|deleteall|add|view"
+				validator="roleValidator(role=ROLE_KMCARMNG_CARMANAGE)" />		
+			<!-- 车辆违章统计 -->
+			<query
+				queryString="method=count|saveExportExcel"
+				validator="roleValidator(role=ROLE_KMCARMNG_CHARGESTAT)" />	
+		</request>
+		<!-- 车辆保险信息 -->
+		<request
+			path="km_carmng_insurance_info/kmCarmngInsuranceInfo.do"
+			validatorParameter="recid=fdId,model=com.landray.kmss.km.carmng.model.KmCarmngInsuranceInfo"
+			defaultValidator="roleValidator(role=ROLE_KMCARMNG_CARMANAGE)">	
+			<query
+				queryString="method=count|saveExportExcel"
+				validator="roleValidator(role=ROLE_KMCARMNG_CHARGESTAT)" />		
+		</request>
+		<!-- 车辆保养-->
+		<request
+			path="km_carmng_maintenance_info/kmCarmngMaintenanceInfo.do"
+			validatorParameter="recid=fdId,model=com.landray.kmss.km.carmng.model.KmCarmngMaintenanceInfo">
+			<!-- 车辆保养信息 -->
+			<query
+				queryString="method=list|edit|delete|deleteall|add|view"
+				validator="roleValidator(role=ROLE_KMCARMNG_CARMANAGE)" />
+			<!-- 车辆保养统计 -->
+			<query
+				queryString="method=count|saveExportExcel"
+				validator="roleValidator(role=ROLE_KMCARMNG_CHARGESTAT)" />				
+		</request>
+		<!-- 出车统计 -->
+		<request
+			path="km_carmng_user_fee_info/kmCarmngUserFeeInfo*"
+			validatorParameter="recid=fdId,model=com.landray.kmss.km.carmng.model.KmCarmngUserFeeInfo">
+			<query
+				queryString="method=carUseCount|saveExportExcel|queryDriverCount|queryOrgCount|queryCarFeeCount"
+				validator="roleValidator(role=ROLE_KMCARMNG_CHARGESTAT)" />	
+		</request>
+		<!--调度信息-->
+		<request
+			path="km_carmng_dispatchers_info/kmCarmngDispatchersInfo.do"
+			validatorParameter="recid=fdId,model=com.landray.kmss.km.carmng.model.KmCarmngDispatchersInfo" >	
+			<query
+				queryString="method=add&amp;fdAppId=*"
+				validator="roleValidator(role=ROLE_KMCARMNG_ATTEMPER)|[roleValidator(role=ROLE_KMCARMNG_MOTORCADE_ATTEMPER)&amp;authFieldValidator(type=attenper,recid=fdAppId,model=com.landray.kmss.km.carmng.model.KmCarmngApplication)]" />
+			<query
+				queryString="method=addBatch"
+				validator="roleValidator(role=ROLE_KMCARMNG_MOTORCADE_ATTEMPER)|roleValidator(role=ROLE_KMCARMNG_ATTEMPER)" />
+			<query
+				queryString="method=view"
+				validator="authFieldValidator(type=SYS_READER)" />
+			<query
+				queryString="method=edit"
+				validator="authFieldValidator(type=SYS_EDITOR)" />
+			<query
+				queryString="method=search"
+				validator="roleValidator(role=ROLE_KMCARMNG_USECARQUERY)" />
+			<query
+				queryString="method=delete"
+				validator="roleValidator(role=ROLE_KMCARMNG_ATTEMPER)" />
+			<query
+				queryString="method=deleteall"
+				validator="roleValidator(role=ROLE_KMCARMNG_ATTEMPER)" />
+		</request>
+		<request path="km_carmng_dispatchers_info_list/kmCarmngDispatchersInfoList.do"
+					validatorParameter="recid=fdDispatchInfoListId,model=com.landray.kmss.km.carmng.model.KmCarmngDispatchersInfoList" >	
+			<query
+				queryString="method=search"
+				validator="roleValidator(role=ROLE_KMCARMNG_USECARQUERY)" />
+		</request>
+		<!-- 回车登记 -->
+		<request
+			path="km_carmng_register_info/kmCarmngRegisterInfo*"
+			validatorParameter="recid=fdId,model=com.landray.kmss.km.carmng.model.KmCarmngRegisterInfo" >
+			<query
+				queryString="method=add"
+				validator="authFieldValidator(type=register,recid=fdDispatchInfoListId,model=com.landray.kmss.km.carmng.model.KmCarmngDispatchersInfoList)|authFieldValidator(type=sysDriver,recid=fdDispatchInfoListId,model=com.landray.kmss.km.carmng.model.KmCarmngDispatchersInfoList)" />		
+			<query
+				queryString="method=viewRegister"
+				validator="authFieldValidator(type=dispatcher,recid=fdDispatchInfoListId,model=com.landray.kmss.km.carmng.model.KmCarmngDispatchersInfoList)|authFieldValidator(type=register,recid=fdDispatchInfoListId,model=com.landray.kmss.km.carmng.model.KmCarmngDispatchersInfoList)|authFieldValidator(type=sysDriver,recid=fdDispatchInfoListId,model=com.landray.kmss.km.carmng.model.KmCarmngDispatchersInfoList)|kmCarmngRegisterValidator(recid=fdAppId)" />	
+			
+			<query
+				queryString="method=edit"
+				validator="authFieldValidator(type=SYS_EDITOR)" />		
+		</request>
+		<!-- 用车申请 -->
+		<request
+			path="km_carmng_application/kmCarmngApplication*"
+			validatorParameter="recid=fdId,model=com.landray.kmss.km.carmng.model.KmCarmngApplication" >	
+			<!-- 创建 -->
+			<query
+				queryString="method=add|save|saveadd"
+				validator="roleValidator(role=ROLE_KMCARMNG_CREATE)" />
+			<!-- 阅读 -->
+			<query
+				queryString="method=view"
+				validator="authFieldValidator(type=SYS_READER)" />		
+			<!-- 编辑 -->
+			<query
+				queryString="method=edit|update"
+				validator="fieldValueValidator(fieldproperty=docStatus,value=30)&amp;roleValidator(role=ROLE_KMCARMNG_EDITOR)|authFieldValidator(type=SYS_EDITOR)" />
+			<!-- 删除 -->
+			<query
+				queryString="method=delete"
+				validator="fieldValueValidator(fieldproperty=docStatus,value=10)&amp;authFieldValidator(type=creator)|roleValidator(role=ROLE_KMCARMNG_DELETE)" />
+			<!-- 删除所有 -->
+			<query
+				queryString="method=deleteall"
+				validator="roleValidator(role=ROLE_KMCARMNG_DELETE)" />
+			<!-- 打印 -->
+			<query
+				queryString="method=print"
+				validator="roleValidator(role=ROLE_KMCARMNG_PRINT)" />
+		</request>
+		
+		<!-- 车队设置过滤器 -->
+		<filters
+			modelName="com.landray.kmss.km.carmng.model.KmCarmngMotorcadeSet">
+			<filter
+				type="SYS_READER"
+				expression="authFieldFilter(field=docCreator.fdId)" />
+			<filter
+				type="SYS_READER"
+				expression="authFieldFilter(field=authAllReaders.fdId)" />
+			<filter
+				type="SYS_READER"
+				expression="flagFieldFilter(field=authReaderFlag,except=0)" />
+			<filter
+				type="SYS_READER"
+				expression="roleFilter(role=ROLE_KMCARMNG_MOTORCADE_SETTING)" />
+			<filter
+				type="SYS_EDITOR"
+				expression="authFieldFilter(field=docCreator.fdId)" />
+			<filter
+				type="SYS_EDITOR"
+				expression="authFieldFilter(field=authAllEditors.fdId)" />
+			<filter
+				type="driveradd"
+				expression="authFieldFilter(field=authAllEditors.fdId)" />
+			<filter
+				type="driveradd"
+				expression="roleFilter(role=ROLE_KMCARMNG_MOTORCADE_SETTING)" />
+			<filter
+				type="driveradd"
+				expression="authFieldFilter(field=docCreator.fdId)" />
+		</filters>
+		
+		<!-- 用车申请过滤器 -->
+		<filters
+			modelName="com.landray.kmss.km.carmng.model.KmCarmngApplication">	
+			<filter
+				type="docCreator"
+				expression="authFieldFilter(field=docCreator.fdId)" />
+			<filter
+				type="SYS_READER"
+				expression="roleFilter(role=ROLE_KMCARMNG_READER)" />
+			<filter
+				type="SYS_READER"
+				expression="roleFilter(role=ROLE_KMCARMNG_EDITOR)" />
+			<filter
+				type="SYS_READER"
+				expression="roleFilter(role=ROLE_KMCARMNG_ATTEMPER)" />	
+			<filter
+				type="SYS_READER"
+				expression="roleFilter(role=ROLE_KMCARMNG_REGISTER)" />				
+			<filter
+				type="SYS_READER"
+				expression="authFieldFilter(field=authAllReaders.fdId)" />	
+			<filter
+				type="SYS_READER"
+				expression="authFieldFilter(field=fdMotorcade.fdDispatchers.fdId)" />	
+				<filter
+				type="SYS_READER"
+				expression="authFieldFilter(field=fdMotorcade.fdRegister.fdId)" />
+			<filter
+				type="SYS_READER"
+				expression="flagFieldFilter(field=authReaderFlag,value=1)" />
+			<filter
+				type="SYS_EDITOR"
+				expression="authFieldFilter(field=authAllEditors.fdId)" />
+			<!--用车申请单中的调度控制-->
+			<filter
+				type="attenper"
+				expression="authFieldFilter(field=fdMotorcade.fdDispatchers.fdId)" />
+			<filter
+				type="attenper"
+				expression="roleFilter(role=ROLE_KMCARMNG_ATTEMPER)" />
+		</filters>
+		<!-- 调度信息过滤器 -->
+		<filters
+			modelName="com.landray.kmss.km.carmng.model.KmCarmngDispatchersInfo">
+			<filter
+				type="SYS_READER"
+				expression="authFieldFilter(field=docCreator.fdId)" />
+			<filter
+				type="SYS_READER"
+				expression="authFieldFilter(field=fdRegister.fdId)" />
+			<filter
+				type="SYS_READER"
+				expression="authFieldFilter(field=authAllReaders.fdId)" />
+			<filter
+				type="SYS_READER"
+				expression="roleFilter(role=ROLE_KMCARMNG_ATTEMPER)" />
+			<filter
+				type="SYS_READER"
+				expression="roleFilter(role=ROLE_KMCARMNG_REGISTER)" />	
+			<filter
+				type="SYS_READER"
+				expression="roleFilter(role=ROLE_KMCARMNG_CARMANAGE)" />	
+			<filter
+				type="SYS_EDITOR"
+				expression="authFieldFilter(field=docCreator.fdId)" />
+			<filter
+				type="SYS_EDITOR"
+				expression="authFieldFilter(field=authAllEditors.fdId)" />
+			<filter
+				type="SYS_EDITOR"
+				expression="roleFilter(role=ROLE_KMCARMNG_ATTEMPER)" />
+			<filter
+				type="SYS_EDITOR"
+				expression="roleFilter(role=ROLE_KMCARMNG_CARMANAGE)" />
+		</filters>	
+		<filters
+			modelName="com.landray.kmss.km.carmng.model.KmCarmngDispatchersInfoList">
+			<filter
+				type="register"
+				expression="authFieldFilter(field=fdCarInfo.fdMotorcade.fdRegister.fdId)" />
+			<filter
+				type="register"
+				expression="authFieldFilter(field=fdDispatchersInfo.fdRegister.fdId)" />
+			<filter
+				type="register"
+				expression="roleFilter(role=ROLE_KMCARMNG_REGISTER)" />
+			<filter
+				type="dispatcher"
+				expression="authFieldFilter(field=fdDispatchersInfo.docCreator.fdId)" />
+			<filter
+				type="sysDriver"
+				expression="authFieldFilter(field=fdSysDriver.fdId)" />
+		</filters>
+		<!-- 回车登记过滤器 -->
+		<filters
+			modelName="com.landray.kmss.km.carmng.model.KmCarmngRegisterInfo">
+			<filter
+				type="SYS_READER"
+				expression="authFieldFilter(field=fdDispatchInfoList.fdCarInfo.fdMotorcade.fdDispatchers.fdId)" />
+			<filter
+				type="SYS_READER"
+				expression="authFieldFilter(field=fdDispatchInfoList.fdSysDriver.fdId)" />
+			<filter
+				type="SYS_READER"
+				expression="roleFilter(role=ROLE_KMCARMNG_REGISTER)" />
+			<filter
+				type="SYS_READER"
+				expression="authFieldFilter(field=fdRegister.fdId)" />
+			<filter
+				type="SYS_READER"
+				expression="authFieldFilter(field=fdDispatchInfoList.fdDispatchersInfo.fdRegister.fdId)" />
+			<filter
+				type="SYS_EDITOR"
+				expression="authFieldFilter(field=fdRegister.fdId)" />
+			<filter
+				type="SYS_EDITOR"
+				expression="authFieldFilter(field=fdDispatchInfoList.fdDispatchersInfo.fdRegister.fdId)" />
+			<filter
+				type="SYS_EDITOR"
+				expression="authFieldFilter(field=fdDispatchInfoList.fdCarInfo.fdMotorcade.fdDispatchers.fdId)" />
+			<filter
+				type="SYS_EDITOR"
+				expression="roleFilter(role=ROLE_KMCARMNG_REGISTER)" />
+		</filters>
+	</module>
+	<!-- 编号机制权限 -->
+    <module 
+        urlPrefix="/sys/number/">
+        <request 
+            path="sys_number_main/sysNumberMain*">
+            <query 
+                queryString="modelName=com.landray.kmss.km.carmng.model.KmCarmngApplication" 
+                validator="roleValidator(role=ROLE_KMCARMNG_SETTING)"/>
+        </request>
+    </module>
+	<module urlPrefix="/sys/transport/">
+		<request path="sys_transport_export/SysTransportExport*">
+			<query validator="roleValidator(role=ROLE_KMCARMNG_TRANSPORT_EXPORT)"
+				queryString="fdModelName=com.landray.kmss.km.carmng.model.KmCarmngApplication" />
+		</request>
+		<request path="sys_transport_export/SysTransportExport*">
+			<query validator="roleValidator(role=ROLE_KMCARMNG_TRANSPORT_EXPORT)"
+				queryString="fdModelName=com.landray.kmss.km.carmng.model.KmCarmngInfringeInfo" />
+		</request>
+		<request path="sys_transport_export/SysTransportExport*">
+			<query validator="roleValidator(role=ROLE_KMCARMNG_TRANSPORT_EXPORT)"
+				queryString="fdModelName=com.landray.kmss.km.carmng.model.KmCarmngInsuranceInfo" />
+		</request>
+		<request path="sys_transport_export/SysTransportExport*">
+			<query validator="roleValidator(role=ROLE_KMCARMNG_TRANSPORT_EXPORT)"
+				queryString="fdModelName=com.landray.kmss.km.carmng.model.KmCarmngMaintenanceInfo" />
+		</request>
+	</module>
+	<!-- 通用流程模板 -->
+	<module 
+		urlPrefix="/sys/workflow/">
+		<request
+			path="sys_wf_common_template/sysWfCommonTemplate*">			
+			<query
+				queryString="fdModelName=com.landray.kmss.km.carmng.model.KmCarmngMotorcadeSet"
+				validator="roleValidator(role=ROLE_KMCARMNG_SETTING)" />				
+		</request>
+	</module>
+	<!-- 通用流程模板目录下 替换处理人和 批量修改特权人 -->
+	<module urlPrefix="/sys/lbpmservice/">
+		<request 
+			path="support/lbpm_template/lbpmTemplate*">
+			<query
+				queryString="method=updateAuditor|updateTemplateAuditor|updateCategoryAuditor|doUpdateAuditor&amp;fdModelName=com.landray.kmss.km.carmng.model.KmCarmngMotorcadeSet"
+				validator="roleValidator(role=ROLE_KMCARMNG_BACKSTAGE_MANAGER)" />
+		</request>
+		<request 
+			path="support/lbpm_template/lbpmPrivileger*">
+			<query
+				queryString="method=updatePrivileger|doUpdatePrivileger&amp;fdModelName=com.landray.kmss.km.carmng.model.KmCarmngMotorcadeSet"
+				validator="roleValidator(role=ROLE_KMCARMNG_BACKSTAGE_MANAGER)" />
+		</request>
+	</module>
+	<!-- 列表自定义权限 -->
+	<module urlPrefix="/sys/profile/">
+		<request 
+			path="listShow/sys_listShow/sysListShow*">
+			<query
+				queryString="modelName=com.landray.kmss.km.carmng.model.KmCarmngApplication"
+				validator="roleValidator(role=ROLE_KMCARMNG_DEFAULT)&amp;roleValidator(role=ROLE_KMCARMNG_BACKSTAGE_MANAGER)&amp;roleValidator(role=ROLE_KMCARMNG_SETTING)" />
+		</request>
+	</module>
+	<module 
+		urlPrefix="/sys/lbpmservice/support/">
+		<request
+			path="lbpm_template/lbpmTemplate*">			
+			<query
+				queryString="fdModelName=com.landray.kmss.km.carmng.model.KmCarmngMotorcadeSet"
+				validator="roleValidator(role=ROLE_KMCARMNG_SETTING)" />				
+		</request>
+	</module>
+	<!-- 批量修改权限 -->
+	<module urlPrefix="/sys/right/">
+		<request path="rightCateChange*">
+			<query
+				queryString="method=cateRightEdit&amp;cateModelName=com.landray.kmss.km.carmng.model.KmCarmngMotorcadeSet"
+				validator="roleValidator(role=ROLE_KMCARMNG_BACKSTAGE_MANAGER)" />
+		</request>
+	</module>
+	
+	<!-- 搜索权限 -->
+	<module
+		messageKey=""
+		urlPrefix="/sys/ftsearch/">
+		<request
+			path="searchBuilder*">
+			<query
+				queryString="modelName=com.landray.kmss.km.carmng.model.KmCarmngApplication"
+				validator="roleValidator(role=ROLE_KMCARMNG_DEFAULT)" />
+		</request>
+		<request
+			path="searchBuilder*">
+			<query
+				queryString="modelName=com.landray.kmss.km.carmng.model.KmCarmngInfomation"
+				validator="roleValidator(role=ROLE_KMCARMNG_DEFAULT)" />
+		</request>
+	</module>
+	
+	<!--<quartz
+		messageKey="km-carmng:kmCarmng.quartz0"
+		jobService="kmCarmngQuartzService"
+		cronExpression="0 50 13 * * ?"
+		jobMethod="runCarmngNotify"
+		description="km-carmng:kmCarmng.quartz0.description"/>-->
+		
+	<quartz
+		messageKey="km-carmng:kmCarmng.quartz1"
+		jobService="kmCarmngNotifyQuartzService"
+		cronExpression="0 50 13 * * ?"
+		jobMethod="runCarmngNotify"
+		description="km-carmng:kmCarmng.quartz1.description"/>
+	
+	<!-- 定时任务，每天2点运行（从组织架构中更新驾驶员手机号码） -->
+	<quartz
+		messageKey="km-carmng:kmCarmng.quartz2"
+		jobService="kmCarmngSynMobileQuartzService"
+		cronExpression="0 0 2 * * ?"
+		jobMethod="synMobile"
+		description="km-carmng:kmCarmng.quartz2.description"/>
+		
+	<search
+		modelName="com.landray.kmss.km.carmng.model.KmCarmngApplication"
+		messageKey="km-carmng:kmCarmngApplication.search"
+		resultProperties="docSubject;fdDestination;fdApplicationPath;fdStartTime;fdEndTime;fdUserNumber;" />
+	<search
+		modelName="com.landray.kmss.km.carmng.model.KmCarmngInfomation"
+		messageKey="km-carmng:kmCarmngInfomation.search"
+		resultProperties="fdNo;docSubject;fdVehichesType.fdName;fdSeatNumber;fdMotorcade.fdName;fdDriverName;docStatus;" />
+	<ftSearch  
+		modelName="com.landray.kmss.km.carmng.model.KmCarmngApplication"
+		boost="2.0"
+		timeField="fdLastModifiedTime">
+		<luceneField
+			name="subject"
+			property="docSubject" 
+			type="text" />  <!-- 检索标题,只需要修改property，不需改name -->
+	    
+		<luceneField
+			name="content"
+			property="fdApplicationReason"
+			type="text" />  <!-- 检索内容,只需要修改property，不需改name -->
+		
+		<luceneField
+            name="category"
+            property="fdMotorcade.fdId"
+            type="Text" />
+            
+		<luceneField
+			name="creator"
+			property="docCreator.fdName"
+			type="text" />  <!-- 检索创建人,只需要修改property，不需改name -->
+		<luceneField
+			name="createTime"
+			property="docCreateTime"
+			type="keyword" />  <!-- 检索创建时间,只需要修改property，不需改name -->
+	</ftSearch>
+	<ftSearch  
+		modelName="com.landray.kmss.km.carmng.model.KmCarmngInfomation" 
+		boost="2.0" 
+		timeField="fdLastModifiedTime">
+		<luceneField
+			name="subject"
+			property="docSubject" 
+			type="text" />  <!-- 检索标题,只需要修改property，不需改name -->
+		<luceneField
+			name="content"
+			property="docSubject"
+			type="text" />  <!-- 检索内容,只需要修改property，不需改name -->
+		<luceneField
+            name="category"
+            property="fdVehichesType.fdId"
+            type="Text" />
+		<luceneField
+			name="creator"
+			property="docCreator.fdName"
+			type="text" />  <!-- 检索创建人,只需要修改property，不需改name -->
+		<luceneField
+			name="createTime"
+			property="docCreateTime"
+			type="keyword" />  <!-- 检索创建时间,只需要修改property，不需改name -->
+	</ftSearch>
+	<treeNodes type="myjob">
+		<treeNode messageKey="km-carmng:kmCarmng.tree.title">
+			<treeNode messageKey="km-carmng:kmCarmng.tree.my.submit">
+				<treeNode
+					messageKey="status.draft"
+					url="/km/carmng/km_carmng_application/kmCarmngApplication.do?method=list&amp;docStatus=10&amp;myDoc=true&amp;type=all">
+				</treeNode>
+				<treeNode
+					messageKey="status.examine"
+					url="/km/carmng/km_carmng_application/kmCarmngApplication.do?method=list&amp;docStatus=20&amp;myDoc=true">
+				</treeNode>
+				<treeNode
+					messageKey="status.publish"
+					url="/km/carmng/km_carmng_application/kmCarmngApplication.do?method=list&amp;docStatus=30&amp;myDoc=true&amp;isDispatcher=1">
+				</treeNode>
+				<treeNode
+					messageKey="km-carmng:kmCarmng.tree.publish2"
+					url="/km/carmng/km_carmng_application/kmCarmngApplication.do?method=list&amp;docStatus=30&amp;myDoc=true&amp;isDispatcher=2">
+				</treeNode>
+				<treeNode
+					messageKey="km-carmng:kmCarmng.tree.publish3"
+					url="/km/carmng/km_carmng_application/kmCarmngApplication.do?method=list&amp;docStatus=30&amp;myDoc=true&amp;isDispatcher=3">
+				</treeNode>
+				<treeNode
+					messageKey="status.refuse"
+					url="/km/carmng/km_carmng_application/kmCarmngApplication.do?method=list&amp;docStatus=11&amp;myDoc=true">
+				</treeNode>
+				<treeNode
+					messageKey="status.discard"
+					url="/km/carmng/km_carmng_application/kmCarmngApplication.do?method=list&amp;docStatus=00&amp;myDoc=true">
+				</treeNode>
+			</treeNode>
+			<treeNode messageKey="km-carmng:kmCarmng.tree.my.examine">
+				<treeNode
+					messageKey="km-carmng:kmCarmng.tree.wait"
+					url="/km/carmng/km_carmng_application/kmCarmngApplication.do?method=list&amp;flowType=unExecuted">
+				</treeNode>
+				<treeNode
+					messageKey="km-carmng:kmCarmng.tree.already"
+					url="/km/carmng/km_carmng_application/kmCarmngApplication.do?method=list&amp;flowType=executed">
+				</treeNode>
+			</treeNode>
+		</treeNode>
+	</treeNodes>
+	<!-- 车辆管理配置 -->
+	<treeNodes type="config">
+		<treeNode messageKey="km-carmng:kmCarmng.tree.title">
+			<treeNode
+				messageKey="km-carmng:kmCarmng.tree.base.set1"
+				url="/km/carmng/km_carmng_motorcade_set/kmCarmngMotorcadeSet.do?method=list" />
+			<treeNode
+				messageKey="km-carmng:kmCarmng.tree.base.set2"
+				url="/km/carmng/km_carmng_drivers_info/kmCarmngDriversInfo.do?method=list" />
+			<treeNode
+				messageKey="km-carmng:kmCarmng.tree.base.set3"
+				url="/km/carmng/km_carmng_category/kmCarmngCategory.do?method=list" />
+			<treeNode
+				messageKey="km-carmng:kmCarmng.tree.base.set4"
+				url="/sys/workflow/sys_wf_common_template/sysWfCommonTemplate.do?method=list&amp;fdModelName=com.landray.kmss.km.carmng.model.KmCarmngMotorcadeSet&amp;fdKey=kmCarmngMotorcadeSet" />
+		</treeNode>
+	</treeNodes>
+<!--	<homePage-->
+<!--		urlPrefix="km/carmng"-->
+<!--		url="/moduleindex.jsp?nav=/km/carmng/tree.jsp&amp;main=%2Fkm%2Fcarmng%2Fkm_carmng_application%2FkmCarmngApplication.do%3Fmethod%3Dlist%26docStatus%26myDoc%3Dtrue%26s_path%3D!{message(km-carmng:kmCarmng.tree.my.submit)}"-->
+<!--		messageKey="km-carmng:kmCarmng.tree.title"-->
+<!--		config="/moduleindex_notopic.jsp?nav=/km/carmng/tree_config.jsp" />-->
+	<homePage
+		urlPrefix="km/carmng"
+		url="/sys/portal/page.jsp#j_start=/km/carmng/index.jsp&amp;j_target=_iframe"
+		messageKey="km-carmng:kmCarmng.tree.title" 
+		config="/moduleindex_notopic.jsp?nav=/km/carmng/tree_config.jsp"/>
+	<flowDef
+		modelName="com.landray.kmss.km.carmng.model.KmCarmngApplication"
+		templateModelName="com.landray.kmss.km.carmng.model.KmCarmngMotorcadeSet"
+		key="kmCarmngMotorcadeSet"
+		templatePropertyName="fdMotorcade"
+		moduleMessageKey="km-carmng:kmCarmng.tree.title"
+		type="oa" />
+	
+	<profileConfig
+		key="km/carmng"
+		messageKey="{km-carmng:module.km.carmng}" 
+		url="/sys/profile/moduleindex.jsp?nav=/km/carmng/tree_config.jsp" 
+		icon="km_carmng"
+		type="ekp"
+		description="{km-carmng:kmCarmng.profileCfg.description}"
+		order="203"/>	
+		
+</configs>

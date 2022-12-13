@@ -1,0 +1,17 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE hibernate-configuration
+	PUBLIC "-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+	"http://hibernate.sourceforge.net/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>	
+	<session-factory>	
+		<mapping resource="com/landray/kmss/geesun/oitems/model/GeesunOitemsManage.hbm.xml"/>
+		<mapping resource="com/landray/kmss/geesun/oitems/model/GeesunOitemsListing.hbm.xml"/>
+		<mapping resource="com/landray/kmss/geesun/oitems/model/GeesunOitemsWarehousingRecord.hbm.xml"/>
+		<mapping resource="com/landray/kmss/geesun/oitems/model/GeesunOitemsWarehousingRecordJoinList.hbm.xml"/>
+		<mapping resource="com/landray/kmss/geesun/oitems/model/GeesunOitemsBudgerApplication.hbm.xml"/>
+		<mapping resource="com/landray/kmss/geesun/oitems/model/GeesunOitemsTemplet.hbm.xml"/>
+		<mapping resource="com/landray/kmss/geesun/oitems/model/GeesunOitemsShoppingTrolley.hbm.xml"/>
+		<mapping resource="com/landray/kmss/geesun/oitems/model/GeesunOitemsMonthReport.hbm.xml" />
+		<mapping resource="com/landray/kmss/geesun/oitems/model/GeesunOitemsReportListing.hbm.xml" />
+	</session-factory>	
+</hibernate-configuration> 

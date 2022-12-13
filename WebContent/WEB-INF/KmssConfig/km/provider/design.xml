@@ -1,0 +1,168 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configs
+	xmlns="http://www.example.org/design-config"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.example.org/design-config ../../design.xsd ">
+
+	<module
+		messageKey="km-provider:module.km.provider"
+		urlPrefix="/km/provider/"
+		defaultValidator="roleValidator(role=ROLE_KMPROVIDER_DEFAULT)">
+		<roles>
+			ROLE_KMPROVIDER_DEFAULT;
+			ROLE_KMPROVIDER_CREATE;
+			ROLE_KMPROVIDER_READER;
+			ROLE_KMPROVIDER_DELETE;
+			ROLE_KMPROVIDER_EDITOR;
+			ROLE_KMPROVIDER_CATEGORY_MAINTAINER;
+			ROLE_KMPROVIDER_OPTALL;
+			ROLE_KMPROVIDER_BACKSTAGE_MANAGER
+		</roles>
+
+		<request
+			path="tree_config.jsp*"
+			defaultValidator="roleValidator(role=ROLE_KMPROVIDER_BACKSTAGE_MANAGER)"/>
+		<request
+			path="km_provider_category/kmProviderCategory*"
+			validatorParameter="recid=fdId,model=com.landray.kmss.km.provider.model.KmProviderCategory,adminRoleName=ROLE_KMPROVIDER_CATEGORY_MAINTAINER">
+			<!-- 新增-->
+			<query
+				queryString="method=add"
+				validator="sysSimpleCategoryEditorValidator(recid=parentId)" />
+			<!-- 阅读 -->
+			<query
+				queryString="method=view"
+				validator="sysSimpleCategoryEditorValidator()|sysSimpleCategoryReaderValidator()" />
+			<!-- 编辑和删除 -->
+			<query
+				queryString="method=edit|update|delete"
+				validator="sysSimpleCategoryEditorValidator()" />
+			<!-- 复制 -->
+			<query
+				queryString="method=copy"
+				validator="sysSimpleCategoryEditorValidator(recid=fdCopyId)" />
+		</request>
+
+		<request
+			path="km_provider_main/kmProviderMain*"
+			validatorParameter="recid=fdId,model=com.landray.kmss.km.provider.model.KmProviderMain,cateModel=com.landray.kmss.km.provider.model.KmProviderCategory">
+			<!-- 指定模板下新增 -->
+			<query
+				queryString="method=add&amp;categoryId=*"
+				validator="roleValidator(role=ROLE_KMPROVIDER_CREATE)&amp;authSimpleCategoryReaderValidator(cateId=categoryId)" />
+			<!-- 新增 -->
+			<query
+				queryString="method=add"
+				validator="roleValidator(role=ROLE_KMPROVIDER_CREATE)" />
+			<!-- 保存 -->
+			<query
+				queryString="method=save&amp;categoryId=*"
+				validator="roleValidator(role=ROLE_KMPROVIDER_CREATE)&amp;authSimpleCategoryReaderValidator(cateId=categoryId)" />
+			<!-- 保存 -->
+			<query
+				queryString="method=save|saveadd"
+				validator="roleValidator(role=ROLE_KMPROVIDER_CREATE)&amp;authSimpleCategoryReaderValidator(cateId=categoryId)" />
+			<!-- 阅读 -->
+			<query
+				queryString="method=view"
+				validator="authFieldValidator(type=SYS_READER)|roleValidator(role=ROLE_KMPROVIDER_READER)" />
+			<!-- 编辑 -->
+			<query
+				queryString="method=edit"
+				validator="authFieldValidator(type=SYS_EDITOR)|roleValidator(role=ROLE_KMPROVIDER_EDITOR)&amp;[roleValidator(role=ROLE_KMPROVIDER_CATEGORY_MAINTAINER)|roleValidator(role=ROLE_KMPROVIDER_OPTALL)|authSimpleCategoryEditorValidator(property=docCategory)]" />
+			<!-- 文档中的删除 -->
+			<query
+				queryString="method=delete"
+				validator="roleValidator(role=ROLE_KMPROVIDER_DELETE)&amp;[roleValidator(role=ROLE_KMPROVIDER_CATEGORY_MAINTAINER)|roleValidator(role=ROLE_KMPROVIDER_OPTALL)|authSimpleCategoryEditorValidator(property=docCategory)]" />
+			<!-- 删除所有其他视图 -->
+			<query
+				queryString="method=deleteall"
+				validator="roleValidator(role=ROLE_KMPROVIDER_DELETE)&amp;[roleValidator(role=ROLE_KMPROVIDER_CATEGORY_MAINTAINER)|authSimpleCategoryEditorValidator(cateId=categoryId)]" />
+		</request>
+		
+		<filters
+			modelName="com.landray.kmss.km.provider.model.KmProviderMain">
+			<filter
+				type="SYS_READER"
+				expression="authFieldFilter(field=docCreator.fdId)" />
+			<filter
+				type="SYS_READER"
+				expression="authFieldFilter(field=authAllReaders.fdId)" />
+			<filter
+				type="SYS_READER"
+				expression="flagFieldFilter(field=authReaderFlag,value=1)" />
+			<filter
+				type="SYS_EDITOR"
+				expression="authFieldFilter(field=authAllEditors.fdId)" />	
+		</filters>
+
+	</module>
+	<!-- 批量修改权限 -->
+	<module urlPrefix="/sys/right/">
+		<request path="rightCateChange*">
+			<query
+				queryString="method=cateRightEdit&amp;cateModelName=com.landray.kmss.km.provider.model.KmProviderCategory"
+				validator="roleValidator(role=ROLE_KMPROVIDER_CATEGORY_MAINTAINER)" />
+		</request>
+	</module>
+	
+	<!-- 全文检索 -->
+	<module
+		messageKey=""
+		urlPrefix="/sys/ftsearch/">
+		<request path="searchBuilder*">
+			<query
+				queryString="modelName=com.landray.kmss.km.provider.model.KmProviderMain"
+				validator="roleValidator(role=ROLE_KMPROVIDER_DEFAULT)" />
+		</request>
+	</module>
+	
+	<ftSearch
+		modelName="com.landray.kmss.km.provider.model.KmProviderMain"
+		boost="2.0"
+		timeField="docCreateTime">
+		<luceneField
+			name="subject"
+			property="fdName"
+			type="Text" />
+		<luceneField
+			name="template"
+			property="docCategory.fdName"
+			type="Text" />
+		<luceneField
+			name="content"
+			property="fdSummary"
+			type="text" />
+		<luceneField
+			name="content"
+			property="fdRemark"
+			type="text" />
+		<luceneField
+            name="category"
+            property="docCategory.fdHierarchyId"
+            type="Text" />
+		<luceneField
+			name="creator"
+			property="docCreator.fdName"
+			type="Text" />
+		<luceneField
+			name="createTime"
+			property="docCreateTime"
+			type="keyword" />
+	</ftSearch>
+
+	<homePage
+		urlPrefix="km/provider"
+		url="/sys/portal/page.jsp#j_start=/km/provider/index.jsp&amp;j_target=_iframe" 
+		messageKey="km-provider:module.km.provider"
+		config="/moduleindex_notopic.jsp?nav=/km/provider/tree_config.jsp"/>
+
+   <profileConfig 
+		key="km/provider"
+		messageKey="{km-provider:module.km.provider}" 
+		url="/sys/profile/moduleindex.jsp?nav=/km/provider/tree_config.jsp" 
+		icon="km_provider"
+		type="ekp"
+		description="{km-provider:kmProvider.profileCfg.description}"
+		order="208"/>
+</configs>

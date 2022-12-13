@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans
+	xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.0.xsd">
+	<bean
+		name="/km/provider/km_provider_category/kmProviderCategory.do"
+		class="com.landray.kmss.km.provider.actions.KmProviderCategoryAction"
+		lazy-init="true"
+		parent="KmssBaseAction">
+		<property
+			name="formType"
+			value="com.landray.kmss.km.provider.forms.KmProviderCategoryForm" />
+		<property name="forwards">
+			<map>
+				<entry
+					key="view"
+					value="/km/provider/km_provider_category/kmProviderCategory_view.jsp" />
+				<entry
+					key="edit"
+					value="/km/provider/km_provider_category/kmProviderCategory_edit.jsp" />
+				<entry
+					key="list"
+					value="/km/provider/km_provider_category/kmProviderCategory_list.jsp" />
+			</map>
+		</property>
+	</bean>
+	<bean
+		name="/km/provider/km_provider_main/kmProviderMain.do"
+		class="com.landray.kmss.km.provider.actions.KmProviderMainAction"
+		lazy-init="true"
+		parent="KmssBaseAction">
+		<property
+			name="formType"
+			value="com.landray.kmss.km.provider.forms.KmProviderMainForm" />
+		<property name="forwards">
+			<map>
+				<entry
+					key="view"
+					value="/km/provider/km_provider_main/kmProviderMain_view.jsp" />
+				<entry
+					key="edit"
+					value="/km/provider/km_provider_main/kmProviderMain_edit.jsp" />
+				<entry
+					key="list"
+					value="/km/provider/km_provider_main/kmProviderMain_list.jsp" />
+				<entry
+					key="saveExcelSuccess"
+					value="/km/provider/km_provider_main/kmProviderMain_list_upload.jsp" />
+			</map>
+		</property>
+	</bean>
+	<bean
+		name="/km/provider/km_provider_main/kmProviderMainSelect.do"
+		class="com.landray.kmss.km.provider.actions.KmProviderMainSelectAction"
+		lazy-init="true"
+		parent="KmssBaseAction">
+		<property
+			name="formType"
+			value="com.landray.kmss.km.provider.forms.KmProviderMainForm" />
+		<property name="forwards">
+			<map>
+				<entry
+					key="showProvider"
+					value="/km/provider/km_provider_main/kmProviderMain_dialog.jsp" />
+				<entry
+					key="list"
+					value="/km/provider/km_provider_main/kmProviderMain_dialog_list.jsp" />
+			</map>
+		</property>
+	</bean>
+</beans>

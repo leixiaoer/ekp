@@ -1,0 +1,183 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans
+	xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.0.xsd">
+	<bean
+		name="/km/vote/km_vote_comment/kmVoteComment.do"
+		class="com.landray.kmss.km.vote.actions.KmVoteCommentAction"
+		lazy-init="true"
+		parent="KmssBaseAction">
+		<property
+			name="formType"
+			value="com.landray.kmss.km.vote.forms.KmVoteCommentForm" />
+		<property name="forwards">
+			<map>
+				<entry
+					key="view"
+					value="/km/vote/km_vote_comment/kmVoteComment_view.jsp" />
+				<entry
+					key="list"
+					value="/km/vote/km_vote_comment/kmVoteComment_data.jsp" />
+				<entry
+					key="moreComment"
+					value="/km/vote/km_vote_comment/kmVoteComment_more.jsp" />
+			</map>
+		</property>
+	</bean>
+	<bean
+		name="/km/vote/km_vote_main/kmVoteMain.do"
+		class="com.landray.kmss.km.vote.actions.KmVoteMainAction"
+		lazy-init="true"
+		parent="KmssBaseAction">
+		<property
+			name="formType"
+			value="com.landray.kmss.km.vote.forms.KmVoteMainForm" />
+		<property name="forwards">
+			<map>
+				<entry
+					key="editVoter"
+					value="/km/vote/km_vote_main/kmVoteMain_editVoter.jsp" />
+				<entry
+					key="view"
+					value="/km/vote/km_vote_ui/kmVoteMain_view.jsp" />
+				<entry
+					key="view.4m"
+					value="/km/vote/mobile/view.jsp" />
+				<entry
+					key="viewitem"
+					value="/km/vote/maxhub/import/viewitem.jsp" />	
+				<entry
+					key="viewitem.4mh"
+					value="/km/vote/maxhub/import/viewitem.jsp" />	
+				<entry
+					key="edit"
+					value="/km/vote/km_vote_ui/kmVoteMain_edit.jsp" />
+				<entry
+					key="edit.4m"
+					value="/km/vote/mobile/edit.jsp" />
+				<entry
+					key="viewo"
+					value="/km/vote/km_vote_main/kmVoteMain_view.jsp" />
+				<entry
+					key="edito"
+					value="/km/vote/km_vote_main/kmVoteMain_edit.jsp" />
+				<entry
+					key="list"
+					value="/km/vote/km_vote_main/kmVoteMain_list.jsp" />
+				<entry
+					key="listChildren"
+					value="/km/vote/km_vote_ui/kmVoteMain_list.jsp" />
+				<entry
+					key="lasterVote"
+					value="/km/vote/km_vote_main/kmVoteMain_portlet.jsp" />
+				<entry
+					key="moreVoting"
+					value="/km/vote/km_vote_main/kmVoteMain_more.jsp" />
+				<entry
+					key="manageList"
+					value="/km/vote/km_vote_main/kmVoteMain_list.jsp" />
+				<entry
+					key="data"
+					value="/km/vote/km_vote_ui/kmVoteMain_data.jsp" />
+				<entry
+					key="participateSucc"
+					value="/km/vote/mobile/participateSucc.jsp" />
+			</map>
+		</property>
+	</bean>
+	<bean
+		name="/km/vote/km_vote_main_item/kmVoteMainItem.do"
+		class="com.landray.kmss.km.vote.actions.KmVoteMainItemAction"
+		lazy-init="true"
+		parent="KmssBaseAction">
+		<property
+			name="formType"
+			value="com.landray.kmss.km.vote.forms.KmVoteMainItemForm" />
+		<property name="forwards">
+			<map>
+				<entry
+					key="view"
+					value="/km/vote/km_vote_main_item/kmVoteMainItem_view.jsp" />
+				<entry
+					key="edit"
+					value="/km/vote/km_vote_main_item/kmVoteMainItem_edit.jsp" />
+				<entry
+					key="list"
+					value="/km/vote/km_vote_main_item/kmVoteMainItem_list.jsp" />
+			</map>
+		</property>
+	</bean>
+	<bean
+		name="/km/vote/km_vote_category/kmVoteCategory.do"
+		class="com.landray.kmss.km.vote.actions.KmVoteCategoryAction"
+		lazy-init="true"
+		parent="KmssBaseAction">
+		<property
+			name="formType"
+			value="com.landray.kmss.km.vote.forms.KmVoteCategoryForm" />
+		<property name="forwards">
+			<map>
+				<entry
+					key="view"
+					value="/km/vote/km_vote_category/kmVoteCategory_view.jsp" />
+				<entry
+					key="edit"
+					value="/km/vote/km_vote_category/kmVoteCategory_edit.jsp" />
+				<entry
+					key="list"
+					value="/km/vote/km_vote_category/kmVoteCategory_list.jsp" />
+			</map>
+		</property>
+	</bean>
+	<bean
+		name="/km/vote/km_vote_main/kmVoteMainIndex.do"
+		class="com.landray.kmss.km.vote.actions.KmVoteMainIndexAction"
+		lazy-init="true"
+		parent="KmssBaseAction">
+		<property
+			name="formType"
+			value="com.landray.kmss.km.vote.forms.KmVoteMainForm" />
+		<property name="forwards">
+			<map>
+				<entry
+					key="listChildren"
+					value="/km/vote/km_vote_ui/kmVoteMain_list.jsp" />
+				<entry
+					key="listChildren.4m"
+					value="/km/vote/mobile/list.jsp" />
+				<entry
+					key="listChildren.4mh"
+					value="/km/vote/mobile/list.jsp" />	
+			</map>
+		</property>
+	</bean>
+	<bean
+		name="/km/vote/km_vote_record/kmVoteRecord.do"
+		class="com.landray.kmss.km.vote.actions.KmVoteRecordAction"
+		lazy-init="true"
+		parent="KmssBaseAction">
+		<property
+			name="formType"
+			value="com.landray.kmss.km.vote.forms.KmVoteRecordForm" />
+		<property name="forwards">
+			<map>
+				<entry
+					key="viewVotedDetail"
+					value="/km/vote/km_vote_record/kmVoteRecord_votedDetail.jsp" />
+				<entry
+					key="view"
+					value="/km/vote/km_vote_record/kmVoteRecord_view.jsp" />
+				<entry
+					key="edit"
+					value="/km/vote/km_vote_record/kmVoteRecord_edit.jsp" />
+				<entry
+					key="list"
+					value="/km/vote/km_vote_record/kmVoteRecord_list.jsp" />
+				<entry
+					key="person"
+					value="/km/vote/km_vote_record/kmVoteRecord_personInfo.jsp" />
+			</map>
+		</property>
+	</bean>
+</beans>

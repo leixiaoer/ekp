@@ -1,0 +1,514 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans
+	xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.0.xsd">
+	<bean
+		name="/km/supervise/km_supervise_main/kmSuperviseMain.do"
+		class="com.landray.kmss.km.supervise.actions.KmSuperviseMainAction"
+		lazy-init="true"
+		parent="KmssBaseAction">
+		<property
+			name="formType"
+			value="com.landray.kmss.km.supervise.forms.KmSuperviseMainForm" />
+		<property name="forwards">
+			<map>
+				<entry
+					key="data"
+					value="/km/supervise/km_supervise_main/kmSuperviseMain_data.jsp" />
+				<entry
+					key="data.4m"
+					value="/km/supervise/mobile/listview.jsp" />
+				<entry
+					key="edit"
+					value="/km/supervise/km_supervise_main/kmSuperviseMain_edit.jsp" />
+				<entry
+					key="editNew"
+					value="/km/supervise/km_supervise_main/kmSuperviseMain_edit_new.jsp" />
+				<entry
+					key="editNew.4m"
+					value="/km/supervise/mobile/main_edit_new.jsp" />
+				<entry
+					key="edit.4m"
+					value="/km/supervise/mobile/main_edit.jsp" />
+				<entry
+					key="view"
+					value="/km/supervise/km_supervise_main/kmSuperviseMain_view.jsp" />
+				<entry
+					key="viewNewPublish"
+					value="/km/supervise/km_supervise_main/kmSuperviseMain_view_new_publish.jsp" />
+				<entry
+					key="viewNewPublish.4m"
+					value="/km/supervise/mobile/main_view_new_publish.jsp" />
+				<entry
+					key="viewNew"
+					value="/km/supervise/km_supervise_main/kmSuperviseMain_view_new.jsp" />
+				<entry
+					key="viewNew.4m"
+					value="/km/supervise/mobile/main_view_new.jsp" />
+				<entry
+					key="view.4m"
+					value="/km/supervise/mobile/main_view.jsp" />
+				<entry
+					key="addTask"
+					value="/km/supervise/km_supervise_task/kmSupervise_edit_task.jsp" />
+				<entry
+					key="addTask.4m"
+					value="/km/supervise/mobile/task_edit.jsp" />
+				<entry
+					key="updatePerform"
+					value="/km/supervise/km_supervise_task/kmSupervise_update_duty.jsp" />
+				<entry
+					key="updateAddFeedback"
+					value="/km/supervise/km_supervise_back/kmSuperviseBack.do?method=add" />
+				<entry
+					key="updateAddFinish"
+					value="/km/supervise/km_supervise_main/kmSuperviseMainFinish_edit.jsp" />
+				<entry
+					key="updateAddFinish.4m"
+					value="/km/supervise/mobile/finish_edit.jsp" />
+				<entry
+					key="updateAddRepealNew"
+					value="/km/supervise/km_supervise_main/kmSuperviseMainRepeal_edit_new.jsp" />
+				<entry
+					key="updateAddRepeal"
+					value="/km/supervise/km_supervise_main/kmSuperviseMainRepeal_edit.jsp" />
+				<entry
+					key="updateAddRepeal.4m"
+					value="/km/supervise/mobile/repeal_edit.jsp" />
+				<entry
+					key="updateAddRestart"
+					value="/km/supervise/km_supervise_main/kmSuperviseMainRestart_edit.jsp" />
+				<entry
+					key="updateAddRemark"
+					value="/km/supervise/km_supervise_main/kmSuperviseMainRemark_edit.jsp" />
+				<entry
+					key="updateAddRemark.4m"
+					value="/km/supervise/mobile/remark_edit.jsp" />
+				<entry
+					key="changeSupervise"
+					value="/km/supervise/km_supervise_main_change/kmSuperviseMainChange_edit.jsp" />
+				<entry
+					key="changeSupervise.4m"
+					value="/km/supervise/mobile/change_edit.jsp" />
+				<entry
+					key="viewChangeSupervise"
+					value="/km/supervise/km_supervise_main_change/kmSuperviseMainChange_view.jsp" />
+				<entry
+					key="viewChangeSupervise.4m"
+					value="/km/supervise/mobile/change_view.jsp" />
+				<entry
+					key="overviewChart"
+					value="/km/supervise/km_supervise_main/kmSuperviseMain_overviewChart.jsp" />
+				<entry
+					key="manageList"
+					value="/km/supervise/km_supervise_temp_main/kmSuperviseMain_list.jsp" />
+				<entry
+					key="listContent"
+					value="/km/supervise/km_supervise_main/kmSuperviseMain_listContent.jsp" />
+				<entry
+					key="remarked"
+					value="/km/supervise/km_supervise_main/kmSuperviseMainRemark_view.jsp" />
+				<entry
+					key="remarkedNew"
+					value="/km/supervise/km_supervise_main_remark/kmSuperviseMainRemark_view_new.jsp" />
+				<entry
+					key="uploadResult"
+					value="/km/supervise/km_supervise_main/kmSupervise_upload_result.jsp" />
+			</map>
+		</property>
+	</bean>
+	<bean
+		name="/km/supervise/km_supervise_level/kmSuperviseLevel.do"
+		class="com.landray.kmss.km.supervise.actions.KmSuperviseLevelAction"
+		lazy-init="true"
+		parent="KmssBaseAction">
+		<property
+			name="formType"
+			value="com.landray.kmss.km.supervise.forms.KmSuperviseLevelForm" />
+		<property name="forwards">
+			<map>
+				<entry
+					key="data"
+					value="/km/supervise/km_supervise_level/kmSuperviseLevel_data.jsp" />
+				<entry
+					key="edit"
+					value="/km/supervise/km_supervise_level/kmSuperviseLevel_edit.jsp" />
+				<entry
+					key="view"
+					value="/km/supervise/km_supervise_level/kmSuperviseLevel_view.jsp" />
+			</map>
+		</property>
+	</bean>
+	<bean
+		name="/km/supervise/km_supervise_urgency/kmSuperviseUrgency.do"
+		class="com.landray.kmss.km.supervise.actions.KmSuperviseUrgencyAction"
+		lazy-init="true"
+		parent="KmssBaseAction">
+		<property
+			name="formType"
+			value="com.landray.kmss.km.supervise.forms.KmSuperviseUrgencyForm" />
+		<property name="forwards">
+			<map>
+				<entry
+					key="data"
+					value="/km/supervise/km_supervise_urgency/kmSuperviseUrgency_data.jsp" />
+				<entry
+					key="edit"
+					value="/km/supervise/km_supervise_urgency/kmSuperviseUrgency_edit.jsp" />
+				<entry
+					key="view"
+					value="/km/supervise/km_supervise_urgency/kmSuperviseUrgency_view.jsp" />
+			</map>
+		</property>
+	</bean>
+	<bean
+		name="/km/supervise/km_supervise_templet/kmSuperviseTemplet.do"
+		class="com.landray.kmss.km.supervise.actions.KmSuperviseTempletAction"
+		lazy-init="true"
+		parent="KmssBaseAction">
+		<property
+			name="formType"
+			value="com.landray.kmss.km.supervise.forms.KmSuperviseTempletForm" />
+		<property name="forwards">
+			<map>
+				<entry
+					key="data"
+					value="/km/supervise/km_supervise_templet/kmSuperviseTemplet_data.jsp" />
+				<entry
+					key="edit"
+					value="/km/supervise/km_supervise_templet/kmSuperviseTemplet_edit.jsp" />
+				<entry
+					key="view"
+					value="/km/supervise/km_supervise_templet/kmSuperviseTemplet_view.jsp" />
+			</map>
+		</property>
+	</bean>
+	<bean
+		name="/km/supervise/km_supervise_warn/kmSuperviseWarn.do"
+		class="com.landray.kmss.km.supervise.actions.KmSuperviseWarnAction"
+		lazy-init="true"
+		parent="KmssBaseAction">
+		<property
+			name="formType"
+			value="com.landray.kmss.km.supervise.forms.KmSuperviseWarnForm" />
+		<property name="forwards">
+			<map>
+				<entry
+					key="edit"
+					value="/km/supervise/km_supervise_warn/kmSuperviseWarn_edit.jsp" />
+				<entry
+					key="data"
+					value="/km/supervise/km_supervise_warn/kmSuperviseWarn_data.jsp" />
+				<entry
+					key="view"
+					value="/km/supervise/km_supervise_warn/kmSuperviseWarn_view.jsp" />
+			</map>
+		</property>
+	</bean>
+	<bean
+		name="/km/supervise/km_supervise_dynamic/kmSuperviseDynamic.do"
+		class="com.landray.kmss.km.supervise.actions.KmSuperviseDynamicAction"
+		lazy-init="true"
+		parent="KmssBaseAction">
+		<property
+			name="formType"
+			value="com.landray.kmss.km.supervise.forms.KmSuperviseDynamicForm" />
+		<property name="forwards">
+			<map>
+				<entry
+					key="data"
+					value="/km/supervise/km_supervise_dynamic/kmSuperviseDynamic_data.jsp" />
+				<entry
+					key="data.4m"
+					value="/km/supervise/mobile/dynamic_data.jsp" />
+			</map>
+		</property>
+	</bean>
+	<bean
+		name="/km/supervise/km_supervise_dynamic/kmSuperviseDynamicData.do"
+		class="com.landray.kmss.km.supervise.actions.KmSuperviseDynamicDataAction"
+		lazy-init="true"
+		parent="KmssBaseAction">
+		<property
+			name="formType"
+			value="com.landray.kmss.km.supervise.forms.KmSuperviseDynamicForm" />
+		<property name="forwards">
+			<map>
+				<entry
+					key="dynamic"
+					value="/km/supervise/km_supervise_dynamic/kmSuperviseDynamic_data_dynamic.jsp" />
+			</map>
+		</property>
+	</bean>
+	<bean
+		name="/km/supervise/km_supervise_concern/kmSuperviseConcern.do"
+		class="com.landray.kmss.km.supervise.actions.KmSuperviseConcernAction"
+		lazy-init="true"
+		parent="KmssBaseAction">
+		<property
+			name="formType"
+			value="com.landray.kmss.km.supervise.forms.KmSuperviseConcernForm" />
+		<property name="forwards">
+			<map>
+				<entry
+					key="data"
+					value="/km/supervise/km_supervise_concern/kmSuperviseConcern_data.jsp" />
+			</map>
+		</property>
+	</bean>
+	<bean
+		name="/km/supervise/km_supervise_back/kmSuperviseBack.do"
+		class="com.landray.kmss.km.supervise.actions.KmSuperviseBackAction"
+		lazy-init="true"
+		parent="KmssBaseAction">
+		<property
+			name="formType"
+			value="com.landray.kmss.km.supervise.forms.KmSuperviseBackForm" />
+		<property name="forwards">
+			<map>
+				<entry
+					key="edit"
+					value="/km/supervise/km_supervise_back/kmSuperviseBack_edit.jsp" />
+				<entry
+					key="editNew"
+					value="/km/supervise/km_supervise_back/kmSuperviseBack_edit_new.jsp" />
+				<entry
+					key="edit.4m"
+					value="/km/supervise/mobile/back_edit.jsp" />
+				<entry
+					key="editNew.4m"
+					value="/km/supervise/mobile/back_edit_new.jsp" />
+				<entry
+					key="view"
+					value="/km/supervise/km_supervise_back/kmSuperviseBack_view.jsp" />
+				<entry
+					key="viewNew"
+					value="/km/supervise/km_supervise_back/kmSuperviseBack_view_new.jsp" />
+				<entry
+					key="viewNew.4m"
+					value="/km/supervise/mobile/back_view_new.jsp" />
+				<entry
+					key="data"
+					value="/km/supervise/km_supervise_back/kmSuperviseBack_data_feedback.jsp" />
+				<entry
+					key="list"
+					value="/km/supervise/km_supervise_back/kmSuperviseBack_list.jsp" />
+				<entry
+					key="data.4m"
+					value="/km/supervise/mobile/back_data.jsp" />
+				<entry
+					key="loadAttachmentInfo"
+					value="/km/supervise/mobile/resource/tmpl/loadAttachmentInfo.jsp" />
+			</map>
+		</property>
+	</bean>
+	<bean
+		name="/km/supervise/km_supervise_back/kmSuperviseBackData.do"
+		class="com.landray.kmss.km.supervise.actions.KmSuperviseBackDataAction"
+		lazy-init="true"
+		parent="KmssBaseAction">
+		<property
+			name="formType"
+			value="com.landray.kmss.km.supervise.forms.KmSuperviseBackForm" />
+		<property name="forwards">
+			<map>
+				<entry
+					key="feedback"
+					value="/km/supervise/km_supervise_back/kmSuperviseBack_data_feedback.jsp" />
+			</map>
+		</property>
+	</bean>
+	<bean
+		name="/km/supervise/km_supervise_main/kmSuperviseMainStat.do"
+		class="com.landray.kmss.km.supervise.actions.KmSuperviseMainStatAction"
+		lazy-init="true"
+		parent="KmssBaseAction">
+	</bean>
+	<bean
+		name="/km/supervise/km_supervise_task/kmSuperviseTask.do"
+		class="com.landray.kmss.km.supervise.actions.KmSuperviseTaskAction"
+		lazy-init="true"
+		parent="KmssBaseAction">
+		<property
+			name="formType"
+			value="com.landray.kmss.km.supervise.forms.KmSuperviseTaskForm" />
+		<property name="forwards">
+			<map>
+				<entry
+					key="data"
+					value="/km/supervise/km_supervise_task/kmSuperviseTask_data.jsp" />
+				<entry
+					key="data.4m"
+					value="/km/supervise/mobile/task_data.jsp" />
+				<entry
+					key="view"
+					value="/km/supervise/km_supervise_task/kmSuperviseTask_view.jsp" />
+				<entry
+					key="view.4m"
+					value="/km/supervise/mobile/task_view.jsp" />
+			</map>
+		</property>
+	</bean>
+	<bean
+		name="/km/supervise/km_supervise_main_finish/kmSuperviseMainFinish.do"
+		class="com.landray.kmss.km.supervise.actions.KmSuperviseMainFinishAction"
+		lazy-init="true"
+		parent="KmssBaseAction">
+		<property
+			name="formType"
+			value="com.landray.kmss.km.supervise.forms.KmSuperviseMainFinishForm" />
+		<property name="forwards">
+			<map>
+				<entry
+					key="edit"
+					value="/km/supervise/km_supervise_main_finish/kmSuperviseMainFinish_edit.jsp" />
+				<entry
+					key="edit.4m"
+					value="/km/supervise/mobile/finish_edit_new.jsp" />
+				<entry
+					key="list"
+					value="/km/supervise/km_supervise_main_finish/kmSuperviseMainFinish_list.jsp" />
+				<entry
+					key="list.4m"
+					value="/km/supervise/mobile/finish_list.jsp" />
+				<entry
+					key="view"
+					value="/km/supervise/km_supervise_main_finish/kmSuperviseMainFinish_view.jsp" />
+				<entry
+					key="view.4m"
+					value="/km/supervise/mobile/finish_view_new.jsp" />
+			</map>
+		</property>
+	</bean>
+	<bean
+		name="/km/supervise/km_supervise_main_stop/kmSuperviseMainStop.do"
+		class="com.landray.kmss.km.supervise.actions.KmSuperviseMainStopAction"
+		lazy-init="true"
+		parent="KmssBaseAction">
+		<property
+			name="formType"
+			value="com.landray.kmss.km.supervise.forms.KmSuperviseMainStopForm" />
+		<property name="forwards">
+			<map>
+				<entry
+					key="edit"
+					value="/km/supervise/km_supervise_main_stop/kmSuperviseMainStop_edit.jsp" />
+				<entry
+					key="edit.4m"
+					value="/km/supervise/mobile/stop_edit.jsp" />
+				<entry
+					key="list"
+					value="/km/supervise/km_supervise_main_stop/kmSuperviseMainStop_list.jsp" />
+				<entry
+					key="list.4m"
+					value="/km/supervise/mobile/stop_list.jsp" />
+				<entry
+					key="view"
+					value="/km/supervise/km_supervise_main_stop/kmSuperviseMainStop_view.jsp" />
+				<entry
+					key="view.4m"
+					value="/km/supervise/mobile/stop_view.jsp" />
+			</map>
+		</property>
+	</bean>
+	<bean
+		name="/km/supervise/km_supervise_main_plan/kmSuperviseMainPlan.do"
+		class="com.landray.kmss.km.supervise.actions.KmSuperviseMainPlanAction"
+		lazy-init="true"
+		parent="KmssBaseAction">
+		<property
+			name="formType"
+			value="com.landray.kmss.km.supervise.forms.KmSuperviseMainPlanForm" />
+		<property name="forwards">
+			<map>
+				<entry
+					key="addTask"
+					value="/km/supervise/km_supervise_main_plan/task_add_edit.jsp" />
+				<entry
+					key="addTask.4m"
+					value="/km/supervise/mobile/plan_add_edit.jsp" />
+				<entry
+					key="updateTask"
+					value="/km/supervise/km_supervise_main_plan/task_update_edit.jsp" />
+				<entry
+					key="updateTask.4m"
+					value="/km/supervise/mobile/plan_update_edit.jsp" />
+				<entry
+					key="view"
+					value="/km/supervise/km_supervise_main_plan/kmSuperviseMainPlan_view.jsp" />
+				<entry
+					key="edit"
+					value="/km/supervise/km_supervise_main_plan/task_update_edit.jsp" />
+				<entry
+					key="view.4m"
+					value="/km/supervise/mobile/plan_view.jsp" />
+			</map>
+		</property>
+	</bean>
+	<bean
+		name="/km/supervise/km_supervise_instruction/kmSuperviseInstruction.do"
+		class="com.landray.kmss.km.supervise.actions.KmSuperviseInstructionAction"
+		lazy-init="true"
+		parent="KmssBaseAction">
+		<property
+			name="formType"
+			value="com.landray.kmss.km.supervise.forms.KmSuperviseInstructionForm" />
+		<property name="forwards">
+			<map>
+				<entry
+					key="data"
+					value="/km/supervise/km_supervise_instruction/kmSuperviseInstruction_data.jsp" />
+				<entry
+					key="data.4m"
+					value="/km/supervise/mobile/instruction_data.jsp" />
+				<entry
+					key="showInstruction"
+					value="/km/supervise/km_supervise_main/kmSuperviseMain_instructionDialog.jsp" />
+			</map>
+		</property>
+	</bean>
+	
+	<bean
+		name="/km/supervise/km_supervise_urge/kmSuperviseUrge.do"
+		class="com.landray.kmss.km.supervise.actions.KmSuperviseUrgeAction"
+		lazy-init="true"
+		parent="KmssBaseAction">
+		<property
+			name="formType"
+			value="com.landray.kmss.km.supervise.forms.KmSuperviseUrgeForm" />
+		<property name="forwards">
+			<map>
+				<entry
+					key="showUrgeSupervise"
+					value="/km/supervise/km_supervise_main/kmSuperviseMain_urgeDialog.jsp" />
+				<entry
+					key="showUrgeSupervise.4m"
+					value="/km/supervise/mobile/urge_edit.jsp" />
+			</map>
+		</property>
+	</bean>
+	
+	<bean
+		name="/km/supervise/km_supervise_main_remark/kmSuperviseMainRemark.do"
+		class="com.landray.kmss.km.supervise.actions.KmSuperviseMainRemarkAction"
+		lazy-init="true"
+		parent="KmssBaseAction">
+		<property
+			name="formType"
+			value="com.landray.kmss.km.supervise.forms.KmSuperviseMainRemarkForm" />
+		<property name="forwards">
+			<map>
+				<entry
+					key="edit"
+					value="/km/supervise/km_supervise_main_remark/kmSuperviseMainRemark_edit_new.jsp" />
+				<entry
+					key="data"
+					value="/km/supervise/km_supervise_main/kmSuperviseMain_data.jsp" />
+				<entry
+					key="data.4m"
+					value="/km/supervise/mobile/listview.jsp" />
+			</map>
+		</property>
+	</bean>
+</beans>

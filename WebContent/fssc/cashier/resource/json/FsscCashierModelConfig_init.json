@@ -1,0 +1,26 @@
+
+{
+    "datas" : [
+        {
+            "fdName" : "报销",
+            "fdModelName" : "com.landray.kmss.fssc.expense.model.FsscExpenseMain",
+            "fdCategoryName" : "com.landray.kmss.fssc.expense.model.FsscExpenseCategory",
+            "fdCategoryPropertyName" : "docTemplate"
+        },{
+            "fdName" : "借款",
+            "fdModelName" : "com.landray.kmss.fssc.loan.model.FsscLoanMain",
+            "fdCategoryName" : "com.landray.kmss.fssc.loan.model.FsscLoanCategory",
+            "fdCategoryPropertyName" : "docTemplate"
+        },{
+            "fdName" : "挂账",
+            "fdModelName" : "com.landray.kmss.fssc.payment.model.FsscPaymentSuspendMain",
+            "fdCategoryName" : "com.landray.kmss.fssc.payment.model.FsscPaymentSuspendCategory",
+            "fdCategoryPropertyName" : "docTemplate"
+        },{
+            "fdName" : "付款申请",
+            "fdModelName" : "com.landray.kmss.fssc.payment.model.FsscPaymentMain",
+            "fdCategoryName" : "com.landray.kmss.fssc.payment.model.FsscPaymentCategory",
+            "fdCategoryPropertyName" : "docTemplate"
+        }
+    ]
+}

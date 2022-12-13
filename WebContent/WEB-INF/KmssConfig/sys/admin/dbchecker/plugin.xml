@@ -1,0 +1,425 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<plugin
+	xmlns="http://www.example.org/plugin-config"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.example.org/plugin-config ../../../plugin.xsd ">
+
+    <extension-point
+        id="com.landray.kmss.sys.admin.database.info">
+        <item name="database">
+            <param
+                name="name"
+                required="true"
+                kind="string">
+                <description>
+                    全局唯一，名字应该包含版本，比如 oracle_11g，oracle_12c, mysql_5.5.45
+                </description>
+            </param>
+            <param
+                name="msgKey"
+                required="true"
+                kind="string">
+                <description>
+                    数据库名称对应的资源文件key，格式为 模块:key，比如 {sys-dbchecker:default.name.key}
+                </description>
+            </param>
+            <param
+                name="dialect"
+                required="true"
+                kind="string">
+                <description>
+                    数据库方言类的全名
+                </description>
+            </param>
+            <param
+                name="dialectExt"
+                required="false"
+                kind="string"
+                basedOn="com.landray.kmss.sys.admin.dbchecker.checker.dialect.DialectExt">
+                <description>
+                   数据库检测需要用到的方言扩展类全名，在执行数据库检测时用来输出sql的类，如果没有，可能在数据库检测时无法给出修复sql
+                </description>
+            </param>
+            <param
+                name="driver"
+                required="true"
+                kind="string">
+                <description>
+                    数据库驱动类全名，必填
+                </description>
+            </param>
+            <param
+                name="urlPattern"
+                required="false"
+                kind="string">
+                <description>
+                数据库链接URL的格式样例，非必填，比如
+     jdbc:mysql://[ip|domain]:port/schema?useUnicode=true&amp;characterEncoding=UTF-8
+     jdbc:polardb://[ip|domain]:port/schema
+     jdbc:oracle:thin:@[ip|domain]:port:schema
+                </description>
+            </param>
+            <description>数据库配置</description>
+        </item>
+        <description>数据库配置信息，请通过 com.landray.kmss.sys.admin.dbchecker.PluginConstrants的API获取相关信息</description>
+    </extension-point>
+    
+    
+	<!-- 数据库检测 -->
+	<extension-point
+		id="com.landray.kmss.sys.admin.dbchecker">
+		<item
+			name="config">
+			<param
+				name="unid"
+				required="true"
+				kind="unid">
+				<description>
+					唯一标识，此标识在所有的数据库检测扩展中是唯一的，建议使用java bean的全限定名。
+				</description>
+			</param>
+			<param
+				name="name"
+				required="true"
+				kind="string">
+				<description>
+					必选，显示名称
+				</description>
+			</param>
+			<param
+				name="bean"
+				required="true"
+				kind="string"
+				basedOn="com.landray.kmss.sys.admin.dbchecker.core.ISchemaChecker">
+				<description>
+					必选，数据库检测实现接口
+				</description>
+			</param>
+			<param
+				name="priority"
+				kind="string"
+				restriction="LOW;NORM;MEDIUM;HIGHT;COLUMN;TABLE"
+				default="NORM">
+				<description>
+					可选，检测优先级、修复优先级默认取检测优先级。
+					TABLE和COLUMN这2个级别为内部使用，外部扩展一般不要使用。
+					级别及其级别基数范围：
+					LOW [-10 - 0)：低
+					NORM [0 - 10)：一般
+					MEDIUM [10 - 20)：中等
+					HIGHT [20 - 30)：高
+					COLUMN [30 - 40)：高
+					TABLE [40 - 50)：高
+				</description>
+			</param>
+			<description>数据库检测扩展配置</description>
+		</item>
+		<description>数据库检测扩展，请实现此扩展点。</description>
+	</extension-point>
+
+	<extension
+		point="com.landray.kmss.sys.admin.dbchecker">
+		<item
+			name="config">
+			<param
+				name="unid"
+				value="com.landray.kmss.sys.admin.dbchecker.checker.TableChecker" />
+			<param
+				name="name"
+				value="表检测" />
+			<param
+				name="bean"
+				value="com.landray.kmss.sys.admin.dbchecker.checker.TableChecker" />
+			<param
+				name="priority"
+				value="TABLE" />
+		</item>
+	</extension>
+	<extension
+		point="com.landray.kmss.sys.admin.dbchecker">
+		<item
+			name="config">
+			<param
+				name="unid"
+				value="com.landray.kmss.sys.admin.dbchecker.checker.PrimaryKeyChecker" />
+			<param
+				name="name"
+				value="主键检测" />
+			<param
+				name="bean"
+				value="com.landray.kmss.sys.admin.dbchecker.checker.PrimaryKeyChecker" />
+			<param
+				name="priority"
+				value="TABLE" />
+		</item>
+	</extension>
+	<extension
+		point="com.landray.kmss.sys.admin.dbchecker">
+		<item
+			name="config">
+			<param
+				name="unid"
+				value="com.landray.kmss.sys.admin.dbchecker.checker.ColumnChecker" />
+			<param
+				name="name"
+				value="字段检测" />
+			<param
+				name="bean"
+				value="com.landray.kmss.sys.admin.dbchecker.checker.ColumnChecker" />
+			<param
+				name="priority"
+				value="COLUMN" />
+		</item>
+	</extension>
+	<extension
+		point="com.landray.kmss.sys.admin.dbchecker">
+		<item
+			name="config">
+			<param
+				name="unid"
+				value="com.landray.kmss.sys.admin.dbchecker.checker.ConstraintChecker" />
+			<param
+				name="name"
+				value="约束检测" />
+			<param
+				name="bean"
+				value="com.landray.kmss.sys.admin.dbchecker.checker.ConstraintChecker" />
+			<param
+				name="priority"
+				value="HIGHT" />
+		</item>
+	</extension>
+	<extension
+		point="com.landray.kmss.sys.admin.dbchecker">
+		<item
+			name="config">
+			<param
+				name="unid"
+				value="com.landray.kmss.sys.admin.dbchecker.checker.IndexChecker" />
+			<param
+				name="name"
+				value="索引检测" />
+			<param
+				name="bean"
+				value="com.landray.kmss.sys.admin.dbchecker.checker.IndexChecker" />
+			<param
+				name="priority"
+				value="NORM" />
+		</item>
+	</extension>
+
+	<extension
+		point="com.landray.kmss.sys.admin.dbchecker">
+		<item
+			name="config">
+			<param
+				name="unid"
+				value="com.landray.kmss.sys.admin.dbchecker.checker.sqlserver.SQLServerDBChecker" />
+			<param
+				name="name"
+				value="###sqlserver专项数据库参数检测" />
+			<param
+				name="bean"
+				value="com.landray.kmss.sys.admin.dbchecker.checker.sqlserver.SQLServerDBChecker" />
+			<param
+				name="priority"
+				value="HIGHT" />
+		</item>
+	</extension>
+
+    <extension
+        point="com.landray.kmss.sys.admin.database.info">
+        <item
+            name="database">
+            <param
+                name="name"
+                value="MYSQL" />
+            <param
+                name="msgKey"
+                value="{}" />
+            <param
+                name="dialect"
+                value="org.hibernate.dialect.MySQL5Dialect" />
+            <param
+                name="driver"
+                value="com.mysql.jdbc.Driver" />
+            <param
+                name="dialectExt"
+                value="com.landray.kmss.sys.admin.dbchecker.checker.dialect.MySQL5DialectExt" />
+            <param
+                name="urlPattern"
+                value="jdbc:mysql://db.landray.com.cn:3306/ekp?useUnicode=true&amp;characterEncoding=UTF-8" />    
+        </item>
+    </extension>
+    <extension
+        point="com.landray.kmss.sys.admin.database.info">
+        <item
+            name="database">
+            <param
+                name="name"
+                value="MySQL" />
+            <param
+                name="msgKey"
+                value="{sys-admin:database.mysql}" />
+            <param
+                name="dialect"
+                value="org.hibernate.dialect.MySQL5Dialect" />
+            <param
+                name="driver"
+                value="com.mysql.jdbc.Driver" />
+            <param
+                name="dialectExt"
+                value="com.landray.kmss.sys.admin.dbchecker.checker.dialect.MySQL5DialectExt" />
+            <param
+                name="urlPattern"
+                value="jdbc:mysql://db.landray.com.cn:3306/ekp?useUnicode=true&amp;characterEncoding=UTF-8" />    
+        </item>
+    </extension>
+    <extension
+        point="com.landray.kmss.sys.admin.database.info">
+        <item
+            name="database">
+            <param
+                name="name"
+                value="MySQL 8.0" />
+            <param
+                name="msgKey"
+                value="{sys-admin:database.mysql8}" />
+            <param
+                name="dialect"
+                value="org.hibernate.dialect.MySQL5Dialect" />
+            <param
+                name="driver"
+                value="com.mysql.cj.jdbc.Driver" />
+            <param
+                name="dialectExt"
+                value="com.landray.kmss.sys.admin.dbchecker.checker.dialect.MySQL5DialectExt" />
+            <param
+                name="urlPattern"
+                value="jdbc:mysql://db.landray.com.cn:3306/ekp?userSSL=true&amp;autoReconnect=true&amp;useUnicode=true&amp;characterEncoding=UTF8&amp;serverTimezone=Asia/Shanghai" />    
+        </item>
+    </extension>
+    <extension
+        point="com.landray.kmss.sys.admin.database.info">
+        <item
+            name="database">
+            <param
+                name="name"
+                value="MySQL 8.0" />
+            <param
+                name="msgKey"
+                value="{sys-admin:database.sqlserver}" />
+            <param
+                name="dialect"
+                value="org.hibernate.dialect.SQLServerDialect" />
+            <param
+                name="driver"
+                value="net.sourceforge.jtds.jdbc.Driver" />
+            <param
+                name="dialectExt"
+                value="com.landray.kmss.sys.admin.dbchecker.checker.dialect.SQLServerDialectExt" />
+            <param
+                name="urlPattern"
+                value="jdbc:jtds:sqlserver://db.landray.com.cn:1433/ekp" />    
+        </item>
+    </extension>
+    
+    <extension
+        point="com.landray.kmss.sys.admin.database.info">
+        <item
+            name="database">
+            <param
+                name="name"
+                value="Oracle" />
+            <param
+                name="msgKey"
+                value="{sys-admin:database.oracle}" />
+            <param
+                name="dialect"
+                value="org.hibernate.dialect.Oracle9Dialect" />
+            <param
+                name="driver"
+                value="oracle.jdbc.driver.OracleDriver" />
+            <param
+                name="dialectExt"
+                value="com.landray.kmss.sys.admin.dbchecker.checker.dialect.Oracle9DialectExt"/>
+            <param
+                name="urlPattern"
+                value="jdbc:oracle:thin:@db.landray.com.cn:1521:ekp" />    
+        </item>
+    </extension>
+    
+    <extension
+        point="com.landray.kmss.sys.admin.database.info">
+        <item
+            name="database">
+            <param
+                name="name"
+                value="Oracle" />
+            <param
+                name="msgKey"
+                value="{sys-admin:database.oracle}" />
+            <param
+                name="dialect"
+                value="org.hibernate.dialect.OscarDialect" />
+            <param
+                name="driver"
+                value="oracle.jdbc.driver.OracleDriver" />
+            <param
+                name="dialectExt"
+                value="com.landray.kmss.sys.admin.dbchecker.checker.dialect.ShenTongDialectExt"/>
+            <param
+                name="urlPattern"
+                value="jdbc:oscar://db.landray.com.cn:2003/ekp?useUnicode=true&amp;characterEncoding=UTF-8" />    
+        </item>
+    </extension>
+    
+    <extension
+        point="com.landray.kmss.sys.admin.database.info">
+        <item
+            name="database">
+            <param
+                name="name"
+                value="PolarDB4Oracle" />
+            <param
+                name="msgKey"
+                value="{sys-admin:database.polardb.oracle}" />
+            <param
+                name="dialect"
+                value="com.landray.kmss.sys.hibernate.dialect.PolarDB4OracleDialect" />
+            <param
+                name="driver"
+                value="com.aliyun.polardb.Driver" />
+            <param
+                name="dialectExt"
+                value="com.landray.kmss.sys.admin.dbchecker.checker.dialect.PolarDB4OracleDialectExt"/>
+            <param
+                name="urlPattern"
+                value="jdbc:polardb://landray.o.polardb.rds.aliyuncs.com:1521/ekp" />    
+        </item>
+    </extension>
+    <extension
+        point="com.landray.kmss.sys.admin.database.info">
+        <item
+            name="database">
+            <param
+                name="name"
+                value="opengauss101" />
+            <param
+                name="msgKey"
+                value="{sys-admin:database.opengauss101}" />
+            <param
+                name="dialect"
+                value="com.landray.kmss.sys.hibernate.dialect.Opengauss101Dialect" />
+            <param
+                name="driver"
+                value="org.postgresql.Driver" />
+            <param
+                name="dialectExt"
+                value="com.landray.kmss.sys.admin.dbchecker.checker.dialect.PostgreSQLDialectExt"/>
+            <param
+                name="urlPattern"
+                value="jdbc:postgresql://192.168.1.133:26000/ekp" />    
+        </item>
+    </extension>
+</plugin>

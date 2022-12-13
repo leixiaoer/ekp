@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans
+	xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.0.xsd">
+	<bean
+		name="/km/keydata/project/km_project_main/kmProjectMain.do"
+		class="com.landray.kmss.km.keydata.project.actions.KmProjectMainAction"
+		lazy-init="true"
+		parent="KmssBaseAction">
+		<property
+			name="formType"
+			value="com.landray.kmss.km.keydata.project.forms.KmProjectMainForm" />
+		<property name="forwards">
+			<map>
+				<entry
+					key="view"
+					value="/km/keydata/project/km_project_main/kmProjectMain_view.jsp" />
+				<entry
+					key="edit"
+					value="/km/keydata/project/km_project_main/kmProjectMain_edit.jsp" />
+				<entry
+					key="list"
+					value="/km/keydata/project/km_project_main/kmProjectMain_list.jsp" />
+				<entry
+					key="listChildren"
+					value="/km/keydata/project/km_project_main/kmProjectMain_list.jsp" />
+				<entry
+					key="showUsed"
+					value="/km/keydata/project/keydataUsed_view.jsp" />
+				<entry
+					key="showUsed.4m"
+					value="/third/pda/resource/jsp/mobile/warn.jsp" />
+			</map>
+		</property>
+	</bean>
+	<bean
+		name="/km/keydata/project/km_project_category/kmProjectCategory.do"
+		class="com.landray.kmss.km.keydata.project.actions.KmProjectCategoryAction"
+		lazy-init="true"
+		parent="KmssBaseAction">
+		<property
+			name="formType"
+			value="com.landray.kmss.km.keydata.project.forms.KmProjectCategoryForm" />
+		<property name="forwards">
+			<map>
+				<entry
+					key="view"
+					value="/km/keydata/project/km_project_category/kmProjectCategory_view.jsp" />
+				<entry
+					key="edit"
+					value="/km/keydata/project/km_project_category/kmProjectCategory_edit.jsp" />
+				<entry
+					key="list"
+					value="/km/keydata/project/km_project_category/kmProjectCategory_list.jsp" />
+			</map>
+		</property>
+	</bean>
+</beans>

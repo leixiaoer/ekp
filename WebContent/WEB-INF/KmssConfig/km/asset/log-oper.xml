@@ -1,0 +1,360 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<log-oper>
+	<logset>
+	
+		<oper
+            id="kmAssetApplyBuyOperLog"
+            extends="kmAssetApplyBaseOperLog"
+            model="com.landray.kmss.km.asset.model.KmAssetApplyBuy"
+            action="/km/asset/km_asset_apply_buy/kmAssetApplyBuy.do">
+        </oper>
+        
+        <oper
+            id="kmAssetApplyRepairExpendOperLog"
+            extends="BaseOperLog"
+            model="com.landray.kmss.km.asset.model.KmAssetApplyRepairExpend"
+            action="/km/asset/km_asset_apply_repair_expend/kmAssetApplyRepairExpend.do">
+        </oper>
+        
+        <oper
+            id="kmAssetApplyRentOperLog"
+            extends="kmAssetApplyBaseOperLog"
+            model="com.landray.kmss.km.asset.model.KmAssetApplyRent"
+            action="/km/asset/km_asset_apply_rent/kmAssetApplyRent.do">
+        </oper>
+        
+        <oper
+            id="kmAssetApplyDivertListOperLog"
+            extends="BaseOperLog"
+            model="com.landray.kmss.km.asset.model.KmAssetApplyDivertList"
+            action="/km/asset/km_asset_apply_divert_list/kmAssetApplyDivertList.do">
+        </oper>
+        
+        <oper
+            id="kmAssetApplyBuyListOperLog"
+            extends="BaseOperLog"
+            model="com.landray.kmss.km.asset.model.KmAssetApplyBuyList"
+            action="/km/asset/km_asset_apply_buy_list/kmAssetApplyBuyList.do">
+        </oper>
+        
+        <oper
+            id="kmAssetApplyReturnListOperLog"
+            extends="BaseOperLog"
+            model="com.landray.kmss.km.asset.model.KmAssetApplyReturnList"
+            action="/km/asset/km_asset_apply_return_list/kmAssetApplyReturnList.do">
+        </oper>
+        
+        <oper
+            id="kmAssetApplyStockListOperLog"
+            extends="BaseOperLog"
+            model="com.landray.kmss.km.asset.model.KmAssetApplyStockList"
+            action="/km/asset/km_asset_apply_stock_list/kmAssetApplyStockList.do">
+            <query 
+                method="loadStockList"
+                logPoint="Base_UrlParam;Action_FindAll"
+                messageKey="button.list">
+            </query>
+        </oper>
+        
+        <oper
+            id="kmAssetApplyDivertOperLog"
+            extends="kmAssetApplyBaseOperLog"
+            model="com.landray.kmss.km.asset.model.KmAssetApplyDivert"
+            action="/km/asset/km_asset_apply_divert/kmAssetApplyDivert.do">
+        </oper>
+        
+        <oper
+            id="kmAssetApplyBaseOperLog"
+            extends="BaseOperLog"
+            model="*"
+            action="/km/asset/km_asset_apply_base/kmAssetApplyBase.do">
+            <query 
+                method="listChildren|manageList"
+                logPoint="Base_UrlParam;Action_FindAll"
+                messageKey="button.list">
+            </query>
+            <query 
+                method="print"
+                logPoint="Base_UrlParam;Action_Find"
+                messageKey="km-asset:button.print">
+            </query>
+            <query 
+                method="view4Base"
+                logPoint="Base_UrlParam;Action_Find"
+                messageKey="button.view">
+            </query>
+        </oper>
+        
+        <oper
+            id="kmAssetIndexOperLog"
+            extends="BaseOperLog"
+            model="*"
+            action="/km/asset/km_asset_index/kmAssetIndex.do">
+            <query 
+                method="listChildren|manageList"
+                logPoint="Base_UrlParam;Action_FindAll"
+                messageKey="button.list">
+            </query>
+        </oper>
+        
+        <oper
+            id="kmAssetCardIndexOperLog"
+            extends="BaseOperLog"
+            model="*"
+            action="/km/asset/km_asset_card_index/kmAssetCardIndex.do">
+            <query 
+                method="listChildren|manageList"
+                logPoint="Base_UrlParam;Action_FindAll"
+                messageKey="button.list">
+            </query>
+        </oper>
+        
+        <oper
+            id="kmAssetApplyChangeListOperLog"
+            extends="BaseOperLog"
+            model="com.landray.kmss.km.asset.model.KmAssetApplyChangeList"
+            action="/km/asset/km_asset_apply_change_list/kmAssetApplyChangeList.do">
+        </oper>
+        
+        <oper
+            id="kmAssetApplyInListOperLog"
+            extends="BaseOperLog"
+            model="com.landray.kmss.km.asset.model.KmAssetApplyInList"
+            action="/km/asset/km_asset_apply_in_list/kmAssetApplyInList.do">
+        </oper>
+        
+        <oper
+            id="kmAssetApplyChangeOperLog"
+            extends="kmAssetApplyBaseOperLog"
+            model="com.landray.kmss.km.asset.model.KmAssetApplyChange"
+            action="/km/asset/km_asset_apply_change/kmAssetApplyChange.do">
+        </oper>
+        
+        <oper
+            id="kmAssetCardOperLog"
+            extends="BaseOperLog"
+            model="com.landray.kmss.km.asset.model.KmAssetCard"
+            action="/km/asset/km_asset_card/kmAssetCard.do">
+            <query 
+                method="addBatchPrint"
+                logPoint="Base_UrlParam;Action_FindAll"
+                messageKey="km-asset:kmAssetCard.batchPrint">
+            </query>
+            <query 
+                method="batchEdit"
+                logPoint="Base_UrlParam;updateBatch"
+                messageKey="km-asset:kmAssetCard.batchEdit">
+            </query>
+            <query 
+                method="getCardLife4pda|listChildren|loadAssetCard"
+                logPoint="Base_UrlParam;Action_FindAll"
+                messageKey="button.list">
+            </query>
+            <query 
+                method="getCardLife"
+                logPoint="Base_UrlParam;Action_FindAll"
+                messageKey="km-asset:kmAssetCard.page.tab3">
+            </query>
+            <query 
+                method="importExcel"
+                logPoint="Base_UrlParam;importExcel"
+                messageKey="button.import">
+            </query>
+        </oper>
+        
+        <oper
+            id="kmAssetAddressCateOperLog"
+            extends="BaseOperLog"
+            model="com.landray.kmss.km.asset.model.KmAssetAddressCate"
+            action="/km/asset/km_asset_address_cate/kmAssetAddressCate.do">
+        </oper>
+        
+        <oper
+            id="kmAssetAddressOperLog"
+            extends="BaseOperLog"
+            model="com.landray.kmss.km.asset.model.KmAssetAddress"
+            action="/km/asset/km_asset_address/kmAssetAddress.do">
+            <query 
+                method="listChildren|manageList"
+                logPoint="Base_UrlParam;Action_FindAll"
+                messageKey="button.list">
+            </query>
+            <query 
+                method="importExcel"
+                logPoint="Base_UrlParam;importExcel"
+                messageKey="button.import">
+            </query>
+        </oper>
+        
+		<oper
+            id="kmAssetConfigOperLog"
+            extends="sysAppConfigOperLog"
+            model="*"
+            action="/km/asset/km_asset_config/kmAssetConfig.do">
+        </oper>
+        
+        <oper
+            id="kmAssetApplyDealOperLog"
+            extends="kmAssetApplyBaseOperLog"
+            model="com.landray.kmss.km.asset.model.KmAssetApplyDeal"
+            action="/km/asset/km_asset_apply_deal/kmAssetApplyDeal.do">
+        </oper>
+        
+        <oper
+            id="kmAssetApplyGetOperLog"
+            extends="kmAssetApplyBaseOperLog"
+            model="com.landray.kmss.km.asset.model.KmAssetApplyGet"
+            action="/km/asset/km_asset_apply_get/kmAssetApplyGet.do">
+        </oper>
+        
+        <oper
+            id="kmAssetCardLifeOperLog"
+            extends="BaseOperLog"
+            model="com.landray.kmss.km.asset.model.KmAssetCardLife"
+            action="/km/asset/km_asset_card_life/kmAssetCardLife.do">
+            <query 
+                method="getCardLifes"
+                logPoint="Base_UrlParam;Action_FindAll"
+                messageKey="button.list">
+            </query>
+        </oper>
+        
+        <oper
+            id="kmAssetApplyReturnOperLog"
+            extends="kmAssetApplyBaseOperLog"
+            model="com.landray.kmss.km.asset.model.KmAssetApplyReturn"
+            action="/km/asset/km_asset_apply_return/kmAssetApplyReturn.do">
+        </oper>
+        
+        <oper
+            id="kmAssetApplyRepairListOperLog"
+            extends="BaseOperLog"
+            model="com.landray.kmss.km.asset.model.KmAssetApplyRepairList"
+            action="/km/asset/km_asset_apply_repair_list/kmAssetApplyRepairList.do">
+        </oper>
+        
+        <oper
+            id="kmAssetApplyRentListOperLog"
+            extends="BaseOperLog"
+            model="com.landray.kmss.km.asset.model.KmAssetApplyRentList"
+            action="/km/asset/km_asset_apply_rent_list/kmAssetApplyRentList.do">
+        </oper>
+        
+        <oper
+            id="kmAssetApplyDealListOperLog"
+            extends="BaseOperLog"
+            model="com.landray.kmss.km.asset.model.KmAssetApplyDealList"
+            action="/km/asset/km_asset_apply_deal_list/kmAssetApplyDealList.do">
+        </oper>
+        
+        <oper
+            id="kmAssetApplyRepairOperLog"
+            extends="kmAssetApplyBaseOperLog"
+            model="com.landray.kmss.km.asset.model.KmAssetApplyRepair"
+            action="/km/asset/km_asset_apply_repair/kmAssetApplyRepair.do">
+            <query 
+                method="modifyRepairInfo"
+                logPoint="Service_Update"
+                messageKey="button.update">
+            </query>
+        </oper>
+        
+        <oper
+            id="kmAssetApplyStockOperLog"
+            extends="kmAssetApplyBaseOperLog"
+            model="com.landray.kmss.km.asset.model.KmAssetApplyStock"
+            action="/km/asset/km_asset_apply_stock/kmAssetApplyStock.do">
+            <query 
+                method="loadExcel"
+                logPoint="Base_UrlParam;loadExcel"
+                messageKey="km-asset:kmAssetApplyStock.excelImport">
+            </query>
+        </oper>
+        
+        <oper
+            id="kmAssetCategoryOperLog"
+            extends="BaseOperLog"
+            model="com.landray.kmss.km.asset.model.KmAssetCategory"
+            action="/km/asset/km_asset_category/kmAssetCategory.do">
+        </oper>
+        
+        <oper
+            id="kmAssetApplyInOperLog"
+            extends="kmAssetApplyBaseOperLog"
+            model="com.landray.kmss.km.asset.model.KmAssetApplyIn"
+            action="/km/asset/km_asset_apply_in/kmAssetApplyIn.do">
+        </oper>
+        
+        <oper
+            id="kmAssetApplyTemplateOperLog"
+            extends="BaseOperLog"
+            model="com.landray.kmss.km.asset.model.KmAssetApplyTemplate"
+            action="/km/asset/km_asset_apply_template/kmAssetApplyTemplate.do">
+            <query 
+                method="listChildren|listUsual"
+                logPoint="Base_UrlParam;Action_FindAll"
+                messageKey="button.list">
+            </query>
+        </oper>
+        
+        <oper
+            id="kmAssetApplyGetListOperLog"
+            extends="BaseOperLog"
+            model="com.landray.kmss.km.asset.model.KmAssetApplyGetList"
+            action="/km/asset/km_asset_apply_get_list/kmAssetApplyGetList.do">
+        </oper>
+        
+        <oper
+            id="kmAssetApplyInventoryOperLog"
+            extends="kmAssetApplyBaseOperLog"
+            model="com.landray.kmss.km.asset.model.KmAssetApplyInventory"
+            action="/km/asset/km_asset_apply_inventory/kmAssetApplyInventory.do">
+        </oper>
+        
+        <oper
+            id="kmAssetApplyTaskOperLog"
+            extends="kmAssetApplyBaseOperLog"
+            model="com.landray.kmss.km.asset.model.KmAssetApplyTask"
+            action="/km/asset/km_asset_apply_task/kmAssetApplyTask.do">
+            <query 
+                method="completeTask"
+                logPoint="Base_UrlParam;completeTask"
+                messageKey="km-asset:kmAssetApplyTask.inventoryComplete">
+            </query>
+            <query 
+                method="exportAssetTask"
+                logPoint="Base_UrlParam;exportAssetTask"
+                messageKey="km-asset:kmAssetApplyTask.button.export">
+            </query>
+            <query 
+                method="inventory"
+                logPoint="Base_UrlParam;Action_Find"
+                messageKey="button.view">
+            </query>
+            <query 
+                method="loadAssetCard|viewPersonnel"
+                logPoint="Base_UrlParam;Action_FindAll"
+                messageKey="button.list">
+            </query>
+            <query 
+                method="notify"
+                logPoint="Base_UrlParam;updateTaskAndNotify"
+                messageKey="km-asset:kmAssetApplyTask.button.ok">
+            </query>
+        </oper>
+        
+        <oper
+            id="kmAssetApplyTaskDetailOperLog"
+            extends="BaseOperLog"
+            model="com.landray.kmss.km.asset.model.KmAssetApplyTaskDetail"
+            action="/km/asset/km_asset_apply_task_detail/kmAssetApplyTaskDetail.do">
+            <query 
+                method="manageList"
+                logPoint="Base_UrlParam;Action_FindAll"
+                messageKey="button.list">
+            </query>
+        </oper>
+        
+	</logset>
+</log-oper>

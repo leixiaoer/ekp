@@ -1,0 +1,177 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<root xmlns="http://www.landray.com.cn/schema/lui" xmlns:degign="http://www.landray.com.cn/schema/design"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="
+	http://www.landray.com.cn/schema/lui
+	../../../sys/ui/lui.xsd
+	http://www.landray.com.cn/schema/design
+	../../../design-xml.xsd">
+	<!-- 我发起的投票 -->
+	<portlet
+		id="km-vote.myVotePortal"
+		name="{km-vote:kmVoteMain.portlet.myVote}"
+		module="{km-vote:tree.voteManagement}"
+		description="{km-vote:portlet.list.myVoteDesc}">
+		<source format="sys.ui.html" type="AjaxText">
+			<code>
+			   <![CDATA[
+					{"url":"/km/vote/km_vote_ui/kmVoteMain_myVotePortlet.jsp?rowsize=!{rowsize}&cateid=!{cateid}&myVote=1",
+					"formatKey":"html"
+					}
+			     ]]>
+			</code>
+			<example>
+				<code>
+					<![CDATA[
+						{^/sys/portal/example_images/km/vote/myVoteDesc.png$}
+					]]>
+				</code>
+			</example>
+		</source>
+		<vars>
+			<var name="{portlet.rowsize}" key="rowsize" kind="rowsize" default="6"/>
+			<var name="{km-vote:table.kmVoteCategory}" key="cateid" kind="sys.simplecategory">
+				{"model":"com.landray.kmss.km.vote.model.KmVoteCategory","name":"{km-vote:kmVoteMain.portlet.selectCategory}"}
+			</var>
+		</vars>
+		<operations>
+	     	<operation
+				name="{operation.create}"
+				type="create"
+				href="javascript:(function(){seajs.use(['km/vote/resource/js/create'], function(create) { 
+							create.addDoc('!{cateid}');
+					 });})();"
+			    target="_self" />
+			<operation
+				name="{operation.more}"
+				type="more"
+				href="/km/vote.index" />
+	    </operations>
+	</portlet>
+	<!-- 我参与的投票 -->
+	<portlet
+		id="km-vote.myVotedPortal"
+		name="{km-vote:kmVoteMain.portlet.myVoted}"
+		module="{km-vote:tree.voteManagement}"
+		description="{km-vote:portlet.list.myVotedDesc}">
+		<source format="sys.ui.html" type="AjaxText">
+			<code>
+			   <![CDATA[
+					{"url":"/km/vote/km_vote_ui/kmVoteMain_myVotePortlet.jsp?rowsize=!{rowsize}&cateid=!{cateid}&myVote=2",
+					"formatKey":"html"
+					}
+			     ]]>
+			</code>
+			<example>
+				<code>
+					<![CDATA[
+						{^/sys/portal/example_images/km/vote/myVoted.png$}
+					]]>
+				</code>
+			</example>
+		</source>
+		<vars>
+			<var name="{portlet.rowsize}" key="rowsize" kind="rowsize" default="6"/>
+			<var name="{km-vote:table.kmVoteCategory}" key="cateid" kind="sys.simplecategory">
+				{"model":"com.landray.kmss.km.vote.model.KmVoteCategory","name":"{km-vote:kmVoteMain.portlet.selectCategory}"}
+			</var>
+		</vars>
+		<operations>
+	     	<operation
+				name="{operation.create}"
+				type="create"
+				href="javascript:(function(){seajs.use(['km/vote/resource/js/create'], function(create) { 
+							create.addDoc('!{cateid}');
+					 });})();"
+			    target="_self" />
+			<operation
+				name="{operation.more}"
+				type="more"
+				href="/km/vote.index" />
+	    </operations>
+	</portlet>
+	<!-- 最新投票 -->
+	<portlet
+		id="km-vote.latestVotePortal"
+		name="{km-vote:kmVoteMain.portlet.latestVote}"
+		module="{km-vote:tree.voteManagement}"
+		description="{km-vote:portlet.list.latestVoteDesc}">
+		<source format="sys.ui.html" type="AjaxText">
+			<code>
+			   <![CDATA[
+					{"url":"/km/vote/km_vote_ui/kmVoteMain_myVotePortlet.jsp?rowsize=!{rowsize}&cateid=!{cateid}&orderby=kmVoteMain.docCreateTime desc",
+					"formatKey":"html"
+					}
+			     ]]>
+			</code>
+			<example>
+				<code>
+					<![CDATA[
+						{^/sys/portal/example_images/km/vote/latestVote.png$}
+					]]>
+				</code>
+			</example>
+		</source>
+		<vars>
+			<var name="{portlet.rowsize}" key="rowsize" kind="rowsize" default="6"/>
+			<var name="{km-vote:table.kmVoteCategory}" key="cateid" kind="sys.simplecategory">
+				{"model":"com.landray.kmss.km.vote.model.KmVoteCategory","name":"{km-vote:kmVoteMain.portlet.selectCategory}"}
+			</var>
+		</vars>
+		<operations>
+	     	<operation
+				name="{operation.create}"
+				type="create"
+				href="javascript:(function(){seajs.use(['km/vote/resource/js/create'], function(create) { 
+							create.addDoc('!{cateid}');
+					 });})();"
+			    target="_self" />
+			<operation
+				name="{operation.more}"
+				type="more"
+				href="/km/vote.index" />
+	    </operations>
+	</portlet>
+	<!-- 最热投票 -->
+	<portlet
+		id="km-vote.hotVotePortal"
+		name="{km-vote:kmVoteMain.portlet.hotVote}"
+		module="{km-vote:tree.voteManagement}"
+		description="{km-vote:portlet.list.hotVoteDesc}">
+		<source format="sys.ui.html" type="AjaxText">
+			<code>
+			   <![CDATA[
+					{"url":"/km/vote/km_vote_ui/kmVoteMain_myVotePortlet.jsp?rowsize=!{rowsize}&cateid=!{cateid}&orderby=kmVoteMain.fdVoteNum desc",
+					"formatKey":"html"
+					}
+			     ]]>
+			</code>
+			<example>
+				<code>
+					<![CDATA[
+						{^/sys/portal/example_images/km/vote/hotVote.png$}
+					]]>
+				</code>
+			</example>
+		</source>
+		<vars>
+			<var name="{portlet.rowsize}" key="rowsize" kind="rowsize" default="6"/>
+			<var name="{km-vote:table.kmVoteCategory}" key="cateid" kind="sys.simplecategory">
+				{"model":"com.landray.kmss.km.vote.model.KmVoteCategory","name":"{km-vote:kmVoteMain.portlet.selectCategory}"}
+			</var>
+		</vars>
+		<operations>
+	     	<operation
+				name="{operation.create}"
+				type="create"
+				href="javascript:(function(){seajs.use(['km/vote/resource/js/create'], function(create) { 
+							create.addDoc('!{cateid}');
+					 });})();"
+			    target="_self" />
+			<operation
+				name="{operation.more}"
+				type="more"
+				href="/km/vote.index" />
+	    </operations>
+	</portlet>
+</root>

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<template>
+	<ins>
+		<field fieldId="personId" fieldName="type" _required="true"/>
+	</ins>
+	<outs>
+		<field fieldId="leaveId" fieldName="请假单ID"  canSearch="false"/>
+		<field fieldId="subject" fieldName="标题"  canSearch="true"/>
+		<field fieldId="number" fieldName="单据编号"  canSearch="true"/>
+		<field fieldId="leaverId" fieldName="请假人ID"  canSearch="false"/>
+		<field fieldId="name" fieldName="姓名"  canSearch="false"/>
+		<field fieldId="deptId" fieldName="部门ID"  canSearch="false"/>
+		<field fieldId="deptName" fieldName="部门名称"  canSearch="false"/>
+		<field fieldId="leaveTypeValue" fieldName="请假类型实际值"  canSearch="false"/>
+		<field fieldId="leaveType" fieldName="请假类型"  canSearch="false"/>
+		<field fieldId="beginTime" fieldName="请假开始时间"  canSearch="false"/>
+		<field fieldId="endTime" fieldName="请假结束时间"  canSearch="false"/>
+	</outs>
+</template>

@@ -1,0 +1,19 @@
+<%@ page language="java" contentType="text/json; charset=UTF-8" pageEncoding="UTF-8" %>
+<%@ include file="/sys/ui/jsp/common.jsp" %>
+<list:data>
+    <list:data-columns var="kmSuperviseWarn" list="${queryPage.list}" varIndex="status">
+        <list:data-column property="fdId" />
+        <list:data-column col="index">
+            ${status+1}
+        </list:data-column>
+
+        <list:data-column property="fdKey" title="${lfn:message('km-supervise:kmSuperviseWarn.fdKey')}" />
+        <list:data-column property="fdFinishTime" title="${lfn:message('km-supervise:kmSuperviseWarn.fdFinishTime')}" />
+        <list:data-column col="fdNotifyPeople" title="${lfn:message('km-supervise:kmSuperviseWarn.fdNotifyPeople')}">
+            <sunbor:enumsShow value="${kmSuperviseWarn.fdNotifyPeople}" enumsType="km_supervise_warn" />
+        </list:data-column>
+        <list:data-column property="fdNotifyType" title="${lfn:message('km-supervise:kmSuperviseWarn.fdNotifyType')}" />
+    </list:data-columns>
+    <%-- 分页信息生成 --%>
+        <list:data-paging page="${queryPage}" />
+</list:data>

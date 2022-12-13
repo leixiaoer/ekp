@@ -1,0 +1,109 @@
+{
+    "global":     {
+        "modelName": "com.landray.kmss.km.carmng.model.KmCarmngUserFeeInfo",
+        "messageKey": "km-carmng:table.kmCarmngUserFeeInfo",
+        "serviceBean": "kmCarmngUserFeeInfoService",
+        "table": "km_carmng_user_fee_info",
+        "url": "/km/carmng/km_carmng_user_fee_info/kmCarmngUserFeeInfo.do?method=view&fdId=${fdId}"
+    },
+    "attrs":     {
+        "fdId":         {
+            "propertyType": "id",
+            "generator": {"type": "assigned"}
+        },
+        "fdFee":         {
+            "propertyType": "simple",
+            "messageKey": "km-carmng:kmCarmngUserFeeInfo.fdFee",
+            "type": "Double",
+            "column": "fd_fee",
+            "notNull": "false",
+            "length": "12"
+        },
+        "fdMileageNumber":         {
+            "propertyType": "simple",
+            "messageKey": "km-carmng:kmCarmngUserFeeInfo.fdMileageNumber",
+            "type": "Double",
+            "column": "fd_mileage_number",
+            "notNull": "false",
+            "length": "12"
+        },
+        "fdStopFee":         {
+            "propertyType": "simple",
+            "messageKey": "km-carmng:kmCarmngUserFeeInfo.fdStopFee",
+            "type": "Double",
+            "column": "fd_stop_fee",
+            "notNull": "false",
+            "length": "12"
+        },
+        "fdTurnpikeFee":         {
+            "propertyType": "simple",
+            "messageKey": "km-carmng:kmCarmngUserFeeInfo.fdTurnpikeFee",
+            "type": "Double",
+            "column": "fd_turnpike_fee",
+            "notNull": "false",
+            "length": "12"
+        },
+        "fdFuelFee":         {
+            "propertyType": "simple",
+            "messageKey": "km-carmng:kmCarmngUserFeeInfo.fdFuelFee",
+            "type": "Double",
+            "column": "fd_fuel_fee",
+            "notNull": "false",
+            "length": "12"
+        },
+        "fdOtherFee":         {
+            "propertyType": "simple",
+            "messageKey": "km-carmng:kmCarmngUserFeeInfo.fdOtherFee",
+            "type": "Double",
+            "column": "fd_other_fee",
+            "notNull": "false",
+            "length": "12"
+        },
+        "fdCarwashFee":         {
+            "propertyType": "simple",
+            "messageKey": "km-carmng:kmCarmngUserFeeInfo.fdCarwashFee",
+            "type": "Double",
+            "column": "fd_carwash_fee",
+            "notNull": "false",
+            "length": "12"
+        },
+        "fdUseStartTime":         {
+            "propertyType": "simple",
+            "messageKey": "km-carmng:kmCarmngUserFeeInfo.fdUseStartTime",
+            "type": "DateTime",
+            "column": "fd_use_start_time",
+            "notNull": "false"
+        },
+        "fdUseEndTime":         {
+            "propertyType": "simple",
+            "messageKey": "km-carmng:kmCarmngUserFeeInfo.fdUseEndTime",
+            "type": "DateTime",
+            "column": "fd_use_end_time",
+            "notNull": "false"
+        },
+        "fdUser":         {
+            "propertyType": "model",
+            "messageKey": "km-carmng:kmCarmngUserFeeInfo.fdUserId",
+            "type": "com.landray.kmss.sys.organization.model.SysOrgElement",
+            "column": "fd_user_id"
+        },
+        "fdVehicles":         {
+            "propertyType": "model",
+            "messageKey": "km-carmng:kmCarmngUserFeeInfo.fdVehiclesId",
+            "type": "com.landray.kmss.km.carmng.model.KmCarmngInfomation",
+            "column": "fd_vehicles_id"
+        },
+        "kmDispatchersInfo":         {
+            "propertyType": "model",
+            "messageKey": "km-carmng:kmCarmngUserFeeInfo.kmDispatchersInfo",
+            "type": "com.landray.kmss.km.carmng.model.KmCarmngDispatchersInfo",
+            "column": "fd_dispatchers_id"
+        },
+        "fdApplicationDept":         {
+            "propertyType": "model",
+            "messageKey": "km-carmng:kmCarmngUserFeeInfo.fdApplicationDept",
+             "type": "com.landray.kmss.sys.organization.model.SysOrgElement",
+            "column": "fd_application_dept"
+        }
+    }
+}

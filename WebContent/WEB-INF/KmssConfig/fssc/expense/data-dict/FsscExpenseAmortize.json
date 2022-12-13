@@ -1,0 +1,56 @@
+
+{
+    "global" : {
+        "modelName" : "com.landray.kmss.fssc.expense.model.FsscExpenseAccounts",
+        "messageKey" : "fssc-expense:table.fsscExpenseAccounts",
+        "serviceBean" : "fsscExpenseAccountsService",
+        "table" : "fssc_expense_accounts"
+    },
+    "attrs" : {
+        "fdId" : {
+            "propertyType" : "id",
+            "generator" : {
+                "type" : "assigned"
+            }
+        },
+        "fdMonth" : {
+            "propertyType" : "simple",
+            "messageKey" : "fssc-expense:fsscExpenseAmortize.fdMonth",
+            "type" : "String",
+            "column" : "fd_month",
+            "notNull" : "false",
+            "readOnly" : "false",
+            "validate" : "true",
+            "canDisplay" : "true",
+            "canRelation" : "true",
+            "canSearch" : "true",
+            "length" : "200"
+        },
+        "fdPercent" : {
+            "propertyType" : "simple",
+            "messageKey" : "fssc-expense:fsscExpenseAmortize.fdPercent",
+            "type" : "Double",
+            "column" : "fd_percent",
+            "notNull" : "false",
+            "readOnly" : "false",
+            "validate" : "true",
+            "canDisplay" : "true",
+            "canRelation" : "true",
+            "canSearch" : "true",
+            "length" : "200"
+        },
+        "fdMoney" : {
+            "propertyType" : "simple",
+            "messageKey" : "fssc-expense:fsscExpenseAmortize.fdMoney",
+            "type" : "Double",
+            "column" : "fd_money",
+            "notNull" : "false",
+            "readOnly" : "false",
+            "validate" : "true",
+            "canDisplay" : "true",
+            "canRelation" : "true",
+            "canSearch" : "true",
+            "length" : "400"
+        }
+    }
+}

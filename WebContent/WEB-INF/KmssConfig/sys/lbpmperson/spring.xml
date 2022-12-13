@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans
+	xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.0.xsd">
+	<bean
+		id="sysLbpmCreateDaoImp"
+		parent="KmssBaseDao"
+		class="com.landray.kmss.sys.lbpmperson.dao.hibernate.SysLbpmCreateDaoImp">
+	</bean>
+	<bean
+		id="sysLbpmPersonDao"
+		parent="KmssBaseDao"
+		class="com.landray.kmss.sys.lbpmperson.dao.hibernate.SysLbpmPersonDaoImp">
+	</bean>
+	<bean
+		id="sysLbpmPersonServiceTarget"
+		parent="KmssBaseTarget"
+		class="com.landray.kmss.sys.lbpmperson.service.spring.SysLbpmPersonServiceImpl">
+		<property name="baseDao">
+			<ref local="sysLbpmPersonDao" />
+		</property>
+	</bean>
+	<bean
+		id="sysLbpmPersonService"
+		parent="KmssBaseService">
+		<property name="target">
+			<ref local="sysLbpmPersonServiceTarget" />
+		</property>
+		<property name="transactionAttributes">
+			<props>
+				<prop key="approve*">PROPAGATION_REQUIRED</prop>
+			</props>
+		</property>
+	</bean>
+	<bean
+		id="sysLbpmModuleInfoService"
+		class="com.landray.kmss.sys.lbpmperson.service.SysLbpmModuleInfoService">
+	</bean>
+	
+	<bean
+		id="lbpmPersonTemplateCacheService"
+		parent="KmssBaseService">
+		<property name="target">
+			<ref local="lbpmPersonTemplateCacheTarget" />
+		</property>
+	</bean>
+	
+	<bean
+		id="lbpmPersonTemplateCacheTarget"
+		parent="KmssBaseTarget"
+		class="com.landray.kmss.sys.lbpmperson.service.spring.LbpmPersonTemplateCacheServiceImp">
+		<property name="baseDao">
+			<ref bean="KmssExtendDataAreaDao" />
+		</property>
+	</bean>
+	
+	<bean id="lbpmPersonQuartzService"
+		class="com.landray.kmss.sys.lbpmperson.service.spring.LbpmPersonQuartzServiceImp">
+		<property name="baseDao">
+			<ref bean="KmssBaseDao" />
+		</property>
+	</bean>
+</beans>

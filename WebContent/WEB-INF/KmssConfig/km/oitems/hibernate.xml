@@ -1,0 +1,17 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE hibernate-configuration
+	PUBLIC "-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+	"http://hibernate.sourceforge.net/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>	
+	<session-factory>	
+		<mapping resource="com/landray/kmss/km/oitems/model/KmOitemsManage.hbm.xml"/>
+		<mapping resource="com/landray/kmss/km/oitems/model/KmOitemsListing.hbm.xml"/>
+		<mapping resource="com/landray/kmss/km/oitems/model/KmOitemsWarehousingRecord.hbm.xml"/>
+		<mapping resource="com/landray/kmss/km/oitems/model/KmOitemsWarehousingRecordJoinList.hbm.xml"/>
+		<mapping resource="com/landray/kmss/km/oitems/model/KmOitemsBudgerApplication.hbm.xml"/>
+		<mapping resource="com/landray/kmss/km/oitems/model/KmOitemsTemplet.hbm.xml"/>
+		<mapping resource="com/landray/kmss/km/oitems/model/KmOitemsShoppingTrolley.hbm.xml"/>
+		<mapping resource="com/landray/kmss/km/oitems/model/KmOitemsMonthReport.hbm.xml" />
+		<mapping resource="com/landray/kmss/km/oitems/model/KmOitemsReportListing.hbm.xml" />
+	</session-factory>	
+</hibernate-configuration> 

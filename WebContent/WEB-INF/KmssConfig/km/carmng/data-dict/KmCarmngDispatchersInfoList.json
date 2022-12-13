@@ -1,0 +1,124 @@
+{
+    "global":     {
+        "modelName": "com.landray.kmss.km.carmng.model.KmCarmngDispatchersInfoList",
+        "messageKey": "km-carmng:table.kmCarmngDispatchersInfolist",
+        "displayProperty": "fdCarInfoNo",
+        "serviceBean": "kmCarmngDispatchersInfoListService",
+        "table": "km_carmng_dispatchers_infolist",
+        "url": "/km/carmng/km_carmng_dispatchers_info_list/kmCarmngDispatchersInfoList.do?method=view&fdId=${fdId}"
+    },
+    "attrs":     {
+        "fdId":         {
+            "propertyType": "id",
+            "generator": {"type": "assigned"}
+        },
+        "fdDriverId":         {
+            "propertyType": "simple",
+            "messageKey": "km-carmng:kmCarmngDispatchersInfo.fdDriverId",
+            "type": "String",
+            "column": "fd_driver_id",
+            "notNull": "false",
+            "length": "36"
+        },
+        "fdRelationPhone":         {
+            "propertyType": "simple",
+            "messageKey": "km-carmng:kmCarmngDispatchersInfo.fdRelationPhone",
+            "type": "String",
+            "column": "fd_relation_phone",
+            "notNull": "false",
+            "length": "100"
+        },
+        "fdCarInfoNo":         {
+            "propertyType": "simple",
+            "messageKey": "km-carmng:kmCarmngDispatchersInfo.fdCarInfoId",
+            "type": "String",
+            "column": "fd_carinfo_no",
+            "notNull": "false",
+            "length": "200"
+        },
+        "fdCarInfoName":         {
+            "propertyType": "simple",
+            "messageKey": "km-carmng:kmCarmngDispatchersInfo.fdCarInfoId",
+            "type": "String",
+            "column": "fd_carinfo_name",
+            "notNull": "false",
+            "length": "200"
+        },
+        "fdSysDriver":         {
+            "propertyType": "model",
+            "messageKey": "km-carmng:kmCarmngDispatchersInfo.fdDriverId",
+            "type": "com.landray.kmss.sys.organization.model.SysOrgElement",
+            "column": "fd_sys_driver_id",
+            "notNull": "false"
+        },
+        "fdCarInfo":         {
+            "propertyType": "model",
+            "messageKey": "km-carmng:kmCarmngDispatchersInfo.fdCarInfoId",
+            "type": "com.landray.kmss.km.carmng.model.KmCarmngInfomation",
+            "column": "fd_carinfo_id",
+            "notNull": "false"
+        },
+        "fdDispatchersInfo":         {
+            "propertyType": "model",
+            "messageKey": "km-carmng:kmCarmngDispatchersInfo.fdCarInfoId",
+            "type": "com.landray.kmss.km.carmng.model.KmCarmngDispatchersInfo",
+            "column": "fd_dispatchers_id",
+            "notNull": "false"
+        },
+        "fdVehichesTypeId":         {
+            "propertyType": "simple",
+            "messageKey": "km-carmng:kmCarmngDispatchersInfo.fdVehichesTypeId",
+            "type": "String",
+            "column": "fd_vehichestype_id",
+            "length": "36"
+        },
+        "fdVehichesTypeName":         {
+            "propertyType": "simple",
+            "messageKey": "km-carmng:kmCarmngDispatchersInfo.fdVehichesTypeName",
+            "type": "String",
+            "column": "fd_vehichestype_name",
+            "length": "200"
+        },
+        "fdDriverName":         {
+            "propertyType": "simple",
+            "messageKey": "km-carmng:kmCarmngDispatchersInfo.fdDriverName",
+            "type": "String",
+            "column": "fd_driver_name",
+            "length": "200"
+        },
+        "fdCarInfoSeatNumber":         {
+            "propertyType": "simple",
+            "messageKey": "km-carmng:kmCarmngDispatchersInfo.fdCarInfoSeatNumber",
+            "type": "String",
+            "column": "fd_carinfo_seatnum",
+            "length": "36"
+        },
+        "fdMotorcadeId":         {
+            "propertyType": "simple",
+            "messageKey": "km-carmng:kmCarmngDispatchersInfo.fdMotorcadeId",
+            "type": "String",
+            "column": "fd_motorcade_id",
+            "length": "36"
+        },
+        "fdMotorcadeName":         {
+            "propertyType": "simple",
+            "messageKey": "km-carmng:kmCarmngDispatchersInfo.fdMotorcadeName",
+            "type": "String",
+            "column": "fd_motorcade_name",
+            "length": "200"
+        },
+        "fdFlag":         {
+            "propertyType": "simple",
+            "messageKey": "km-carmng:kmCarmngDispatchersInfo.fdFlag",
+            "type": "String",
+            "column": "fd_flag"
+        },
+        "fdRegisterId":         {
+            "propertyType": "simple",
+            "messageKey": "km-carmng:kmCarmngDispatchersInfo.fdRegisterId",
+            "type": "String",
+            "column": "fd_register_id",
+            "length": "36"
+        }
+    }
+}

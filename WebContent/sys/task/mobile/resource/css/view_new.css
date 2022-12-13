@@ -1,0 +1,68 @@
+@CHARSET "UTF-8";
+
+/* 组件样式覆盖 */
+.muiDialogElementDiv_bottom{
+	border-top-left-radius:0.5rem;
+	border-top-right-radius:0.5rem;
+}
+.muiDialogElementDiv_bottom .muiDialogElementTitle_bottom{
+	font-size:1.2rem;
+	color:#a3a3a3;
+}
+.muiNavitem span{
+		font-size:1.6rem;
+}
+   .muiAccordionPanelTitle{
+	background-color:#fff !important;
+}
+.muiNavbarContainer{
+	background-color:#fff;
+}
+.muiAccordionPanel>div{
+	margin-bottom:0.6rem;
+}
+.muiAccordionPanelTitle span{
+	/*修复 图标与文字错位#110010*/
+	top:0;/*50%*/
+	border:none;
+	margin-left:0;
+	margin-top:0/*-0.8rem*/;
+	padding:0 0 0 2.06rem;
+	font-size:1.6rem;
+}
+.muiAccordionPanelTitle>div{
+	margin-left:4.5rem !important;
+	font-weight:500;
+	font-size:1.5rem;
+	color:#666;
+	
+}	
+.info h4{
+	color:#000;
+}
+.info .infoDate,.info .content{
+	padding-left:4rem;
+}
+/*临时解决 panel/content组件添加的图标点击会触发点击事件，产生黑色弹窗 */
+	 .muiPanelOverlay{
+		display:none !important;
+	}
+.mblEdgeToEdgeList{
+	border-top:none;
+}
+.mblTabBarTabBar .mblTabBarButton .mblTabBarButtonLabel{
+	font-size:1.6rem;
+	font-family: PingFangSC-Regular;
+	color: #0D93D6;
+	letter-spacing: 0;
+}
+.mblTabBarTabBar.mblTabBar{
+	height:4.5rem;	
+}
+
+#tableFdChildTask{
+	border-top:1px solid #e5e5e5;
+}
+.mblEdgeToEdgeList{
+	border-bottom:none;
+}

@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class 
+        name="com.landray.kmss.geesun.base.model.GeesunBaseProject" 
+        table="geesun_base_project">
+        <id 
+            name="fdId" 
+            column="fd_id" 
+            length="36"/>
+        <property 
+            name="fdName" 
+            column="fd_name" 
+            update="true" 
+            insert="true" 
+            length="200"/>
+        <property 
+            name="fdOrder" 
+            column="fd_order" 
+            update="true" 
+            insert="true" 
+            index="idx_geesunBaseProject_fdOrder"/>
+        <property 
+            name="fdIsAvailable" 
+            column="fd_is_available" 
+            update="true" 
+            insert="true"/>
+        <property 
+            name="docCreateTime" 
+            column="doc_create_time" 
+            update="true" 
+            insert="true" 
+            index="idx_geesunBaseProject_docCreateTime"/>
+        <property 
+            name="fdProjectNo" 
+            column="fd_project_no" 
+            update="true" 
+            insert="true" 
+            length="150"/>
+        <many-to-one 
+            name="docCreator" 
+            column="doc_creator_id" 
+            update="true" 
+            insert="true"/>
+    </class>
+</hibernate-mapping>

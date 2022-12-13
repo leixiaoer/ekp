@@ -1,0 +1,414 @@
+<?xml version="1.0"?>
+<beans
+	xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.0.xsd">
+
+	<bean
+		id="kmOitemsManageDao"
+		parent="KmssAuthBaseDao"
+		class="com.landray.kmss.km.oitems.dao.hibernate.KmOitemsManageDaoImp">
+		<property
+			name="modelName"
+			value="com.landray.kmss.km.oitems.model.KmOitemsManage" />
+	</bean>
+	<bean
+		id="kmOitemsManageTarget"
+		parent="KmssBaseTarget"
+		class="com.landray.kmss.km.oitems.service.spring.KmOitemsManageServiceImp">
+		<property
+			name="baseDao">
+			<ref
+				local="kmOitemsManageDao" />
+		</property>
+	</bean> 
+	<bean
+		id="kmOitemsManageService"
+		parent="KmssBaseService">
+		<property
+			name="target">
+			<ref
+				local="kmOitemsManageTarget" />
+		</property>
+	</bean>
+
+	<bean
+		id="kmOitemsManageServiceTree"
+		class="com.landray.kmss.km.oitems.service.spring.KmOitemsManageServiceTreeImp">
+		<property
+			name="kmOitemsManageService">
+			<ref
+				local="kmOitemsManageService" />
+		</property>
+	</bean>
+	<bean
+		id="kmOitemsManageServiceCheckTree"
+		class="com.landray.kmss.km.oitems.service.spring.KmOitemsManageServiceCheckTreeImp">
+		<property
+			name="kmOitemsManageService">
+			<ref
+				local="kmOitemsManageService" />
+		</property>
+	</bean>
+	<bean
+		id="kmOitemsManageMobileTreeService"
+		class="com.landray.kmss.km.oitems.service.spring.KmOitemsManageMobileTreeService">
+	</bean>
+
+	<bean
+		id="kmOitemsListingDao"
+		parent="KmssAuthBaseDao"
+		class="com.landray.kmss.km.oitems.dao.hibernate.KmOitemsListingDaoImp">
+		<property
+			name="modelName"
+			value="com.landray.kmss.km.oitems.model.KmOitemsListing" />
+	</bean>
+	<bean
+		id="kmOitemsListingTarget"
+		parent="KmssBaseTarget"
+		class="com.landray.kmss.km.oitems.service.spring.KmOitemsListingServiceImp">
+		<property
+			name="baseDao">
+			<ref
+				local="kmOitemsListingDao" />
+		</property>
+		<property
+			name="kmOitemsWarehousingRecordJoinListDao">
+			<ref
+				local="kmOitemsWarehousingRecordJoinListDao" />
+		</property>	
+		<property
+			name="kmOitemsWarehousingRecordService">
+			<ref
+				local="kmOitemsWarehousingRecordService" />
+		</property>
+        <property name="sysAttMainService">
+			<ref bean="sysAttMainService"/>
+		</property>
+		<property
+			name="kmOitemsShoppingTrolleyService">
+			<ref
+				local="kmOitemsShoppingTrolleyService" />
+		</property>
+	</bean>
+	<bean
+		id="kmOitemsListingService"
+		parent="KmssBaseService">
+		<property
+			name="target">
+			<ref
+				local="kmOitemsListingTarget" />
+		</property>
+	</bean>
+
+	<bean
+		id="kmOitemsWarehousingRecordDao"
+		parent="KmssAuthBaseDao"
+		class="com.landray.kmss.km.oitems.dao.hibernate.KmOitemsWarehousingRecordDaoImp">
+		<property
+			name="modelName"
+			value="com.landray.kmss.km.oitems.model.KmOitemsWarehousingRecord" />
+	</bean>
+	<bean
+		id="kmOitemsWarehousingRecordJoinListDao"
+		parent="KmssAuthBaseDao"
+		class="com.landray.kmss.km.oitems.dao.hibernate.KmOitemsWarehousingRecordJoinListDaoImp">
+		<property
+			name="modelName"
+			value="com.landray.kmss.km.oitems.model.KmOitemsWarehousingRecordJoinList" />
+	</bean>
+	<bean
+		id="kmOitemsWarehousingRecordTarget"
+		parent="KmssBaseTarget"
+		class="com.landray.kmss.km.oitems.service.spring.KmOitemsWarehousingRecordServiceImp">
+		<property
+			name="baseDao">
+			<ref
+				local="kmOitemsWarehousingRecordDao" />
+		</property>
+	</bean>
+	<bean
+		id="kmOitemsWarehousingRecordJoinListTarget"
+		parent="KmssBaseTarget"
+		class="com.landray.kmss.km.oitems.service.spring.KmOitemsWarehousingRecordJoinListServiceImp">
+		<property
+			name="baseDao">
+			<ref
+				local="kmOitemsWarehousingRecordJoinListDao" />
+		</property>
+	</bean>
+	<bean
+		id="kmOitemsWarehousingRecordService"
+		parent="KmssBaseService">
+		<property
+			name="target">
+			<ref
+				local="kmOitemsWarehousingRecordTarget" />
+		</property>
+	</bean>
+    <bean
+		id="kmOitemsWarehousingRecordJoinListService"
+		parent="KmssBaseService">
+		<property
+			name="target">
+			<ref
+				local="kmOitemsWarehousingRecordJoinListTarget" />
+		</property>
+	</bean> 
+
+
+	<bean
+		id="kmOitemsBudgerApplicationDao"
+		parent="KmssAuthBaseDao"
+		class="com.landray.kmss.km.oitems.dao.hibernate.KmOitemsBudgerApplicationDaoImp">
+		<property
+			name="modelName"
+			value="com.landray.kmss.km.oitems.model.KmOitemsBudgerApplication" />
+	</bean>
+	<bean
+		id="kmOitemsBudgerApplicationTarget"
+		parent="KmssExtendDataTarget"
+		class="com.landray.kmss.km.oitems.service.spring.KmOitemsBudgerApplicationServiceImp">
+		<property
+			name="baseDao">
+			<ref
+				local="kmOitemsBudgerApplicationDao" />
+		</property>
+		<property
+			name="sysNumberFlowService">
+			<ref
+				bean="sysNumberFlowService" />
+		</property>
+		<property
+			name="sysNumberMainMappService">
+			<ref
+				bean="sysNumberMainMappService" />
+		</property>
+		<property
+			name="kmOitemsTempletService">
+			<ref
+				local="kmOitemsTempletService" />
+		</property>
+	</bean>
+	<bean
+		id="kmOitemsBudgerApplicationService"
+		parent="KmssBaseService">
+		<property
+			name="target">
+			<ref
+				local="kmOitemsBudgerApplicationTarget" />
+		</property>
+	</bean>
+
+
+
+	<bean
+		id="kmOitemsTempletDao"
+		parent="KmssAuthBaseDao"
+		class="com.landray.kmss.km.oitems.dao.hibernate.KmOitemsTempletDaoImp">
+		<property
+			name="modelName"
+			value="com.landray.kmss.km.oitems.model.KmOitemsTemplet" />
+	</bean>
+	<bean
+		id="kmOitemsTempletTarget"
+		parent="KmssBaseTarget"
+		class="com.landray.kmss.km.oitems.service.spring.KmOitemsTempletServiceImp">
+		<property
+			name="baseDao">
+			<ref
+				local="kmOitemsTempletDao" />
+		</property>
+	</bean>
+	<bean
+		id="kmOitemsTempletService"
+		parent="KmssBaseService">
+		<property
+			name="target">
+			<ref
+				local="kmOitemsTempletTarget" />
+		</property>
+	</bean>
+
+
+	<bean
+		id="kmOitemsShoppingTrolleyDao"
+		parent="KmssAuthBaseDao"
+		class="com.landray.kmss.km.oitems.dao.hibernate.KmOitemsShoppingTrolleyDaoImp">
+		<property
+			name="modelName"
+			value="com.landray.kmss.km.oitems.model.KmOitemsShoppingTrolley" />
+	</bean>
+	<bean
+		id="kmOitemsShoppingTrolleyTarget"
+		parent="KmssBaseTarget"
+		class="com.landray.kmss.km.oitems.service.spring.KmOitemsShoppingTrolleyServiceImp">
+		<property
+			name="baseDao">
+			<ref
+				local="kmOitemsShoppingTrolleyDao" />
+		</property>
+		<property
+			name="kmOitemsListingService">
+			<ref
+				local="kmOitemsListingService" />
+		</property>
+		<property
+			name="kmOitemsWarehousingRecordJoinListService">
+			<ref
+				local="kmOitemsWarehousingRecordJoinListService" />
+		</property>
+	</bean>
+	<bean
+		id="kmOitemsShoppingTrolleyService"
+		parent="KmssBaseService">
+		<property
+			name="target">
+			<ref
+				local="kmOitemsShoppingTrolleyTarget" />
+		</property>
+	</bean>
+
+	<bean
+		id="kmOitemsTempletTreeService"
+		class="com.landray.kmss.km.oitems.service.spring.KmOitemsTempletTreeService">
+		<property
+			name="kmOitemsTempletService">
+			<ref
+				local="kmOitemsTempletService" />
+		</property>
+	</bean>
+
+	<bean
+		id="oitemsDaoProxyCreator"
+		class="org.springframework.aop.framework.autoproxy.BeanNameAutoProxyCreator">
+		<property
+			name="beanNames">
+			<value>kmOitemsBudgerApplicationDao</value>
+		</property>
+		<property
+			name="interceptorNames">
+			<list>
+				<value>luceneCreateAdvisor</value>
+				<value>luceneSaveAdvisor</value>
+				<value>luceneDeleteAdvisor</value>
+				<value>docKeyWriteAdvice</value>
+			</list>
+		</property>
+	</bean>
+
+	<bean
+		id="oitemsListingDaoProxyCreator"
+		class="org.springframework.aop.framework.autoproxy.BeanNameAutoProxyCreator">
+		<property
+			name="beanNames">
+			<value>kmOitemsListingDao</value>
+		</property>
+		<property
+			name="interceptorNames">
+			<list>
+				<value>luceneCreateAdvisor</value>
+				<value>luceneSaveAdvisor</value>
+				<value>luceneDeleteAdvisor</value>
+				<value>docKeyWriteAdvice</value>
+			</list>
+		</property>
+	</bean>
+
+	<!--月统计报表 -->
+	<bean
+		id="kmOitemsMonthReportDao"
+		parent="KmssAuthBaseDao"
+		class="com.landray.kmss.km.oitems.dao.hibernate.KmOitemsMonthReportDaoImp">
+		<property
+			name="modelName"
+			value="com.landray.kmss.km.oitems.model.KmOitemsMonthReport" />
+	</bean>
+	<bean
+		id="kmOitemsMonthReportTarget"
+		parent="KmssBaseTarget"
+		class="com.landray.kmss.km.oitems.service.spring.KmOitemsMonthReportServiceImp">
+		<property
+			name="baseDao">
+			<ref
+				local="kmOitemsMonthReportDao" />
+		</property>
+	</bean>
+	<bean
+		id="kmOitemsMonthReportService"
+		parent="KmssBaseService">
+		<property
+			name="target">
+			<ref
+				local="kmOitemsMonthReportTarget" />
+		</property>
+	</bean>
+
+	<bean
+		id="kmOitemsReportListingDao"
+		parent="KmssAuthBaseDao"
+		class="com.landray.kmss.km.oitems.dao.hibernate.KmOitemsReportListingDaoImp">
+		<property
+			name="modelName"
+			value="com.landray.kmss.km.oitems.model.KmOitemsReportListing" />
+	</bean>
+	<bean
+		id="kmOitemsReportListingTarget"
+		parent="KmssBaseTarget"
+		class="com.landray.kmss.km.oitems.service.spring.KmOitemsReportListingServiceImp">
+		<property
+			name="baseDao">
+			<ref
+				local="kmOitemsReportListingDao" />
+		</property>
+	</bean>
+	<bean
+		id="kmOitemsReportListingService"
+		parent="KmssBaseService">
+		<property
+			name="target">
+			<ref
+				local="kmOitemsReportListingTarget" />
+		</property>
+	</bean>
+	<bean
+		id="KmOitemsCountListingService"
+		class="com.landray.kmss.km.oitems.service.spring.KmOitemsCountListingService">
+		<property
+			name="kmOitemsBudgerApplicationService">
+			<ref
+				local="kmOitemsBudgerApplicationService" />
+		</property>
+		<property
+			name="kmOitemsMonthReportService">
+			<ref
+				local="kmOitemsMonthReportService" />
+		</property>
+		<property
+			name="sysOrgCoreService">
+			<ref bean="sysOrgCoreService" />
+		</property>
+	</bean>
+	<bean id="oitemsFlagFieldFilter"
+		class="com.landray.kmss.km.oitems.filter.OitemsFlagFieldFilter" />
+		
+	<bean id="kmOitemsBudgerApplicationValidator"
+		class="com.landray.kmss.km.oitems.service.spring.KmOitemsBudgerApplicationValidator" />
+	<bean
+		id="kmOitemsManageFilter"
+		class="com.landray.kmss.km.oitems.service.spring.KmOitemsManageFilter">
+		<property name="kmOitemsManageService">
+			<ref bean="kmOitemsManageService" />
+		</property> 
+	</bean>
+	<bean
+		id="kmOitemsManageValidator"
+		class="com.landray.kmss.km.oitems.service.spring.KmOitemsManageValidator">
+		<property name="kmOitemsManageService">
+			<ref bean="kmOitemsManageService" />
+		</property> 
+		<property name="kmOitemsListingService">
+			<ref bean="kmOitemsListingService" />
+		</property> 
+	</bean>	
+</beans>

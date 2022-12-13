@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<version xmlns="http://www.example.org/version-config" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.example.org/version-config ../../../version.xsd">
+	<modifies>
+		<modify>
+			<description>#166661 修复 Restservice服务访问策略中，新建访问策略时，输入相同名称的策略时，点【保存】不了，也没有提示</description>
+			<author>黄海</author>
+			<revision-time>2022-06-10</revision-time>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+	</modifies>
+</version>

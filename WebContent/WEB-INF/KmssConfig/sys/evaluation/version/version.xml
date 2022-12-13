@@ -1,0 +1,918 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<version xmlns="http://www.example.org/version-config" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.example.org/version-config ../../../version.xsd">
+	<modifies>
+		<modify>
+			<description>#155299 修复 系统导出的CSV漏洞</description>
+			<author>代家宽</author>
+			<revision-time>2022-06-06</revision-time>
+			<relation>
+				<relation-module>core</relation-module>
+			</relation>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#162463 修复 点评机制段落点评通知问题</description>
+			<author>廖碧成</author>
+			<revision-time>2022-04-07</revision-time>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#155751 修复 普通用户（管理员角色）查看课程详情页的点评信息显示一片空白</description>
+			<author>李芳敏</author>
+			<revision-time>2021-12-17</revision-time>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#152806 修复 移动端评论时，输入换行符，显示br br</description>
+			<author>孙佳敏</author>
+			<revision-time>2021-11-10</revision-time>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#151338 修复 移动端在课程详情页点评时，回复表情时，显示乱码</description>
+			<author>李芳敏</author>
+			<revision-time>2021-11-03</revision-time>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#121237 修复 安卓移动端点击文档进行点评或分享后，第一次返回文档页面，第二次返回无法返回知识仓库页面</description>
+			<author>张颖</author>
+			<revision-time>2021-08-17</revision-time>
+			<relation>
+				<relation-module>sys/introduce</relation-module>
+			</relation>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#146265 修复 点评机制存在安全漏洞问题</description>
+			<author>孙佳敏</author>
+			<revision-time>2021-08-11</revision-time>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#146400 修复 在文档知识库页面，选择段落内容进行分享，分享文字显示乱码</description>
+			<author>李芳敏</author>
+			<revision-time>2021-08-05</revision-time>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#145490 修复 PolarDB数据兼容性检测问题</description>
+			<author>代家宽</author>
+			<revision-time>2021-08-02</revision-time>
+			<relation>
+				<relation-module>core</relation-module>
+			</relation>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#144248 修复 文档知识点击分享到圈子，分享页面显示500错误</description>
+			<author>孙佳敏</author>
+			<revision-time>2021-07-14</revision-time>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#138465 优化 知识管理中部分页面英文翻译</description>
+			<author>孙佳敏</author>
+			<revision-time>2021-04-28</revision-time>
+			<relation>
+				<relation-module>sys/evaluation</relation-module>
+				<relation-module>sys/help</relation-module>
+				<relation-module>kms/ask</relation-module>
+				<relation-module>kms/kmservice</relation-module>
+				<relation-module>kms/knowledge</relation-module>
+				<relation-module>kms/kmaps</relation-module>
+				<relation-module>kms/integral</relation-module>
+				<relation-module>kms/medal</relation-module>
+				<relation-module>kms/category</relation-module>
+				<relation-module>kms/tutor</relation-module>
+				<relation-module>kms/kcube</relation-module>
+				<relation-module>sns/fshare</relation-module>
+			</relation>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#124583 优化 移动端点评UI界面优化</description>
+			<author>刘庞</author>
+			<revision-time>2021-04-23</revision-time>
+			<relation>
+				<relation-module>sys/mobile</relation-module>
+			</relation>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#131631 修复 评论内容取消字符转义，避免出现特殊字符被过滤</description>
+			<author>潘永辉</author>
+			<revision-time>2021-01-25</revision-time>
+			<relation>
+				<relation-module>core</relation-module>
+			</relation>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#125288 修复 段落点评配置不生效的问题</description>
+			<author>陈建林</author>
+			<revision-time>2020-11-23</revision-time>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#117429 优化 点评校验非法值</description>
+			<author>陈建林</author>
+			<revision-time>2020-09-24</revision-time>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#113262 优化 样式</description>
+			<author>陈建林</author>
+			<revision-time>2020-07-31</revision-time>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#111915 优化 移动端点评提示</description>
+			<author>洪泽铨</author>
+			<revision-time>2020-07-29</revision-time>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#修复 110576 移动端点评机制通知方式默认不勾选 “ 通知创建者”“ 通知作者 ”</description>
+			<author>李芳敏</author>
+			<revision-time>2020-07-27</revision-time>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#108017 修复 点评机制br标签换行问题</description>
+			<author>廖碧成</author>
+			<revision-time>2020-07-03</revision-time>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#110020 修复 移动端回复点评，使用emoji表情，在PC端显示乱码</description>
+			<author>李芳敏</author>
+			<revision-time>2020-06-28</revision-time>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#109154 新增 点评频率和点评次数设置</description>
+			<author>陈建林</author>
+			<revision-time>2020-06-22</revision-time>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#97234 优化 点评通知默认不通知作者和创建者</description>
+			<author>陈平山</author>
+			<revision-time>2020-06-06</revision-time>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#86850 优化 文档底部页签的展开折叠组件优化</description>
+			<author>潘永辉</author>
+			<revision-time>2020-02-17</revision-time>
+			<relation>
+				<relation-module>sys/ui</relation-module>
+			</relation>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#91863 优化 关闭段落点评不后不影响段落分享功能</description>
+			<author>廖碧成</author>
+			<revision-time>2020-01-03</revision-time>
+			<baseline>V15.0.3.R.20200117</baseline>
+		</modify>
+		<modify>
+			<description>#91011 修复 分享到圈子话题中显示标题信息含有源码格式字符</description>
+			<author>何景锋</author>
+			<revision-time>2019-12-30</revision-time>
+			<baseline>V15.0.3.R.20200117</baseline>
+		</modify>
+		<modify>
+			<description>#79219 优化 分享功能优化</description>
+			<author>唐有炜</author>
+			<revision-time>2019-12-20</revision-time>
+			<baseline>V15.0.3.R.20200117</baseline>
+		</modify>
+		<modify>
+			<description>#91025 修复 段落进行“分享”和“点评”操作时操作功能框超出显示边界</description>
+			<author>何景锋</author>
+			<revision-time>2019-12-13</revision-time>
+			<baseline>V15.0.3.R.20200117</baseline>
+		</modify>
+		<modify>
+			<description>#83583 优化 段落分享功能优化</description>
+			<author>唐有炜</author>
+			<revision-time>2019-12-10</revision-time>
+			<baseline>V15.0.3.R.20200117</baseline>
+		</modify>
+		<modify>
+			<description>#87960 优化 移动性能体验</description>
+			<author>陈平山</author>
+			<revision-time>2019-12-09</revision-time>
+			<relation>
+				<relation-module>sys/mobile</relation-module>
+			</relation>
+			<baseline>V15.0.3.R.20200117</baseline>
+		</modify>
+		<modify>
+			<description>#79542 修复 点评管理&gt;段落点评总览下全选按钮无效问题</description>
+			<author>廖碧成</author>
+			<revision-time>2019-09-20</revision-time>
+			<baseline>V15.0.2.R.20191108</baseline>
+		</modify>
+		<modify>
+			<description>#51450 新增 点评可以上传附件的功能</description>
+			<author>陈建林</author>
+			<revision-time>2019-09-19</revision-time>
+			<relation>
+				<relation-module>sys/mobile</relation-module>
+				<relation-module>sys/attachment</relation-module>
+			</relation>
+			<baseline>V15.0.2.R.20191108</baseline>
+		</modify>
+		<modify>
+			<description>#75033 修复 段落点评失败的问题</description>
+			<author>陈建林</author>
+			<revision-time>2019-06-17</revision-time>
+			<baseline>V15.0.0.R.20190712</baseline>
+		</modify>
+		<modify>
+			<description>#69806 移除 用不到的链接</description>
+			<author>陈建林</author>
+			<revision-time>2019-04-04</revision-time>
+			<baseline>V15.0.0.B3.20190412</baseline>
+		</modify>
+		<modify>
+			<description>#69076 修复 后台段落点评总览排序失效问题</description>
+			<author>张嘉韬</author>
+			<revision-time>2019-04-02</revision-time>
+			<baseline>V15.0.0.B3.20190412</baseline>
+		</modify>
+		<modify>
+			<description>#68939 修复 段落点评提交失败的问题</description>
+			<author>陈建林</author>
+			<revision-time>2019-03-19</revision-time>
+			<baseline>V15.0.0.B3.20190412</baseline>
+		</modify>
+		<modify>
+			<description>#66927 #67108 修复 移动端点评内容进行换行，PC端查看会出现换行符“&lt;br&gt;”</description>
+			<author>黎凯麟</author>
+			<revision-time>2019-01-24</revision-time>
+			<baseline>V15.0.0.B3.20190412</baseline>
+		</modify>
+		<modify>
+			<description>#62712 新增 移动端点评通知对象选择功能</description>
+			<author>陈建林</author>
+			<revision-time>2019-01-16</revision-time>
+			<relation>
+				<relation-module>sys/mobile</relation-module>
+			</relation>
+			<baseline>V15.0.0.B2.20190118</baseline>
+		</modify>
+		<modify>
+			<description>#65585 修复 admin.do配置勾选启动并默认邮件提醒待办，移动端点评之后，无邮件提醒</description>
+			<author>蒋志广</author>
+			<revision-time>2018-12-29</revision-time>
+			<baseline>V15.0.0.B2.20190118</baseline>
+		</modify>
+		<modify>
+			<description>#65566 优化 点评内容长度修改为1000</description>
+			<author>朱湖强</author>
+			<revision-time>2018-12-29</revision-time>
+			<baseline>V15.0.0.B2.20190118</baseline>
+		</modify>
+		<modify>
+			<description>#65058 优化 点评管理中“通知作者”国际化</description>
+			<author>何景锋</author>
+			<revision-time>2018-12-18</revision-time>
+			<baseline>V15.0.0.B2.20190118</baseline>
+		</modify>
+		<modify>
+			<description>#49599 优化 点评输入框及内容区英文按单词拆行</description>
+			<author>马泽棉</author>
+			<revision-time>2018-12-12</revision-time>
+			<baseline>V15.0.0.B2.20190118</baseline>
+		</modify>
+		<modify>
+			<description>修复 文档知识库行评论并仅选择“通知创建者”时，作者可同样收到到文档被评论</description>
+			<author>何景锋</author>
+			<revision-time>2018-11-08</revision-time>
+			<baseline>V15.0.0.B1.20181109</baseline>
+		</modify>
+		<modify>
+			<description>新增 文档点评时可以选择通知文档作者</description>
+			<author>何景锋</author>
+			<revision-time>2018-11-01</revision-time>
+			<baseline>V15.0.0.B1.20181109</baseline>
+		</modify>
+		<modify>
+			<description>修复【新闻管理】新闻文档界面点击点评输入框报错</description>
+			<author>何协殷</author>
+			<revision-time>2018-09-28</revision-time>
+			<baseline>V15.0.0.B1.20181109</baseline>
+		</modify>
+		<modify>
+			<description>修复 保存ip字段长度增加</description>
+			<author>郑超</author>
+			<revision-time>2018-09-27</revision-time>
+			<baseline>V15.0.0.B1.20181109</baseline>
+		</modify>
+		<modify>
+			<description>修复 火狐浏览器44.0版本点评无效的问题</description>
+			<author>何景峰</author>
+			<revision-time>2018-08-29</revision-time>
+			<baseline>V15.0.0.B1.20181109</baseline>
+		</modify>
+		<modify>
+			<description>修复 点评总览、段落点评总览中，点评时间、点赞数、回复数筛选无效</description>
+			<author>陈平山</author>
+			<revision-time>2018-07-04</revision-time>
+			<baseline>V14.0.1.R.20180706</baseline>
+		</modify>
+		<modify>
+			<description>优化 回收站开启下点评数请求性能</description>
+			<author>洪泽铨</author>
+			<revision-time>2018-07-03</revision-time>
+			<relation>
+				<relation-module>kms/knowledge</relation-module>
+			</relation>
+			<baseline>V14.0.1.R.20180706</baseline>
+		</modify>
+		<modify>
+			<description>修复 点评总览 和段落点评onclick被点评文档列表内文档 JS报错</description>
+			<author>梁国尚</author>
+			<revision-time>2018-01-11</revision-time>
+			<baseline>V14.0.0.B2.20180112</baseline>
+		</modify>
+		<modify>
+			<description>修复 移动端表情pc端展现不了的问题</description>
+			<author>陈建林</author>
+			<revision-time>2018-01-09</revision-time>
+			<baseline>V14.0.0.B2.20180112</baseline>
+		</modify>
+		<modify>
+			<description>优化 统一敏感词管理</description>
+			<author>陈建林</author>
+			<revision-time>2017-12-26</revision-time>
+			<baseline>V14.0.0.B2.20180112</baseline>
+		</modify>
+		<modify>
+			<description>优化 点评对敏感词没有对空格处理</description>
+			<author>陈尉建</author>
+			<revision-time>2017-11-10</revision-time>
+			<baseline>V14.0.0.B2.20180112</baseline>
+		</modify>
+		<modify>
+			<description>修复 点评管理的敏感词没有给提示</description>
+			<author>陈尉建</author>
+			<revision-time>2017-11-08</revision-time>
+			<baseline>V14.0.0.B1.20171110</baseline>
+		</modify>
+		<modify>
+			<description>修复 【点评机制-缺陷】敏感词检查里面写得有问题，导致提交点评时卡顿几秒的缺陷</description>
+			<author>周楠</author>
+			<revision-time>2017-11-01</revision-time>
+			<baseline>V14.0.0.B1.20171110</baseline>
+		</modify>
+		<modify>
+			<description>优化 点评机制样式</description>
+			<author>洪泽铨</author>
+			<revision-time>2017-11-01</revision-time>
+			<baseline>V14.0.0.B1.20171110</baseline>
+		</modify>
+		<modify>
+			<description>优化 敏感词过滤提供全局配置，针对标题和RTF、文本</description>
+			<author>陈尉建</author>
+			<revision-time>2017-10-27</revision-time>
+			<baseline>V14.0.0.B1.20171110</baseline>
+		</modify>
+		<modify>
+			<description>修复 【员工黄页-缺陷】我的点评页面签-搜索范围筛选无效 by chenps version</description>
+			<author>陈平山</author>
+			<revision-time>2017-10-24</revision-time>
+			<baseline>V14.0.0.B1.20171110</baseline>
+		</modify>
+		<modify>
+			<description>优化 点评只能点评一次</description>
+			<author>陈建林</author>
+			<revision-time>2017-09-30</revision-time>
+			<relation>
+				<relation-module>sys/mobile</relation-module>
+			</relation>
+			<baseline>V14.0.0.B1.20171110</baseline>
+		</modify>
+		<modify>
+			<description>新增 待办多语言</description>
+			<author>黄伟强</author>
+			<revision-time>2017-09-02</revision-time>
+			<relation>
+				<relation-module>sys/notify</relation-module>
+			</relation>
+			<baseline>V13.5.0.R.20170915</baseline>
+		</modify>
+		<modify>
+			<description>优化 增加后台配置KEY，便于后台菜单搜索</description>
+			<author>潘永辉</author>
+			<revision-time>2017-05-03</revision-time>
+			<baseline>V13.5.0.B1.20170512</baseline>
+		</modify>
+		<modify>
+			<description>优化 空格不计入字数的功能</description>
+			<author>周楠</author>
+			<revision-time>2017-04-25</revision-time>
+			<baseline>V13.5.0.B1.20170512</baseline>
+		</modify>
+		<modify>
+			<description>优化 字数超限制，按钮没变色的功能</description>
+			<author>周楠</author>
+			<revision-time>2017-04-25</revision-time>
+			<baseline>V13.5.0.B1.20170512</baseline>
+		</modify>
+		<modify>
+			<description>优化 默认并非所有点评记录都显示回复的输入框</description>
+			<author>徐广敏</author>
+			<revision-time>2017-03-23</revision-time>
+			<baseline>V13.5.0.B1.20170512</baseline>
+		</modify>
+		<modify>
+			<description>优化 配置页面标题字体优化（字体颜色随主题变化）</description>
+			<author>潘永辉</author>
+			<revision-time>2017-03-09</revision-time>
+			<relation>
+				<relation-module>sys/ui</relation-module>
+			</relation>
+			<baseline>V13.0.0.R.20170310</baseline>
+		</modify>
+		<modify>
+			<description>修复 后台配置中心&gt;&gt;应用中心&gt;&gt;机制&gt;&gt;点评机制，进入后自动定位到某一节点</description>
+			<author>潘永辉</author>
+			<revision-time>2017-03-08</revision-time>
+			<baseline>V13.0.0.R.20170310</baseline>
+		</modify>
+		<modify>
+			<description>修复 应用中心下进入各个业务模块，中间帧的字体可随主题包样式</description>
+			<author>陈经纬</author>
+			<revision-time>2017-03-08</revision-time>
+			<baseline>V13.0.0.R.20170310</baseline>
+		</modify>
+		<modify>
+			<description>修复 匿名访问的问题</description>
+			<author>陈建林</author>
+			<revision-time>2017-02-28</revision-time>
+			<baseline>V13.0.0.R.20170310</baseline>
+		</modify>
+		<modify>
+			<description>优化 点评样式优化</description>
+			<author>谢幸</author>
+			<revision-time>2017-02-20</revision-time>
+			<relation>
+				<relation-module>sys/ui</relation-module>
+			</relation>
+			<baseline>V13.0.0.R.20170310</baseline>
+		</modify>
+		<modify>
+			<description>修复 点评机制中ie8等浏览器出现&lt;p&gt;标签</description>
+			<author>符伟彬</author>
+			<revision-time>2017-01-13</revision-time>
+			<baseline>V13.0.0.R.20170310</baseline>
+		</modify>
+		<modify>
+			<description>修复 点评注入漏洞问题</description>
+			<author>符伟彬</author>
+			<revision-time>2017-01-09</revision-time>
+			<baseline>V13.0.0.R.20170310</baseline>
+		</modify>
+		<modify>
+			<description>修复 普通用户使用段落点评，敏感词控制失效问题</description>
+			<author>符伟彬</author>
+			<revision-time>2017-01-03</revision-time>
+			<baseline>V13.0.0.R.20170310</baseline>
+		</modify>
+		<modify>
+			<description>优化 段落点评中发送待办对象，增加‘创建者’默认勾选</description>
+			<author>符伟彬</author>
+			<revision-time>2017-01-03</revision-time>
+			<baseline>V13.0.0.R.20170310</baseline>
+		</modify>
+		<modify>
+			<description>修复 默认不展开回复的情况下，需要两次点击才能查看点评回复的问题</description>
+			<author>徐广敏</author>
+			<revision-time>2016-12-26</revision-time>
+			<baseline>V13.0.0.B3.20161230</baseline>
+		</modify>
+		<modify>
+			<description>优化 学习管理增加点评控制</description>
+			<author>梁国尚</author>
+			<revision-time>2016-12-26</revision-time>
+			<baseline>V13.0.0.B3.20161230</baseline>
+		</modify>
+		<modify>
+			<description>优化 移动端不显示段落点评</description>
+			<author>陈建林</author>
+			<revision-time>2016-12-19</revision-time>
+			<baseline>V13.0.0.B3.20161230</baseline>
+		</modify>
+		<modify>
+			<description>优化 点评记录列表开放默认显示条数设置</description>
+			<author>徐广敏</author>
+			<revision-time>2016-12-19</revision-time>
+			<baseline>V13.0.0.B3.20161230</baseline>
+		</modify>
+		<modify>
+			<description>修复 课程点评时，点击评论，系统无反应</description>
+			<author>符伟彬</author>
+			<revision-time>2016-12-05</revision-time>
+			<baseline>V13.0.0.B3.20161230</baseline>
+		</modify>
+		<modify>
+			<description>修复 在IE8浏览器中，段落点评选择框错误</description>
+			<author>符伟彬</author>
+			<revision-time>2016-11-21</revision-time>
+			<baseline>V13.0.0.B3.20161230</baseline>
+		</modify>
+		<modify>
+			<description>优化 段落点评、点评总览等信息</description>
+			<author>符伟彬</author>
+			<revision-time>2016-11-03</revision-time>
+			<baseline>V13.0.0.B3.20161230</baseline>
+		</modify>
+		<modify>
+			<description>优化点评管理的后台维护</description>
+			<author>符伟彬</author>
+			<revision-time>2016-11-03</revision-time>
+			<baseline>V13.0.0.B3.20161230</baseline>
+		</modify>
+		<modify>
+			<description>修复 点评机制在Edge浏览器下上传表情图片不显示</description>
+			<author>符伟彬</author>
+			<revision-time>2016-08-23</revision-time>
+			<baseline>V13.0.0.B2.20160930</baseline>
+		</modify>
+		<modify>
+			<description>新增 点评时记录点评者的ip</description>
+			<author>徐广敏</author>
+			<revision-time>2016-07-27</revision-time>
+			<baseline>V13.0.0.B2.20160930</baseline>
+		</modify>
+		<modify>
+			<description>新增 点评对象的平均分调用接口以及相关计算</description>
+			<author>徐广敏</author>
+			<revision-time>2016-07-27</revision-time>
+			<baseline>V13.0.0.B2.20160930</baseline>
+		</modify>
+		<modify>
+			<description>优化 移动端头像加载性能</description>
+			<author>陈建林</author>
+			<revision-time>2016-06-30</revision-time>
+			<baseline>V13.0.0.B2.20160930</baseline>
+		</modify>
+		<modify>
+			<description>修复 移动端国际化支持</description>
+			<author>林秀贤</author>
+			<revision-time>2016-06-28</revision-time>
+			<baseline>V13.0.0.B2.20160930</baseline>
+		</modify>
+		<modify>
+			<description>优化 移动端头像大小性能优化</description>
+			<author>林秀贤</author>
+			<revision-time>2016-06-12</revision-time>
+			<baseline>V13.0.0.B2.20160930</baseline>
+		</modify>
+		<modify>
+			<description>修复 部分情况下段落点评点击事件无效的问题</description>
+			<author>洪泽铨</author>
+			<revision-time>2016-04-27</revision-time>
+			<baseline>V13.0.0.B1.20160429</baseline>
+		</modify>
+		<modify>
+			<description>修复 表情弹出框样式问题</description>
+			<author>陈建林</author>
+			<revision-time>2016-04-27</revision-time>
+			<baseline>V13.0.0.B1.20160429</baseline>
+		</modify>
+		<modify>
+			<description>优化 点评回复选中样式</description>
+			<author>洪泽铨</author>
+			<revision-time>2016-04-25</revision-time>
+			<relation>
+				<relation-module>sys/mobile</relation-module>
+			</relation>
+			<baseline>V13.0.0.B1.20160429</baseline>
+		</modify>
+		<modify>
+			<description>修复 默认通知方式选取admin.do的配置</description>
+			<author>陈建林</author>
+			<revision-time>2016-04-07</revision-time>
+			<baseline>V13.0.0.B1.20160429</baseline>
+		</modify>
+		<modify>
+			<description>修复 点评回复头像在使用KK头像时显示不出来的问题</description>
+			<author>陈建林</author>
+			<revision-time>2016-04-07</revision-time>
+			<baseline>V13.0.0.B1.20160429</baseline>
+		</modify>
+		<modify>
+			<description>优化 点评默认发送待办</description>
+			<author>陈建林</author>
+			<revision-time>2016-04-05</revision-time>
+			<baseline>V13.0.0.B1.20160429</baseline>
+		</modify>
+		<modify>
+			<description>修复 xss漏洞</description>
+			<author>陈建林</author>
+			<revision-time>2016-02-02</revision-time>
+			<baseline>V12.0.9.R.20160325</baseline>
+		</modify>
+		<modify>
+			<description>优化 刷新页面再在点评框添加表情后，表情周围出现了小方框</description>
+			<author>张文辉</author>
+			<revision-time>2015-11-12</revision-time>
+			<baseline>V12.0.7.R.20151203</baseline>
+		</modify>
+		<modify>
+			<description>优化 移动端点评回复支持字数限制</description>
+			<author>陈建林</author>
+			<revision-time>2015-11-05</revision-time>
+			<relation>
+				<relation-module>sys/mobile</relation-module>
+			</relation>
+			<baseline>V12.0.6.R.20151106</baseline>
+		</modify>
+		<modify>
+			<description>修复 员工黄页中引用的"我的点评"列表展示的是包括其他人在内的点评的问题</description>
+			<author>张文辉</author>
+			<revision-time>2015-11-05</revision-time>
+			<baseline>V12.0.6.R.20151106</baseline>
+		</modify>
+		<modify>
+			<description>优化 点评文本框复制黏贴后无法自动换行的问题</description>
+			<author>张文辉</author>
+			<revision-time>2015-11-04</revision-time>
+			<baseline>V12.0.6.R.20151106</baseline>
+		</modify>
+		<modify>
+			<description>优化 点评回复内容显示错位</description>
+			<author>张文辉</author>
+			<revision-time>2015-11-04</revision-time>
+			<baseline>V12.0.6.R.20151106</baseline>
+		</modify>
+		<modify>
+			<description>修复 点评记录由于传参带有非法字符而导致点评列表无法显示</description>
+			<author>张文辉</author>
+			<revision-time>2015-11-04</revision-time>
+			<baseline>V12.0.6.R.20151106</baseline>
+		</modify>
+		<modify>
+			<description>优化 xss攻击的问题</description>
+			<author>周理义</author>
+			<revision-time>2015-10-15</revision-time>
+			<relation>
+				<relation-module>sys/ui</relation-module>
+				<relation-module>core</relation-module>
+			</relation>
+			<baseline>V12.0.6.R.20151106</baseline>
+		</modify>
+		<modify>
+			<description>修复 移动端点击编辑框下方空白区域关闭内容窗口</description>
+			<author>潘永辉</author>
+			<revision-time>2015-10-14</revision-time>
+			<baseline>V12.0.6.R.20151106</baseline>
+		</modify>
+		<modify>
+			<description>优化 点评回复权限与点评权限一致</description>
+			<author>张文辉</author>
+			<revision-time>2015-09-29</revision-time>
+			<baseline>V12.0.6.R.20151106</baseline>
+		</modify>
+		<modify>
+			<description>修复 没勾选"通知文档创建者"，点评后文档创建者依旧会收到待办通知的问题</description>
+			<author>张文辉</author>
+			<revision-time>2015-09-25</revision-time>
+			<baseline>V12.0.6.R.20151106</baseline>
+		</modify>
+		<modify>
+			<description>优化 点评输入框输入内容为纯英文时可自动换行</description>
+			<author>张文辉</author>
+			<revision-time>2015-08-27</revision-time>
+			<baseline>V12.0.5.R.20150911</baseline>
+		</modify>
+		<modify>
+			<description>优化 点评字数校验</description>
+			<author>张文辉</author>
+			<revision-time>2015-08-27</revision-time>
+			<baseline>V12.0.5.R.20150911</baseline>
+		</modify>
+		<modify>
+			<description>优化 点评回复中，查看对话框里的头像无法正常显示</description>
+			<author>张文辉</author>
+			<revision-time>2015-08-05</revision-time>
+			<baseline>V12.0.4.R.20150807</baseline>
+		</modify>
+		<modify>
+			<description>修复 移动端点评内容没做特殊字符过滤的问题</description>
+			<author>陈建林</author>
+			<revision-time>2015-07-07</revision-time>
+			<baseline>V12.0.3.R.20150710</baseline>
+		</modify>
+		<modify>
+			<description>优化 点评列表底部空白高度</description>
+			<author>张文辉</author>
+			<revision-time>2015-06-04</revision-time>
+			<baseline>V12.0.2.R.20150605</baseline>
+		</modify>
+		<modify>
+			<description>优化 点评选择一星级别后聚焦点评框，点评框中默认点评语无法自动清空</description>
+			<author>张文辉</author>
+			<revision-time>2015-05-28</revision-time>
+			<baseline>V12.0.2.R.20150605</baseline>
+		</modify>
+		<modify>
+			<description>优化 点评回复中列表展开按钮样式</description>
+			<author>张文辉</author>
+			<revision-time>2015-04-27</revision-time>
+			<baseline>V12.0.1.R.20150508</baseline>
+		</modify>
+		<modify>
+			<description>优化 点评输入内容过滤</description>
+			<author>张文辉</author>
+			<revision-time>2015-03-31</revision-time>
+			<baseline>V12.0.1.R.20150508</baseline>
+		</modify>
+		<modify>
+			<description>优化 火狐浏览器下无法点评</description>
+			<author>张文辉</author>
+			<revision-time>2015-03-31</revision-time>
+			<baseline>V12.0.1.R.20150508</baseline>
+		</modify>
+		<modify>
+			<description>修复 admin.do中消息机制默认通知方式设置未生效</description>
+			<author>魏本源</author>
+			<revision-time>2015-03-03</revision-time>
+			<baseline>V12.0.0.R.20150325</baseline>
+		</modify>
+		<modify>
+			<description>优化 点评回复中查看对话的回复框在IE8下表情框显示错位</description>
+			<author>张文辉</author>
+			<revision-time>2015-01-15</revision-time>
+			<baseline>V12.0.0.B3.20150116</baseline>
+		</modify>
+		<modify>
+			<description>优化 点评输入框剩余字数检验以及点评框针对表情输入问题的优化</description>
+			<author>张文辉</author>
+			<revision-time>2015-01-15</revision-time>
+			<baseline>V12.0.0.B3.20150116</baseline>
+		</modify>
+		<modify>
+			<description>修复 没有一条点评信息时，点评总览视图会报错</description>
+			<author>张文辉</author>
+			<revision-time>2014-10-27</revision-time>
+			<baseline>V12.0.0.B2.20141114</baseline>
+		</modify>
+		<modify>
+			<description>新增 操作成功后自动刷新列表</description>
+			<author>魏本源</author>
+			<revision-time>2014-10-17</revision-time>
+			<baseline>V12.0.0.B2.20141114</baseline>
+		</modify>
+		<modify>
+			<description>优化 点评回复框英文字母自动换行</description>
+			<author>张文辉</author>
+			<revision-time>2014-09-05</revision-time>
+			<baseline>V12.0.0.B1.20140905</baseline>
+		</modify>
+		<modify>
+			<description>修复 段落点评圈起的内容在was环境乱码的问题</description>
+			<author>张文辉</author>
+			<revision-time>2014-09-04</revision-time>
+			<baseline>V12.0.0.B1.20140905</baseline>
+		</modify>
+		<modify>
+			<description>新增 移动新UED支持</description>
+			<author>李衡</author>
+			<revision-time>2014-09-03</revision-time>
+			<baseline>V12.0.0.B1.20140905</baseline>
+		</modify>
+		<modify>
+			<description>优化 点评回复框在点击回复时才加载</description>
+			<author>张文辉</author>
+			<revision-time>2014-09-02</revision-time>
+			<baseline>V12.0.0.B1.20140905</baseline>
+		</modify>
+		<modify>
+			<description>新增 点评回复功能以及段落点评功能</description>
+			<author>张文辉</author>
+			<revision-time>2014-09-02</revision-time>
+			<relation>
+				<relation-module>sys/praise</relation-module>
+			</relation>
+			<baseline>V12.0.0.B1.20140905</baseline>
+		</modify>
+		<modify>
+			<description>修复 点评时间取客户端时间的问题</description>
+			<author>易荣烽</author>
+			<revision-time>2014-01-27</revision-time>
+			<baseline>V11.0.0.R.20140320</baseline>
+		</modify>
+		<modify>
+			<description>优化 点评内容显示调整</description>
+			<author>朱湖强</author>
+			<revision-time>2013-07-18</revision-time>
+			<baseline>V11.0.0.B1.20140107</baseline>
+		</modify>
+		<modify>
+			<description>修复 点评新增删除不更新标签上显示数目的问题</description>
+			<author>洪泽铨</author>
+			<revision-time>2013-06-05</revision-time>
+			<baseline>V10.0.3.R.20130712</baseline>
+		</modify>
+		<modify>
+			<description>优化 前端点评内容把两个英文字符当一个汉字计算；新增 PC端前端页面点评内容字数提示</description>
+			<author>朱湖强</author>
+			<revision-time>2013-04-17</revision-time>
+			<baseline>V10.0.2.R.20130608</baseline>
+		</modify>
+		<modify>
+			<description>修复 资源文件导致的英文环境脚本错误</description>
+			<author>魏本源</author>
+			<revision-time>2013-02-04</revision-time>
+			<baseline>V10.0.1.R.20130328</baseline>
+		</modify>
+		<modify>
+			<description>优化 避免英文翻译中缩写单引号引起js错误</description>
+			<author>张乐志</author>
+			<revision-time>2013-01-22</revision-time>
+			<baseline>V10.0.1.R.20130328</baseline>
+		</modify>
+		<modify>
+			<description>优化 SQL注入问题</description>
+			<author>邱建华</author>
+			<revision-time>2013-01-22</revision-time>
+			<baseline>V10.0.1.R.20130328</baseline>
+		</modify>
+		<modify>
+			<description>优化 没有点评权限时不出现点评框</description>
+			<author>朱湖强</author>
+			<revision-time>2012-12-11</revision-time>
+			<baseline>V10.0.0.R.20121215</baseline>
+		</modify>
+		<modify>
+			<description>修复 多行文本框编辑时输入换行，显示的时候没换行的问题</description>
+			<author>朱湖强</author>
+			<revision-time>2012-04-27</revision-time>
+			<baseline>V10.0.0.B1.20120522</baseline>
+		</modify>
+		<modify>
+			<description>优化 “无数据时”，提示信息不统一的问题</description>
+			<author>朱湖强</author>
+			<revision-time>2012-04-09</revision-time>
+			<baseline>V10.0.0.B1.20120522</baseline>
+		</modify>
+		<modify>
+			<description>移动组件中增加点评功能</description>
+			<author>李衡</author>
+			<revision-time>2012-03-12</revision-time>
+			<relation>
+				<relation-module>third/pda</relation-module>
+			</relation>
+			<baseline>V9.0.2.R.20120326</baseline>
+		</modify>
+		<modify>
+			<description>解决sqlserver下,点评时间相同,按点评时间排序的分页问题</description>
+			<author>李衡</author>
+			<revision-time>2011-12-28</revision-time>
+			<baseline>EKP9.0.1.R.20111231</baseline>
+		</modify>
+		<modify>
+			<description>90UI文档查看界面点评操作界面调整</description>
+			<author>李衡</author>
+			<revision-time>2011-12-22</revision-time>
+			<baseline>EKP9.0.1.R.20111231</baseline>
+		</modify>
+		<modify>
+			<description>更换文档发布页面点评处提交按钮背景图片</description>
+			<author>庄为亮</author>
+			<revision-time>2011-12-05</revision-time>
+			<baseline>EKP9.0.1.R.20111231</baseline>
+		</modify>
+		<modify>
+			<description>机制字段加索引</description>
+			<author>缪贵荣</author>
+			<revision-time>2011-11-07</revision-time>
+			<relation>
+				<relation-module>core</relation-module>
+			</relation>
+			<baseline>EKP9.0.1.R.20111231</baseline>
+		</modify>
+		<modify>
+			<description>没人点评的时候，页面显示点评数为0</description>
+			<author>卢海军</author>
+			<revision-time>2011-10-28</revision-time>
+			<baseline>EKP9.0.1.R.20111231</baseline>
+		</modify>
+		<modify>
+			<description>ekp90UI改造</description>
+			<author>庄为亮</author>
+			<revision-time>2011-10-14</revision-time>
+			<relation>
+				<relation-module>core</relation-module>
+			</relation>
+			<baseline>EKP9.0.0.R.20111025</baseline>
+		</modify>
+	</modifies>
+</version>

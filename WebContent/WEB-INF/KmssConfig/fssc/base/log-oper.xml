@@ -1,0 +1,259 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!-- 财务基础数据模块默认监听增删改查 -->
+<log-oper>
+	<logset>
+		<!-- 员工账户 -->
+        <oper
+        	id="fsscBaseAccountOperLog"
+        	extends="BaseOperLog"
+        	model="com.landray.kmss.fssc.base.model.FsscBaseAccount"
+        	action="/fssc/base/fssc_base_account/fsscBaseAccount.do">
+        </oper>
+		<!-- 会计科目(公共) -->
+        <oper
+        	id="fsscBaseAccountsOperLog"
+        	extends="BaseOperLog"
+        	model="com.landray.kmss.fssc.base.model.FsscBaseAccounts"
+        	action="/fssc/base/fssc_base_accounts/fsscBaseAccounts.do">
+        </oper>
+		<!-- 会计科目(公司) -->
+        <oper
+        	id="fsscBaseAccountsComOperLog"
+        	extends="BaseOperLog"
+        	model="com.landray.kmss.fssc.base.model.FsscBaseAccountsCom"
+        	action="/fssc/base/fssc_base_accounts_com/fsscBaseAccountsCom.do">
+        </oper>
+		<!-- 地域 -->
+        <oper
+        	id="fsscBaseAreaOperLog"
+        	extends="BaseOperLog"
+        	model="com.landray.kmss.fssc.base.model.FsscBaseArea"
+        	action="/fssc/base/fssc_base_area/fsscBaseArea.do">
+        </oper>
+        <!-- 舱位 -->
+        <oper
+        	id="fsscBaseBerthOperLog"
+        	extends="BaseOperLog"
+        	model="com.landray.kmss.fssc.base.model.FsscBaseBerth"
+        	action="/fssc/base/fssc_base_berth/fsscBaseBerth.do">
+        </oper>
+        <!-- 预算科目(公共) -->
+        <oper
+        	id="fsscBaseBudgetItemOperLog"
+        	extends="BaseOperLog"
+        	model="com.landray.kmss.fssc.base.model.FsscBaseBudgetItem"
+        	action="/fssc/base/fssc_base_budget_item/fsscBaseBudgetItem.do">
+        </oper>
+        <!-- 预算科目(公司) -->
+        <oper
+        	id="fsscBaseBudgetItemComOperLog"
+        	extends="BaseOperLog"
+        	model="com.landray.kmss.fssc.base.model.FsscBaseBudgetItemCom"
+        	action="/fssc/base/fssc_base_budget_item_com/fsscBaseBudgetItemCom.do">
+        </oper>
+        <!-- 预算方案 -->
+        <oper
+        	id="fsscBaseBudgetSchemeOperLog"
+        	extends="BaseOperLog"
+        	model="com.landray.kmss.fssc.base.model.FsscBaseBudgetScheme"
+        	action="/fssc/base/fssc_base_budget_scheme/fsscBaseBudgetScheme.do">
+        </oper>
+        <!-- 现金流量项目 -->
+        <oper
+        	id="fsscBaseCashFlowOperLog"
+        	extends="BaseOperLog"
+        	model="com.landray.kmss.fssc.base.model.FsscBaseCashFlow"
+        	action="/fssc/base/fssc_base_cash_flow/fsscBaseCashFlow.do">
+        </oper>
+        <!-- 公司 -->
+        <oper
+        	id="fsscBaseCompanyOperLog"
+        	extends="BaseOperLog"
+        	model="com.landray.kmss.fssc.base.model.FsscBaseCompany"
+        	action="/fssc/base/fssc_base_company/fsscBaseCompany.do">
+        </oper>
+        <!-- 公司组 -->
+        <oper
+        	id="fsscBaseCompanyGroupOperLog"
+        	extends="BaseOperLog"
+        	model="com.landray.kmss.fssc.base.model.FsscBaseCompanyGroup"
+        	action="/fssc/base/fssc_base_company_group/fsscBaseCompanyGroup.do">
+        </oper>
+        <!-- 成本中心 -->
+        <oper
+        	id="fsscBaseCostCenterOperLog"
+        	extends="BaseOperLog"
+        	model="com.landray.kmss.fssc.base.model.FsscBaseCostCenter"
+        	action="/fssc/base/fssc_base_cost_center/fsscBaseCostCenter.do">
+        </oper>
+        <!-- 成本中心类型 -->
+        <oper
+        	id="fsscBaseCostTypeOperLog"
+        	extends="BaseOperLog"
+        	model="com.landray.kmss.fssc.base.model.FsscBaseCostType"
+        	action="/fssc/base/fssc_base_cost_type/fsscBaseCostType.do">
+        </oper>
+        <!-- 货币 -->
+        <oper
+        	id="fsscBaseCurrencyOperLog"
+        	extends="BaseOperLog"
+        	model="com.landray.kmss.fssc.base.model.FsscBaseCurrency"
+        	action="/fssc/base/fssc_base_currency/fsscBaseCurrency.do">
+        </oper>
+        <!-- ERP人员 -->
+        <oper
+        	id="fsscBaseErpPersonOperLog"
+        	extends="BaseOperLog"
+        	model="com.landray.kmss.fssc.base.model.FsscBaseErpPerson"
+        	action="/fssc/base/fssc_base_erp_person/fsscBaseErpPerson.do">
+        </oper>
+        <!-- 汇率 -->
+        <oper
+        	id="fsscBaseExchangeRateOperLog"
+        	extends="BaseOperLog"
+        	model="com.landray.kmss.fssc.base.model.FsscBaseExchangeRate"
+        	action="/fssc/base/fssc_base_exchange_rate/fsscBaseExchangeRate.do">
+        </oper>
+        <!-- 费用类型 -->
+        <oper
+        	id="fsscBaseExpenseItemOperLog"
+        	extends="BaseOperLog"
+        	model="com.landray.kmss.fssc.base.model.FsscBaseExpenseItem"
+        	action="/fssc/base/fssc_base_expense_item/fsscBaseExpenseItem.do">
+        </oper>
+        <!-- 内部订单 -->
+        <oper
+        	id="fsscBaseInnerOrderOperLog"
+        	extends="BaseOperLog"
+        	model="com.landray.kmss.fssc.base.model.FsscBaseInnerOrder"
+        	action="/fssc/base/fssc_base_inner_order/fsscBaseInnerOrder.do">
+        </oper>
+        <!-- 费用类型-预算控制维护 -->
+        <oper
+        	id="fsscBaseItemBudgetOperLog"
+        	extends="BaseOperLog"
+        	model="com.landray.kmss.fssc.base.model.FsscBaseItemBudget"
+        	action="/fssc/base/fssc_base_item_budget/fsscBaseItemBudget.do">
+        </oper>
+        <!-- 费用类型-显示字段维护 -->
+        <oper
+        	id="fsscBaseItemFieldOperLog"
+        	extends="BaseOperLog"
+        	model="com.landray.kmss.fssc.base.model.FsscBaseItemField"
+        	action="/fssc/base/fssc_base_item_field/fsscBaseItemField.do">
+        </oper>
+        <!-- 职级 -->
+        <oper
+        	id="fsscBaseLevelOperLog"
+        	extends="BaseOperLog"
+        	model="com.landray.kmss.fssc.base.model.FsscBaseLevel"
+        	action="/fssc/base/fssc_base_level/fsscBaseLevel.do">
+        </oper>
+        <!-- 护照 -->
+        <oper
+        	id="fsscBasePassportOperLog"
+        	extends="BaseOperLog"
+        	model="com.landray.kmss.fssc.base.model.FsscBasePassport"
+        	action="/fssc/base/fssc_base_passport/fsscBasePassport.do">
+        </oper>
+        <!-- 付款银行 -->
+        <oper
+        	id="fsscBasePayBankOperLog"
+        	extends="BaseOperLog"
+        	model="com.landray.kmss.fssc.base.model.FsscBasePayBank"
+        	action="/fssc/base/fssc_base_pay_bank/fsscBasePayBank.do">
+        </oper>
+        <!-- 付款单 -->
+        <oper
+        	id="fsscBasePaymentOperLog"
+        	extends="BaseOperLog"
+        	model="com.landray.kmss.fssc.base.model.FsscBasePayment"
+        	action="/fssc/base/fssc_base_payment/fsscBasePayment.do">
+        </oper>
+        <!-- 付款方式 -->
+        <oper
+        	id="fsscBasePayWayOperLog"
+        	extends="BaseOperLog"
+        	model="com.landray.kmss.fssc.base.model.FsscBasePayWay"
+        	action="/fssc/base/fssc_base_pay_way/fsscBasePayWay.do">
+        </oper>
+        <!-- 项目 -->
+        <oper
+        	id="fsscBaseProjectOperLog"
+        	extends="BaseOperLog"
+        	model="com.landray.kmss.fssc.base.model.FsscBaseProject"
+        	action="/fssc/base/fssc_base_project/fsscBaseProject.do">
+        </oper>
+        <!-- 特殊事项 -->
+        <oper
+        	id="fsscBaseSpecialItemOperLog"
+        	extends="BaseOperLog"
+        	model="com.landray.kmss.fssc.base.model.FsscBaseSpecialItem"
+        	action="/fssc/base/fssc_base_special_item/fsscBaseSpecialItem.do">
+        </oper>
+        <!-- 标准数据 -->
+        <oper
+        	id="fsscBaseStandardOperLog"
+        	extends="BaseOperLog"
+        	model="com.landray.kmss.fssc.base.model.FsscBaseStandard"
+        	action="/fssc/base/fssc_base_standard/fsscBaseStandard.do">
+        </oper>
+        <!-- 标准方案 -->
+        <oper
+        	id="fsscBaseStandardSchemeOperLog"
+        	extends="BaseOperLog"
+        	model="com.landray.kmss.fssc.base.model.FsscBaseStandardScheme"
+        	action="/fssc/base/fssc_base_standard_scheme/fsscBaseStandardScheme.do">
+        </oper>
+        <!-- 客商 -->
+        <oper
+        	id="fsscBaseSupplierOperLog"
+        	extends="BaseOperLog"
+        	model="com.landray.kmss.fssc.base.model.FsscBaseSupplier"
+        	action="/fssc/base/fssc_base_supplier/fsscBaseSupplier.do">
+        </oper>
+        <!-- 开关设置 -->
+        <oper
+        	id="fsscBaseSwitchOperLog"
+        	extends="BaseOperLog"
+        	model="com.landray.kmss.fssc.base.model.FsscBaseSwitch"
+        	action="/fssc/base/fssc_base_switch/fsscBaseSwitch.do">
+        	<query
+				method="modifySwitch"
+				logPoint="Base_UrlParam;Action_Find"
+				messageKey="button.view" />
+        	<query
+				method="updateSwitch"
+				logPoint="updateSwitch"
+				messageKey="button.submit" />
+        </oper>
+        <!-- 税率 -->
+        <oper
+        	id="fsscBaseTaxRateOperLog"
+        	extends="BaseOperLog"
+        	model="com.landray.kmss.fssc.base.model.FsscBaseTaxRate"
+        	action="/fssc/base/fssc_base_tax_rate/fsscBaseTaxRate.do">
+        </oper>
+        <!-- 交通工具 -->
+        <oper
+        	id="fsscBaseVehicleOperLog"
+        	extends="BaseOperLog"
+        	model="com.landray.kmss.fssc.base.model.FsscBaseVehicle"
+        	action="/fssc/base/fssc_base_vehicle/fsscBaseVehicle.do">
+        </oper>
+        <!-- 凭证类型 -->
+        <oper
+        	id="fsscBaseVoucherTypeOperLog"
+        	extends="BaseOperLog"
+        	model="com.landray.kmss.fssc.base.model.FsscBaseVoucherType"
+        	action="/fssc/base/fssc_base_voucher_type/fsscBaseVoucherType.do">
+        </oper>
+        <!-- WBS号 -->
+        <oper
+        	id="fsscBaseWbsOperLog"
+        	extends="BaseOperLog"
+        	model="com.landray.kmss.fssc.base.model.FsscBaseWbs"
+        	action="/fssc/base/fssc_base_wbs/fsscBaseWbs.do">
+        </oper>
+	</logset>
+</log-oper>

@@ -1,0 +1,115 @@
+{
+    "global":     {
+        "modelName": "com.landray.kmss.km.oitems.model.KmOitemsShoppingTrolley",
+        "messageKey": "km-oitems:table.kmOitemsShoppingTrolley",
+        "serviceBean": "kmOitemsShoppingTrolleyService",
+        "table": "km_oitems_shopping_trolley",
+        "displayProperty": "fdName",
+        "url": "/km/oitems/km_oitems_shopping_trolley/kmOitemsShoppingTrolley.do?method=view&fdId=${fdId}"
+    },
+    "attrs":     {
+        "fdId":         {
+            "propertyType": "id",
+            "generator": {"type": "assigned"}
+        },
+        "fdApplicationNumber":         {
+            "propertyType": "simple",
+            "messageKey": "km-oitems:kmOitemsShoppingTrolley.fdApplicationNumber",
+            "type": "Integer",
+            "column": "fd_application_number",
+            "notNull": "false",
+            "length": "12"
+        },
+        "kmOitemsListing":         {
+            "propertyType": "model",
+            "messageKey": "km-oitems:kmOitemsShoppingTrolley.kmOitemsListing",
+            "type": "com.landray.kmss.km.oitems.model.KmOitemsListing",
+            "column": "fd_listing_id",
+            "notNull": "false"
+        },
+        "kmOitemsWarehousingRecordJoinList":         {
+            "propertyType": "model",
+            "messageKey": "km-oitems:kmOitemsShoppingTrolley.kmOitemsWarehousingRecordJoinList",
+            "column": "fd_warehousingjoinlist_id",
+            "type": "com.landray.kmss.km.oitems.model.KmOitemsWarehousingRecordJoinList",
+            "notNull": "false"
+        },
+        "fdApplicationId":         {
+            "propertyType": "simple",
+            "messageKey": "km-oitems:kmOitemsShoppingTrolley.fdApplicationId",
+            "column": "fd_application_temp_id",
+            "type": "String",
+            "notNull": "false"
+        },
+        "fdNo":         {
+            "propertyType": "simple",
+            "messageKey": "km-oitems:kmOitemsShoppingTrolley.fdNo",
+            "column": "fd_no",
+            "type": "String",
+            "notNull": "false",
+            "length": "100"
+        },
+        "fdName":         {
+            "propertyType": "simple",
+            "messageKey": "km-oitems:kmOitemsShoppingTrolley.fdName",
+            "column": "fd_name",
+            "type": "String",
+            "notNull": "false",
+            "length": "200"
+        },
+        "fdCategoryName":         {
+            "propertyType": "simple",
+            "messageKey": "km-oitems:kmOitemsShoppingTrolley.fdCategoryName",
+            "column": "fd_category_name",
+            "type": "String",
+            "notNull": "false"
+        },
+        "fdSpecification":         {
+            "propertyType": "simple",
+            "messageKey": "km-oitems:kmOitemsShoppingTrolley.fdSpecification",
+            "column": "fd_specification",
+            "type": "String",
+            "notNull": "false",
+            "length": "100"
+        },
+        "fdBrand":         {
+            "propertyType": "simple",
+            "messageKey": "km-oitems:kmOitemsShoppingTrolley.fdBrand",
+            "column": "fd_brand",
+            "type": "String",
+            "notNull": "false",
+            "length": "200"
+        },
+        "fdUnit":         {
+            "propertyType": "simple",
+            "messageKey": "km-oitems:kmOitemsShoppingTrolley.fdUnit",
+            "column": "fd_unit",
+            "type": "String",
+            "notNull": "false",
+            "length": "100"
+        },
+        "fdAmount":         {
+            "propertyType": "simple",
+            "messageKey": "km-oitems:kmOitemsShoppingTrolley.fdAmount",
+            "type": "Integer",
+            "column": "fd_amount",
+            "notNull": "false",
+            "length": "12"
+        },
+        "fdReferencePrice":         {
+            "propertyType": "simple",
+            "messageKey": "km-oitems:kmOitemsShoppingTrolley.fdReferencePrice",
+            "type": "Double",
+            "column": "fd_reference_price",
+            "notNull": "false",
+            "length": "100"
+        },
+        "kmOitemsBudgerApplication":         {
+            "propertyType": "model",
+            "messageKey": "km-oitems:kmOitemsShoppingTrolley.kmOitemsBudgerApplication",
+            "type": "com.landray.kmss.km.oitems.model.KmOitemsBudgerApplication",
+            "column": "fd_application_id",
+            "notNull": "false"
+        }
+    }
+}

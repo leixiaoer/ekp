@@ -1,0 +1,119 @@
+{
+    "global":     {
+        "modelName": "com.landray.kmss.sys.circulation.model.SysCirculationOpinion",
+        "messageKey": "sys-circulation:table.sysCirculationOpinion",
+        "serviceBean": "sysCirculationOpinionService",
+        "table": "sys_circulation_opinion",
+        "url": "/sys/circulation/sys_circulation_opinion/sysCirculationOpinion.do?method=view&fdId=${fdId}"
+    },
+    "attrs":     {
+        "fdId":         {
+            "propertyType": "id",
+            "generator": {"type": "assigned"}
+        },
+        
+         "fdOrder":         {
+            "propertyType": "simple",
+            "messageKey": "sys-circulation:sysCirculationOpinion.fdOrder",
+            "type": "Integer",
+            "column": "fd_order",
+            "notNull": "false",
+            "length": "10"
+        },
+        
+        "fdReadTime":         {
+            "propertyType": "simple",
+            "messageKey": "sys-circulation:sysCirculationOpinion.fdReadTime",
+            "type": "DateTime",
+            "column": "fd_read_time",
+            "notNull": "false",
+            "canLogShow":"1",
+            "length": "50"
+        },
+         "fdWriteTime":         {
+            "propertyType": "simple",
+            "messageKey": "sys-circulation:sysCirculationOpinion.fdWriteTime",
+            "type": "DateTime",
+            "column": "fd_write_time",
+            "notNull": "false",
+            "canLogShow":"1",
+            "length": "50"
+        },
+         "fdRecallTime":         {
+            "propertyType": "simple",
+            "messageKey": "sys-circulation:sysCirculationOpinion.fdRecallTime",
+            "type": "DateTime",
+            "column": "fd_recall_time",
+            "notNull": "false",
+            "canLogShow":"1",
+            "length": "50"
+        },
+         "docCreateTime":         {
+            "propertyType": "simple",
+            "messageKey": "sys-circulation:sysCirculationOpinion.docCreateTime",
+            "type": "DateTime",
+            "column": "doc_create_time",
+            "notNull": "false",
+            "canLogShow":"1",
+            "length": "50"
+        },
+        "docCreator":         {
+            "propertyType": "model",
+            "messageKey": "sys-circulation:sysCirculationOpinion.docCreator",
+            "type": "com.landray.kmss.sys.organization.model.SysOrgElement",
+            "column": "doc_create_id",
+            "canLogShow":"1",
+            "notNull": "false"
+        },
+         "fdBelongPerson":         {
+            "propertyType": "model",
+            "messageKey": "sys-circulation:sysCirculationOpinion.fdBelongPerson",
+            "type": "com.landray.kmss.sys.organization.model.SysOrgElement",
+            "column": "fd_belong_personid",
+            "canLogShow":"1",
+            "notNull": "false"
+        },
+          "sysCirculationMain":         {
+            "propertyType": "model",
+            "messageKey": "sys-circulation:sysCirculationOpinion.sysCirculationMain",
+            "type": "com.landray.kmss.sys.circulation.model.SysCirculationMain",
+            "column": "fd_main_id",
+            "canLogShow":"1",
+            "notNull": "false"
+        },
+        "docContent":         {
+            "propertyType": "simple",
+            "messageKey": "sys-circulation:sysCirculationOpinion.docContent",
+            "type": "String",
+            "column": "doc_content",
+            "notNull": "false",
+            "canLogShow":"1",
+            "length": "500"
+        },
+         "docStatus":         {
+            "propertyType": "simple",
+            "messageKey": "sys-circulation:sysCirculationOpinion.docStatus",
+            "type": "String",
+            "column": "doc_status",
+            "notNull": "false",
+            "length": "2",
+            "enumType": "sysCirculationOpinion_docStatus"
+        },
+        "fdRemindCount":         {
+            "propertyType": "simple",
+            "messageKey": "sys-circulation:sysCirculationOpinion.readCount",
+            "type": "Integer",
+            "column": "fd_remind_count",
+            "notNull": "false",
+            "length": "10"
+        },
+        
+        "fdCurrent":         {
+            "propertyType": "simple",
+            "messageKey": "sys-circulation:sysCirculationOpinion.fdCurrent",
+            "type": "Boolean",
+            "column": "fd_current",
+            "notNull": "false"
+        }
+    }
+}

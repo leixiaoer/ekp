@@ -1,0 +1,18 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE hibernate-configuration
+    PUBLIC "-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+    "http://hibernate.sourceforge.net/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+	<session-factory>
+		<mapping
+			resource="com/landray/kmss/km/vote/model/KmVoteMain.hbm.xml" />
+		<mapping
+			resource="com/landray/kmss/km/vote/model/KmVoteComment.hbm.xml" />
+		<mapping
+			resource="com/landray/kmss/km/vote/model/KmVoteMainItem.hbm.xml" />
+		<mapping
+			resource="com/landray/kmss/km/vote/model/KmVoteCategory.hbm.xml" />
+		<mapping
+			resource="com/landray/kmss/km/vote/model/KmVoteRecord.hbm.xml" />
+	</session-factory>
+</hibernate-configuration> 

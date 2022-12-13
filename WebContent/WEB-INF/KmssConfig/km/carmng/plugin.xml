@@ -1,0 +1,304 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<plugin
+	xmlns="http://www.example.org/plugin-config"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.example.org/plugin-config ../../plugin.xsd ">
+	<extension
+		point="com.landray.kmss.sys.workflow.support.oa.subprocess"
+		model="*">
+		
+		<item
+			name="subprocess">
+			<param
+				name="modelName"
+				value="com.landray.kmss.km.carmng.model.KmCarmngApplication" />	
+			<param
+				name="cateBean"		
+				value="kmCarmngMotorcadeSetTreeService" />			
+			<param
+				name="createParam"
+				value="categoryId=!{cateid}" />
+		</item>
+	</extension>
+	<extension
+		point="com.landray.kmss.sys.number.config"
+		model="*">
+		<item name="extend">
+			<param name="modelName" value="com.landray.kmss.km.carmng.model.KmCarmngApplication"/>
+			<param name="moduleName" value="{km-carmng:kmCarmngMotorcadeSet.number}"/>
+			<param name="templatePropertyName" value="fdMotorcade"/>
+			<param name="isReform" value="false"/>
+			<param name="order" value="10"/>
+		</item>
+	</extension>
+	
+	<extension point="com.landray.kmss.sys.mobile.compress" model="*">
+		<item name="js-pkg">
+			<param name="name" value="mui-carmng-list.js" />
+			<param name="targetFile" value="/km/carmng/mobile/js/mui-carmng-list.js" />
+			<param name="srcFold" value="/km/carmng/mobile/js" />
+		</item>
+		<item name="js-pkg">
+			<param name="name" value="mui-carmng-index.js" />
+			<param name="targetFile" value="/km/carmng/mobile/js/Index.js" />
+			<param name="tinyId" value="kmCarmngIndexTiny" />
+		</item>
+		<item name="js-pkg">
+			<param name="name" value="mui-carmng-apply.js" />
+			<param name="targetFile" value="/km/carmng/mobile/js/Apply.js" />
+			<param name="tinyId" value="kmCarmngApplyTiny" />
+		</item>
+		<item name="js-pkg">
+			<param name="name" value="mui-carmng-dispatch.js" />
+			<param name="targetFile" value="/km/carmng/mobile/js/Dispatch.js" />
+			<param name="tinyId" value="kmCarmngDispatchTiny" />
+		</item>
+		<item name="js-pkg">
+			<param name="name" value="mui-carmng-dispatch-info.js" />
+			<param name="targetFile" value="/km/carmng/mobile/js/DispatchInfo.js" />
+			<param name="tinyId" value="kmCarmngDispatchInfoTiny" />
+		</item>
+		<item name="js-pkg">
+			<param name="name" value="mui-carmng-info.js" />
+			<param name="targetFile" value="/km/carmng/mobile/js/CarInfo.js" />
+			<param name="tinyId" value="kmCarmngInfoTiny" />
+		</item>
+		<item  name="css-file">
+			<param  name="name" value="mui-carmng-list.css" />
+			<param  name="targetFile" value="/km/carmng/mobile/css/list.css" />
+		</item>
+		<item  name="css-file">
+			<param  name="name" value="mui-carmng-carlist.css" />
+			<param  name="targetFile" value="/km/carmng/mobile/css/carlist.css" />
+		</item>
+		<item  name="css-file">
+			<param  name="name" value="mui-carmng-dispatcherlist.css" />
+			<param  name="targetFile" value="/km/carmng/mobile/css/dispatcherlist.css" />
+		</item>
+	</extension>
+	
+	<!-- 数据迁移 -->
+	<extension
+		point="com.landray.kmss.sys.admin.transfer">
+		<item
+			name="config">
+			<param
+				name="unid"
+				value="com.landray.kmss.km.carmng.transfer.KmCarmngTransferTask" />
+			<param
+				name="name"
+				value="车辆管理驾驶员信息数据迁移" />
+			<param
+				name="path"
+				value="/km/carmng/" />
+			<param
+				name="check"
+				value="com.landray.kmss.km.carmng.transfer.KmCarmngTransferChecker" />
+			<param
+				name="upgrade"
+				value="com.landray.kmss.km.carmng.transfer.KmCarmngTransferTask" />
+			<param
+				name="description"
+				value="车辆管理驾驶员信息数据迁移，将外部人员的fdSysId置为空。（特别注意：1、执行前先备份好数据库。2、执行前全部应用服务器需要停止用户访问。3、执行过程可能比较久，请耐心等待。建议：先在测试环境执行成功，才到生产环境执行。）" />
+		</item>
+	</extension>
+	
+	<extension point="com.landray.kmss.sys.admin.transfer">
+		<item
+			name="config">
+			<param
+				name="unid"
+				value="com.landray.kmss.km.carmng.transfer.KmCarmngMotorcadeSetTask" />
+			<param
+				name="name"
+				value="车辆管理车队设置信息数据迁移" />
+			<param
+				name="path"
+				value="/km/carmng/" />
+			<param
+				name="check"
+				value="com.landray.kmss.km.carmng.transfer.KmCarmngMotorcadeSetChecker" />
+			<param
+				name="upgrade"
+				value="com.landray.kmss.km.carmng.transfer.KmCarmngMotorcadeSetTask" />
+			<param
+				name="description"
+				value="车辆管理车队设置信息数据迁移。默认创建者可以编辑。如果车队无效，则只有创建者可以使用。否则，默认所用用户为可使用者。"/>
+		</item>
+	</extension>
+
+	<extension point="com.landray.kmss.sys.admin.transfer">
+		<item
+				name="config">
+			<param
+					name="unid"
+					value="com.landray.kmss.km.carmng.transfer.KmCarmngNewTask" />
+			<param
+					name="name"
+					value="车辆管理调度信息数据迁移" />
+			<param
+					name="path"
+					value="/km/carmng/" />
+			<param
+					name="check"
+					value="com.landray.kmss.km.carmng.transfer.KmCarmngNewChecker" />
+			<param
+					name="upgrade"
+					value="com.landray.kmss.km.carmng.transfer.KmCarmngNewTask" />
+			<param
+					name="description"
+					value="车辆模块重构后，车辆调度支持一个申请单调度多个车辆和多个申请单调度同一个（或多个）车辆，为了兼容旧数据的查看，升级到该版本时请先执行该迁移任务（特别注意：1、执行前先备份好数据库。2、执行前全部应用服务器需要停止用户访问。3、执行过程可能比较久，请耐心等待。建议：先在测试环境执行成功，才到生产环境执行。）"/>
+		</item>
+	</extension>
+	
+	<extension point="com.landray.kmss.sys.admin.transfer">
+		<item
+			name="config">
+			<param
+				name="unid"
+				value="com.landray.kmss.km.carmng.transfer.KmCarmngUserFeeTask" />
+			<param
+				name="name"
+				value="车辆管理用车费用部门信息数据迁移" />
+			<param
+				name="path"
+				value="/km/carmng/" />
+			<param
+				name="check"
+				value="com.landray.kmss.km.carmng.transfer.KmCarmngUserFeeChecker" />
+			<param
+				name="upgrade"
+				value="com.landray.kmss.km.carmng.transfer.KmCarmngUserFeeTask" />
+			<param
+				name="description"
+				value="车辆模块重构后，支持按部门统计部门用车记录，需要将部门信息迁移到费用表中。（特别注意：1、执行前先备份好数据库。2、执行前全部应用服务器需要停止用户访问。3、执行过程可能比较久，请耐心等待。建议：先在测试环境执行成功，才到生产环境执行。）"/>
+		</item>
+	</extension>
+	
+	
+	<extension
+		point="com.landray.kmss.sys.admin.transfer">
+		<item
+			name="config">
+			<param
+				name="unid"
+				value="com.landray.kmss.km.carmng.transfer.KmCarmngUserFeeInfoTransferTask" />
+			<param
+				name="name"
+				value="车辆管理用车统计数据库字段修复" />
+			<param
+				name="path"
+				value="/km/carmng/" />
+			<param
+				name="check"
+				value="com.landray.kmss.km.carmng.transfer.KmCarmngUserFeeInfoTransferTask" />
+			<param
+				name="upgrade"
+				value="com.landray.kmss.km.carmng.transfer.KmCarmngUserFeeInfoTransferTask" />
+			<param
+				name="description"
+				value="修复oracle数据库版本与方言版本不匹配，导致Date类型转变为timestamp" />
+		</item>
+	</extension>
+	
+	<!-- 表单关联控件可选模块扩展点实现 -->
+	<extension point="com.landray.kmss.sys.xform.base.service.controls.relevance" model="*">
+		<item name="node">
+			<param name="modelName" value="com.landray.kmss.km.carmng.model.KmCarmngApplication" />
+			<param name="templateModelName" value="com.landray.kmss.km.carmng.model.KmCarmngMotorcadeSet" />
+			<param name="key" value="kmCarmng" />
+			<param name="templatePropertyName" value="fdMotorcade" />
+			<param name="moduleMessageKey" value="km-carmng:kmCarmng.tree.title" />
+		</item>
+	</extension>
+	
+	
+	<extension
+		point="com.landray.kmss.sys.listshow.listShowConfig"
+		model="com.landray.kmss.km.carmng.model.KmCarmngApplication">
+		<item
+			name="listShowConfig">
+			<param
+				name="name"
+				value="km-carmng:kmCarmng.use.all" />
+			<param
+				name="model"
+				value="com.landray.kmss.km.carmng.model.KmCarmngApplication" />
+			<param
+				name="page"
+				value="/listAll" />
+				<param
+				name="default"
+				value="docSubject;fdNo;fdApplicationPath;fdStartTime;fdUserNumber;fdApplicationPerson.fdName;docCreateTime;docStatus" />
+			<param
+				name="customized"
+				value="docStatus;km-carmng:kmCarmngApplication.docStatus,evaluationStatus;km-carmng:kmCarmngApplication.evaluationStatus" />
+		</item>
+	</extension> 
+	<extension
+		point="com.landray.kmss.sys.listshow.listShowConfig"
+		model="com.landray.kmss.km.carmng.model.KmCarmngApplication">
+		<item
+			name="listShowConfig">
+			<param
+				name="name"
+				value="km-carmng:kmCarmng.tree.my.submit" />
+			<param
+				name="model"
+				value="com.landray.kmss.km.carmng.model.KmCarmngApplication" />
+			<param
+				name="page"
+				value="/listCreate" />
+				<param
+				name="default"
+				value="docSubject;fdNo;fdApplicationPath;fdStartTime;fdUserNumber;fdApplicationPerson.fdName;docCreateTime;docStatus" />
+			<param
+				name="customized"
+				value="docStatus;km-carmng:kmCarmngApplication.docStatus,evaluationStatus;km-carmng:kmCarmngApplication.evaluationStatus" />
+		</item>
+	</extension> 
+	<extension
+		point="com.landray.kmss.sys.listshow.listShowConfig"
+		model="com.landray.kmss.km.carmng.model.KmCarmngApplication">
+		<item
+			name="listShowConfig">
+			<param
+				name="name"
+				value="km-carmng:kmCarmng.tree.my.approval" />
+			<param
+				name="model"
+				value="com.landray.kmss.km.carmng.model.KmCarmngApplication" />
+			<param
+				name="page"
+				value="/listApproval" />
+				<param
+				name="default"
+				value="docSubject;fdNo;fdApplicationPath;fdStartTime;fdUserNumber;fdApplicationPerson.fdName;docCreateTime;docStatus" />
+			<param
+				name="customized"
+				value="docStatus;km-carmng:kmCarmngApplication.docStatus,evaluationStatus;km-carmng:kmCarmngApplication.evaluationStatus" />
+		</item>
+	</extension> 
+	<extension
+		point="com.landray.kmss.sys.listshow.listShowConfig"
+		model="com.landray.kmss.km.carmng.model.KmCarmngApplication">
+		<item
+			name="listShowConfig">
+			<param
+				name="name"
+				value="km-carmng:kmCarmng.tree.my.approved" />
+			<param
+				name="model"
+				value="com.landray.kmss.km.carmng.model.KmCarmngApplication" />
+			<param
+				name="page"
+				value="/listApproved" />
+				<param
+				name="default"
+				value="docSubject;fdNo;fdApplicationPath;fdStartTime;fdUserNumber;fdApplicationPerson.fdName;docCreateTime;docStatus" />
+			<param
+				name="customized"
+				value="docStatus;km-carmng:kmCarmngApplication.docStatus,evaluationStatus;km-carmng:kmCarmngApplication.evaluationStatus" />
+		</item>
+	</extension> 
+</plugin>

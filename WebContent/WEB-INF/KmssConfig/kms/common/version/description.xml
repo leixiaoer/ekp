@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<description xmlns="http://www.example.org/description-config" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.example.org/description-config ../../../description.xsd">
+	<module>
+		<module-name>知识组件</module-name>
+		<module-path>kms/common</module-path>
+		<baseline>V15.0.4.R.20200410</baseline>
+		<source-md5>c5030c55b6e366576c11b87937babfe1</source-md5>
+		<is-custom>否</is-custom>
+		<serial-num>40</serial-num>
+	</module>
+</description>

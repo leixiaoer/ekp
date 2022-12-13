@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<description xmlns="http://www.example.org/description-config" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.example.org/description-config ../../../description.xsd">
+	<module>
+		<module-name>财务凭证</module-name>
+		<module-path>fssc/voucher</module-path>
+		<baseline>V15.0.4.R.20200410</baseline>
+		<source-md5>df95a743d7c10e54b0bfe6137023ec28</source-md5>
+		<is-custom>否</is-custom>
+		<serial-num>18</serial-num>
+	</module>
+</description>

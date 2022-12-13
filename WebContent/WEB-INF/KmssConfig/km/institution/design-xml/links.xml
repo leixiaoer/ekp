@@ -1,0 +1,20 @@
+<root 
+	xmlns="http://www.landray.com.cn/schema/person" 
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="
+			http://www.landray.com.cn/schema/person  ../../../sys/person/person.xsd">
+	<links type="zone-nav">
+	    <link 
+			id="km_institution_zone_nav"
+			url="/km/institution/km_institution_ui/kmInstitutionKnowledge_zone.jsp?user=!{user}"
+	 		msgKey="km-institution:kmInstitution.tree.title.ta" />
+	</links>
+	
+	<links type="shortcut" order="10">
+	    <link 
+	        id="km_institution_shortcut_add"
+	        url="/km/institution/km_institution_knowledge/kmInstitutionKnowledge.do?method=add" 
+	        msgKey="km-institution:kmInstitution.create.title"
+	        icon="lui_icon_l_icon_11"/>
+	</links>
+</root>

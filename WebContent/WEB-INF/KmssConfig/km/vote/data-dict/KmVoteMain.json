@@ -1,0 +1,295 @@
+{
+    "global":     {
+        "modelName": "com.landray.kmss.km.vote.model.KmVoteMain",
+        "messageKey": "km-vote:table.kmVoteMain",
+        "displayProperty": "docSubject",
+        "serviceBean": "kmVoteMainService",
+        "table": "km_vote_main",
+        "url": "/km/vote/km_vote_main/kmVoteMain.do?method=view&fdId=${fdId}"
+    },
+    "attrs":     {
+        "fdId":         {
+            "propertyType": "id",
+            "generator": {"type": "assigned"}
+        },
+        "fdModelId":         {
+            "propertyType": "simple",
+            "messageKey": "km-vote:kmVoteMain.fdModelId",
+            "type": "String",
+            "column": "fd_model_id",
+            "notNull": "true",
+            "length": "36"
+        },
+        "fdModelName":         {
+            "propertyType": "simple",
+            "messageKey": "km-vote:kmVoteMain.fdModelName",
+            "type": "String",
+            "column": "fd_model_name",
+            "notNull": "true",
+            "length": "100",
+            "canSearch": "true"
+        },
+        "docSubject":         {
+            "propertyType": "simple",
+            "messageKey": "km-vote:kmVoteMain.docSubject",
+            "type": "String",
+            "column": "doc_subject",
+            "notNull": "true",
+            "length": "200",
+            "canSearch": "true"
+        },
+        "fdDescription":         {
+            "propertyType": "simple",
+            "messageKey": "km-vote:kmVoteMain.fdDescription",
+            "type": "String",
+            "column": "fd_description",
+            "notNull": "false",
+            "length": "2000"
+        },
+        "fdIsRadio":         {
+            "propertyType": "simple",
+            "messageKey": "km-vote:kmVoteMain.fdIsRadio",
+            "type": "Boolean",
+            "column": "fd_is_radio",
+            "notNull": "false",
+            "length": "1",
+            "canDisplay": "false"
+        },
+        "fdMaxSelectNum":         {
+            "propertyType": "simple",
+            "messageKey": "km-vote:kmVoteMain.fdMaxSelectNum",
+            "type": "Long",
+            "column": "fd_max_select_num",
+            "notNull": "false",
+            "length": "10"
+        },
+        "fdIsEffectImmediately":         {
+            "propertyType": "simple",
+            "messageKey": "km-vote:kmVoteMain.fdIsEffectImmediately",
+            "type": "Boolean",
+            "column": "fd_is_effect_immediately",
+            "notNull": "false",
+            "length": "1",
+            "canDisplay": "false"
+        },
+        "docCreateTime":         {
+            "propertyType": "simple",
+            "messageKey": "km-vote:kmVoteMain.docCreateTime",
+            "type": "DateTime",
+            "column": "doc_create_time",
+            "notNull": "true",
+            "canSearch": "true"
+        },
+        "fdEffectTime":         {
+            "propertyType": "simple",
+            "messageKey": "km-vote:kmVoteMain.fdEffectTime",
+            "type": "DateTime",
+            "column": "fd_effect_time",
+            "notNull": "true",
+            "canSearch": "true"
+        },
+        "fdExpireTime":         {
+            "propertyType": "simple",
+            "messageKey": "km-vote:kmVoteMain.fdExpireTime",
+            "type": "DateTime",
+            "column": "fd_expire_time",
+            "notNull": "true",
+            "canSearch": "true"
+        },
+        "fdIsRequired":         {
+            "propertyType": "simple",
+            "messageKey": "km-vote:kmVoteMain.fdIsRequired",
+            "type": "Boolean",
+            "column": "fd_is_required",
+            "notNull": "false",
+            "length": "1",
+            "canDisplay": "false"
+        },
+        "fdNotifyType":         {
+            "propertyType": "simple",
+            "messageKey": "km-vote:kmVoteMain.fdNotifyType",
+            "type": "String",
+            "column": "fd_notify_type",
+            "notNull": "false",
+            "length": "100",
+            "canDisplay": "false",
+            "canLogShow":"1"
+        },
+        "fdVoteNum":         {
+            "propertyType": "simple",
+            "messageKey": "km-vote:kmVoteMain.fdVoteNum",
+            "type": "Long",
+            "column": "fd_vote_num",
+            "notNull": "false",
+            "length": "19"
+        },
+        "fdVoterViewFlag":         {
+            "propertyType": "simple",
+            "messageKey": "km-vote:kmVoteMain.fdVoterViewFlag",
+            "type": "Boolean",
+            "column": "fd_voter_view_flag",
+            "notNull": "false",
+            "length": "1",
+            "canDisplay": "false"
+        },
+        "fdOtherViewFlag":         {
+            "propertyType": "simple",
+            "messageKey": "km-vote:kmVoteMain.fdOtherViewFlag",
+            "type": "Boolean",
+            "column": "fd_other_view_flag",
+            "notNull": "false",
+            "length": "1",
+            "canDisplay": "false"
+        },
+        "fdAuthVoteFlag":         {
+            "propertyType": "simple",
+            "messageKey": "km-vote:kmVoteMain.fdAuthVoteFlag",
+            "type": "Boolean",
+            "column": "fd_auth_vote_flag",
+            "notNull": "false",
+            "length": "1",
+            "canDisplay": "false"
+        },
+        "fdVotedIds":         {
+            "propertyType": "simple",
+            "messageKey": "km-vote:kmVoteMain.fdVotedIds",
+            "type": "RTF",
+            "column": "fd_voted_ids",
+            "notNull": "false",
+            "length": "1000000",
+            "canDisplay": "false"
+        },
+        "fdVotedNames":         {
+            "propertyType": "simple",
+            "messageKey": "km-vote:kmVoteMain.fdVotedNames",
+            "type": "RTF",
+            "column": "fd_voted_names",
+            "notNull": "false",
+            "length": "1000000",
+            "canDisplay": "false"
+        },
+        "docStatus":         {
+            "propertyType": "simple",
+            "messageKey": "sys-doc:sysDocBaseInfo.docStatus",
+            "type": "String",
+            "column": "doc_status",
+            "notNull": "true",
+            "unique": "false",
+            "length": "2",
+            "enumType": "kmVote_status",
+            "canDisplay": "true"
+        },
+        "docCreator":         {
+            "propertyType": "model",
+            "messageKey": "km-vote:kmVoteMain.docCreatorId",
+            "type": "com.landray.kmss.sys.organization.model.SysOrgElement",
+            "column": "doc_creator_id",
+            "notNull": "true",
+            "canSearch": "true",
+            "where": "sysOrgElement.fdOrgType=8",
+            "dialogJS": "Dialog_Address(!{mulSelect}, '!{idField}', '!{nameField}', null, ORG_TYPE_PERSON);"
+        },
+        "fdVoteCategory":         {
+            "propertyType": "model",
+            "messageKey": "km-vote:kmVoteMain.fdCategoryId",
+            "type": "com.landray.kmss.km.vote.model.KmVoteCategory",
+            "column": "fd_category_id",
+            "notNull": "true",
+            "canSearch": "true",
+            "dialogJS": "Dialog_Tree(!{mulSelect}, '!{idField}', '!{nameField}', null, 'kmVoteCategoryTreeService&fdParentId=!{value}', '!{message(km-vote:tree.voteManagement)}')"
+        },
+        "fdVoteItems":         {
+            "propertyType": "list",
+            "messageKey": "km-vote:kmVoteMain.fdVoteItem",
+            "indexColumn": "fd_index",
+            "column": "fd_vote_id",
+            "type": "com.landray.kmss.km.vote.model.KmVoteMainItem",
+            "cascade": "all-delete-orphan",
+            "canDisplay": "false",
+            "table": "km_vote_main_item"
+        },
+        "fdVoters":         {
+            "propertyType": "list",
+            "messageKey": "km-vote:kmVoteMain.fdVoters",
+            "column": "fd_main_id",
+            "type": "com.landray.kmss.sys.organization.model.SysOrgElement",
+            "elementColumn": "fd_voter_id",
+            "table": "km_vote_main_voter",
+            "canDisplay": "false",
+            "canLogShow":"1"
+        },
+        "fdViewer":         {
+            "propertyType": "list",
+            "messageKey": "km-vote:kmVoteMian.otherViews",
+            "column": "fd_main_id",
+            "type": "com.landray.kmss.sys.organization.model.SysOrgElement",
+            "elementColumn": "fd_viewer_id",
+            "table": "km_vote_main_viewer",
+            "canDisplay": "false"
+        },
+        "fdIsAllowSay":         {
+            "propertyType": "simple",
+            "messageKey": "km-vote:kmVoteMain.fdIsAllowSay",
+            "type": "Boolean",
+            "column": "fd_is_allowSay",
+            "length": "1"
+        },
+        "fdDisplay":         {
+            "propertyType": "simple",
+            "messageKey": "km-vote:kmVoteMain.fdDisplay",
+            "type": "String",
+            "column": "fd_display",
+            "length": "10"
+        },
+        "fdCount":         {
+            "propertyType": "simple",
+            "messageKey": "km-vote:kmVoteMain.fdCount",
+            "type": "String",
+            "column": "fd_count",
+            "length": "36"
+        },
+        "fdIsStart":         {
+            "propertyType": "simple",
+            "type": "Boolean",
+            "column": "fd_is_start",
+            "length": "1",
+            "canDisplay": "false"
+        },
+        "fdLastModifiedTime":         {
+            "propertyType": "simple",
+            "canDisplay": "false",
+            "type": "DateTime",
+            "column": "fd_last_modified_time"
+        },
+        "fdStyle":         {
+            "propertyType": "simple",
+            "messageKey": "km-vote:kmVoteMain.fdStyle",
+            "type": "Integer",
+            "column": "fd_style",
+            "length": "4"
+        },
+        "fdMinOption":         {
+            "propertyType": "simple",
+            "messageKey": "km-vote:kmVoteMain.min.optional",
+            "type": "Integer",
+            "column": "fd_min_option",
+            "length": "3"
+        },
+        "fdMaxOption":         {
+            "propertyType": "simple",
+            "messageKey": "km-vote:kmVoteMain.max.optional",
+            "type": "Integer",
+            "column": "fd_max_option",
+            "length": "3"
+        },
+        "authArea":         {
+            "propertyType": "model",
+            "messageKey": "sys-authorization:sysAuthArea.authArea",
+            "type": "com.landray.kmss.sys.authorization.model.SysAuthArea",
+            "column": "auth_area_id",
+            "notNull": "false",
+            "unique": "false",
+            "readOnly": "true"
+        }
+    }
+}

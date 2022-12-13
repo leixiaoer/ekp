@@ -1,0 +1,30 @@
+{
+	"id": "supervise-list",
+	"title": "督办管理移动端列表页面",
+	"desc": "督办管理移动端列表页面",
+	"jsList": [
+		"/km/supervise/mobile/module",
+		"/km/supervise/mobile/resource/js/header",
+		"/km/supervise/mobile/resource/js/list/LeaderConcernItemListMixin.js",
+        "/km/supervise/mobile/resource/js/list/item/LeaderConcernItemMixin.js",
+        "/km/supervise/mobile/resource/js/list/SuperviseItemListNewMixin.js",
+        "/km/supervise/mobile/resource/js/list/item/SuperviseItemNewMixin.js",
+        "/km/supervise/mobile/resource/js/list/DynamicItemListMixin.js",
+        "/km/supervise/mobile/resource/js/list/item/DynamicItemMixin.js",
+        "/sys/mportal/mobile/Card.js",
+        "/sys/mportal/mobile/card/mixins/CardCreateMixin.js",
+        "/sys/mportal/mobile/card/mixins/CardMoreMixin.js",
+        "/sys/mportal/mobile/CardMixin.js",
+        "/km/supervise/mobile/resource/js/list/TemplateItemListMixin.js",
+        "/sys/mportal/mobile/card/mixins/CardCreateSimplateCategoryMixin.js",
+        "/km/supervise/mobile/resource/js/list/item/TemplateItemMixin.js",
+        "/sys/mobile/js/mui/simplecategory/SimpleCategoryMixin.js",
+        "/sys/mobile/js/mui/syscategory/SysCategoryMixin.js",
+        "/km/supervise/mobile/resource/js/list/MySuperviseItemListMixin.js",
+        "/km/supervise/mobile/resource/js/list/ManageAndChargeItemListMixin.js",
+        "/km/supervise/mobile/resource/js/list/UndertakeAndSupItemListMixin.js",
+        "/km/supervise/mobile/resource/js/list/item/MySuperviseItemMixin.js",
+        "/km/supervise/mobile/resource/js/list/item/ManageAndChargeItemMixin.js",
+        "/km/supervise/mobile/resource/js/list/item/UndertakeAndSupItemMixin.js"
+	]
+}

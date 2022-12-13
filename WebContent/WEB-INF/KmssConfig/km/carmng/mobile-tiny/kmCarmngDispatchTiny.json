@@ -1,0 +1,8 @@
+{
+	"id": "kmCarmngDispatchTiny",
+	"title": "移动端车辆调度相关js文件",
+	"desc": "移动端车辆调度相关js文件",
+	"jsList": [
+	    "/km/carmng/mobile/km_carmng_dispatch/js/"
+	]
+}

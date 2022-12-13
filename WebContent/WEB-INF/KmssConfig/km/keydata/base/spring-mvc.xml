@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans
+	xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.0.xsd">
+	<bean
+		name="/km/keydata/base/kmKeydataBase.do"
+		class="com.landray.kmss.km.keydata.base.actions.KmKeydataBaseAction"
+		lazy-init="true"
+		parent="KmssBaseAction">
+		<property
+			name="formType"
+			value="com.landray.kmss.km.keydata.base.forms.KmKeydataBaseForm" />
+		<property name="forwards">
+			<map>
+				<entry
+					key="showKeydataUsed"
+					value="/km/keydata/base/kmKeydataBase_showKeydataUsed.jsp" />
+				<entry
+					key="select"
+					value="/km/keydata/base/kmKeydataBase_select.jsp" />
+				<entry
+					key="view"
+					value="/km/keydata/base/kmKeydataBase_view.jsp" />
+			</map>
+		</property>
+	</bean>
+	<bean
+		name="/km/keydata/base/kmKeydataUsed.do"
+		class="com.landray.kmss.km.keydata.base.actions.KmKeydataUsedAction"
+		lazy-init="true"
+		parent="KmssBaseAction">
+	</bean>
+	<bean
+		name="/km/keydata/base/kmKeydataPluginShow.do"
+		class="com.landray.kmss.km.keydata.base.actions.KmKeydataPluginShowAction"
+		lazy-init="true"
+		parent="KmssBaseAction">
+		<property
+			name="formType"
+			value="com.landray.kmss.km.keydata.base.forms.KmKeydataPluginShowForm" />
+		<property name="forwards">
+			<map>
+				<entry
+					key="view"
+					value="/km/keydata/base/kmKeydataPluginShow_view.jsp" />
+				<entry
+					key="edit"
+					value="/km/keydata/base/kmKeydataPluginShow_edit.jsp" />
+				<entry
+					key="list"
+					value="/km/keydata/base/kmKeydataPluginShow_list.jsp" />
+			</map>
+		</property>
+	</bean>
+</beans>

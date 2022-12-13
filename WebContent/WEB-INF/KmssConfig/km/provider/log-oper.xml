@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<log-oper>
+	<logset>
+	
+		<oper
+            id="kmProviderCategoryOperLog"
+            extends="BaseOperLog"
+            model="com.landray.kmss.km.provider.model.KmProviderCategory"
+            action="/km/provider/km_provider_category/kmProviderCategory.do">
+        </oper>
+        
+        <oper
+            id="kmProviderMainOperLog"
+            extends="BaseOperLog"
+            model="com.landray.kmss.km.provider.model.KmProviderMain"
+            action="/km/provider/km_provider_main/kmProviderMain.do">
+            <query 
+                method="validateAll"
+                logPoint="Base_UrlParam;validateAll"
+                messageKey="km-provider:kmProviderMain.btn.validate">
+            </query>
+            <query 
+                method="invalidateAll"
+                logPoint="Base_UrlParam;invalidateAll"
+                messageKey="km-provider:kmProviderMain.btn.invalidate">
+            </query>
+            <query 
+                method="saveExcel"
+                logPoint="Base_UrlParam;saveExcel"
+                messageKey="button.import">
+            </query>
+        </oper>
+        
+        <oper
+            id="kmProviderMainSelectOperLog"
+            extends="BaseOperLog"
+            model="*"
+            action="/km/provider/km_provider_main/kmProviderMainSelect.do">
+        </oper>
+        
+	</logset>
+</log-oper>

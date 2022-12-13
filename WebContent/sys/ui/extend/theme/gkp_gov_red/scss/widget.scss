@@ -1,0 +1,281 @@
+@import './lib/vars.scss';
+@import './lib/mixins.scss';
+
+/* 部件样式，合并为widget.css 
+panel.css/dataview.css/popup.css/toolbar.css/menu.css*/
+
+/* panel.css：V14之前的样式表,V14之后合并为 widget.css Starts ++++++++++++++++++++++++++++++++++++++++ */
+@import './widget/panel.scss';
+/* panel.css：V14之前的样式表,V14之后合并为 widget.css Ends ++++++++++++++++++++++++++++++++++++++++++ */
+
+/* panel.css：V15 新增标签样式 Starts ++++++++++++++++++++++++++++++++++++++++ */
+@import './widget/panel_v15.scss';
+/* panel.css 新增标签样式 Ends ++++++++++++++++++++++++++++++++++++++++++ */
+
+
+/* dataview.css：V14之前的样式表,V14之后合并为 widget.css Starts ++++++++++++++++++++++++++++++++++++++++ */
+@import './widget/dataview.scss';
+/* dataview.css：V14之前的样式表,V14之后合并为 widget.css Ends ++++++++++++++++++++++++++++++++++++++++++ */
+
+
+/* popup.css：V14之前的样式表,V14之后合并为 widget.css Starts ++++++++++++++++++++++++++++++++++++++++ */
+@import './widget/popup.scss';
+/* popup.css：V14之前的样式表,V14之后合并为 widget.css Ends ++++++++++++++++++++++++++++++++++++++++++ */
+
+
+/* toolbar.css：V14之前的样式表,V14之后合并为 widget.css Starts ++++++++++++++++++++++++++++++++++++++++ */
+@import './widget/toolbar.scss';
+/* toolbar.css：V14之前的样式表,V14之后合并为 widget.css Ends ++++++++++++++++++++++++++++++++++++++++++ */
+
+
+/* menu.css：V14之前的样式表,V14之后合并为 widget.css Starts ++++++++++++++++++++++++++++++++++++++++ */
+@import './widget/menu.scss';
+/* menu.css：V14之前的样式表,V14之后合并为 widget.css Ends ++++++++++++++++++++++++++++++++++++++++++ */
+
+
+/* 个人中心头部大背景 Starts
+	========================================================================== */
+.lui_personal_headBox {
+	background-image: url(../images/panel/banner_personal.png);
+}
+
+.lui_personal_iconbox .item_img {
+	border: 2px solid $primary-color;
+	box-shadow: 0 4px 11px 0 rgba(66, 51, 1, 0.35);
+}
+
+.lui_personal_tabHeader ul li:hover a,
+.lui_personal_tabHeader ul li.current a {
+	color: $primary-color;
+	border-color: $primary-color;
+}
+
+.lui_personal_relation_nav ul li:hover a,
+.lui_personal_relation_nav ul li.current a {
+	color: $primary-color;
+	border-color: $primary-color;
+}
+
+/* 图标选项卡 Starts */
+@for $i from 1 through 5 {
+
+	.lui_personal_iconbox .icon0#{$i} span {
+		background-image: url(../icon/m/icon-m-0#{$i}.png);
+	}
+
+	.lui_personal_iconbox .current.icon0#{$i} a span,
+	.lui_personal_iconbox .icon0#{$i} a:hover span {
+		background-image: url(../icon/m-on/icon-m-0#{$i}.png);
+	}
+}
+
+@media screen and (-webkit-min-device-pixel-ratio: 2) {
+	@for $i from 1 through 5 {
+		.lui_personal_iconbox .icon0#{$i} span {
+			background-image: url(../icon/m/icon-m-0#{$i}@2x.png);
+		}
+
+		.lui_personal_iconbox .current.icon0#{$i} a span,
+		.lui_personal_iconbox .icon0#{$i} a:hover span {
+			background-image: url(../icon/m-on/icon-m-0#{$i}@2x.png);
+		}
+	}
+}
+
+.lui_personal_iconbox .current a .item_img,
+.lui_personal_iconbox a:hover .item_img {
+	background-color: $primary-color;
+}
+
+/* 图标选项卡 Ends */
+
+
+/* 个人中心头部大背景 Ends
+	========================================================================== */
+/* ===== V15新增 标签带icon和标题 Starts ===== */
+.lui_panel_frame .lui_panel_title_icon,
+.lui_panel_simple_frame .lui_panel_title_icon,
+.lui_panel_light_frame .lui_panel_title_icon {
+	vertical-align: middle;
+}
+
+.lui_panel_title_icon,
+.lui_panel_frame .lui_panel_title_main,
+.lui_panel_light_frame .lui_panel_title_main,
+.lui_panel_simple_frame .lui_panel_title_main {
+	vertical-align: middle;
+}
+
+.lui_panel_frame .lui_panel_title_subtitle {
+	color: #666;
+	vertical-align: 5px;
+}
+
+.lui_panel_light_frame .lui_panel_title_subtitle {
+	// vertical-align: 5px;
+}
+
+.lui_panel_simple_frame .lui_panel_title_subtitle {
+	// vertical-align: 10px;
+}
+
+.lui_panel_simple_frame .lui_panel_title_icon {
+	// vertical-align: 10px;
+}
+
+.lui_panel_simple_frame .lui_panel_title_icon,
+.lui_panel_light_frame .lui_panel_title_icon,
+.lui_panel_simple_frame .lui_panel_title_main,
+.lui_panel_light_frame .lui_panel_title_main {
+	color: $primary-color;
+}
+
+/* ===== V15新增 标签带icon和标题 Ends ===== */
+/* 流程-置顶多标签颜色 */
+.lui_tabpanel_sucktop_navs_item_selected .lui_tabpanel_sucktop_navs_item_c {
+	color: $primary-color;
+	border-bottom-color: $primary-color;
+}
+
+.lui_toolbar_frame_float .lui_widget_btn_primary .lui_toolbar_btn_l {
+	border-color: $primary-color;
+	background-color: $primary-color;
+}
+
+.lui_tabpanel_sucktop_navs_item_c:hover {
+	color: $primary-color;
+}
+
+/* ===== 流程处理多页签颜色跟随 ===== */
+body .lui_flowstate_tabhead>li a:hover,
+body .lui_flowstate_tabhead>li span:hover,
+body .lui_flowstate_tabhead>li.active a,
+body .lui_flowstate_tabhead>li.active span,
+body .lui_flowstate_tabhead>li.active a:hover,
+body .lui_flowstate_tabhead>li.active span:hover {
+	background-color: $primary-color;
+}
+
+body .lui_flowstate_tabhead>li a:after,
+body .lui_flowstate_tabhead>li span:after {
+	color: $primary-color;
+}
+
+/* 三级页面顶部按钮 */
+.lui_toolbar_frame_float .lui_widget_btn_primary .lui_toolbar_btn_l {
+	border-color: $primary-color;
+	background-color: $primary-color;
+}
+
+/* 公文顶部多标签颜色跟随 Starts */
+.lui_tabpanel_view_navs_item_selected .lui_tabpanel_view_navs_item_c {
+	color: $primary-color;
+	border-bottom-color: $primary-color;
+}
+
+.lui_tabpanel_collapse_collapse_more_item:hover>.lui_tabpanel_collapse_navs_item_r>.lui_tabpanel_collapse_navs_item_c {
+	color: $primary-color;
+	border-top-color: $primary-color;
+}
+
+.lui_tabpanel_collapse_navs_list .lui_tabpanel_collapse_navs_item_l:hover .lui_tabpanel_collapse_navs_item_c {
+	color: $primary-color;
+}
+
+.lui_tabpanel_view_navs_item_c:hover {
+	color: $primary-color;
+}
+
+/* 公文顶部多标签颜色跟随 Ends */
+
+/* 公文顶部图标 Starts */
+/* 选中状态 */
+.lui_tabpanel_view_navs_item_selected {}
+
+@for $i from 1 through 9 {
+
+	.lui_tabpanel_view_navs_item_l:hover>.lui_tabpanel_view_navs_item_r>.lui_tabpanel_view_navs_item_c .lui-tab-icon.tab-icon-#{$i},
+	.lui_tabpanel_collapse_navs_list .lui_tabpanel_collapse_navs_item_l:hover .lui-tab-icon.tab-icon-0#{$i},
+	.lui_tabpanel_view_navs_item_selected>.lui_tabpanel_view_navs_item_r>.lui_tabpanel_view_navs_item_c .lui-tab-icon.tab-icon-#{$i},
+	.lui_tabpanel_collapse_navs_list .lui_tabpanel_collapse_navs_item_selected .lui-tab-icon.tab-icon-0#{$i} {
+		background-image: url(../images/form/icon-on/tab-icon-0#{$i}.png)
+	}
+}
+
+@for $i from 0 through 2 {
+
+	.lui_tabpanel_view_navs_item_l:hover>.lui_tabpanel_view_navs_item_r>.lui_tabpanel_view_navs_item_c .lui-tab-icon.tab-icon-1#{$i},
+	.lui_tabpanel_collapse_navs_list .lui_tabpanel_collapse_navs_item_l:hover .lui-tab-icon.tab-icon-1#{$i},
+	.lui_tabpanel_view_navs_item_selected>.lui_tabpanel_view_navs_item_r>.lui_tabpanel_view_navs_item_c .lui-tab-icon.tab-icon-1#{$i},
+	.lui_tabpanel_collapse_navs_list .lui_tabpanel_collapse_navs_item_selected .lui-tab-icon.tab-icon-1#{$i} {
+		background-image: url(../images/form/icon-on/tab-icon-1#{$i}.png)
+	}
+}
+
+@media screen and (-webkit-min-device-pixel-ratio: 2) {
+	@for $i from 1 through 9 {
+
+		.lui_tabpanel_view_navs_item_l:hover>.lui_tabpanel_view_navs_item_r>.lui_tabpanel_view_navs_item_c .lui-tab-icon.tab-icon-#{$i},
+		.lui_tabpanel_collapse_navs_list .lui_tabpanel_collapse_navs_item_l:hover .lui-tab-icon.tab-icon-0#{$i},
+		.lui_tabpanel_view_navs_item_selected>.lui_tabpanel_view_navs_item_r>.lui_tabpanel_view_navs_item_c .lui-tab-icon.tab-icon-#{$i},
+		.lui_tabpanel_collapse_navs_list .lui_tabpanel_collapse_navs_item_selected .lui-tab-icon.tab-icon-0#{$i} {
+			background-image: url(../images/form/icon-on/tab-icon-0#{$i}@2x.png)
+		}
+	}
+
+	@for $i from 0 through 2 {
+
+		.lui_tabpanel_view_navs_item_l:hover>.lui_tabpanel_view_navs_item_r>.lui_tabpanel_view_navs_item_c .lui-tab-icon.tab-icon-1#{$i},
+		.lui_tabpanel_collapse_navs_list .lui_tabpanel_collapse_navs_item_l:hover .lui-tab-icon.tab-icon-1#{$i},
+		.lui_tabpanel_view_navs_item_selected>.lui_tabpanel_view_navs_item_r>.lui_tabpanel_view_navs_item_c .lui-tab-icon.tab-icon-1#{$i},
+		.lui_tabpanel_collapse_navs_list .lui_tabpanel_collapse_navs_item_selected .lui-tab-icon.tab-icon-1#{$i} {
+			background-image: url(../images/form/icon-on/tab-icon-1#{$i}@2x.png)
+		}
+	}
+}
+
+
+/* 公文顶部图标 Ends */
+
+/* v15主题包样式修改 */
+.lui_dataview_search_wrap .lui_search_bar {
+	padding: 6px 0;
+}
+
+.lui_dataview_cate .lui_dataview_cate_item.lui_icon_on_select {
+	color: $primary-color;
+	border-left-color: $primary-color;
+	background-color: #feeed1;
+}
+
+/* 修复补回默认主题缺失图片 */
+.lui_dataview_picmenulist_mod .lui_dataview_picmenu_left,
+.lui_dataview_picmenulist_mod .lui_dataview_picmenu_right,
+.lui_dataview_picmenulist_mod .lui_dataview_picmenu_content,
+.lui_dataview_picmenulist_mod .lui_dataview_picmenu_on .lui_dataview_picmenu_left,
+.lui_dataview_picmenulist_mod .lui_dataview_picmenu_more_on .lui_dataview_picmenu_left,
+.lui_dataview_picmenulist_mod .lui_dataview_picmenu_on .lui_dataview_picmenu_right,
+.lui_dataview_picmenulist_mod .lui_dataview_picmenu_more_on .lui_dataview_picmenu_right,
+.lui_dataview_picmenulist_mod .lui_dataview_picmenu_on .lui_dataview_picmenu_content,
+.lui_dataview_picmenulist_mod .lui_dataview_picmenu_more_on .lui_dataview_picmenu_content {
+	background: none;
+}
+
+.lui_list_noCreate_frame .lui_dataview_picmenulist_mod .lui_dataview_picmenu_on .lui_dataview_picmenu_content,
+.lui_list_noCreate_frame .lui_dataview_picmenulist_mod .lui_dataview_picmenu_more_on .lui_dataview_picmenu_content,
+.lui_dataview_picmenulist_mod .lui_dataview_picmenu_left,
+.lui_dataview_picmenulist_mod .lui_dataview_picmenu_on .lui_dataview_picmenu_left,
+.lui_dataview_picmenulist_mod .lui_dataview_picmenu_more_on .lui_dataview_picmenu_left,
+.lui_list_noCreate_frame .lui_dataview_picmenulist_mod .lui_dataview_picmenu_on .lui_dataview_picmenu_left,
+.lui_list_noCreate_frame .lui_dataview_picmenulist_mod .lui_dataview_picmenu_more_on .lui_dataview_picmenu_left,
+.lui_dataview_picmenulist_mod .lui_dataview_picmenu_right,
+.lui_dataview_picmenulist_mod .lui_dataview_picmenu_on .lui_dataview_picmenu_right,
+.lui_dataview_picmenulist_mod .lui_dataview_picmenu_more_on .lui_dataview_picmenu_right,
+.lui_list_noCreate_frame .lui_dataview_picmenulist_mod .lui_dataview_picmenu_on .lui_dataview_picmenu_right,
+.lui_list_noCreate_frame .lui_dataview_picmenulist_mod .lui_dataview_picmenu_more_on .lui_dataview_picmenu_right,
+.lui_dataview_picmenulist_mod .lui_dataview_picmenu_content,
+.lui_dataview_picmenulist_mod .lui_dataview_picmenu_on .lui_dataview_picmenu_content,
+.lui_dataview_picmenulist_mod .lui_dataview_picmenu_more_on .lui_dataview_picmenu_content .lui_list_noCreate_frame .lui_dataview_picmenulist_mod .lui_dataview_picmenu_on .lui_dataview_picmenu_content,
+.lui_list_noCreate_frame .lui_dataview_picmenulist_mod .lui_dataview_picmenu_more_on .lui_dataview_picmenu_content {
+	background: none;
+}

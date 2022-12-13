@@ -1,0 +1,84 @@
+@IMPORT url("./cardlist.css");
+.muiHeader{ display:block; box-shadow:none; margin-bottom:0px; }/*** ***/
+.muiCommonHeader {
+	height: 11rem;
+	background:#20abe8 url(../images/bg.jpg) no-repeat;
+	background-size:cover;
+	-webkit-transition: all 100ms linear;
+}
+
+.muiGroupHeaderNav {
+	-webkit-transition: all 100ms linear;
+	height: 0;
+	overflow: hidden;
+}
+.muiGroupHeaderNav .muiHeaderItem {
+	display: table-cell;
+}
+.muiGroupHeaderPic {
+	display: inline;
+	float: left;
+	width: 5.3rem;
+	height: 5.3rem;
+	text-align: center;
+	border: 2px solid rgba(255, 255, 255, 1);
+	border-radius: 50%;
+	overflow: hidden;
+	margin: 2rem 0 0 1rem;
+}
+.muiGroupHeaderPic img {
+	width: 100%;
+	height: 100%;
+}
+
+.muiGroupHeaderBar {
+	margin: 2rem 1.2rem 0 8rem;
+}
+.muiGroupHeaderBar h2 {
+	display: block;
+	width: 100%;
+	margin: 0 0 0.5rem;
+	padding: 0rem 0 0.5rem;
+	color: #fff;
+	border-bottom: 1px rgba(255, 255, 255, 0.5) solid;
+	font-size: 1.8rem;
+	font-weight: normal;text-shadow:1px 1px 1px #333;
+}
+
+.muiGroupHeaderBar ul {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+	display: table;
+	width: 100%;
+}
+.muiGroupHeaderBar ul li {
+	display: table-cell;
+	text-align: center;
+	color: #fff;
+}
+.muiGroupHeaderBar ul h3,
+.muiGroupHeaderBar ul h4 {
+	font-weight: normal;
+	font-size: 1.4rem;
+	padding: 0;
+	margin: 0; text-shadow:1px 1px 1px #333;
+}
+.muiGroupHeaderBar ul h4{  padding-top:0.2rem;}
+
+
+@media screen and (min-width: 321px) and (max-width: 400px) {
+  	.muiCommonHeader {
+	height: 11rem;
+	}
+}
+
+
+@media screen and (min-width: 401px) {
+  	.muiCommonHeader {
+	height: 11rem;
+	}
+}
+
+
+

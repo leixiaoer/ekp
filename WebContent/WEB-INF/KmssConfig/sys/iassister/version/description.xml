@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<description xmlns="http://www.example.org/description-config" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.example.org/description-config ../../../description.xsd">
+	<module>
+		<module-name>智能检查助手</module-name>
+		<module-path>sys/iassister</module-path>
+		<baseline>V15.0.4.R.20200410</baseline>
+		<source-md5>e47f60b06da81a5c023332c9f5d92af0</source-md5>
+		<is-custom>否</is-custom>
+		<serial-num>8</serial-num>
+	</module>
+</description>

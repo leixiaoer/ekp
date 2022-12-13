@@ -1,0 +1,156 @@
+{
+    "global":     {
+        "modelName": "com.landray.kmss.km.carmng.model.KmCarmngRegisterInfo",
+        "messageKey": "km-carmng:table.kmCarmngRegisterInfo",
+        "serviceBean": "kmCarmngRegisterInfoService",
+        "table": "km_carmng_register_info",
+        "url": "/km/carmng/km_carmng_register_info/kmCarmngRegisterInfo.do?method=view&fdId=${fdId}"
+    },
+    "attrs":     {
+        "fdId":         {
+            "propertyType": "id",
+            "generator": {"type": "assigned"}
+        },
+        "fdEndTime":         {
+            "propertyType": "simple",
+            "messageKey": "km-carmng:kmCarmngRegisterInfo.fdEndTime",
+            "type": "DateTime",
+            "column": "fd_end_time",
+            "notNull": "false"
+        },
+        "fdMileageBeforeNumber":         {
+            "propertyType": "simple",
+            "messageKey": "km-carmng:kmCarmngRegisterInfo.fdMileageBeforeNumber",
+            "type": "Double",
+            "column": "fd_mileage_before_number",
+            "notNull": "false",
+            "length": "12"
+        },
+        "fdMileageAfterNumber":         {
+            "propertyType": "simple",
+            "messageKey": "km-carmng:kmCarmngRegisterInfo.fdMileageAfterNumber",
+            "type": "Double",
+            "column": "fd_mileage_after_number",
+            "notNull": "false",
+            "length": "12"
+        },
+        "fdMileageStartNumber":         {
+            "propertyType": "simple",
+            "messageKey": "km-carmng:kmCarmngRegisterInfo.fdMileageStartNumber",
+            "type": "Double",
+            "column": "fd_mileage_start_number",
+            "notNull": "false",
+            "length": "12"
+        },
+        "fdMileageEndNumber":         {
+            "propertyType": "simple",
+            "messageKey": "km-carmng:kmCarmngRegisterInfo.fdMileageEndNumber",
+            "type": "Double",
+            "column": "fd_mileage_end_number",
+            "notNull": "false",
+            "length": "12"
+        },
+        "fdRealPath":         {
+            "propertyType": "simple",
+            "messageKey": "km-carmng:kmCarmngRegisterInfo.fdRealPath",
+            "type": "String",
+            "column": "fd_real_path",
+            "notNull": "false",
+            "length": "1500"
+        },
+        "fdStopFee":         {
+            "propertyType": "simple",
+            "messageKey": "km-carmng:kmCarmngRegisterInfo.fdStopFee",
+            "type": "Double",
+            "column": "fd_stop_fee",
+            "notNull": "false",
+            "length": "12"
+        },
+        "fdTurnpikeFee":         {
+            "propertyType": "simple",
+            "messageKey": "km-carmng:kmCarmngRegisterInfo.fdTurnpikeFee",
+            "type": "Double",
+            "column": "fd_turnpike_fee",
+            "notNull": "false",
+            "length": "12"
+        },
+        "fdFuelFee":         {
+            "propertyType": "simple",
+            "messageKey": "km-carmng:kmCarmngRegisterInfo.fdFuelFee",
+            "type": "Double",
+            "column": "fd_fuel_fee",
+            "notNull": "false",
+            "length": "12"
+        },
+        "fdOtherFee":         {
+            "propertyType": "simple",
+            "messageKey": "km-carmng:kmCarmngRegisterInfo.fdOtherFee",
+            "type": "Double",
+            "column": "fd_other_fee",
+            "notNull": "false",
+            "length": "12"
+        },
+        "fdCarwashFee":         {
+            "propertyType": "simple",
+            "messageKey": "km-carmng:kmCarmngRegisterInfo.fdCarwashFee",
+            "type": "Double",
+            "column": "fd_carwash_fee",
+            "notNull": "false",
+            "length": "12"
+        },
+        "fdRemark":         {
+            "propertyType": "simple",
+            "messageKey": "km-carmng:kmCarmngRegisterInfo.fdRemark",
+            "type": "String",
+            "column": "fd_remark",
+            "notNull": "false",
+            "length": "2000"
+        },
+        "fdRegisterTime":         {
+            "propertyType": "simple",
+            "messageKey": "km-carmng:kmCarmngRegisterInfo.fdRegisterTime",
+            "type": "DateTime",
+            "column": "fd_register_time",
+            "notNull": "false"
+        },
+        "fdMileageNumber":         {
+            "propertyType": "simple",
+            "messageKey": "km-carmng:kmCarmngUserFeeInfo.fdMileageNumber",
+            "type": "Double",
+            "column": "fd_mileage_number",
+            "notNull": "false",
+            "length": "12"
+        },
+        "fdRegister":         {
+            "propertyType": "model",
+            "messageKey": "km-carmng:kmCarmngRegisterInfo.fdRegisterId",
+            "type": "com.landray.kmss.sys.organization.model.SysOrgElement",
+            "column": "fd_register_id"
+        },
+        "fdDispatchInfoList":         {
+            "propertyType": "model",
+            "messageKey": "km-carmng:kmCarmngRegisterInfo.fdDispatchersId",
+            "type": "com.landray.kmss.km.carmng.model.KmCarmngDispatchersInfoList",
+            "column": "fd_dispatchinfolist_id"
+        },
+        "fdStartTime":         {
+            "propertyType": "simple",
+            "messageKey": "km-carmng:kmCarmngRegisterInfo.fdStartTime",
+            "type": "DateTime",
+            "column": "fd_start_time"
+        },
+        "fdTotalFee":         {
+            "propertyType": "simple",
+            "messageKey": "km-carmng:kmCarmngRegisterInfo.fdTotalFee",
+            "type": "Double",
+            "column": "fd_total_fee",
+            "length": "12"
+        },
+        "fdDispatchers":         {
+            "propertyType": "model",
+            "messageKey": "km-carmng:kmCarmngRegisterInfo.fdDispatchersId",
+            "type": "com.landray.kmss.km.carmng.model.KmCarmngDispatchersInfo",
+            "column": "fd_dispatchers_id"
+        }
+    }
+}

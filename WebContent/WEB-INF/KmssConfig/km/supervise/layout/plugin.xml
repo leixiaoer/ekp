@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<plugin
+	xmlns="http://www.example.org/plugin-config"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.example.org/plugin-config ../../../plugin.xsd ">
+	<!-- 基本属性布局扩展 -->
+	<extension point="com.landray.kmss.sys.xform.fieldlayout" model="com.landray.kmss.km.supervise.model.KmSuperviseMain">
+		<!-- 督办标题 -->
+	    <item name="config">
+			<param name="fieldIds" value="docSubject"></param>
+			<param name="required" value="true"></param>
+		    <param name="jspParams" value="km/supervise/fieldlayout/docsubject/param.jsp"></param>
+			<param name="jspRunProfix" value="km/supervise/fieldlayout/docsubject/docSubject"></param>
+		</item>
+		<!-- 督办内容 -->
+		<item name="config">
+			<param name="fieldIds" value="fdContent"></param>
+			<param name="required" value="true"></param>
+		    <param name="jspParams" value="km/supervise/fieldlayout/fdcontent/param.jsp"></param>
+			<param name="jspRunProfix" value="km/supervise/fieldlayout/fdcontent/fdContent"></param>
+		</item>
+		<!-- 开始时间 -->
+		<item name="config">
+			<param name="fieldIds" value="fdStartTime"></param>
+			<param name="required" value="true"></param>
+		    <param name="jspParams" value="km/supervise/fieldlayout/fdstarttime/param.jsp"></param>
+			<param name="jspRunProfix" value="km/supervise/fieldlayout/fdstarttime/fdStartTime"></param>
+		</item>
+		<!-- 完成时间 -->
+		<item name="config">
+			<param name="fieldIds" value="fdFinishTime"></param>
+			<param name="required" value="true"></param>
+		    <param name="jspParams" value="km/supervise/fieldlayout/fdfinishtime/param.jsp"></param>
+			<param name="jspRunProfix" value="km/supervise/fieldlayout/fdfinishtime/fdFinishTime"></param>
+		</item>
+		<!-- 督办来源 -->
+		<item name="config">
+			<param name="fieldIds" value="fdModelId"></param>
+			<param name="required" value="false"></param>
+		    <param name="jspParams" value="km/supervise/fieldlayout/fdmodelid/param.jsp"></param>
+			<param name="jspRunProfix" value="km/supervise/fieldlayout/fdmodelid/fdModelId"></param>
+		</item>
+		<!-- 主办单位/部门-->
+		<item name="config">
+			<param name="fieldIds" value="fdSysUnit"></param>
+			<param name="required" value="false"></param>
+		    <param name="jspParams" value="km/supervise/fieldlayout/fdsysunit/param.jsp"></param>
+			<param name="jspRunProfix" value="km/supervise/fieldlayout/fdsysunit/fdSysUnit"></param>
+		</item>
+		
+		<!-- <item name="config">
+			<param name="fieldIds" value="fdUnit"></param>
+			<param name="required" value="false"></param>
+		    <param name="jspParams" value="km/supervise/fieldlayout/fdunit/param.jsp"></param>
+			<param name="jspRunProfix" value="km/supervise/fieldlayout/fdunit/fdUnit"></param>
+		</item> -->
+		<!-- 主办分管领导-->
+		<item name="config">
+			<param name="fieldIds" value="fdLeads"></param>
+			<param name="required" value="false"></param>
+		    <param name="jspParams" value="km/supervise/fieldlayout/fdleads/param.jsp"></param>
+			<param name="jspRunProfix" value="km/supervise/fieldlayout/fdleads/fdLeads"></param>
+		</item>
+		<!-- 主办单位负责人-->
+		<item name="config">
+			<param name="fieldIds" value="fdSponsor"></param>
+			<param name="required" value="false"></param>
+		    <param name="jspParams" value="km/supervise/fieldlayout/fdsponsor/param.jsp"></param>
+			<param name="jspRunProfix" value="km/supervise/fieldlayout/fdsponsor/fdSponsor"></param>
+		</item>
+		<!-- 主办联络员-->
+		<item name="config">
+			<param name="fieldIds" value="fdLiaisons"></param>
+			<param name="required" value="false"></param>
+		    <param name="jspParams" value="km/supervise/fieldlayout/fdliaisons/param.jsp"></param>
+			<param name="jspRunProfix" value="km/supervise/fieldlayout/fdliaisons/fdLiaisons"></param>
+		</item>
+		<!-- 协办单位/部门-->
+		<item name="config">
+			<param name="fieldIds" value="fdOtherUnits"></param>
+			<param name="required" value="false"></param>
+		    <param name="jspParams" value="km/supervise/fieldlayout/fdotherunits/param.jsp"></param>
+			<param name="jspRunProfix" value="km/supervise/fieldlayout/fdotherunits/fdOtherUnits"></param>
+		</item>
+		<!-- 协办分管领导-->
+		<item name="config">
+			<param name="fieldIds" value="fdOtherLeads"></param>
+			<param name="required" value="false"></param>
+		    <param name="jspParams" value="km/supervise/fieldlayout/fdotherleads/param.jsp"></param>
+			<param name="jspRunProfix" value="km/supervise/fieldlayout/fdotherleads/fdOtherLeads"></param>
+		</item>
+		<!-- 协办联络员-->
+		<item name="config">
+			<param name="fieldIds" value="fdOtherLiaisons"></param>
+			<param name="required" value="false"></param>
+		    <param name="jspParams" value="km/supervise/fieldlayout/fdotherliaisons/param.jsp"></param>
+			<param name="jspRunProfix" value="km/supervise/fieldlayout/fdotherliaisons/fdOtherLiaisons"></param>
+		</item>
+		<!-- 协办责任人-->
+		<item name="config">
+			<param name="fieldIds" value="fdOtherSponsors"></param>
+			<param name="required" value="false"></param>
+		    <param name="jspParams" value="km/supervise/fieldlayout/fdothersponsors/param.jsp"></param>
+			<param name="jspRunProfix" value="km/supervise/fieldlayout/fdothersponsors/fdOtherSponsors"></param>
+		</item>
+		<!-- <item name="config">
+			<param name="fieldIds" value="fdOUnits"></param>
+			<param name="required" value="false"></param>
+		    <param name="jspParams" value="km/supervise/fieldlayout/fdounits/param.jsp"></param>
+			<param name="jspRunProfix" value="km/supervise/fieldlayout/fdounits/fdOUnits"></param>
+		</item> -->
+		<!-- 立项时间-->
+		<item name="config">
+			<param name="fieldIds" value="fdApprovalTime"></param>
+			<param name="required" value="false"></param>
+		    <param name="jspParams" value="km/supervise/fieldlayout/fdapprovaltime/param.jsp"></param>
+			<param name="jspRunProfix" value="km/supervise/fieldlayout/fdapprovaltime/fdApprovalTime"></param>
+		</item>
+		<!-- 督办级别-->
+		<item name="config">
+			<param name="fieldIds" value="fdLevel"></param>
+			<param name="required" value="false"></param>
+		    <param name="jspParams" value="km/supervise/fieldlayout/fdlevel/param.jsp"></param>
+			<param name="jspRunProfix" value="km/supervise/fieldlayout/fdlevel/fdLevel"></param>
+		</item>
+		<!-- 紧急程度-->
+		<item name="config">
+			<param name="fieldIds" value="fdUrgency"></param>
+			<param name="required" value="false"></param>
+		    <param name="jspParams" value="km/supervise/fieldlayout/fdurgency/param.jsp"></param>
+			<param name="jspRunProfix" value="km/supervise/fieldlayout/fdurgency/fdUrgency"></param>
+		</item>
+		<!-- 督办编号 -->
+		<item name="config">
+			<param name="fieldIds" value="docNumber"></param>
+			<param name="required" value="false"></param>
+		    <param name="jspParams" value="km/supervise/fieldlayout/docnumber/param.jsp"></param>
+			<param name="jspRunProfix" value="km/supervise/fieldlayout/docnumber/docNumber"></param>
+		</item>
+	</extension>
+</plugin>

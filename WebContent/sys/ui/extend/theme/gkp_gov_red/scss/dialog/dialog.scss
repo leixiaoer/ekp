@@ -1,0 +1,372 @@
+@import './../lib/vars.scss';
+@import './../lib/mixins.scss';
+
+/* 日历日程-门户 Starts */
+.lui_calendar_portlet .lui_calendar_portlet_table * {
+    font-size: inherit;
+    text-align: center;
+}
+
+.lui_calendar_portlet .lui_calendar_portlet_header {
+    padding: 10px 15px;
+}
+
+.lui_calendar_portlet .lui_calendar_portlet_left {
+    text-align: left;
+}
+
+.lui_calendar_portlet .lui_calendar_portlet_opt,
+.lui_calendar_portlet .lui_calendar_portlet_monyear {
+    text-align: right;
+}
+
+.lui_calendar_portlet .lui_calendar_portlet_opt>* {
+    display: inline-block;
+    border: 1px solid #d9d9d9;
+    padding: 3px;
+    text-align: center;
+    transition-duration: .3s;
+    cursor: pointer;
+}
+
+.lui_calendar_portlet .lui_calendar_portlet_today {
+    width: 40px;
+}
+
+.lui_calendar_portlet .lui_calendar_portlet_refresh {
+    margin-left: 5px;
+    width: 24px;
+}
+
+.lui_calendar_portlet .lui_calendar_portlet_today:hover,
+.lui_calendar_portlet .lui_calendar_portlet_refresh:hover {
+    color: $primary-color;
+    border-color: $primary-color;
+}
+
+.lui_calendar_portlet .lui_calendar_portlet_refresh:after {
+    background-image: url(../images/icons/icon-reflash-gray.png);
+    background-position: 50%;
+    background-size: 14px auto;
+    top: 2px;
+}
+
+.lui_calendar_portlet .lui_calendar_portlet_refresh:hover:after {
+    background-image: url(../images/icons/icon-reflash-on.png);
+    background-position: 50%;
+    background-size: 14px auto;
+}
+
+@media screen and (-webkit-min-device-pixel-ratio: 2) {
+    .lui_calendar_portlet .lui_calendar_portlet_refresh:after {
+        background-image: url(../images/icons/icon-reflash-gray@2x.png);
+    }
+
+    .lui_calendar_portlet .lui_calendar_portlet_refresh:hover:after {
+        background-image: url(../images/icons/icon-reflash-on@2x.png);
+    }
+}
+
+.lui_calendar_portlet .lui_calendar_portlet_date>span {
+    color: #666;
+}
+
+.lui_calendar_portlet .lui_calendar_portlet_date.pre>span,
+.lui_calendar_portlet .lui_calendar_portlet_date.next>span {
+    color: #999;
+}
+
+.lui_calendar_portlet .lui_calendar_portlet_date.current>span {
+    color: #fff;
+    background-color: $primary-color;
+    -webkit-box-shadow: 0 2px 5px rgba(0, 0, 0, .15);
+    -moz-box-shadow: 0 2px 5px rgba(0, 0, 0, .15);
+    -ms-box-shadow: 0 2px 5px rgba(0, 0, 0, .15);
+    -o-box-shadow: 0 2px 5px rgba(0, 0, 0, .15);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, .15);
+}
+
+.lui_calendar_portlet .lui_calendar_portlet_date.today>span {
+    border-color: $primary-color;
+}
+
+.lui_calendar_portlet .lui_calendar_portlet_dot {
+    background-color: #ea4335;
+    z-index: 6;
+}
+
+.lui_calendar_portlet .lui_calendar_portlet_footer_ul {
+    padding: 10px;
+}
+
+/* 日历日程-门户 Ends */
+
+/* 模态弹出窗 Starts */
+.lui_dialog_frame {
+    border: 1px solid #fff;
+    background-color: #fff;
+    -webkit-box-shadow: 0 0 7px rgba(0, 0, 0, .15);
+    -moz-box-shadow: 0 0 7px rgba(0, 0, 0, .15);
+    -ms-box-shadow: 0 0 7px rgba(0, 0, 0, .15);
+    -o-box-shadow: 0 0 7px rgba(0, 0, 0, .15);
+    box-shadow: 0 0 7px rgba(0, 0, 0, .15);
+}
+
+.lui_dialog_head {
+    height: 45px;
+    line-height: 45px;
+    border-bottom: 1px solid #d9d9d9;
+    background-color: #fff;
+    color: $primary-color;
+    font-size: 16px;
+    position: relative;
+}
+
+.lui_dialog_head_left {
+    font-size: inherit;
+    float: left;
+    padding-left: 12px;
+}
+
+.lui_dialog_head_right {
+    margin: 0;
+    float: none;
+    width: 16px;
+    height: 16px;
+    background: url(../images/icons/icon-delete.png) no-repeat 0 0;
+    background-size: auto 16px;
+    position: absolute;
+    right: 12px;
+    top: 50%;
+    margin-top: -8px;
+    cursor: pointer;
+    transition: background-color .3s;
+}
+
+.lui_dialog_head_right:hover {
+    color: $primary-color;
+    background-color: transparent;
+    background-position: -16px 0;
+}
+
+.lui_dialog_container {
+    padding: 0;
+    text-align: center;
+    border: 0;
+    position: relative;
+}
+
+.lui_dialog_content_question,
+.lui_dialog_content_warn,
+.lui_dialog_content_dollar {
+    float: none;
+    display: inline-block;
+    padding-top: 15px;
+    padding-left: 15px;
+    padding-bottom: 15px;
+    width: 62px;
+    height: 110px;
+    background: none;
+    background-repeat: no-repeat;
+    background-position: 15px 50%;
+    position: static;
+    left: auto;
+    top: auto;
+    bottom: auto;
+    vertical-align: top;
+}
+
+.lui_dialog_common_content_right {
+    margin: 0;
+    padding: 15px;
+    max-width: 74%;
+    display: inline-block;
+    min-height: 110px;
+    vertical-align: top;
+}
+
+.lui_dialog_content_question {
+    background-image: url(../images/dialog/dialog_doubt.png);
+    background-size: 62px auto;
+}
+
+.lui_dialog_content_warn {
+    background-image: url(../images/dialog/dialog_warning.png);
+    background-size: 62px auto;
+}
+
+.lui_dialog_content_dollar {
+    width: 80px;
+    background-image: url(../images/dialog/dollar.png);
+}
+
+.lui_dialog_common_content_inside {
+    margin: 20px 0;
+    text-align: left;
+    font-size: inherit;
+    word-wrap: break-word;
+}
+
+.lui_dialog_common_buttons {
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    position: static;
+    width: auto;
+}
+
+.lui_dialog_common_buttons .lui_widget_btn {
+    margin: 0 3px !important;
+}
+
+.lui_dialog_common_buttons .lui_toolbar_btn_l {
+    min-width: 58px;
+}
+
+.lui_dialog_buttons .lui_dialog_buttons_container {
+    padding: 4px 5px 8px 0;
+}
+
+.lui_dialog_buttons_container .lui_widget_btn {
+    margin: 0 5px !important;
+}
+
+.lui_dialog_buttons_container .lui_widget_btn .lui_toolbar_btn_l {
+    padding-left: 5px;
+    padding-right: 5px;
+    min-width: 58px;
+}
+
+@media screen and (-webkit-min-device-pixel-ratio: 2) {
+    .lui_dialog_head_right {
+        background-image: url(../images/icons/icon-delete@2x.png);
+    }
+
+    .lui_dialog_content_question {
+        background-image: url(../images/dialog/dialog_doubt@2x.png);
+    }
+
+    .lui_dialog_content_warn {
+        background-image: url(../images/dialog/dialog_warning@2x.png);
+    }
+}
+
+/* 模态弹出窗 Ends */
+
+/* 提示弹出框 Starts */
+.lui_dialog_loading_frame {
+    width: auto;
+    /* height: 80px; */
+}
+
+.lui_dialog_tip_frame {
+    margin: 8px 10px;
+}
+
+.lui_dialog_tip_title_l {
+    height: 0;
+    padding-left: 0;
+}
+
+.lui_dialog_tip_container,
+.lui_dialog_loading_container {
+    border: 1px solid #eee\9;
+    -webkit-box-shadow: 0 0 8px rgba(0, 0, 0, .15);
+    -moz-box-shadow: 0 0 8px rgba(0, 0, 0, .15);
+    -ms-box-shadow: 0 0 8px rgba(0, 0, 0, .15);
+    -o-box-shadow: 0 0 8px rgba(0, 0, 0, .15);
+    box-shadow: 0 0 8px rgba(0, 0, 0, .15);
+    position: relative;
+}
+
+.lui_dialog_loading_container {
+    width: 50px;
+    padding: 0;
+    margin: 10px auto;
+    background-color: #fff;
+}
+
+.lui_dialog_tip_container {
+    padding: 0;
+    background-color: #fff;
+}
+
+.lui_dialog_content_success,
+.lui_dialog_content_failure,
+.lui_dialog_content_suggest {
+    margin: 0 10px;
+    min-height: 50px;
+    width: 40px;
+    height: 60px;
+}
+
+.lui_dialog_loading_content .load_img {
+    display: inline-block;
+    margin: 0;
+    background-repeat: no-repeat;
+    background-position: 100% 50%;
+    float: none;
+    width: 50px;
+    height: 50px;
+    background-image: url(../images/dialog/loading.gif);
+    background-position: 50%;
+    vertical-align: middle;
+}
+
+.lui_dialog_content_success {
+    background-image: url(../images/dialog/dialog_succeed.png);
+}
+
+.lui_dialog_content_failure {
+    background-image: url(../images/dialog/dialog_failed.png);
+}
+
+.lui_dialog_content_suggest {
+    background-image: url(../images/dialog/dialog_suggest.png);
+}
+
+.lui_dialog_loading_content .load_img {}
+
+.lui_dialog_tip_content_inside {
+    padding-top: 0;
+    line-height: 60px;
+    padding-right: 15px;
+}
+
+.lui_dialog_tip_content_inside .lui_dialog_tip_content_inside_title {
+    line-height: 60px;
+    color: #666;
+    font-size: 16px;
+    display: block;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.lui_dialog_loading_content .load_txt {
+    color: #636879;
+    font-size: 16px;
+    display: block;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    margin-top: -5px;
+    display: none;
+}
+
+/* 提示弹出框 Ends */
+
+/* 日程弹出框 Starts */
+.lui_dialog_frame .schedule_share li:hover,
+.lui_dialog_frame .schedule_share li.current,
+.lui_calendar_title .schedule_share li:hover,
+.lui_calendar_title .schedule_share li.current {
+    color: $primary-color;
+}
+
+/* 日程弹出框 Ends */
+
+
+.lui_dialog_mask {
+    background-color: #000 !important;
+}

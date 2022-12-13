@@ -1,0 +1,184 @@
+.streamBox{
+    margin-left:50px;
+    padding-left:28px;
+    border-left:3px solid #e9e9e8;
+}
+.streamBox .stream_contentWrap:last-child{ margin-bottom:0;}
+
+.div_dateBar{
+	border: 1px solid  #e5e5e5;
+	background-color: #f4f4f4;
+	width:120px;
+    height:40px;
+	padding: 5px;
+	position:relative;
+	margin-bottom: 15px;
+    margin-left:-55px;
+    border-radius: 10px;
+}
+.streamBox .dateBar{
+    border-radius: 8px;
+    width:120px;
+    height:40px;
+    background-color:#838383;
+    text-align: center;
+    vertical-align: middle;
+}
+.streamBox .month{
+    padding-top: 9px;
+    color:#fff;
+    font-family:Arial;
+    font-size:18px;
+    font-weight:bold;
+    display:block;
+}
+.streamBox .year{
+    color:#cdcdcd;
+    font-family:Arial;
+    font-size:14px;
+    font-weight:bold;
+    display:block;
+}
+.streamBox .head{
+    margin-bottom:8px;
+    margin-left:-83px;
+    color:#6b6b6b;
+    line-height:52px;
+    zoom:1;
+}
+.streamBox .head:after{
+    display:block;
+    content:'clear';
+    clear:both;
+    line-height:0;
+    visibility:hidden;
+}
+.streamBox .head .title{
+    padding-left:60px;
+    height:52px;
+    line-height:52px;
+    color:#404040;
+    font-size:18px;
+    background-position:0 50%;
+    display:block;
+    float:left;
+}
+.streamBox .time{
+    padding:0 6px;
+    width:34px;
+    text-align:right;
+    color:#6b6b6b;
+    font-size:13px;
+    overflow:hidden;
+    display:block;
+    float:left;
+}
+.streamBox .head .line{
+    width:35px;
+    height:52px;
+    background:url(../images/assetCard_line.png) no-repeat 0 50%;
+    display:block;
+    float:left;
+}
+
+.stream_contentWrap{
+    padding-bottom:15px;
+    position:relative;
+}
+.stream_contentWrap .arrow{
+    width:0;
+    height:0;
+    border-width:12px 10px 12px 0;
+    border-style:dashed solid dashed dashed;
+    border-color:transparent;
+    position:absolute;
+    top:25px;
+}
+.stream_contentWrap .M_arr{
+    border-right-color:#e3e3e3;
+    left:-10px;
+}
+.stream_contentWrap .C_arr{
+    border-right-color:#f4f4f4;
+    left:-9px;
+}
+
+.stream_contentHeadL{ padding-left:6px; background:url(../images/assetCard_content_bgTL.png) no-repeat 0 0;}
+.stream_contentHeadR{ padding-right:6px; background:url(../images/assetCard_content_bgTR.png) no-repeat 100% 0;}
+.stream_contentHeadC{ height:5px; border-top:1px solid #e3e3e3; background-color:#f4f4f4;}
+.stream_contentFootL{ padding-left:6px; background:url(../images/assetCard_content_bgBL.png) no-repeat 0 0;}
+.stream_contentFootR{ padding-right:6px; background:url(../images/assetCard_content_bgBR.png) no-repeat 100% 0;}
+.stream_contentFootC{ height:5px; border-bottom:1px solid #e3e3e3; background-color:#f4f4f4;}
+.stream_content{
+    padding:0 15px;
+    border-left:1px solid #e3e3e3;
+    border-right:1px solid #e3e3e3;
+    background-color:#f4f4f4;
+}
+.stream_content h2{
+    padding-top:10px;
+    font-size:14px;
+    font-weight:bold;
+}
+.stream_content .s_content_title{
+    margin-bottom:6px;
+    padding:10px 0;
+    font-size:14px;
+    border-bottom:1px solid #e3e3e3;
+    zoom:1;
+}
+.stream_content .s_content_title:after{
+    display:block;
+    content:'clear';
+    clear:both;
+    line-height:0;
+    visibility:hidden;
+}
+.stream_content .s_content_title img{
+    border:2px solid #fff;
+    border-radius:3px;
+    display:block;
+    float:left;
+}
+.stream_content .s_content_title .notes{
+    line-height:40px;
+    font-size:14px;
+    font-weight:bold;
+    float:right;
+}
+.stream_content .s_content_title .title_txt{
+   font-size:12px;
+   margin:0 140px 0 50px;
+   list-style-type:none
+}
+
+
+.stream_content .s_content_title span{
+    line-height:40px; 
+}
+.stream_content .txt{
+    padding:5px 0;
+    vertical-align:middle;
+}
+.stream_content .txtBold{
+    padding:5px 0;
+    color:#333;
+    font-weight:bold;
+}
+.txtBold a{
+color:#0000FF;
+text-decoration:underline;
+}
+.streamBox .icon_allocation{ background:url(../images/assetCard_HP_01.gif) no-repeat;}  
+
+
+.streamBox .icon_buy{ background:url(../images/assetCard_icon_buy.png) no-repeat;}   
+.streamBox .icon_in{ background:url(../images/assetCard_icon_in.png) no-repeat;}  
+.streamBox .icon_divert{ background:url(../images/assetCard_icon_divert.png) no-repeat;}            
+.streamBox .icon_rent{ background:url(../images/assetCard_icon_rent.png) no-repeat;}          
+.streamBox .icon_get{ background:url(../images/assetCard_icon_get.png) no-repeat;}       
+.streamBox .icon_repair{ background:url(../images/assetCard_icon_repair.png) no-repeat;}               
+.streamBox .icon_change{ background:url(../images/assetCard_icon_change.png) no-repeat;}       
+.streamBox .icon_stock{ background:url(../images/assetCard_icon_stock.png) no-repeat;} 
+.streamBox .icon_deal{ background:url(../images/assetCard_icon_deal.png) no-repeat;}
+.streamBox .icon_return{ background:url(../images/assetCard_icon_return.png) no-repeat;}   

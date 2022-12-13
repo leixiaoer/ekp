@@ -1,0 +1,129 @@
+{
+    "global":     {
+        "modelName": "com.landray.kmss.km.asset.model.KmAssetApplyStockList",
+        "messageKey": "km-asset:table.kmAssetApplyStockList",
+        "displayProperty": "fdName",
+        "serviceBean": "kmAssetApplyStockListService",
+        "table": "km_asset_apply_stock_list",
+        "url": "/km/asset/km_asset_apply_stock_list/kmAssetApplyStockList.do?method=view&fdId=${fdId}"
+    },
+    "attrs":     {
+        "fdId":         {
+            "propertyType": "id",
+            "generator": {"type": "assigned"}
+        },
+        "fdName":         {
+            "propertyType": "simple",
+            "messageKey": "km-asset:kmAssetApplyStockList.fdName",
+            "type": "String",
+            "column": "fd_name",
+            "notNull": "false",
+            "length": "200",
+            "validate": "true"
+        },
+        "fdStandard":         {
+            "propertyType": "simple",
+            "messageKey": "km-asset:kmAssetApplyStockList.fdStandard",
+            "type": "String",
+            "column": "fd_standard",
+            "notNull": "false",
+            "length": "200",
+            "validate": "true"
+        },
+        "fdMeasure":         {
+            "propertyType": "simple",
+            "messageKey": "km-asset:kmAssetApplyStockList.fdMeasure",
+            "type": "String",
+            "column": "fd_measure",
+            "notNull": "false",
+            "length": "36",
+            "validate": "true"
+        },
+        "fdStockAmount":         {
+            "propertyType": "simple",
+            "messageKey": "km-asset:kmAssetApplyStockList.fdStockAmount",
+            "type": "Integer",
+            "column": "fd_stock_amount",
+            "notNull": "false",
+            "length": "4",
+            "validate": "true"
+        },
+        "fdPrice":         {
+            "propertyType": "simple",
+            "messageKey": "km-asset:kmAssetApplyStockList.fdPrice",
+            "type": "Double",
+            "column": "fd_price",
+            "notNull": "false",
+            "length": "36",
+            "validate": "true"
+        },
+        "fdSubTotal":         {
+            "propertyType": "simple",
+            "messageKey": "km-asset:kmAssetApplyStockList.fdSubTotal",
+            "type": "Double",
+            "column": "fd_sub_total",
+            "notNull": "false",
+            "length": "36",
+            "validate": "true"
+        },
+        "fdStockDate":         {
+            "propertyType": "simple",
+            "messageKey": "km-asset:kmAssetApplyStockList.fdStockDate",
+            "type": "DateTime",
+            "column": "fd_stock_date",
+            "notNull": "false",
+            "validate": "false"
+        },
+        "fdRemark":         {
+            "propertyType": "simple",
+            "messageKey": "km-asset:kmAssetApplyStockList.fdRemark",
+            "type": "String",
+            "column": "fd_remark",
+            "notNull": "false",
+            "length": "36",
+            "validate": "true"
+        },
+        "fdOrder":         {
+            "propertyType": "simple",
+            "messageKey": "km-asset:kmAssetApplyStockList.fdOrder",
+            "type": "Integer",
+            "column": "fd_order",
+            "notNull": "false",
+            "length": "10",
+            "validate": "true"
+        },
+        "fdReceiveAmount":         {
+            "propertyType": "simple",
+            "messageKey": "km-asset:kmAssetApplyStockList.fdReceiveAmount",
+            "type": "Integer",
+            "column": "fd_receive_amount",
+            "notNull": "false",
+            "length": "4",
+            "validate": "false"
+        },
+        "fdAssetApplyStock":         {
+            "propertyType": "model",
+            "messageKey": "km-asset:kmAssetApplyStockList.fdAssetApplyStock",
+            "type": "com.landray.kmss.km.asset.model.KmAssetApplyStock",
+            "column": "fd_asset_apply_stock",
+            "notNull": "false",
+            "validate": "true"
+        },
+        "fdProvider":         {
+            "propertyType": "model",
+            "messageKey": "km-asset:kmAssetApplyStockList.fdProvider",
+            "type": "com.landray.kmss.km.provider.model.KmProviderMain",
+            "column": "fd_provider_id",
+            "notNull": "false",
+            "validate": "false"
+        },
+        "fdStocker":         {
+            "propertyType": "model",
+            "messageKey": "km-asset:kmAssetApplyStockList.fdStocker",
+            "type": "com.landray.kmss.sys.organization.model.SysOrgElement",
+            "column": "fd_stocker",
+            "notNull": "false",
+            "validate": "true"
+        }
+    }
+}

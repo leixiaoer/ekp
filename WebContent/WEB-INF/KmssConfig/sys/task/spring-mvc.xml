@@ -1,0 +1,324 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans
+	xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.0.xsd">
+	<bean
+		name="/sys/task/sys_task_main/sysTaskIndex.do"
+		class="com.landray.kmss.sys.task.actions.SysTaskIndexAction"
+		lazy-init="true"
+		parent="KmssBaseAction">
+		<property
+			name="formType"
+			value="com.landray.kmss.sys.task.forms.SysTaskMainForm" />
+		<property name="forwards">
+			<map>
+				<entry
+					key="list"
+					value="/sys/task/sys_task_ui/sysTaskMain_list.jsp" />
+				<entry
+					key="list.4m"
+					value="/sys/task/mobile/list.jsp" />
+				<entry
+					key="list.4mh"
+					value="/sys/task/maxhub/import/sysTaskMain_list.jsp" />
+				<entry
+					key="taskTab"
+					value="/sys/task/sys_task_ui/sysTaskMain_tab.jsp" />
+				<entry
+					key="superviseList"
+					value="/sys/task/sys_task_supervise/sysTaskMain_supervise_list.jsp" />
+			</map>
+		</property>
+	</bean>
+	<bean
+		name="/sys/task/sys_task_main/sysTaskMain.do"
+		class="com.landray.kmss.sys.task.actions.SysTaskMainAction"
+		lazy-init="true"
+		parent="KmssBaseAction">
+		<property
+			name="formType"
+			value="com.landray.kmss.sys.task.forms.SysTaskMainForm" />
+		<property name="forwards">
+			<map>
+				<entry
+					key="view"
+					value="/sys/task/sys_task_ui/sysTaskMain_view.jsp" />
+				<entry
+					key="view.4m"
+					value="/sys/task/mobile/view.jsp" />
+				<entry
+					key="view.4pda"
+					value="/sys/task/sys_task_main/sysTaskMain_view_pda.jsp" />
+				<entry
+					key="edit"
+					value="/sys/task/sys_task_ui/sysTaskMain_edit.jsp" />
+				<entry
+					key="edit.4m"
+					value="/sys/task/mobile/edit.jsp" />
+				<entry
+					key="edit.4mh"
+					value="/sys/task/maxhub/import/edit.jsp" />
+				<entry
+					key="edit.4pda"
+					value="/sys/task/sys_task_main/sysTaskMain_edit_pda.jsp" />
+				<entry
+					key="editChild"
+					value="/sys/task/sys_task_ui/sysTaskMain_child_edit.jsp" />
+				<entry
+					key="editChild.4pda"
+					value="/sys/task/sys_task_main/sysTaskMain_child_edit_pda.jsp" />
+				<entry
+					key="editChild.4m"
+					value="/sys/task/mobile/child_edit.jsp" />
+				<entry
+					key="list"
+					value="/sys/task/sys_task_main/sysTaskMain_list.jsp" />
+				<entry
+					key="list.4pda"
+					value="/sys/task/pda/sysTaskMain_list4pda.jsp" />
+				<entry
+					key="childList"
+					value="/sys/task/sys_task_main/sysTaskMain_listChildTask4pda.jsp" />
+				<entry
+					key="childCnavas"
+					value="/sys/task/sys_task_main/sysTaskMain_childCanvas.jsp" />
+				<entry
+					key="analyzeList"
+					value="/sys/task/sys_task_ui/sysTaskMain_list.jsp" />
+				<entry
+					key="overviewChart"
+					value="/sys/task/sys_task_supervise/sysTaskMain_supervise_overviewChart.jsp" />
+				<entry
+					key="addPerform"
+					value="/sys/task/mobile/add_perform_success.jsp" />	
+			</map>
+		</property>
+	</bean>
+	<bean
+		name="/sys/task/sys_task_feedback/sysTaskFeedback.do"
+		class="com.landray.kmss.sys.task.actions.SysTaskFeedbackAction"
+		lazy-init="true"
+		parent="KmssBaseAction">
+		<property
+			name="formType"
+			value="com.landray.kmss.sys.task.forms.SysTaskFeedbackForm" />
+		<property name="forwards">
+			<map>
+				<entry
+					key="view"
+					value="/sys/task/sys_task_feedback_ui/sysTaskFeedback_view.jsp" />
+				<entry
+					key="view.4m"
+					value="/sys/task/mobile/feedback_view.jsp" />
+				<entry
+					key="edit"
+					value="/sys/task/sys_task_feedback_ui/sysTaskFeedback_edit.jsp" />
+				<entry
+					key="edit.4m"
+					value="/sys/task/mobile/feedback_edit.jsp" />
+				<entry
+					key="list"
+					value="/sys/task/sys_task_feedback_ui/listdata.jsp" />
+				<entry
+					key="list.4m"
+					value="/sys/task/mobile/feedback_list.jsp" />
+				<entry
+					key="list.4pda"
+					value="/sys/task/sys_task_feedback/sysTaskFeedback_list_pda.jsp" />
+				<entry
+					key="loadAttachmentInfo"
+					value="/sys/task/mobile/resource/tmpl/loadAttachmentInfo.jsp" />
+			</map>
+		</property>
+	</bean>
+	<bean
+		name="/sys/task/sys_task_evaluate/sysTaskEvaluate.do"
+		class="com.landray.kmss.sys.task.actions.SysTaskEvaluateAction"
+		lazy-init="true"
+		parent="KmssBaseAction">
+		<property
+			name="formType"
+			value="com.landray.kmss.sys.task.forms.SysTaskEvaluateForm" />
+		<property name="forwards">
+			<map>
+				<entry
+					key="view"
+					value="/sys/task/sys_task_evaluate_ui/sysTaskEvaluate_view.jsp" />
+				<entry
+					key="edit"
+					value="/sys/task/sys_task_evaluate_ui/sysTaskEvaluate_edit.jsp" />
+				<entry
+					key="edit.4m"
+					value="/sys/task/mobile/evaluate_edit.jsp" />
+				<entry
+					key="editTag"
+					value="/sys/task/sys_task_evaluate/sysTaskEvaluate_tag_edit.jsp" />
+				<entry
+					key="list"
+					value="/sys/task/sys_task_evaluate_ui/listdata.jsp" />
+				<entry
+					key="list.4pda"
+					value="/sys/task/sys_task_evaluate/sysTaskEvaluate_list_pda.jsp" />
+				<entry
+					key="list.4m"
+					value="/sys/task/mobile/evaluate_list.jsp" />
+			</map>
+		</property>
+	</bean>
+	<bean
+		name="/sys/task/sys_task_category/sysTaskCategory.do"
+		class="com.landray.kmss.sys.task.actions.SysTaskCategoryAction"
+		lazy-init="true"
+		parent="KmssBaseAction">
+		<property
+			name="formType"
+			value="com.landray.kmss.sys.task.forms.SysTaskCategoryForm" />
+		<property name="forwards">
+			<map>
+				<entry
+					key="view"
+					value="/sys/task/sys_task_category/sysTaskCategory_view.jsp" />
+				<entry
+					key="edit"
+					value="/sys/task/sys_task_category/sysTaskCategory_edit.jsp" />
+				<entry
+					key="list"
+					value="/sys/task/sys_task_category/sysTaskCategory_list.jsp" />
+			</map>
+		</property>
+	</bean>
+	<bean
+		name="/sys/task/sys_task_approve/sysTaskApprove.do"
+		class="com.landray.kmss.sys.task.actions.SysTaskApproveAction"
+		lazy-init="true"
+		parent="KmssBaseAction">
+		<property
+			name="formType"
+			value="com.landray.kmss.sys.task.forms.SysTaskApproveForm" />
+		<property name="forwards">
+			<map>
+				<entry
+					key="view"
+					value="/sys/task/sys_task_approve/sysTaskApprove_view.jsp" />
+				<entry
+					key="edit"
+					value="/sys/task/sys_task_approve/sysTaskApprove_edit.jsp" />
+				<entry
+					key="list"
+					value="/sys/task/sys_task_approve/sysTaskApprove_list.jsp" />
+			</map>
+		</property>
+	</bean>
+	<bean
+		name="/sys/task/sys_task_analyze/sysTaskAnalyze.do"
+		class="com.landray.kmss.sys.task.actions.SysTaskAnalyzeAction"
+		lazy-init="true"
+		parent="KmssBaseAction">
+		<property
+			name="formType"
+			value="com.landray.kmss.sys.task.forms.SysTaskAnalyzeForm" />
+		<property name="forwards">
+			<map>
+				<entry
+					key="view"
+					value="/sys/task/sys_task_analyze_ui/sysTaskAnalyze_view.jsp" />
+				<entry
+					key="edit"
+					value="/sys/task/sys_task_analyze_ui/sysTaskAnalyze_edit.jsp" />
+				<entry
+					key="list"
+					value="/sys/task/sys_task_analyze_ui/sysTaskAnalyze_list.jsp" />
+				<entry
+					key="listAnalyzeDept"
+					value="/sys/task/sys_task_analyze_ui/sysTaskAnalyze_dept_result_list.jsp" />
+				<entry
+					key="listAnalyzePerson"
+					value="/sys/task/sys_task_analyze_ui/sysTaskAnalyze_person_result_list.jsp" />
+				<entry
+					key="evalAnalyze"
+					value="/sys/task/sys_task_analyze/eval_analyze/sysTaskEvalAnalyze_result.jsp" />
+				<entry
+					key="weightAnalyze"
+					value="/sys/task/sys_task_analyze/weight_analyze/sysTaskWeightAnalyze_result.jsp" />
+				<entry
+					key="typeAnalyze"
+					value="/sys/task/sys_task_analyze/type_analyze/sysTaskTypeAnalyze_result.jsp" />
+				<entry
+					key="trendAnalyze"
+					value="/sys/task/sys_task_analyze/trend_analyze/sysTaskTrendAnalyze_result.jsp" />
+			</map>
+		</property>
+	</bean>
+	<bean
+		name="/sys/task/sys_task_overrule/sysTaskOverrule.do"
+		class="com.landray.kmss.sys.task.actions.SysTaskOverruleAction"
+		lazy-init="true"
+		parent="KmssBaseAction">
+		<property
+			name="formType"
+			value="com.landray.kmss.sys.task.forms.SysTaskOverruleForm" />
+		<property name="forwards">
+			<map>
+				<entry
+					key="view"
+					value="/sys/task/sys_task_overrule_ui/sysTaskOverrule_view.jsp" />
+				<entry
+					key="edit"
+					value="/sys/task/sys_task_overrule_ui/sysTaskOverrule_edit.jsp" />
+				<entry
+					key="edit.4m"
+					value="/sys/task/mobile/overrule_edit.jsp" />
+				<entry
+					key="list"
+					value="/sys/task/sys_task_overrule_ui/listdata.jsp" />
+			</map>
+		</property>
+	</bean>
+	<bean
+		name="/sys/task/sys_task_portlet/SysTaskMainPortlet.do"
+		class="com.landray.kmss.sys.task.actions.SysTaskMainPortletAction"
+		lazy-init="true"
+		parent="KmssBaseAction">
+		<property name="forwards">
+			<map>
+				<entry
+					key="portlet"
+					value="/sys/task/sys_task_ui/sysTaskMain_portlet.jsp" />
+				<entry
+					key="coproject"
+					value="/sys/task/sys_task_ui/sysTaskMain_coprojectPortlet.jsp" />
+			</map>
+		</property>
+	</bean>
+	<bean
+		name="/sys/task/sys_task_main/sysTaskMainStat.do"
+		class="com.landray.kmss.sys.task.actions.SysTaskMainStatAction"
+		lazy-init="true"
+		parent="KmssBaseAction">
+	</bean>
+	<bean
+		name="sysTaskMainPortletController"
+		class="com.landray.kmss.sys.task.actions.SysTaskMainPortletController">
+		<property name="sysTaskMainService">
+			<ref bean="sysTaskMainService" />
+		</property>
+	</bean>
+	<bean 
+        class="com.landray.kmss.sys.task.actions.SysTaskRejectAction" 
+        parent="KmssBaseAction" 
+        name="/sys/task/sys_task_reject/sysTaskReject.do" 
+        lazy-init="true">
+        <property 
+            name="formType" 
+            value="com.landray.kmss.sys.task.forms.SysTaskRejectForm"/>
+        <property 
+            name="forwards">
+            <map>
+                <entry 
+                    key="data" 
+                    value="/sys/task/sys_task_reject/sysTaskReject_data.jsp"/>
+            </map>
+        </property>
+    </bean>
+</beans>

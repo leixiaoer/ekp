@@ -1,0 +1,38 @@
+.muiKmPindagateList {
+	padding-top: .5rem;
+}
+.muiKmPindagateList li {
+	min-height: 4.2rem;
+    padding: .6rem 8.2rem .6rem 1.4rem;
+    border-bottom: 1px solid #EDEDED;
+    position: relative;
+}
+.muiKmPindagateList li:LAST-CHILD {
+    border-bottom: none;
+}
+.muiKmPindagateList li h4 {
+	font-weight: normal;
+}
+.muiKmPindagateList li div {
+	margin-top:.5rem;
+	color: #898989;
+    font-size: 13px;
+}
+.muiKmPindagateList li span.btn.disabled {
+	background-color: #BDC4CB;
+}
+
+.muiKmPindagateList li span.btn {
+	text-align:center;
+	font-size:13px;
+	width:6rem;
+    display: inline-block;
+    float: right;
+    color: #fff;
+    background-color: #42B432;
+    padding: .5rem;
+    border-radius: 5px;
+    position: absolute;
+    right: 1rem;
+    top: .8rem;
+}

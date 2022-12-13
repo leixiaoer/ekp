@@ -1,0 +1,65 @@
+{
+    "global":     {
+        "modelName": "com.landray.kmss.km.vote.model.KmVoteRecord",
+        "messageKey": "km-vote:table.kmVoteRecord",
+        "displayProperty": "fdId",
+        "serviceBean": "kmVoteRecordService",
+        "table": "km_vote_record",
+        "url": "/km/vote/km_vote_record/kmVoteRecord.do?method=view&fdId=${fdId}"
+    },
+    "attrs":     {
+        "fdId":         {
+            "propertyType": "id",
+            "generator": {"type": "assigned"}
+        },
+        "docCreateTime":         {
+            "propertyType": "simple",
+            "messageKey": "km-vote:kmVoteRecord.docCreateTime",
+            "type": "DateTime",
+            "column": "doc_create_time",
+            "notNull": "false",
+            "validate": "false"
+        },
+        "fdMainItemIds":         {
+            "propertyType": "simple",
+            "messageKey": "km-vote:kmVoteRecord.fdMainItemIds",
+            "type": "RTF",
+            "column": "fd_main_item_ids",
+            "notNull": "false",
+            "length": "1000000"
+        },
+        "fdMainItemNames":         {
+            "propertyType": "simple",
+            "messageKey": "km-vote:kmVoteRecord.fdMainItemNames",
+            "type": "RTF",
+            "column": "fd_main_item_names",
+            "notNull": "false",
+            "length": "1000000",
+            "validate": "true"
+        },
+        "docCreator":         {
+            "propertyType": "model",
+            "messageKey": "km-vote:kmVoteRecord.docCreator",
+            "type": "com.landray.kmss.sys.organization.model.SysOrgPerson",
+            "column": "doc_creator_id",
+            "notNull": "false",
+            "validate": "false"
+        },
+        "kmVoteMain":         {
+            "propertyType": "model",
+            "messageKey": "km-vote:kmVoteRecord.kmVoteMain",
+            "type": "com.landray.kmss.km.vote.model.KmVoteMain",
+            "column": "fd_main_id",
+            "notNull": "true",
+            "validate": "false"
+        },
+        "kmVoteCommentId":         {
+            "propertyType": "simple",
+            "messageKey": "km-vote:kmVoteRecord.voteComment",
+            "type": "String",
+            "column": "fd_comment_id",
+            "notNull": "false",
+            "validate": "false"
+        }
+    }
+}

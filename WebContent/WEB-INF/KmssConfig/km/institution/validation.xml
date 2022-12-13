@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE form-validation PUBLIC "-//Apache Software Foundation//DTD Commons Validator Rules Configuration 1.1//EN" "http://jakarta.apache.org/commons/dtds/validator_1_1.dtd">
+<form-validation>
+	<formset>
+		<form name="kmInstitutionKnowledgeForm">
+			<field
+				property="docSubject"
+				depends="required,maxlength">
+				<arg
+					key="kmInstitution.docSubject"
+					bundle="km-institution"
+					position="0" />
+				<arg1
+					name="maxlength"
+					key="${var:maxlength}"
+					resource="false" />
+				<var>
+					<var-name>maxlength</var-name>
+					<var-value>200</var-value>
+				</var>
+			</field>
+			<field
+				property="docDeptId"
+				depends="required">
+				<arg
+					key="sysDocBaseInfo.docDept"
+					bundle="sys-doc"
+					position="0" />
+			
+			</field>
+			<field
+				property="fdNumber"
+				depends="required,maxlength">
+				<arg
+					key="kmInstitution.fdNumber"
+					bundle="km-institution"
+					position="0" />
+				<arg1
+					name="maxlength"
+					key="${var:maxlength}"
+					resource="false" />
+				<var>
+					<var-name>maxlength</var-name>
+					<var-value>200</var-value>
+				</var>
+			</field>
+		</form>
+		<form name="kmInstitutionTemplateForm">
+			<field
+				property="fdName"
+				depends="required,maxlength">
+				<arg
+					key="kmInstitutionTemplate.fdName"
+					bundle="km-institution"
+					position="0" />
+				<arg1
+					name="maxlength"
+					key="${var:maxlength}"
+					resource="false" />
+				<var>
+					<var-name>maxlength</var-name>
+					<var-value>200</var-value>
+				</var>
+			</field>
+			<field
+				property="fdOrder"
+				depends="integer">
+				<arg
+					key="model.fdOrder"
+					position="0" />
+			</field>					
+		</form>
+	</formset>
+</form-validation>

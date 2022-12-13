@@ -1,0 +1,110 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN" 
+    "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+	<class
+		name="com.landray.kmss.geesun.oitems.model.GeesunOitemsShoppingTrolley"
+		table="geesun_oitems_shopping_trolley">
+		<id
+			name="fdId"
+			column="fd_id"
+			length="36">
+			<generator class="assigned" />
+		</id>
+
+
+		<property
+			name="fdApplicationNumber"
+			column="fd_application_number"
+			update="true"
+			insert="true"
+			not-null="false"
+			length="12" />
+		
+	
+		<property
+			name="fdApplicationId"
+			column="fd_application_temp_id"
+			update="true"
+			insert="true"
+			not-null="false"
+			 />
+	    <property
+			name="fdNo"
+			column="fd_no"
+			update="true"
+			insert="true"
+			not-null="false"
+			length="100" />
+		<property
+			name="fdName"
+			column="fd_name"
+			update="true"
+			insert="true"
+			not-null="false"
+			length="200" />
+		<property
+			name="fdCategoryName"
+			column="fd_category_name"
+			insert="true"
+			update="true"
+			not-null="false" />
+		<property
+			name="fdSpecification"
+			column="fd_specification"
+			update="true"
+			insert="true"
+			not-null="false"
+			length="100" />
+		<property
+			name="fdBrand"
+			column="fd_brand"
+			update="true"
+			insert="true"
+			not-null="false"
+			length="200" />
+		<property
+			name="fdUnit"
+			column="fd_unit"
+			update="true"
+			insert="true"
+			not-null="false"
+			length="100" />
+		<property
+			name="fdAmount"
+			column="fd_amount"
+			update="true"
+			insert="true"
+			not-null="false"
+			length="12" />
+		 <property
+			name="fdReferencePrice"
+			column="fd_reference_price"
+			update="true"
+			insert="true"
+			not-null="false"
+			length="100" />
+		<many-to-one
+			name="geesunOitemsListing"
+			column="fd_listing_id"
+			insert="true"
+			update="true"
+			not-null="false" />
+		<many-to-one
+			name="geesunOitemsWarehousingRecordJoinList"
+			column="fd_warehousingjoinlist_id"
+			insert="true"
+			update="true"
+			not-null="false" />
+			
+		<many-to-one
+			name="geesunOitemsBudgerApplication"
+			column="fd_application_id"
+			insert="true"
+			update="true"
+			not-null="false" />
+
+	</class>
+</hibernate-mapping>

@@ -1,0 +1,73 @@
+﻿<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+	"-//Hibernate/Hibernate Mapping DTD 3.0//EN" 
+	"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+	<class
+		name="com.landray.kmss.geesun.org.model.GeesunOrgEkp"
+		table="geesun_org_ekp">
+		<id
+			name="fdId"
+			column="fd_id"
+			length="36">
+			<generator
+				class="assigned" />
+		</id>
+
+		<property
+			name="docCreateTime"
+			column="doc_create_time"
+			update="true"
+			insert="true"
+			not-null="false" 
+			index="idx_geesunOrgEkp_docCreateTime"/>
+
+		<property
+			name="fdResult"
+			column="fd_result"
+			update="true"
+			insert="true"
+			length="10"
+			index="idx_geesunOrgEkp_fdResult"
+			not-null="false"/>
+
+		<property
+			name="fdType"
+			column="fd_type"
+			update="true"
+			insert="true"
+			length="20"
+			index="idx_geesunOrgEkp_fdType"
+			not-null="false" />
+			
+		<property
+			name="fdInput"
+			column="fd_input"
+			update="true"
+			insert="true"
+			length="500"
+			not-null="false" />
+
+		<property
+			name="fdMessage"
+			column="fd_message"
+			update="true"
+			insert="true"
+			length="1000000"
+			not-null="false"
+			type="com.landray.kmss.common.dao.ClobStringType"
+			lazy="true" />
+
+		<property
+			name="fdReturns"
+			column="fd_returns"
+			update="true"
+			insert="true"
+			length="1000000"
+			not-null="false"
+			type="com.landray.kmss.common.dao.ClobStringType"
+			lazy="true" />
+
+	</class>
+</hibernate-mapping>

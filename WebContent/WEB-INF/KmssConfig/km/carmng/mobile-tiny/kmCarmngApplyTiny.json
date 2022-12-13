@@ -1,0 +1,10 @@
+{
+	"id": "kmCarmngApplyTiny",
+	"title": "移动端车辆审批相关js文件",
+	"desc": "移动端车辆待我审，我已审，我提交的js文件",
+	"jsList": [
+	    "/km/carmng/mobile/km_carmng_apply/js/",
+		"/km/carmng/mobile/js/list/item/CarApplyItemListMixin.js",
+		"/km/carmng/mobile/js/list/item/CarApplyItemMixin.js"
+	]
+}

@@ -1,0 +1,108 @@
+{
+    "global":     {
+        "modelName": "com.landray.kmss.km.asset.model.KmAssetApplyRent",
+        "messageKey": "km-asset:table.kmAssetApplyRent",
+        "displayProperty": "docSubject",
+        "serviceBean": "kmAssetApplyRentService",
+        "table": "km_asset_apply_base",
+        "url": "/km/asset/km_asset_apply_rent/kmAssetApplyRent.do?method=view&fdId=${fdId}",
+        "extendClass": "com.landray.kmss.km.asset.model.KmAssetApplyBase",
+        "discriminatorValue": "com.landray.kmss.km.asset.model.KmAssetApplyRent"
+    },
+    "attrs":     {
+        "fdId":         {
+            "propertyType": "id",
+            "generator": {"type": "assigned"}
+        },
+        "fdRentBranch":         {
+            "propertyType": "model",
+            "messageKey": "km-asset:kmAssetApplyRent.fdRentBranch",
+            "type": "com.landray.kmss.sys.organization.model.SysOrgElement",
+            "column": "fd_rent_branch",
+            "notNull": "true",
+            "length": "36",
+            "validate": "true",
+            "canSearch": "true",
+            "canLogShow":"1"
+        },
+        "fdRentDept":         {
+            "propertyType": "model",
+            "messageKey": "km-asset:kmAssetApplyRent.fdRentDept",
+            "type": "com.landray.kmss.sys.organization.model.SysOrgElement",
+            "column": "fd_rent_dept",
+            "notNull": "true",
+            "length": "36",
+            "validate": "true",
+            "canSearch": "true",
+            "dialogJS": "Dialog_Address(!{mulSelect}, '!{idField}', '!{nameField}', null, ORG_TYPE_DEPT);",
+            "canLogShow":"1"
+        },
+        "fdForeignBranch":         {
+            "propertyType": "simple",
+            "messageKey": "km-asset:kmAssetApplyRent.fdForeignBranch",
+            "type": "String",
+            "column": "fd_foreign_branch",
+            "notNull": "false",
+            "length": "36",
+            "validate": "true",
+            "canSearch": "true",
+            "canLogShow":"1"
+        },
+        "fdForeignDept":         {
+            "propertyType": "simple",
+            "messageKey": "km-asset:kmAssetApplyRent.fdForeignDept",
+            "type": "String",
+            "column": "fd_foreign_dept",
+            "notNull": "false",
+            "length": "36",
+            "validate": "true",
+            "canSearch": "true",
+            "canLogShow":"1"
+        },
+        "fdStartDate":         {
+            "propertyType": "simple",
+            "messageKey": "km-asset:kmAssetApplyRent.fdStartDate",
+            "type": "DateTime",
+            "column": "fd_start_date",
+            "notNull": "true",
+            "validate": "true",
+            "canSearch": "true",
+            "canLogShow":"1"
+        },
+        "fdEndDate":         {
+            "propertyType": "simple",
+            "messageKey": "km-asset:kmAssetApplyRent.fdEndDate",
+            "type": "DateTime",
+            "column": "fd_end_date",
+            "notNull": "true",
+            "validate": "true",
+            "canSearch": "true",
+            "canLogShow":"1"
+        },
+        "fdDays":         {
+            "propertyType": "simple",
+            "messageKey": "km-asset:kmAssetApplyRent.fdDays",
+            "type": "Integer",
+            "column": "fd_days",
+            "notNull": "false",
+            "length": "4",
+            "validate": "true",
+            "canSearch": "true",
+            "canLogShow":"1"
+        },
+        "fdApplyRentList":         {
+            "propertyType": "list",
+            "messageKey": "km-asset:kmAssetApplyRent.fdApplyRentList",
+            "type": "com.landray.kmss.km.asset.model.KmAssetApplyRentList",
+            "column": "fd_apply_rent_id",
+            "cascade": "all-delete-orphan",
+            "table": "km_asset_apply_rent_list",
+            "canLogShow":"1"
+        }
+    },
+    "attachments": {"attachment":     {
+        "propertyType": "att",
+        "messageKey": "km-asset:kmAssetApplyBase.attachMent",
+        "canDisplay": "true"
+    }}
+}

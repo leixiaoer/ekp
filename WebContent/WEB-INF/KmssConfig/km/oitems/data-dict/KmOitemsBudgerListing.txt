@@ -1,0 +1,35 @@
+{
+    "global":     {
+        "modelName": "com.landray.kmss.km.oitems.model.KmOitemsBudgerListing",
+        "messageKey": "km-oitems:table.kmOitemsBudgerListing",
+        "table": "km_oitems_budger_list"
+    },
+    "attrs":     {
+        "fdId":         {
+            "propertyType": "id",
+            "generator": {"type": "assigned"}
+        },
+        "fdApplicationNumber":         {
+            "propertyType": "simple",
+            "messageKey": "km-oitems:kmOitemsShoppingTrolley.fdApplicationNumber",
+            "type": "Integer",
+            "column": "fd_application_number",
+            "notNull": "false",
+            "length": "12"
+        },
+        "kmOitemsBudgerApplication":         {
+            "propertyType": "model",
+            "messageKey": "",
+            "type": "com.landray.kmss.km.oitems.model.KmOitemsBudgerApplication",
+            "column": "fd_application_id",
+            "notNull": "false"
+        },
+        "kmOitemsListing":         {
+            "propertyType": "model",
+            "messageKey": "",
+            "type": "com.landray.kmss.km.oitems.model.KmOitemsListing",
+            "column": "fd_listing_id",
+            "notNull": "false"
+        }
+    }
+}

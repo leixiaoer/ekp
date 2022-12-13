@@ -1,0 +1,268 @@
+.muiPortalMenuSlide {
+  overflow-y: hidden;
+  position: relative;
+}
+.mulPortalSlide {
+  width: 100%;
+}
+.muiPortalMenuSlide .muiPortalMenuSlideSwitch {
+  right: 0;
+  text-align: center;
+  padding: .3rem 1rem 1rem;
+  width: 100%;
+  /*height: 3.5rem;
+  line-height: 3.5rem;*/
+  color: #fff;
+  font-size: 0;
+  position: absolute;
+  bottom: 0;
+  z-index: 2;
+  text-overflow: ellipsis;
+}
+.muiPortalMenuSlideSwitch .muiPortalMenuSlideSwitchSpan {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background-color: #b0b0b0;
+  display: inline-block;
+  margin-right: .5rem;
+}
+.muiPortalMenuSlideSwitch .muiPortalMenuSlideSwitchSpan.on {
+  background-color: #25a8e8;
+}
+.muiPortalMenuSlideItem {
+  display: inline-block;
+  width: 7rem;
+  text-align: center;
+}
+
+.muiPortalMenuSlide .MenuModuleIndex0 .muiPortalMenuModule{
+	background-color: #5a9cff;
+}
+.muiPortalMenuSlide .MenuModuleIndex1 .muiPortalMenuModule{
+	background-color: #5cd66e;
+}
+.muiPortalMenuSlide .MenuModuleIndex2 .muiPortalMenuModule{
+	background-color: #ffc526;
+}
+.muiPortalMenuSlide .MenuModuleIndex3 .muiPortalMenuModule{
+	background-color: #fe7373;
+}
+.muiPortalMenuSlide .MenuModuleIndex4 .muiPortalMenuModule{
+	background-color: #b39af1;
+}
+.muiPortalMenuSlide .MenuModuleIndex5 .muiPortalMenuModule{
+	background-color: #ff9ad1;
+}
+.muiPortalMenuSlide .MenuModuleIndex6 .muiPortalMenuModule{
+	background-color: #ff8347;
+}
+.muiPortalMenuSlide .MenuModuleIndex7 .muiPortalMenuModule{
+	background-color: #63d3bd;
+}
+
+
+.muiPortalMenuSlideItem .muiPortalMenuModule .mui {
+  color: #fff;
+}
+.mulPortalSlideInner {
+  height: 9rem;
+}
+.muiPortalMenuSlide .muiPortalMenuModule {
+  margin: 0 auto;
+  width: 42px;
+  height: 42px;
+  line-height: 42px;
+  text-align: center;
+  color: #fff;
+  font-size: 2.8rem;
+  border-radius: 50%;
+  background-color: #f8f8f8;
+  display: block;
+  position: relative;
+  font-size: 1.6rem;
+}
+
+/* 移动端优化 */
+.mui_ekp_portal_item{
+
+}
+.mui_ekp_portal_item::-webkit-scrollbar {
+	display: none;
+}
+.mui_ekp_portal_item ul::-webkit-scrollbar {
+	display: none;
+}
+.mui_ekp_portal_item ul>li>a {
+	display: inline-block;
+}
+.mui_ekp_portal_item ul{
+	padding: 0 1.25rem;	
+}
+.mui_ekp_portal_item ul>li{
+	width: 20%;
+	float: left;
+	text-align: center;
+	height: 10rem;	
+}
+.mui_ekp_portal_item ul>li>a>div{
+	display: block;
+	margin:0 auto;
+	width: 5.2rem;
+	height: 5.2rem;
+	margin-bottom:0.4rem;
+}
+.mui_ekp_portal_item ul>li>a>span {
+	overflow: hidden;
+	text-overflow: ellipsis;
+	display: -webkit-box;
+	-webkit-line-clamp: 1;
+	-webkit-box-orient: vertical;
+}
+
+.muiPortalClickItem .imgBox {
+	line-height: 1.4;
+	width: 100%;
+	height: 100%;
+	vertical-align: top;
+}
+
+.imgBox {
+	background-size: 100%;
+}
+
+.mui-quick-entry-01-icon {
+	background: url(../../../../sys/mportal/mobile/menu/img/quick-entry-01.png) no-repeat center;
+	background-size: 100%; 
+}
+.mui-quick-entry-02-icon {
+	background: url(../../../../sys/mportal/mobile/menu/img/quick-entry-02.png) no-repeat center;
+	background-size: 100%;
+}
+.mui-quick-entry-03-icon {
+	background: url(../../../../sys/mportal/mobile/menu/img/quick-entry-03.png) no-repeat center;
+	background-size: 100%;
+}
+.mui-quick-entry-04-icon {
+	background: url(../../../../sys/mportal/mobile/menu/img/quick-entry-04.png) no-repeat center;
+	background-size: 100%;
+}
+.mui-quick-entry-05-icon {
+	background: url(../../../../sys/mportal/mobile/menu/img/quick-entry-05.png) no-repeat center;
+	background-size: 100%;
+}
+.mui-quick-entry-06-icon {
+	background: url(../../../../sys/mportal/mobile/menu/img/quick-entry-06.png) no-repeat center;
+	background-size: 100%;
+}
+.mui-quick-entry-07-icon {
+	background: url(../../../../sys/mportal/mobile/menu/img/quick-entry-07.png) no-repeat center;
+	background-size: 100%;
+}
+.mui-quick-entry-08-icon {
+	background: url(../../../../sys/mportal/mobile/menu/img/quick-entry-08.png) no-repeat center;
+	background-size: 100%;
+}
+.mui-quick-entry-09-icon {
+	background: url(../../../../sys/mportal/mobile/menu/img/quick-entry-09.png) no-repeat center;
+	background-size: 100%;
+}
+.mui-quick-entry-10-icon {
+	background: url(../../../../sys/mportal/mobile/menu/img/quick-entry-10.png) no-repeat center;
+	background-size: 100%;
+}
+.mui-quick-entry-11-icon {
+	background: url(../../../../sys/mportal/mobile/menu/img/quick-entry-11.png) no-repeat center;
+	background-size: 100%;
+}
+.mui-quick-entry-12-icon {
+	background: url(../../../../sys/mportal/mobile/menu/img/quick-entry-12.png) no-repeat center;
+	background-size: 100%;
+}
+.mui-quick-entry-13-icon {
+	background: url(../../../../sys/mportal/mobile/menu/img/quick-entry-13.png) no-repeat center;
+	background-size: 100%;
+}
+.mui-quick-entry-14-icon {
+	background: url(../../../../sys/mportal/mobile/menu/img/quick-entry-14.png) no-repeat center;
+	background-size: 100%;
+}
+.mui-quick-entry-15-icon {
+	background: url(../../../../sys/mportal/mobile/menu/img/quick-entry-15.png) no-repeat center;
+	background-size: 100%;
+}
+.mui-quick-entry-16-icon {
+	background: url(../../../../sys/mportal/mobile/menu/img/quick-entry-16.png) no-repeat center;
+	background-size: 100%;
+}
+.mui-quick-entry-17-icon {
+	background: url(../../../../sys/mportal/mobile/menu/img/quick-entry-17.png) no-repeat center;
+	background-size: 100%;
+}
+.mui-quick-entry-18-icon {
+	background: url(../../../../sys/mportal/mobile/menu/img/quick-entry-18.png) no-repeat center;
+	background-size: 100%;
+}
+.mui-quick-entry-19-icon {
+	background: url(../../../../sys/mportal/mobile/menu/img/quick-entry-19.png) no-repeat center;
+	background-size: 100%;
+}
+.mui-quick-entry-20-icon {
+	background: url(../../../../sys/mportal/mobile/menu/img/quick-entry-20.png) no-repeat center;
+	background-size: 100%;
+}
+.mui-quick-entry-21-icon {
+	background: url(../../../../sys/mportal/mobile/menu/img/quick-entry-21.png) no-repeat center;
+	background-size: 100%;
+}
+.mui-quick-entry-22-icon {
+	background: url(../../../../sys/mportal/mobile/menu/img/quick-entry-22.png) no-repeat center;
+	background-size: 100%;
+}
+.mui-quick-entry-23-icon {
+	background: url(../../../../sys/mportal/mobile/menu/img/quick-entry-23.png) no-repeat center;
+	background-size: 100%;
+}
+.mui-quick-entry-24-icon {
+	background: url(../../../../sys/mportal/mobile/menu/img/quick-entry-24.png) no-repeat center;
+	background-size: 100%;
+}
+
+.muiPortalIcon {
+	font-size: 3.4rem !important;
+}
+
+.muiPortalIcon {
+	border-radius: 18px;
+	color: #fff;
+}
+
+/* navBarSlide start */
+.mui_ekp_portal_item ul.withbg{
+	background: url(./imgs/item-bg.png) no-repeat;
+	background-size: 20rem 8rem;
+    background-position: 98% 30%;
+}
+.swiper-pagination-bullets {
+	position: absolute;
+	bottom: 0;
+    left: 0px;
+    width: 100%;
+    text-align: center;
+}
+.swiper-pagination-bullets .swiper-pagination-bullet{
+	background-color: #EAEBF0;
+	width: 1.38rem;
+	height:3px;
+	border-radius: 10px;
+	margin:0;
+	display: inline-block;
+	margin-right: 6px
+}
+.swiper-pagination-bullets .swiper-pagination-bullet.swiper-pagination-bullet-active{
+	background-color: #4285F4;
+}
+/* navBarSlide end */
+
+
+

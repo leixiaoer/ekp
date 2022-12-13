@@ -1,0 +1,283 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<plugin
+	xmlns="http://www.example.org/plugin-config"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.example.org/plugin-config ../../../../../plugin.xsd ">
+    <!-- 分类/模板 -->
+	<extension
+		point="com.landray.kmss.sys.handover">
+		<item
+			name="config">
+			<param
+				name="module"
+				value="com.landray.kmss.km.asset.model.KmAssetCategory" />
+			<param 
+				name="messageKey" 
+				value="km-asset:table.kmAssetCategoryHandover"/>
+			<param 
+				name="provider" 
+				value="com.landray.kmss.sys.handover.support.config.catetemplate.CateTempProvider"/>
+			<param 
+				name="order" 
+				value="3"/>
+		</item>
+		<item
+			name="config">
+			<param
+				name="module"
+				value="com.landray.kmss.km.asset.model.KmAssetApplyTemplate" />
+			<param 
+				name="messageKey" 
+				value="km-asset:table.kmAssetApplyTemplateHandover"/>
+			<param 
+				name="provider" 
+				value="com.landray.kmss.km.asset.handover.KmAssetApplyTempProvider"/>
+			<param 
+				name="order" 
+				value="4"/>
+		</item>
+		<item
+			name="config">
+			<param
+				name="module"
+				value="com.landray.kmss.km.asset.model.KmAssetAddressCate" />
+			<param 
+				name="messageKey" 
+				value="km-asset:table.kmAssetAddressCateHandover"/>
+			<param 
+				name="provider" 
+				value="com.landray.kmss.km.asset.handover.KmAssetAddressCateProvider"/>
+			<param 
+				name="order" 
+				value="5"/>
+		</item>
+	</extension>
+	
+	<extension
+		point="com.landray.kmss.sys.handover.doc.auth">
+		<!-- 资产卡片 -->
+		<item
+			name="config">
+			<param
+				name="module"
+				value="com.landray.kmss.km.asset.model.KmAssetCard" />
+			<param 
+				name="messageKey" 
+				value="km-asset:handover.km.asset.card"/>
+			<param 
+				name="provider" 
+				value="com.landray.kmss.sys.handover.support.config.auth.DocAuthProvider"/>
+			<param 
+				name="order" 
+				value="3"/>
+		</item>
+		<!-- 资产申购单 -->
+		<item
+			name="config">
+			<param
+				name="module"
+				value="com.landray.kmss.km.asset.model.KmAssetApplyBuy" />
+			<param 
+				name="messageKey" 
+				value="km-asset:handover.km.asset.Buy"/>
+			<param 
+				name="provider" 
+				value="com.landray.kmss.km.asset.handover.KmAssetApplyProvider"/>
+			<param 
+				name="subSql" 
+				value="and fd_doc_id in (select distinct fd_id from km_asset_apply_base where subclass_modelname='com.landray.kmss.km.asset.model.KmAssetApplyBuy')"/>
+			<param 
+				name="order" 
+				value="3"/>
+		</item>
+		<!-- 资产采购单 -->
+		<item
+			name="config">
+			<param
+				name="module"
+				value="com.landray.kmss.km.asset.model.KmAssetApplyStock" />
+			<param 
+				name="messageKey" 
+				value="km-asset:handover.km.asset.Stock"/>
+			<param 
+				name="provider" 
+				value="com.landray.kmss.km.asset.handover.KmAssetApplyProvider"/>
+			<param 
+				name="subSql" 
+				value="and fd_doc_id in (select distinct fd_id from km_asset_apply_base where subclass_modelname='com.landray.kmss.km.asset.model.KmAssetApplyStock')"/>
+			<param 
+				name="order" 
+				value="3"/>
+		</item>
+		<!-- 资产入库单 -->
+		<item
+			name="config">
+			<param
+				name="module"
+				value="com.landray.kmss.km.asset.model.KmAssetApplyIn" />
+			<param 
+				name="messageKey" 
+				value="km-asset:handover.km.asset.In"/>
+			<param 
+				name="provider" 
+				value="com.landray.kmss.km.asset.handover.KmAssetApplyProvider"/>
+			<param 
+				name="subSql" 
+				value="and fd_doc_id in (select distinct fd_id from km_asset_apply_base where subclass_modelname='com.landray.kmss.km.asset.model.KmAssetApplyIn')"/>
+			<param 
+				name="order" 
+				value="3"/>
+		</item>
+		<!-- 资产领用单 -->
+		<item
+			name="config">
+			<param
+				name="module"
+				value="com.landray.kmss.km.asset.model.KmAssetApplyGet" />
+			<param 
+				name="messageKey" 
+				value="km-asset:handover.km.asset.Get"/>
+			<param 
+				name="provider" 
+				value="com.landray.kmss.km.asset.handover.KmAssetApplyProvider"/>
+			<param 
+				name="subSql" 
+				value="and fd_doc_id in (select distinct fd_id from km_asset_apply_base where subclass_modelname='com.landray.kmss.km.asset.model.KmAssetApplyGet')"/>
+			<param 
+				name="order" 
+				value="3"/>
+		</item>
+		<!-- 资产调拨单 -->
+		<item
+			name="config">
+			<param
+				name="module"
+				value="com.landray.kmss.km.asset.model.KmAssetApplyDivert" />
+			<param 
+				name="messageKey" 
+				value="km-asset:handover.km.asset.Divert"/>
+			<param 
+				name="provider" 
+				value="com.landray.kmss.km.asset.handover.KmAssetApplyProvider"/>
+			<param 
+				name="subSql" 
+				value="and fd_doc_id in (select distinct fd_id from km_asset_apply_base where subclass_modelname='com.landray.kmss.km.asset.model.KmAssetApplyDivert')"/>
+			<param 
+				name="order" 
+				value="3"/>
+		</item>
+		<!-- 资产维修/保养单 -->
+		<item
+			name="config">
+			<param
+				name="module"
+				value="com.landray.kmss.km.asset.model.KmAssetApplyRepair" />
+			<param 
+				name="messageKey" 
+				value="km-asset:handover.km.asset.Repair"/>
+			<param 
+				name="provider" 
+				value="com.landray.kmss.km.asset.handover.KmAssetApplyProvider"/>
+			<param 
+				name="subSql" 
+				value="and fd_doc_id in (select distinct fd_id from km_asset_apply_base where subclass_modelname='com.landray.kmss.km.asset.model.KmAssetApplyRepair')"/>
+			<param 
+				name="order" 
+				value="3"/>
+		</item>
+		<!-- 资产处置单 -->
+		<item
+			name="config">
+			<param
+				name="module"
+				value="com.landray.kmss.km.asset.model.KmAssetApplyDeal" />
+			<param 
+				name="messageKey" 
+				value="km-asset:handover.km.asset.Deal"/>
+			<param 
+				name="provider" 
+				value="com.landray.kmss.km.asset.handover.KmAssetApplyProvider"/>
+			<param 
+				name="subSql" 
+				value="and fd_doc_id in (select distinct fd_id from km_asset_apply_base where subclass_modelname='com.landray.kmss.km.asset.model.KmAssetApplyDeal')"/>
+			<param 
+				name="order" 
+				value="3"/>
+		</item>
+		<!-- 资产变更单 -->
+		<item
+			name="config">
+			<param
+				name="module"
+				value="com.landray.kmss.km.asset.model.KmAssetApplyChange" />
+			<param 
+				name="messageKey" 
+				value="km-asset:handover.km.asset.Change"/>
+			<param 
+				name="provider" 
+				value="com.landray.kmss.km.asset.handover.KmAssetApplyProvider"/>
+			<param 
+				name="subSql" 
+				value="and fd_doc_id in (select distinct fd_id from km_asset_apply_base where subclass_modelname='com.landray.kmss.km.asset.model.KmAssetApplyChange')"/>
+			<param 
+				name="order" 
+				value="3"/>
+		</item>
+		<!-- 资产出租/出借单-->
+		<item
+			name="config">
+			<param
+				name="module"
+				value="com.landray.kmss.km.asset.model.KmAssetApplyRent" />
+			<param 
+				name="messageKey" 
+				value="km-asset:handover.km.asset.Rent"/>
+			<param 
+				name="provider" 
+				value="com.landray.kmss.km.asset.handover.KmAssetApplyProvider"/>
+			<param 
+				name="subSql" 
+				value="and fd_doc_id in (select distinct fd_id from km_asset_apply_base where subclass_modelname='com.landray.kmss.km.asset.model.KmAssetApplyRent')"/>
+			<param 
+				name="order" 
+				value="3"/>
+		</item>
+		<!-- 资产归还单 -->
+		<item
+			name="config">
+			<param
+				name="module"
+				value="com.landray.kmss.km.asset.model.KmAssetApplyReturn" />
+			<param 
+				name="messageKey" 
+				value="km-asset:handover.km.asset.Return"/>
+			<param 
+				name="provider" 
+				value="com.landray.kmss.km.asset.handover.KmAssetApplyProvider"/>
+			<param 
+				name="subSql" 
+				value="and fd_doc_id in (select distinct fd_id from km_asset_apply_base where subclass_modelname='com.landray.kmss.km.asset.model.KmAssetApplyReturn')"/>
+			<param 
+				name="order" 
+				value="3"/>
+		</item>
+	</extension>
+	<!-- 工作交接（事项交接） -->
+	<extension point="com.landray.kmss.sys.handover.item">
+		<item name="config">
+			<!-- 主文档全名称 -->
+			<param
+				name="module"
+				value="com.landray.kmss.km.asset.model.KmAssetCard" />
+			<param
+				name="messageKey"
+				value="km-asset:table.kmAssetCardItemHandover" />
+			<param
+				name="handler"
+				value="com.landray.kmss.km.asset.handover.KmAssetCardItemHandler" />
+			<param
+				name="provider"
+				value="com.landray.kmss.km.asset.handover.KmAssetCardItemProvider" />
+		</item>
+	</extension>
+</plugin>

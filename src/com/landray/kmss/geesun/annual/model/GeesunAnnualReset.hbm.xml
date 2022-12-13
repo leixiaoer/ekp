@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class 
+        name="com.landray.kmss.geesun.annual.model.GeesunAnnualReset" 
+        table="geesun_annual_reset">
+        <id 
+            name="fdId" 
+            column="fd_id" 
+            length="36"/>
+        <property 
+            name="fdHasExecute" 
+            column="fd_has_execute" 
+            update="true" 
+            insert="true" 
+            length="10"/>
+        <property 
+            name="fdExecuteTime" 
+            column="fd_execute_time" 
+            update="true" 
+            insert="true"/>
+        <many-to-one 
+            name="fdOwner" 
+            column="fd_owner_id" 
+            update="true" 
+            insert="true"/>
+        <many-to-one 
+            name="fdAnnual" 
+            column="fd_annual_id" 
+            update="true" 
+            insert="true"/>
+    </class>
+</hibernate-mapping>

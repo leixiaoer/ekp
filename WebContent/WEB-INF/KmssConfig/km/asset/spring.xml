@@ -1,0 +1,1087 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans
+	xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.0.xsd">
+	<bean
+		id="kmAssetApplyBuyDao"
+		parent="kmAssetApplyBaseDao"
+		class="com.landray.kmss.km.asset.dao.hibernate.KmAssetApplyBuyDaoImp">
+		<property
+			name="modelName"
+			value="com.landray.kmss.km.asset.model.KmAssetApplyBuy" />
+	</bean>
+	<bean
+		id="kmAssetApplyBuyTarget"
+		parent="kmAssetApplyBaseTarget"
+		class="com.landray.kmss.km.asset.service.spring.KmAssetApplyBuyServiceImp">
+		<property
+			name="baseDao">
+			<ref
+				local="kmAssetApplyBuyDao" />
+		</property>
+	</bean>
+	<bean
+		id="kmAssetApplyBuyService"
+		parent="kmAssetApplyBaseService">
+		<property
+			name="target">
+			<ref
+				local="kmAssetApplyBuyTarget" />
+		</property>
+	</bean>
+
+	<bean
+		id="kmAssetApplyRepairExpendDao"
+		parent="KmssAuthBaseDao"
+		class="com.landray.kmss.km.asset.dao.hibernate.KmAssetApplyRepairExpendDaoImp">
+		<property
+			name="modelName"
+			value="com.landray.kmss.km.asset.model.KmAssetApplyRepairExpend" />
+	</bean>
+	<bean
+		id="kmAssetApplyRepairExpendTarget"
+		parent="KmssBaseTarget"
+		class="com.landray.kmss.km.asset.service.spring.KmAssetApplyRepairExpendServiceImp">
+		<property
+			name="baseDao">
+			<ref
+				local="kmAssetApplyRepairExpendDao" />
+		</property>
+	</bean>
+	<bean
+		id="kmAssetApplyRepairExpendService"
+		parent="KmssBaseService">
+		<property
+			name="target">
+			<ref
+				local="kmAssetApplyRepairExpendTarget" />
+		</property>
+	</bean>
+
+	<bean
+		id="kmAssetApplyRentDao"
+		parent="KmssAuthBaseDao"
+		class="com.landray.kmss.km.asset.dao.hibernate.KmAssetApplyRentDaoImp">
+		<property
+			name="modelName"
+			value="com.landray.kmss.km.asset.model.KmAssetApplyRent" />
+	</bean>
+	<bean
+		id="kmAssetApplyRentTarget"
+		parent="kmAssetApplyBaseTarget"
+		class="com.landray.kmss.km.asset.service.spring.KmAssetApplyRentServiceImp">
+		<property
+			name="baseDao">
+			<ref
+				local="kmAssetApplyRentDao" />
+		</property>
+	</bean>
+	<bean
+		id="kmAssetApplyRentService"
+		parent="kmAssetApplyBaseService">
+		<property
+			name="target">
+			<ref
+				local="kmAssetApplyRentTarget" />
+		</property>
+	</bean>
+
+	<bean
+		id="kmAssetApplyDivertListDao"
+		parent="KmssAuthBaseDao"
+		class="com.landray.kmss.km.asset.dao.hibernate.KmAssetApplyDivertListDaoImp">
+		<property
+			name="modelName"
+			value="com.landray.kmss.km.asset.model.KmAssetApplyDivertList" />
+	</bean>
+	<bean
+		id="kmAssetApplyDivertListTarget"
+		parent="KmssBaseTarget"
+		class="com.landray.kmss.km.asset.service.spring.KmAssetApplyDivertListServiceImp">
+		<property
+			name="baseDao">
+			<ref
+				local="kmAssetApplyDivertListDao" />
+		</property>
+	</bean>
+	<bean
+		id="kmAssetApplyDivertListService"
+		parent="KmssBaseService">
+		<property
+			name="target">
+			<ref
+				local="kmAssetApplyDivertListTarget" />
+		</property>
+	</bean>
+
+	<bean
+		id="kmAssetApplyBuyListDao"
+		parent="KmssAuthBaseDao"
+		class="com.landray.kmss.km.asset.dao.hibernate.KmAssetApplyBuyListDaoImp">
+		<property
+			name="modelName"
+			value="com.landray.kmss.km.asset.model.KmAssetApplyBuyList" />
+	</bean>
+	<bean
+		id="kmAssetApplyBuyListTarget"
+		parent="KmssBaseTarget"
+		class="com.landray.kmss.km.asset.service.spring.KmAssetApplyBuyListServiceImp">
+		<property
+			name="baseDao">
+			<ref
+				local="kmAssetApplyBuyListDao" />
+		</property>
+	</bean>
+	<bean
+		id="kmAssetApplyBuyListService"
+		parent="KmssBaseService">
+		<property
+			name="target">
+			<ref
+				local="kmAssetApplyBuyListTarget" />
+		</property>
+	</bean>
+
+	<bean
+		id="kmAssetApplyReturnListDao"
+		parent="KmssAuthBaseDao"
+		class="com.landray.kmss.km.asset.dao.hibernate.KmAssetApplyReturnListDaoImp">
+		<property
+			name="modelName"
+			value="com.landray.kmss.km.asset.model.KmAssetApplyReturnList" />
+	</bean>
+	<bean
+		id="kmAssetApplyReturnListTarget"
+		parent="KmssBaseTarget"
+		class="com.landray.kmss.km.asset.service.spring.KmAssetApplyReturnListServiceImp">
+		<property
+			name="baseDao">
+			<ref
+				local="kmAssetApplyReturnListDao" />
+		</property>
+	</bean>
+	<bean
+		id="kmAssetApplyReturnListService"
+		parent="KmssBaseService">
+		<property
+			name="target">
+			<ref
+				local="kmAssetApplyReturnListTarget" />
+		</property>
+	</bean>
+
+	<bean
+		id="kmAssetApplyStockListDao"
+		parent="KmssAuthBaseDao"
+		class="com.landray.kmss.km.asset.dao.hibernate.KmAssetApplyStockListDaoImp">
+		<property
+			name="modelName"
+			value="com.landray.kmss.km.asset.model.KmAssetApplyStockList" />
+	</bean>
+	<bean
+		id="kmAssetApplyStockListTarget"
+		parent="KmssBaseTarget"
+		class="com.landray.kmss.km.asset.service.spring.KmAssetApplyStockListServiceImp">
+		<property
+			name="baseDao">
+			<ref
+				local="kmAssetApplyStockListDao" />
+		</property>
+	</bean>
+	<bean
+		id="kmAssetApplyStockListService"
+		parent="KmssBaseService">
+		<property
+			name="target">
+			<ref
+				local="kmAssetApplyStockListTarget" />
+		</property>
+	</bean>
+
+	<bean
+		id="kmAssetApplyDivertDao"
+		parent="KmssAuthBaseDao"
+		class="com.landray.kmss.km.asset.dao.hibernate.KmAssetApplyDivertDaoImp">
+		<property
+			name="modelName"
+			value="com.landray.kmss.km.asset.model.KmAssetApplyDivert" />
+	</bean>
+	<bean
+		id="kmAssetApplyDivertTarget"
+		parent="kmAssetApplyBaseTarget"
+		class="com.landray.kmss.km.asset.service.spring.KmAssetApplyDivertServiceImp">
+		<property
+			name="baseDao">
+			<ref
+				local="kmAssetApplyDivertDao" />
+		</property>		
+	</bean>
+	<bean
+		id="kmAssetApplyDivertService"
+		parent="kmAssetApplyBaseService">
+		<property
+			name="target">
+			<ref
+				local="kmAssetApplyDivertTarget" />
+		</property>
+	</bean>
+
+	<bean
+		id="kmAssetApplyBaseDao"
+		parent="KmssAuthBaseDao"
+		class="com.landray.kmss.km.asset.dao.hibernate.KmAssetApplyBaseDaoImp">
+		<property
+			name="modelName"
+			value="com.landray.kmss.km.asset.model.KmAssetApplyBase" />
+	</bean>
+	<bean
+		id="kmAssetApplyBaseTarget"
+		parent="KmssExtendDataTarget"
+		class="com.landray.kmss.km.asset.service.spring.KmAssetApplyBaseServiceImp">
+		<property
+			name="baseDao">
+			<ref
+				local="kmAssetApplyBaseDao" />
+		</property>
+		<property
+			name="kmAssetApplyTemplateService">
+			<ref
+				local="kmAssetApplyTemplateService" />
+		</property>
+		<property
+			name="kmAssetCardService">
+			<ref
+				local="kmAssetCardService" />
+		</property>
+		<property name="sysNumberFlowService">
+			<ref bean="sysNumberFlowService"/>
+		</property>
+	</bean>
+	<bean
+		id="kmAssetApplyBaseService"
+		parent="KmssBaseService">
+		<property
+			name="target">
+			<ref
+				local="kmAssetApplyBaseTarget" />
+		</property>
+		<property name="transactionAttributes">
+			<props>
+				<prop key="add*">PROPAGATION_REQUIRED</prop>
+				<prop key="copy*">PROPAGATION_REQUIRED</prop>
+				<prop key="update*">PROPAGATION_REQUIRED</prop>
+				<prop key="save*">PROPAGATION_REQUIRED</prop>
+				<prop key="delete*">PROPAGATION_REQUIRED</prop>
+				<prop key="init*">PROPAGATION_REQUIRED</prop>
+				<prop key="clone*">PROPAGATION_REQUIRED</prop>
+				<prop key="complete*">PROPAGATION_REQUIRED</prop>
+				<prop key="*">PROPAGATION_REQUIRED,readOnly</prop>
+			</props>
+		</property>
+	</bean>
+
+	<bean
+		id="kmAssetApplyChangeListDao"
+		parent="KmssAuthBaseDao"
+		class="com.landray.kmss.km.asset.dao.hibernate.KmAssetApplyChangeListDaoImp">
+		<property
+			name="modelName"
+			value="com.landray.kmss.km.asset.model.KmAssetApplyChangeList" />
+	</bean>
+	<bean
+		id="kmAssetApplyChangeListTarget"
+		parent="KmssBaseTarget"
+		class="com.landray.kmss.km.asset.service.spring.KmAssetApplyChangeListServiceImp">
+		<property
+			name="baseDao">
+			<ref
+				local="kmAssetApplyChangeListDao" />
+		</property>
+	</bean>
+	<bean
+		id="kmAssetApplyChangeListService"
+		parent="KmssBaseService">
+		<property
+			name="target">
+			<ref
+				local="kmAssetApplyChangeListTarget" />
+		</property>
+	</bean>
+
+	<bean
+		id="kmAssetApplyInListDao"
+		parent="KmssAuthBaseDao"
+		class="com.landray.kmss.km.asset.dao.hibernate.KmAssetApplyInListDaoImp">
+		<property
+			name="modelName"
+			value="com.landray.kmss.km.asset.model.KmAssetApplyInList" />
+	</bean>
+	<bean
+		id="kmAssetApplyInListTarget"
+		parent="KmssBaseTarget"
+		class="com.landray.kmss.km.asset.service.spring.KmAssetApplyInListServiceImp">
+		<property
+			name="baseDao">
+			<ref
+				local="kmAssetApplyInListDao" />
+		</property>
+	</bean>
+	<bean
+		id="kmAssetApplyInListService"
+		parent="KmssBaseService">
+		<property
+			name="target">
+			<ref
+				local="kmAssetApplyInListTarget" />
+		</property>
+	</bean>
+
+	<bean
+		id="kmAssetApplyChangeDao"
+		parent="KmssAuthBaseDao"
+		class="com.landray.kmss.km.asset.dao.hibernate.KmAssetApplyChangeDaoImp">
+		<property
+			name="modelName"
+			value="com.landray.kmss.km.asset.model.KmAssetApplyChange" />
+	</bean>
+	<bean
+		id="kmAssetApplyChangeTarget"
+		parent="kmAssetApplyBaseTarget"
+		class="com.landray.kmss.km.asset.service.spring.KmAssetApplyChangeServiceImp">
+		<property
+			name="baseDao">
+			<ref
+				local="kmAssetApplyChangeDao" />
+		</property>
+	</bean>
+	<bean
+		id="kmAssetApplyChangeService"
+		parent="kmAssetApplyBaseService">
+		<property
+			name="target">
+			<ref
+				local="kmAssetApplyChangeTarget" />
+		</property>
+	</bean>
+
+	<bean
+		id="kmAssetCardDao"
+		parent="KmssExtendDataDao" 
+		class="com.landray.kmss.km.asset.dao.hibernate.KmAssetCardDaoImp">
+		<property
+			name="modelName"
+			value="com.landray.kmss.km.asset.model.KmAssetCard" />
+	</bean>
+	<bean
+		id="kmAssetCardTarget"
+		parent="KmssExtendDataTarget"
+		class="com.landray.kmss.km.asset.service.spring.KmAssetCardServiceImp">
+		<property name="baseDao">
+			<ref local="kmAssetCardDao" />
+		</property>
+		<property name="sysAttMainService">
+			<ref bean="sysAttMainService"/>
+		</property>
+		<property name="kmAssetCategoryService">
+			<ref local="kmAssetCategoryService"/> 
+		</property>
+		<property name="sysOrgElementService">
+			<ref bean="sysOrgElementService"/> 
+		</property>
+		<property name="kmAssetAddressService">
+			<ref local="kmAssetAddressService"/> 
+		</property>
+		<property name="sysNumberFlowService">
+        	<ref bean="sysNumberFlowService"/>
+		</property>
+		<property name="kmAssetApplyTaskDetailService">
+        	<ref local="kmAssetApplyTaskDetailService"/>
+		</property>
+	</bean>
+	<bean
+		id="kmAssetCardService"
+		parent="KmssBaseService">
+		<property
+			name="target">
+			<ref
+				local="kmAssetCardTarget" />
+		</property>
+	</bean>
+	
+	<bean
+		id="kmAssetAddressCateDao"
+		parent="KmssAuthBaseDao"
+		class="com.landray.kmss.km.asset.dao.hibernate.KmAssetAddressCateDaoImp">
+		<property
+			name="modelName"
+			value="com.landray.kmss.km.asset.model.KmAssetAddressCate" />
+	</bean>
+	<bean
+		id="kmAssetAddressCateTarget"
+		parent="KmssBaseTarget"
+		class="com.landray.kmss.km.asset.service.spring.KmAssetAddressCateServiceImp">
+		<property
+			name="baseDao">
+			<ref
+				local="kmAssetAddressCateDao" />
+		</property>
+	</bean>
+	<bean
+		id="kmAssetAddressCateService"
+		parent="KmssBaseService">
+		<property
+			name="target">
+			<ref
+				local="kmAssetAddressCateTarget" />
+		</property>
+	</bean>
+
+	<bean
+		id="kmAssetAddressDao"
+		parent="KmssAuthBaseDao"
+		class="com.landray.kmss.km.asset.dao.hibernate.KmAssetAddressDaoImp">
+		<property
+			name="modelName"
+			value="com.landray.kmss.km.asset.model.KmAssetAddress" />
+	</bean>
+	<bean
+		id="kmAssetAddressTarget"
+		parent="KmssBaseTarget"
+		class="com.landray.kmss.km.asset.service.spring.KmAssetAddressServiceImp">
+		<property
+			name="baseDao">
+			<ref
+				local="kmAssetAddressDao" />
+		</property>
+	</bean>
+	<bean
+		id="kmAssetAddressService"
+		parent="KmssBaseService">
+		<property
+			name="target">
+			<ref
+				local="kmAssetAddressTarget" />
+		</property>
+	</bean>
+
+	<bean
+		id="kmAssetApplyDealDao"
+		parent="KmssAuthBaseDao"
+		class="com.landray.kmss.km.asset.dao.hibernate.KmAssetApplyDealDaoImp">
+		<property
+			name="modelName"
+			value="com.landray.kmss.km.asset.model.KmAssetApplyDeal" />
+	</bean>
+	<bean
+		id="kmAssetApplyDealTarget"
+		parent="kmAssetApplyBaseTarget"
+		class="com.landray.kmss.km.asset.service.spring.KmAssetApplyDealServiceImp">
+		<property
+			name="baseDao">
+			<ref
+				local="kmAssetApplyDealDao" />
+		</property>
+	</bean>
+	<bean
+		id="kmAssetApplyDealService"
+		parent="kmAssetApplyBaseService">
+		<property
+			name="target">
+			<ref
+				local="kmAssetApplyDealTarget" />
+		</property>
+	</bean>
+
+	<bean
+		id="kmAssetApplyGetDao"
+		parent="KmssAuthBaseDao"
+		class="com.landray.kmss.km.asset.dao.hibernate.KmAssetApplyGetDaoImp">
+		<property
+			name="modelName"
+			value="com.landray.kmss.km.asset.model.KmAssetApplyGet" />
+	</bean>
+	<bean
+		id="kmAssetApplyGetTarget"
+		parent="kmAssetApplyBaseTarget"
+		class="com.landray.kmss.km.asset.service.spring.KmAssetApplyGetServiceImp">
+		<property
+			name="baseDao">
+			<ref
+				local="kmAssetApplyGetDao" />
+		</property>
+	</bean>
+	<bean
+		id="kmAssetApplyGetService"
+		parent="kmAssetApplyBaseService">
+		<property
+			name="target">
+			<ref
+				local="kmAssetApplyGetTarget" />
+		</property>
+	</bean>
+
+	<bean
+		id="kmAssetCardLifeDao"
+		parent="KmssAuthBaseDao"
+		class="com.landray.kmss.km.asset.dao.hibernate.KmAssetCardLifeDaoImp">
+		<property
+			name="modelName"
+			value="com.landray.kmss.km.asset.model.KmAssetCardLife" />
+	</bean>
+	<bean
+		id="kmAssetCardLifeTarget"
+		parent="KmssBaseTarget"
+		class="com.landray.kmss.km.asset.service.spring.KmAssetCardLifeServiceImp">
+		<property
+			name="baseDao">
+			<ref
+				local="kmAssetCardLifeDao" />
+		</property>
+		<property name="kmAssetCardService">
+			<ref local="kmAssetCardService"/>
+		</property>
+		<property name="kmAssetApplyBaseService">
+			<ref local="kmAssetApplyBaseService" />
+		</property>
+	</bean>
+	<bean
+		id="kmAssetCardLifeService"
+		parent="KmssBaseService">
+		<property
+			name="target">
+			<ref
+				local="kmAssetCardLifeTarget" />
+		</property>
+	</bean>
+
+	<bean
+		id="kmAssetApplyReturnDao"
+		parent="KmssAuthBaseDao"
+		class="com.landray.kmss.km.asset.dao.hibernate.KmAssetApplyReturnDaoImp">
+		<property
+			name="modelName"
+			value="com.landray.kmss.km.asset.model.KmAssetApplyReturn" />
+	</bean>
+	<bean
+		id="kmAssetApplyReturnTarget"
+		parent="kmAssetApplyBaseTarget"
+		class="com.landray.kmss.km.asset.service.spring.KmAssetApplyReturnServiceImp">
+		<property
+			name="baseDao">
+			<ref
+				local="kmAssetApplyReturnDao" />
+		</property>
+	</bean>
+	<bean
+		id="kmAssetApplyReturnService"
+		parent="kmAssetApplyBaseService">
+		<property
+			name="target">
+			<ref
+				local="kmAssetApplyReturnTarget" />
+		</property>
+	</bean>
+
+	<bean
+		id="kmAssetApplyRepairListDao"
+		parent="KmssAuthBaseDao"
+		class="com.landray.kmss.km.asset.dao.hibernate.KmAssetApplyRepairListDaoImp">
+		<property
+			name="modelName"
+			value="com.landray.kmss.km.asset.model.KmAssetApplyRepairList" />
+	</bean>
+	<bean
+		id="kmAssetApplyRepairListTarget"
+		parent="KmssBaseTarget"
+		class="com.landray.kmss.km.asset.service.spring.KmAssetApplyRepairListServiceImp">
+		<property
+			name="baseDao">
+			<ref
+				local="kmAssetApplyRepairListDao" />
+		</property>
+	</bean>
+	<bean
+		id="kmAssetApplyRepairListService"
+		parent="KmssBaseService">
+		<property
+			name="target">
+			<ref
+				local="kmAssetApplyRepairListTarget" />
+		</property>
+	</bean>
+
+	<bean
+		id="kmAssetApplyRentListDao"
+		parent="KmssAuthBaseDao"
+		class="com.landray.kmss.km.asset.dao.hibernate.KmAssetApplyRentListDaoImp">
+		<property
+			name="modelName"
+			value="com.landray.kmss.km.asset.model.KmAssetApplyRentList" />
+	</bean>
+	<bean
+		id="kmAssetApplyRentListTarget"
+		parent="KmssBaseTarget"
+		class="com.landray.kmss.km.asset.service.spring.KmAssetApplyRentListServiceImp">
+		<property
+			name="baseDao">
+			<ref
+				local="kmAssetApplyRentListDao" />
+		</property>
+	</bean>
+	<bean
+		id="kmAssetApplyRentListService"
+		parent="KmssBaseService">
+		<property
+			name="target">
+			<ref
+				local="kmAssetApplyRentListTarget" />
+		</property>
+	</bean>
+
+	<bean
+		id="kmAssetApplyDealListDao"
+		parent="KmssAuthBaseDao"
+		class="com.landray.kmss.km.asset.dao.hibernate.KmAssetApplyDealListDaoImp">
+		<property
+			name="modelName"
+			value="com.landray.kmss.km.asset.model.KmAssetApplyDealList" />
+	</bean>
+	<bean
+		id="kmAssetApplyDealListTarget"
+		parent="KmssBaseTarget"
+		class="com.landray.kmss.km.asset.service.spring.KmAssetApplyDealListServiceImp">
+		<property
+			name="baseDao">
+			<ref
+				local="kmAssetApplyDealListDao" />
+		</property>
+	</bean>
+	<bean
+		id="kmAssetApplyDealListService"
+		parent="KmssBaseService">
+		<property
+			name="target">
+			<ref
+				local="kmAssetApplyDealListTarget" />
+		</property>
+	</bean>
+
+	<bean
+		id="kmAssetApplyRepairDao"
+		parent="KmssAuthBaseDao"
+		class="com.landray.kmss.km.asset.dao.hibernate.KmAssetApplyRepairDaoImp">
+		<property
+			name="modelName"
+			value="com.landray.kmss.km.asset.model.KmAssetApplyRepair" />
+	</bean>
+	<bean
+		id="kmAssetApplyRepairTarget"
+		parent="kmAssetApplyBaseTarget"
+		class="com.landray.kmss.km.asset.service.spring.KmAssetApplyRepairServiceImp">
+		<property
+			name="baseDao">
+			<ref
+				local="kmAssetApplyRepairDao" />
+		</property>
+	</bean>
+	<bean
+		id="kmAssetApplyRepairService"
+		parent="kmAssetApplyBaseService">
+		<property
+			name="target">
+			<ref
+				local="kmAssetApplyRepairTarget" />
+		</property>
+	</bean>
+
+	<bean
+		id="kmAssetApplyStockDao"
+		parent="kmAssetApplyBaseDao"
+		class="com.landray.kmss.km.asset.dao.hibernate.KmAssetApplyStockDaoImp">
+		<property
+			name="modelName"
+			value="com.landray.kmss.km.asset.model.KmAssetApplyStock" />
+	</bean>
+	<bean
+		id="kmAssetApplyStockTarget"
+		parent="kmAssetApplyBaseTarget"
+		class="com.landray.kmss.km.asset.service.spring.KmAssetApplyStockServiceImp">
+		<property
+			name="baseDao">
+			<ref
+				local="kmAssetApplyStockDao" />
+		</property>
+		<property
+			name="kmProviderMainService">
+			<ref
+				bean="kmProviderMainService" />
+		</property>
+		<property
+			name="sysOrgPersonService">
+			<ref
+				bean="sysOrgPersonService" />
+		</property>
+	</bean>
+	<bean
+		id="kmAssetApplyStockService"
+		parent="kmAssetApplyBaseService">
+		<property
+			name="target">
+			<ref
+				local="kmAssetApplyStockTarget" />
+		</property>
+	</bean>
+
+	<bean
+		id="kmAssetCategoryDao"
+		parent="KmssAuthBaseDao"
+		class="com.landray.kmss.km.asset.dao.hibernate.KmAssetCategoryDaoImp">
+		<property
+			name="modelName"
+			value="com.landray.kmss.km.asset.model.KmAssetCategory" />
+	</bean>
+	<bean
+		id="kmAssetCategoryTarget"
+		parent="KmssBaseTarget"
+		class="com.landray.kmss.km.asset.service.spring.KmAssetCategoryServiceImp">
+		<property
+			name="baseDao">
+			<ref
+				local="kmAssetCategoryDao" />
+		</property>
+	</bean>
+	<bean
+		id="kmAssetCategoryService"
+		parent="KmssBaseService">
+		<property
+			name="target">
+			<ref
+				local="kmAssetCategoryTarget" />
+		</property>
+	</bean>
+	<bean
+		id="kmAssetSubWfCateTreeService"
+		class="com.landray.kmss.km.asset.service.spring.KmAssetSubWfCateTreeService">
+		<property
+			name="sysCategoryMainService">
+			<ref bean="sysCategoryMainService" />
+		</property>				
+	</bean>
+	
+	<bean id="kmAssetCategoryTreeService"
+		class="com.landray.kmss.km.asset.service.spring.KmAssetCategoryTreeService">
+		<property name="sysCategoryMainService">
+			<ref bean="sysCategoryMainService"/>
+		</property>
+	</bean>
+
+	<bean
+		id="kmAssetApplyInDao"
+		parent="kmAssetApplyBaseDao"
+		class="com.landray.kmss.km.asset.dao.hibernate.KmAssetApplyInDaoImp">
+		<property
+			name="modelName"
+			value="com.landray.kmss.km.asset.model.KmAssetApplyIn" />
+	</bean>
+	<bean
+		id="kmAssetApplyInTarget"
+		parent="kmAssetApplyBaseTarget"
+		class="com.landray.kmss.km.asset.service.spring.KmAssetApplyInServiceImp">
+		<property
+			name="baseDao">
+			<ref
+				local="kmAssetApplyInDao" />
+		</property>
+		<property name="kmAssetCardService">
+			<ref bean="kmAssetCardService"/>
+		</property>
+		<property name="kmApplyStockListService">
+			<ref bean="kmAssetApplyStockListService"/>
+		</property>
+	</bean>
+	<bean
+		id="kmAssetApplyInService"
+		parent="kmAssetApplyBaseService">
+		<property
+			name="target">
+			<ref
+				local="kmAssetApplyInTarget" />
+		</property>
+	</bean>
+
+	   <bean
+		id="kmAssetApplyTemplateDao"
+		parent="KmssAuthBaseDao"
+		class="com.landray.kmss.km.asset.dao.hibernate.KmAssetApplyTemplateDaoImp">
+		<property
+			name="modelName"
+			value="com.landray.kmss.km.asset.model.KmAssetApplyTemplate" />
+	</bean>
+	<bean
+		id="kmAssetApplyTemplateTarget"
+		parent="KmssBaseTarget"
+		class="com.landray.kmss.km.asset.service.spring.KmAssetApplyTemplateServiceImp">
+		<property
+			name="baseDao">
+			<ref
+				local="kmAssetApplyTemplateDao" />
+		</property>
+	</bean>
+	<bean
+		id="kmAssetApplyTemplateService"
+		parent="KmssBaseService">
+		<property
+			name="target">
+			<ref
+				local="kmAssetApplyTemplateTarget" />
+		</property>
+	</bean>
+		<bean
+		id="kmAssetApplyTreeService"
+		class="com.landray.kmss.km.asset.service.spring.KmAssetApplyTreeService">
+	</bean>
+	<bean id="kmAssetApplyTemplateTreeService"
+		class="com.landray.kmss.km.asset.service.spring.KmAssetApplyTemplateTreeService">
+		<property
+			name="kmAssetApplyTemplateService">
+			<ref
+				local="kmAssetApplyTemplateService" />
+		</property>
+	</bean>
+	<bean
+		id="kmAssetApplyGetListDao"
+		parent="KmssAuthBaseDao"
+		class="com.landray.kmss.km.asset.dao.hibernate.KmAssetApplyGetListDaoImp">
+		<property
+			name="modelName"
+			value="com.landray.kmss.km.asset.model.KmAssetApplyGetList" />
+	</bean>
+	<bean
+		id="kmAssetApplyGetListTarget"
+		parent="KmssBaseTarget"
+		class="com.landray.kmss.km.asset.service.spring.KmAssetApplyGetListServiceImp">
+		<property
+			name="baseDao">
+			<ref
+				local="kmAssetApplyGetListDao" />
+		</property>
+	</bean>
+	<bean
+		id="kmAssetApplyGetListService"
+		parent="KmssBaseService">
+		<property
+			name="target">
+			<ref
+				local="kmAssetApplyGetListTarget" />
+		</property>
+	</bean>
+	
+	<bean id="kmAssetApplyInRobotService"
+		 class="com.landray.kmss.km.asset.service.spring.KmAssetApplyInRobotService">
+		  <property name="kmAssetCategoryService">
+		 	<ref local="kmAssetCategoryService"/>
+		 </property>
+		  <property name="kmAssetCardService">
+		 	<ref bean="kmAssetCardService"/>
+		 </property>
+	
+	</bean>
+	
+	<bean id="kmAssetApplyChangeRobotService"
+		 class="com.landray.kmss.km.asset.service.spring.KmAssetApplyChangeRobotService">
+		  <property name="kmAssetCategoryService">
+		 	<ref local="kmAssetCategoryService"/>
+		 </property>
+		  <property name="kmAssetCardService">
+		 	<ref bean="kmAssetCardService"/>
+		 </property>
+	
+	</bean>
+	
+	<bean id="kmAssetApplyGetRobotService"
+		 class="com.landray.kmss.km.asset.service.spring.KmAssetApplyGetRobotService">
+		  <property name="kmAssetCategoryService">
+		 	<ref local="kmAssetCategoryService"/>
+		 </property>
+		  <property name="kmAssetCardService">
+		 	<ref bean="kmAssetCardService"/>
+		 </property>
+	
+	</bean>
+	
+	<bean id="kmAssetApplyDivertRobotService"
+		 class="com.landray.kmss.km.asset.service.spring.KmAssetApplyDivertRobotService">
+		  <property name="kmAssetCategoryService">
+		 	<ref local="kmAssetCategoryService"/>
+		 </property>
+		  <property name="kmAssetCardService">
+		 	<ref bean="kmAssetCardService"/>
+		 </property>
+	
+	</bean>
+	
+	<bean class="org.springframework.aop.framework.autoproxy.BeanNameAutoProxyCreator">
+		<property name="beanNames">
+			<value>kmAssetCardDao,kmAssetApplyBaseDao</value><!-- 增加会议纪要 -->
+		</property>
+		<property name="interceptorNames">
+			<list>
+				<value>luceneCreateAdvisor</value>
+				<value>luceneSaveAdvisor</value>
+				<value>docKeyWriteAdvice</value>
+				<value>luceneDeleteAdvisor</value>
+			</list>
+		</property>
+	</bean>
+	
+	<bean
+		id="kmAssetApplyInventoryDao"
+		parent="kmAssetApplyBaseDao"
+		class="com.landray.kmss.km.asset.dao.hibernate.KmAssetApplyInventoryDaoImp">
+		<property
+			name="modelName"
+			value="com.landray.kmss.km.asset.model.KmAssetApplyInventory" />
+	</bean>
+
+	<bean
+		id="kmAssetApplyInventoryTarget"
+		parent="kmAssetApplyBaseTarget"
+		class="com.landray.kmss.km.asset.service.spring.KmAssetApplyInventoryServiceImp">
+		<property
+			name="baseDao">
+			<ref
+				local="kmAssetApplyInventoryDao" />
+		</property>
+	</bean>
+	<bean
+		id="kmAssetApplyInventoryService"
+		parent="kmAssetApplyBaseService">
+		<property
+			name="target">
+			<ref
+				local="kmAssetApplyInventoryTarget" />
+		</property>
+	</bean>
+
+	
+	<bean
+		id="kmAssetApplyTaskDao"
+		parent="kmAssetApplyBaseDao"
+		class="com.landray.kmss.km.asset.dao.hibernate.KmAssetApplyTaskDaoImp">
+		<property
+			name="modelName"
+			value="com.landray.kmss.km.asset.model.KmAssetApplyTask" />
+	</bean>
+
+	<bean
+		id="kmAssetApplyTaskTarget"
+		parent="kmAssetApplyBaseTarget"
+		class="com.landray.kmss.km.asset.service.spring.KmAssetApplyTaskServiceImp">
+		<property
+			name="baseDao">
+			<ref
+				local="kmAssetApplyTaskDao" />
+		</property>
+		<property
+			name="kmAssetCardService">
+			<ref
+				local="kmAssetCardService" />
+		</property>
+		<property
+			name="kmAssetApplyTaskDetailService">
+			<ref
+				local="kmAssetApplyTaskDetailService" />
+		</property>
+		<property
+			name="sysNotifyMainCoreService">
+			<ref
+				bean="sysNotifyMainCoreService" />
+		</property>
+		<property
+			name="sysOrgCoreService">
+			<ref
+				bean="sysOrgCoreService" />
+		</property>
+		<property
+			name="sysOrgPersonService">
+			<ref
+				bean="sysOrgPersonService" />
+		</property>
+	</bean>
+	<bean
+		id="kmAssetApplyTaskService"
+		parent="kmAssetApplyBaseService">
+		<property
+			name="target">
+			<ref
+				local="kmAssetApplyTaskTarget" />
+		</property>
+	</bean>
+
+	
+	<bean
+		id="kmAssetApplyTaskDetailDao"
+		parent="KmssExtendDataAreaDao"
+		class="com.landray.kmss.km.asset.dao.hibernate.KmAssetApplyTaskDetailDaoImp">
+		<property
+			name="modelName"
+			value="com.landray.kmss.km.asset.model.KmAssetApplyTaskDetail" />
+	</bean>
+
+	<bean
+		id="kmAssetApplyTaskDetailTarget"
+		parent="KmssExtendDataTarget"
+		class="com.landray.kmss.km.asset.service.spring.KmAssetApplyTaskDetailServiceImp">
+		<property
+			name="baseDao">
+			<ref
+				local="kmAssetApplyTaskDetailDao" />
+		</property>
+	</bean>
+	<bean
+		id="kmAssetApplyTaskDetailService"
+		parent="KmssBaseService">
+		<property
+			name="target">
+			<ref
+				local="kmAssetApplyTaskDetailTarget" />
+		</property>
+	</bean>
+	<bean
+		id="kmAssetApplyTaskValidator"
+		class="com.landray.kmss.km.asset.service.spring.KmAssetApplyTaskValidator">
+		<property
+			name="kmAssetApplyTaskService">
+			<ref
+				local="kmAssetApplyTaskService" />
+		</property>
+	</bean>
+	<bean
+		id="kmAssetApplyInventoryDetailDao"
+		parent="KmssAuthBaseDao"
+		class="com.landray.kmss.km.asset.dao.hibernate.KmAssetApplyInventoryDetailDaoImp">
+		<property
+			name="modelName"
+			value="com.landray.kmss.km.asset.model.KmAssetApplyInventoryDetail" />
+	</bean>
+	<bean
+		id="kmAssetApplyInventoryDetailTarget"
+		parent="KmssExtendDataTarget"
+		class="com.landray.kmss.km.asset.service.spring.KmAssetApplyInventoryDetailServiceImp">
+		<property
+			name="baseDao">
+			<ref
+				local="kmAssetApplyInventoryDetailDao" />
+		</property>
+	</bean>
+	<bean
+		id="kmAssetApplyInventoryDetailService"
+		parent="KmssBaseService">
+		<property
+			name="target">
+			<ref
+				local="kmAssetApplyInventoryDetailTarget" />
+		</property>
+	</bean>
+</beans>

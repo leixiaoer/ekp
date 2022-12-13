@@ -1,0 +1,270 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<version xmlns="http://www.example.org/version-config" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.example.org/version-config ../../../version.xsd">
+	<modifies>
+		<modify>
+			<description>#105237 优化 SQL和HQL中对boolean值的参数化</description>
+			<author>陈进科</author>
+			<revision-time>2021-08-04</revision-time>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#67688 新增【信创 - 构建国产化体系】数据库兼容性支持 polardb、opengauss</description>
+			<author>陈进科</author>
+			<revision-time>2020-12-24</revision-time>
+			<relation>
+				<relation-module>core</relation-module>
+			</relation>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#113271 优化 解决UDAL规则下，delete与update缺少where条件报错的问题</description>
+			<author>屈高鹏</author>
+			<revision-time>2020-07-28</revision-time>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#105646 修复 许可中启用域名校验的时候导致系统启动失败</description>
+			<author>陈进科</author>
+			<revision-time>2020-05-19</revision-time>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#94680 修复 没有保存网络校验结果的问题</description>
+			<author>陈进科</author>
+			<revision-time>2020-03-16</revision-time>
+			<relation>
+				<relation-module>core</relation-module>
+			</relation>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#99149 修复 新增人员超出license限制功能导致数据库泄露问题</description>
+			<author>潘永辉</author>
+			<revision-time>2020-03-13</revision-time>
+			<relation>
+				<relation-module>sys/organization</relation-module>
+			</relation>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#94680 新增 在线校验license功能</description>
+			<author>陈进科</author>
+			<revision-time>2020-02-10</revision-time>
+			<relation>
+				<relation-module>core</relation-module>
+				<relation-module>sys/organization</relation-module>
+				<relation-module>component/locker</relation-module>
+			</relation>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#82634 修复 列表全选按钮勾选后，下面的对应列表未勾选</description>
+			<author>叶正平</author>
+			<revision-time>2019-11-04</revision-time>
+			<baseline>V15.0.2.R.20191108</baseline>
+		</modify>
+		<modify>
+			<description>#77506 新增 南大通用Gbase 8t适配</description>
+			<author>叶正平</author>
+			<revision-time>2019-10-16</revision-time>
+			<relation>
+				<relation-module>core</relation-module>
+			</relation>
+			<baseline>V15.0.2.R.20191108</baseline>
+		</modify>
+		<modify>
+			<description>#82328 新增 新增动态节点标识功能</description>
+			<author>叶中奇</author>
+			<revision-time>2019-09-23</revision-time>
+			<baseline>V15.0.2.R.20191108</baseline>
+		</modify>
+		<modify>
+			<description>#68859 修复 多服务器配置子系统，点击进入子系统详情查看页面显示空白</description>
+			<author>杨铮</author>
+			<revision-time>2019-08-22</revision-time>
+			<baseline>V15.0.1.R.20190906</baseline>
+		</modify>
+		<modify>
+			<description>#68845 修复 多服务器配置子系统，列表页面缺少字段描述标识</description>
+			<author>杨铮</author>
+			<revision-time>2019-08-22</revision-time>
+			<baseline>V15.0.1.R.20190906</baseline>
+		</modify>
+		<modify>
+			<description>优化 统一升级系统Spring版本到3.2.18</description>
+			<author>陈进科</author>
+			<revision-time>2019-03-05</revision-time>
+			<relation>
+				<relation-module>core</relation-module>
+			</relation>
+			<baseline>V15.0.0.B3.20190412</baseline>
+		</modify>
+		<modify>
+			<description>#63760 修复 IE10浏览器下，群集测试查看页面，表格内的分隔线不显示</description>
+			<author>潘永辉</author>
+			<revision-time>2018-11-21</revision-time>
+			<baseline>V15.0.0.B2.20190118</baseline>
+		</modify>
+		<modify>
+			<description>新增 群集测试工具新增显示各服务器时间的功能</description>
+			<author>叶中奇</author>
+			<revision-time>2017-10-18</revision-time>
+			<baseline>V14.0.0.B1.20171110</baseline>
+		</modify>
+		<modify>
+			<description>修复 多服务器配置中的群集节点信息的刷新时间取值不正确</description>
+			<author>潘永辉</author>
+			<revision-time>2017-08-02</revision-time>
+			<baseline>V13.5.0.R.20170915</baseline>
+		</modify>
+		<modify>
+			<description>优化 优化群集通讯接口，在网络抖动的情况下更加稳定</description>
+			<author>叶中奇</author>
+			<revision-time>2017-03-04</revision-time>
+			<baseline>V13.0.0.R.20170310</baseline>
+		</modify>
+		<modify>
+			<description>修复 运维监控中心》多服务器配置》集群帮助信息翻译</description>
+			<author>陈经纬</author>
+			<revision-time>2016-12-21</revision-time>
+			<baseline>V13.0.0.B3.20161230</baseline>
+		</modify>
+		<modify>
+			<description>修复 运维监控中心&gt;&gt;集群信息页面报错</description>
+			<author>陈经纬</author>
+			<revision-time>2016-12-20</revision-time>
+			<baseline>V13.0.0.B3.20161230</baseline>
+		</modify>
+		<modify>
+			<description>修复 系统配置-多服务器配置-群集节点信息列表，英文环境下打开报错</description>
+			<author>潘永辉</author>
+			<revision-time>2016-12-16</revision-time>
+			<baseline>V13.0.0.B3.20161230</baseline>
+		</modify>
+		<modify>
+			<description>修复 群集管理中，高亮显示当前运行的节点</description>
+			<author>潘永辉</author>
+			<revision-time>2016-11-21</revision-time>
+			<baseline>V13.0.0.B3.20161230</baseline>
+		</modify>
+		<modify>
+			<description>修复 群集调度配置切换成功后，增加消息通知</description>
+			<author>李衡</author>
+			<revision-time>2016-06-08</revision-time>
+			<baseline>V13.0.0.B2.20160930</baseline>
+		</modify>
+		<modify>
+			<description>修复 修复在群集启动时偶然产生数据库死锁、在同一个IP下占用同一个端口等问题</description>
+			<author>叶中奇</author>
+			<revision-time>2016-04-21</revision-time>
+			<baseline>V13.0.0.B1.20160429</baseline>
+		</modify>
+		<modify>
+			<description>修复 在weblogic下admin.do打开报错的问题</description>
+			<author>易荣烽</author>
+			<revision-time>2015-05-21</revision-time>
+			<baseline>V12.0.2.R.20150605</baseline>
+		</modify>
+		<modify>
+			<description>新增 子系统配置</description>
+			<author>叶中奇</author>
+			<revision-time>2014-10-31</revision-time>
+			<baseline>V12.0.0.B2.20141114</baseline>
+		</modify>
+		<modify>
+			<description>新增 新增允许后台调度多服务器运行的接口</description>
+			<author>叶中奇</author>
+			<revision-time>2014-08-12</revision-time>
+			<baseline>V12.0.0.B1.20140905</baseline>
+		</modify>
+		<modify>
+			<description>优化 基于新增的插件工厂容器加载结束监听器，来绝对保障集群是在其他服务初始化完成后执行。</description>
+			<author>龚健</author>
+			<revision-time>2014-07-01</revision-time>
+			<relation>
+				<relation-module>core</relation-module>
+			</relation>
+			<baseline>V11.0.3.R.20140704</baseline>
+		</modify>
+		<modify>
+			<description>修复 插件工厂没有加载完成就启动集群，导致流程出错问题</description>
+			<author>缪贵荣</author>
+			<revision-time>2014-05-12</revision-time>
+			<baseline>V11.0.2.R.20140606</baseline>
+		</modify>
+		<modify>
+			<description>新增 实现线程池的JMX支持</description>
+			<author>汪俊锋</author>
+			<revision-time>2013-03-25</revision-time>
+			<relation>
+				<relation-module>core</relation-module>
+			</relation>
+			<baseline>V10.0.1.R.20130328</baseline>
+		</modify>
+		<modify>
+			<description>关联 将获取数据库时间的工具类移入CORE中</description>
+			<author>易荣烽</author>
+			<revision-time>2013-03-04</revision-time>
+			<relation>
+				<relation-module>core</relation-module>
+			</relation>
+			<baseline>V10.0.1.R.20130328</baseline>
+		</modify>
+		<modify>
+			<description>优化 调整了admin.do的显示位置</description>
+			<author>叶中奇</author>
+			<revision-time>2012-11-23</revision-time>
+			<relation>
+				<relation-module>core</relation-module>
+			</relation>
+			<baseline>V10.0.0.R.20121215</baseline>
+		</modify>
+		<modify>
+			<description>关联 将系统配置移入模块内，减少代码耦合</description>
+			<author>易荣烽</author>
+			<revision-time>2012-10-30</revision-time>
+			<baseline>V10.0.0.R.20121215</baseline>
+		</modify>
+		<modify>
+			<description>优化 admin.do配置的描述信息</description>
+			<author>易荣烽</author>
+			<revision-time>2012-05-15</revision-time>
+			<baseline>V10.0.0.B1.20120522</baseline>
+		</modify>
+		<modify>
+			<description>新增 支持后台服务可以绑定某个节点运行的功能，通讯方式支持TCP协议和UDP协议的配置。 优化 减少了网络因素对群集环境造成的影响。 注意：由于本次改动重写了对外接口，因此牵涉到多个底层模块的修改，注意同步升级。</description>
+			<author>叶中奇</author>
+			<revision-time>2012-03-29</revision-time>
+			<relation>
+				<relation-module>core</relation-module>
+				<relation-module>sys/webservice2</relation-module>
+				<relation-module>sys/xform</relation-module>
+				<relation-module>sys/workflow</relation-module>
+				<relation-module>sys/ftsearch</relation-module>
+				<relation-module>sys/property</relation-module>
+			</relation>
+			<baseline>V10.0.0.B1.20120522</baseline>
+		</modify>
+		<modify>
+			<description>修改事务问题，关闭session</description>
+			<author>缪贵荣</author>
+			<revision-time>2012-03-13</revision-time>
+			<baseline>V9.0.2.R.20120326</baseline>
+		</modify>
+		<modify>
+			<description>将admin.do中群集相关配置移入模块内进行解耦</description>
+			<author>易荣烽</author>
+			<revision-time>2012-03-12</revision-time>
+			<relation>
+				<relation-module>core</relation-module>
+			</relation>
+			<baseline>V9.0.2.R.20120326</baseline>
+		</modify>
+		<modify>
+			<description>ui改动，提示页面跟风格走！</description>
+			<author>卢海军</author>
+			<revision-time>2011-11-10</revision-time>
+			<baseline>EKP9.0.1.R.20111231</baseline>
+		</modify>
+	</modifies>
+</version>

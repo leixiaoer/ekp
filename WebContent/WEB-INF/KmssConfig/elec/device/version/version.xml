@@ -1,0 +1,233 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<version xmlns="http://www.example.org/version-config" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.example.org/version-config ../../../version.xsd">
+	<modifies>
+		<modify>
+			<description>#165190 新增 封装支持指定位置签署及静默签署相关接口给业务</description>
+			<author>林宇超</author>
+			<revision-time>2022-05-23</revision-time>
+			<relation>
+				<relation-module>elec/eqb</relation-module>
+				<relation-module>elec/eqbh</relation-module>
+				<relation-module>elec/eqbs</relation-module>
+			</relation>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#162392 修复 E签宝本地化签署完成后签署完成文件重复的问题</description>
+			<author>林宇超</author>
+			<revision-time>2022-04-18</revision-time>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#160886 修复 附件加密及存储方式导致的E签宝签署失败问题</description>
+			<author>林宇超</author>
+			<revision-time>2022-03-28</revision-time>
+			<relation>
+				<relation-module>elec/eqb</relation-module>
+			</relation>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#147222 修复 uekpDemo环境https协议使用E签宝签署文件拉取失败的问题</description>
+			<author>林宇超</author>
+			<revision-time>2021-08-12</revision-time>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#141518 优化 E签宝本地化支持签署页面嵌入式签署模式</description>
+			<author>林宇超</author>
+			<revision-time>2021-07-05</revision-time>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#139517 新增 E签宝SaaS签署集成</description>
+			<author>林宇超</author>
+			<revision-time>2021-05-20</revision-time>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#132031 新增 E签宝集成</description>
+			<author>林宇超</author>
+			<revision-time>2021-03-24</revision-time>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#135882 修改 合同签署e签宝集成</description>
+			<author>余朝丰</author>
+			<revision-time>2021-03-24</revision-time>
+			<relation>
+				<relation-module>km/agreement</relation-module>
+			</relation>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#132658 修改 中文枚举</description>
+			<author>余朝丰</author>
+			<revision-time>2021-01-28</revision-time>
+			<relation>
+				<relation-module>km/review</relation-module>
+				<relation-module>elec/yqqs</relation-module>
+			</relation>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#132658 修改 中文枚举</description>
+			<author>余朝丰</author>
+			<revision-time>2021-01-22</revision-time>
+			<relation>
+				<relation-module>km/review</relation-module>
+				<relation-module>km/imeeting</relation-module>
+				<relation-module>km/imissive</relation-module>
+				<relation-module>sys/news</relation-module>
+				<relation-module>elec/signature</relation-module>
+				<relation-module>elec/cfca</relation-module>
+				<relation-module>elec/rmkk</relation-module>
+				<relation-module>elec/axq</relation-module>
+				<relation-module>elec/yqqs</relation-module>
+				<relation-module>elec/sgt</relation-module>
+				<relation-module>elec/qj</relation-module>
+				<relation-module>elec/pseal</relation-module>
+				<relation-module>elec/cfcaauth</relation-module>
+				<relation-module>elec/cfcaca</relation-module>
+				<relation-module>elec/ssq</relation-module>
+				<relation-module>hr/ratify</relation-module>
+				<relation-module>km/institution</relation-module>
+				<relation-module>km/agreement</relation-module>
+			</relation>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#131588 优化 中文枚举</description>
+			<author>余朝丰</author>
+			<revision-time>2021-01-13</revision-time>
+			<relation>
+				<relation-module>km/review</relation-module>
+				<relation-module>km/imeeting</relation-module>
+				<relation-module>km/imissive</relation-module>
+				<relation-module>sys/news</relation-module>
+				<relation-module>elec/signature</relation-module>
+				<relation-module>elec/cfca</relation-module>
+				<relation-module>elec/rmkk</relation-module>
+				<relation-module>elec/axq</relation-module>
+				<relation-module>elec/yqqs</relation-module>
+				<relation-module>elec/sgt</relation-module>
+				<relation-module>elec/qj</relation-module>
+				<relation-module>elec/pseal</relation-module>
+				<relation-module>elec/cfcaauth</relation-module>
+				<relation-module>elec/cfcaca</relation-module>
+				<relation-module>elec/ssq</relation-module>
+				<relation-module>hr/ratify</relation-module>
+				<relation-module>km/institution</relation-module>
+				<relation-module>km/agreement</relation-module>
+			</relation>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#105580 修改 捕获参数验证异常</description>
+			<author>余朝丰</author>
+			<revision-time>2020-11-16</revision-time>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#115988 新增 合同下沉v15.0</description>
+			<author>林宇超</author>
+			<revision-time>2020-11-16</revision-time>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#115066 优化 群杰代码同步到v15</description>
+			<author>林宇超</author>
+			<revision-time>2020-08-12</revision-time>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#101966 修改 上下文信息增加删除方法</description>
+			<author>余朝丰</author>
+			<revision-time>2020-05-29</revision-time>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#99718 修改 思格特优化</description>
+			<author>余朝丰</author>
+			<revision-time>2020-04-28</revision-time>
+			<relation>
+				<relation-module>elec/pseal</relation-module>
+				<relation-module>elec/qj</relation-module>
+				<relation-module>elec/sgt</relation-module>
+			</relation>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#79239 新增 权限同步及用印结束接口</description>
+			<author>余朝丰</author>
+			<revision-time>2020-03-26</revision-time>
+			<relation>
+				<relation-module>elec/qj</relation-module>
+				<relation-module>elec/sgt</relation-module>
+			</relation>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#97362 优化 异步处理通知增加模块识别</description>
+			<author>余朝丰</author>
+			<revision-time>2020-03-09</revision-time>
+			<relation>
+				<relation-module>elec/yqqs</relation-module>
+				<relation-module>elec/seal</relation-module>
+				<relation-module>km/agreement</relation-module>
+			</relation>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#97155 新增 支持关键字签署</description>
+			<author>余朝丰</author>
+			<revision-time>2020-03-09</revision-time>
+			<relation>
+				<relation-module>elec/yqqs</relation-module>
+			</relation>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#93005 新增 签署及单点登录接口</description>
+			<author>余朝丰</author>
+			<revision-time>2020-01-16</revision-time>
+			<baseline>V15.0.3.R.20200117</baseline>
+		</modify>
+		<modify>
+			<description>#88286 新增 易企签SaaS端集成开通签署服务账户接口</description>
+			<author>张建忠</author>
+			<revision-time>2019-11-26</revision-time>
+			<relation>
+				<relation-module>elec/yqqs</relation-module>
+			</relation>
+			<baseline>V15.0.3.R.20200117</baseline>
+		</modify>
+		<modify>
+			<description>#80112 新增 物理用印集成数据同步</description>
+			<author>余朝丰</author>
+			<revision-time>2019-11-19</revision-time>
+			<baseline>V15.0.3.R.20200117</baseline>
+		</modify>
+		<modify>
+			<description>#78394 修改 安心签易企签集成接口重命名</description>
+			<author>余朝丰</author>
+			<revision-time>2019-11-14</revision-time>
+			<relation>
+				<relation-module>km/agreement</relation-module>
+			</relation>
+			<baseline>V15.0.3.R.20200117</baseline>
+		</modify>
+		<modify>
+			<description>#78394 修改 安心签易企签集成接口重命名</description>
+			<author>余朝丰</author>
+			<revision-time>2019-11-08</revision-time>
+			<baseline>V15.0.3.R.20200117</baseline>
+		</modify>
+		<modify>
+			<description>#74794 新增 安心签初始版本</description>
+			<author>余朝丰</author>
+			<revision-time>2019-10-14</revision-time>
+			<baseline>V15.0.1.R.20190906</baseline>
+		</modify>
+	</modifies>
+</version>

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<root 
+	xmlns="http://www.landray.com.cn/schema/person" 
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="
+			http://www.landray.com.cn/schema/person  ../../../sys/person/person.xsd">
+	
+	<category
+		msgKey="km-asset:module.km.asset"
+		modelName="com.landray.kmss.km.asset.model.KmAssetApplyTemplate" />
+		
+	<category
+		msgKey="km-asset:table.kmAssetCard"
+		modelName="com.landray.kmss.km.asset.model.KmAssetCategory" />
+	
+</root>

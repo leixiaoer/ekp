@@ -1,0 +1,115 @@
+.lui_form_content_frame{
+	background: #FFFFFF;
+box-shadow: 0 2px 5px 0 rgba(0,0,0,0.05);
+border-radius: 6px;
+width: 365px;
+}
+.lui_score_dep_tb 	tr th {
+	height: 30px;
+	line-height: 30px;
+	/*border: 1px solid #97bcd6;*/
+	background: #eff2f7;
+	text-align: center;
+}
+.lui_score_dep_name_th {
+	text-align: left!important;
+	padding-left: 28px;
+}
+.lui_score_dep_tb tr td{
+	padding: 10px 0px;
+	color:#c8c8c8;
+}
+.lui_score_dep_num {
+	text-align: center;
+	font-size:14px;
+	color:#83c7f6;
+}
+.lui_score_dep_pre {
+	color: #f30;
+}
+.lui_score_dep_center {
+	text-align: center;
+	
+}
+.lui_score_dep_pre_1 .lui_score_dep_num_flag {
+	background: url(../images/rank_1.png) no-repeat;
+}
+
+.lui_score_dep_pre_2 .lui_score_dep_num_flag {
+	background: url(../images/rank_2.png) no-repeat ;
+}
+.lui_score_dep_pre_3 .lui_score_dep_num_flag{
+	background: url(../images/rank_3.png) no-repeat;
+}
+.lui_score_dep_pre_1 .lui_score_dep_num_flag, .lui_score_dep_pre_3 .lui_score_dep_num_flag, .lui_score_dep_pre_2 .lui_score_dep_num_flag {
+	display:inline-block;
+	width:14px;
+	height:20px;
+	color: #ffffff;
+	font-weight: bold;
+}
+
+.lui_score_dep_top_common .lui_score_dep_num_flag{
+	text-align: center;
+    font-size: 14px;
+    color: #83c7f6;
+}
+.lui_score_dep_head {
+	width: 36px;
+	height:36px;
+	overflow: hidden;
+	display: inline-block;
+	vertical-align: middle;
+	margin-right: 5px;
+}
+.lui_score_dep_head img {
+	width: 36px;
+	height:36px;
+	border-radius: 50%;
+}
+.lui_score_dep_dynamic_up {
+	width:8px;
+	height:8px;
+	display:inline-block;
+	background: url(../images/arrow_up.png) no-repeat ;
+}
+.lui_score_dep_dynamic_down {
+	width:8px;
+	height:8px;
+	display:inline-block;
+	background: url(../images/arrow_down.png) no-repeat ;
+}
+.lui_score_dep_name {
+	text-align: left;
+	padding-left: 8px!important;
+	
+}
+.lui_score_dep_head_name {
+	overflow: hidden;display: block;white-space: nowrap;text-overflow: ellipsis;color:#c8c8c8;
+}
+.lui_score_dep_top3,.lui_score_dep_top_common {
+	padding: 3px 0;
+	border-bottom: 1px dotted #c8c8c8;
+}
+.lui_score_dep_top3:hover,
+.lui_score_dep_top_common:hover{
+	background-color:#F9F0C9;
+}
+.lui_score_dep_top3>.lui_score_dep_name, .lui_score_dep_top3>.lui_score_dep_score, .lui_score_dep_top3>.lui_score_dep_piece{
+	font-size:14px; 
+	color:#c8c8c8;;
+}
+.lui_score_dep_top_common>.lui_score_dep_name, .lui_score_dep_top_common>.lui_score_dep_piece{
+	color:#c8c8c8;
+}
+table.lui_score_dep_tb_personal {
+	table-layout: fixed;
+}
+
+a {
+	       text-decoration: none;
+    font-family: MicrosoftYaHei;
+    font-size: 14px;
+    color: #333333;
+    line-height: 14px;
+}

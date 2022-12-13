@@ -1,0 +1,241 @@
+@charset "UTF-8";
+/* 翻页导航 Starts
+	========================================================================== */
+.lui_paging_box {
+  padding: 15px 0;
+  text-align: center;
+  background-color: #fff;
+}
+
+.lui_paging_contentBox {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  text-align: center;
+  font-size: 12px;
+  display: inline-block;
+}
+
+.lui_paging_contentBox .lui_paging_content_centre {
+  font-size: 0;
+  *white-space: -1px;
+}
+
+.lui_paging_contentBox .lui_paging_num_left:hover,
+.lui_paging_contentBox .lui_paging_num_left.selected {
+  color: #fff;
+  background-color: transparent;
+}
+
+.lui_paging_contentBox a {
+  margin-left: 1px;
+  padding: 4px 11px;
+  line-height: 20px;
+  color: #666;
+  font-family: Arial;
+  font-size: 12px;
+  border: 1px solid #d9d9d9;
+  display: block;
+}
+
+.lui_paging_contentBox li span {
+  line-height: 30px;
+  font-size: 12px;
+}
+
+.lui_paging_contentBox .lui_paging_num_left:hover a,
+.lui_paging_contentBox .lui_paging_num_left.selected a {
+  color: #fff;
+  border-color: #0C3E6C;
+  background-color: #0C3E6C;
+}
+
+.lui_paging_contentBox li.lui_paging_next {
+  margin: 0 10px;
+  background-color: #fff;
+}
+
+.lui_paging_contentBox .lui_paging_total_center span {
+  line-height: 30px;
+  font-size: 12px;
+}
+
+.lui_paging_contentBox .lui_paging_total_center span input,
+.lui_paging_contentBox .lui_paging_jump_center span input,
+.lui_paging_contentBox .lui_paging_amount_center span input {
+  margin: 0 4px;
+  padding: 0 4px;
+  width: 28px;
+  height: 28px;
+  line-height: 28px;
+  text-align: center;
+  border: 1px solid #d9d9d9;
+  color: #9e9e9e;
+  font-size: 12px;
+  position: relative;
+  top: 0;
+}
+
+.lui_paging_contentBox .lui_paging_go_center a.lui_paging_btn {
+  padding-left: 8px;
+  padding-right: 8px;
+  color: #fff;
+  border: 1px solid #909399;
+  background-color: #909399;
+  position: relative;
+  top: 0;
+}
+
+.lui_paging_contentBox .lui_paging_go_center a.lui_paging_btn:hover {
+  color: #fff;
+  border-color: #0C3E6C;
+  background-color: #0C3E6C;
+}
+
+.lui_paging_contentBox li.lui_paging_next {
+  margin: 0 10px;
+  background-color: #fff;
+}
+
+.lui_paging_contentBox li.lui_paging_next:hover a,
+.lui_paging_contentBox li.lui_paging_pre:hover a {
+  color: #fff;
+  border-color: #0C3E6C;
+  background-color: #0C3E6C;
+}
+
+.lui_paging_contentBox .simple_change_select {
+  font-size: 12px;
+}
+
+/* 翻页导航 Ends
+        ========================================================================== */
+/* 顶部分页样式 Starts
+        ========================================================================== */
+.lui_paging_t_box {
+  margin-left: 3px;
+  height: 28px;
+  line-height: 28px;
+  vertical-align: middle;
+  display: inline-block;
+  overflow: hidden;
+}
+
+.lui_paging_t_content_box td {
+  padding: 0 3px;
+}
+
+.lui_paging_t_content_box .lui_icon_s {
+  width: 16px;
+  height: 16px;
+  -webkit-transition-property: background-color;
+  transition-property: background-color;
+  position: relative;
+  top: -2px;
+}
+
+.lui_paging_t_notpre,
+.lui_paging_t_notnext,
+.lui_paging_t_hasnext,
+.lui_paging_t_hasnext:hover,
+.lui_paging_t_haspre,
+.lui_paging_t_haspre:hover {
+  background-image: url(../images/icons/icon-list-Dnor.png);
+  background-repeat: no-repeat;
+  background-size: 32px auto;
+}
+
+.lui_paging_t_notpre,
+.lui_paging_t_notnext {
+  cursor: default;
+}
+
+.lui_paging_t_notpre,
+.lui_paging_t_notpre:hover {
+  background-position: 0 -32px;
+}
+
+.lui_paging_t_notnext,
+.lui_paging_t_notnext:hover {
+  background-position: -16px -32px;
+}
+
+.lui_paging_t_haspre {
+  background-position: 0 0;
+}
+
+.lui_paging_t_haspre:hover {
+  background-position: 0 -16px;
+}
+
+.lui_paging_t_hasnext {
+  background-position: -16px 0;
+}
+
+.lui_paging_t_hasnext:hover {
+  background-position: -16px -16px;
+}
+
+.lui_paging_t_refresh_l {
+  padding: 0 4px;
+  border: 1px solid #d9d9d9;
+  height: 22px;
+  line-height: 22px;
+  background-color: #fff;
+  cursor: pointer;
+  position: relative;
+  top: -1px;
+  -webkit-transition-duration: .3s;
+          transition-duration: .3s;
+}
+
+.lui_paging_t_refresh_l .lui_icon_s.lui_paging_t_refresh {
+  background-position: 50%;
+  background-size: 14px auto;
+  background-image: url(../images/icons/icon-reflash-gray.png);
+  position: relative;
+  top: -1px;
+}
+
+.lui_paging_t_refresh_l:hover {
+  border-color: #0C3E6C;
+}
+
+.lui_paging_t_refresh_l:hover .lui_icon_s.lui_paging_t_refresh {
+  background-image: url(../images/icons/icon-reflash-on.png);
+  -webkit-animation: refresh-rotate .8s linear 0s 2 both;
+  animation: refresh-rotate .8s linear 0s 2 both;
+}
+
+.lui_paging_t_page_info {
+  color: #999;
+}
+
+.lui_paging_t_page_info_current {
+  color: #0C3E6C;
+  font-size: 1.5em;
+}
+
+@media screen and (-webkit-min-device-pixel-ratio: 2) {
+  .lui_paging_t_notpre,
+  .lui_paging_t_notnext,
+  .lui_paging_t_hasnext,
+  .lui_paging_t_hasnext:hover,
+  .lui_paging_t_haspre,
+  .lui_paging_t_haspre:hover {
+    background-image: url(../images/icons/icon-list-Dnor@2x.png);
+  }
+  .lui_paging_t_refresh_l .lui_icon_s.lui_paging_t_refresh {
+    background-image: url(../images/icons/icon-reflash-gray@2x.png);
+  }
+  .lui_paging_t_refresh_l:hover .lui_icon_s.lui_paging_t_refresh {
+    background-image: url(../images/icons/icon-reflash-on@2x.png);
+  }
+}
+
+.lui_list_operation_page_top {
+  margin-left: 3px;
+}
+
+/* 顶部分页样式 Starts
+        ========================================================================== */

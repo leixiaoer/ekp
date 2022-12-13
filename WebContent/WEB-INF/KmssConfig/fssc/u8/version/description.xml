@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<description xmlns="http://www.example.org/description-config" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.example.org/description-config ../../../description.xsd">
+	<module>
+		<module-name>U8对接组件</module-name>
+		<module-path>fssc/u8</module-path>
+		<baseline>V15.0.4.R.20200410</baseline>
+		<source-md5>6cccc885625ec2474ce5dc12d13b22d3</source-md5>
+		<is-custom>否</is-custom>
+		<serial-num>5</serial-num>
+	</module>
+</description>

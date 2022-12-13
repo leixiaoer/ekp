@@ -1,0 +1,580 @@
+﻿@charset "utf-8";
+/*车辆阅读 Start*/
+.muiCarSecHeader{
+	margin-bottom: 1.5rem;
+	border-bottom: 1px solid #d7d8d9;
+	background-color: #fff;
+}
+.muiCarSecHeader > .imgHeader{
+	display: block;
+	height: 19.3rem;
+	width: 100%;
+	overflow: hidden;
+}
+.muiCarSecHeader > .imgHeader img{ width: 100%;}
+.muiCarSecBody{
+	border-top: 1px solid #d7d8d9;
+	border-bottom: 1px solid #d7d8d9;
+	background-color: #fff;
+}
+.muiCarItem{
+	margin-left: 1rem;
+	padding-right: 2rem;
+	line-height: 42px;
+	color: #333;
+	font-size: 1.6rem;
+	font-weight: bold;
+	border-bottom: 1px solid #d7d8d9;
+	cursor: pointer;
+	display: block;
+	position: relative;
+}
+.muiCarItem:after{
+	display: inline-block;
+	font-family: FontMui;
+	text-align: center;
+	font-style: normal;
+	font-weight: normal;
+	line-height: 42px;
+	color: #d7d8d9;
+	font-size: 1.8rem;
+	vertical-align: middle;
+	-webkit-font-smoothing: antialiased;
+	position: absolute;
+	right: 1rem;
+	top:0;
+}
+
+.muiCalendarTable {
+	width: 100%;
+	text-align: center;
+	padding: 0 0.5rem;
+	margin: 0;
+	border-bottom: 1px solid #d7d8d9;
+}
+.muiCalendarTable .muiCalendarWeek th {
+	line-height: 1;
+	text-align: center;
+	font-size: 1.2rem;
+	padding: 0.8rem;
+	color: #4d4d4d;
+}
+.muiCalendarTable td {
+  position: relative;
+}
+.muiCalendarTable tr:last-child td {
+  padding-bottom: 0.6rem;
+}
+.muiCalendarTable td .muiCalendarDate {
+  border: 1px solid transparent;
+  font-size: 1.5rem;
+  display: inline-block;
+  border-radius: 50%;
+  width: 3rem;
+  height: 3rem;
+  line-height: 3rem;
+  font-size: 1.5rem;
+}
+.muiCalendarTable td .muiCalendarHoliday {
+  color: #37aee9;
+}
+.muiCalendarNotify {
+  background-color: #FD8641;
+  width: 4px;
+  height: 4px;
+  display: inline-block;
+  top: 2.4rem;
+  left: 50%;
+  border-radius: 50%;
+  position: absolute;
+  margin-left: -2px;
+}
+.muiCalendarDateCurr.selected {
+  border-color: #37aee9 !important;
+}
+.muiCalendarDateCurr.muiCalendarCurrentDate {
+  background: #37aee9;
+  color: #fff !important;
+  border-color: #37aee9 !important;
+}
+
+.muiCarOptionTooltip{
+	position: fixed;
+	bottom: 10.5rem;
+	right: 0;
+	z-index: 10;
+}
+.muiCarOptionTooltip > .muiCarDropToggle {
+	margin-right: 5px;
+	width: 42px;
+	height: 42px;
+	line-height: 42px;
+	padding: 4px;
+	text-align: center;
+	border-radius: 50%;
+	background-color: rgba(166, 169, 171, 0.65);
+	-webkit-box-sizing: border-box;
+					box-sizing: border-box;
+	display: block;
+	cursor: pointer;
+}
+.muiCarOptionTooltip > .muiCarDropToggle.on .mui{
+	-webkit-transform:rotate(180deg);
+	transform:rotate(180deg);
+	transform-origin:50%;
+}
+.muiCarOptionTooltip > .muiCarDropToggle.on .mui{
+	-webkit-transform:rotate(225deg);
+	transform:rotate(225deg);
+	transform-origin:50%;
+}
+
+.muiCarOptionTooltip .mui{
+	margin: 0 auto;
+	width: 34px;
+	height: 34px;
+	line-height: 1;
+	color: #399be8;
+	font-size: 2.2rem;
+	border-radius: 50%;
+	background-color: #fff;
+	transition:all 0.3s;
+	display: -webkit-box;
+	display: box;
+	-webkit-box-orient: vertical;
+			box-orient: vertical;
+	-webkit-box-pack: center;
+			box-pack: center;
+	-webkit-box-align:center;
+			box-align:center;
+	-webkit-box-sizing:border-box;
+			box-sizing:border-box;
+}
+.muiCarOptionTooltip > .muiCarDropMenu{
+	display: none;
+	padding: 8px 2px;
+	border-radius: 50%/20px;
+	background-color: rgba(166,169,171,.95);
+	position: absolute;
+	bottom: 4.5rem;
+	right: 6px;
+}
+.muiCarOptionTooltip > .muiCarDropMenu > li:not(:last-child){
+	margin-bottom: .1rem;
+}
+.muiCarOptionTooltip > .muiCarDropMenu > li,
+.muiCarOptionTooltip > .muiCarDropMenu > li a{
+	padding: .2rem .1rem;
+	color: #fff;
+	font-size: 1rem;
+	text-align: center;
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow:ellipsis;
+	display: block;
+}
+.muiCarOptionTooltip > .muiCarDropMenu > li .mui{
+	margin-bottom: .3rem;
+	position: relative;
+}
+
+.muiCarOptionTooltip > .muiCarDropMenu > li.cur .mui,
+.muiCarOptionTooltip > .muiCarDropMenu > li:active .mui,
+.muiCarOptionTooltip > .muiCarDropMenu > li:focus{ background:#399be8; color:#fff;}
+.muiCarTimeAxis{
+	margin-left: 1.6rem;
+	padding: 1rem 1rem 1rem 0;
+	border: 0;
+}
+ul,li{ list-style:none;}
+.muiCarTimeAxis li{	border-left: 1px solid #d7d8d9;}
+.muiCarTimeAxis li.muiListNoData{ border-left:none;}
+.muiCarTimeAxisContent{ padding-left:1.5rem; border-left: 1px solid #d7d8d9;}
+.muiCarTimeAxis.muiCarNoRecord{ border-left:none;}
+.muiCarTimeAxisContent{
+	padding-top: 1rem;
+	padding-bottom: .5rem;
+	border-bottom: 1px dashed #d7d8d9;
+}
+.muiCarTimeAxisContent:last-child{ margin-bottom: 0; border-bottom:none;}
+.muiCarTimeAxisContent > .header{
+	margin-bottom: 8px;
+	position: relative;
+}
+.muiCarTimeAxisContent > .header .mui{
+	height: 18px;
+	line-height: 20px;
+	color: #18b4ed;
+	font-size: 1.6rem;
+	background-color: #fff;
+	position: absolute;
+	border:2px solid #fff;
+	top:2px;
+	left: -25px;
+}
+.muiCarTimeAxisContent > .header .mui.mui-date:before{
+	position: relative;
+	top:-2px;
+}
+.muiCarTimeAxisContent > .header .time{
+	color: #777676;
+	line-height: 28px;
+	font-size: 1.4rem;
+}
+.muiCarTimeAxisContent > .detailItem{
+	margin: 2px 0 0px; padding-bottom:5px;
+	color: #575757;
+	font-size: 1.4rem;
+}
+.muiCarTimeAxisContent > .detailItem .mui {
+	margin-right: .2rem;
+	line-height: 1;
+	font-size: 1.4rem;
+	color: #989898;
+	top: -.1rem;
+}
+.muiCarTimeAxisContent .muiCarBtn {
+	padding: 0.3rem 0.6rem;
+	display: block;
+	color: #fff;
+	font-size: 1.4rem;
+	border-radius: 3px;
+	background-color: #f0ad4e;
+	float: right;
+}
+.muiCarTimeAxisContent .muiCarBtn.returned { background:#51b749;}
+.muiCarTimeAxisContent > .iconItem{
+	display: -webkit-box;
+	margin-bottom: 8px;
+}
+.muiCarTimeAxisContent > .iconItem > h4{
+	-webkit-box-flex:1;
+	color: #18b4ed;
+	font-size: 1.4rem;
+	display: -webkit-box;
+	display: box;
+	-webkit-box-orient: vertical;
+			box-orient: vertical;
+	-webkit-box-pack: center;
+			box-pack: center;
+	-webkit-box-sizing:border-box;
+			box-sizing:border-box;
+}
+.muiCarTimeAxisContent > .iconItem .iconBox{
+	padding-right: 10px;
+}
+.muiCarTimeAxisContent > .iconItem img{
+	border-radius: 50%;
+	width: 3rem;
+	height: 3rem;
+}
+
+.muiCarSecHeaderTool{
+	width: 100%;
+	padding: 0 1rem;
+	min-height: 3.5rem;
+	vertical-align: middle;
+	font-size: 1.6rem;
+	display: table;
+	-webkit-box-sizing:border-box;
+			box-sizing:border-box;
+}
+.muiCarSecHeaderTool .muiFieldItem>div{ font-size:1.6rem; line-height:2.1rem;}
+.muiCarSecHeaderTool > div{
+	display: table-cell;
+	vertical-align: middle;
+}
+.muiCarSecHeaderTool > div:last-child{
+	text-align: right; white-space:nowrap;
+}
+
+.muiCarSecHeaderTool > .txt{
+}
+.muiCarSecHeaderBtn{
+	padding: 0.3rem 0.6rem;
+	display: inline-block;
+	color: #fff;
+	font-size: 1.6rem;
+	border-radius: 3px;
+	background-color: #78c06e;
+}
+.muiCarSecHeaderBtn.repair{ background-color: #f27d62;}
+.muiCarSecHeaderBtn.scrap{ background-color: #d8d8d8;}
+
+.muiCarInfoBox{
+	padding:.5rem 1rem;
+	border-top: 1px solid #d7d8d9;
+	list-style: none;
+	zoom:1;
+}
+.muiCarInfoBox:after{
+	content: 'clear';
+	clear: both;
+	line-height: 0;
+	display: block;
+	visibility: hidden;
+}
+.muiCarInfoBox > li{
+	margin: 5px 0;
+	padding-right: 5px;
+	width: 49%;
+	color: #333;
+	font-size: 1.4rem;
+	float: left; position:relative;
+	-webkit-box-sizing:border-box;
+			box-sizing:border-box;white-space:nowrap;
+}
+.muiCarInfoBox > li:nth-child(even){ padding-right: 0;}
+.muiCarInfoBox > li > .title{
+	width: 50px;
+	color: #989898;
+	display: inline-block;
+}
+.muiCarInfoBox .mui-tel {
+	line-height: 1.6rem;
+	color: #989898;
+	right: -0.8rem;
+	margin-left: 2px;
+}
+.muiCarInfoBox > li {
+	display: inline-table;
+}
+.muiCarInfoBox > li>span{ display:table-cell;}
+.muiCarInfoBox > li>.title{ display:table-cell;}
+.muiCarInfoBox > li>.txt{ white-space:normal;}
+.basicInfoHeader{
+	width: 100%;
+	display: inline-table;
+	border-bottom: 0.1rem solid #C9D7E0;
+	background-color: #18b4ed;
+	color: #fff;
+	table-layout: fixed;
+}
+.basicInfoHeader > div{
+	display: table-cell;
+	vertical-align: middle;
+	overflow: hidden;
+}
+.basicInfoHeaderBack{
+	padding-left: 1rem;
+	color: #fff;
+	/* float: right; */
+	cursor: pointer;
+}
+.basicInfoHeaderTitle{
+	width: 50%;
+	text-align: center;
+	font-size: 1.8rem;
+	font-weight: bold;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+}
+
+
+.muiCarRecordList { }
+.cardLifeNodeInfo { height: 36px; }
+.cardLifeNodeInfo h4 { color: #989898; font-size: 1.4rem; padding-top: 1.5rem; }
+.carRecordList{}
+.carRecordList li{ padding:0px; margin:0px; }
+.carRecordList span{ display:inline-block; height:15px; }
+.carRecordList .recordTitle{ color:#989898; width:7.5rem;}
+.carRecordList .recordTitle .mui{ font-size:1.8rem; margin-right:0.5rem;}
+
+.cardLifeContainer{
+	padding-top: 10px;
+	border-top:1px solid #e2e2e2;
+}
+.cardLifeNodeItem {
+	padding-top: 0.5rem ;
+	-webkit-transition: all 0.2s ease-out;
+	overflow: hidden;
+}
+
+.cardLifeLabelItem {
+	position: relative;
+	padding-left: 1.6rem;
+	padding-bottom: 1rem;
+	margin:0 1.6rem; 
+	-webkit-transition: all 0.2s ease-out;
+	background-color: #fff;
+	border-left: 0.1rem solid #e8e8e8;
+}
+
+.cardLifeNodeItemContainer {
+	background: #fff;
+	position: relative;
+}
+
+.cardLifeNodeImage {
+	border-radius: 50%;
+	width: 3rem;
+	height: 3rem;
+	position: absolute;
+	left: 0.6rem;
+	top: 0.4rem;
+}
+
+.cardLifeNodeInfo h4 {
+	color: #37aee9;
+	font-weight: normal;
+	font-size: 1.3rem;
+	line-height: 2rem; 
+	padding: 0;padding-top:0.9rem;
+	margin: 0;
+}
+
+.cardLifeNodeInfo {
+	padding: 0.3rem 0.5rem 0.5rem 4.5rem;
+	background-color: #f5f5f5;
+	position: relative;
+	border: 1px solid #e5e5e5;
+	border-radius: 5px 5px 0px 0px
+}
+
+.cardLifeNodeInfo:after {
+	display: block;
+	content: 'clear';
+	clear: both;
+	line-height: 0;
+	visibility: hidden;
+}
+
+.cardLifeNodeDate {
+	color: #777676;
+	line-height: 1.3rem;
+	padding: 0;
+	margin: 0;
+	float: left;
+}
+
+.cardLifeNodeDate span {
+	font-size: 1rem;
+	display: inline-block;
+	padding-left: 0.4rem;
+}
+
+.cardLifeNodeContent {
+	border-radius: 0px 0px 5px 5px;
+	padding: 0.5rem;
+	font-size: 1.2rem;
+	color: #050505;
+	border: 1px solid #e5e5e5;
+	border-top: none;
+}
+
+.cardLifeNodeContent p {
+	padding: 0;
+	margin: 0;
+}
+
+.cardLifeNodeContent p:last-child {
+	text-align: right;
+	word-wrap: break-word;
+	word-break: break-all;
+}
+
+.cardLifeNodeContent .cardLifeNode {
+	font-size: 1.4rem;
+	padding: 0 0 1rem 0;
+	word-break: break-all;
+}
+
+.cardLifeNodeContent em {
+	font-weight: normal;
+	font-style: normal;
+	color: #7e7e7e;
+}
+.mblEdgeToEdgeList > div:first-child{ margin-top: 10px;}
+.cardLifeLabelItemTitle {
+	font-size: 1.4rem;
+	color: #777676;
+	padding: 4px 0 0;
+}
+
+.cardLifeLabelItemTitle i {
+	display: inline-block;
+	width: 0px;
+	height: 0px;
+	border: 0.6rem solid transparent;
+	border-bottom-color: #d8ab56;
+	top: -0.3rem;
+	position: relative;
+	margin-left: 0.5rem;
+}
+
+.cardLifeLabelItemTitle.hide i {
+	border-top-color: #d8ab56;
+	border-bottom-color: transparent;
+	top: 0.3rem;
+}
+
+.cardLifeLabelItemDot {
+	display: inline-block;
+	position: absolute;
+	left: -1.2rem;
+	top: 0px;
+	width: 2.5rem;
+	/*height: 2.5rem;*/
+	background-color: #fff;
+}
+
+.cardLifeLabelItemDot:before {
+	content: '';
+	display: block;
+	width: 20px;
+	height: 20px;
+	border: 1px solid #e8e8e8;
+	background-color: #fff;
+	border-radius: 50%;
+	position: absolute;
+	left: 0px;
+	top: 0px;
+}
+.cardLifeLabelItemDot:after {
+	content: '';
+	display: block;
+	width: 10px;
+	height: 10px;
+	background: #18b4ed;
+	border-radius: 7px;
+	position: absolute;
+	left: 6px;
+	top: 6px;
+}
+.cardLifeLabelItemDot.mui.mui-dot:before{ content: "";}
+
+/*车辆阅读 End*/
+
+
+@media screen (max-width: 319px) {
+  .muiCarOptionTooltip > .muiCarDropToggle{ margin-right:9px;}
+
+}
+
+
+/*在可视区域的宽度在 321px 和 431px 之间的时候被应用(小米2/三星  360px)*/
+@media screen and (min-width: 321px) and (max-width: 400px) {
+    .cardLifeLabelItemDot { left:-0.9rem;}
+    .carRecordList span{ height:18px;}
+}
+/*在可视区域的宽度在 375px  iphone6*/
+@media screen and (min-width: 373px) and (max-width: 376px) {
+    .cardLifeLabelItemDot { left:-1.1rem;}
+    .carRecordList span{ height:18px;}
+}
+/*在可视区域的宽度大于401px 的时候被应用(魅族mx3 432px)*/
+@media screen and (min-width: 401px) {
+    .cardLifeLabelItemDot { left:-1.2rem;}
+    .carRecordList span{ height:18px;}
+}
+
+
+
+
+
+
+
+
+
+
+

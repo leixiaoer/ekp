@@ -1,0 +1,444 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configs
+	xmlns="http://www.example.org/design-config"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.example.org/design-config ../../design.xsd ">
+	<!-- 权限控制 -->
+	<module
+		messageKey="km-institution:module.km.institution"
+		defaultValidator="roleValidator(role=ROLE_KMINSTITUTION_DEFAULT)"
+		urlPrefix="/km/institution/">
+		<roles>
+			ROLE_KMINSTITUTION_DEFAULT; 
+			ROLE_KMINSTITUTION_COMMONWORKFLOW;
+			ROLE_KMINSTITUTION_COMMONNUMBER;
+			ROLE_KMINSTITUTION_SETTING	
+		</roles>
+		<areaRoles>
+			ROLE_KMINSTITUTION_CREATE;
+			ROLE_KMINSTITUTION_DELETE;
+			ROLE_KMINSTITUTION_READER;
+			ROLE_KMINSTITUTION_EDITOR;
+			ROLE_KMINSTITUTION_CANCLE;
+			ROLE_KMINSTITUTION_CATEGORY_MAINTAINER;
+			ROLE_KMINSTITUTION_CHANGERIGHT;
+			ROLE_KMINSTITUTION_CHANGECATE;
+			ROLE_KMINSTITUTION_OPTALL;
+			ROLE_KMINSTITUTION_MANUALPUBLISH;  <!-- 发布角色 -->
+			ROLE_KMINSTITUTION_BACKSTAGE_MANAGER;
+			ROLE_KMINSTITUTION_ABOLISH_MAINTAINER;
+			ROLE_KMINSTITUTION_EDITION_CREATE;
+			ROLE_KMINSTITUTION_TRANSPORT_EXPORT;
+			ROLE_KMINSTITUTION_VIEWDISPLY;
+			ROLE_KMINSTITUTION_CIRCULATION_CREATE;
+			ROLE_KMINSTITUTION_CIRCULATION_DELETE
+		</areaRoles>
+		<request
+			path="tree.jsp*"
+			defaultValidator="roleValidator(role=ROLE_KMINSTITUTION_BACKSTAGE_MANAGER)"/>
+		<!-- 模板权限 -->
+		<request
+			path="km_institution_template/kmInstitutionTemplate*"
+			validatorParameter="recid=fdId,model=com.landray.kmss.km.institution.model.KmInstitutionTemplate,adminRoleName=ROLE_KMINSTITUTION_CATEGORY_MAINTAINER">
+			<!-- 新增 -->
+			<query
+				queryString="method=add"
+				validator="sysSimpleCategoryEditorValidator(recid=parentId)" />		
+			<!-- 复制 -->
+			<query
+				queryString="method=copy"
+				validator="sysSimpleCategoryEditorValidator(recid=fdCopyId)" />		
+			<!-- 阅读 -->
+			<query
+				queryString="method=view"
+				validator="sysSimpleCategoryReaderValidator()" />
+			<!-- 编辑和删除 -->
+			<query
+				queryString="method=edit|update|delete"
+				validator="sysSimpleCategoryEditorValidator()" />								
+		</request>
+		<!-- 主文档权限 -->
+		<request
+			path="km_institution_knowledge/kmInstitutionKnowledge.*"
+			validatorParameter="recid=fdId,model=com.landray.kmss.km.institution.model.KmInstitutionKnowledge,cateModel=com.landray.kmss.km.institution.model.KmInstitutionTemplate,adminRoleName=ROLE_KMINSTITUTION_CATEGORY_MAINTAINER">
+			<!-- 新建 -->
+			<query
+				queryString="method=add&amp;fdTemplateId=*"
+				validator="areaRoleValidator(role=ROLE_KMINSTITUTION_CREATE)&amp;authSimpleCategoryReaderValidator(cateId=fdTemplateId)" />
+			<!-- 保存新版本 -->
+			<query
+				queryString="method=save|saveadd&amp;originId=*"
+				validator="authFieldValidator(type=creator,recid=originId)|authFieldValidator(recid=originId,type=SYS_EDITOR)|areaRoleValidator(role=ROLE_KMINSTITUTION_EDITION_CREATE)&amp;[areaRoleValidator(role=ROLE_KMINSTITUTION_CATEGORY_MAINTAINER)|areaRoleValidator(role=ROLE_KMINSTITUTION_OPTALL)|authSimpleCategoryEditorValidator(recid=originId,property=kmInstitutionTemplate)]" />
+			<!-- 保存 -->
+			<query
+				queryString="method=save|saveadd"
+				validator="areaRoleValidator(role=ROLE_KMINSTITUTION_CREATE)&amp;authSimpleCategoryReaderValidator(cateId=fdTemplateId)" />
+			<!-- 阅读 -->
+			<query
+				queryString="method=view"
+				validator="authFieldValidator(type=SYS_READER,isArea=true)|authSimpleCategoryEditorValidator(property=kmInstitutionTemplate)" />
+			<!-- 编辑 -->
+			<query
+				queryString="method=edit|update"
+				validator="authFieldValidator(type=SYS_EDITOR)|fieldValueValidator(fieldproperty=docStatus,value=30;50)&amp;areaRoleValidator(role=ROLE_KMINSTITUTION_EDITOR)&amp;[areaRoleValidator(role=ROLE_KMINSTITUTION_CATEGORY_MAINTAINER)|areaRoleValidator(role=ROLE_KMINSTITUTION_OPTALL)|authSimpleCategoryEditorValidator(property=kmInstitutionTemplate)]"/>
+			<!-- 删除 -->
+			<query
+				queryString="method=delete"
+				validator="fieldValueValidator(fieldproperty=docStatus,value=10)&amp;authFieldValidator(type=creator)|areaRoleValidator(role=ROLE_KMINSTITUTION_DELETE)&amp;[areaRoleValidator(role=ROLE_KMINSTITUTION_CATEGORY_MAINTAINER)|areaRoleValidator(role=ROLE_KMINSTITUTION_OPTALL)|authSimpleCategoryEditorValidator(property=kmInstitutionTemplate)]"/>
+			<!-- 删除所有草稿视图 -->
+			<query
+				queryString="method=deleteall&amp;status=10"
+				validator="roleValidator(role=ROLE_KMINSTITUTION_DEFAULT)" />
+			<!-- 置顶和取消置顶 -->
+			<query
+				queryString="method=setTop&amp;status=30"
+				validator="areaRoleValidator(role=ROLE_KMINSTITUTION_VIEWDISPLY)&amp;[roleValidator(role=ROLE_KMINSTITUTION_CATEGORY_MAINTAINER)|roleValidator(role=ROLE_KMINSTITUTION_OPTALL)|authSimpleCategoryEditorValidator(cateId=categoryId)]"/>
+			
+			<!-- 删除所有其他视图 -->
+			<query
+				queryString="method=deleteall"
+				validator="areaRoleValidator(role=ROLE_KMINSTITUTION_DELETE)&amp;[roleValidator(role=ROLE_KMINSTITUTION_CATEGORY_MAINTAINER)|roleValidator(role=ROLE_KMINSTITUTION_OPTALL)|authSimpleCategoryEditorValidator(cateId=categoryId)]"/>
+
+			<!-- 转移分类-->
+			<query
+				queryString="method=cateChgEdit"
+				validator="roleValidator(role=ROLE_KMINSTITUTION_CHANGECATE)&amp;[authSimpleCategoryEditorValidator(cateId=categoryId,role=ROLE_KMINSTITUTION_CATEGORY_MAINTAINER)]" />
+			<!-- 单个文档中失效 -->
+			<query
+				queryString="method=abolish"
+				validator="authFieldValidator(type=SYS_EDITOR)|fieldValueValidator(fieldproperty=docStatus,value=30)&amp;areaRoleValidator(role=ROLE_KMINSTITUTION_CANCLE)&amp;[areaRoleValidator(role=ROLE_KMINSTITUTION_CATEGORY_MAINTAINER)|areaRoleValidator(role=ROLE_KMINSTITUTION_OPTALL)|authSimpleCategoryEditorValidator(property=kmInstitutionTemplate)]"/>
+			<!-- 维护界面 -->
+			<query
+				queryString="method=manageList"
+				validator="authSimpleCategoryEditorValidator(cateId=categoryId,role=ROLE_KMINSTITUTION_CATEGORY_MAINTAINER)" />
+		</request>
+		<!-- 失效文档权限 -->
+		<request
+			path="km_inst_knowledge_abolish/kmInstitutionKnowledgeAbolish.*"
+			validatorParameter="recid=fdId,model=com.landray.kmss.km.institution.model.KmInstitutionKnowledgeAbolish,adminRoleName=ROLE_KMINSTITUTION_ABOLISH_MAINTAINER">
+			<!-- 编辑 -->
+			<query
+				queryString="method=edit"
+				validator="roleValidator(role=ROLE_KMINSTITUTION_ABOLISH_MAINTAINER)" />
+			<!-- 删除 -->
+			<query
+				queryString="method=delete|deleteall"
+				validator="roleValidator(role=ROLE_KMINSTITUTION_ABOLISH_MAINTAINER)" />
+			<!-- 阅读 -->
+			<query
+				queryString="method=view"
+				validator="authFieldValidator(type=SYS_READER)|roleValidator(role=ROLE_KMINSTITUTION_ABOLISH_MAINTAINER)" />
+		</request>	
+		<filters
+			modelName="com.landray.kmss.km.institution.model.KmInstitutionKnowledge">
+			<filter
+				type="creator"
+				expression="authFieldFilter(field=docCreator.fdId)" />
+			<filter
+				type="SYS_READER"
+				expression="roleFilter(role=ROLE_KMINSTITUTION_READER)" />
+			<filter
+				type="SYS_EDITOR"
+				expression="authFieldFilter(field=authAllEditors.fdId)" />	
+		</filters>
+		<filters
+			modelName="com.landray.kmss.km.institution.model.KmInstitutionKnowledgeAbolish">
+			<filter
+				type="SYS_READER"
+				expression="roleFilter(role=ROLE_KMINSTITUTION_ABOLISH_MAINTAINER)" />
+		</filters>
+	</module>
+	<module urlPrefix="/sys/transport/">
+		<request path="sys_transport_export/SysTransportExport*">
+			<query validator="roleValidator(role=ROLE_KMINSTITUTION_TRANSPORT_EXPORT)"
+				queryString="fdModelName=com.landray.kmss.km.institution.model.KmInstitutionKnowledge" />
+		</request>
+	</module>
+	<!-- 类别设置目录下 替换处理人和 批量修改特权人 -->
+	<module urlPrefix="/sys/lbpmservice/">
+		<request 
+			path="support/lbpm_template/lbpmTemplate*">
+			<query
+				queryString="method=updateAuditor|updateTemplateAuditor|updateCategoryAuditor|doUpdateAuditor&amp;fdModelName=com.landray.kmss.km.institution.model.KmInstitutionTemplate"
+				validator="roleValidator(role=ROLE_KMINSTITUTION_BACKSTAGE_MANAGER)" />
+		</request>
+		<request 
+			path="support/lbpm_template/lbpmPrivileger*">
+			<query
+				queryString="method=updatePrivileger|doUpdatePrivileger&amp;fdModelName=com.landray.kmss.km.institution.model.KmInstitutionTemplate"
+				validator="roleValidator(role=ROLE_KMINSTITUTION_BACKSTAGE_MANAGER)" />
+		</request>
+	</module>
+	<!-- 通用流程模板设置权限 -->
+	<module urlPrefix="/sys/workflow/">
+		<request path="sys_wf_common_template/sysWfCommonTemplate*">
+			<query
+				queryString="fdModelName=com.landray.kmss.km.institution.model.KmInstitutionTemplate"
+				validator="roleValidator(role=ROLE_KMINSTITUTION_COMMONWORKFLOW)" />
+		</request>
+	</module>
+	<!-- 通用编号规则设置权限 -->
+	<module urlPrefix="/sys/number/">
+		<request path="sys_number_main/sysNumberMain*">
+			<query
+				queryString="modelName=com.landray.kmss.km.institution.model.KmInstitutionKnowledge"
+				validator="roleValidator(role=ROLE_KMINSTITUTION_COMMONNUMBER)" />
+		</request>
+	</module>
+	<!-- 创建新版本 -->
+	<module urlPrefix="/sys/edition/">
+		<request 
+			path="sys_edition_main/sysEditionMain*">
+			<query
+				queryString="method=newVersion&amp;fdModelName=com.landray.kmss.km.institution.model.KmInstitutionKnowledge"				
+				validator="authFieldValidator(recid=fdModelId,model=com.landray.kmss.km.institution.model.KmInstitutionKnowledge,cateModel=com.landray.kmss.km.institution.model.KmInstitutionTemplate,type=creator)|authFieldValidator(recid=fdModelId,model=com.landray.kmss.km.institution.model.KmInstitutionKnowledge,cateModel=com.landray.kmss.km.institution.model.KmInstitutionTemplate,type=SYS_EDITOR)|areaRoleValidator(role=ROLE_KMINSTITUTION_EDITION_CREATE)&amp;[areaRoleValidator(role=ROLE_KMINSTITUTION_CATEGORY_MAINTAINER)|areaRoleValidator(role=ROLE_KMINSTITUTION_OPTALL)|authSimpleCategoryEditorValidator(recid=fdModelId,model=com.landray.kmss.km.institution.model.KmInstitutionKnowledge,cateModel=com.landray.kmss.km.institution.model.KmInstitutionTemplate,property=kmInstitutionTemplate)]"/>
+		</request>
+	</module>
+	<!-- 转移分类权限 -->
+	<module urlPrefix="/sys/sc/">
+		<request path="cateChg*">
+			<query
+				queryString="method=cateChgEdit&amp;cateModelName=com.landray.kmss.km.institution.model.KmInstitutionTemplate"
+				validator="roleValidator(role=ROLE_KMINSTITUTION_CHANGECATE)&amp;[roleValidator(role=ROLE_KMINSTITUTION_CATEGORY_MAINTAINER)|roleValidator(role=ROLE_KMINSTITUTION_OPTALL)|authSimpleCategoryEditorValidator(cateId=categoryId,cateModel=com.landray.kmss.km.institution.model.KmInstitutionTemplate)]"/>
+		</request>
+	</module>
+	<!-- 文档视图列表批量修改权限 -->
+	<module urlPrefix="/sys/right/">
+		<request path="rightDocChange*">
+			<query
+				queryString="method=docRightEdit&amp;modelName=com.landray.kmss.km.institution.model.KmInstitutionKnowledge"
+				validator="roleValidator(role=ROLE_KMINSTITUTION_CHANGERIGHT)&amp;[roleValidator(role=ROLE_KMINSTITUTION_CATEGORY_MAINTAINER)|roleValidator(role=ROLE_KMINSTITUTION_OPTALL)|authSimpleCategoryEditorValidator(cateId=categoryId,cateModel=com.landray.kmss.km.institution.model.KmInstitutionTemplate)]"/>
+		</request>
+	</module>
+	<!--发布机制权限-->
+	<module
+		messageKey=""
+		urlPrefix="/sys/news/">
+		<request path="sys_news_publish_main/sysNewsPublishMain_viewManualFrame.jsp*">
+			<query
+				queryString="fdModelNameParam=com.landray.kmss.km.institution.model.KmInstitutionKnowledge"
+				validator="roleValidator(role=ROLE_KMINSTITUTION_MANUALPUBLISH)" />
+		</request>
+		<request 
+				path="sys_news_main/sysNewsMain*">			
+			<query
+				queryString="method=editManualPublish&amp;fdModelNameParam=com.landray.kmss.km.institution.model.KmInstitutionKnowledge"
+				validator="areaRoleValidator(role=ROLE_KMINSTITUTION_MANUALPUBLISH,recid=fdModelIdParam,model=com.landray.kmss.km.institution.model.KmInstitutionKnowledge)" />
+			<query
+				queryString="method=manualPublishAdd&amp;fdModelName=com.landray.kmss.km.institution.model.KmInstitutionKnowledge"
+				validator="areaRoleValidator(role=ROLE_KMINSTITUTION_MANUALPUBLISH,recid=fdModelId,model=com.landray.kmss.km.institution.model.KmInstitutionKnowledge)" />
+		</request>
+	</module>
+	<!-- 传阅权限 -->
+	<module
+		messageKey=""
+		urlPrefix="/sys/circulation/">
+		<request 
+			path="sys_circulation_main/sysCirculationMain*">
+			<query
+				queryString="fdModelName=com.landray.kmss.km.institution.model.KmInstitutionKnowledge&amp;method=add|save|saveadd"
+				validator="roleValidator(role=ROLE_KMINSTITUTION_CIRCULATION_CREATE,recid=fdModelId,model=com.landray.kmss.km.institution.model.KmInstitutionKnowledge)" />
+			<query
+				queryString="fdModelName=com.landray.kmss.km.institution.model.KmInstitutionKnowledge&amp;method=delete"
+				validator="roleValidator(role=ROLE_KMINSTITUTION_CIRCULATION_DELETE,recid=fdModelId,model=com.landray.kmss.km.institution.model.KmInstitutionKnowledge)" />
+			<query
+				queryString="fdModelName=com.landray.kmss.km.institution.model.KmInstitutionKnowledge"
+				validator="roleValidator(role=ROLE_KMINSTITUTION_DEFAULT)" />
+		</request>
+	</module>
+	<!-- 搜索权限 -->
+	<module
+		messageKey=""
+		urlPrefix="/sys/ftsearch/">
+		<request path="searchBuilder*">
+			<query
+				queryString="modelName=com.landray.kmss.km.institution.model.KmInstitutionKnowledge"
+				validator="roleValidator(role=ROLE_KMINSTITUTION_DEFAULT)" />
+		</request>
+	</module>
+	<!-- 列表自定义权限 -->
+	<module urlPrefix="/sys/profile/">
+		<request 
+			path="listShow/sys_listShow/sysListShow*">
+			<query
+				queryString="modelName=com.landray.kmss.km.institution.model.KmInstitutionKnowledge"
+				validator="roleValidator(role=ROLE_KMINSTITUTION_DEFAULT)&amp;roleValidator(role=ROLE_KMINSTITUTION_BACKSTAGE_MANAGER)&amp;roleValidator(role=ROLE_KMINSTITUTION_SETTING)" />
+		</request>
+	</module>
+	<!-- 参数设置 -->
+	<module messageKey="" urlPrefix="/sys/appconfig/">
+		<request path="sys_appconfig/sysAppConfig*">
+			<query
+				queryString="modelName=com.landray.kmss.km.institution.model.KmInstitutionConfig"
+				validator="roleValidator(role=ROLE_KMINSTITUTION_SETTING)" />
+		</request>
+    </module>
+	<!-- 更新概览定时任务 -->
+	<quartz
+		cronExpression="0 0 4 * * ?"
+		jobService="kmInstitutionKnowledgePreService"
+		messageKey="km-institution:kmInstitutionKnowledge.quartz.preview"
+		jobMethod="updateKmInstitutionKnowledgePre"
+		description="km-institution:kmInstitutionKnowledge.quartz.description"/>
+	<!-- 更新过期文档定时任务 -->
+	<quartz
+		cronExpression="0 0 1 * * ?"
+		jobService="kmInstitutionAbolishUpdateService"
+		messageKey="km-institution:kmInstitutionKnowledge.quartz.abolish"
+		jobMethod="updateKmInstitutionKnowledgeAbolish"
+		description="km-institution:kmInstitutionKnowledge.quartz.abolish.desc"/>
+	<!-- 取消置顶定时任务 -->
+	<quartz
+		messageKey="km-institution:kmInstitution.quartz.checkPeriodValidity"
+		jobService="kmInstitutionKnowledgeService"
+		cronExpression="1 0 0 ? * *"
+		jobMethod="updateTopAgent" 
+		description="km-institution:kmInstitution.quartz.checkPeriodValidity.description"/>
+		
+	<!-- 主文档高级搜索 -->
+	<search
+		modelName="com.landray.kmss.km.institution.model.KmInstitutionKnowledge"
+		messageKey="km-institution:kmInstitution.search.title"
+		resultUrl="/km/institution/km_institution_knowledge/kmInstitutionKnowledge.do?method=result" />
+	<!-- 主文档全文搜索 -->
+	<ftSearch
+		modelName="com.landray.kmss.km.institution.model.KmInstitutionKnowledge"
+		boost="2.0"
+		timeField="fdLastModifiedTime">
+		<luceneField
+			name="subject"
+			property="docSubject"
+			type="text" />
+		<luceneField
+			name="content"
+			property="docContent"
+			type="text" />
+		<luceneField
+			name="template"
+			property="fdNumber"
+			type="keyword" />
+		<luceneField
+			name="category"
+			property="kmInstitutionTemplate.fdHierarchyId"
+			type="Text" />
+		<luceneField
+			name="creator"
+			property="docCreator.fdName"
+			type="text" />
+		<luceneField
+			name="author"
+			property="docAuthor.fdName"
+			type="text" />
+		<luceneField
+			name="createTime"
+			property="docAlterTime"
+			type="keyword" />
+		<luceneField
+			name="keyword"
+			property="sysTagMain"
+			property-value-getter="com.landray.kmss.sys.ftsearch.util.TagFullTextPropertyGetter"
+			type="text" />
+	</ftSearch>
+	<!-- 文档订阅机制配置 -->
+	<subscribe
+		messageKey="km-institution:kmInstitution.tree.title"
+		modelName="com.landray.kmss.km.institution.model.KmInstitutionKnowledge"
+		timeField="docPublishTime"
+		whereBlock="kmInstitutionKnowledge.docStatus='30'"
+		replaceKey="sys-doc:sysDocBaseInfo.docCreateTime;sys-doc:sysDocBaseInfo.docCreator;km-institution:kmInstitution.docSubject" />
+	<!-- 关联机制 -->
+	<relation
+		modelName="com.landray.kmss.km.institution.model.KmInstitutionKnowledge"
+		messageKey="km-institution:kmInstitution.tree.title" />
+	<!-- 我的工作菜单 -->
+	<treeNodes type="myjob">
+		<treeNode
+			messageKey="km-institution:table.kmInstitutionKnowledge">
+			<treeNode
+				messageKey="km-institution:kmInstitution.tree.myDoc"
+				url="/km/institution/km_institution_knowledge/kmInstitutionKnowledge.do?method=list&amp;mydoc=true&amp;status=all">
+				<treeNode
+					messageKey="status.draft"
+					url="/km/institution/km_institution_knowledge/kmInstitutionKnowledge.do?method=list&amp;mydoc=true&amp;status=10">
+				</treeNode>
+				<treeNode
+					messageKey="status.refuse"
+					url="/km/institution/km_institution_knowledge/kmInstitutionKnowledge.do?method=list&amp;mydoc=true&amp;status=11">
+				</treeNode>
+				<treeNode
+					messageKey="status.examine"
+					url="/km/institution/km_institution_knowledge/kmInstitutionKnowledge.do?method=list&amp;mydoc=true&amp;status=20">
+				</treeNode>
+				<treeNode
+					messageKey="status.publish"
+					url="/km/institution/km_institution_knowledge/kmInstitutionKnowledge.do?method=list&amp;mydoc=true&amp;status=30">
+				</treeNode>
+			</treeNode>
+			<treeNode
+				messageKey="km-institution:kmInstitution.tree.myJob.flowStatus">
+				<treeNode
+					messageKey="km-institution:kmInstitution.tree.myJob.flowStatus.prepare"
+					url="/km/institution/km_institution_knowledge/kmInstitutionKnowledge.do?method=list&amp;myflow=0&amp;status=all">
+				</treeNode>
+				<treeNode
+					messageKey="km-institution:kmInstitution.tree.myJob.flowStatus.passed"
+					url="/km/institution/km_institution_knowledge/kmInstitutionKnowledge.do?method=list&amp;myflow=1&amp;status=all">
+				</treeNode>
+			</treeNode>
+		</treeNode>
+	</treeNodes>
+	<!-- 我的工作－－草稿箱 -->
+	<treeNodes type="draft">
+		<treeNode
+			messageKey="km-institution:table.kmInstitutionKnowledge"
+			url="/km/institution/km_institution_knowledge/kmInstitutionKnowledge.do?method=list&amp;mydoc=true&amp;status=10">
+		</treeNode>
+	</treeNodes>
+	<!-- 规章制度配置 -->
+	<treeNodes type="config">
+		<treeNode messageKey="km-institution:kmInstitution.tree.title">
+		<treeNode
+			messageKey="km-institution:menu.kmdoc.categoryconfig"
+			url="/sys/simplecategory/sys_simple_category/sysCategoryMain_tree.jsp?modelName=com.landray.kmss.km.institution.model.KmInstitutionTemplate&amp;actionUrl=/km/institution/km_institution_template/kmInstitutionTemplate.do&amp;formName=kmInstitutionTemplateForm&amp;mainModelName=com.landray.kmss.km.institution.model.KmInstitutionKnowledge&amp;docFkName=kmInstitutionTemplate" />
+		<treeNode
+			messageKey="km-institution:tree.workflowTemplate"
+			url="/sys/workflow/sys_wf_common_template/sysWfCommonTemplate.do?method=list&amp;fdModelName=com.landray.kmss.km.institution.model.KmInstitutionTemplate&amp;fdKey=mainDoc" />
+		</treeNode>
+	</treeNodes>
+	<!-- 规章制度主页配置 -->
+	<homePage
+		urlPrefix="km/institution"
+		url="/sys/portal/page.jsp#j_start=/km/institution/index.jsp&amp;j_target=_iframe"
+		messageKey="km-institution:kmInstitution.tree.title" 
+		config="/moduleindex_notopic.jsp?nav=/km/institution/tree.jsp"/>
+	<!-- 规章制度流程配置 -->
+	<flowDef
+		modelName="com.landray.kmss.km.institution.model.KmInstitutionKnowledge"
+		templateModelName="com.landray.kmss.km.institution.model.KmInstitutionTemplate"
+		key="mainDoc"
+		templatePropertyName="kmInstitutionTemplate"
+		moduleMessageKey="km-institution:table.kmdoc"
+		type="oa">
+		<!-- 易企签 -->
+		<variant
+			name="yqqSign"
+			key="km-institution:kmInstitutionKnowledge.yqqSign" 
+			depend="elec/yqqs" />
+	</flowDef>	
+	<!-- 文档失效流程配置 -->
+	<flowDef
+		modelName="com.landray.kmss.km.institution.model.KmInstitutionKnowledgeAbolish"
+		templateModelName="com.landray.kmss.km.institution.model.KmInstitutionTemplate"
+		key="abolishDoc"
+		moduleMessageKey="km-institution:tree.abolish.workflowTemplate"
+		type="oa" />
+	<profileConfig
+	    key="km/institution"
+		messageKey="{km-institution:module.km.institution}" 
+		url="/sys/profile/moduleindex.jsp?nav=/km/institution/tree.jsp" 
+		icon="km_institution"
+		type="ekp"
+		description="{km-institution:kmInstitution.profileCfg.description}"
+		order="108"/>
+		
+</configs>

@@ -1,0 +1,263 @@
+@import './../lib/vars.scss';
+@import './../lib/mixins.scss';
+
+/* 公共公用 Starts
+		========================================================================== */
+.lui_list_body {
+    background-color: #f7f7f7;
+    box-shadow: none;
+}
+
+.lui_list_body .lui_paging_box {
+    border-bottom-left-radius: 4px;
+    border-bottom-right-radius: 4px;
+}
+
+/* 公共公用 Ends
+              ========================================================================== */
+
+
+/* 折叠面板内容列表 Starts
+              ========================================================================== */
+.lui_list_nav_list {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    color: inherit;
+}
+
+.lui_list_nav_list li {
+    padding: 0;
+    margin: 1px 0;
+}
+
+.lui_list_nav_list li a {
+    padding: 6px 15px;
+    width: auto;
+    height: auto;
+    line-height: 20px;
+    color: #666;
+    display: block;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    opacity: 1;
+    filter: alpha(opacity=100);
+}
+
+.lui_list_nav_list li a:hover,
+.lui_list_nav_list li.lui_list_nav_selected a,
+.lui_list_nav_list li.lui_list_nav_selected a:hover {
+    background-color: #f8f8f8;
+    opacity: 1;
+    filter: alpha(opacity=100);
+}
+
+/* 折叠面板内容列表 Ends
+              ========================================================================== */
+
+
+/* 左侧栏分类列表 Starts
+              ========================================================================== */
+
+/* 人员卡片 Starts */
+.lui-navtitle-card {}
+
+.lui-navtitle-card-operation>li a {
+    color: rgba(255, 255, 255, .8);
+    border-radius: 3px;
+}
+
+.lui-navtitle-card-operation>li.selected a {
+    margin-left: -3px;
+    margin-right: -3px;
+    padding-left: 3px;
+    padding-right: 3px;
+    color: #fff;
+    background-color: $primary-color;
+    text-shadow: 1px 1px 1px rgba(0, 0, 0, .35);
+}
+
+.lui-navtitle-card-operation>li.selected a:hover {
+    opacity: 1;
+    filter: alpha(opacity=100);
+}
+
+.lui-navtitle-card-info>li a {
+    color: rgba(255, 255, 255, .8);
+}
+
+.lui-navtitle-card-info>li.selected a .num,
+.lui-navtitle-card-info>li.selected a:hover .num {
+    color: $primary-color;
+}
+
+.lui-navtitle-card-info>li.selected a:hover {
+    opacity: 1;
+    filter: alpha(opacity=100);
+}
+
+/* 人员卡片 Ends */
+
+
+
+/* 左侧栏分类列表 Ends
+              ========================================================================== */
+
+
+/* 视图区域 Starts
+              ========================================================================== */
+.lui_list_body_frame br {
+    display: none;
+}
+
+.listview {
+    clear: both;
+    padding-top: 1px;
+    padding-bottom: 10px;
+    background-color: #fff;
+}
+
+/* 二级页面列表操作栏 Starts */
+.lui_list_operation {
+    padding: 1px 10px;
+    height: 38px;
+    line-height: 38px;
+    background-color: #fff;
+    border-top: 0;
+    border-bottom: 1px solid #d9d9d9;
+    border-top-left-radius: 4px;
+    border-top-right-radius: 4px;
+}
+
+.lui_list_operation_order_text {
+    padding-top: 0;
+}
+
+/* 二级页面列表操作栏 Ends */
+
+/* 列表视图样式 Starts */
+.lui_listview_columntable_table {
+    border-bottom: 0;
+}
+
+.lui_listview_columntable_table thead th {
+    padding: 0 2px;
+    height: 40px;
+    line-height: 40px;
+    font-size: inherit;
+    font-weight: bold;
+    border-bottom: 1px dotted #d9d9d9;
+    background-color: #fff;
+    white-space: nowrap;
+}
+
+.lui_listview_columntable_table tbody tr {
+    border-bottom: 1px dotted #d9d9d9;
+    transition: background-color .2s ease-in-out;
+}
+
+.lui_listview_columntable_table tbody tr:last-child {
+    border-bottom: 1px dotted #d9d9d9;
+}
+
+.lui_listview_columntable_table tbody tr:nth-child(even) {
+    background-color: #fcfcfc;
+}
+
+.lui_listview_columntable_table tbody tr:hover,
+.lui_listview_columntable_table tbody tr.lui_listview_columntable_tr_current {
+    background-color: $primary-color-opacity-10;
+}
+
+.lui_listview_columntable_table tbody tr td .com_subject {
+    color: #333;
+}
+
+.lui_listview_columntable_table tbody tr:hover .com_subject,
+.lui_listview_columntable_table tbody tr.lui_listview_columntable_tr_current .com_subject {
+    color: $primary-color !important;
+    text-decoration: none;
+}
+
+/* 列表视图样式 Ends */
+
+/* 摘要视图 Starts */
+.lui_listview_rowtable_main_body {}
+
+.lui_listview_rowtable_centerL {}
+
+.lui_listview_rowtable_summary_content_box {
+    padding: 12px 20px;
+    border-bottom: 1px solid #d9d9d9;
+    background-color: #fff;
+    transition: background-color .2s ease-in-out;
+}
+
+.lui_listview_rowtable_summary_content_box:hover {
+    background-color: #f4f4f4;
+}
+
+.lui_listview_rowtable_summary_content_box dt a,
+.lui_listview_rowtable_summary_content_box dt a span {
+    color: #333;
+    font-size: inherit;
+}
+
+.lui_listview_rowtable_summary_content_box:hover dt a,
+.lui_listview_rowtable_summary_content_box:hover dt a:hover,
+.lui_listview_rowtable_summary_content_box:hover dt a:hover span {
+    color: $primary-color !important;
+    text-decoration: none;
+}
+
+.lui_listview_rowtable_summary_content_box dd {
+    padding: 0;
+}
+
+.lui_listview_rowtable_summary_box>div:last-child {
+    border-bottom: 0;
+}
+
+.lui_listview_rowtable_summary_content_box_foot_info {
+    margin-top: 5px;
+    padding: 0;
+    color: #999;
+    line-height: 20px;
+    font-size: 12px;
+}
+
+.lui_listview_rowtable_summary_content_box_foot_info .com_author {
+    color: $primary-color;
+}
+
+/* 摘要视图 Ends */
+
+/* 格子视图 Starts */
+.lui_listview_gridtable_table {}
+
+.lui_listview_gridtable_table tr td {
+    border-bottom: 1px solid #d9d9d9;
+}
+
+.lui_listview_gridtable_table tbody tr:last-child {
+    border-bottom: 0;
+}
+
+/* 格子视图 Ends */
+
+/* 新UI图文视图 Starts */
+.lui_listview_landrayblue_content .lui_listview_landrayblue_content_container:hover {
+    border: 1px solid $primary-color;
+    -webkit-box-shadow: 0 2px 12px rgba(0, 0, 0, .175);
+    -moz-box-shadow: 0 2px 12px rgba(0, 0, 0, .175);
+    -ms-box-shadow: 0 2px 12px rgba(0, 0, 0, .175);
+    -o-box-shadow: 0 2px 12px rgba(0, 0, 0, .175);
+    box-shadow: 0 2px 12px rgba(0, 0, 0, .175);
+}
+
+/* 新UI图文视图 Ends */
+
+
+/* 视图区域 Ends
+              ========================================================================== */

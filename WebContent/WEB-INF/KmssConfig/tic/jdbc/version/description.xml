@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<description xmlns="http://www.example.org/description-config" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.example.org/description-config ../../../description.xsd">
+	<module>
+		<module-name>集成中心_JDBC应用组件</module-name>
+		<module-path>tic/jdbc</module-path>
+		<baseline>V15.0.4.R.20200410</baseline>
+		<source-md5>390e24aef13a8d1a2fc2c328fb9c6585</source-md5>
+		<is-custom>否</is-custom>
+		<serial-num>10</serial-num>
+	</module>
+</description>

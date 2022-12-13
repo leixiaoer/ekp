@@ -1,0 +1,82 @@
+{
+    "global":     {
+        "modelName": "com.landray.kmss.km.asset.model.KmAssetApplyChangeList",
+        "messageKey": "km-asset:table.kmAssetApplyChangeList",
+        "displayProperty": "fdId",
+        "serviceBean": "kmAssetApplyChangeListService",
+        "table": "km_asset_apply_change_list",
+        "url": "/km/asset/km_asset_apply_change_list/kmAssetApplyChangeList.do?method=view&fdId=${fdId}"
+    },
+    "attrs":     {
+        "fdId":         {
+            "propertyType": "id",
+            "generator": {"type": "assigned"}
+        },
+        "fdApplyChange":         {
+            "propertyType": "model",
+            "messageKey": "km-asset:kmAssetApplyChangeList.fdApplyChange",
+            "type": "com.landray.kmss.km.asset.model.KmAssetApplyChange",
+            "column": "fd_apply_change_id",
+            "notNull": "false",
+            "validate": "false",
+            "canLogShow":"1"
+        },
+        "fdNewAddress":         {
+            "propertyType": "model",
+            "messageKey": "km-asset:kmAssetApplyChangeList.fdNewAddress",
+            "type": "com.landray.kmss.km.asset.model.KmAssetAddress",
+            "column": "fd_new_address",
+            "notNull": "false",
+            "validate": "true",
+            "canLogShow":"1"
+        },
+        "fdNewDept":         {
+            "propertyType": "model",
+            "messageKey": "km-asset:kmAssetApplyChangeList.fdNewDept",
+            "type": "com.landray.kmss.sys.organization.model.SysOrgElement",
+            "column": "fd_new_dept",
+            "notNull": "false",
+            "validate": "true",
+            "canLogShow":"1"
+        },
+        "fdAssetCard":         {
+            "propertyType": "model",
+            "messageKey": "km-asset:kmAssetApplyChangeList.fdAssetCard",
+            "type": "com.landray.kmss.km.asset.model.KmAssetCard",
+            "column": "fd_asset_card_id",
+            "notNull": "false",
+            "validate": "false",
+            "canLogShow":"1"
+        },
+        "fdResponsiblePerson":         {
+            "propertyType": "model",
+            "messageKey": "km-asset:kmAssetApplyChangeList.fdResponsiblePerson",
+            "type": "com.landray.kmss.sys.organization.model.SysOrgElement",
+            "column": "fd_responsible_person",
+            "notNull": "false",
+            "validate": "true",
+            "canLogShow":"1"
+        },
+        "fdOldAddress":         {
+            "propertyType": "model",
+            "messageKey": "km-asset:kmAssetApplyChangeList.fdOldAddress",
+            "type": "com.landray.kmss.km.asset.model.KmAssetAddress",
+            "column": "fd_old_address",
+            "canLogShow":"1"
+        },
+        "fdOldDept":         {
+            "propertyType": "model",
+            "messageKey": "km-asset:kmAssetApplyChangeList.fdOldDept",
+            "type": "com.landray.kmss.sys.organization.model.SysOrgElement",
+            "column": "fd_old_dept",
+            "canLogShow":"1"
+        },
+        "fdOldResponsiblePerson":         {
+            "propertyType": "model",
+            "messageKey": "km-asset:kmAssetApplyChangeList.fdOldResponsiblePerson",
+            "type": "com.landray.kmss.sys.organization.model.SysOrgElement",
+            "column": "fd_old_responsible_person",
+            "canLogShow":"1"
+        }
+    }
+}

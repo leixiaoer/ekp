@@ -1,0 +1,29 @@
+
+.muiHeader{box-shadow:none; }
+.muiHeader{ margin-bottom:0px;}
+.muiCommonHeader {
+  	background:#0a6bb2 url(./images/bg.jpg) no-repeat 50% 100%;
+	background-size: cover;
+}
+
+
+.muiAskHeaderNav {
+	-webkit-transition: all 100ms linear;
+	height: 0;
+	overflow: hidden;
+}
+
+
+.muiAskHeaderNav .muiHeaderItem {
+	display: table-cell;
+}
+
+.muiAskHomeButton {
+	color: #fff;
+	min-width: 4rem;
+	height: 100%;
+	cursor: pointer;
+	background-color: #37aee9;
+}
+
+

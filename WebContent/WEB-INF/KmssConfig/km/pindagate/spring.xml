@@ -1,0 +1,311 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans
+	xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.0.xsd">
+	<bean
+		id="kmPindagateTemplateDao"
+		parent="KmssAuthAreaBaseDao"
+		class="com.landray.kmss.km.pindagate.dao.hibernate.KmPindagateTemplateDaoImp">
+		<property
+			name="modelName"
+			value="com.landray.kmss.km.pindagate.model.KmPindagateTemplate" />
+	</bean>
+		<bean
+		id="kmPindagateTemplateTarget"
+		parent="KmssBaseTarget"
+		class="com.landray.kmss.km.pindagate.service.spring.KmPindagateTemplateServiceImp">
+		<property name="baseDao">
+			<ref local="kmPindagateTemplateDao" />
+		</property>
+	</bean>
+	<bean
+		id="kmPindagateTemplateService"
+		parent="KmssBaseService">
+		<property name="target">
+			<ref local="kmPindagateTemplateTarget" />
+		</property>
+	</bean>
+	<bean
+		id="kmPindagateRejectPersonDao"
+		parent="KmssAuthAreaBaseDao"
+		class="com.landray.kmss.km.pindagate.dao.hibernate.KmPindagateRejectPersonDaoImp">
+		<property
+			name="modelName"
+			value="com.landray.kmss.km.pindagate.model.KmPindagateRejectPerson" />
+	</bean>
+	<bean
+		id="kmPindagateRejectPersonTarget"
+		parent="KmssBaseTarget"
+		class="com.landray.kmss.km.pindagate.service.spring.KmPindagateRejectPersonServiceImp">
+		<property name="baseDao">
+			<ref local="kmPindagateRejectPersonDao" />
+		</property>
+		<property name="sysNotifyTodoService">
+			<ref bean="sysNotifyTodoService" />
+		</property>
+		<property name="sysOrgPersonService">
+			<ref bean="sysOrgPersonService" />
+		</property>
+	</bean>
+	<bean
+		id="kmPindagateRejectPersonService"
+		parent="KmssBaseService">
+		<property name="target">
+			<ref local="kmPindagateRejectPersonTarget" />
+		</property>
+	</bean>
+	<bean
+		id="kmPindagateQuestionDao"
+		parent="KmssAuthAreaBaseDao"
+		class="com.landray.kmss.km.pindagate.dao.hibernate.KmPindagateQuestionDaoImp">
+		<property
+			name="modelName"
+			value="com.landray.kmss.km.pindagate.model.KmPindagateQuestion" />
+	</bean>
+	<bean
+		id="kmPindagateQuestionTarget"
+		parent="KmssBaseTarget"
+		class="com.landray.kmss.km.pindagate.service.spring.KmPindagateQuestionServiceImp">
+		<property
+			name="baseDao">
+			<ref
+				local="kmPindagateQuestionDao" />
+		</property>
+	</bean>
+	<bean
+		id="kmPindagateQuestionService"
+		parent="KmssBaseService">
+		<property
+			name="target">
+			<ref
+				local="kmPindagateQuestionTarget" />
+		</property>
+	</bean>
+
+	<bean
+		id="kmPindagateResponseDao"
+		parent="KmssAuthAreaBaseDao"
+		class="com.landray.kmss.km.pindagate.dao.hibernate.KmPindagateResponseDaoImp">
+		<property
+			name="modelName"
+			value="com.landray.kmss.km.pindagate.model.KmPindagateResponse" />
+	</bean>
+	<bean
+		id="kmPindagateResponseTarget"
+		parent="KmssBaseTarget"
+		class="com.landray.kmss.km.pindagate.service.spring.KmPindagateResponseServiceImp">
+		<property name="baseDao">
+			<ref local="kmPindagateResponseDao" />
+		</property>
+		<property name="kmPindagateQuestionService">
+			<ref local="kmPindagateQuestionService" />
+		</property>
+		<property name="kmPindagateMainService">
+			<ref local="kmPindagateMainService" />
+		</property>
+		<property name="sysNotifyMainCoreService">
+			<ref bean="sysNotifyMainCoreService" />
+		</property>
+		<property name="kmPindagateStatisticService">
+			<ref bean="kmPindagateStatisticService" />
+		</property>
+		<property name="sysOrgPersonService">
+			<ref bean="sysOrgPersonService" />
+		</property>
+		
+	</bean>
+	<bean
+		id="kmPindagateResponseService"
+		parent="KmssBaseService">
+		<property
+			name="target">
+			<ref
+				local="kmPindagateResponseTarget" />
+		</property>
+	</bean>
+
+	<bean
+		id="kmPindagateMainDao"
+		parent="KmssAuthAreaBaseDao"
+		class="com.landray.kmss.km.pindagate.dao.hibernate.KmPindagateMainDaoImp">
+		<property
+			name="modelName"
+			value="com.landray.kmss.km.pindagate.model.KmPindagateMain" />
+	</bean>
+	<bean
+		id="kmPindagateMainTarget"
+		parent="KmssBaseTarget"
+		class="com.landray.kmss.km.pindagate.service.spring.KmPindagateMainServiceImp">
+		<property name="baseDao">
+			<ref local="kmPindagateMainDao" />
+		</property>
+		<property name="sysQuartzCoreService">
+			<ref bean="sysQuartzCoreService" />
+		</property>
+		<property name="sysNotifyMainCoreService">
+			<ref bean="sysNotifyMainCoreService" />
+		</property>
+		<property name="sysOrgCoreService">
+			<ref bean="sysOrgCoreService" />
+		</property>
+		<property name="kmPindagateResponseService">
+			<ref local="kmPindagateResponseService" />
+		</property>
+		<property name="sysAttMainService">
+			<ref bean="sysAttMainService" />
+		</property>
+		<property name="kmPindagateStatisticService">
+			<ref bean="kmPindagateStatisticService" />
+		</property>
+		<property name="sysCategoryMainService">
+			<ref bean="sysCategoryMainService" />
+		</property>
+	</bean>
+	<bean
+		id="kmPindagateMainService"
+		parent="KmssBaseService">
+		<property
+			name="target">
+			<ref
+				local="kmPindagateMainTarget" />
+		</property>
+		
+	</bean>
+<bean
+		id="kmPindagateMainTempDao"
+		parent="KmssAuthAreaBaseDao"
+		class="com.landray.kmss.km.pindagate.dao.hibernate.KmPindagateMainTempDaoImp">
+		<property
+			name="modelName"
+			value="com.landray.kmss.km.pindagate.model.KmPindagateMainTemp" />
+	</bean>
+	<bean
+		id="kmPindagateMainTempTarget"
+		parent="KmssBaseTarget"
+		class="com.landray.kmss.km.pindagate.service.spring.KmPindagateMainTempServiceImp">
+		<property
+			name="baseDao">
+			<ref
+				local="kmPindagateMainTempDao" />
+		</property>
+	</bean>
+	<bean
+		id="kmPindagateMainTempService"
+		parent="KmssBaseService">
+		<property
+			name="target">
+			<ref
+				local="kmPindagateMainTempTarget" />
+		</property>
+	</bean>
+	<bean
+		id="kmPindagateQuestionResDao"
+		parent="KmssAuthAreaBaseDao"
+		class="com.landray.kmss.km.pindagate.dao.hibernate.KmPindagateQuestionResDaoImp">
+		<property
+			name="modelName"
+			value="com.landray.kmss.km.pindagate.model.KmPindagateQuestionRes" />
+	</bean>
+	<bean
+		id="kmPindagateQuestionResTarget"
+		parent="KmssBaseTarget"
+		class="com.landray.kmss.km.pindagate.service.spring.KmPindagateQuestionResServiceImp">
+		<property
+			name="baseDao">
+			<ref
+				local="kmPindagateQuestionResDao" />
+		</property>
+	</bean>
+	<bean
+		id="kmPindagateQuestionResService"
+		parent="KmssBaseService">
+		<property
+			name="target">
+			<ref
+				local="kmPindagateQuestionResTarget" />
+		</property>
+	</bean>
+	<bean
+		id="kmPindagateTemplateTreeService"
+		class="com.landray.kmss.km.pindagate.service.spring.KmPindagateTemplateTreeService">
+		<property name="kmPindagateTemplateService">
+			<ref local="kmPindagateTemplateService" />
+		</property>
+	</bean>
+	<bean
+		id="kmPindagateMainTempTreeService"
+		class="com.landray.kmss.km.pindagate.service.spring.KmPindagateMainTempTreeService">
+		<property name="kmPindagateMainTempService">
+			<ref local="kmPindagateMainTempService" />
+		</property>
+	</bean>
+	<bean
+		id="kmPindagateQuestionTypeService"
+		class="com.landray.kmss.km.pindagate.service.spring.KmPindagateQuestionTypeService">
+	</bean>
+	<bean
+		id="kmPindagateMainTempQuestionService"
+		class="com.landray.kmss.km.pindagate.service.spring.KmPindagateMainTempQuestionService">
+			<property name="kmPindagateQuestionService">
+			<ref local="kmPindagateQuestionService" />
+		</property>
+	</bean>
+	
+	<!-- 题目类别树 -->
+	<bean
+		id="kmPindagateMainTempTitleTreeService"
+		class="com.landray.kmss.km.pindagate.service.spring.KmPindagateMainTempTitleTreeService">
+		<property name="sysCategoryMainService">
+			<ref bean="sysCategoryMainService" />
+		</property>
+	</bean>
+	
+	<!-- 题目类别信息树 -->
+	<bean
+		id="kmPindagateMainTempNameTreeService"
+		class="com.landray.kmss.km.pindagate.service.spring.KmPindagateMainTempNameTreeService">
+		<property name="kmPindagateMainTempService">
+			<ref bean="kmPindagateMainTempService" />
+		</property>
+	</bean>
+	
+	<!-- 题目搜索 -->
+	<bean
+		id="kmPindagateMainTempNameSearchService"
+		class="com.landray.kmss.km.pindagate.service.spring.KmPindagateMainTempNameSearchService">
+		<property name="kmPindagateMainTempService">
+			<ref bean="kmPindagateMainTempService" />
+		</property>
+	</bean>
+	
+	<!-- 调查结果 -->
+	<bean
+		id="kmPindagateStatisticDao"
+		parent="KmssAuthAreaBaseDao"
+		class="com.landray.kmss.km.pindagate.dao.hibernate.KmPindagateStatisticDaoImp">
+		<property
+			name="modelName"
+			value="com.landray.kmss.km.pindagate.model.KmPindagateStatistic" />
+	</bean>
+	<bean
+		id="kmPindagateStatisticTarget"
+		parent="KmssBaseTarget"
+		class="com.landray.kmss.km.pindagate.service.spring.KmPindagateStatisticServiceImp">
+		<property
+			name="baseDao">
+			<ref
+				local="kmPindagateStatisticDao" />
+		</property>
+	</bean>
+	<bean
+		id="kmPindagateStatisticService"
+		parent="KmssBaseService">
+		<property
+			name="target">
+			<ref
+				local="kmPindagateStatisticTarget" />
+		</property>
+	</bean>
+	
+</beans>

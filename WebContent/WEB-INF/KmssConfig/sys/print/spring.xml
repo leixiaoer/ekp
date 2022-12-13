@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans
+	xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.0.xsd">
+	<bean
+		id="sysPrintTemplateDao"
+		parent="KmssAuthBaseDao"
+		class="com.landray.kmss.sys.print.dao.hibernate.SysPrintTemplateDaoImp">
+		<property
+			name="modelName"
+			value="com.landray.kmss.sys.print.model.SysPrintTemplate" />
+	</bean>
+	<bean
+		id="sysPrintLogDao"
+		parent="KmssAuthBaseDao"
+		class="com.landray.kmss.sys.print.dao.hibernate.SysPrintLogDaoImp">
+		<property name="sysOrgElementDao">
+			<ref bean="sysOrgElementDao"/>
+		</property>
+		<property
+			name="modelName"
+			value="com.landray.kmss.sys.print.model.SysPrintLog" />
+	</bean>
+	<bean
+		id="sysPrintTemplateTarget"
+		parent="KmssBaseTarget"
+		class="com.landray.kmss.sys.print.service.spring.SysPrintTemplateServiceImp">
+		<property
+			name="baseDao">
+			<ref
+				local="sysPrintTemplateDao" />
+		</property>
+	</bean>
+	<bean
+		id="sysPrintTemplateService"
+		parent="KmssBaseService">
+		<property
+			name="target">
+			<ref
+				local="sysPrintTemplateTarget" />
+		</property>
+	</bean>
+	
+	<bean
+		id="sysPrintLogTarget"
+		parent="KmssBaseTarget"
+		class="com.landray.kmss.sys.print.service.spring.SysPrintLogServiceImp">
+		<property
+			name="baseDao">
+			<ref
+				local="sysPrintLogDao" />
+		</property>
+	</bean>
+	<bean
+		id="sysPrintLogService"
+		parent="KmssBaseService">
+		<property
+			name="target">
+			<ref
+				local="sysPrintLogTarget" />
+		</property>
+	</bean>
+	
+	<!-- 机制注入 -->
+	<bean id="sysPrintMainCoreService" parent="KmssBaseCoreService">
+		<property name="target">
+			<bean class="com.landray.kmss.sys.print.service.spring.SysPrintMainCoreServiceImp">
+				<property name="sysPrintTemplateService">
+					<ref local="sysPrintTemplateService" />
+				</property>
+				<property name="sysPrintTemplateHistoryService">
+					<ref local="sysPrintTemplateHistoryService" />
+				</property>
+			</bean>
+		</property>
+	</bean>
+	
+	<bean id="sysPrintTemplateCoreService" parent="KmssBaseCoreService">
+		<property name="target">
+			<bean class="com.landray.kmss.sys.print.service.spring.SysPrintTemplateCoreServiceImp">
+				<property name="sysPrintTemplateService">
+					<ref local="sysPrintTemplateService" />
+				</property>
+			</bean>
+		</property>
+	</bean>
+	
+	<bean id="sysPrintLogCoreService" parent="KmssBaseCoreService">
+		<property name="target">
+			<bean class="com.landray.kmss.sys.print.service.spring.SysPrintLogCoreServiceImp">
+				<property name="sysPrintLogService">
+					<ref local="sysPrintLogService" />
+				</property>
+			</bean>
+		</property>
+	</bean>
+	
+	<bean id="sysPrintPropertyDictService" class="com.landray.kmss.sys.print.service.spring.SysPrintPropertyDictService">
+	</bean>
+	<bean
+		id="sysPrintTemplateHistoryDao"
+		parent="KmssAuthBaseDao"
+		class="com.landray.kmss.sys.print.dao.hibernate.SysPrintTemplateHistoryDaoImp">
+		<property
+			name="modelName"
+			value="com.landray.kmss.sys.print.model.SysPrintTemplateHistory" />
+	</bean>
+	<bean
+		id="sysPrintTemplateHistoryTarget"
+		parent="KmssBaseTarget"
+		class="com.landray.kmss.sys.print.service.spring.SysPrintTemplateHistoryServiceImp">
+		<property
+			name="baseDao">
+			<ref
+				local="sysPrintTemplateHistoryDao" />
+		</property>
+	</bean>
+	<bean
+		id="sysPrintTemplateHistoryService"
+		parent="KmssBaseService">
+		<property
+			name="target">
+			<ref
+				local="sysPrintTemplateHistoryTarget" />
+		</property>
+	</bean>
+	<bean id="sysPrintMessageUtil" class="com.landray.kmss.sys.print.util.SysPrintMessageUtil"></bean>
+	
+	<bean
+		id="sysPrintTemplateJspClearMessageReceiver"
+		class="com.landray.kmss.sys.print.message.SysPrintTemplateJspClearMessageReceiver">
+	</bean>	
+</beans>

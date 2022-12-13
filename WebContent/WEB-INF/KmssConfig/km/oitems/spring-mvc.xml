@@ -1,0 +1,292 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans
+	xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.0.xsd">
+	<bean
+		name="/km/oitems/km_oitems_manage/kmOitemsManage.do"
+		class="com.landray.kmss.km.oitems.actions.KmOitemsManageAction"
+		lazy-init="true"
+		parent="KmssBaseAction">
+		<property
+			name="formType"
+			value="com.landray.kmss.km.oitems.forms.KmOitemsManageForm" />
+		<property name="forwards">
+			<map>
+				<entry
+					key="view"
+					value="/km/oitems/km_oitems_manage/kmOitemsManage_view.jsp" />
+				<entry
+					key="edit"
+					value="/km/oitems/km_oitems_manage/kmOitemsManage_edit.jsp" />
+				<entry
+					key="list"
+					value="/km/oitems/km_oitems_manage/kmOitemsManage_list.jsp" />
+			</map>
+		</property>
+	</bean>
+	<bean
+		name="/km/oitems/km_oitems_listing/kmOitemsListing.do"
+		class="com.landray.kmss.km.oitems.actions.KmOitemsListingAction"
+		lazy-init="true"
+		parent="KmssBaseAction">
+		<property
+			name="formType"
+			value="com.landray.kmss.km.oitems.forms.KmOitemsListingForm" />
+		<property name="forwards">
+			<map>
+				<entry
+					key="view"
+					value="/km/oitems/km_oitems_listing_ui/kmOitemsListing_view.jsp" />
+				<entry
+					key="edit"
+					value="/km/oitems/km_oitems_listing_ui/kmOitemsListing_edit.jsp" />
+				<entry
+					key="list"
+					value="/km/oitems/km_oitems_listing_ui/kmOitemsListing_list.jsp" />
+				<entry
+					key="recordList"
+					value="/km/oitems/km_oitems_listing/kmOitemsListing_listRecord.jsp" />
+				<entry
+					key="recordListData"
+					value="/km/oitems/km_oitems_listing/kmOitemsListing_listRecord_data.jsp" />
+				<entry
+					key="checkOitemsList"
+					value="/km/oitems/km_oitems_listing/kmOitemsListing_checkOitemsList.jsp" />
+				<entry
+					key="checkOitemsList.4m"
+					value="/km/oitems/mobile/checkOitemsList.jsp" />
+				<entry
+					key="inCount"
+					value="/km/oitems/km_oitems_listing/kmOitemsListing_inCountList.jsp" />
+				<entry
+					key="inCountData"
+					value="/km/oitems/km_oitems_listing/kmOitemsListing_inCountList_data.jsp" />
+				<entry
+					key="outCount"
+					value="/km/oitems/km_oitems_listing/kmOitemsListing_outCountList.jsp" />
+				<entry
+					key="outCountData"
+					value="/km/oitems/km_oitems_listing/kmOitemsListing_outCountList_data.jsp" />
+				<entry
+					key="stockCount"
+					value="/km/oitems/km_oitems_listing/kmOitemsListing_stockCountList.jsp" />
+				<entry
+					key="stockCountData"
+					value="/km/oitems/km_oitems_listing/kmOitemsListing_stockCountList_data.jsp" />
+				<entry
+					key="receiveCount"
+					value="/km/oitems/km_oitems_listing/kmOitemsListing_receiveCountList.jsp" />
+				<entry
+					key="receiveCountData"
+					value="/km/oitems/km_oitems_listing/kmOitemsListing_receiveCountList_data.jsp" />
+				<entry
+					key="saveExcel"
+					value="/km/oitems/km_oitems_listing/km_oitems_listing_Upload.jsp" />
+				<entry
+					key="listChileren"
+					value="/km/oitems/km_oitems_listing_ui/kmOitemsListing_set.jsp" />
+			</map>
+		</property>
+	</bean>
+	<bean
+		name="/km/oitems/km_oitems_warehousing_record/kmOitemsWarehousingRecord.do"
+		class="com.landray.kmss.km.oitems.actions.KmOitemsWarehousingRecordAction"
+		lazy-init="true"
+		parent="KmssBaseAction">
+		<property
+			name="formType"
+			value="com.landray.kmss.km.oitems.forms.KmOitemsWarehousingRecordForm" />
+		<property name="forwards">
+			<map>
+				<entry
+					key="view"
+					value="/km/oitems/km_oitems_warehousing_record/kmOitemsWarehousingRecord_view.jsp" />
+				<entry
+					key="edit"
+					value="/km/oitems/km_oitems_warehousing_record/kmOitemsWarehousingRecord_edit.jsp" />
+				<entry
+					key="list"
+					value="/km/oitems/km_oitems_warehousing_record/kmOitemsWarehousingRecord_list.jsp" />
+				<entry
+					key="listRecord"
+					value="/km/oitems/km_oitems_warehousing_record/kmOitemsWarehousingRecord_listRecord.jsp" />
+			</map>
+		</property>
+	</bean>
+	<bean
+		name="/km/oitems/km_oitems_warehousing_record_joinlist/kmOitemsWarehousingRecordJoinList.do"
+		class="com.landray.kmss.km.oitems.actions.KmOitemsWarehousingRecordJoinListAction"
+		lazy-init="true"
+		parent="KmssBaseAction">
+		<property
+			name="formType"
+			value="com.landray.kmss.km.oitems.forms.KmOitemsWarehousingRecordJoinListForm" />
+		<property name="forwards">
+			<map>
+				<entry
+					key="listRecord"
+					value="/km/oitems/km_oitems_warehousing_record_joinlist/kmOitemsWarehousingRecordJoinList_listRecord.jsp" />
+				<entry
+					key="listRecord.4m"
+					value="/km/oitems/mobile/listRecord.jsp" />
+				<entry
+					key="list"
+					value="/km/oitems/km_oitems_warehousing_record_joinlist/kmOitemsWarehousingRecordJoinList_list.jsp" />
+			</map>
+		</property>
+	</bean>
+	<bean
+		name="/km/oitems/km_oitems_budger_application/kmOitemsBudgerApplication.do"
+		class="com.landray.kmss.km.oitems.actions.KmOitemsBudgerApplicationAction"
+		lazy-init="true"
+		parent="KmssBaseAction">
+		<property
+			name="formType"
+			value="com.landray.kmss.km.oitems.forms.KmOitemsBudgerApplicationForm" />
+		<property name="forwards">
+			<map>
+				<entry
+					key="view"
+					value="/km/oitems/km_oitems_budger_application_ui/kmOitemsBudgerApplication_view.jsp" />
+				<entry
+					key="print"
+					value="/km/oitems/km_oitems_budger_application_ui/kmOitemsBudgerApplication_print.jsp" />
+				<entry
+					key="view.4m"
+					value="/km/oitems/mobile/view.jsp" />
+				<entry
+					key="edit"
+					value="/km/oitems/km_oitems_budger_application_ui/kmOitemsBudgerApplication_edit.jsp" />
+				<entry
+					key="edit.4m"
+					value="/km/oitems/mobile/edit.jsp" />
+				<entry
+					key="list"
+					value="/km/oitems/km_oitems_budger_application/kmOitemsBudgerApplication_list.jsp" />
+				<entry
+					key="count"
+					value="/km/oitems/km_oitems_budger_application/kmOitemsBudgerApplication_count.jsp" />
+			</map>
+		</property>
+	</bean>
+	<bean
+		name="/km/oitems/km_oitems_budger_application/kmOitemsBudgerApplicationIndex.do"
+		class="com.landray.kmss.km.oitems.actions.KmOitemsBudgerApplicationIndexAction"
+		lazy-init="true"
+		parent="KmssBaseAction">
+		<property name="forwards">
+			<map>
+				<entry
+					key="list"
+					value="/km/oitems/km_oitems_budger_application_ui/kmOitemsBudgerApplication_list.jsp" />
+				<entry
+					key="list.4m"
+					value="/km/oitems/mobile/list.jsp" />
+			</map>
+		</property>
+	</bean>
+	<bean
+		name="/km/oitems/km_oitems_shopping_trolley/kmOitemsShoppingTrolley.do"
+		class="com.landray.kmss.km.oitems.actions.KmOitemsShoppingTrolleyAction"
+		lazy-init="true"
+		parent="KmssBaseAction">
+		<property
+			name="formType"
+			value="com.landray.kmss.km.oitems.forms.KmOitemsShoppingTrolleyForm" />
+		<property name="forwards">
+			<map>
+				<entry
+					key="view"
+					value="/km/oitems/km_oitems_shopping_trolley/kmOitemsShoppingTrolley_view.jsp" />
+				<entry
+					key="edit"
+					value="/km/oitems/km_oitems_shopping_trolley/kmOitemsShoppingTrolley_edit.jsp" />
+				<entry
+					key="list"
+					value="/km/oitems/km_oitems_shopping_trolley/kmOitemsShoppingTrolley_list.jsp" />
+				<entry
+					key="listForApplication"
+					value="/km/oitems/km_oitems_shopping_trolley/kmOitemsShoppingTrolley_application_list.jsp" />
+				<entry
+					key="listForDelete"
+					value="/km/oitems/km_oitems_shopping_trolley/kmOitemsShoppingTrolley.do?method=list&amp;fdType=${param.fdType}" />
+				<entry
+					key="listForFdListingId"
+					value="/km/oitems/km_oitems_shopping_trolley/km_oitems_shopping_trolley_details_list.jsp" />
+				<entry
+					key="data"
+					value="/km/oitems/km_oitems_shopping_trolley/kmOitemsShoppingTrolley_data.jsp" />
+				<entry
+					key="saveExcel"
+					value="/km/oitems/km_oitems_shopping_trolley/km_oitems_shopping_trolley_upload.jsp" />
+			</map>
+		</property>
+	</bean>
+	<bean
+		name="/km/oitems/km_oitems_templet/kmOitemsTemplet.do"
+		class="com.landray.kmss.km.oitems.actions.KmOitemsTempletAction"
+		lazy-init="true"
+		parent="KmssBaseAction">
+		<property
+			name="formType"
+			value="com.landray.kmss.km.oitems.forms.KmOitemsTempletForm" />
+		<property name="forwards">
+			<map>
+				<entry
+					key="view"
+					value="/km/oitems/km_oitems_templet/kmOitemsTemplet_view.jsp" />
+				<entry
+					key="edit"
+					value="/km/oitems/km_oitems_templet/kmOitemsTemplet_edit.jsp" />
+				<entry
+					key="list"
+					value="/km/oitems/km_oitems_templet/kmOitemsTemplet_list.jsp" />
+			</map>
+		</property>
+	</bean>
+	<bean
+		name="/km/oitems/km_oitems_month_report/kmOitemsMonthReport.do"
+		class="com.landray.kmss.km.oitems.actions.KmOitemsMonthReportAction"
+		lazy-init="true"
+		parent="KmssBaseAction">
+		<property
+			name="formType"
+			value="com.landray.kmss.km.oitems.forms.KmOitemsMonthReportForm" />
+		<property name="forwards">
+			<map>
+				<entry
+					key="view"
+					value="/km/oitems/km_oitems_month_report_ui/kmOitemsMonthReport_view.jsp" />
+				<entry
+					key="edit"
+					value="/km/oitems/km_oitems_month_report_ui/kmOitemsMonthReport_edit.jsp" />
+				<entry
+					key="list"
+					value="/km/oitems/km_oitems_month_report_ui/kmOitemsMonthReport_list.jsp" />
+			</map>
+		</property>
+	</bean>
+	<bean
+		name="/km/oitems/km_oitems_report_listing/kmOitemsReportListing.do"
+		class="com.landray.kmss.km.oitems.actions.KmOitemsReportListingAction"
+		lazy-init="true"
+		parent="KmssBaseAction">
+		<property
+			name="formType"
+			value="com.landray.kmss.km.oitems.forms.KmOitemsReportListingForm" />
+		<property name="forwards">
+			<map>
+				<entry
+					key="view"
+					value="/km/oitems/km_oitems_report_listing/kmOitemsReportListing_view.jsp" />
+				<entry
+					key="edit"
+					value="/km/oitems/km_oitems_report_listing/kmOitemsReportListing_edit.jsp" />
+				<entry
+					key="list"
+					value="/km/oitems/km_oitems_report_listing/kmOitemsReportListing_list.jsp" />
+			</map>
+		</property>
+	</bean>
+</beans>

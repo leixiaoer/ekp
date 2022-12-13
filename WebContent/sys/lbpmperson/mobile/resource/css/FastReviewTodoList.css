@@ -1,0 +1,123 @@
+/***********************************   快速审批列表相关（Start）    ***********************************/
+#scroll_FastReview .fastReviewTodoListTitle{
+	padding-left:1rem;
+	padding-right:1rem;
+	padding-top: 1.4rem;
+	padding-bottom:1rem;
+	font-weight: bold;
+}
+#scroll_FastReview .fastReviewTodoList{
+    margin-top: 1rem;
+}
+#scroll_FastReview .muiFastReviewTodoListItem{
+    padding-bottom: 1rem;
+    position: relative;
+}
+
+#scroll_FastReview .muiFastReviewTodoListItem:after{
+	content: " ";
+    position: absolute;
+    z-index: 2;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    border-top: .1rem solid #EEEEEE;
+    -webkit-transform-origin: 0 0;
+    transform-origin: 0 0;
+    -webkit-transform: scaleY(.5);
+    transform: scaleY(.5);
+}
+
+#scroll_FastReview .muiPortalClickItem:not(:first-child)>.muiFastReviewTodoListItem{
+	padding-top: .6rem;
+}
+
+.muiFastReviewTodoListItem .muiFastReviewTodoContentContainer .muiFastReviewToTitleLabel{
+    overflow: hidden;
+    text-overflow: ellipsis;
+    word-break: break-all;
+    word-wrap: break-word;
+    -webkit-line-clamp: 4;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    box-orient: vertical;
+    -webkit-box-pack: center;
+    box-pack: center;
+    -webkit-box-align: start;
+    box-align: start;
+}
+
+.muiFastReviewTodoListItem .muiFastReviewTodoContentContainer .muiFastReviewTodoBaseInfo{
+    position: relative;
+    margin-top: .6rem;
+    min-height: 2.6rem;
+}
+
+.muiFastReviewTodoListItem .muiFastReviewTodoContentContainer .muiFastReviewTodoBaseInfo .muiFastReviewTodoPersonHeadIcon{
+    position: absolute;
+    width: 2.4rem;
+    height: 2.4rem;
+    border-radius: 50%;
+    border: 1px solid #c9dfff;
+    background-color: #f8f8f8;
+    overflow: hidden;
+}
+.muiFastReviewTodoListItem .muiFastReviewTodoContentContainer .muiFastReviewTodoBaseInfo .muiFastReviewTodoPersonHeadIcon img{
+	width: 100%;
+}
+
+.muiFastReviewTodoListItem .muiFastReviewTodoContentContainer .muiFastReviewTodoBaseInfo .muiFastReviewTodoTextInfo{
+    position: relative;
+    padding-left: 3.6rem;
+    padding-top: .4rem;
+}
+
+.muiFastReviewTodoListItem .muiFastReviewTodoContentContainer .muiFastReviewTodoBaseInfo .muiFastReviewTodoTextInfo span{
+	display: inline-block;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    max-width: 100%;
+}
+
+.muiFastReviewTodoListItem .muiFastReviewTodoContentContainer .muiFastReviewTodoBaseInfo .muiFastReviewTodoTextInfo span:not(:last-child){
+	padding-right: 1rem;
+}
+
+.muiFastReviewTodoListItem .muiFastReviewTodoOperateBtnContainer{
+	position: relative;
+    text-align: right;
+    padding-top: .6rem;
+}
+
+.muiFastReviewTodoListItem .muiFastReviewTodoOperateBtnContainer .muiProcessBtn{
+    display: inline-block;
+    background-color: #4285F4;
+    border: 1px solid #4285F4;
+    color: #FFFFFF;
+    border-radius: .2rem;
+    padding-left: 1.2rem;
+    padding-right: 1.2rem;
+    padding-top: .4rem;
+    padding-bottom: .4rem;
+}
+.muiFastReviewTodoListItem .muiFastReviewTodoOperateBtnContainer .muiProcessBtn.muiProcessBtnGray{
+	background-color: #FFFFFF;
+	color: #2A304A;
+	border: 1px solid #999999;
+}
+.muiFastReviewTodoListItem .muiFastReviewTodoOperateBtnContainer .muiProcessBtn:not(:first-child){
+	margin-left: 1rem;
+}
+.muiFastReviewTodoListItem .muiFastReviewTodoOperateBtnContainer .muiFastReviewTodoOperatedTag{
+	display: inline-block;
+	background-color: #F4F4F4;
+	border: 1px solid #F4F4F4;
+    color: #999999;
+    border-radius: .2rem;
+    padding-left: 1.2rem;
+    padding-right: 1.2rem;
+    padding-top: .4rem;
+    padding-bottom: .4rem;
+}
+/***********************************   快速审批列表相关（End）    ***********************************/

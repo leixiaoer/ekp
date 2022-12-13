@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<plugin 
+    xsi:schemaLocation="http://www.example.org/plugin-config ../../plugin.xsd" 
+    xmlns="http://www.example.org/plugin-config" 
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+
+	<!-- 
+		导入导出机制需要特殊处理的情况 ：
+		1.选择导出的是主文档
+		2.子文档中也包含附件，也要一起导出
+	-->
+	<extension point="com.landray.kmss.sys.datainit.exportAndImport">
+		<item name="config">
+			<param name="operateModelName" value="com.landray.kmss.sys.help.model.SysHelpMain;com.landray.kmss.sys.help.model.SysHelpCatelog" />
+			<param name="exportAndImport" value="com.landray.kmss.sys.help.model.SysHelpCatelog" />
+			<param name="deleteModelName" value="com.landray.kmss.sys.help.model.SysHelpCatelog" />
+		</item>
+	</extension>
+	
+
+</plugin>

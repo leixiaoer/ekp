@@ -1,0 +1,173 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN" 
+    "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+	<class
+		name="com.landray.kmss.geesun.oitems.model.GeesunOitemsListing"
+		table="geesun_oitems_listing">
+		<id
+			name="fdId"
+			column="fd_id"
+			length="36">
+			<generator class="assigned" />
+		</id>
+
+
+		<property
+			name="fdNo"
+			column="fd_no"
+			update="true"
+			insert="true"
+			not-null="false"
+			length="100" />
+		<property
+			name="fdName"
+			column="fd_name"
+			update="true"
+			insert="true"
+			not-null="false"
+			length="200" />
+		<property
+			name="fdIsAbandon"
+			column="fd_is_abandon"
+			update="true"
+			insert="true"
+			not-null="false" />
+		<property
+			name="fdSpecification"
+			column="fd_specification"
+			update="true"
+			insert="true"
+			not-null="false"
+			length="100" />
+		<property
+			name="fdBrand"
+			column="fd_brand"
+			update="true"
+			insert="true"
+			not-null="false"
+			length="200" />
+		<property
+			name="fdReferencePrice"
+			column="fd_reference_price"
+			update="true"
+			scale="3"
+			insert="true"
+			not-null="false"
+			length="100" />
+		<property
+			name="fdUnit"
+			column="fd_unit"
+			update="true"
+			insert="true"
+			not-null="false"
+			length="100" />
+		<property
+			name="fdRemark"
+			column="fd_remark"
+			update="true"
+			insert="true"
+			not-null="false"
+			length="2000" />
+		<property
+			name="fdAmount"
+			column="fd_amount"
+			update="true"
+			insert="true"
+			not-null="false"
+			length="12" />
+		<property
+			name="docCreateTime"
+			column="doc_create_time"
+			update="true"
+			insert="true"
+			not-null="false" />
+
+		<many-to-one
+			name="fdCategory"
+			column="fd_category_id"
+			insert="true"
+			update="true"
+			not-null="false" />
+
+		<many-to-one
+			name="docCreator"
+			column="doc_creator_id"
+			insert="true"
+			update="true"
+			not-null="false" />
+			
+		<bag
+			name="geesunOitemsWarehousingRecordList"
+			inverse="true">
+			<key column="fd_listing_id" />
+			<one-to-many
+				class="com.landray.kmss.geesun.oitems.model.GeesunOitemsWarehousingRecord" />
+		</bag>
+		<bag
+			name="geesunOitemsWarehousingRecordJoinListList"
+			inverse="true"
+			cascade="delete">
+			<key column="fd_listing_id" />
+			<one-to-many
+				class="com.landray.kmss.geesun.oitems.model.GeesunOitemsWarehousingRecordJoinList" />
+		</bag>
+       <property
+			name="authReaderFlag"
+			column="auth_reader_flag"
+			update="true"
+			insert="true"
+			not-null="false"
+			length="1" />
+		<bag
+			name="authReaders"
+			table="geesun_oitems_listing_readers">
+			<key
+				column="fd_doc_id" />
+			<many-to-many
+				class="com.landray.kmss.sys.organization.model.SysOrgElement"
+				column="fd_org_id" />
+		</bag>
+		<bag
+			name="authEditors"
+			table="geesun_oitems_listing_editors">
+			<key
+				column="fd_doc_id" />
+			<many-to-many
+				class="com.landray.kmss.sys.organization.model.SysOrgElement"
+				column="fd_org_id" />
+		</bag>
+		<bag
+			name="authAllReaders"
+			table="geesun_oitems_listing_areader"
+			lazy="true">
+			<key
+				column="fd_doc_id" />
+			<many-to-many
+				class="com.landray.kmss.sys.organization.model.SysOrgElement"
+				column="auth_reader_id" />
+		</bag>
+		<bag
+			name="authAllEditors"
+			table="geesun_oitems_listing_aeditor"
+			lazy="true">
+			<key
+				column="fd_doc_id" />
+			<many-to-many
+				class="com.landray.kmss.sys.organization.model.SysOrgElement"
+				column="auth_editor_id" />
+		</bag>
+		<property
+			name="authChangeReaderFlag"
+			column="fd_change_reader_flag"
+			update="true"
+			insert="true"/>
+		<property
+			name="authChangeEditorFlag"
+			column="fd_change_editor_flag"
+			update="true"
+			insert="true"/>
+	</class>
+</hibernate-mapping>

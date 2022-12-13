@@ -1,0 +1,163 @@
+@charset "utf-8";
+/*待调度列表 Start*/
+.muiDispatcherList{}
+.muiDispatcherList{
+	border-bottom: 1px solid #e3e3e3;
+	position: relative;
+	list-style: none;
+	background-color: #fff;
+}
+.muiDispatcherList > a{
+	width: 100%;
+	display: table;
+	padding: 0.2rem .5rem;
+	-webkit-box-sizing: border-box;
+			box-sizing: border-box;
+}
+.muiDispatcherList .muiDispatcherLeft{
+	width: 7rem;
+    text-align: center;
+    overflow: hidden;
+    float: left;
+}
+
+.muiDispatcherList .muiDispatcherLeft .muiDispatcherImg{
+    width: 3.7rem;
+    height: 3.7rem;
+    border-radius: 50%;
+    margin-top: 1.7rem;
+}
+.muiDispatcherList .muiDispatcherLeft .muiDispatcherCreator {
+    display: block;
+    font-size: 1.4rem !important;
+    position: relative;
+    top: 4px;
+}
+.muiDispatcherList .muiDispatcherLeft .muiAuthor{
+    color: #37aee9!important;
+}
+
+.muiDispatcherList .muiDispatcherLeft .muiDispatcherCreated {
+    font-size: 1.2rem !important;
+    color: #989898 !important;
+    line-height: 1 !important;
+    white-space: nowrap;
+    overflow: hidden;
+}
+.muiDispatcherList .muiDispatcherLeft .muiListSummary {
+    color: #989898;
+    font-size: 1.3rem;
+    line-height: 1.5rem;
+}
+.muiDispatcherList .muiDispatcherRight{
+    height: 100%;
+    display: block;
+    width: 75%;
+    float: right;
+}
+.muiDispatcherList .muiDispatcherRight h3{
+    width: 95%;
+    margin: 0.6rem 0px 0.8rem;
+    color: black;
+    line-height: 1.8rem;
+    overflow: hidden;
+    font-size: 1.6rem;
+    font-weight: normal;
+    display: -webkit-box;
+    -ms-text-overflow: ellipsis;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;
+    float: left;
+}
+
+.muiDispatcherList .muiDispatcherRight .dispatcherBtn {
+    margin: 0.5rem .5rem;
+    padding: 0.3rem 0.6rem;
+    display: inline-block;
+    color: #fff;
+    font-size: 1.6rem;
+    border-radius: 3px;
+    background-color: #78c06e;
+    float: right;
+}
+
+muiDispatcherList > a:visited .dispatcherInfo h3{ color: #888;}
+.muiDispatcherList .dispatcherInfo .dispatcherTip{
+	line-height: 1.8rem;
+	color: #5bc91f;
+	font-size: 1.6rem;
+	position: absolute;
+	right: 1rem;
+	top: 1rem;
+}
+
+.muiDispatcherList .muiDispatcherRight .dispatcherDetail,
+.muiDispatcherList .muiDispatcherRight .dispatcherDetailLine {
+  margin: .2rem 0;
+  color: #989898;
+  font-size: 1.2rem;
+}
+.muiDispatcherList .muiDispatcherRight .dispatcherDetail > span,
+.muiDispatcherList .muiDispatcherRight .dispatcherDetailLine > span {
+  display: inline-block;
+  width: 50%;
+  line-height: 1;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+.muiDispatcherList .muiDispatcherRight .dispatcherDetail > span:last-child,
+.muiDispatcherList .muiDispatcherRight .dispatcherDetailLine > span:last-child {
+  margin-right: 0;
+}
+.muiDispatcherList .muiDispatcherRight .dispatcherDetail .mui,
+.muiDispatcherList .muiDispatcherRight .dispatcherDetailLine .mui{
+	font-size: 1.2rem;
+	line-height: 1;
+  vertical-align: top;
+	margin-right: .2rem;
+}
+
+
+/*待调度列表 End*/
+
+/*已调度列表 start*/
+.muiDispatcherCardItem {
+	
+}
+.muiDispatcherCardItem .muiListSummary{ border-top:0px;}
+.muiDispatcherCardItem .figure{ padding-right:3rem;}
+.muiDispatcherCardItem .figure.noStatusFigure{ padding-right:0rem;}
+.muiDispatcherCardItem .muiCardSummary{ padding-top:0px;}
+.muiDispatcherCardItem .muiCardIcoList li{ float:none;}
+.muiDispatcherStatusTag{
+	width: 85px;
+	font-size: 1.2rem;
+	position: absolute;
+	right: -26px;
+	top: 5px;
+	padding: 5px 0px;
+	background-color: #6fc13a;
+	color: #fff;
+	text-align: center;
+	-webkit-transform: rotate(45deg);
+	-moz-transform: rotate(45deg);
+	-ms-transform: rotate(45deg);
+	-o-transform: rotate(45deg);
+}
+.muiDispatcherStatusTag.muiDispatcherUnhold{ background:#51b749; }
+.muiDispatcherStatusTag.muiDispatcherHold{ background:#f0ad4e; } 
+.muiDispatcherStatusTag.muiDispatcherNoCar{ background:#9f0fe6; } 
+.muiDispatcherStatusTag.muiDispatcherHolding{ background:#5484ed; } 
+.muiDispatcherStatusTag.muiDispatcherDraft{ background:#c0c0c0; } 
+.muiDispatcherStatusTag.muiDispatcherRefuse{ background:#c0c0c0; } 
+.muiDispatcherStatusTag.muiDispatcherExamine{ background:#c0c0c0; }
+.muiDispatcherStatusTag.muiDispatcherDiscard{ background:#c0c0c0; } 
+.muiDispatcherStatusTag.muiDispatcherCancel{ background:#c0c0c0; } 
+
+.muiCalendarContainer .muiListNoData{
+	background-color: #F8F8F8;
+}
+/*已调度列表 end*/

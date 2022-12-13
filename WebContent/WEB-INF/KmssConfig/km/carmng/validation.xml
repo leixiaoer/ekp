@@ -1,0 +1,797 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE form-validation PUBLIC "-//Apache Software Foundation//DTD Commons Validator Rules Configuration 1.1//EN" "http://jakarta.apache.org/commons/dtds/validator_1_1.dtd">
+<form-validation>
+	<formset>
+		<form
+			name="kmCarmngUserFeeInfoForm">
+			<field
+				property="fdUserId"
+				depends="maxlength">
+				<arg
+					key="kmCarmngUserFeeInfo.fdUserId"
+					bundle="km-carmng"
+					position="0" />
+				<arg1
+					name="maxlength"
+					key="${var:maxlength}"
+					resource="false" />
+				<var>
+					<var-name>maxlength</var-name>
+					<var-value>36</var-value>
+				</var>
+			</field>
+			<field
+				property="fdVehiclesId"
+				depends="maxlength">
+				<arg
+					key="kmCarmngUserFeeInfo.fdVehiclesId"
+					bundle="km-carmng"
+					position="0" />
+				<arg1
+					name="maxlength"
+					key="${var:maxlength}"
+					resource="false" />
+				<var>
+					<var-name>maxlength</var-name>
+					<var-value>36</var-value>
+				</var>
+			</field>
+		</form>
+		<form
+			name="kmCarmngInfringeInfoForm">
+			<field
+				property="fdVehiclesInfoNo"
+				depends="required">
+				<arg
+					key="kmCarmngInfringeInfo.fdVehiclesInfoId"
+					bundle="km-carmng"
+					position="0" />
+			</field>
+			<field
+				property="fdInfringeSite"
+				depends="required,maxlength">
+				<arg
+					key="kmCarmngInfringeInfo.fdInfringeSite"
+					bundle="km-carmng"
+					position="0" />
+				<arg1
+					name="maxlength"
+					key="${var:maxlength}"
+					resource="false" />
+				<var>
+					<var-name>maxlength</var-name>
+					<var-value>200</var-value>
+				</var>
+			</field>
+			<field
+				property="fdInfringeTime"
+				depends="required">
+				<arg
+					key="kmCarmngInfringeInfo.fdInfringeTime"
+					bundle="km-carmng"
+					position="0" />
+			</field>
+			<field
+				property="fdInfringeFee"
+				depends="required,float">
+				<arg
+					key="kmCarmngInfringeInfo.fdInfringeFee"
+					bundle="km-carmng"
+					position="0" />
+			</field>
+			<field
+				property="fdInfringePersonName"
+				depends="required">
+				<arg
+					key="kmCarmngInfringeInfo.fdInfringePersonId"
+					bundle="km-carmng"
+					position="0" />
+			</field>
+			<field
+				property="fdRemark"
+				depends="maxlength">
+				<arg
+					key="kmCarmngInfringeInfo.fdRemark"
+					bundle="km-carmng"
+					position="0" />
+				<arg1
+					name="maxlength"
+					key="${var:maxlength}"
+					resource="false" />
+				<var>
+					<var-name>maxlength</var-name>
+					<var-value>2000</var-value>
+				</var>
+			</field>
+		</form>
+		<form
+			name="kmCarmngInsuranceInfoForm">
+			<field
+				property="fdProductBrand"
+				depends="required,maxlength">
+				<arg
+					key="kmCarmngInsuranceInfo.fdProductBrand"
+					bundle="km-carmng"
+					position="0" />
+				<arg1
+					name="maxlength"
+					key="${var:maxlength}"
+					resource="false" />
+				<var>
+					<var-name>maxlength</var-name>
+					<var-value>200</var-value>
+				</var>
+			</field>
+			<field
+				property="fdVehiclesInfoId"
+				depends="required">
+				<arg
+					key="kmCarmngInsuranceInfo.fdVehiclesInfoId"
+					bundle="km-carmng"
+					position="0" />
+			</field>
+			<field
+				property="fdInsurancePrice"
+				depends="double">
+				<arg
+					key="kmCarmngInsuranceInfo.fdInsurancePrice"
+					bundle="km-carmng"
+					position="0" />
+			</field>
+			<field
+				property="fdInsuranceFee"
+				depends="float">
+				<arg
+					key="kmCarmngInsuranceInfo.fdInsuranceFee"
+					bundle="km-carmng"
+					position="0" />
+			</field>
+			<field
+				property="fdRegisterTime"
+				depends="required">
+				<arg
+					key="kmCarmngInsuranceInfo.fdRegisterTime"
+					bundle="km-carmng"
+					position="0" />
+			</field>
+			<field
+				property="fdInsuranceStartTime"
+				depends="required">
+				<arg
+					key="kmCarmngInsuranceInfo.fdInsuranceStartTime"
+					bundle="km-carmng"
+					position="0" />
+			</field>
+			<field
+				property="fdInsuranceEndTime"
+				depends="required">
+				<arg
+					key="kmCarmngInsuranceInfo.fdInsuranceEndTime"
+					bundle="km-carmng"
+					position="0" />
+			</field>	
+			<field
+				property="fdInsuranceNo"
+				depends="required,maxlength">
+				<arg
+					key="kmCarmngInsuranceInfo.fdInsuranceNo"
+					bundle="km-carmng"
+					position="0" />
+				<arg1
+					name="maxlength"
+					key="${var:maxlength}"
+					resource="false" />
+				<var>
+					<var-name>maxlength</var-name>
+					<var-value>200</var-value>
+				</var>
+			</field>
+			<field
+				property="fdRemark"
+				depends="maxlength">
+				<arg
+					key="kmCarmngInsuranceInfo.fdRemark"
+					bundle="km-carmng"
+					position="0" />
+				<arg1
+					name="maxlength"
+					key="${var:maxlength}"
+					resource="false" />
+				<var>
+					<var-name>maxlength</var-name>
+					<var-value>2000</var-value>
+				</var>
+			</field>
+		</form>
+		<form
+			name="kmCarmngMaintenanceInfoForm">
+			<field
+				property="fdVehiclesInfoId"
+				depends="required">
+				<arg
+					key="kmCarmngMaintenanceInfo.fdVehiclesInfoId"
+					bundle="km-carmng"
+					position="0" />
+			</field>
+			<field
+				property="fdRepairFee"
+				depends="required,float">
+				<arg
+					key="kmCarmngMaintenanceInfo.fdRepairFee"
+					bundle="km-carmng"
+					position="0" />
+			</field>
+			<field
+				property="fdMaintenanceFee"
+				depends="required,float">
+				<arg
+					key="kmCarmngMaintenanceInfo.fdMaintenanceFee"
+					bundle="km-carmng"
+					position="0" />
+			</field>
+			<!--
+				<field property="fdPersonName" depends="required"> <arg
+				key="kmCarmngMaintenanceInfo.fdPersonId" bundle="km-carmng"
+				position="0" /> </field>
+			-->
+			<field
+				property="fdMaintenanceTime"
+				depends="required">
+				<arg
+					key="kmCarmngMaintenanceInfo.fdMaintenanceTime"
+					bundle="km-carmng"
+					position="0" />
+			</field>
+			<field
+				property="fdPersonName"
+				depends="maxlength">
+				<arg
+					key="kmCarmngMaintenanceInfo.fdPersonId"
+					bundle="km-carmng"
+					position="0" />
+				<arg1
+					name="maxlength"
+					key="${var:maxlength}"
+					resource="false" />
+				<var>
+					<var-name>maxlength</var-name>
+					<var-value>200</var-value>
+				</var>
+			</field>
+			<field
+				property="fdRemark"
+				depends="maxlength">
+				<arg
+					key="kmCarmngMaintenanceInfo.fdRemark"
+					bundle="km-carmng"
+					position="0" />
+				<arg1
+					name="maxlength"
+					key="${var:maxlength}"
+					resource="false" />
+				<var>
+					<var-name>maxlength</var-name>
+					<var-value>2000</var-value>
+				</var>
+			</field>
+		</form>
+		<form
+			name="kmCarmngRegisterInfoForm">
+			<field
+				property="fdRealPath"
+				depends="maxlength">
+				<arg
+					key="kmCarmngRegisterInfo.fdRealPath"
+					bundle="km-carmng"
+					position="0" />
+				<arg1
+					name="maxlength"
+					key="${var:maxlength}"
+					resource="false" />
+				<var>
+					<var-name>maxlength</var-name>
+					<var-value>1500</var-value>
+				</var>
+			</field>
+			<!--
+				<field property="fdMileageAfterNumber" depends="required"> <arg
+				key="kmCarmngRegisterInfo.fdMileageAfterNumber" bundle="km-carmng"
+				position="0" /> </field>
+			-->
+			<field
+				property="fdMileageNumber"
+				depends="required,float">
+				<arg
+					key="kmCarmngUserFeeInfo.fdMileageNumber"
+					bundle="km-carmng"
+					position="0" />
+			</field>
+			<field
+				property="fdRemark"
+				depends="maxlength">
+				<arg
+					key="kmCarmngRegisterInfo.fdRemark"
+					bundle="km-carmng"
+					position="0" />
+				<arg1
+					name="maxlength"
+					key="${var:maxlength}"
+					resource="false" />
+				<var>
+					<var-name>maxlength</var-name>
+					<var-value>2000</var-value>
+				</var>
+			</field>
+		</form>
+		<form
+			name="kmCarmngDispatchersInfoForm">
+			<field
+				property="fdStartTime"
+				depends="required">
+				<arg
+					key="kmCarmngDispatchersInfo.fdStartTime"
+					bundle="km-carmng"
+					position="0" />
+			</field>
+			<field
+				property="fdEndTime"
+				depends="required">
+				<arg
+					key="kmCarmngDispatchersInfo.fdEndTime"
+					bundle="km-carmng"
+					position="0" />
+			</field>
+		</form>
+		<form name="kmCarmngApplicationForm">
+			<field
+				property="docSubject"
+				depends="maxlength,required">
+				<arg
+					key="kmCarmngApplication.docSubject"
+					bundle="km-carmng"
+					position="0" />
+				<arg1
+					name="maxlength"
+					key="${var:maxlength}"
+					resource="false" />
+				<var>
+					<var-name>maxlength</var-name>
+					<var-value>200</var-value>
+				</var>
+			</field>
+			<field
+				property="fdOtherUsers"
+				depends="maxlength">
+				<arg
+					key="kmCarmngApplication.fdOtherUsers"
+					bundle="km-carmng"
+					position="0" />
+				<arg1
+					name="maxlength"
+					key="${var:maxlength}"
+					resource="false" />
+				<var>
+					<var-name>maxlength</var-name>
+					<var-value>200</var-value>
+				</var>
+			</field>
+			<field
+				property="fdMotorcadeId"
+				depends="required">
+				<arg
+					key="kmCarmngApplication.fdMotorcadeId"
+					bundle="km-carmng"
+					position="0" />
+			</field>
+			<field
+				property="fdApplicationPersonId"
+				depends="required">
+				<arg
+					key="kmCarmngApplication.fdApplicationPerson"
+					bundle="km-carmng"
+					position="0" />
+			</field>
+			<!-- 新增外部用车人，取消用车人必填校验
+			<field
+				property="fdUserPersonIds"
+				depends="required">
+				<arg
+					key="kmCarmngApplication.fdUserPersons"
+					bundle="km-carmng"
+					position="0" />
+			</field>
+			
+			<field
+				property="fdApplicationPersonPhone"
+				depends="required,mask">
+				<arg
+					key="kmCarmngApplication.fdApplicationPersonPhone"
+					bundle="km-carmng"
+					position="0" />
+				<msg
+					name="mask"
+					bundle="km-carmng"
+					key="kmCarmng.fdRelationPhone.message" />
+				<var>
+					<var-name>mask</var-name>
+					<var-value>^[0-9]*$</var-value>
+				</var>
+			</field> -->
+			<field
+				property="fdUserNumber"
+				depends="integer">
+				<arg
+					key="kmCarmngApplication.fdUserNumber"
+					bundle="km-carmng"
+					position="0" />
+			</field>
+			<field
+				property="fdApplicationReason"
+				depends="maxlength">
+				<arg
+					key="kmCarmngApplication.fdApplicationReason"
+					bundle="km-carmng"
+					position="0" />
+				<arg1
+					name="maxlength"
+					key="${var:maxlength}"
+					resource="false" />
+				<var>
+					<var-name>maxlength</var-name>
+					<var-value>1500</var-value>
+				</var>
+			</field>
+			<field
+				property="fdStartTime"
+				depends="required">
+				<arg
+					key="kmCarmngApplication.fdStartTime"
+					bundle="km-carmng"
+					position="0" />
+			</field>
+			<field
+				property="fdEndTime"
+				depends="required">
+				<arg
+					key="kmCarmngApplication.fdEndTime"
+					bundle="km-carmng"
+					position="0" />
+			</field>
+		</form>
+		<form
+			name="kmCarmngDriversInfoForm">
+			<field
+				property="fdName"
+				depends="required,maxlength">
+				<arg
+					key="kmCarmngDriversInfo.fdName"
+					bundle="km-carmng"
+					position="0" />
+				<arg1
+					name="maxlength"
+					key="${var:maxlength}"
+					resource="false" />
+				<var>
+					<var-name>maxlength</var-name>
+					<var-value>200</var-value>
+				</var>
+			</field>
+			<field
+				property="fdOrder"
+				depends="integer">
+				<arg
+					key="kmCarmngDriversInfo.fdOrder"
+					bundle="km-carmng"
+					position="0" />
+			</field>
+			<field
+				property="fdMotorcadeId"
+				depends="required">
+				<arg
+					key="kmCarmngDriversInfo.fdMotorcadeId"
+					bundle="km-carmng"
+					position="0" />
+			</field>
+			<field
+				property="fdDriverNumber"
+				depends="maxlength">
+				<arg
+					key="kmCarmngDriversInfo.fdDriverNumber"
+					bundle="km-carmng"
+					position="0" />
+				<arg1
+					name="maxlength"
+					key="${var:maxlength}"
+					resource="false" />
+				<var>
+					<var-name>maxlength</var-name>
+					<var-value>100</var-value>
+				</var>
+			</field>
+			<field
+				property="fdRemark"
+				depends="maxlength">
+				<arg
+					key="kmCarmngDriversInfo.fdRemark"
+					bundle="km-carmng"
+					position="0" />
+				<arg1
+					name="maxlength"
+					key="${var:maxlength}"
+					resource="false" />
+				<var>
+					<var-name>maxlength</var-name>
+					<var-value>2000</var-value>
+				</var>
+			</field>
+			<field
+				property="fdRelationPhone"
+				depends="required,mask,maxlength">
+				<msg
+					name="mask"
+					bundle="km-carmng"
+					key="kmCarmngDriversInfo.fdRelationPhone.message" />
+				<arg
+					key="kmCarmngDriversInfo.fdRelationPhone"
+					bundle="km-carmng"
+					position="0" />
+				<arg1
+					name="maxlength"
+					key="${var:maxlength}"
+					resource="false" />
+				<var>
+					<var-name>mask</var-name>
+					<var-value>^[0-9]*$</var-value>
+				</var>
+				<var>
+					<var-name>maxlength</var-name>
+					<var-value>20</var-value>
+				</var>
+			</field>
+			<field
+				property="fdCredentialsNumber"
+				depends="mask,maxlength">
+				<msg
+					name="mask"
+					bundle="km-carmng"
+					key="kmCarmngDriversInfo.fdCredentialsNumber.message" />
+				<arg
+					key="kmCarmngDriversInfo.fdCredentialsNumber"
+					bundle="km-carmng"
+					position="0" />
+				<arg1
+					name="maxlength"
+					key="${var:maxlength}"
+					resource="false" />
+				<var>
+					<var-name>mask</var-name>
+					<var-value>^[a-zA-Z0-9]*$</var-value>
+				</var>
+				<var>
+					<var-name>maxlength</var-name>
+					<var-value>20</var-value>
+				</var>
+			</field>
+			<field
+				property="fdDriveYear"
+				depends="float">
+				<arg
+					key="kmCarmngDriversInfo.fdDriveYear"
+					bundle="km-carmng"
+					position="0" />
+			</field>
+			<field
+				property="fdAnnualExamFrequency"
+				depends="integer">
+				<arg
+					key="kmCarmngDriversInfo.fdAnnualExamFrequency"
+					bundle="km-carmng"
+					position="0" />
+			</field>
+			<field
+				property="fdCredentialsType">
+				<arg
+					key="kmCarmngDriversInfo.fdCredentialsType"
+					bundle="km-carmng"
+					position="0" />
+			</field>
+		</form>
+		<form
+			name="kmCarmngCategoryForm">
+			<field
+				property="fdName"
+				depends="maxlength,required">
+				<arg
+					key="kmCarmngCategory.fdName"
+					bundle="km-carmng"
+					position="0" />
+				<arg1
+					name="maxlength"
+					key="${var:maxlength}"
+					resource="false" />
+				<var>
+					<var-name>maxlength</var-name>
+					<var-value>60</var-value>
+				</var>
+			</field>
+			<field
+				property="fdOrder"
+				depends="integer,maxlength">
+				<arg
+					key="kmCarmngCategory.fdOrder"
+					bundle="km-carmng"
+					position="0" />
+				<arg1
+					name="maxlength"
+					key="${var:maxlength}"
+					resource="false" />
+				<var>
+					<var-name>maxlength</var-name>
+					<var-value>10</var-value>
+				</var>
+			</field>
+		</form>
+		<form
+			name="kmCarmngInfomationForm">
+			<field
+				property="fdRemark"
+				depends="maxlength">
+				<arg
+					key="kmCarmngInfomation.fdRemark"
+					bundle="km-carmng"
+					position="0" />
+				<arg1
+					name="maxlength"
+					key="${var:maxlength}"
+					resource="false" />
+				<var>
+					<var-name>maxlength</var-name>
+					<var-value>2000</var-value>
+				</var>
+			</field>
+			<field
+				property="fdNo"
+				depends="required,maxlength">
+				<arg
+					key="kmCarmngInfomation.fdNo"
+					bundle="km-carmng"
+					position="0" />
+				<arg1
+					name="maxlength"
+					key="${var:maxlength}"
+					resource="false" />
+				<var>
+					<var-name>maxlength</var-name>
+					<var-value>200</var-value>
+				</var>
+			</field>
+			<field
+				property="docSubject"
+				depends="required,maxlength">
+				<arg
+					key="kmCarmngInfomation.docSubject"
+					bundle="km-carmng"
+					position="0" />
+				<arg1
+					name="maxlength"
+					key="${var:maxlength}"
+					resource="false" />
+				<var>
+					<var-name>maxlength</var-name>
+					<var-value>200</var-value>
+				</var>
+			</field>
+			<field
+				property="fdVehichesTypeId"
+				depends="required">
+				<arg
+					key="kmCarmngInfomation.fdVehichesType"
+					bundle="km-carmng"
+					position="0" />
+			</field>
+			<field
+				property="fdMotorcadeId"
+				depends="required">
+				<arg
+					key="kmCarmngInfomation.fdMotorcadeId"
+					bundle="km-carmng"
+					position="0" />
+			</field>
+			<field
+				property="fdRelationPhone"
+				depends="mask">
+				<msg
+					name="mask"
+					bundle="km-carmng"
+					key="kmCarmng.fdRelationPhone.message" />
+				<var>
+					<var-name>mask</var-name>
+					<var-value>^[0-9]*$</var-value>
+				</var>
+			</field>
+			<field
+				property="fdPassageMoney"
+				depends="float">
+				<arg
+					key="kmCarmngInfomation.fdPassageMoney"
+					bundle="km-carmng"
+					position="0" />
+			</field>
+			<field
+				property="fdSeatNumber"
+				depends="required,integer">
+				<arg
+					key="kmCarmngInfomation.fdSeatNumber"
+					bundle="km-carmng"
+					position="0" />
+			</field>
+		</form>
+		<form
+			name="kmCarmngMotorcadeSetForm">
+			<field
+				property="fdName"
+				depends="maxlength">
+				<arg
+					key="kmCarmngMotorcadeSet.fdName"
+					bundle="km-carmng"
+					position="0" />
+				<arg1
+					name="maxlength"
+					key="${var:maxlength}"
+					resource="false" />
+				<var>
+					<var-name>maxlength</var-name>
+					<var-value>200</var-value>
+				</var>
+			</field>
+			<field
+				property="fdOrder"
+				depends="integer">
+				<arg
+					key="kmCarmngMotorcadeSet.fdOrder"
+					bundle="km-carmng"
+					position="0" />
+			</field>
+			<field
+				property="fdName"
+				depends="required">
+				<arg
+					key="kmCarmngMotorcadeSet.fdName"
+					bundle="km-carmng"
+					position="0" />
+			</field>
+			<field
+				property="fdDispatchersId"
+				depends="required">
+				<arg
+					key="kmCarmngMotorcadeSet.fdDispatchersId"
+					bundle="km-carmng"
+					position="0" />
+			</field>
+			<field
+				property="fdRegisterId"
+				depends="required">
+				<arg
+					key="kmCarmngMotorcadeSet.fdRegisterId"
+					bundle="km-carmng"
+					position="0" />
+			</field>
+			<field
+				property="fdRemark"
+				depends="maxlength">
+				<arg
+					key="kmCarmngMotorcadeSet.fdRemark"
+					bundle="km-carmng"
+					position="0" />
+				<arg1
+					name="maxlength"
+					key="${var:maxlength}"
+					resource="false" />
+				<var>
+					<var-name>maxlength</var-name>
+					<var-value>2000</var-value>
+				</var>
+			</field>
+		</form>
+	</formset>
+</form-validation>

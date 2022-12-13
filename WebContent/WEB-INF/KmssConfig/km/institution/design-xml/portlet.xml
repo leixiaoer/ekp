@@ -1,0 +1,176 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<root xmlns="http://www.landray.com.cn/schema/lui" xmlns:degign="http://www.landray.com.cn/schema/design"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="
+	http://www.landray.com.cn/schema/lui
+	../../../sys/ui/lui.xsd
+	http://www.landray.com.cn/schema/design
+	../../../design-xml.xsd">
+	
+	<!-- 最新规范制度 -->
+	<portlet id="km.institution.newDoc" name="{km-institution:portlet.kmInstitution.newDoc}" module="{km-institution:kmInstitution.tree.title}">
+		<source  format="sys.ui.classic" type="AjaxXml" >
+			<code>
+			<![CDATA[
+				{
+					"url":"/sys/common/dataxml.jsp?s_bean=kmInstitutionKnowledgePortlet&fdCategoryId=!{cateid}&rowsize=!{rowsize}&scope=!{scope}"
+				}
+			]]>
+			</code>
+		</source>
+		
+		<vars>
+		    <var name="{km-institution:kmInstitution.docPublishTime}" key="scope" kind="enumValue" default="no">
+                 {  "values":[{ "text":"{portlet.var.date.oneMonth}", "value":"month"},
+	                              { "text":"{portlet.var.date.threeMonths}", "value":"season"},
+	                              { "text":"{portlet.var.date.halfAYear}", "value":"halfYear"},
+	                              { "text":"{portlet.var.date.oneYear}", "value":"year"},
+	                              { "text":"{portlet.var.date.unlimited}", "value":"no"}],
+                   "showType":"radio"
+                  }
+            </var>
+		    <var name="{portlet.rowsize}" key="rowsize" kind="rowsize" />
+		     <var name="{km-institution:kmInstitution.docType}" key="cateid" kind="sys.simplecategory" >
+		     	{model:"com.landray.kmss.km.institution.model.KmInstitutionTemplate"}
+		     </var>
+		</vars>
+		<operations>
+			<operation
+				name="{operation.create}"
+				type="create"
+				href="javascript:(function(){seajs.use(['km/institution/km_institution_ui/js/create'], function(create) { 
+							create.addDoc('!{cateid}');
+					 });})();" 
+			    target="_self" />
+			<operation
+				name="{operation.more}"
+				type="more"
+				href="/km/institution?categoryId=!{cateid}" />
+		</operations>	
+	</portlet>
+	
+<!-- 以下为支持cloud数据源 -->
+<!-- 最新规范制度（列表） -->
+	<portlet id="km.institution.newDoc" 
+	 name="{km-institution:portlet.kmInstitution.newDoc}"
+	 module="{km-institution:kmInstitution.tree.title}"
+	 forSystem="cloud" varExtend="km.institution.newDoc">
+		<source id="km-institution.newDoc" format="data.list" type="xml" >
+			<code>
+			<![CDATA[
+				{
+					"url":"/data/sys-common/dataxml?s_bean=kmInstitutionKnowledgePortlet&fdCategoryId=!{cateid}&rowsize=!{rowsize}&scope=!{scope}"
+				}
+			]]>
+			</code>
+			<example>
+				<code>
+					<![CDATA[
+					[{"text":"公司级走进战区培训管理办法 ","href":"http://java.landray.com.cn/km/institution/km_institution_knowledge/kmInstitutionKnowledge.do?method=view&fdId=16cb6e322a9abb075c671914fc5b2a8a","statusInfo":"已发布","statusColor":"primary","cateName":"规范制度","cateHref":"http://java.landray.com.cn/sys/portal/page.jsp#j_start=%2Fkm%2Finstitution.index&j_target=_iframe&c_app_title=%25E8%25A7%2584%25E8%258C%2583%25E5%2588%25B6%25E5%25BA%25A6&c_app_url=%252Fkm%252Finstitution.index","creator":{"fdName":"蔡高恒"},"created":1557132149164},{"text":"公司级走进战区培训管理办法 ","href":"http://java.landray.com.cn/km/institution/km_institution_knowledge/kmInstitutionKnowledge.do?method=view&fdId=16c8f878034d94c7a18dc63419c93612","statusInfo":"已发布","statusColor":"primary","cateName":"规范制度","cateHref":"http://java.landray.com.cn/sys/portal/page.jsp#j_start=%2Fkm%2Finstitution.index&j_target=_iframe&c_app_title=%25E8%25A7%2584%25E8%258C%2583%25E5%2588%25B6%25E5%25BA%25A6&c_app_url=%252Fkm%252Finstitution.index","creator":{"fdName":"吴洁娜"},"created":1557132149163},{"text":"2019年蓝凌老客户经营管理制度","href":"http://java.landray.com.cn/km/institution/km_institution_knowledge/kmInstitutionKnowledge.do?method=view&fdId=16c8df6a26c274b43b0f16c429e80b6c","statusInfo":"已发布","statusColor":"primary","cateName":"规范制度","cateHref":"http://java.landray.com.cn/sys/portal/page.jsp#j_start=%2Fkm%2Finstitution.index&j_target=_iframe&c_app_title=%25E8%25A7%2584%25E8%258C%2583%25E5%2588%25B6%25E5%25BA%25A6&c_app_url=%252Fkm%252Finstitution.index","creator":{"fdName":"吴洁娜"},"created":1557132149162},{"text":"2019年蓝凌EKP产品代理商加盟与管理制度","href":"http://java.landray.com.cn/km/institution/km_institution_knowledge/kmInstitutionKnowledge.do?method=view&fdId=16c7620bb7657932ed3fee44a8394b6b","statusInfo":"已发布","statusColor":"primary","cateName":"规范制度","cateHref":"http://java.landray.com.cn/sys/portal/page.jsp#j_start=%2Fkm%2Finstitution.index&j_target=_iframe&c_app_title=%25E8%25A7%2584%25E8%258C%2583%25E5%2588%25B6%25E5%25BA%25A6&c_app_url=%252Fkm%252Finstitution.index","creator":{"fdName":"吴洁娜"},"created":1557132149161},{"text":"2019年蓝凌事业部经营结算规则","href":"http://java.landray.com.cn/km/institution/km_institution_knowledge/kmInstitutionKnowledge.do?method=view&fdId=16c1e59a00026ad50a9686d4e599e9e6","statusInfo":"已发布","statusColor":"primary","cateName":"规范制度","cateHref":"http://java.landray.com.cn/sys/portal/page.jsp#j_start=%2Fkm%2Finstitution.index&j_target=_iframe&c_app_title=%25E8%25A7%2584%25E8%258C%2583%25E5%2588%25B6%25E5%25BA%25A6&c_app_url=%252Fkm%252Finstitution.index","creator":{"fdName":"吴洁娜"},"created":1557132149160}]
+					]]>
+				</code>
+			</example>
+		</source>
+		<operations>
+			<operation
+				name="{operation.create}"
+				type="create"
+				href="/km/institution/km_institution_knowledge/kmInstitutionKnowledge.do?method=add" />
+			<operation
+				name="{operation.more}"
+				type="more"
+				mobileHref="/km/institution/mobile/index.jsp#query=categoryId%3A!{cateid}"
+				href="/km/institution?categoryId=!{cateid}" />
+		</operations>	
+	</portlet>
+	<!-- 最新规范制度（列表） new-->
+	<portlet id="km.institution.newDoc.new"
+			 name="{km-institution:portlet.kmInstitution.newDoc.new}"
+			 module="{km-institution:kmInstitution.tree.title}"
+			 forSystem="cloud" varExtend="km.institution.newDoc">
+		<source id="km-institution.newDoc.new" format="data.fieldlist" type="xml" >
+			<code>
+				<![CDATA[
+				{
+					"url":"/data/sys-common/dataxml?s_bean=kmInstitutionKnowledgePortlet&fdCategoryId=!{cateid}&rowsize=!{rowsize}&scope=!{scope}&isNew=true"
+				}
+			]]>
+			</code>
+			<example>
+				<code>
+					<![CDATA[
+						[{"text":"公司级走进战区培训管理办法 ","href":"http://java.landray.com.cn/km/institution/km_institution_knowledge/kmInstitutionKnowledge.do?method=view&fdId=16cb6e322a9abb075c671914fc5b2a8a","cateName":{"text":"规范制度","href":"http://java.landray.com.cn/sys/portal/page.jsp#j_start=%2Fkm%2Finstitution.index&j_target=_iframe&c_app_title=%25E8%25A7%2584%25E8%258C%2583%25E5%2588%25B6%25E5%25BA%25A6&c_app_url=%252Fkm%252Finstitution.index"},"creator":{"fdName":"蔡高恒"},"created":{"text":1557132149164}},{"text":"公司级走进战区培训管理办法 ","href":"http://java.landray.com.cn/km/institution/km_institution_knowledge/kmInstitutionKnowledge.do?method=view&fdId=16c8f878034d94c7a18dc63419c93612","cateName":{"text":"规范制度","href":"http://java.landray.com.cn/sys/portal/page.jsp#j_start=%2Fkm%2Finstitution.index&j_target=_iframe&c_app_title=%25E8%25A7%2584%25E8%258C%2583%25E5%2588%25B6%25E5%25BA%25A6&c_app_url=%252Fkm%252Finstitution.index"},"creator":{"fdName":"吴洁娜"},"created":{"text":1557132149163}},{"text":"2019年蓝凌老客户经营管理制度","href":"http://java.landray.com.cn/km/institution/km_institution_knowledge/kmInstitutionKnowledge.do?method=view&fdId=16c8df6a26c274b43b0f16c429e80b6c","cateName":{"text":"规范制度","href":"http://java.landray.com.cn/sys/portal/page.jsp#j_start=%2Fkm%2Finstitution.index&j_target=_iframe&c_app_title=%25E8%25A7%2584%25E8%258C%2583%25E5%2588%25B6%25E5%25BA%25A6&c_app_url=%252Fkm%252Finstitution.index"},"creator":{"fdName":"吴洁娜"},"created":{"text":1557132149162}},{"text":"2019年蓝凌EKP产品代理商加盟与管理制度","href":"http://java.landray.com.cn/km/institution/km_institution_knowledge/kmInstitutionKnowledge.do?method=view&fdId=16c7620bb7657932ed3fee44a8394b6b","cateName":{"text":"规范制度","href":"http://java.landray.com.cn/sys/portal/page.jsp#j_start=%2Fkm%2Finstitution.index&j_target=_iframe&c_app_title=%25E8%25A7%2584%25E8%258C%2583%25E5%2588%25B6%25E5%25BA%25A6&c_app_url=%252Fkm%252Finstitution.index"},"creator":{"fdName":"吴洁娜"},"created":{"text":1557132149161}},{"text":"2019年蓝凌事业部经营结算规则","href":"http://java.landray.com.cn/km/institution/km_institution_knowledge/kmInstitutionKnowledge.do?method=view&fdId=16c1e59a00026ad50a9686d4e599e9e6","cateName":{"text":"规范制度","href":"http://java.landray.com.cn/sys/portal/page.jsp#j_start=%2Fkm%2Finstitution.index&j_target=_iframe&c_app_title=%25E8%25A7%2584%25E8%258C%2583%25E5%2588%25B6%25E5%25BA%25A6&c_app_url=%252Fkm%252Finstitution.index"},"creator":{"fdName":"吴洁娜"},"created":{"text":1557132149160}}]
+					]]>
+				</code>
+			</example>
+			<dataFields>
+				<code>
+					<![CDATA[
+						{
+						"base": {
+						"label": "基础信息",
+						"items": []
+						},
+						"info": {
+						"label": "辅助信息",
+						"items": [
+						{"key": "created", "text": "创建时间", "type": "timestamp"},
+						{"key": "creator", "text": "作者", "type": "person"},
+						{"key": "cateName", "text": "分类", "type": "string"}
+						]
+						},
+						"tag": {
+						"label": "标签",
+						"items": []
+						}
+						}
+					]]>
+				</code>
+			</dataFields>
+		</source>
+		<operations>
+			<operation
+					name="{operation.create}"
+					type="create"
+					href="/km/institution/km_institution_knowledge/kmInstitutionKnowledge.do?method=add" />
+			<operation
+					name="{operation.more}"
+					type="more"
+					mobileHref="/km/institution/mobile/index.jsp#query=categoryId%3A!{cateid}"
+					href="/km/institution?categoryId=!{cateid}" />
+		</operations>
+	</portlet>
+	<!-- 最新规范制度（表格） -->
+	<portlet id="km.institution.newDoc.table" 
+	 name="{km-institution:portlet.kmInstitution.newDoc.table}"
+	 module="{km-institution:kmInstitution.tree.title}"
+	 forSystem="cloud" varExtend="km.institution.newDoc">
+		<source id="km-institution.newDocTable" format="data.table" type="json" >
+			<code>
+			<![CDATA[
+				{
+					"url":"/data/km-institution/kmInstitutionPortlet/listPortlet?fdCategoryId=!{cateid}&rowsize=!{rowsize}&scope=!{scope}"
+				}
+			]]>
+			</code>
+			<example>
+				<code>
+					<![CDATA[
+					{"columns":[{"property":"fdId","renderType":"hidden"},{"property":"docSubject","title":"文件标题","align":"left"},{"property":"fdNumber","title":"文件编号"},{"property":"docStatus","title":"文件状态"},{"property":"docDept.fdName","title":"所属部门"},{"property":"docCreator","title":"录入者"},{"property":"docPublishTime","title":"生效时间"},{"property":"fdAbolishTime","title":"失效日期"},{"property":"fdOverdue","title":"过期时间"},{"property":"docCreateTime","title":"录入时间"},{"property":"docAlterTime","title":"最后修改时间"}],"data":[{"href":null,"cells":[{"col":"fdId","value":"16b213b7d80bcca189b8fb44554a7f10"},{"col":"docSubject","value":"产品质量管理制度","href":"/km/institution/km_institution_knowledge/kmInstitutionKnowledge.do?method=view&fdId=16b213b7d80bcca189b8fb44554a7f10"},{"col":"fdNumber","value":"2019060404"},{"col":"docStatus","value":"发布"},{"col":"docDept.fdName","value":"产品质量部"},{"col":"docCreator","value":"mlx"},{"col":"docPublishTime","value":"2019-06-04"},{"col":"fdAbolishTime"},{"col":"fdOverdue"},{"col":"docCreateTime","value":"2019-06-04"},{"col":"docAlterTime","value":"2019-06-04"}]},{"href":null,"cells":[{"col":"fdId","value":"16b213c0703e3a825856c7b4a0c8a6c8"},{"col":"docSubject","value":"工作任务转移制度","href":"/km/institution/km_institution_knowledge/kmInstitutionKnowledge.do?method=view&fdId=16b213c0703e3a825856c7b4a0c8a6c8"},{"col":"fdNumber","value":"2019060405"},{"col":"docStatus","value":"发布"},{"col":"docDept.fdName","value":"产品质量部"},{"col":"docCreator","value":"mlx"},{"col":"docPublishTime","value":"2019-06-04"},{"col":"fdAbolishTime"},{"col":"fdOverdue"},{"col":"docCreateTime","value":"2019-06-04"},{"col":"docAlterTime","value":"2019-06-04"}]},{"href":null,"cells":[{"col":"fdId","value":"162b392f6b1f27812ae0da2468cb86bb"},{"col":"docSubject","value":"培训管理制度 ","href":"/km/institution/km_institution_knowledge/kmInstitutionKnowledge.do?method=view&fdId=162b392f6b1f27812ae0da2468cb86bb"},{"col":"fdNumber","value":"GZZD【2018】024号"},{"col":"docStatus","value":"发布"},{"col":"docDept.fdName"},{"col":"docCreator","value":"郑超"},{"col":"docPublishTime","value":"2018-04-11"},{"col":"fdAbolishTime"},{"col":"fdOverdue"},{"col":"docCreateTime","value":"2018-04-11"},{"col":"docAlterTime","value":"2018-04-11"}]},{"href":null,"cells":[{"col":"fdId","value":"162b39134fa0f859b75aee44ad7a5c03"},{"col":"docSubject","value":"合伙人任命管理办法","href":"/km/institution/km_institution_knowledge/kmInstitutionKnowledge.do?method=view&fdId=162b39134fa0f859b75aee44ad7a5c03"},{"col":"fdNumber","value":"GZZD【2018】023号"},{"col":"docStatus","value":"发布"},{"col":"docDept.fdName"},{"col":"docCreator","value":"唐超"},{"col":"docPublishTime","value":"2018-04-11"},{"col":"fdAbolishTime"},{"col":"fdOverdue"},{"col":"docCreateTime","value":"2018-04-11"},{"col":"docAlterTime","value":"2018-04-11"}]},{"href":null,"cells":[{"col":"fdId","value":"162b3902a10c981cef28b2e4089b4bcb"},{"col":"docSubject","value":"转岗管理办法","href":"/km/institution/km_institution_knowledge/kmInstitutionKnowledge.do?method=view&fdId=162b3902a10c981cef28b2e4089b4bcb"},{"col":"fdNumber","value":"GZZD【2018】022号"},{"col":"docStatus","value":"发布"},{"col":"docDept.fdName"},{"col":"docCreator","value":"李佳腾"},{"col":"docPublishTime","value":"2018-04-11"},{"col":"fdAbolishTime"},{"col":"fdOverdue"},{"col":"docCreateTime","value":"2018-04-11"},{"col":"docAlterTime","value":"2018-04-11"}]},{"href":null,"cells":[{"col":"fdId","value":"1616f89b927c36255d1bb6f466d86f2c"},{"col":"docSubject","value":"员工个人电脑安装使用规范 ","href":"/km/institution/km_institution_knowledge/kmInstitutionKnowledge.do?method=view&fdId=1616f89b927c36255d1bb6f466d86f2c"},{"col":"fdNumber","value":"GZZD【2018】001号"},{"col":"docStatus","value":"发布"},{"col":"docDept.fdName","value":"人力资源部"},{"col":"docCreator","value":"李小燕"},{"col":"docPublishTime","value":"2018-02-07"},{"col":"fdAbolishTime"},{"col":"fdOverdue"},{"col":"docCreateTime","value":"2018-02-07"},{"col":"docAlterTime","value":"2018-02-07"}]},{"href":null,"cells":[{"col":"fdId","value":"15c1aca78d9fa487199a19e426cbc4eb"},{"col":"docSubject","value":"请休假制度","href":"/km/institution/km_institution_knowledge/kmInstitutionKnowledge.do?method=view&fdId=15c1aca78d9fa487199a19e426cbc4eb"},{"col":"fdNumber","value":"21344"},{"col":"docStatus","value":"发布"},{"col":"docDept.fdName"},{"col":"docCreator","value":"李佳腾"},{"col":"docPublishTime","value":"2017-05-18"},{"col":"fdAbolishTime"},{"col":"fdOverdue"},{"col":"docCreateTime","value":"2017-05-18"},{"col":"docAlterTime","value":"2017-05-18"}]}]}
+					]]>
+				</code>
+			</example>
+		</source>
+		<operations>
+			<operation
+				name="{operation.create}"
+				type="create"
+				href="/km/institution/km_institution_knowledge/kmInstitutionKnowledge.do?method=add" />
+			<operation
+				name="{operation.more}"
+				type="more"
+				mobileHref="/km/institution/mobile/index.jsp#query=categoryId%3A!{cateid}"
+				href="/km/institution?categoryId=!{cateid}" />
+		</operations>	
+	</portlet>
+</root>

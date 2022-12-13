@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<log-oper>
+	<logset>
+		<oper
+            id="kmKeydataBaseOperLog"
+            extends="BaseOperLog"
+            model="com.landray.kmss.km.keydata.base.model.KmKeydataBase"
+            action="/km/keydata/base/kmKeydataBase.do">
+            <query 
+                method="restoreAllReaders"
+                logPoint="restoreAllReaders"
+                messageKey="button.update">
+            </query>
+            <query 
+                method="select"
+                logPoint="Base_UrlParam;Action_FindAll"
+                messageKey="button.list">
+            </query>
+            <query 
+                method="view"
+                logPoint="Base_UrlParam;Action_Find"
+                messageKey="button.view">
+            </query>
+        </oper>
+        
+        <oper
+            id="kmKeydataUsedOperLog"
+            extends="BaseOperLog"
+            model="com.landray.kmss.km.keydata.base.model.KmKeydataUsed"
+            action="/km/keydata/base/kmKeydataUsed.do">
+            <query 
+                method="insertKeydataUsed"
+                logPoint="addKmKeydataUsed"
+                messageKey="button.save">
+            </query>
+        </oper>
+        
+	 	 <oper
+            id="kmKeydataPluginShowOperLog"
+            extends="BaseOperLog"
+            model="com.landray.kmss.km.keydata.base.model.KmKeydataPluginShow"
+            action="/km/keydata/base/kmKeydataPluginShow.do">
+            <query 
+                method="importPluginShowData"
+                logPoint="importPluginShowData"
+                messageKey="km-keydata-base:keydata.plugin.import">
+            </query>
+            <query 
+                method="showall|disshowall"
+                logPoint="Base_UrlParam;updateIsShow">
+            </query>
+        </oper> 
+	</logset>
+</log-oper>

@@ -1,0 +1,31 @@
+{
+    "global":     {
+        "modelName": "com.landray.kmss.km.institution.model.KmInstitutionTemplateKeyword",
+        "messageKey": "km-institution:table.kmInstitutionTemplateKeyword",
+        "displayProperty": "docKeyword",
+        "table": "km_inst_template_keyword"
+    },
+    "attrs":     {
+        "fdId":         {
+            "propertyType": "id",
+            "generator": {"type": "assigned"}
+        },
+        "docKeyword":         {
+            "propertyType": "simple",
+            "messageKey": "km-institution:kmInstitutionTemplateKeyword.docKeyword",
+            "type": "String",
+            "column": "doc_keyword",
+            "notNull": "false",
+            "unique": "false",
+            "length": "200"
+        },
+        "kmInstitutionTemplate":         {
+            "propertyType": "model",
+            "messageKey": "km-institution:kmInstitutionTemplateKeyword.kmInstitutionTemplate",
+            "type": "com.landray.kmss.km.institution.model.KmInstitutionTemplate",
+            "column": "fd_template_id",
+            "notNull": "false",
+            "unique": "false"
+        }
+    }
+}

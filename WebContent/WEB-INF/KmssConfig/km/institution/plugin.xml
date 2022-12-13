@@ -1,0 +1,276 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<plugin
+	xmlns="http://www.example.org/plugin-config"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.example.org/plugin-config ../../plugin.xsd ">
+	<!--  
+	<extension
+		point="com.landray.kmss.sys.workflow.support.oa.subprocess"
+		model="*">
+		
+		<item
+			name="subprocess">
+			<param
+				name="modelName"
+				value="com.landray.kmss.km.institution.model.KmInstitutionKnowledge" />
+			<param
+				name="createParam"
+				value="fdTemplateId=!{cateid}" />
+		</item>
+	</extension>
+	-->	
+	
+	<!-- 功能区分类实现 扩展点 -->
+	<extension point="com.landray.kmss.third.pda.extend" model="*">
+		<item name="extend">
+			<param name="modelName"
+				value="com.landray.kmss.km.institution.model.KmInstitutionKnowledge" />
+			<param name="templateClass"
+				value="com.landray.kmss.km.institution.model.KmInstitutionTemplate" />
+			<param name="filterURL"
+				value="/third/pda/pda_property_filter/pdaPropertyFilter.do?method=getPropertyFilter&amp;templateClass=KmInstitutionTemplate" />
+		</item>
+	</extension>
+	
+	<!-- 订阅管理 -->
+	<extension
+		point="com.landray.kmss.sys.follow.setting"
+		model="com.landray.kmss.km.institution.model.KmInstitutionKnowledge">
+		<item name="followSetting">
+			<param name="methodName" value="add" />
+			<param name="templateModel"  value="com.landray.kmss.km.institution.model.KmInstitutionTemplate" />
+			<param name="templateField"  value="kmInstitutionTemplate.fdHierarchyId" />
+		</item>
+	</extension>
+	
+	<extension point="com.landray.kmss.sys.mobile.config">
+		<item name="info">
+			<param name="name" value="{km-institution:module.km.institution}" />
+			<param name="modelName" value="com.landray.kmss.km.institution.model.KmInstitutionKnowledge" />
+			<param name="defaultUrl" value="/km/institution/mobile/nav.json" />
+		</item>
+	</extension>
+	
+	<extension point="com.landray.kmss.sys.mobile.compress" model="*">
+		<item name="js-pkg">
+			<param name="name" value="mui-km-institution.js" />
+			<param name="targetFile" value="/km/institution/mobile/resource/js/mui-km-institution.js" />
+			<param name="tinyId" value="kmInstitutionListTiny" />
+		</item>
+		<item name="css-file">
+			<param name="name" value="mui-km-institution.css" />
+			<param name="targetFile" value="/km/institution/mobile/resource/css/institution.css" />
+		</item>			
+	</extension>	
+	
+	<extension	point="com.landray.kmss.km.keydata"	model="*" >
+		<item
+			name="showKeydataUsed"
+			enable="false">
+			<param
+				name="name"
+				value="规范制度" />
+			<param
+				name="actionUrl"
+				value="/km/institution/showKeydataUsed.jsp?keydataId=${keydataId}" />
+			<param
+				name="formName"
+				value="kmInstitutionKnowledgeForm" />
+		</item>
+	</extension>
+	
+	<!-- top字段设置为0 -->
+	<extension point="com.landray.kmss.sys.admin.transfer">
+		<item
+			name="config">
+			<param
+				name="unid"
+				value="com.landray.kmss.km.institution.model.KmInstitutionKnowledgeSetTop" />
+			<param
+				name="name"
+				value="规范制度置顶功能数据迁移" />
+			<param
+				name="path"
+				value="/km/institution/" />
+			<param
+				name="check"
+				value="com.landray.kmss.km.institution.transfer.KmInstitutionKnowledgeChecker" />
+			<param
+				name="upgrade"
+				value="com.landray.kmss.km.institution.transfer.KmInstitutionKnowledgeTask" />
+			<param
+				name="description"
+				value="文档置顶后，文档没排到最前面，有些旧数据反而排在前面"/>
+		</item>
+	</extension>
+	
+	<!-- 编号规则 -->
+	<extension point="com.landray.kmss.sys.number.config" model="*">
+		<item name="extend">
+			<param name="modelName" value="com.landray.kmss.km.institution.model.KmInstitutionKnowledge"/>
+			<param name="templatePropertyName" value="kmInstitutionTemplate"/>
+			<param name="moduleName" value="{km-institution:module.km.institution}"/>
+			<param name="isReform" value="false"/>
+		</item>
+	</extension>
+	<!-- 表单关联控件模块扩展点 -->
+	<extension point="com.landray.kmss.sys.xform.base.service.controls.relevance" model="*">
+		<item name="node">
+			<param name="modelName" value="com.landray.kmss.km.institution.model.KmInstitutionKnowledge" />
+			<param name="templateModelName" value="com.landray.kmss.km.institution.model.KmInstitutionTemplate" />
+			<param name="key" value="kmInstitution" />
+			<param name="templatePropertyName" value="kmInstitutionTemplate" />
+			<param name="moduleMessageKey" value="km-institution:table.kmdoc" />
+		</item>
+	</extension>
+	
+	<extension point="com.landray.kmss.sys.person.categoryUrl" model="com.landray.kmss.km.institution.model.KmInstitutionKnowledge" >
+		<item name="categoryUrl">
+			<param name="addUrl" value="/km/institution/km_institution_knowledge/kmInstitutionKnowledge.do?method=add&amp;fdTemplateId={0}" />
+			<param name="templateModel" value="com.landray.kmss.km.institution.model.KmInstitutionTemplate" />
+		</item>
+	</extension>
+	
+	<extension
+		point="com.landray.kmss.sys.listshow.listShowConfig"
+		model="com.landray.kmss.km.institution.model.KmInstitutionKnowledge">
+		<item
+			name="listShowConfig">
+			<param
+				name="name"
+				value="km-institution:kmInstitutionKnowledge.list.all" />
+			<param
+				name="model"
+				value="com.landray.kmss.km.institution.model.KmInstitutionKnowledge" />
+			<param
+				name="page"
+				value="/allDoc" />
+				<param
+				name="default"
+				value="docSubject;fdNumber;docDept.fdName;docCreator;docPublishTime;fdTopDays" />
+			<param
+				name="customized"
+				value="docCreator;km-institution:kmInstitution.docCreator,docDept.fdName;km-institution:kmInstitution.form.main.docDeptId,docPublishTime;km-institution:kmInstitution.docPublishTime,fdTopDays;km-institution:kmInstitutionKnowledge.fdIsTop" />
+		</item>
+	</extension> 
+	<extension
+		point="com.landray.kmss.sys.listshow.listShowConfig"
+		model="com.landray.kmss.km.institution.model.KmInstitutionKnowledge">
+		<item
+			name="listShowConfig">
+			<param
+				name="name"
+				value="km-institution:kmInstitutionKnowledge.list.create" />
+			<param
+				name="model"
+				value="com.landray.kmss.km.institution.model.KmInstitutionKnowledge" />
+			<param
+				name="page"
+				value="/create" />
+				<param
+				name="default"
+				value="docSubject;fdNumber;docDept.fdName;docCreator;docPublishTime;fdTopDays" />
+			<param
+				name="customized"
+			value="docCreator;km-institution:kmInstitution.docCreator,docDept.fdName;km-institution:kmInstitution.form.main.docDeptId,docPublishTime;km-institution:kmInstitution.docPublishTime,fdTopDays;km-institution:kmInstitutionKnowledge.fdIsTop" />
+		</item>
+	</extension> 
+	<extension
+		point="com.landray.kmss.sys.listshow.listShowConfig"
+		model="com.landray.kmss.km.institution.model.KmInstitutionKnowledge">
+		<item
+			name="listShowConfig">
+			<param
+				name="name"
+				value="list.approval" />
+			<param
+				name="model"
+				value="com.landray.kmss.km.institution.model.KmInstitutionKnowledge" />
+			<param
+				name="page"
+				value="/approval" />
+				<param
+				name="default"
+				value="docSubject;fdNumber;docDept.fdName;docCreator;docPublishTime;fdTopDays" />
+			<param
+				name="customized"
+				value="docCreator;km-institution:kmInstitution.docCreator,docDept.fdName;km-institution:kmInstitution.form.main.docDeptId,docPublishTime;km-institution:kmInstitution.docPublishTime,fdTopDays;km-institution:kmInstitutionKnowledge.fdIsTop" />
+		</item>
+	</extension> 
+	<extension
+		point="com.landray.kmss.sys.listshow.listShowConfig"
+		model="com.landray.kmss.km.institution.model.KmInstitutionKnowledge">
+		<item
+			name="listShowConfig">
+			<param
+				name="name"
+				value="list.approved" />
+			<param
+				name="model"
+				value="com.landray.kmss.km.institution.model.KmInstitutionKnowledge" />
+			<param
+				name="page"
+				value="/approved" />
+				<param
+				name="default"
+				value="docSubject;fdNumber;docDept.fdName;docCreator;docPublishTime;fdTopDays" />
+			<param
+				name="customized"
+				value="docCreator;km-institution:kmInstitution.docCreator,docDept.fdName;km-institution:kmInstitution.form.main.docDeptId,docPublishTime;km-institution:kmInstitution.docPublishTime,fdTopDays;km-institution:kmInstitutionKnowledge.fdIsTop" />
+		</item>
+	</extension>
+	<extension
+		point="com.landray.kmss.sys.listshow.listShowConfig"
+		model="com.landray.kmss.km.institution.model.KmInstitutionKnowledge">
+		<item
+			name="listShowConfig">
+			<param
+				name="name"
+				value="sys-simplecategory:menu.sysSimpleCategory.index" />
+			<param
+				name="model"
+				value="com.landray.kmss.km.institution.model.KmInstitutionKnowledge" />
+			<param
+				name="page"
+				value="/docCategory" />
+				<param
+				name="default"
+				value="docSubject;fdNumber;docDept.fdName;docCreator;docPublishTime;fdTopDays" />
+			<param
+				name="customized"
+				value="docCreator;km-institution:kmInstitution.docCreator,docDept.fdName;km-institution:kmInstitution.form.main.docDeptId,docPublishTime;km-institution:kmInstitution.docPublishTime,fdTopDays;km-institution:kmInstitutionKnowledge.fdIsTop" />
+		</item>
+	</extension> 	 
+	<!-- 数据中台 -RTF -->
+	<extension point="com.landray.kmss.sys.xform.maindata.rtf">
+		<item name="config">
+			<!-- 主文档全名称 -->
+			<param
+				name="modelName"
+				value="com.landray.kmss.km.institution.model.KmInstitutionKnowledge" />
+			<param
+				name="fields"
+				value="docContent" />
+		</item>
+		<item name="config">
+			<!-- 主文档全名称 -->
+			<param
+				name="modelName"
+				value="com.landray.kmss.km.institution.model.KmInstitutionKnowledgePre" />
+			<param
+				name="fields"
+				value="fdPreContent" />
+		</item>
+	</extension>
+	
+	<extension 
+		point="com.landray.kmss.elec.device.ansyService"
+		model="com.landray.kmss.elec.device.client.IElecChannelRequestMessage">
+    	<item name="convertor">
+      		<param name="bean" value="kmInstitutionYqqSignService" />
+      		<param name="channel" value="yqq" />
+      		<param name="receiver" value="km-institution" />
+    	</item>
+  	</extension>
+	
+</plugin>

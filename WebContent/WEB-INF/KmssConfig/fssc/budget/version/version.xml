@@ -1,0 +1,537 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<version xmlns="http://www.example.org/version-config" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.example.org/version-config ../../../version.xsd">
+	<modifies>
+		<modify>
+			<description>#134900 修复 单据提交后，预算结转，单据跨月发布，预算占用无法转为使用</description>
+			<author>谢星星</author>
+			<revision-time>2021-03-09</revision-time>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#134361 优化 预算编制生效报错不清晰问题</description>
+			<author>谢星星</author>
+			<revision-time>2021-02-26</revision-time>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#133906 修复 由于无效成本中心预算已经生成，判断预算是否存在按照编号查找，导致系统认为预算已经生成，切换为ID判断</description>
+			<author>谢星星</author>
+			<revision-time>2021-02-24</revision-time>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#133700 修复 生效预算定时任务报错导致预算无法生成的问题</description>
+			<author>谢星星</author>
+			<revision-time>2021-02-24</revision-time>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#131550 新增 右侧审批模式下立项没有基本信息，预提、采购申请、调账，事后分摊、事前申请、预算调整基本信息没有发布时间</description>
+			<author>贺金波</author>
+			<revision-time>2021-01-21</revision-time>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#131183 修复 预算调整分类增加可使用者与可维护者</description>
+			<author>贺金波</author>
+			<revision-time>2021-01-13</revision-time>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#131089 修复 提交单据，跨年财务审核，导致预算无法匹配，单据无法提交</description>
+			<author>谢星星</author>
+			<revision-time>2021-01-06</revision-time>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#123865 修复 预算结转金额错误的问题</description>
+			<author>谢星星</author>
+			<revision-time>2020-11-10</revision-time>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#103039 修复 系统所有选择弹框时，弹框要有显示选择的是什么</description>
+			<author>张慧慧</author>
+			<revision-time>2020-10-30</revision-time>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#123177 优化 预算调整默认新增一行明细，提交校验至少有一行明细才能提交</description>
+			<author>谢星星</author>
+			<revision-time>2020-10-24</revision-time>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#102994 修复 预算导入筛选列表标题去掉、加个年度筛选项和预算启用筛选项</description>
+			<author>张慧慧</author>
+			<revision-time>2020-10-13</revision-time>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#112953 修复 预算占用使用负数未显示问题</description>
+			<author>谢星星</author>
+			<revision-time>2020-10-10</revision-time>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#107176 优化 预算模板修改列数需提示用户使用正确的模板</description>
+			<author>谢星星</author>
+			<revision-time>2020-10-10</revision-time>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#103325 优化 预算查询按照名称模糊搜索</description>
+			<author>谢星星</author>
+			<revision-time>2020-10-10</revision-time>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#115138 修复 去除错误代码</description>
+			<author>汪金满</author>
+			<revision-time>2020-10-10</revision-time>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#103595 修复 预算模块没有权限页签</description>
+			<author>张慧慧</author>
+			<revision-time>2020-09-30</revision-time>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#112370 修复 预算执行台账查询重置部门值未清空的问题</description>
+			<author>谢星星</author>
+			<revision-time>2020-09-24</revision-time>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#107812 新增 单据显示流程处理结果已完结、已废弃的水印</description>
+			<author>谢星星</author>
+			<revision-time>2020-09-19</revision-time>
+			<relation>
+				<relation-module>fssc/base</relation-module>
+			</relation>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#116167 优化 模块中的筛选项记账公司全部改为手输的，可以模糊搜索</description>
+			<author>余艳祥</author>
+			<revision-time>2020-09-18</revision-time>
+			<relation>
+				<relation-module>fssc/common</relation-module>
+			</relation>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#103000 修复 预算数据查询时，点击预算调整记录不能跳转到单据中进行查看</description>
+			<author>张慧慧</author>
+			<revision-time>2020-09-17</revision-time>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#119941 修复 预算导入，未校验预算科目是否有效状态</description>
+			<author>谢星星</author>
+			<revision-time>2020-09-17</revision-time>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#116869 优化 工作交接的内容增加费控模块</description>
+			<author>汪金满</author>
+			<revision-time>2020-09-07</revision-time>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#93153 优化 项目主数据中项目性质：项目/核算项目，再增加一个两者均是。在选择项目的地方可以选择项目+两者均是的项目，生成凭证获取核算项目的时候如果是项目性质根据项目去查找核算项目，如果是两者均是回传本身</description>
+			<author>余艳祥</author>
+			<revision-time>2020-09-07</revision-time>
+			<relation>
+				<relation-module>fssc/base</relation-module>
+			</relation>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#113393 优化 列表页面待审或发布不允许删除提示修改为资源文件</description>
+			<author>谢星星</author>
+			<revision-time>2020-09-07</revision-time>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#111370 修复 预算已经导入了，然后在用Excel导入时，金额过大会出现科学计数法</description>
+			<author>张慧慧</author>
+			<revision-time>2020-08-10</revision-time>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#106797 修复 费控模块分类无法选择常用分类</description>
+			<author>张慧慧</author>
+			<revision-time>2020-08-03</revision-time>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#112116 修复 预算生效日期不能小于当前日期</description>
+			<author>谢星星</author>
+			<revision-time>2020-08-01</revision-time>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#113110 优化 增加预算初始化导入权限控制</description>
+			<author>谢星星</author>
+			<revision-time>2020-08-01</revision-time>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#103318 修复 预算可以删除废弃状态单据</description>
+			<author>余艳祥</author>
+			<revision-time>2020-08-01</revision-time>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>112951 修复 预算调整编辑主文档</description>
+			<author>谢星星</author>
+			<revision-time>2020-08-01</revision-time>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#103055 优化 标准版屏蔽预算初始化导入</description>
+			<author>谢星星</author>
+			<revision-time>2020-07-30</revision-time>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#111216 修复 预算导入成功之后，查看页面出现空白区</description>
+			<author>张慧慧</author>
+			<revision-time>2020-07-30</revision-time>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#112918 修复 预算编制里面做了预算科目为零，生效之后，不会回写到预算管理中</description>
+			<author>张慧慧</author>
+			<revision-time>2020-07-24</revision-time>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#103318 修复 有已使用或占用的预算数据不允许删除</description>
+			<author>余艳祥</author>
+			<revision-time>2020-07-23</revision-time>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#105156 修复 预算调整和追加没有传阅功能</description>
+			<author>张慧慧</author>
+			<revision-time>2020-07-09</revision-time>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#105932 修复 预算调整和预算追加，点击暂存，也会校验预算是否存在</description>
+			<author>张慧慧</author>
+			<revision-time>2020-07-09</revision-time>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#111374 修复 预算执行台账查询，根据季度查询，查询结果错误</description>
+			<author>张慧慧</author>
+			<revision-time>2020-07-07</revision-time>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#102955 优化 预算导入时，导入字段不多时，则不需要出现滚动条</description>
+			<author>谢星星</author>
+			<revision-time>2020-06-24</revision-time>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#109541 优化 Excel批量导入数据支持xls、xlsx格式</description>
+			<author>谢星星</author>
+			<revision-time>2020-06-17</revision-time>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#108872 修复 预算匹配预算接口成本中心、费用类型增加公司条件</description>
+			<author>谢星星</author>
+			<revision-time>2020-06-16</revision-time>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#107128 修复 费用类型范围为个人匹配不到预算的问题</description>
+			<author>谢星星</author>
+			<revision-time>2020-05-30</revision-time>
+			<relation>
+				<relation-module>fssc/base</relation-module>
+			</relation>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#107565 新增 预算数据增加可阅读者权限调整</description>
+			<author>谢星星</author>
+			<revision-time>2020-06-02</revision-time>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#106858 修复 多公司预算导入，不同公司预算科目同编号导致预算科目未取到对应公司下的科目导致预算匹配不到的问题</description>
+			<author>谢星星</author>
+			<revision-time>2020-05-30</revision-time>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#104472 修复 预算查询筛选条件中项目中还显示核算项目</description>
+			<author>张慧慧</author>
+			<revision-time>2020-05-07</revision-time>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#103059 修复 预算执行，有科目选择科目提示选择公司，公司无法选择的问题</description>
+			<author>谢星星</author>
+			<revision-time>2020-04-28</revision-time>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#103395 优化 预算查询列表和查看权限及增加项目经理权限</description>
+			<author>谢星星</author>
+			<revision-time>2020-04-22</revision-time>
+			<relation>
+				<relation-module>fssc/base</relation-module>
+			</relation>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#90464 优化 借出部门名称修改</description>
+			<author>谢星星</author>
+			<revision-time>2020-04-16</revision-time>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#100386 修复 预算调整发布后，所有人都能看到单据的问题</description>
+			<author>谢星星</author>
+			<revision-time>2020-03-28</revision-time>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#91470 优化 【restservice服务】restservice接口文档说明调整</description>
+			<author>谢星星</author>
+			<revision-time>2020-02-28</revision-time>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#93983 修复 预算调整发布提示信息错误，预算为0允许导入</description>
+			<author>谢星星</author>
+			<revision-time>2020-01-10</revision-time>
+			<baseline>V15.0.3.R.20200117</baseline>
+		</modify>
+		<modify>
+			<description>#90408 修复 预算行数引发明细行数不对的问题</description>
+			<author>谢星星</author>
+			<revision-time>2019-12-27</revision-time>
+			<baseline>V15.0.3.R.20200117</baseline>
+		</modify>
+		<modify>
+			<description>#92157 新增 预算全维度批量导入功能</description>
+			<author>谢星星</author>
+			<revision-time>2019-12-24</revision-time>
+			<relation>
+				<relation-module>fssc/base</relation-module>
+			</relation>
+			<baseline>V15.0.3.R.20200117</baseline>
+		</modify>
+		<modify>
+			<description>#90405 优化 预算结转显示位置，预算方案增加提示，待摊科目导航优化显示</description>
+			<author>谢星星</author>
+			<revision-time>2019-12-05</revision-time>
+			<baseline>V15.0.3.R.20200117</baseline>
+		</modify>
+		<modify>
+			<description>#89398 修复 预算执行台账11，12月份显示有误的问题</description>
+			<author>谢星星</author>
+			<revision-time>2019-11-29</revision-time>
+			<baseline>V15.0.3.R.20200117</baseline>
+		</modify>
+		<modify>
+			<description>#88267 修复 预算操作按钮样式切换导致月度预算金额不能大于年度预算金额校验无效</description>
+			<author>谢星星</author>
+			<revision-time>2019-11-14</revision-time>
+			<baseline>V15.0.3.R.20200117</baseline>
+		</modify>
+		<modify>
+			<description>#83566 优化 【后台配置-优化】费控产品各个模块主页后台配置目录链接调整</description>
+			<author>余艳祥</author>
+			<revision-time>2019-10-11</revision-time>
+			<relation>
+				<relation-module>sys/ui</relation-module>
+			</relation>
+			<baseline>V15.0.2.R.20191108</baseline>
+		</modify>
+		<modify>
+			<description>#81394 新增 预算写入接口，优化项目预算可跨年</description>
+			<author>谢星星</author>
+			<revision-time>2019-09-06</revision-time>
+			<baseline>V15.0.2.R.20191108</baseline>
+		</modify>
+		<modify>
+			<description>#80352 新增 预算调整移动端审批</description>
+			<author>谢星星</author>
+			<revision-time>2019-09-02</revision-time>
+			<baseline>V15.0.2.R.20191108</baseline>
+		</modify>
+		<modify>
+			<description>#80374 新增 预算执行台账</description>
+			<author>谢星星</author>
+			<revision-time>2019-08-29</revision-time>
+			<relation>
+				<relation-module>fssc/common</relation-module>
+			</relation>
+			<baseline>V15.0.2.R.20191108</baseline>
+		</modify>
+		<modify>
+			<description>#68034 优化 明细增加按钮</description>
+			<author>谢星星</author>
+			<revision-time>2019-08-17</revision-time>
+			<baseline>V15.0.1.R.20190906</baseline>
+		</modify>
+		<modify>
+			<description>#68034 优化 角色描述</description>
+			<author>谢星星</author>
+			<revision-time>2019-08-17</revision-time>
+			<baseline>V15.0.1.R.20190906</baseline>
+		</modify>
+		<modify>
+			<description>#78869 优化 预算管理模块新增按钮</description>
+			<author>谢星星</author>
+			<revision-time>2019-08-09</revision-time>
+			<baseline>V15.0.1.R.20190906</baseline>
+		</modify>
+		<modify>
+			<description>#78925 修复 由于正则表达式导致config_edit.js明细无法选择</description>
+			<author>谢星星</author>
+			<revision-time>2019-08-07</revision-time>
+			<baseline>V15.0.1.R.20190906</baseline>
+		</modify>
+		<modify>
+			<description>#78869 修复 存在月，弹性判断错误导致刚控需填写弹性比例</description>
+			<author>谢星星</author>
+			<revision-time>2019-08-05</revision-time>
+			<baseline>V15.0.1.R.20190906</baseline>
+		</modify>
+		<modify>
+			<description>#78937 新增 webservice接口RestService配置</description>
+			<author>谢星星</author>
+			<revision-time>2019-08-01</revision-time>
+			<baseline>V15.0.1.R.20190906</baseline>
+		</modify>
+		<modify>
+			<description>#77742 修复 月度有弹出控制，下次新建弹性变成非必填了</description>
+			<author>谢星星</author>
+			<revision-time>2019-07-24</revision-time>
+			<baseline>V15.0.1.R.20190906</baseline>
+		</modify>
+		<modify>
+			<description>#76596 修复 预算调整update权限导致提交报错的问题</description>
+			<author>谢星星</author>
+			<revision-time>2019-07-23</revision-time>
+			<baseline>V15.0.1.R.20190906</baseline>
+		</modify>
+		<modify>
+			<description>#77753 优化 预算查询筛选条件增加年期间值筛选</description>
+			<author>谢星星</author>
+			<revision-time>2019-07-20</revision-time>
+			<baseline>V15.0.1.R.20190906</baseline>
+		</modify>
+		<modify>
+			<description>#65483 修复 预算调整，无借出预算也能提交的问题</description>
+			<author>谢星星</author>
+			<revision-time>2019-07-16</revision-time>
+			<baseline>V15.0.1.R.20190906</baseline>
+		</modify>
+		<modify>
+			<description>#65630 修复 结转选择不了公司的问题</description>
+			<author>谢星星</author>
+			<revision-time>2019-06-29</revision-time>
+			<baseline>V15.0.0.R.20190712</baseline>
+		</modify>
+		<modify>
+			<description>#65483 优化 数据预算查询增加月度、季度筛选项</description>
+			<author>谢星星</author>
+			<revision-time>2019-06-28</revision-time>
+			<baseline>V15.0.0.R.20190712</baseline>
+		</modify>
+		<modify>
+			<description>#75673 优化 新版本流程右侧显示</description>
+			<author>谢星星</author>
+			<revision-time>2019-06-25</revision-time>
+			<baseline>V15.0.0.R.20190712</baseline>
+		</modify>
+		<modify>
+			<description>#65630 优化 优化弹框选择</description>
+			<author>汪金满</author>
+			<revision-time>2019-06-20</revision-time>
+			<relation>
+				<relation-module>fssc/common</relation-module>
+			</relation>
+			<baseline>V15.0.0.R.20190712</baseline>
+		</modify>
+		<modify>
+			<description>#68034 删除 多余的引用包</description>
+			<author>谢星星</author>
+			<revision-time>2019-06-18</revision-time>
+			<baseline>V15.0.0.R.20190712</baseline>
+		</modify>
+		<modify>
+			<description>#74464 修复 预算调整编辑和删除权限控制</description>
+			<author>谢星星</author>
+			<revision-time>2019-06-06</revision-time>
+			<baseline>V15.0.0.R.20190712</baseline>
+		</modify>
+		<modify>
+			<description>#74438 优化 增加预算调整结果提示信息</description>
+			<author>谢星星</author>
+			<revision-time>2019-06-05</revision-time>
+			<baseline>V15.0.0.R.20190712</baseline>
+		</modify>
+		<modify>
+			<description>#74356 修复 提交和重新匹配跨月预算占用使用错乱问题</description>
+			<author>谢星星</author>
+			<revision-time>2019-06-05</revision-time>
+			<relation>
+				<relation-module>fssc/expense</relation-module>
+				<relation-module>fssc/fee</relation-module>
+			</relation>
+			<baseline>V15.0.0.R.20190712</baseline>
+		</modify>
+		<modify>
+			<description>#74334 修复 切换成本中心等维度，控制规则不会重新赋值、清空</description>
+			<author>谢星星</author>
+			<revision-time>2019-06-05</revision-time>
+			<baseline>V15.0.0.R.20190712</baseline>
+		</modify>
+		<modify>
+			<description>#74358 修复 驳回状态下，查看页面流程操作隐藏</description>
+			<author>谢星星</author>
+			<revision-time>2019-06-04</revision-time>
+			<relation>
+				<relation-module>fssc/common</relation-module>
+			</relation>
+			<baseline>V15.0.0.R.20190712</baseline>
+		</modify>
+		<modify>
+			<description>#74358 修复 匹配执行台账，只返回一条数据的问题</description>
+			<author>谢星星</author>
+			<revision-time>2019-06-04</revision-time>
+			<baseline>V15.0.0.R.20190712</baseline>
+		</modify>
+		<modify>
+			<description>#74329 修复 预算新建，自动带出的预算金额需加上调整金额</description>
+			<author>谢星星</author>
+			<revision-time>2019-06-04</revision-time>
+			<baseline>V15.0.0.R.20190712</baseline>
+		</modify>
+		<modify>
+			<description>#74261 修复 预算查看页面可使用金额未加上滚动金额</description>
+			<author>谢星星</author>
+			<revision-time>2019-06-04</revision-time>
+			<baseline>V15.0.0.R.20190712</baseline>
+		</modify>
+		<modify>
+			<description>#68034 新增 初始化费控V4代码</description>
+			<author>谢星星</author>
+			<revision-time>2019-06-03</revision-time>
+			<baseline>V15.0.0.R.20190712</baseline>
+		</modify>
+	</modifies>
+</version>

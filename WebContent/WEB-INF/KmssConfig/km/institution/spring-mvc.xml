@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans
+	xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.0.xsd">
+	<bean
+		name="/km/institution/km_institution_knowledge/kmInstitutionKnowledgeIndex.do"
+		class="com.landray.kmss.km.institution.actions.KmInstitutionKnowledgeIndexAction"
+		lazy-init="true"
+		parent="KmssBaseAction">
+		<property
+			name="formType"
+			value="com.landray.kmss.km.institution.forms.KmInstitutionKnowledgeForm" />
+		<property name="forwards">
+			<map>
+				<entry
+					key="listChildren"
+					value="/km/institution/km_institution_ui/kmInstitutionKnowledge_list.jsp" />
+				<entry
+					key="listChildren.4m"
+					value="/km/institution/mobile/list.jsp" />
+			</map>
+		</property>
+	</bean>
+	<bean
+		name="/km/institution/km_inst_knowledge_abolish/kmInstitutionKnowledgeAbolish.do"
+		class="com.landray.kmss.km.institution.actions.KmInstitutionKnowledgeAbolishAction"
+		lazy-init="true"
+		parent="KmssBaseAction">
+		<property
+			name="formType"
+			value="com.landray.kmss.km.institution.forms.KmInstitutionKnowledgeAbolishForm" />
+		<property name="forwards">
+			<map>
+				<entry
+					key="view"
+					value="/km/institution/km_inst_knowledge_abolish/kmInstitutionKnowledgeAbolish_view.jsp" />
+				<entry
+					key="edit"
+					value="/km/institution/km_inst_knowledge_abolish/kmInstitutionKnowledgeAbolish_edit.jsp" />
+				<entry
+					key="list"
+					value="/km/institution/km_inst_knowledge_abolish/kmInstitutionKnowledgeAbolish_list.jsp" />
+			</map>
+		</property>
+	</bean>
+	<bean
+		name="/km/institution/km_institution_knowledge/kmInstitutionKnowledge.do"
+		class="com.landray.kmss.km.institution.actions.KmInstitutionKnowledgeAction"
+		lazy-init="true"
+		parent="KmssBaseAction">
+		<property
+			name="formType"
+			value="com.landray.kmss.km.institution.forms.KmInstitutionKnowledgeForm" />
+		<property name="forwards">
+			<map>
+				<entry
+					key="view"
+					value="/km/institution/km_institution_ui/kmInstitutionKnowledge_view.jsp" />
+				<entry
+					key="edit"
+					value="/km/institution/km_institution_ui/kmInstitutionKnowledge_edit.jsp" />
+				<entry
+					key="list"
+					value="/km/institution/km_institution_knowledge/kmInstitutionKnowledge_list.jsp" />
+				<entry
+					key="listChildren"
+					value="/km/institution/km_institution_knowledge/kmInstitutionKnowledge_list.jsp" />
+				<entry
+					key="sameCategoryDoc"
+					value="/km/institution/km_institution_knowledge/kmInstitutionKnowledge_info_sameCategoryDoc.jsp" />
+				<entry
+					key="searchResult"
+					value="/km/institution/km_institution_knowledge/kmInstitutionKnowledge_list.jsp" />
+				<entry
+					key="manageList"
+					value="/km/institution/km_institution_knowledge/kmInstitutionKnowledge_list.jsp" />
+				<entry
+					key="listOut"
+					value="/km/institution/km_institution_knowledge/kmInstitutionKnowledge_list_out.jsp" />
+				<entry
+					key="stylepage"
+					value="/km/institution/km_institution_ui/kmInstitutionKnowledge_view.jsp" />
+				<entry
+					key="stylepage.4pda"
+					value="/third/pda/public/module_viewdata.jsp" />
+				<entry
+					key="stylepage.4m"
+					value="/km/institution/mobile/view.jsp" />
+				<entry
+					key="view.4m"
+					value="/km/institution/mobile/view.jsp" />
+				<entry
+					key="previewDoc"
+					value="/km/institution/km_institution_knowledge/kmInstitutionKnowledge_preview.jsp" />
+				<entry
+					key="getlatest"
+					value="/km/institution/mobile/list.mportal.jsp" />
+				<entry 
+                    key="extendinfo" 
+                    value="/km/institution/km_institution_knowledge/yqq/extend_info.jsp"/>
+                <entry 
+                    key="yqqLoading" 
+                    value="/km/institution/km_institution_knowledge/yqq/yqq_loading.jsp"/>
+			</map>
+		</property>
+	</bean>
+	<bean
+		name="/km/institution/km_institution_template/kmInstitutionTemplate.do"
+		class="com.landray.kmss.km.institution.actions.KmInstitutionTemplateAction"
+		lazy-init="true"
+		parent="KmssBaseAction">
+		<property
+			name="formType"
+			value="com.landray.kmss.km.institution.forms.KmInstitutionTemplateForm" />
+		<property name="forwards">
+			<map>
+				<entry
+					key="view"
+					value="/km/institution/km_institution_template/kmInstitutionTemplate_view.jsp" />
+				<entry
+					key="edit"
+					value="/km/institution/km_institution_template/kmInstitutionTemplate_edit.jsp" />
+				<entry
+					key="listChildren"
+					value="/km/institution/km_institution_template/kmInstitutionTemplate_list.jsp" />
+			</map>
+		</property>
+	</bean>
+	<bean id="kmInstitutionPortletController"
+        class="com.landray.kmss.km.institution.actions.KmInstitutionPortletController">
+    </bean>
+    
+    <bean 
+        class="com.landray.kmss.km.institution.actions.KmInstitutionOutSignAction" 
+        parent="KmssBaseAction" 
+        name="/km/institution/km_institution_out_sign/kmInstitutionOutSign.do" 
+        lazy-init="true">
+        <property 
+            name="formType" 
+            value="com.landray.kmss.km.institution.forms.KmInstitutionOutSignForm"/>
+        <property 
+            name="forwards">
+            <map/>
+        </property>
+    </bean>
+    
+    <bean
+		name="/km/institution/kmInstitutionKnowledge/kmInstitutionConfig.do"
+		class="com.landray.kmss.sys.appconfig.actions.SysAppConfigAction"
+		lazy-init="true"
+		parent="KmssBaseAction">
+		<property
+			name="formType"
+			value="com.landray.kmss.sys.appconfig.forms.SysAppConfigForm" />
+	</bean>
+</beans>

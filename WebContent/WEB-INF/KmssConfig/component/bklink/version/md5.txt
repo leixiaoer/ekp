@@ -1,0 +1,12 @@
+WebContent/WEB-INF/KmssConfig/component/bklink/design.xml=14c7c44369fb796bbafa4dbec880886d
+WebContent/WEB-INF/KmssConfig/component/bklink/log-oper.xml=ec9b1dd91b54e3894313571f5efdaecc
+WebContent/WEB-INF/KmssConfig/component/bklink/plugin.xml=d377909d67f0ff0f10110bdbf9311710
+WebContent/WEB-INF/KmssConfig/component/bklink/spring-mvc.xml=b16157494ba8655cf839b48167868236
+WebContent/WEB-INF/KmssConfig/component/bklink/spring.xml=05230eeebdd1ea1b7a9f5b4439586217
+WebContent/WEB-INF/KmssConfig/component/bklink/validation.xml=9f2425d6da2d48e9a36db8c6135787db
+WebContent/WEB-INF/KmssConfig/component/bklink/version/description.xml=6276dbdbe4640d11af664683f15be446
+WebContent/WEB-INF/KmssConfig/component/bklink/version/version.xml=476cd5a375caab018765e2be40fdb25a
+WebContent/WEB-INF/lib/kmss_component_bklink.jar=2fd3b77e1f8cb6e9d48190a442ac8a6a
+WebContent/component/bklink/compBklink_quote_view.jsp=7dcb213ae5dc7c8213e2679c272fe7d6
+WebContent/component/bklink/compBklink_removeToModel_edit.jsp=7087d87107f05653ae834ca7483198ff
+WebContent/component/bklink/compBklink_view.jsp=2d71efd83041321a8acb69acff01cb27

@@ -1,0 +1,123 @@
+{
+    "global":     {
+        "modelName": "com.landray.kmss.km.carmng.model.KmCarmngCategory",
+        "messageKey": "km-carmng:table.kmCarmngCategory",
+        "displayProperty": "fdName",
+        "serviceBean": "kmCarmngCategoryService",
+        "table": "km_carmng_category",
+        "url": "/km/carmng/km_carmng_category/kmCarmngCategory.do?method=view&fdId=${fdId}"
+    },
+    "attrs":     {
+        "fdId":         {
+            "propertyType": "id",
+            "generator": {"type": "assigned"}
+        },
+        "fdOrder":         {
+            "propertyType": "simple",
+            "messageKey": "km-carmng:kmCarmngCategory.fdOrder",
+            "type": "Integer",
+            "column": "fd_order",
+            "length": "10",
+            "notNull": "false"
+        },
+        "fdName":         {
+            "propertyType": "simple",
+            "messageKey": "km-carmng:kmCarmngCategory.fdName",
+            "type": "String",
+            "column": "fd_name",
+            "notNull": "false",
+            "length": "200",
+            "canSearch": "true",
+            "langSupport": "true"
+        },
+        "fdHierarchyId":         {
+            "propertyType": "simple",
+            "messageKey": "km-carmng:kmCarmngCategory.fdHierarchyId",
+            "type": "String",
+            "column": "fd_hierarchy_id",
+            "notNull": "false",
+            "length": "1000",
+            "canDisplay": "false"
+        },
+        "docCreateTime":         {
+            "propertyType": "simple",
+            "messageKey": "km-carmng:kmCarmngCategory.docCreateTime",
+            "type": "DateTime",
+            "column": "doc_create_time",
+            "notNull": "false",
+            "canSearch": "true"
+        },
+        "docCreator":         {
+            "propertyType": "model",
+            "messageKey": "km-carmng:kmCarmngCategory.docCreatorId",
+            "type": "com.landray.kmss.sys.organization.model.SysOrgPerson",
+            "column": "doc_creator_id",
+            "canSearch": "true"
+        },
+        "hbmParent":         {
+            "propertyType": "model",
+            "messageKey": "km-carmng:kmCarmngCategory.hbmParent",
+            "type": "com.landray.kmss.km.carmng.model.KmCarmngCategory",
+            "column": "fd_parent_id",
+            "cascade": "save-update"
+        },
+        "authReaderFlag":         {
+            "propertyType": "simple",
+            "messageKey": "km-carmng:kmCarmngCategory.authReaderFlag",
+            "type": "Boolean",
+            "column": "auth_reader_flag",
+            "notNull": "false",
+            "unique": "false",
+            "length": "1",
+            "canDisplay": "false"
+        },
+        "authReaders":         {
+            "propertyType": "list",
+            "messageKey": "km-carmng:kmCarmngCategory.authReaders",
+            "column": "fd_template_id",
+            "type": "com.landray.kmss.sys.organization.model.SysOrgElement",
+            "elementColumn": "auth_reader_id",
+            "table": "km_carmng_cate_reader",
+            "canDisplay": "false"
+        },
+        "authEditors":         {
+            "propertyType": "list",
+            "messageKey": "km-carmng:kmCarmngCategory.authEditors",
+            "column": "fd_template_id",
+            "type": "com.landray.kmss.sys.organization.model.SysOrgElement",
+            "elementColumn": "auth_editor_id",
+            "table": "km_carmng_cate_editor",
+            "canDisplay": "false"
+        },
+        "authAllEditors":         {
+            "propertyType": "list",
+            "messageKey": "km-carmng:kmCarmngCategory.authAllEditors",
+            "column": "fd_template_id",
+            "type": "com.landray.kmss.sys.organization.model.SysOrgElement",
+            "elementColumn": "auth_editor_id",
+            "table": "km_carmng_cate_aeditor",
+            "canDisplay": "false"
+        },
+        "authAllReaders":         {
+            "propertyType": "list",
+            "messageKey": "km-carmng:kmCarmngCategory.authAllReaders",
+            "column": "fd_template_id",
+            "type": "com.landray.kmss.sys.organization.model.SysOrgElement",
+            "elementColumn": "auth_reader_id",
+            "table": "km_carmng_cate_areader",
+            "canDisplay": "false"
+        },
+        "docAlteror":         {
+            "propertyType": "model",
+            "messageKey": "sys-doc:sysDocBaseInfo.docAlteror",
+            "type": "com.landray.kmss.sys.organization.model.SysOrgPerson",
+            "column": "doc_alteror_id"
+        },
+        "docAlterTime":         {
+            "propertyType": "simple",
+            "messageKey": "sys-doc:sysDocBaseInfo.docAlterTime",
+            "type": "DateTime",
+            "column": "doc_alter_time"
+        }
+    }
+}

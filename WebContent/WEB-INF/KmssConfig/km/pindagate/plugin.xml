@@ -1,0 +1,215 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<plugin
+	xmlns="http://www.example.org/plugin-config"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.example.org/plugin-config ../../plugin.xsd ">
+	<!--  
+	<extension
+		point="com.landray.kmss.sys.workflow.support.oa.subprocess"
+		model="*">
+		
+		<item
+			name="subprocess">
+			<param
+				name="modelName"
+				value="com.landray.kmss.km.pindagate.model.KmPindagateMain" />
+			<param
+				name="createParam"
+				value="fdTemplateId=!{cateid}" />
+		</item>
+	</extension>
+		-->
+		
+		
+	<extension point="com.landray.kmss.sys.mobile.config">
+		<item name="info">
+			<param name="name" value="{km-pindagate:module.km.pindagate}" />
+			<param name="modelName" value="com.landray.kmss.km.pindagate.model.KmPindagateMain" />
+			<param name="defaultUrl" value="/km/pindagate/mobile/nav.json" />
+		</item>
+	</extension>	
+		
+		
+	<extension point="com.landray.kmss.sys.mobile.compress" model="*">
+		<item name="js-pkg">
+			<param name="name" value="mui-pindagate.js" />
+			<param name="targetFile" value="/km/pindagate/mobile/mui-pindagate.js" />
+			<param name="srcFold" value="/km/pindagate/mobile/resource/js" />
+		</item>
+		<item name="js-pkg">
+			<param name="name" value="mui-pindagate-question.js" />
+			<param name="targetFile" value="/km/pindagate/mobile/mui-pindagate-question.js" />
+			<param name="srcFold" value="/km/pindagate/mobile/question_type" />
+		</item>
+		<item name="css-file">
+			<param name="name" value="mui-pindagate-list.css" />
+			<param name="targetFile" value="/km/pindagate/mobile/resource/css/list.css" />
+		</item>		
+	</extension>
+	
+	<!--调查管理一键选择分类扩展点实现 -->
+	<extension point="com.landray.kmss.sys.person.categoryUrl" model="com.landray.kmss.km.pindagate.model.KmPindagateMain" >
+		<item name="categoryUrl">
+			<param name="addUrl" value="/km/pindagate/km_pindagate_main/kmPindagateMain.do?method=add&amp;fdTemplateId={0}" />
+			<param name="templateModel" value="com.landray.kmss.km.pindagate.model.KmPindagateTemplate" />
+		</item>
+	</extension>
+		
+	<!--调查管理旧数据统计提交份数扩展点实现 -->
+	<extension
+		point="com.landray.kmss.sys.admin.transfer">
+	<item
+			name="config">
+			<param
+				name="unid"
+				value="com.landray.kmss.km.pindagate.transfer.KmPindagateTransferTask" />
+			<param
+				name="name"
+				value="{km-pindagate:kmPindagate.fdLastStatNum.transfer}" />
+			<param
+				name="path"
+				value="/km/pindagate/" />
+			<param
+				name="check"
+				value="com.landray.kmss.km.pindagate.transfer.KmPindagateTransferChecker" />
+			<param
+				name="upgrade"
+				value="com.landray.kmss.km.pindagate.transfer.KmPindagateTransferTask" />
+			<param
+				name="description"
+				value="{km-pindagate:kmPindagate.fdLastStatNum.transfer.description}" />
+		</item>
+		<item
+			name="config">
+			<param
+				name="unid"
+				value="com.landray.kmss.km.pindagate.transfer.KmPindagateStatisticTransferTask" />
+			<param
+				name="name"
+				value="{km-pindagate:kmPindagateStatistic.fdStatisticScore.transfer}" />
+			<param
+				name="path"
+				value="/km/pindagate/" />
+			<param
+				name="check"
+				value="com.landray.kmss.km.pindagate.transfer.KmPindagateStatisticTransferChecker" />
+			<param
+				name="upgrade"
+				value="com.landray.kmss.km.pindagate.transfer.KmPindagateStatisticTransferTask" />
+			<param
+				name="description"
+				value="{km-pindagate:kmPindagateStatistic.fdStatisticScore.transfer.description}" />
+		</item>
+	</extension>
+		
+		<extension
+		point="com.landray.kmss.sys.listshow.listShowConfig"
+		model="com.landray.kmss.km.pindagate.model.KmPindagateMain">
+		<item
+			name="listShowConfig">
+			<param
+				name="name"
+				value="{km-pindagate:kmPindagate.tree.all}" />
+			<param
+				name="model"
+				value="com.landray.kmss.km.pindagate.model.KmPindagateMain" />
+			<param
+				name="page"
+				value="/mydocMine" />
+				<param
+				name="default"
+				value="docSubject;docStatus;kmPindagateTemplate.fdName;docFinishedTime;operations" />
+			<param
+				name="customized"
+					value="operations;km-pindagate:kmPindagateMain.operations" />
+		</item>
+	</extension>
+		<extension
+		point="com.landray.kmss.sys.listshow.listShowConfig"
+		model="com.landray.kmss.km.pindagate.model.KmPindagateMain">
+		<item
+			name="listShowConfig">
+			<param
+				name="name"
+				value="{km-pindagate:kmPindagate.tree.create.mine}" />
+			<param
+				name="model"
+				value="com.landray.kmss.km.pindagate.model.KmPindagateMain" />
+			<param
+				name="page"
+				value="/mydocCreate" />
+				<param
+				name="default"
+				value="docSubject;docStatus;kmPindagateTemplate.fdName;docFinishedTime;operations" />
+			<param
+				name="customized"
+					value="operations;km-pindagate:kmPindagateMain.operations" />
+		</item>
+	</extension>
+		<extension
+		point="com.landray.kmss.sys.listshow.listShowConfig"
+		model="com.landray.kmss.km.pindagate.model.KmPindagateMain">
+		<item
+			name="listShowConfig">
+			<param
+				name="name"
+				value="{list.approval}" />
+			<param
+				name="model"
+				value="com.landray.kmss.km.pindagate.model.KmPindagateMain" />
+			<param
+				name="page"
+				value="/mydocApproval" />
+				<param
+				name="default"
+				value="docSubject;docStatus;kmPindagateTemplate.fdName;operations" />
+			<param
+				name="customized"
+					value="operations;km-pindagate:kmPindagateMain.operations" />
+		</item>
+	</extension>
+		<extension
+		point="com.landray.kmss.sys.listshow.listShowConfig"
+		model="com.landray.kmss.km.pindagate.model.KmPindagateMain">
+		<item
+			name="listShowConfig">
+			<param
+				name="name"
+				value="{list.approved}" />
+			<param
+				name="model"
+				value="com.landray.kmss.km.pindagate.model.KmPindagateMain" />
+			<param
+				name="page"
+				value="/mydocApproved" />
+				<param
+				name="default"
+				value="docSubject;docStatus;kmPindagateTemplate.fdName;docFinishedTime;operations" />
+			<param
+				name="customized"
+				value="operations;km-pindagate:kmPindagateMain.operations" />
+		</item>
+	</extension>
+	
+		<!-- 数据中台 -RTF -->
+	<extension point="com.landray.kmss.sys.xform.maindata.rtf">
+		<item name="config">
+			<!-- 主文档全名称 -->
+			<param
+				name="modelName"
+				value="com.landray.kmss.km.pindagate.model.KmPindagateMain" />
+			<param
+				name="fields"
+				value="fdQuestionExplain" />
+		</item>
+		<item name="config">
+			<!-- 主文档全名称 -->
+			<param
+				name="modelName"
+				value="com.landray.kmss.km.pindagate.model.KmPindagateQuestionRes" />
+			<param
+				name="fields"
+				value="fdAnswer" />
+		</item>
+	</extension>
+</plugin>

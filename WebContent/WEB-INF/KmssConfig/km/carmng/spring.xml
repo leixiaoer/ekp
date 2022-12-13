@@ -1,0 +1,540 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans
+	xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.0.xsd">
+	<bean
+		id="kmCarmngEvaluationDao"
+		parent="KmssAuthBaseDao"
+		class="com.landray.kmss.km.carmng.dao.hibernate.KmCarmngEvaluationDaoImp">
+		<property
+			name="modelName"
+			value="com.landray.kmss.km.carmng.model.KmCarmngEvaluation" />
+	</bean>
+	<bean
+		id="kmCarmngEvaluationTarget"
+		parent="KmssBaseTarget"
+		class="com.landray.kmss.km.carmng.service.spring.KmCarmngEvaluationServiceImp">
+		<property name="baseDao">
+			<ref local="kmCarmngEvaluationDao" />
+		</property>
+		<property name="kmCarmngApplicationService">
+			<ref local="kmCarmngApplicationService" />
+		</property>
+	</bean>
+	<bean
+		id="kmCarmngEvaluationService"
+		parent="KmssBaseService">
+		<property name="target">
+			<ref local="kmCarmngEvaluationTarget" />
+		</property>
+	</bean>
+
+	<bean
+		id="kmCarmngUserFeeInfoDao"
+		parent="KmssAuthBaseDao"
+		class="com.landray.kmss.km.carmng.dao.hibernate.KmCarmngUserFeeInfoDaoImp">
+		<property
+			name="modelName"
+			value="com.landray.kmss.km.carmng.model.KmCarmngUserFeeInfo" />
+	</bean>
+	<bean
+		id="kmCarmngUserFeeInfoTarget"
+		parent="KmssBaseTarget"
+		class="com.landray.kmss.km.carmng.service.spring.KmCarmngUserFeeInfoServiceImp">
+		<property name="baseDao">
+			<ref local="kmCarmngUserFeeInfoDao" />
+		</property>
+		<property name="kmCarmngExcelService">
+			<ref local="kmCarmngExcelService" />
+		</property>
+	</bean>
+	<bean
+		id="kmCarmngUserFeeInfoService"
+		parent="KmssBaseService">
+		<property name="target">
+			<ref local="kmCarmngUserFeeInfoTarget" />
+		</property>
+	</bean>
+
+	<bean
+		id="kmCarmngInfringeInfoDao"
+		parent="KmssAuthBaseDao"
+		class="com.landray.kmss.km.carmng.dao.hibernate.KmCarmngInfringeInfoDaoImp">
+		<property
+			name="modelName"
+			value="com.landray.kmss.km.carmng.model.KmCarmngInfringeInfo" />
+	</bean>
+	<bean
+		id="kmCarmngInfringeInfoTarget"
+		parent="KmssBaseTarget"
+		class="com.landray.kmss.km.carmng.service.spring.KmCarmngInfringeInfoServiceImp">
+		<property name="baseDao">
+			<ref local="kmCarmngInfringeInfoDao" />
+		</property>
+		<property name="kmCarmngExcelService">
+			<ref local="kmCarmngExcelService" />
+		</property>
+	</bean>
+	<bean
+		id="kmCarmngInfringeInfoService"
+		parent="KmssBaseService">
+		<property name="target">
+			<ref local="kmCarmngInfringeInfoTarget" />
+		</property>
+	</bean>
+
+	<bean
+		id="kmCarmngInsuranceInfoDao"
+		parent="KmssAuthBaseDao"
+		class="com.landray.kmss.km.carmng.dao.hibernate.KmCarmngInsuranceInfoDaoImp">
+		<property
+			name="modelName"
+			value="com.landray.kmss.km.carmng.model.KmCarmngInsuranceInfo" />
+	</bean>
+	<bean
+		id="kmCarmngInsuranceInfoTarget"
+		parent="KmssBaseTarget"
+		class="com.landray.kmss.km.carmng.service.spring.KmCarmngInsuranceInfoServiceImp">
+		<property name="baseDao">
+			<ref local="kmCarmngInsuranceInfoDao" />
+		</property>
+	</bean>
+	<bean
+		id="kmCarmngInsuranceInfoService"
+		parent="KmssBaseService">
+		<property name="target">
+			<ref local="kmCarmngInsuranceInfoTarget" />
+		</property>
+	</bean>
+
+	<bean
+		id="kmCarmngMaintenanceInfoDao"
+		parent="KmssAuthBaseDao"
+		class="com.landray.kmss.km.carmng.dao.hibernate.KmCarmngMaintenanceInfoDaoImp">
+		<property
+			name="modelName"
+			value="com.landray.kmss.km.carmng.model.KmCarmngMaintenanceInfo" />
+	</bean>
+	<bean
+		id="kmCarmngMaintenanceInfoTarget"
+		parent="KmssBaseTarget"
+		class="com.landray.kmss.km.carmng.service.spring.KmCarmngMaintenanceInfoServiceImp">
+		<property name="baseDao">
+			<ref local="kmCarmngMaintenanceInfoDao" />
+		</property>
+		<property name="kmCarmngExcelService">
+			<ref local="kmCarmngExcelService" />
+		</property>
+	</bean>
+	<bean
+		id="kmCarmngMaintenanceInfoService"
+		parent="KmssBaseService">
+		<property name="target">
+			<ref local="kmCarmngMaintenanceInfoTarget" />
+		</property>
+	</bean>
+
+	<bean
+		id="kmCarmngRegisterInfoDao"
+		parent="KmssAuthBaseDao"
+		class="com.landray.kmss.km.carmng.dao.hibernate.KmCarmngRegisterInfoDaoImp">
+		<property
+			name="modelName"
+			value="com.landray.kmss.km.carmng.model.KmCarmngRegisterInfo" />
+	</bean>
+	<bean
+		id="kmCarmngRegisterInfoTarget"
+		parent="KmssBaseTarget"
+		class="com.landray.kmss.km.carmng.service.spring.KmCarmngRegisterInfoServiceImp">
+		<property name="baseDao">
+			<ref local="kmCarmngRegisterInfoDao" />
+		</property>
+		<property name="kmCarmngApplicationService">
+			<ref local="kmCarmngApplicationService" />
+		</property>
+		<property name="kmCarmngUserFeeInfoService">
+			<ref local="kmCarmngUserFeeInfoService" />
+		</property>
+		<property name="sysNotifyMainCoreService">
+			<ref bean="sysNotifyMainCoreService" />
+		</property>
+		<property name="kmCarmngDispatchersInfoService">
+			<ref local="kmCarmngDispatchersInfoService" />
+		</property>
+		<property name="kmCarmngDispatchersInfoListService">
+			<ref local="kmCarmngDispatchersInfoListService" />
+		</property>
+	</bean>
+	<bean
+		id="kmCarmngRegisterInfoService"
+		parent="KmssBaseService">
+		<property name="target">
+			<ref local="kmCarmngRegisterInfoTarget" />
+		</property>
+	</bean>
+
+	<bean
+		id="kmCarmngDispatchersInfoDao"
+		parent="KmssAuthBaseDao"
+		class="com.landray.kmss.km.carmng.dao.hibernate.KmCarmngDispatchersInfoDaoImp">
+		<property
+			name="modelName"
+			value="com.landray.kmss.km.carmng.model.KmCarmngDispatchersInfo" />
+	</bean>
+	<bean
+		id="kmCarmngDispatchersInfoListDao"
+		parent="KmssAuthBaseDao"
+		class="com.landray.kmss.km.carmng.dao.hibernate.KmCarmngDispatchersInfoListDaoImp">
+		<property
+			name="modelName"
+			value="com.landray.kmss.km.carmng.model.KmCarmngDispatchersInfoList" />
+	</bean>
+	<bean
+		id="kmCarmngDispatchersInfoTarget"
+		parent="KmssBaseTarget"
+		class="com.landray.kmss.km.carmng.service.spring.KmCarmngDispatchersInfoServiceImp">
+		<property name="baseDao">
+			<ref local="kmCarmngDispatchersInfoDao" />
+		</property>
+		<property name="sysNotifyMainCoreService">
+			<ref bean="sysNotifyMainCoreService" />
+		</property>
+		<property name="kmCarmngApplicationService">
+			<ref local="kmCarmngApplicationService" />
+		</property>
+		<property name="kmCarmngDriversInfoService">
+			<ref local="kmCarmngDriversInfoService" />
+		</property>
+		<!-- sms -->
+		<property name="sysNotifyShortMessageSendDao">
+			<ref bean="sysNotifyShortMessageSendDao" />
+		</property>
+		<!-- sms -->
+		<property name="kmCarmngDispatchersLogService">
+			<ref local="kmCarmngDispatchersLogService" />
+		</property>
+	</bean>
+	<bean
+		id="kmCarmngDispatchersInfoListTarget"
+		parent="KmssBaseTarget"
+		class="com.landray.kmss.km.carmng.service.spring.KmCarmngDispatchersInfoListServiceImp">
+		<property name="baseDao">
+			<ref local="kmCarmngDispatchersInfoListDao" />
+		</property>
+		<property name="kmCarmngExcelService">
+			<ref local="kmCarmngExcelService" />
+		</property>
+	</bean>
+	<bean
+		id="kmCarmngDispatchersInfoService"
+		parent="KmssBaseService">
+		<property name="target">
+			<ref local="kmCarmngDispatchersInfoTarget" />
+		</property>
+	</bean>
+	<bean
+		id="kmCarmngDispatchersInfoListService"
+		parent="KmssBaseService">
+		<property name="target">
+			<ref local="kmCarmngDispatchersInfoListTarget" />
+		</property>
+	</bean>
+
+	<bean
+		id="kmCarmngApplicationDao"
+		parent="KmssAuthBaseDao"
+		class="com.landray.kmss.km.carmng.dao.hibernate.KmCarmngApplicationDaoImp">
+		<property
+			name="modelName"
+			value="com.landray.kmss.km.carmng.model.KmCarmngApplication" />
+	</bean>
+	<bean
+		id="kmCarmngApplicationTarget"
+		parent="KmssExtendDataTarget"
+		class="com.landray.kmss.km.carmng.service.spring.KmCarmngApplicationServiceImp">
+		<property name="baseDao">
+			<ref local="kmCarmngApplicationDao" />
+		</property>
+		<property name="sysNotifyMainCoreService">
+			<ref bean="sysNotifyMainCoreService" />
+		</property>
+		<property name="kmCarmngMotorcadeSetService">
+			<ref local="kmCarmngMotorcadeSetService" />
+		</property>
+		<property name="kmCarmngDispatchersInfoService">
+			<ref local="kmCarmngDispatchersInfoService" />
+		</property>
+		<property name="kmCarmngEvaluationService">
+			<ref local="kmCarmngEvaluationService" />
+		</property>
+		<property name="sysNumberFlowService">
+			<ref bean="sysNumberFlowService" />
+		</property>
+	</bean>
+	<bean
+		id="kmCarmngApplicationService"
+		parent="KmssBaseService">
+		<property name="target">
+			<ref local="kmCarmngApplicationTarget" />
+		</property>
+	</bean>
+
+	<bean
+		id="kmCarmngDriversInfoDao"
+		parent="KmssAuthBaseDao"
+		class="com.landray.kmss.km.carmng.dao.hibernate.KmCarmngDriversInfoDaoImp">
+		<property
+			name="modelName"
+			value="com.landray.kmss.km.carmng.model.KmCarmngDriversInfo" />
+	</bean>
+	<bean
+		id="kmCarmngDriversInfoTarget"
+		parent="KmssBaseTarget"
+		class="com.landray.kmss.km.carmng.service.spring.KmCarmngDriversInfoServiceImp">
+		<property name="baseDao">
+			<ref local="kmCarmngDriversInfoDao" />
+		</property>
+	</bean>
+	<bean
+		id="kmCarmngDriversInfoService"
+		parent="KmssBaseService">
+		<property name="target">
+			<ref local="kmCarmngDriversInfoTarget" />
+		</property>
+	</bean>
+
+	<bean
+		id="kmCarmngCategoryDao"
+		parent="KmssAuthBaseDao"
+		class="com.landray.kmss.km.carmng.dao.hibernate.KmCarmngCategoryDaoImp">
+		<property
+			name="modelName"
+			value="com.landray.kmss.km.carmng.model.KmCarmngCategory" />
+	</bean>
+	<bean
+		id="kmCarmngCategoryTarget"
+		parent="KmssBaseTarget"
+		class="com.landray.kmss.km.carmng.service.spring.KmCarmngCategoryServiceImp">
+		<property name="baseDao">
+			<ref local="kmCarmngCategoryDao" />
+		</property>
+	</bean>
+	<bean
+		id="kmCarmngCategoryService"
+		parent="KmssBaseService">
+		<property name="target">
+			<ref local="kmCarmngCategoryTarget" />
+		</property>
+	</bean>
+
+	<bean
+		id="kmCarmngInfomationDao"
+		parent="KmssAuthBaseDao"
+		class="com.landray.kmss.km.carmng.dao.hibernate.KmCarmngInfomationDaoImp">
+		<property
+			name="modelName"
+			value="com.landray.kmss.km.carmng.model.KmCarmngInfomation" />
+	</bean>
+	<bean
+		id="kmCarmngInfomationTarget"
+		parent="KmssBaseTarget"
+		class="com.landray.kmss.km.carmng.service.spring.KmCarmngInfomationServiceImp">
+		<property name="baseDao">
+			<ref local="kmCarmngInfomationDao" />
+		</property>
+		<property name="sysAttMainService">
+			<ref bean="sysAttMainService" />
+		</property>
+	</bean>
+	<bean
+		id="kmCarmngInfomationService"
+		parent="KmssBaseService">
+		<property name="target">
+			<ref local="kmCarmngInfomationTarget" />
+		</property>
+	</bean>
+
+	<bean
+		id="kmCarmngMotorcadeSetDao"
+		parent="KmssAuthBaseDao"
+		class="com.landray.kmss.km.carmng.dao.hibernate.KmCarmngMotorcadeSetDaoImp">
+		<property
+			name="modelName"
+			value="com.landray.kmss.km.carmng.model.KmCarmngMotorcadeSet" />
+	</bean>
+	<bean
+		id="kmCarmngMotorcadeSetTarget"
+		parent="KmssBaseTarget"
+		class="com.landray.kmss.km.carmng.service.spring.KmCarmngMotorcadeSetServiceImp">
+		<property name="baseDao">
+			<ref local="kmCarmngMotorcadeSetDao" />
+		</property>
+		<property name="sysNumberFlowService">
+			<ref bean="sysNumberFlowService" />
+		</property>
+	</bean>
+	<bean
+		id="kmCarmngMotorcadeSetService"
+		parent="KmssBaseService">
+		<property name="target">
+			<ref local="kmCarmngMotorcadeSetTarget" />
+		</property>
+	</bean>
+
+	<bean
+		id="kmCarmngCategoryTreeService"
+		class="com.landray.kmss.km.carmng.service.spring.KmCarmngCategoryTreeService">
+		<property name="kmCarmngCategoryService">
+			<ref local="kmCarmngCategoryService" />
+		</property>
+	</bean>
+
+	<bean
+		id="kmCarmngMotorcadeSetTreeService"
+		class="com.landray.kmss.km.carmng.service.spring.KmCarmngMotorcadeSetTreeService">
+		<property name="kmCarmngMotorcadeSetService">
+			<ref local="kmCarmngMotorcadeSetService" />
+		</property>
+	</bean>
+	<bean
+		id="kmCarmngInfomationTreeService"
+		class="com.landray.kmss.km.carmng.service.spring.KmCarmngInfomationTreeService">
+		<property name="kmCarmngInfomationService">
+			<ref local="kmCarmngInfomationService" />
+		</property>
+		<property name="kmCarmngCategoryService">
+			<ref local="kmCarmngCategoryService" />
+		</property>
+		<property name="kmCarmngMotorcadeSetService">
+			<ref local="kmCarmngMotorcadeSetService" />
+		</property>
+		<property name="kmCarmngDispatchersInfoListService">
+			<ref local="kmCarmngDispatchersInfoListService" />
+		</property>
+		<property name="kmCarmngDispatchersInfoService">
+			<ref local="kmCarmngDispatchersInfoService" />
+		</property>
+		<property name="kmCarmngApplicationService">
+			<ref local="kmCarmngApplicationService" />
+		</property>
+	</bean>
+	<bean
+		id="kmCarmngDriverInfoTreeService"
+		class="com.landray.kmss.km.carmng.service.spring.KmCarmngDriversInfoTreeService">
+		<property name="kmCarmngDriversInfoService">
+			<ref local="kmCarmngDriversInfoService" />
+		</property>
+
+		<property name="kmCarmngMotorcadeSetService">
+			<ref local="kmCarmngMotorcadeSetService" />
+		</property>
+
+	</bean>
+	<bean
+		id="kmCarmngExcelService"
+		class="com.landray.kmss.km.carmng.service.spring.KmCarmngExcelServiceImp">
+	</bean>
+
+	<bean
+		id="kmCarmngQuartzService"
+		class="com.landray.kmss.km.carmng.service.spring.KmCarmngQuartzServiceImp">
+		<property name="kmCarmngDispatchersInfoService">
+			<ref local="kmCarmngDispatchersInfoService" />
+		</property>
+		<property name="kmCarmngDriversInfoService">
+			<ref local="kmCarmngDriversInfoService" />
+		</property>
+		<property name="kmCarmngInfomationService">
+			<ref local="kmCarmngInfomationService" />
+		</property>
+		<property name="sysOrgElementService">
+			<ref bean="sysOrgElementService" />
+		</property>
+	</bean>
+	<bean
+		id="kmCarmngNotifyQuartzService"
+		class="com.landray.kmss.km.carmng.service.spring.KmCarmngNotifyQuartzServiceImp">
+		<property name="kmCarmngInsuranceInfoService">
+			<ref local="kmCarmngInsuranceInfoService" />
+		</property>
+		<property name="kmCarmngInfomationService">
+			<ref local="kmCarmngInfomationService" />
+		</property>
+		<property name="sysNotifyMainCoreService">
+			<ref bean="sysNotifyMainCoreService" />
+		</property>
+	</bean>
+	<bean
+		id="kmCarmngApplicationDaoProxyCreator"
+		class="org.springframework.aop.framework.autoproxy.BeanNameAutoProxyCreator">
+		<property name="beanNames">
+			<value>kmCarmngApplicationDao,kmCarmngInfomationDao</value>
+		</property>
+		<property name="interceptorNames">
+			<list>
+				<value>luceneCreateAdvisor</value>
+				<value>luceneSaveAdvisor</value>
+				<value>luceneDeleteAdvisor</value>
+				<value>docKeyWriteAdvice</value>
+			</list>
+		</property>
+	</bean>
+	<bean
+		id="kmCarmngRegisterValidator"
+		class="com.landray.kmss.km.carmng.service.spring.KmCarmngRegisterValidator">
+		<property name="kmCarmngApplicationService">
+			<ref local="kmCarmngApplicationService" />
+		</property>
+	</bean>
+	<bean
+		id="kmCarmngSynMobileQuartzService"
+		class="com.landray.kmss.km.carmng.service.spring.KmCarmngSynMobileQuartzServiceImp">
+		<property name="kmCarmngDriversInfoService">
+			<ref local="kmCarmngDriversInfoService" />
+		</property>
+		<property name="sysOrgCoreService">
+            <ref bean="sysOrgCoreService"/>
+        </property>
+	</bean>
+	
+	 <bean 
+        id="kmCarmngDispatchersLogDao" 
+        class="com.landray.kmss.km.carmng.dao.hibernate.KmCarmngDispatchersLogDaoImp" 
+        parent="KmssAuthBaseDao">
+        <property 
+            name="modelName">
+            <value>com.landray.kmss.km.carmng.model.KmCarmngDispatchersLog</value>
+        </property>
+    </bean>
+    <bean 
+        id="kmCarmngDispatchersLogTarget" 
+        class="com.landray.kmss.km.carmng.service.spring.KmCarmngDispatchersLogServiceImp" 
+        parent="KmssExtendDataTarget">
+        <property 
+            name="baseDao">
+            <ref 
+                bean="kmCarmngDispatchersLogDao"/>
+        </property>
+    </bean>
+    <bean 
+        id="kmCarmngDispatchersLogService" 
+        parent="KmssBaseService">
+        <property 
+            name="target">
+            <ref 
+                bean="kmCarmngDispatchersLogTarget"/>
+        </property>
+    </bean>
+    <!--智能门户新增接口-->
+    <bean 
+        id="kmCarmngMainDataService" 
+        class="com.landray.kmss.km.carmng.service.spring.KMCarmngMainDataServiceImp">
+    	<property name="kmCarmngApplicationService">
+			<ref local="kmCarmngApplicationService" />
+		</property>
+		<property name="kmCarmngMotorcadeSetService">
+			<ref local="kmCarmngMotorcadeSetService" />
+		</property>
+    </bean>
+</beans>

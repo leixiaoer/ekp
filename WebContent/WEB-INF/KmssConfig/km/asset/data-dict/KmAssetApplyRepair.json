@@ -1,0 +1,84 @@
+{
+    "global":     {
+        "modelName": "com.landray.kmss.km.asset.model.KmAssetApplyRepair",
+        "messageKey": "km-asset:table.kmAssetApplyRepair",
+        "displayProperty": "docSubject",
+        "extendClass": "com.landray.kmss.km.asset.model.KmAssetApplyBase",
+        "serviceBean": "kmAssetApplyRepairService",
+        "table": "km_asset_apply_base",
+        "discriminatorValue": "com.landray.kmss.km.asset.model.KmAssetApplyRepair",
+        "url": "/km/asset/km_asset_apply_repair/kmAssetApplyRepair.do?method=view&fdId=${fdId}"
+    },
+    "attrs":     {
+        "fdId":         {
+            "propertyType": "id",
+            "generator": {"type": "assigned"}
+        },
+        "fdTotalMoney":         {
+            "propertyType": "simple",
+            "messageKey": "km-asset:kmAssetApplyRepair.fdTotalMoney",
+            "type": "Double",
+            "column": "fd_total_money",
+            "notNull": "false",
+            "length": "36",
+            "validate": "true",
+            "canLogShow":"1"
+        },
+        "fdStartDate":         {
+            "propertyType": "simple",
+            "messageKey": "km-asset:kmAssetApplyRepair.fdStartDate",
+            "type": "DateTime",
+            "column": "fd_start_date",
+            "notNull": "false",
+            "validate": "false",
+            "canLogShow":"1"
+        },
+        "fdEndDate":         {
+            "propertyType": "simple",
+            "messageKey": "km-asset:kmAssetApplyRepair.fdEndDate",
+            "type": "DateTime",
+            "column": "fd_end_date",
+            "notNull": "false",
+            "validate": "false",
+            "canLogShow":"1"
+        },
+        "fdIsUsedExpend":         {
+            "propertyType": "simple",
+            "messageKey": "km-asset:kmAssetApplyRepair.fdIsUsedExpend",
+            "type": "Boolean",
+            "column": "fd_is_used_expend",
+            "notNull": "false",
+            "length": "36",
+            "enumType": "common_yesno",
+            "canDisplay": "true",
+            "canLogShow":"1"
+        },
+        "fdItems":         {
+            "propertyType": "list",
+            "messageKey": "km-asset:table.kmAssetApplyRepairList",
+            "type": "com.landray.kmss.km.asset.model.KmAssetApplyRepairList",
+            "column": "fd_apply_repair_id",
+            "inverse": "true",
+            "canDisplay": "false",
+            "cascade": "all-delete-orphan",
+            "table": "km_asset_apply_repair_list",
+            "canLogShow":"1"
+        },
+        "fdExpendItems":         {
+            "propertyType": "list",
+            "messageKey": "km-asset:table.kmAssetApplyRepairExpend",
+            "type": "com.landray.kmss.km.asset.model.KmAssetApplyRepairExpend",
+            "column": "fd_apply_repair_id",
+            "inverse": "true",
+            "canDisplay": "false",
+            "cascade": "all-delete-orphan",
+            "table": "km_asset_apply_repair_expend",
+            "canLogShow":"1"
+        }
+    },
+    "attachments": {"attachment":     {
+        "propertyType": "att",
+        "messageKey": "km-asset:kmAssetApplyBase.attachMent",
+        "canDisplay": "true"
+    }}
+}

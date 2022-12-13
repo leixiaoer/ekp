@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<plugin
+	xmlns="http://www.example.org/plugin-config"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.example.org/plugin-config ../../plugin.xsd ">
+	<extension point="com.landray.kmss.sys.config.design">
+		<item name="xml">
+			<param name="namespace" value="http://www.landray.com.cn/schema/lui" />
+			<param name="handler" value="com.landray.kmss.sys.ui.xml.LuiNamespaceHandler" />
+		</item>
+	</extension>
+	<extension
+		point="com.landray.kmss.sys.admin.commontools">
+		<item
+			name="tools">
+			<param
+				name="name"
+				value="{sys-ui:ui.tools.statictool}" />
+			<param
+				name="path"
+				value="/sys/ui/tools.jsp"/>
+			<param
+				name="description"
+				value="{sys-ui:ui.tools.statictool.desc}" />
+			<param
+				name="icon"
+				value="profile_tool_part" />
+		</item>													
+	</extension>
+	<!-- 参数配置统一管理 -->
+	<extension point="com.landray.kmss.sys.admin.transfer">
+		<item name="config">
+			<param name="unid"
+				value="com.landray.kmss.sys.ui.model.SysUiConfig" />
+			<param name="name"
+				value="{sys-ui:sys.ui.config.transfer.name}" />
+			<param name="path"
+				value="/sys/ui/" />
+			<param name="check"
+				value="com.landray.kmss.sys.ui.transfer.SysUiConfigChecker" />
+			<param name="upgrade"
+				value="com.landray.kmss.sys.ui.transfer.SysUiConfigTask" />
+			<param name="description"
+				value="{sys-ui:sys.ui.config.transfer.description}"/>
+		</item>
+	</extension>
+	<extension point="com.landray.kmss.sys.cluster">
+		<item name="messageReceiver">
+			<param name="service" value="resourceCacheListener" />
+			<param name="type" value="resourceCacheType" />
+		</item>
+	</extension>
+	<extension point="com.landray.kmss.sys.config.admin.do">
+		<item name="config">
+			<param name="jsp" value="/sys/ui/config.jsp" />
+			<param name="type" value="application" />
+			<param name="order" value="205" />
+		</item>
+	</extension>
+	<!-- 云商城门户服务 -->
+	<extension point="com.landray.kmss.third.mall.portal">
+		<!--登录页(login)，主题包(theme)，部件呈现(layout)，部件外观(ui)，页眉(header)，页脚(footer)，页面模板(page)-->
+		<item name="portalItem">
+			<param name="fdKey" value="theme" />
+			<param name="parser" value="sysUiExtendService" />
+		</item>
+	</extension>
+</plugin>

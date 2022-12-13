@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-configuration PUBLIC "-//Hibernate/Hibernate Configuration DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+    <session-factory>
+        <mapping 
+            resource="com/landray/kmss/km/supervise/model/KmSuperviseMain.hbm.xml"/>
+        <mapping 
+            resource="com/landray/kmss/km/supervise/model/KmSuperviseTask.hbm.xml"/>
+        <mapping 
+            resource="com/landray/kmss/km/supervise/model/KmSuperviseLevel.hbm.xml"/>
+        <mapping 
+            resource="com/landray/kmss/km/supervise/model/KmSuperviseUrgency.hbm.xml"/>
+        <mapping 
+            resource="com/landray/kmss/km/supervise/model/KmSuperviseTemplet.hbm.xml"/>
+        <mapping 
+            resource="com/landray/kmss/km/supervise/model/KmSuperviseWarn.hbm.xml"/>
+        <mapping 
+            resource="com/landray/kmss/km/supervise/model/KmSuperviseDynamic.hbm.xml"/>
+        <mapping 
+            resource="com/landray/kmss/km/supervise/model/KmSuperviseConcern.hbm.xml"/>
+        <mapping 
+            resource="com/landray/kmss/km/supervise/model/KmSuperviseBack.hbm.xml"/>
+        <mapping 
+            resource="com/landray/kmss/km/supervise/model/KmSuperviseMainFinish.hbm.xml"/>
+        <mapping 
+            resource="com/landray/kmss/km/supervise/model/KmSuperviseMainStop.hbm.xml"/>
+        <mapping 
+            resource="com/landray/kmss/km/supervise/model/KmSuperviseMainPlan.hbm.xml"/>
+            <mapping 
+            resource="com/landray/kmss/km/supervise/model/KmSuperviseInstruction.hbm.xml"/>
+    </session-factory>
+</hibernate-configuration>

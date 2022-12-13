@@ -1,0 +1,9 @@
+{
+	"id": "oitems-list",
+	"title": "办公用品管理移动端列表页面",
+	"desc": "办公用品管理移动端列表页面",
+	"jsList": [
+		"/sys/mobile/js/mui/list/item/ProcessItemMixin.js",
+		"/sys/mobile/js/mui/list/ProcessItemListMixin.js"
+	]
+}

@@ -1,0 +1,153 @@
+﻿.muiTaskListItem{
+	position: relative;
+	background-color: #FFFFFF !important;
+	box-shadow: 0 0 30px 0 rgba(153,179,210,0.20);
+	border-radius: 1rem;
+}
+.muiTaskListItem:not(:first-child){
+	margin-top: 1.2rem;
+}
+.muiTaskListItem:first-child{ 
+	margin-top: 2.0rem;
+	border-top: 0;
+}
+.muiTaskListItem:last-child{ 
+	margin-bottom: 2.0rem;
+}
+
+.muiTaskStatusTag.muiTaskStatusDefault {
+	background-color: #F3F3F3;
+	color: #999FB7;
+    letter-spacing: 0;
+	border-radius: 2px;
+} 
+.muiTaskListItem>.itemContentContainer{
+	position: relative;
+}
+.muiTaskListItem>.itemContentContainer>.headerContainer{
+    padding-top: 1.2rem;
+    padding-bottom: 1.2rem;
+    padding-left: 1rem;
+    display: table;
+    width: 100%;
+}
+.muiTaskListItem>.itemContentContainer>.headerContainer>.leftContainer>.firstRow{
+	padding-top: .4rem;
+	padding-bottom: .4rem;
+}
+.muiTaskListItem>.itemContentContainer>.headerContainer>.leftContainer>.firstRow>span.muiTaskSubject{
+    word-break: break-all;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    padding-right: 1rem;
+}
+.muiTaskListItem>.itemContentContainer>.headerContainer>.leftContainer>.secondRow{
+	padding-top: .8rem;
+	padding-bottom: .4rem;
+}
+.muiTaskListItem>.itemContentContainer>.headerContainer>.leftContainer>.secondRow>span {
+    padding: .2rem .4rem;
+}
+.muiTaskListItem>.itemContentContainer>.headerContainer>.leftContainer>.secondRow>span.overday {
+    background-color: #FFEEEA;
+    color: #F46642;
+    letter-spacing: 0;
+    border-radius: .4rem;
+    margin-left: .8rem;
+}
+.muiTaskListItem>.itemContentContainer>.headerContainer>.leftContainer>.secondRow>span.overday>span:not(:first-child){
+    margin-left: .4rem;
+}
+.muiTaskListItem>.itemContentContainer>.headerContainer>.leftContainer{
+	display: table-cell;
+	position: relative;
+	width: 70%;
+	vertical-align: top;
+	margin-right: 10rem;
+}
+.muiTaskListItem>.itemContentContainer>.headerContainer>.leftContainer:after{  /**伪类处理右侧极细边框（border-right构建出来的边框在移动端不够细）**/
+    content: '';
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    border-right: 1px solid #e2e2e2;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    height: 100%;
+    -webkit-transform: scale(0.1);
+    transform: scale(0.5,1);
+}
+.muiTaskListItem>.itemContentContainer>.headerContainer>.rightContainer{
+	display: table-cell;
+	position: relative;
+	width: 30%;
+	vertical-align: middle;
+    text-align: center;
+}
+.muiTaskListItem>.itemContentContainer>.headerContainer>.rightContainer>.progress{
+}
+.muiTaskListItem>.itemContentContainer>.headerContainer>.rightContainer>.progress>span:first-child{
+	font-family: fontnumber;
+	font-size: 3.2rem;
+}
+.muiTaskListItem>.itemContentContainer>.headerContainer>.rightContainer>.progress>span:last-child{
+	margin-left: .2rem;
+	font-size: 1.8rem;
+}
+
+.muiTaskListItem>.itemContentContainer>.footerContainer{
+	position: relative;
+	background-color: #FCFCFC;
+	padding-left: 1rem;
+    padding-right: 1rem;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    height: 3.6rem;
+    box-sizing: border-box;
+}
+
+.muiTaskListItem>.itemContentContainer>.footerContainer>.muiTaskPersonsInfo{
+    position: relative;
+    height: 1.3rem;
+    line-height: 1.3rem;
+    width: 100%;
+    vertical-align: middle;
+    display: inline-block;
+}
+
+.muiTaskListItem>.itemContentContainer>.footerContainer .muiTaskPersonsIcon{
+    display: inline-block;
+    color: #EAECF7;
+    height: 1.3rem;
+    font-size: 1.1rem;
+    vertical-align: middle;
+}
+
+.muiTaskListItem>.itemContentContainer>.footerContainer .muiTaskPersonsTitle{
+    display: block;
+    position: absolute;
+    bottom: 0;
+    margin-left: 1.6rem;
+}
+.muiTaskListItem>.itemContentContainer>.footerContainer .muiTaskPersons{
+    display: block;
+    position: absolute;
+    bottom: 0;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    width: 100%;
+    padding-left: 6.8rem;
+    box-sizing: border-box;
+}
+.muiSysTaskUl{
+	padding: 0 1.25rem;
+}
+.muiSysTaskUl>li.muiListNoData {
+	padding: 0;
+    line-height: 18rem;
+}
+

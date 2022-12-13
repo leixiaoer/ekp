@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<description xmlns="http://www.example.org/description-config" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.example.org/description-config ../../../description.xsd">
+	<module>
+		<module-name>个人收藏夹</module-name>
+		<module-path>sys/bookmark</module-path>
+		<baseline>V15.0.4.R.20200410</baseline>
+		<source-md5>a53759e617ffd20cc2575c4662bed9d5</source-md5>
+		<is-custom>否</is-custom>
+		<serial-num>16</serial-num>
+	</module>
+</description>

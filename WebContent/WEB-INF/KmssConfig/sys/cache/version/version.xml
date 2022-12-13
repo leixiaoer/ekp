@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<version xmlns="http://www.example.org/version-config" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.example.org/version-config ../../../version.xsd">
+	<modifies>
+		<modify>
+			<description>#155096 新增 v15admin.do中Redis集群配置描述</description>
+			<author>林宇超</author>
+			<revision-time>2022-02-18</revision-time>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#153097 修复 缓存机制通过加载器加载数据时，调整为只读事务</description>
+			<author>潘永辉</author>
+			<revision-time>2021-12-17</revision-time>
+			<baseline>V15.0.4.R.20200410</baseline>
+		</modify>
+		<modify>
+			<description>#76290 修复 安全漏洞报告，请产品评估处理</description>
+			<author>郑操辉</author>
+			<revision-time>2019-08-02</revision-time>
+			<baseline>V15.0.1.R.20190906</baseline>
+		</modify>
+		<modify>
+			<description>优化 统一升级系统Spring版本到3.2.18</description>
+			<author>陈进科</author>
+			<revision-time>2019-03-05</revision-time>
+			<relation>
+				<relation-module>core</relation-module>
+			</relation>
+			<baseline>V15.0.0.B3.20190412</baseline>
+		</modify>
+		<modify>
+			<description>新增 会话管理机制：添加redis操作接口</description>
+			<author>陈进科</author>
+			<revision-time>2018-08-06</revision-time>
+			<baseline>V15.0.0.B1.20181109</baseline>
+		</modify>
+	</modifies>
+</version>

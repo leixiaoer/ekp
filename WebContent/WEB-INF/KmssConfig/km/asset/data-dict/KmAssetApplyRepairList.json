@@ -1,0 +1,74 @@
+{
+    "global":     {
+        "modelName": "com.landray.kmss.km.asset.model.KmAssetApplyRepairList",
+        "messageKey": "km-asset:table.kmAssetApplyRepairList",
+        "displayProperty": "fdId",
+        "serviceBean": "kmAssetApplyRepairListService",
+        "table": "km_asset_apply_repair_list",
+        "url": "/km/asset/km_asset_apply_repair_list/kmAssetApplyRepairList.do?method=view&fdId=${fdId}"
+    },
+    "attrs":     {
+        "fdId":         {
+            "propertyType": "id",
+            "generator": {"type": "assigned"}
+        },
+        "fdRepairType":         {
+            "propertyType": "simple",
+            "messageKey": "km-asset:kmAssetApplyRepairList.fdRepairType",
+            "type": "String",
+            "column": "fd_repair_type",
+            "notNull": "false",
+            "length": "50",
+            "validate": "true",
+            "canLogShow":"1"
+        },
+        "fdMoney":         {
+            "propertyType": "simple",
+            "messageKey": "km-asset:kmAssetApplyRepairList.fdMoney",
+            "type": "Double",
+            "column": "fd_money",
+            "notNull": "true",
+            "length": "36",
+            "validate": "true",
+            "canLogShow":"1"
+        },
+        "fdDegree":         {
+            "propertyType": "simple",
+            "messageKey": "km-asset:kmAssetApplyRepairList.fdDegree",
+            "type": "String",
+            "column": "fd_degree",
+            "notNull": "false",
+            "length": "36",
+            "validate": "false",
+            "canLogShow":"1"
+        },
+        "fdForeignRepairAdd":         {
+            "propertyType": "simple",
+            "messageKey": "km-asset:kmAssetApplyRepairList.fdForeignRepairAdd",
+            "type": "String",
+            "column": "fd_foreign_repair_add",
+            "notNull": "true",
+            "length": "200",
+            "validate": "true",
+            "canLogShow":"1"
+        },
+        "fdApplyRepair":         {
+            "propertyType": "model",
+            "messageKey": "km-asset:kmAssetApplyRepairList.fdApplyRepair",
+            "type": "com.landray.kmss.km.asset.model.KmAssetApplyRepair",
+            "column": "fd_apply_repair_id",
+            "notNull": "false",
+            "validate": "false",
+            "canLogShow":"1"
+        },
+        "fdAssetCard":         {
+            "propertyType": "model",
+            "messageKey": "km-asset:kmAssetApplyRepairList.fdAssetCard",
+            "type": "com.landray.kmss.km.asset.model.KmAssetCard",
+            "column": "fd_asset_card_id",
+            "notNull": "false",
+            "validate": "false",
+            "canLogShow":"1"
+        }
+    }
+}

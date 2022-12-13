@@ -1,0 +1,151 @@
+/* 公共css start
+	========================================================================== */
+  .clearfix:after {
+    content: '';
+    display: table;
+    visibility: hidden;
+    clear: both;
+  }
+/* 公共css end
+  ========================================================================== */
+body, html{
+  background-color: #f7f7f7;
+  width: 100%;
+}
+
+.leaderBorder-container{
+  width: 100%;
+  background: #FFFFFF;
+  box-shadow: 0 2px 5px 0 rgba(0,0,0,0.05);
+  border-radius: 6px;
+  padding-bottom: 19px;
+}
+
+.contract-tab-table{
+  width: 100%;
+  text-align: center;
+}
+
+.contract-tab-table td{
+  padding: 7px 0;
+  min-width: 52px;
+}
+
+.span-r1{
+  background: #FBBC05;
+  color: #ffffff;
+  border-radius: 100%;
+  display: inline-block;
+  width: 18px;
+  height: 18px;
+  text-align: center;
+  font-style: normal;
+  font-size: 12px;
+  border: 2px solid #FFE391;
+}
+
+.bottomSpan-r1{
+  color: #FBBC05;
+}
+
+.span-r2{
+  background: #AFB9C3;
+  color: #ffffff;
+  border-radius: 100%;
+  display: inline-block;
+  width: 18px;
+  height: 18px;
+  text-align: center;
+  font-style: normal;
+  font-size: 12px;
+  border: 2px solid #E1EAF0;
+}
+
+.bottomSpan-r2{
+  color: #AFB9C3;
+}
+
+.span-r3{
+  background: #D5A386;
+  color: #ffffff;
+  border-radius: 100%;
+  display: inline-block;
+  width: 18px;
+  height: 18px;
+  text-align: center;
+  font-style: normal;
+  font-size: 12px;
+  border: 2px solid #F6CCBA;
+}
+
+.bottomSpan-r3{
+  color: #D5A386;
+}
+
+
+.tbody-div-pic{
+  position: relative;
+  float: left;
+  font-size: 0;
+}
+.tbody-div-complex p{
+  position: relative;
+  float: left;
+  padding-top: 12px;
+  font-size: 14px;
+  color: #333333;
+  line-height: 14px;
+  max-width: 200px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  padding-left: 10px;
+  overflow: hidden;
+  margin:0 auto;
+}
+
+.tbody-div-complex a{
+  transition: all 0.3s ease;
+}
+
+.tbody-div-complex a:hover{
+  color: #4285f4;
+}
+
+.tbody-div-complex img{
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+}
+
+.table-th-name{
+  text-align: left;
+}
+
+.contract-tab-table thead tr th{
+  height: 40px;
+  border-bottom: 1px solid  #F4F4F4;
+  font-weight: normal;
+}
+
+
+.tbody-line{
+  border-top: 1px solid pink;
+}
+
+.table-th-span{
+  font-size: 14px;
+  color: #333333;
+  line-height: 14px;
+}
+
+.span-normal{
+  color: #A4A4A4;
+  line-height: 12px;
+  font-size: 12px;
+}
+
+.bottomSpan-normal{
+  font-size: 14px;
+  color: #666666;
+  line-height: 14px;
+}

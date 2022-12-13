@@ -1,0 +1,477 @@
+@charset "UTF-8";
+.tTemplate #queryListView [data-lui-type='lui/panel!Content'],
+.lui_portal_body #queryListView [data-lui-type='lui/panel!Content'] {
+  padding: 0;
+}
+
+.criteria {
+  margin-bottom: 10px;
+  color: inherit;
+  font-variant: normal;
+  font-weight: normal;
+  border-radius: 4px;
+  background-color: #fff;
+}
+
+.criterion {
+  padding: 8px 0;
+  border: 1px solid transparent;
+  border-bottom: 1px dashed #d5d5d5;
+}
+
+.criterions {
+  background-color: transparent;
+  border-color: transparent;
+}
+
+.criterion.editing {
+  margin-top: -1px;
+  margin-bottom: -1px;
+  padding-top: 9px;
+  padding-bottom: 9px;
+  border-radius: 4px;
+  border: 1px solid #0C3E6C;
+  -ms-box-shadow: inset 0 1px 1px rgba(66, 133, 244, 0.075), 0 0 8px rgba(66, 133, 244, 0.6);
+  -o-box-shadow: inset 0 1px 1px rgba(66, 133, 244, 0.075), 0 0 8px rgba(66, 133, 244, 0.6);
+  box-shadow: inset 0 1px 1px rgba(66, 133, 244, 0.075), 0 0 8px rgba(66, 133, 244, 0.6);
+}
+
+.criteria .criterion a:hover,
+.criteria .criterion a.selected,
+.criteria .criterion a.selected span {
+  color: #0C3E6C;
+  text-decoration: none;
+  border-color: #0C3E6C;
+}
+
+.criterion-value .lui_criteria_date_span input,
+.criteria-popup-value .lui_criteria_date_span input {
+  width: 120px;
+  height: 20px;
+  line-height: 20px;
+  padding: 0 20px 0 5px;
+  color: #797874;
+  border-radius: 4px;
+  border: 1px solid #d5d5d5;
+  background-color: #fff;
+}
+
+.criterion-value .lui_criteria_date_select,
+.criteria-popup-value .lui_criteria_date_select {
+  width: 20px;
+  height: 20px;
+  background: url(../images/criteria/date-input.png) no-repeat 50%;
+  cursor: pointer;
+  position: absolute;
+  top: 1px;
+  right: 1px;
+}
+
+.lui_icon_s_icon_circle_arrow_right {
+  background-image: url(../icon/s/icon-circle-arrow-right.png);
+}
+
+.criterion-value .lui_criteria_date_select:hover,
+.criteria-popup-value .lui_criteria_date_select:hover {
+  background: #f8f8f8 url(../images/criteria/date-input-hover.png) no-repeat 50%;
+}
+
+.criterion-hierarchy .criterion-collapse .lui_icon_s_icon_circle_arrow_right:hover {
+  background-image: url(../icon/s-on/icon-circle-arrow-right.png);
+}
+
+.criterion-value li a,
+.criteria-popup-value li a {
+  padding: 0 4px;
+  border: 1px solid transparent;
+  border-radius: 4px;
+  text-decoration: none;
+  color: #333;
+  line-height: 20px;
+  display: block;
+}
+
+.criterion-value .checkbox,
+.criteria-popup-value .checkbox {
+  float: none;
+  display: inline-block;
+  width: 16px;
+  height: 16px;
+  margin-top: 0px;
+  margin-right: 2px;
+  vertical-align: -15%;
+  font-size: 0;
+  background: transparent url(../images/criteria/criteria-checkbox.png) no-repeat 50%;
+  overflow: hidden;
+}
+
+.criterion-value .selected .checkbox,
+.criteria-popup-value .selected .checkbox {
+  background: transparent url(../images/criteria/criteria-checkbox-selected.png) no-repeat 50%;
+}
+
+/* 已选条件 Starts */
+.criteria-selected-wapper {
+  padding: 0;
+  border-bottom: 1px solid #d5d5d5;
+}
+
+.criterion-other .criterion {
+  padding: 0;
+  height: 28px;
+  line-height: 28px;
+  border-radius: 4px;
+}
+
+.criterion-other .criterion .criteria-input-text {
+  height: 100%;
+  background-color: #fff;
+  top: 0;
+}
+
+.criteria-selected {
+  background: #fff;
+  border-color: #fff;
+  padding-bottom: 0;
+}
+
+.criteria-selected .criterion-value li {
+  border: 0 !important;
+  padding: 0;
+  margin: 2px 5px 2px 0;
+}
+
+.criteria-selected .criterion-value li.criterion-other {
+  margin: 2px 5px 2px 0;
+}
+
+/***-----确定按钮 清空筛选按钮---**/
+.criteria-selected .criterion-value li.commit-action {
+  margin-left: 2px;
+}
+
+.criteria-selected .criterion-value li.commit-action a:hover {
+  border-color: #0C3E6C;
+}
+
+.criteria-selected .criterion-value li > a {
+  padding: 0 4px;
+  line-height: 28px;
+  border: 1px solid #dedede;
+  border-radius: 4px;
+  display: block;
+  cursor: pointer;
+  position: relative;
+}
+
+.criteria-selected .cancel {
+  background: url(../images/criteria/criteria.png) no-repeat left top;
+  width: 22px;
+  height: 28px;
+  -webkit-transition: background-color .3s ease-in-out;
+  transition: background-color .3s ease-in-out;
+  cursor: pointer;
+  float: none;
+  display: inline-block;
+  vertical-align: middle;
+  position: relative;
+  left: 4px;
+}
+
+.criteria-selected .criterion-value li[data-criterion-key]:hover i {
+  background-color: transparent;
+  background-position: left top;
+}
+
+/* 清空筛选 */
+.criteria-selected .criterion-value li.criterion-clear {
+  border: none;
+  background-color: transparent;
+  margin: 0;
+  height: 28px;
+  line-height: 28px;
+}
+
+.criteria-selected .criterion-value li.criterion-clear a {
+  border: none;
+  line-height: 28px;
+  color: #F95A5A;
+}
+
+.criterion-value li,
+.criteria-popup-value li {
+  margin: 1px 15px 1px 0;
+  padding: 0;
+  float: left;
+  line-height: 22px;
+}
+
+.criteria-input-text-title {
+  color: #333;
+}
+
+.criteria .criterion a.selected {
+  color: #0C3E6C;
+}
+
+.criteria .criterion a.selected span {
+  text-decoration: none;
+}
+
+.criteria .criterion a:hover,
+.criteria a:hover {
+  color: #0C3E6C;
+}
+
+/*--- 筛选器标题 ---*/
+.criterion-title {
+  width: 12%;
+}
+
+/*--- 筛选器数据选项 ---*/
+.criterion-value {
+  width: 88%;
+  background: #fff;
+}
+
+/* input 颜色统一 */
+.criterion-value .criteria-input-text input {
+  padding: 0 4px;
+  width: 150px;
+  height: 20px;
+  line-height: 20px;
+  border-color: #d5d5d5;
+  border-radius: 4px;
+}
+
+.search-box {
+  border-color: #dedede;
+}
+
+/*---------级联分类选项类型---------*/
+li.criterion-hierarchy-parent a {
+  font-size: 0;
+  border: none;
+  background: none;
+}
+
+li.criterion-hierarchy-parent a .text {
+  font-size: 14px;
+  color: #0C3E6C;
+  vertical-align: middle;
+}
+
+li.criterion-hierarchy-parent a .up {
+  display: inline-block;
+  height: 22px;
+  width: 20px;
+  background: transparent url(../images/criteria/parent_arrow.png) no-repeat 0 center;
+  vertical-align: middle;
+  margin-left: 5px;
+  transition: none;
+  -webkit-transition: none;
+}
+
+li.criterion-hierarchy-parent a:hover .up {
+  background-position: -20px center;
+}
+
+.criteria .criterion-button li > a {
+  font-size: 12px;
+  padding: 0 4px;
+  border: 1px solid #d5d5d5;
+}
+
+.criterion .search-box {
+  height: 20px;
+  border-color: #d5d5d5;
+  border-radius: 4px;
+}
+
+/*--- 弹出选项 ---*/
+.criterion-title-popup-div .lui_menu_item {
+  display: inline-block;
+}
+
+.criterion-title-popup-div .lui_menu_item .lui_item_txt {
+  position: static;
+}
+
+.criterion-title-popup-div .lui_menu_frame_nav .lui_item_txt:hover {
+  color: #0C3E6C;
+}
+
+/* 搜索图标 */
+.criterion .criteria-input-text .criteria-input-ok,
+.search-box .search-box-btn {
+  background: transparent url(../images/criteria/search_btn.png) no-repeat 50%;
+}
+
+.criterion .criteria-input-text .criteria-input-ok:hover,
+.search-box .search-box-btn:hover {
+  background-color: #f8f8f8;
+  background-image: url(../images/criteria/search_btn_on.png);
+}
+
+.criterion-other .criterion .criteria-input-text .criteria-input-ok {
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+  background: transparent url(../images/criteria/search_btn.png) no-repeat center;
+}
+
+.criterion-other .criterion .criteria-input-text .criteria-input-ok:hover {
+  background: #f8f8f8 url(../images/criteria/search_btn_on.png) no-repeat center;
+}
+
+.criterions-wapper .search-box-cancel:hover {
+  background: url(../images/criteria/search_cancel_cur.png) no-repeat center;
+}
+
+.criterion-other .criterion .criteria-input-text .criteria-input-cancel {
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+}
+
+.criterion-other .criterion .criteria-input-text .criteria-input-cancel:hover {
+  background: #f8f8f8 url(../images/criteria/search_cancel_cur.png) no-repeat center !important;
+}
+
+.criteria .commit-action, .criteria-popup-value .commit-action, .criteria .criterion-clear {
+  color: #0C3E6C;
+  border-color: #0C3E6C !important;
+  border-radius: 2px;
+  background-color: #fff;
+}
+
+.criteria .commit-action:hover, .criteria-popup-value .commit-action:hover, .criteria .criterion-clear:hover {
+  background-color: #fff;
+}
+
+/*--- 更多收起 ---*/
+.criterion-more {
+  color: #dc772a;
+  display: none;
+  float: right;
+  padding: 0 2px;
+  line-height: 1;
+  cursor: default;
+  position: absolute;
+  right: 10px;
+  top: 26px;
+  z-index: 1;
+}
+
+.criterion-more-down,
+.criterion-more-up {
+  width: auto;
+  height: auto;
+  text-align: center;
+  color: #999;
+  font-size: 12px;
+  border: 0;
+  display: inline-block;
+  -webkit-transition: all .3s ease-in-out;
+  transition: all .3s ease-in-out;
+  cursor: pointer;
+}
+
+.criterion-more-down:after {
+  content: '';
+  margin-left: 2px;
+  vertical-align: middle;
+  border-top: 4px dashed;
+  border-top: 4px solid \9;
+  border-right: 4px solid transparent;
+  border-left: 4px solid transparent;
+  display: inline-block;
+}
+
+.criterion-more-down.criterion-more-up:after {
+  border-top: 0;
+  border-bottom: 4px dashed;
+  border-bottom: 4px solid \9;
+}
+
+.criterion-more-down:before {
+  content: "更多";
+}
+
+.criterion-more-down.criterion-more-up:before {
+  content: "收起";
+}
+
+.fix_82123 .criterion-more-down:before {
+  content: attr(data-prefix);
+}
+
+.fix_82123 .criterion-more-down.criterion-more-up:before {
+  content: attr(data-suffix);
+}
+
+.criterion-more-down:hover {
+  color: #0C3E6C;
+}
+
+/*--- 单选&多选 ---*/
+.criterion-options {
+  margin-top: 1px;
+  min-width: auto;
+}
+
+.criteria .criterion-options .multi-option {
+  top: auto;
+  position: relative;
+  margin-top: 0;
+  margin-right: 0;
+  text-decoration: none;
+  border: 1px solid #d5d5d5;
+  padding: 0 2px;
+  min-width: 40px;
+  width: auto;
+  height: 20px;
+  line-height: 20px;
+  color: #666 !important;
+  border-radius: 4px;
+  background: none;
+  background-color: #fff;
+  -webkit-transition-duration: .3s;
+          transition-duration: .3s;
+  font-size: 12px;
+}
+
+.criteria .criterion-options .multi-option .multi-text {
+  font-size: 0;
+}
+
+.criteria .criterion-options .multi-option,
+.criteria .criterion-options .multi-option.selected,
+.criteria .criterion-options .multi-option.selected span {
+  color: #666;
+  border-color: #d5d5d5;
+}
+
+.criteria .criterion-options .multi-option:hover,
+.criteria .criterion-options .multi-option.selected:hover,
+.criteria .criterion-options .multi-option.selected:hover span {
+  color: #0C3E6C !important;
+  border-color: #0C3E6C;
+}
+
+.criteria .criterion-options .multi-option .multi-radio,
+.criteria .criterion-options .multi-option .multi-checkbox,
+.criteria .criterion-options .multi-option.selected .multi-radio,
+.criteria .criterion-options .multi-option.selected .multi-checkbox {
+  font-size: 12px;
+  text-align: center;
+  white-space: nowrap;
+  display: none;
+}
+
+.criteria .criterion-options .multi-option .multi-checkbox,
+.criteria .criterion-options .multi-option.selected .multi-checkbox {
+  display: block;
+}
+
+.criterion-expand-top .criterion-expand-top-text {
+  color: #0C3E6C;
+}

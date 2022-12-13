@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<column-enums>
+    <type 
+        name="geesun_annual_is_execute">
+        <value-label>
+            <value>YES</value>
+            <label-key>enums.is_execute.YES</label-key>
+            <bundle>geesun-annual</bundle>
+        </value-label>
+        <value-label>
+            <value>NO</value>
+            <label-key>enums.is_execute.NO</label-key>
+            <bundle>geesun-annual</bundle>
+        </value-label>
+    </type>
+    
+    <type 
+        name="geesun_annual_use_fdType">
+        <value-label>
+            <value>leave</value>
+            <label-key>geesunAnnualUse.fdType.leave</label-key>
+            <bundle>geesun-annual</bundle>
+        </value-label>
+        <value-label>
+            <value>resume</value>
+            <label-key>geesunAnnualUse.fdType.resume</label-key>
+            <bundle>geesun-annual</bundle>
+        </value-label>
+    </type>
+    <type 
+        name="geesun_annual_type">
+        <value-label>
+            <value>common</value>
+            <label-key>geesunAnnualUse.type.common</label-key>
+            <bundle>geesun-annual</bundle>
+        </value-label>
+        <value-label>
+            <value>detail</value>
+            <label-key>geesunAnnualUse.type.detail</label-key>
+            <bundle>geesun-annual</bundle>
+        </value-label>
+    </type>
+</column-enums>

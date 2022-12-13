@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<models
+	xmlns="http://www.example.org/design-config"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.example.org/design-config ../../../data-dict.xsd ">
+	<model
+		modelName="com.landray.kmss.geesun.org.model.GeesunOrgEkp"
+		messageKey="geesun-org:table.geesunOrgEkp"
+		displayProperty="fdId"
+		serviceBean="geesunOrgEkpService"
+		table="geesun_org_ekp"
+		url="/geesun/org/geesun_org_ekp/geesunOrgEkp.do?method=view&amp;fdId=${fdId}">
+
+		<idProperty>
+			<generator
+				type="assigned" />
+		</idProperty>
+
+		<simpleProperty
+			name="docCreateTime"
+			messageKey="geesun-org:geesunOrgEkp.docCreateTime"
+			type="DateTime"
+			column="doc_create_time"
+			notNull="false"
+			validate="false" />
+
+		<simpleProperty
+			name="fdResult"
+			messageKey="geesun-org:geesunOrgEkp.fdResult"
+			type="String"
+			column="fd_result"
+			notNull="false"
+			length="10"
+			enumType="geesunOrgEkp_fdResult"
+			validate="true" />
+
+		<simpleProperty
+			name="fdType"
+			messageKey="geesun-org:geesunOrgEkp.fdType"
+			type="String"
+			column="fd_type"
+			notNull="false"
+			length="20"
+			enumType="geesunOrgEkp_fdType"
+			validate="true" />
+
+		<simpleProperty
+			name="fdMessage"
+			messageKey="geesun-org:geesunOrgEkp.fdMessage"
+			type="RTF"
+			column="fd_message"
+			notNull="false"
+			length="1000000"
+			validate="false" />
+
+ 		<simpleProperty
+			name="fdReturns"
+			messageKey="geesun-org:geesunOrgEkp.fdReturns"
+			type="RTF"
+			column="fd_returns"
+			notNull="false"
+			length="1000000"
+			validate="false" />
+
+		<simpleProperty
+			name="fdInput"
+			messageKey="geesun-org:geesunOrgEkp.fdInput"
+			type="String"
+			column="fd_input"
+			notNull="false"
+			length="500"
+			validate="true" />
+
+	</model>
+</models>

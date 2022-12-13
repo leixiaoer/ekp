@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<description xmlns="http://www.example.org/description-config" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.example.org/description-config ../../../../description.xsd">
+	<module>
+		<module-name>KK集成V6</module-name>
+		<module-path>third/im/kk</module-path>
+		<baseline>V15.0.4.R.20200410</baseline>
+		<source-md5>d8ba80a8e8f6b6e0c8a13759e6718cd3</source-md5>
+		<is-custom>否</is-custom>
+		<serial-num>18</serial-num>
+		<parallel-version>V6</parallel-version>
+	</module>
+</description>

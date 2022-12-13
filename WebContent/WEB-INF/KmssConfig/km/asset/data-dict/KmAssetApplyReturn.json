@@ -1,0 +1,32 @@
+{
+    "global":     {
+        "modelName": "com.landray.kmss.km.asset.model.KmAssetApplyReturn",
+        "messageKey": "km-asset:table.kmAssetApplyReturn",
+        "displayProperty": "docSubject",
+        "serviceBean": "kmAssetApplyReturnService",
+        "table": "km_asset_apply_base",
+        "url": "/km/asset/km_asset_apply_return/kmAssetApplyReturn.do?method=view&fdId=${fdId}",
+        "extendClass": "com.landray.kmss.km.asset.model.KmAssetApplyBase",
+        "discriminatorValue": "com.landray.kmss.km.asset.model.KmAssetApplyReturn"
+    },
+    "attrs":     {
+        "fdId":         {
+            "propertyType": "id",
+            "generator": {"type": "assigned"}
+        },
+        "fdApplyReturnList":         {
+            "propertyType": "list",
+            "messageKey": "km-asset:kmAssetApplyReturn.fdApplyReturnList",
+            "type": "com.landray.kmss.km.asset.model.KmAssetApplyReturnList",
+            "column": "fd_apply_return_id",
+            "cascade": "all-delete-orphan",
+            "table": "km_asset_apply_return_list",
+            "canLogShow":"1"
+        }
+    },
+    "attachments": {"attachment":     {
+        "propertyType": "att",
+        "messageKey": "km-asset:kmAssetApplyBase.attachMent",
+        "canDisplay": "true"
+    }}
+}

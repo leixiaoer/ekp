@@ -1,0 +1,33 @@
+<model extendDaoEventBean="fsscFeeFormEvent" >
+<extendElementProperty name="fd_37425332ffd2f2" label="申请人" type="com.landray.kmss.sys.organization.model.SysOrgPerson" notNull="true" defaultValue="OrgFunction.getCurrentUser()" formula="true" dialogJS="Dialog_Address(!{mulSelect}, '!{idField}','!{nameField}', ';',ORG_TYPE_PERSON);" customElementProperties="{&quot;orgType&quot;:&quot;ORG_TYPE_PERSON&quot;}" businessType="address" isMark="false" />
+<extendSimpleProperty name="fd_374252eae52b20" label="申请人公司" type="String" notNull="true" defaultValue="1" /><extendSimpleProperty name="fd_374252eae52b20_name" label="申请人公司(名称)" type="String" notNull="true" defaultValue="1" />
+<extendElementProperty name="fd_37425334cb401a" label="申请人部门" type="com.landray.kmss.sys.organization.model.SysOrgElement" notNull="true" defaultValue="OrgFunction.getCurrentDept()" formula="true" dialogJS="Dialog_Address(!{mulSelect}, '!{idField}','!{nameField}', ';',ORG_TYPE_ORG|ORG_TYPE_DEPT);" customElementProperties="{&quot;orgType&quot;:&quot;ORG_TYPE_ORG|ORG_TYPE_DEPT&quot;}" businessType="address" isMark="false" />
+<extendSimpleProperty name="fd_374252fcb7dcbc" label="申请事由" type="String" length="4000" notNull="true" businessType="textarea" isMark="false" />
+<extendSimpleProperty name="fd_38cb02dc6402e4" label="携程单点1" type="String" /><extendSimpleProperty name="fd_38cb02dc6402e4_name" label="携程单点1" type="String" /><extendSimpleProperty name="fd_38cb02dc6402e4_vehicle_name" label="携程单点1" type="String" /><extendSimpleProperty name="fd_38cb02dc6402e4_vehicle_id" label="携程单点1" type="String" />
+<extendSimpleProperty name="fd_37689df08409d2" label="项目" type="String" /><extendSimpleProperty name="fd_37689df08409d2_name" label="项目(名称)" type="String" />
+<extendSimpleProperty name="fd_38cb02e77f784a" label="单据编号" type="String" businessType="inputText" length="200" formula="true" defaultValue="$docNumber$" recalculateOnSave="true" canDisplay="false" isMark="false" customElementProperties="" />
+<attachmentProperty name="fd_3742531f2f9e92" label="附件" />
+<extendSubTableProperty name="fd_37425415d18482" label="明细表1" businessType="detailsTable" >
+<idProperty><generator type="assigned" /></idProperty>
+<extendElementProperty name="fd_374254b781a860" label="实际使用人" type="com.landray.kmss.sys.organization.model.SysOrgPerson" notNull="true" defaultValue="OrgFunction.getCurrentUser()" formula="true" dialogJS="Dialog_Address(!{mulSelect}, '!{idField}','!{nameField}', ';',ORG_TYPE_PERSON);" customElementProperties="{&quot;orgType&quot;:&quot;ORG_TYPE_PERSON&quot;}" businessType="address" isMark="false" />
+<extendElementProperty name="fd_3747bc78a5acac" label="部门" type="com.landray.kmss.sys.organization.model.SysOrgElement" defaultValue="OrgFunction.getCurrentDept()" formula="true" dialogJS="Dialog_Address(!{mulSelect}, '!{idField}','!{nameField}', ';',ORG_TYPE_ORG|ORG_TYPE_DEPT);" customElementProperties="{&quot;orgType&quot;:&quot;ORG_TYPE_ORG|ORG_TYPE_DEPT&quot;}" businessType="address" isMark="false" />
+<extendSimpleProperty name="fd_374254bae4f150" label="成本中心" type="String" notNull="true" defaultValue="1" /><extendSimpleProperty name="fd_374254bae4f150_name" label="成本中心(名称)" type="String" notNull="true" defaultValue="1" />
+<extendSimpleProperty name="fd_374254bd820e1a" label="费用类型" type="String" notNull="true" /><extendSimpleProperty name="fd_374254bd820e1a_name" label="费用类型(名称)" type="String" notNull="true" />
+<extendSimpleProperty name="fd_3896a743e82b4e" label="内部订单" type="String" /><extendSimpleProperty name="fd_3896a743e82b4e_name" label="内部订单(名称)" type="String" />
+<extendSimpleProperty name="fd_3896a7428a5ce6" label="wbs" type="String" /><extendSimpleProperty name="fd_3896a7428a5ce6_name" label="wbs(名称)" type="String" />
+<extendSimpleProperty name="fd_374254c3f61e8c" label="开始日期" type="Date" notNull="true" businessType="datetime" isMark="false" />
+<extendSimpleProperty name="fd_374254c2b4c6b4" label="结束日期" type="Date" notNull="true" businessType="datetime" isMark="false" />
+<extendSimpleProperty name="fd_374254c73c8c6c" label="天数" type="String" /><extendSimpleProperty name="fd_374254c73c8c6c_name" label="天数" type="String" notNull="true" />
+<extendSimpleProperty name="fd_374254ce440280" label="出发地" type="String" notNull="true" /><extendSimpleProperty name="fd_374254ce440280_name" label="出发地(名称)" type="String" notNull="true" />
+<extendSimpleProperty name="fd_374254cf7a094e" label="到达地" type="String" notNull="true" /><extendSimpleProperty name="fd_374254cf7a094e_name" label="到达地(名称)" type="String" notNull="true" />
+<extendSimpleProperty name="fd_375843e7870d7a" label="交通工具" type="String" /><extendSimpleProperty name="fd_375843e7870d7a_name" label="交通工具(名称)" type="String" /><extendSimpleProperty name="fd_375843e7870d7a_vehicle_name" label="交通工具" type="String" /><extendSimpleProperty name="fd_375843e7870d7a_vehicle_id" label="交通工具" type="String" />
+<extendSimpleProperty name="fd_374254d1b75512" label="币种/汇率" type="String" notNull="true" defaultValue="1" /><extendSimpleProperty name="fd_374254d1b75512_name" label="币种/汇率(名称)" type="String" notNull="true" defaultValue="1" /><extendSimpleProperty name="fd_374254d1b75512_cost_rate" label="币种/汇率" type="String" notNull="true" defaultValue="1" /><extendSimpleProperty name="fd_374254d1b75512_budget_rate" label="币种/汇率" type="String" notNull="true" defaultValue="1" />
+<extendSimpleProperty name="fd_374254d5c436d8" label="申请金额" type="BigDecimal" businessType="inputText" length="16" scale="2" notNull="true" isMark="false" customElementProperties="scale='2'" />
+<extendSimpleProperty name="fd_374254d37fabb2" label="本位币金额" type="String" /><extendSimpleProperty name="fd_374254d37fabb2_name" label="本位币金额" type="String" notNull="true" />
+<extendSimpleProperty name="fd_377ae5c8711bc0_budget_status" label="预算状态" type="String" /><extendSimpleProperty name="fd_377ae5c8711bc0_budget_info" label="预算状态" type="String" />
+<extendSimpleProperty name="fd_374254daea2108_standard_status" label="标准状态" type="String" /><extendSimpleProperty name="fd_374254daea2108_standard_info" label="标准状态" type="String" />
+</extendSubTableProperty>
+
+<extendSimpleProperty name="fd_374257254b2f80" label="申请总金额" type="BigDecimal" scale="2" businessType="calculation" isMark="false" />
+<extendSimpleProperty name="fd_3779ec91775752" label="总金额大写" type="String" relatedid="fd_374257254b2f80" businessType="chinaValue" />
+</model>

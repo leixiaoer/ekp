@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configs
+	xmlns="http://www.example.org/design-config"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.example.org/design-config ../../design.xsd ">
+
+	<module
+		messageKey="km-keydata-base:module.km.keydata.base"
+		urlPrefix="/km/keydata/base/">
+		<roles>
+			ROLE_KMKEYDATA_MAINTAINER;
+			<!--ROLE_MAINTAINER_READER; 
+			ROLE_MAINTAINER_EDITOR; -->
+		</roles>
+
+		<request
+			path="kmKeydataPluginShow*"
+			validatorParameter="recid=fdId,model=com.landray.kmss.km.keydata.base.model.KmKeydataPluginShow,adminRoleName=ROLE_KMKEYDATA_MAINTAINER">
+			<query
+				queryString="method=add|save|list|view|saveadd|importPluginShowData|showall|disshowall"
+				validator="roleValidator(role=ROLE_KMKEYDATA_MAINTAINER)" />
+		</request>
+		
+		<filters
+			modelName="com.landray.kmss.km.keydata.base.model.KmKeydataBase">
+			<filter
+				type="creator"
+				expression="authFieldFilter(field=docCreator.fdId)" />
+			<filter
+				type="SYS_READER"
+				expression="authFieldFilter(field=authAllReaders.fdId)" />
+			<filter
+				type="SYS_READER"
+				expression="flagFieldFilter(field=authReaderFlag,value=1)" />
+			<filter
+				type="SYS_EDITOR"
+				expression="authFieldFilter(field=authAllEditors.fdId)" />				
+		</filters>
+		
+	</module>
+	
+	<homePage
+		urlPrefix="km/keydata"
+		url="/moduleindex.jsp?nav=/km/keydata/tree.jsp"
+		messageKey="km-keydata-base:module.km.keydata.base"
+		config="/moduleindex_notopic.jsp?nav=/km/keydata/tree.jsp" />
+		
+	<quartz	messageKey="km-keydata-base:KDSSynchroTitle" 
+		jobService="keydataSynchroService"
+		cronExpression="0 0 3 * * ?"
+		jobMethod="synchroAll" enable="false"
+		description="km-keydata-base:KDSSynchro.description" />
+	
+	<profileConfig
+		key="km/keydata"
+		messageKey="{km-keydata-base:module.km.keydata.base}" 
+		url="/sys/profile/moduleindex.jsp?nav=/km/keydata/tree.jsp" 
+		icon="lui_icon_l_profile_km_keydata"
+		type="ekp"
+		description="{km-keydata-base:kmKeydata.profileCfg.description}"/>	
+
+</configs>

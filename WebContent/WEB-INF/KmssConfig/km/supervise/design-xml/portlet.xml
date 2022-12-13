@@ -1,0 +1,530 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<root xmlns="http://www.landray.com.cn/schema/lui" xmlns:degign="http://www.landray.com.cn/schema/design"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="
+	http://www.landray.com.cn/schema/lui
+	../../../sys/ui/lui.xsd
+	http://www.landray.com.cn/schema/design
+	../../../design-xml.xsd">
+	
+	<!-- 我负责的督办-->
+	<portlet
+		id="km.supervise.duty"
+		name="{km-supervise:portlet.duty}"
+		module="{km-supervise:module.km.supervise}"
+		description="{km-supervise:kmSupervise.portlet.list.description}">
+		<source
+			format="sys.ui.classic"
+			type="AjaxXml">
+			<code>
+				<![CDATA[
+				{"url":"/sys/common/dataxml.jsp?s_bean=kmSuperviseMainPortlet&fdCategoryId=!{cateid}&type=duty&rowsize=!{rowsize}&scope=!{scope}"}
+				]]>
+			</code>
+			<example>
+				<code>
+					<![CDATA[
+						[{"text":"办好18件民生实事","created":"2020-01-08","creator":"王泽烽","catename":"民生实事","catehref":"#","href":"#"},{"text":"力争一年建成广钢环保迁建湛江项目搬迁村民安置小区","created":"2020-01-07","creator":"王泽烽","catename":"民生实事","catehref":"#","href":"#"},{"text":"建成海淀路、奋勇大道、体育北路西段和海田路景观整治二期工程","created":"2020-01-07","creator":"王泽烽","catename":"工程建设","catehref":"#","href":"#"},{"text":"推进疏港大道二期工程","created":"2020-01-07","creator":"王泽烽","catename":"工程建设","catehref":"#","href":"#"},{"text":"推进海滨大道改造工程","created":"2019-12-26","creator":"王泽烽","catename":"工程建设","catehref":"#","href":"#"},{"text":"启动湛江大道工程建设","created":"2019-11-28","creator":"王泽烽","catename":"工程建设","catehref":"#","href":"#"},{"text":"启动新湖大道工程建设","created":"2019-11-28","creator":"王泽烽","catename":"工程建设","catehref":"#","href":"#"},{"text":"启动金沙湾观海长廊三期工程建设","created":"2019-11-26","creator":"王泽烽","catename":"工程建设","catehref":"#","href":"#"},{"text":"动工建设生活垃圾焚烧发电厂","created":"2019-11-26","creator":"王泽烽","catename":"工程建设","catehref":"#","href":"#"},{"text":"启动银帆公园、麻章公园建设","created":"2019-11-26","creator":"王泽烽","catename":"公园建设","catehref":"#","href":"#"},{"text":"启动东海公园建设","created":"2019-11-22","creator":"管理员","catename":"公园建设","catehref":"#","href":"#"}]
+					]]>
+				</code>
+			</example>
+		</source>
+		<vars>
+		  <var name="{km-supervise:kmSuperviseMain.docCreateTime}" key="scope" kind="enumValue" default="no">
+	                 {  "values":[{ "text":"{portlet.var.date.oneMonth}", "value":"month"},
+	                              { "text":"{portlet.var.date.threeMonths}", "value":"season"},
+	                              { "text":"{portlet.var.date.halfAYear}", "value":"halfYear"},
+	                              { "text":"{portlet.var.date.oneYear}", "value":"year"},
+	                              { "text":"{portlet.var.date.unlimited}", "value":"no"}],
+	                   "showType":"radio"
+	                  }
+	        </var>
+			<var name="{portlet.rowsize}" key="rowsize" kind="rowsize" />
+			<var name="{portlet.cate}"
+				key="cateid"
+				kind="sys.category">
+				{"model":"com.landray.kmss.km.supervise.model.KmSuperviseTemplet","name":"{button.select}"}
+			</var>
+		</vars>
+		<operations>
+	    	<operation
+				name="{operation.create}"
+				type="create"
+				href="javascript:(function(){seajs.use(['km/supervise/resource/js/create'], function(create) { 
+							create.addDoc('!{cateid}');
+					 });})();"
+			    target="_self" />
+			<operation
+				name="{operation.more}"
+				type="more"
+				href="/km/supervise/#j_path=/myCharge&amp;mydoc=duty&amp;cri.q=docTemplate:!{cateid}" />
+	    </operations>
+	</portlet>
+	
+	
+	<!-- 我承办的督办 -->
+	<portlet
+		id="km.supervise.undertake"
+		name="{km-supervise:portlet.undertake}"
+		module="{km-supervise:module.km.supervise}"
+		description="{km-supervise:kmSupervise.portlet.list.description}">
+		<source
+			format="sys.ui.classic"
+			type="AjaxXml">
+			<code>
+				<![CDATA[
+				{"url":"/sys/common/dataxml.jsp?s_bean=kmSuperviseMainPortlet&fdCategoryId=!{cateid}&type=undertake&rowsize=!{rowsize}&scope=!{scope}"}
+				]]>
+			</code>
+			<example>
+				<code>
+					<![CDATA[
+						[{"text":"办好18件民生实事","created":"2020-01-08","creator":"王泽烽","catename":"民生实事","catehref":"#","href":"#"},{"text":"力争一年建成广钢环保迁建湛江项目搬迁村民安置小区","created":"2020-01-07","creator":"王泽烽","catename":"民生实事","catehref":"#","href":"#"},{"text":"建成海淀路、奋勇大道、体育北路西段和海田路景观整治二期工程","created":"2020-01-07","creator":"王泽烽","catename":"工程建设","catehref":"#","href":"#"},{"text":"推进疏港大道二期工程","created":"2020-01-07","creator":"王泽烽","catename":"工程建设","catehref":"#","href":"#"},{"text":"推进海滨大道改造工程","created":"2019-12-26","creator":"王泽烽","catename":"工程建设","catehref":"#","href":"#"},{"text":"启动湛江大道工程建设","created":"2019-11-28","creator":"王泽烽","catename":"工程建设","catehref":"#","href":"#"},{"text":"启动新湖大道工程建设","created":"2019-11-28","creator":"王泽烽","catename":"工程建设","catehref":"#","href":"#"},{"text":"启动金沙湾观海长廊三期工程建设","created":"2019-11-26","creator":"王泽烽","catename":"工程建设","catehref":"#","href":"#"},{"text":"动工建设生活垃圾焚烧发电厂","created":"2019-11-26","creator":"王泽烽","catename":"工程建设","catehref":"#","href":"#"},{"text":"启动银帆公园、麻章公园建设","created":"2019-11-26","creator":"王泽烽","catename":"公园建设","catehref":"#","href":"#"},{"text":"启动东海公园建设","created":"2019-11-22","creator":"管理员","catename":"公园建设","catehref":"#","href":"#"}]
+					]]>
+				</code>
+			</example>
+		</source>
+		<vars>
+		  <var name="{km-supervise:kmSuperviseMain.docCreateTime}" key="scope" kind="enumValue" default="no">
+	                 {  "values":[{ "text":"{portlet.var.date.oneMonth}", "value":"month"},
+	                              { "text":"{portlet.var.date.threeMonths}", "value":"season"},
+	                              { "text":"{portlet.var.date.halfAYear}", "value":"halfYear"},
+	                              { "text":"{portlet.var.date.oneYear}", "value":"year"},
+	                              { "text":"{portlet.var.date.unlimited}", "value":"no"}],
+	                   "showType":"radio"
+	                  }
+	        </var>
+			<var name="{portlet.rowsize}" key="rowsize" kind="rowsize" />
+			<var name="{portlet.cate}"
+				key="cateid"
+				kind="sys.category">
+				{"model":"com.landray.kmss.km.supervise.model.KmSuperviseTemplet","name":"{button.select}"}
+			</var>
+		</vars>
+		<operations>
+	    	<operation
+				name="{operation.create}"
+				type="create"
+				href="javascript:(function(){seajs.use(['km/supervise/resource/js/create'], function(create) { 
+							create.addDoc('!{cateid}');
+					 });})();"
+			    target="_self" />
+			<operation
+				name="{operation.more}"
+				type="more"
+				href="/km/supervise/#j_path=/myUndertake&amp;mydoc=undertake&amp;cri.q=docTemplate:!{cateid}" />
+	    </operations>
+	</portlet>
+	
+	<!-- 我分管的 -->
+	<portlet
+		id="km.supervise.manage"
+		name="{km-supervise:portlet.fenguan}"
+		module="{km-supervise:module.km.supervise}"
+		description="{km-supervise:kmSupervise.portlet.list.description}">
+		<source
+			format="sys.ui.classic"
+			type="AjaxXml">
+			<code>
+				<![CDATA[
+					{"url":"/sys/common/dataxml.jsp?s_bean=kmSuperviseMainPortlet&fdCategoryId=!{cateid}&type=fenguan&rowsize=!{rowsize}&scope=!{scope}"}
+				]]>
+			</code>
+			<example>
+				<code>
+					<![CDATA[
+						[{"text":"办好18件民生实事","created":"2020-01-08","creator":"王泽烽","catename":"民生实事","catehref":"#","href":"#"},{"text":"力争一年建成广钢环保迁建湛江项目搬迁村民安置小区","created":"2020-01-07","creator":"王泽烽","catename":"民生实事","catehref":"#","href":"#"},{"text":"建成海淀路、奋勇大道、体育北路西段和海田路景观整治二期工程","created":"2020-01-07","creator":"王泽烽","catename":"工程建设","catehref":"#","href":"#"},{"text":"推进疏港大道二期工程","created":"2020-01-07","creator":"王泽烽","catename":"工程建设","catehref":"#","href":"#"},{"text":"推进海滨大道改造工程","created":"2019-12-26","creator":"王泽烽","catename":"工程建设","catehref":"#","href":"#"},{"text":"启动湛江大道工程建设","created":"2019-11-28","creator":"王泽烽","catename":"工程建设","catehref":"#","href":"#"},{"text":"启动新湖大道工程建设","created":"2019-11-28","creator":"王泽烽","catename":"工程建设","catehref":"#","href":"#"},{"text":"启动金沙湾观海长廊三期工程建设","created":"2019-11-26","creator":"王泽烽","catename":"工程建设","catehref":"#","href":"#"},{"text":"动工建设生活垃圾焚烧发电厂","created":"2019-11-26","creator":"王泽烽","catename":"工程建设","catehref":"#","href":"#"},{"text":"启动银帆公园、麻章公园建设","created":"2019-11-26","creator":"王泽烽","catename":"公园建设","catehref":"#","href":"#"},{"text":"启动东海公园建设","created":"2019-11-22","creator":"管理员","catename":"公园建设","catehref":"#","href":"#"}]
+					]]>
+				</code>
+			</example>
+		</source>
+		<vars>
+		  <var name="{km-supervise:kmSuperviseMain.docCreateTime}" key="scope" kind="enumValue" default="no">
+	                 {  "values":[{ "text":"{portlet.var.date.oneMonth}", "value":"month"},
+	                              { "text":"{portlet.var.date.threeMonths}", "value":"season"},
+	                              { "text":"{portlet.var.date.halfAYear}", "value":"halfYear"},
+	                              { "text":"{portlet.var.date.oneYear}", "value":"year"},
+	                              { "text":"{portlet.var.date.unlimited}", "value":"no"}],
+	                   "showType":"radio"
+	                  }
+	        </var>
+			<var name="{portlet.rowsize}" key="rowsize" kind="rowsize" />
+			<var name="{portlet.cate}"
+				key="cateid"
+				kind="sys.category">
+				{"model":"com.landray.kmss.km.supervise.model.KmSuperviseTemplet","name":"{button.select}"}
+			</var>
+		</vars>
+		<operations>
+	    	<operation
+				name="{operation.create}"
+				type="create"
+				href="javascript:(function(){seajs.use(['km/supervise/resource/js/create'], function(create) { 
+							create.addDoc('!{cateid}');
+					 });})();"
+			    target="_self" />
+			<operation
+				name="{operation.more}"
+				type="more"
+				href="/km/supervise/#j_path=/myManage&amp;mydoc=fenguan&amp;cri.q=docTemplate:!{cateid}" />
+	    </operations>
+	</portlet>
+	
+	<!-- 我关注的 -->
+	<portlet
+		id="km.supervise.concern"
+		name="{km-supervise:portlet.concern}"
+		module="{km-supervise:module.km.supervise}"
+		description="{km-supervise:kmSupervise.portlet.list.description}">
+		<source
+			format="sys.ui.classic"
+			type="AjaxXml">
+			<code>
+				<![CDATA[
+				{"url":"/sys/common/dataxml.jsp?s_bean=kmSuperviseMainPortlet&fdCategoryId=!{cateid}&type=concern&rowsize=!{rowsize}&scope=!{scope}"}
+				]]>
+			</code>
+			<example>
+				<code>
+					<![CDATA[
+						[{"text":"办好18件民生实事","created":"2020-01-08","creator":"王泽烽","catename":"民生实事","catehref":"#","href":"#"},{"text":"力争一年建成广钢环保迁建湛江项目搬迁村民安置小区","created":"2020-01-07","creator":"王泽烽","catename":"民生实事","catehref":"#","href":"#"},{"text":"建成海淀路、奋勇大道、体育北路西段和海田路景观整治二期工程","created":"2020-01-07","creator":"王泽烽","catename":"工程建设","catehref":"#","href":"#"},{"text":"推进疏港大道二期工程","created":"2020-01-07","creator":"王泽烽","catename":"工程建设","catehref":"#","href":"#"},{"text":"推进海滨大道改造工程","created":"2019-12-26","creator":"王泽烽","catename":"工程建设","catehref":"#","href":"#"},{"text":"启动湛江大道工程建设","created":"2019-11-28","creator":"王泽烽","catename":"工程建设","catehref":"#","href":"#"},{"text":"启动新湖大道工程建设","created":"2019-11-28","creator":"王泽烽","catename":"工程建设","catehref":"#","href":"#"},{"text":"启动金沙湾观海长廊三期工程建设","created":"2019-11-26","creator":"王泽烽","catename":"工程建设","catehref":"#","href":"#"},{"text":"动工建设生活垃圾焚烧发电厂","created":"2019-11-26","creator":"王泽烽","catename":"工程建设","catehref":"#","href":"#"},{"text":"启动银帆公园、麻章公园建设","created":"2019-11-26","creator":"王泽烽","catename":"公园建设","catehref":"#","href":"#"},{"text":"启动东海公园建设","created":"2019-11-22","creator":"管理员","catename":"公园建设","catehref":"#","href":"#"}]
+					]]>
+				</code>
+			</example>
+		</source>
+		<vars>
+		  <var name="{km-supervise:kmSuperviseMain.docCreateTime}" key="scope" kind="enumValue" default="no">
+	                 {  "values":[{ "text":"{portlet.var.date.oneMonth}", "value":"month"},
+	                              { "text":"{portlet.var.date.threeMonths}", "value":"season"},
+	                              { "text":"{portlet.var.date.halfAYear}", "value":"halfYear"},
+	                              { "text":"{portlet.var.date.oneYear}", "value":"year"},
+	                              { "text":"{portlet.var.date.unlimited}", "value":"no"}],
+	                   "showType":"radio"
+	                  }
+	        </var>
+			<var name="{portlet.rowsize}" key="rowsize" kind="rowsize" />
+			<var name="{portlet.cate}"
+				key="cateid"
+				kind="sys.category">
+				{"model":"com.landray.kmss.km.supervise.model.KmSuperviseTemplet","name":"{button.select}"}
+			</var>
+		</vars>
+		<operations>
+	    	<operation
+				name="{operation.create}"
+				type="create"
+				href="javascript:(function(){seajs.use(['km/supervise/resource/js/create'], function(create) { 
+							create.addDoc('!{cateid}');
+					 });})();"
+			    target="_self" />
+			<operation
+				name="{operation.more}"
+				type="more"
+				href="/km/supervise/#j_path=/myConcern&amp;mydoc=concern&amp;cri.q=docTemplate:!{cateid}" />
+	    </operations>
+	</portlet>
+	
+	<!-- 督办门户（新） -->
+	<portlet
+		id="km.supervise.new"
+		name="新督办门户"
+		module="{km-supervise:module.km.supervise}"
+		description="新督办门户">
+		<source
+			format="sys.ui.html"
+			type="AjaxText">
+			<code>
+			   <![CDATA[
+					{"url":"/km/supervise/km_supervise_main/import/index_list_frame.jsp?fdType=!{type}",
+					"formatKey":"html"
+					}
+			     ]]>
+			</code>
+			<example>
+				<code>
+					<![CDATA[
+						{^/sys/portal/example_images/km/supervise/portlet_new.png$}
+					]]>
+				</code>
+			</example>
+		</source>
+		<vars>
+			<var name="类型" key="type" kind="enumValue" default="myCharge">
+	                 {  "values":[{ "text":"我负责的", "value":"myCharge"},
+	                              { "text":"我承办的", "value":"myUndertake"},
+	                              { "text":"领导关注", "value":"leadConcern"},
+	                              { "text":"我关注的", "value":"myConcern"},
+	                              { "text":"我分管的", "value":"myManage"}],
+	                   "showType":"radio"
+	                  }
+	        </var>
+	    </vars>
+	</portlet>
+	
+	<!-- 支持cloud数据源 -->
+	
+	<!-- 最新的督办 -->
+	<portlet
+		id="km.supervise.new"
+		name="{km-supervise:portlet.new}"
+		module="{km-supervise:module.km.supervise}"
+		description="{km-supervise:kmSupervise.portlet.list.description}" forSystem="cloud" varExtend="km.supervise.duty">
+		<source
+			id="km-supervise.new"
+			format="data.table"
+			type="json">
+			<code>
+				<![CDATA[
+				{
+					"url":"/data/km-supervise/kmSuperviseMainPortlet/listPortlet?fdCategoryId=!{cateid}&rowsize=!{rowsize}&scope=!{scope}",
+					"dataType":"json"
+				}
+				]]>
+			</code>
+			<example>
+				<code>
+					<![CDATA[
+					{"columns":[{"property":"fdId","renderType":"hidden"},{"property":"catename","title":"督办模板"},{"property":"docSubject","title":"督办名称"},{"property":"docCreateTime","title":"创建时间"},{"property":"docCreator","title":"创建人"}],"data":[{"href":null,"cells":[{"col":"fdId","value":"16b2083914607c30e8d0760454d82ccb"},{"col":"catename","value":"重大项目督办","href":"http://java.landray.com.cn/kms/multidoc/kms_multidoc_knowledge/kmsMultidocKnowledge.do?method=view&fdId=16dbda26dd6f61581249d5c4194a942d"},{"col":"docSubject","value":"测试"},{"col":"docCreateTime","value":"2019-10-08 00:00 "},{"col":"docCreator","value":"张晗"}]},{"href":null,"cells":[{"col":"fdId","value":"16b2083914607c30e8d0760454d82ccb"},{"col":"catename","value":"【V15升级测试】立项","href":"http://java.landray.com.cn/km/supervise/km_supervise_main/kmSuperviseMain.do?method=view&fdId=16d43db9c7e1cda090579484f9d86106"},{"col":"docSubject","value":"待办测试111 "},{"col":"docCreateTime","value":"2019-10-18 00:00 "},{"col":"docCreator","value":"蒋志广"}]},{"href":null,"cells":[{"col":"fdId","value":"16b2083914607c30e8d0760454d82ccb"},{"col":"catename","value":"【V15升级测试】立项","href":"http://java.landray.com.cn/km/supervise/km_supervise_main/kmSuperviseMain.do?method=view&fdId=16d43db9c7e1cda090579484f9d86106"},{"col":"docSubject","value":"反馈测试"},{"col":"docCreateTime","value":"2019-08-09 00:00 "},{"col":"docCreator","value":"邓春喜"}]},{"href":null,"cells":[{"col":"fdId","value":"16b2083914607c30e8d0760454d82ccb"},{"col":"catename","value":"重大项目督办","href":"http://java.landray.com.cn/km/supervise/km_supervise_main/kmSuperviseMain.do?method=view&fdId=16c6edf561005af2d70a8bd401790e39"},{"col":"docSubject","value":"工作安排测试"},{"col":"docCreateTime","value":"2019-08-08 00:00 "},{"col":"docCreator","value":"臧运生"}]}]}
+					]]>
+				</code>
+			</example>
+		</source>
+		<operations>
+	    	<operation
+				name="{operation.create}"
+				type="create"
+				href="/km/supervise/km_supervise_main/kmSuperviseMain.do?method=add" />
+			<operation
+				name="{operation.more}"
+				type="more"
+				href="/km/supervise" />
+	    </operations>
+	</portlet>
+	
+	<!-- 我的督办 -->
+	<portlet
+		id="km.supervise.duty"
+		name="{km-supervise:portlet.duty}"
+		module="{km-supervise:module.km.supervise}"
+		description="{km-supervise:kmSupervise.portlet.list.description}" forSystem="cloud" varExtend="km.supervise.duty">
+		<source
+			id="km-supervise.duty"
+			format="data.list"
+			type="xml">
+			<code>
+				<![CDATA[
+				{
+					"url":"/data/sys-common/dataxml?s_bean=kmSuperviseMainPortlet&fdCategoryId=!{cateid}&type=!{type}&rowsize=!{rowsize}&scope=!{scope}"
+				}
+				]]>
+			</code>
+			<example>
+				<code>
+					<![CDATA[
+					[{"text":"测试","created":1557132149164,"cateHref":"http://java.landray.com.cn/km/supervise/index.jsp?j_module=true#j_path=%2FsuperviseItem","href":"http://java.landray.com.cn/km/supervise/km_supervise_main/kmSuperviseMain.do?method=view&fdId=16da96bd59261b77267ce9845e6aa4cb","cateName":"督办管理","creator":{"fdId":"16b1be478d7d58e609c940945d187af0","fdName":"李佳腾","fdLoginName":"lijiateng"},"statusInfo":"已超期","statusColor":"error"},{"text":"反馈测试 ","created":1557132149163,"cateHref":"http://java.landray.com.cn/km/supervise/index.jsp?j_module=true#j_path=%2FsuperviseItem","href":"http://java.landray.com.cn/km/supervise/km_supervise_main/kmSuperviseMain.do?method=view&fdId=16c75d5e1acad2e18c713d64bc1815d1","cateName":"督办管理","creator":{"fdId":"16b1be478d7d58e609c940945d187af0","fdName":"李佳腾","fdLoginName":"lijiateng"},"statusInfo":"即将超期","statusColor":"warning"},{"text":"工作安排测试","created":1529649570921,"cateHref":"http://java.landray.com.cn/km/supervise/index.jsp?j_module=true#j_path=%2FsuperviseItem","href":"http://java.landray.com.cn/km/supervise/km_supervise_main/kmSuperviseMain.do?method=view&fdId=16c6edf561005af2d70a8bd401790e39","cateName":"督办管理","creator":{"fdId":"16b1be478d7d58e609c940945d187af0","fdName":"郑超","fdLoginName":"zhengc","avatarUrl":"http://java.landray.com.cn/sys/person/image.jsp?personId=16b1be478d7d58e609c940945d187af0"},"statusInfo":"即将超期","statusColor":"warning"}]
+					]]>
+				</code>
+			</example>
+		</source>
+		<var name="{km-supervise:lbpm.my}" key="type" kind="enumValue" default="no">
+                {  "values":[{ "text":"{km-supervise:py.WoFuZeDe}", "value":"duty"},
+                             { "text":"{km-supervise:portlet.manage}", "value":"manage"}],
+                  "showType":"radio"
+                }
+        </var>
+		<operations>
+	    	<operation
+				name="{operation.create}"
+				type="create"
+				href="/km/supervise/km_supervise_main/kmSuperviseMain.do?method=add" />
+			<operation
+				name="{operation.more}"
+				type="more"
+				href="/km/supervise/#j_path=/myCharge&amp;mydoc=duty&amp;cri.q=docTemplate:!{cateid}" />
+	    </operations>
+	</portlet>
+	
+	
+	<!-- 我的督办 new -->
+	<portlet
+			id="km.supervise.duty.new"
+			name="{km-supervise:portlet.duty.new}"
+			module="{km-supervise:module.km.supervise}"
+			description="{km-supervise:kmSupervise.portlet.list.description}" forSystem="cloud" varExtend="km.supervise.duty">
+		<source
+				id="km-supervise.duty.new"
+				format="data.fieldlist"
+				type="xml">
+			<code>
+				<![CDATA[
+				{
+					"url":"/data/sys-common/dataxml?s_bean=kmSuperviseMainPortlet&fdCategoryId=!{cateid}&type=!{type}&rowsize=!{rowsize}&scope=!{scope}&isNew=true"
+				}
+				]]>
+			</code>
+			<example>
+				<code>
+					<![CDATA[
+						[{"text":"测试","created":{"text":1557132149164},"href":"http://java.landray.com.cn/km/supervise/km_supervise_main/kmSuperviseMain.do?method=view&fdId=16da96bd59261b77267ce9845e6aa4cb","cateName":{"text":"督办管理","href":"http://java.landray.com.cn/km/supervise/index.jsp?j_module=true#j_path=%2FsuperviseItem"},"creator":{"fdId":"16b1be478d7d58e609c940945d187af0","fdName":"李佳腾","fdLoginName":"lijiateng"},"statusInfo":{"text":"已超期","color":"error"}},{"text":"反馈测试 ","created":{"text":1557132149163},"href":"http://java.landray.com.cn/km/supervise/km_supervise_main/kmSuperviseMain.do?method=view&fdId=16c75d5e1acad2e18c713d64bc1815d1","cateName":{"text":"督办管理","href":"http://java.landray.com.cn/km/supervise/index.jsp?j_module=true#j_path=%2FsuperviseItem"},"creator":{"fdId":"16b1be478d7d58e609c940945d187af0","fdName":"李佳腾","fdLoginName":"lijiateng"},"statusInfo":{"text":"即将超期","color":"warning"}},{"text":"工作安排测试","created":{"text":1529649570921},"href":"http://java.landray.com.cn/km/supervise/km_supervise_main/kmSuperviseMain.do?method=view&fdId=16c6edf561005af2d70a8bd401790e39","cateName":{"text":"督办管理","href":"http://java.landray.com.cn/km/supervise/index.jsp?j_module=true#j_path=%2FsuperviseItem"},"creator":{"fdId":"16b1be478d7d58e609c940945d187af0","fdName":"郑超","fdLoginName":"zhengc","avatarUrl":"http://java.landray.com.cn/sys/person/image.jsp?personId=16b1be478d7d58e609c940945d187af0"},"statusInfo":{"text":"即将超期","color":"warning"}}]
+					]]>
+				</code>
+			</example>
+			<dataFields>
+				<code>
+					<![CDATA[
+						{
+						"base": {
+						"label": "基础信息",
+						"items": [
+						{"key": "statusInfo", "text": "状态"}
+						]
+						},
+						"info": {
+						"label": "辅助信息",
+						"items": [
+						{"key": "created", "text": "创建时间", "type": "timestamp"},
+						{"key": "creator", "text": "作者", "type": "person"},
+						{"key": "cateName", "text": "分类", "type": "string"}
+						]
+						},
+						"tag": {
+						"label": "标签",
+						"items": []
+						}
+						}
+					]]>
+				</code>
+			</dataFields>
+		</source>
+		<var name="{km-supervise:lbpm.my}" key="type" kind="enumValue" default="no">
+			{  "values":[{ "text":"{km-supervise:py.WoFuZeDe}", "value":"duty"},
+			{ "text":"{km-supervise:portlet.manage}", "value":"manage"}],
+			"showType":"radio"
+			}
+		</var>
+		<operations>
+			<operation
+					name="{operation.create}"
+					type="create"
+					href="/km/supervise/km_supervise_main/kmSuperviseMain.do?method=add" />
+			<operation
+					name="{operation.more}"
+					type="more"
+					href="/km/supervise/#j_path=/myCharge&amp;mydoc=duty&amp;cri.q=docTemplate:!{cateid}" />
+		</operations>
+	</portlet>
+	<!-- 我的督办文档 -->
+	<portlet
+		id="km.supervise.manage"
+		name="{km-supervise:portlet.manage}"
+		module="{km-supervise:module.km.supervise}"
+		description="{km-supervise:kmSupervise.portlet.list.description}" forSystem="cloud" varExtend="km.supervise.manage">
+		<source
+			id="km-supervise.manage"
+			format="data.list"
+			type="xml">
+			<code>
+				<![CDATA[
+				{
+					"url":"/data/sys-common/dataxml?s_bean=kmSuperviseMainPortlet&fdCategoryId=!{cateid}&myFlow=!{myFlow}&rowsize=!{rowsize}&scope=!{scope}"
+				}
+					
+				]]>
+			</code>
+			<example>
+				<code>
+					<![CDATA[
+					[{"text":"测试","created":1557132149164,"cateHref":"http://java.landray.com.cn/km/supervise/index.jsp?j_module=true#j_path=%2FsuperviseItem","href":"http://java.landray.com.cn/km/supervise/km_supervise_main/kmSuperviseMain.do?method=view&fdId=16da96bd59261b77267ce9845e6aa4cb","cateName":"督办管理","creator":{"fdId":"16b1be478d7d58e609c940945d187af0","fdName":"李佳腾","fdLoginName":"lijiateng"},"statusInfo":"已超期","statusColor":"error"},{"text":"反馈测试 ","created":1557132149163,"cateHref":"http://java.landray.com.cn/km/supervise/index.jsp?j_module=true#j_path=%2FsuperviseItem","href":"http://java.landray.com.cn/km/supervise/km_supervise_main/kmSuperviseMain.do?method=view&fdId=16c75d5e1acad2e18c713d64bc1815d1","cateName":"督办管理","creator":{"fdId":"16b1be478d7d58e609c940945d187af0","fdName":"李佳腾","fdLoginName":"lijiateng"},"statusInfo":"即将超期","statusColor":"warning"},{"text":"工作安排测试","created":1529649570921,"cateHref":"http://java.landray.com.cn/km/supervise/index.jsp?j_module=true#j_path=%2FsuperviseItem","href":"http://java.landray.com.cn/km/supervise/km_supervise_main/kmSuperviseMain.do?method=view&fdId=16c6edf561005af2d70a8bd401790e39","cateName":"督办管理","creator":{"fdId":"16b1be478d7d58e609c940945d187af0","fdName":"郑超","fdLoginName":"zhengc","avatarUrl":"http://java.landray.com.cn/sys/person/image.jsp?personId=16b1be478d7d58e609c940945d187af0"},"statusInfo":"即将超期","statusColor":"warning"}]
+					]]>
+				</code>
+			</example>
+		</source>
+		<var name="{km-supervise:lbpm.my}" key="myFlow" kind="enumValue" default="no">
+                {  "values":[{ "text":"{km-supervise:lbpm.create.my}", "value":"create"},
+                             { "text":"{km-supervise:lbpm.approval.my}", "value":"approval"},
+                             { "text":"{km-supervise:lbpm.approved.my}", "value":"approved"}],
+                  "showType":"radio"
+                }
+        </var>
+		<operations>
+	    	<operation
+				name="{operation.create}"
+				type="create"
+				href="/km/supervise/km_supervise_main/kmSuperviseMain.do?method=add" />
+			<operation
+				name="{operation.more}"
+				type="more"
+				href="/km/supervise/#j_path=/myUndertake&amp;mydoc=undertake&amp;cri.q=docTemplate:!{cateid}" />
+	    </operations>
+	</portlet>
+	<!-- 我的督办文档 new-->
+	<portlet
+			id="km.supervise.manage.new"
+			name="{km-supervise:portlet.manage.new}"
+			module="{km-supervise:module.km.supervise}"
+			description="{km-supervise:kmSupervise.portlet.list.description}" forSystem="cloud" varExtend="km.supervise.manage">
+		<source
+				id="km-supervise.manage.new"
+				format="data.fieldlist"
+				type="xml">
+			<code>
+				<![CDATA[
+				{
+					"url":"/data/sys-common/dataxml?s_bean=kmSuperviseMainPortlet&fdCategoryId=!{cateid}&myFlow=!{myFlow}&rowsize=!{rowsize}&scope=!{scope}&isNew=true"
+				}
+
+				]]>
+			</code>
+			<example>
+				<code>
+					<![CDATA[
+						[{"text":"测试","created":{"text":1557132149164},"href":"http://java.landray.com.cn/km/supervise/km_supervise_main/kmSuperviseMain.do?method=view&fdId=16da96bd59261b77267ce9845e6aa4cb","cateName":{"text":"督办管理","href":"http://java.landray.com.cn/km/supervise/index.jsp?j_module=true#j_path=%2FsuperviseItem"},"creator":{"fdId":"16b1be478d7d58e609c940945d187af0","fdName":"李佳腾","fdLoginName":"lijiateng"},"statusInfo":{"text":"已超期","color":"error"}},{"text":"反馈测试 ","created":{"text":1557132149163},"href":"http://java.landray.com.cn/km/supervise/km_supervise_main/kmSuperviseMain.do?method=view&fdId=16c75d5e1acad2e18c713d64bc1815d1","cateName":{"text":"督办管理","href":"http://java.landray.com.cn/km/supervise/index.jsp?j_module=true#j_path=%2FsuperviseItem"},"creator":{"fdId":"16b1be478d7d58e609c940945d187af0","fdName":"李佳腾","fdLoginName":"lijiateng"},"statusInfo":{"text":"即将超期","color":"warning"}},{"text":"工作安排测试","created":{"text":1529649570921},"href":"http://java.landray.com.cn/km/supervise/km_supervise_main/kmSuperviseMain.do?method=view&fdId=16c6edf561005af2d70a8bd401790e39","cateName":{"text":"督办管理","href":"http://java.landray.com.cn/km/supervise/index.jsp?j_module=true#j_path=%2FsuperviseItem"},"creator":{"fdId":"16b1be478d7d58e609c940945d187af0","fdName":"郑超","fdLoginName":"zhengc","avatarUrl":"http://java.landray.com.cn/sys/person/image.jsp?personId=16b1be478d7d58e609c940945d187af0"},"statusInfo":{"text":"即将超期","color":"warning"}}]
+					]]>
+				</code>
+			</example>
+			<dataFields>
+				<code>
+					<![CDATA[
+						{
+						"base": {
+						"label": "基础信息",
+						"items": [
+						{"key": "statusInfo", "text": "状态"}
+						]
+						},
+						"info": {
+						"label": "辅助信息",
+						"items": [
+						{"key": "created", "text": "创建时间", "type": "timestamp"},
+						{"key": "creator", "text": "作者", "type": "person"},
+						{"key": "cateName", "text": "分类", "type": "string"}
+						]
+						},
+						"tag": {
+						"label": "标签",
+						"items": []
+						}
+						}
+					]]>
+				</code>
+			</dataFields>
+		</source>
+		<var name="{km-supervise:lbpm.my}" key="myFlow" kind="enumValue" default="no">
+			{  "values":[{ "text":"{km-supervise:lbpm.create.my}", "value":"create"},
+			{ "text":"{km-supervise:lbpm.approval.my}", "value":"approval"},
+			{ "text":"{km-supervise:lbpm.approved.my}", "value":"approved"}],
+			"showType":"radio"
+			}
+		</var>
+		<operations>
+			<operation
+					name="{operation.create}"
+					type="create"
+					href="/km/supervise/km_supervise_main/kmSuperviseMain.do?method=add" />
+			<operation
+					name="{operation.more}"
+					type="more"
+					href="/km/supervise/#j_path=/myUndertake&amp;mydoc=undertake&amp;cri.q=docTemplate:!{cateid}" />
+		</operations>
+	</portlet>
+</root>

@@ -1,0 +1,19 @@
+{
+    "global":     {
+        "modelName": "com.landray.kmss.km.asset.model.KmAssetConfig",
+        "messageKey": "km-asset:table.kmAssetConfig",
+        "displayProperty": "codeRule",
+        "table": "km_asset_config",
+        "url": "/km/asset/km_asset_config/kmAssetConfig.do?method=view&fdId=${fdId}"
+    },
+    "attrs": {"codeRule":     {
+        "propertyType": "simple",
+        "messageKey": "km-asset:kmAssetConfig.codeRule",
+        "type": "String",
+        "column": "code_rule",
+        "notNull": "false",
+        "length": "36",
+        "enumType": "km_asset_config_code_rule",
+        "validate": "true"
+    }}
+}

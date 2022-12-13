@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<column-enums>
+	<type
+		default-value="true"
+		name="km_provider_main_fd_isvalidate">
+		<value-label>
+			<value>true</value>
+			<label-key>enumeration_km_provider_main_fd_isValidate_1</label-key>
+			<bundle>km-provider</bundle>
+		</value-label>
+		<value-label>
+			<value>false</value>
+			<label-key>enumeration_km_provider_main_fd_isValidate_2</label-key>
+			<bundle>km-provider</bundle>
+		</value-label>
+	</type>
+</column-enums>

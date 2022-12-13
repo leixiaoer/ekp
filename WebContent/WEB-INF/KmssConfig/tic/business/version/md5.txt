@@ -1,0 +1,14 @@
+WebContent/WEB-INF/KmssConfig/tic/business/connector/data-dict/TicBusinessCategory.json=0f0b81c1211aaf131f438fe48c5350b9
+WebContent/WEB-INF/KmssConfig/tic/business/connector/hibernate.xml=710dba2cd5e90ac8ee3df2ddadcd1f83
+WebContent/WEB-INF/KmssConfig/tic/business/connector/plugin.xml=5c441c4f73ac7d7f37e2aec87a35e40a
+WebContent/WEB-INF/KmssConfig/tic/business/connector/spring-mvc.xml=2939011dfeb7c43c9b595fc18f8944d6
+WebContent/WEB-INF/KmssConfig/tic/business/connector/spring.xml=5212834e292e9b08dfd4b6f0f541bcfa
+WebContent/WEB-INF/KmssConfig/tic/business/design.xml=719dd99827a58200ff0d32aa907f2ac0
+WebContent/WEB-INF/KmssConfig/tic/business/mapping/plugin.xml=61c0389ce4e081cac3f696f90aaf1962
+WebContent/WEB-INF/KmssConfig/tic/business/version/description.xml=a53e1f28ca9a8754797e1541c5597219
+WebContent/WEB-INF/KmssConfig/tic/business/version/version.xml=9b2352b005d026523176d331034bf336
+WebContent/WEB-INF/lib/kmss_tic_business.jar=ea333aae1a1e6b180e10e744de1988bb
+WebContent/tic/business/connector/tic_business_category/form_option.js=da241f471b70eafbfa984fe2c9842f85
+WebContent/tic/business/connector/tic_business_category/ticBusinessCategory_edit.jsp=d57b21058f8b58fa403cb8a8fbbb3a7b
+WebContent/tic/business/connector/tic_business_category/ticBusinessCategory_view.jsp=d9c238369252eb5557727ad62cf6b673
+WebContent/tic/business/tree.jsp=bbb18f29e1e819e2b91928419cbf7eb1

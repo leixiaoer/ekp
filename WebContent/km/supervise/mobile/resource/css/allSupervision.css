@@ -1,0 +1,163 @@
+.lui_all_supervision_box {
+  width: 100%;
+  font-family: PingFangSC-Regular;
+  background: #F2F4F8;
+}
+.lui_all_supervision_content {
+  margin-top: 42px;
+}
+.lui_asc_nav_box {
+  background: #fff;
+  padding: 0 15px;
+  display: flex;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  border-bottom: 1px solid #F2F4F8;
+  z-index: 103; 
+  /* box-shadow: 0px .5px 6px .5px rgba(153, 153, 153, 0.75); */
+}
+.lui_asc_select_item {
+  height: 42px;
+  line-height: 42px;
+  display: inline-block;
+  font-size: 15px;
+  box-sizing: border-box;
+  color: #999999;
+}
+.lui_asc_select_item-active {
+  color: #4285f4;
+  border-bottom: 2px solid #4285f4;
+}
+.lui_asc_select{
+  display: flex;
+  width: 282px;
+  justify-content: space-between;
+}
+.lui_asc_handle_drop-icon {
+  width: 13px;
+  height: 13px;
+  display: inline-block;
+  background: url('../images/dropdown.png') no-repeat center;
+  background-size: contain;
+}
+.lui_asc_handle_search-icon {
+  width: 20px;
+  height: 20px;
+  display: inline-block;
+  background: url('../images/search.png') no-repeat center;
+  background-size: contain;
+}
+.lui_asc_handle {
+  display: flex;
+  align-items: center;
+}
+.lui_asc_handle_drop {
+  width: 37px;
+  text-align: center; 
+}
+.lui_asc_handle_line {
+  width: 1px;
+  height: 8px;
+  border-left: 1px solid #F2F4F8;
+  margin-right: 10px;
+}
+.lui_asc_list {
+  padding: 15px 13px;
+  background: #f2f4f8;
+}
+.lui_asc_item {
+  background: #FFFFFF;
+  border-radius: 4px;
+  padding: 12px;
+  position: relative;
+  border-bottom: 1px solid #f2f4f8;
+}
+.lui_asc_item_title {
+  /*font-size: 17px;*/
+  /*color: #333333;*/
+  /*margin-bottom: 15px;*/
+}
+.lui_asc_item_text {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    word-break: break-all;
+    word-wrap: break-word;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+    display: block;
+    font-size: var(--muiFontSizeSS);
+    line-height: 1.8rem;
+    color: #999FB7;
+}
+.lui_asc_item_text >a{
+	color: #4285F4;
+	font-size: 12px;
+}
+.lui_asc_item_text:last-child {
+  margin-bottom: 0px;
+}
+.lui_asc_item_flag {
+  display: inline-block;
+  position: absolute;
+  top: 0;
+  right: 0;
+  border-radius: 0 0 0 8px;
+  width: 60px;
+  height: 15px;
+  line-height: 15px;
+  font-size: 10px;
+  text-align: center;
+  background-image: linear-gradient(90deg, #E9E9E9 0%, #DFDFDF 100%);
+  color: #fff;
+}
+.lui_asc_item_flag-red {
+  background-image: linear-gradient(90deg, #F37575 0%, #F33333 100%);
+}
+.lui_asc_item_flag-blue {
+  background-image: linear-gradient(-270deg, #6BA4FF 0%, #1B6FF5 100%);
+}
+.lui_asc_item_flag-orange {
+  background-image: linear-gradient(90deg, #FFB57A 0%, #FF943E 100%);
+}
+.lui_asc_item_flag-black {
+  background-image: linear-gradient(90deg, #AEADAD 0%, #807F7F 100%);
+}
+.lui_asc_mask {
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, .4);
+  position: fixed;
+  top: 0;
+  left: 0;
+}
+.lui_asc_nav_dropList {
+  background: #fff;
+  position: fixed;
+  top: 42px;
+  width: 100%;
+  z-index: 102;
+}
+.lui_asc_ndl_item {
+  padding: 13px 20px;
+  border-bottom: 1px solid #F2F4F8;
+  font-size: 15px;
+  color: #333333;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.lui_asc_ndl_item-active {
+  color: #4285F4;
+}
+.lui_asc_ndl_item_icon {
+  width: 18px;
+  height: 18px;
+  background: url(../images/pass.png) no-repeat center;
+  background-size: contain;
+  display: block;
+}
+/* #126524 【督办管理】移动端督办信息查看页面，基本信息左侧信息没有留白[iphonexr] */
+#__xform_kmSuperviseMain>.muiSimple>tbody>tr>td:first-child{
+  padding-left:.6rem;
+}

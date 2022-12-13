@@ -1,0 +1,190 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans
+	xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.0.xsd">
+	<bean
+		name="/fssc/ledger/fssc_ledger_invoice/fsscLedgerInvoice.do"
+		class="com.landray.kmss.fssc.ledger.actions.FsscLedgerInvoiceAction"
+		lazy-init="true"
+		parent="KmssBaseAction">
+		<property
+			name="formType"
+			value="com.landray.kmss.fssc.ledger.forms.FsscLedgerInvoiceForm" />
+		<property name="forwards">
+			<map>
+				<entry
+					key="data"
+					value="/fssc/ledger/fssc_ledger_invoice/fsscLedgerInvoice_data.jsp" />
+				<entry
+					key="edit"
+					value="/fssc/ledger/fssc_ledger_invoice/fsscLedgerInvoice_edit.jsp" />
+				<entry
+					key="view"
+					value="/fssc/ledger/fssc_ledger_invoice/fsscLedgerInvoice_view.jsp" />
+				<entry 
+	                key="data.4m" 
+	                value="/fssc/ledger/fssc_ledger_invoice/mobile/data.jsp"/>
+	            <entry 
+	                key="edit.4m" 
+	                value="/fssc/ledger/fssc_ledger_invoice/mobile/edit.jsp"/>
+	            <entry 
+	                key="view.4m" 
+	                value="/fssc/ledger/fssc_ledger_invoice/mobile/view.jsp"/>
+	            <entry 
+	                key="batchPrint" 
+	                value="/fssc/ledger/fssc_ledger_invoice/fsscLedgerInvoice_qrCode_print.jsp"/>
+			</map>
+		</property>
+	</bean>
+	<bean
+		name="/fssc/ledger/fssc_ledger_invoice/fsscLedgerInvoiceData.do"
+		class="com.landray.kmss.fssc.ledger.actions.FsscLedgerInvoiceDataAction"
+		lazy-init="true"
+		parent="KmssBaseAction">
+		<property
+			name="formType"
+			value="com.landray.kmss.fssc.ledger.forms.FsscLedgerInvoiceForm" />
+		<property name="forwards">
+			<map>
+				<entry
+					key="fdInvoice"
+					value="/fssc/ledger/fssc_ledger_invoice/fsscLedgerInvoice_dialog_fdInvoice.jsp" />
+			</map>
+		</property>
+	</bean>
+	<bean
+		name="/fssc/ledger/fssc_ledger_invoice/fsscLedgerDetail.do"
+		class="com.landray.kmss.fssc.ledger.actions.FsscLedgerDetailAction"
+		lazy-init="true"
+		parent="KmssBaseAction">
+		<property
+			name="formType"
+			value="com.landray.kmss.fssc.ledger.forms.FsscLedgerDetailForm" />
+	</bean>
+	<bean
+		name="/fssc/ledger/fssc_ledger_material/fsscLedgerMaterial.do"
+		class="com.landray.kmss.fssc.ledger.actions.FsscLedgerMaterialAction"
+		lazy-init="true"
+		parent="KmssBaseAction">
+		<property
+			name="formType"
+			value="com.landray.kmss.fssc.ledger.forms.FsscLedgerMaterialForm" />
+		<property name="forwards">
+			<map>
+				<entry
+					key="data"
+					value="/fssc/ledger/fssc_ledger_material/fsscLedgerMaterial_data.jsp" />
+				<entry
+					key="edit"
+					value="/fssc/ledger/fssc_ledger_material/fsscLedgerMaterial_edit.jsp" />
+				<entry
+					key="view"
+					value="/fssc/ledger/fssc_ledger_material/fsscLedgerMaterial_view.jsp" />
+				<entry
+					key="importResult"
+					value="/fssc/base/resource/jsp/fsscBaseImport_result.jsp" />
+			</map>
+		</property>
+	</bean>
+	<bean
+		name="/fssc/ledger/fssc_ledger_material_stock/fsscLedgerMaterialStock.do"
+		class="com.landray.kmss.fssc.ledger.actions.FsscLedgerMaterialStockAction"
+		lazy-init="true"
+		parent="KmssBaseAction">
+		<property
+			name="formType"
+			value="com.landray.kmss.fssc.ledger.forms.FsscLedgerMaterialStockForm" />
+		<property name="forwards">
+			<map>
+				<entry
+					key="data"
+					value="/fssc/ledger/fssc_ledger_material_stock/fsscLedgerMaterialStock_data.jsp" />
+				<entry
+					key="edit"
+					value="/fssc/ledger/fssc_ledger_material_stock/fsscLedgerMaterialStock_edit.jsp" />
+				<entry
+					key="view"
+					value="/fssc/ledger/fssc_ledger_material_stock/fsscLedgerMaterialStock_view.jsp" />
+			</map>
+		</property>
+	</bean>
+	<bean 
+            name="/fssc/ledger/fssc_ledger_contract/fsscLedgerContract.do" 
+            class="com.landray.kmss.fssc.ledger.actions.FsscLedgerContractAction" 
+            lazy-init="true"
+			parent="KmssBaseAction">
+			<property
+				name="formType"
+				value="com.landray.kmss.fssc.ledger.forms.FsscLedgerContractForm" />
+            <property name="forwards"> 
+            	<map>
+            		<entry
+                		key="data" 
+                		value="/fssc/ledger/fssc_ledger_contract/fsscLedgerContract_data.jsp"/>
+            		<entry 
+                		key="edit" 
+                		value="/fssc/ledger/fssc_ledger_contract/fsscLedgerContract_edit.jsp"/>
+            		<entry 
+                		key="view" 
+                		value="/fssc/ledger/fssc_ledger_contract/fsscLedgerContract_view.jsp"/>
+            		<entry 
+                		key="importResult" 
+                		value="/fssc/base/resource/jsp/fsscBaseImport_result.jsp"/>
+                    <entry 
+                    	key="getContractUseDetail"
+                    	value="/fssc/ledger/fssc_ledger_contract/fsscLedgerContract_use_detail.jsp"/>
+                </map>
+            </property>
+        </bean>
+        <bean 
+            name="/fssc/ledger/fssc_ledger_contract/fsscLedgerContractClause.do" 
+            class="com.landray.kmss.fssc.ledger.actions.FsscLedgerContractClauseAction" 
+            lazy-init="true"
+			parent="KmssBaseAction">
+			<property
+				name="formType"
+				value="com.landray.kmss.fssc.ledger.forms.FsscLedgerContractClauseForm" />
+		</bean>
+    <bean 
+        class="com.landray.kmss.fssc.ledger.actions.FsscLedgerCreditAction" 
+        parent="KmssBaseAction" 
+        name="/fssc/ledger/fssc_ledger_credit/fsscLedgerCredit.do" 
+        lazy-init="true">
+        <property 
+            name="formType" 
+            value="com.landray.kmss.fssc.ledger.forms.FsscLedgerCreditForm"/>
+        <property 
+            name="forwards">
+            <map>
+                <entry 
+                    key="data" 
+                    value="/fssc/ledger/fssc_ledger_credit/fsscLedgerCredit_data.jsp"/>
+                <entry 
+                    key="edit" 
+                    value="/fssc/ledger/fssc_ledger_credit/fsscLedgerCredit_edit.jsp"/>
+                <entry 
+                    key="view" 
+                    value="/fssc/ledger/fssc_ledger_credit/fsscLedgerCredit_view.jsp"/>
+            </map>
+        </property>
+    </bean>
+		<bean 
+	        class="com.landray.kmss.fssc.ledger.actions.FsscLedgerContractDataAction" 
+	        parent="KmssBaseAction" 
+	        name="/fssc/ledger/fssc_ledger_contract/fsscLedgerContractData.do" 
+	        lazy-init="true">
+	        <property 
+	            name="formType" 
+	            value="com.landray.kmss.fssc.ledger.forms.FsscLedgerContractForm"/>
+	    </bean>
+	    <bean 
+	        class="com.landray.kmss.fssc.ledger.actions.FsscLedgerContractClauseDataAction" 
+	        parent="KmssBaseAction" 
+	        name="/fssc/ledger/fssc_ledger_contract/fsscLedgerContractClauseData.do" 
+	        lazy-init="true">
+	        <property 
+	            name="formType" 
+	            value="com.landray.kmss.fssc.ledger.forms.FsscLedgerContractClauseForm"/>
+	    </bean>
+</beans>

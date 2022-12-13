@@ -1,0 +1,14 @@
+<root 
+	xmlns="http://www.landray.com.cn/schema/person" 
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="
+			http://www.landray.com.cn/schema/person  ../../../sys/person/person.xsd">
+	 <links type="shortcut" order="10">
+	    <link 
+	        id="km_asset_shortcut_add"
+	        url="/km/asset/km_asset_apply_base/kmAssetApplyBase.do?method=add" 
+	        msgKey="km-asset:kmAssetApplyBase.shortcut.create"
+	        icon="lui_icon_l_icon_1"/>
+	</links>
+	
+</root>

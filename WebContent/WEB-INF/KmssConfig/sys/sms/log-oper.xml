@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<log-oper>
+	<logset>
+		<oper
+            id="sysSmsConfig"
+            extends="sysAppConfigOperLog"
+            model="*"
+            action="/sys/sms/sys_sms_config/sysSmsConfig.do">
+        </oper>
+        <oper
+        	id="sysSmsMainOperLog"
+        	extends="BaseOperLog"
+        	model="*"
+        	action="/sys/sms/sys_sms_main/sysSmsMain.do">
+        </oper>
+	</logset>
+</log-oper>

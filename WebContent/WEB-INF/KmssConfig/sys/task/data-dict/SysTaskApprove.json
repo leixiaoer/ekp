@@ -1,0 +1,49 @@
+{
+    "global":     {
+        "modelName": "com.landray.kmss.sys.task.model.SysTaskApprove",
+        "messageKey": "sys-task:table.sysTaskApprove",
+        "displayProperty": "fdApprove",
+        "serviceBean": "sysTaskApproveService",
+        "table": "sys_task_approve",
+        "url": "/sys/task/sys_task_approve/sysTaskApprove.do?method=view&fdId=${fdId}"
+    },
+    "attrs":     {
+        "fdId":         {
+            "propertyType": "id",
+            "generator": {"type": "assigned"}
+        },
+        "fdApprove":         {
+            "propertyType": "simple",
+            "messageKey": "sys-task:sysTaskApprove.fdApprove",
+            "type": "String",
+            "column": "fd_approve",
+            "notNull": "true",
+            "length": "200",
+            "validate": "true"
+        },
+        "fdOrder":         {
+            "propertyType": "simple",
+            "messageKey": "sys-task:sysTaskCategory.fdOrder",
+            "type": "Integer",
+            "column": "fd_order",
+            "notNull": "false",
+            "length": "10",
+            "validate": "true"
+        },
+        "fdScore":         {
+            "propertyType": "simple",
+            "messageKey": "sys-task:sysTaskApprove.fdScore",
+            "type": "Double",
+            "column": "fd_score",
+            "notNull": "false",
+            "length": "100"
+        },
+        "fdIsAvailable":         {
+            "propertyType": "simple",
+            "messageKey": "sys-task:sysTaskApprove.fdIsAvailable",
+            "type": "Boolean",
+            "column": "fd_is_available",
+            "notNull": "false"
+        }
+    }
+}

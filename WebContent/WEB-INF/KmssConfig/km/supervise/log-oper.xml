@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<log-oper>
+	<logset>
+         <oper
+            id="kmSuperviseMainOperLog"
+            extends="BaseOperLog"
+            model="*"
+            action="/km/supervise/km_supervise_main/kmSuperviseMain.do">
+            <query
+				method="addConcern" logPoint="addConcern"
+				messageKey="km-supervise:kmSuperviseMain.logOper.addConcern" />
+		    <query
+				method="deleteConcern" logPoint="Base_UrlParam;Service_Delete"
+				messageKey="km-supervise:kmSuperviseMain.logOper.deleteConcern" />
+		    <query
+				method="downloadTemplate" logPoint="Base_UrlParam"
+				messageKey="km-supervise:kmSuperviseMain.logOper.downloadTemplate" />
+		    <query
+				method="importSupervise" logPoint="Base_UrlParam"
+				messageKey="km-supervise:kmSuperviseMain.logOper.importSupervise" />
+			<query
+				method="remark" logPoint="Service_Update" 
+				messageKey="km-supervise:kmSuperviseMain.logOper.remark"/>
+			<query
+				method="saveAddFinish" logPoint="saveAddFinish" 
+				messageKey="km-supervise:kmSuperviseMain.logOper.saveAddFinish"/>	
+			<query
+				method="publishSupervise" logPoint="Service_Update" 
+				messageKey="km-supervise:kmSuperviseMain.logOper.publishSupervise"/>
+			<query
+				method="saveAddRepeal" logPoint="saveAddRepeal" 
+				messageKey="km-supervise:kmSuperviseMain.logOper.saveAddRepeal"/>
+			<query
+				method="saveAddRestart" logPoint="saveAddRestart" 
+				messageKey="km-supervise:kmSuperviseMain.logOper.saveAddRestart"/>
+			<query
+				method="addDynamic" logPoint="addDynamic" 
+				messageKey="km-supervise:kmSuperviseMain.logOper.addDynamic"/>
+			<query
+				method="overviewChart"
+				logPoint="Base_UrlParam;overviewChart"/>				
+        </oper>
+		  <oper
+        	id="kmSuperviseMainPortletOperLog"
+        	extends="BaseOperLog"
+        	model="*"
+        	action="/sys/common/dataxml.jsp">
+        	<query
+            	paramName="s_bean"
+            	paramValue="kmSuperviseMainPortlet"
+            	logPoint="Base_UrlParam;kmSuperviseMainPortlet"
+            	messageKey="km-supervise:kmSuperviseMainPortlet.logOper.getDataList">
+            </query>
+        </oper>
+		  
+		   <oper
+	            id="kmSuperviseLevelOperLog"
+	            extends="BaseOperLog"
+	            model="com.landray.kmss.km.supervise.model.KmSuperviseLevel"
+	            action="/km/supervise/km_supervise_level/kmSuperviseLevel.do">
+	       </oper>
+	       
+	       <oper
+	            id="kmSuperviseUrgencyOperLog"
+	            extends="BaseOperLog"
+	            model="com.landray.kmss.km.supervise.model.KmSuperviseUrgency"
+	            action="/km/supervise/km_supervise_urgency/kmSuperviseUrgency.do">
+	       </oper>
+	       
+	       <oper
+	            id="kmSuperviseTempletOperLog"
+	            extends="BaseOperLog"
+	            model="com.landray.kmss.km.supervise.model.KmSuperviseTemplet"
+	            action="/km/supervise/km_supervise_templet/kmSuperviseTemplet.do">
+	            <ignoreFields>authAttNoprint;authAttNocopy;authAttNodownload</ignoreFields>
+	       </oper>
+	       
+	       <oper
+	            id="kmSuperviseWarnOperLog"
+	            extends="BaseOperLog"
+	            model="com.landray.kmss.km.supervise.model.KmSuperviseWarn"
+	            action="/km/supervise/km_supervise_warn/kmSuperviseWarn.do">
+	       </oper>
+	       
+	        <oper
+	            id="kmSuperviseDynamicOperLog"
+	            extends="BaseOperLog"
+	            model="com.landray.kmss.km.supervise.model.KmSuperviseDynamic"
+	            action="/km/supervise/km_supervise_dynamic/kmSuperviseDynamic.do">
+	       </oper>
+	       
+	       <oper
+	            id="kmSuperviseConcernOperLog"
+	            extends="BaseOperLog"
+	            model="com.landray.kmss.km.supervise.model.KmSuperviseConcern"
+	            action="/km/supervise/km_supervise_concern/kmSuperviseConcern.do">
+	       </oper>
+	       
+	       <oper
+	            id="kmSuperviseBackOperLog"
+	            extends="BaseOperLog"
+	            model="com.landray.kmss.km.supervise.model.KmSuperviseBack"
+	            action="/km/supervise/km_supervise_back/kmSuperviseBack.do">
+	       </oper>
+	       
+	</logset>
+</log-oper>

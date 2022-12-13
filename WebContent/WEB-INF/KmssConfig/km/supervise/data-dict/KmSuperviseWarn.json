@@ -1,0 +1,87 @@
+{
+    "global":     {
+        "modelName": "com.landray.kmss.km.supervise.model.KmSuperviseWarn",
+        "messageKey": "km-supervise:table.kmSuperviseWarn",
+        "table": "km_supervise_warn",
+        "url": "/km/supervise/km_supervise_warn/kmSuperviseWarn.do?method=view&fdId=${fdId}",
+        "displayProperty": "fdName",
+        "serviceBean": "kmSuperviseWarnService"
+    },
+    "attrs":     {
+        "fdId":         {
+            "propertyType": "id",
+            "generator": {"type": "assigned"}
+        },
+        "fdKey":         {
+            "propertyType": "simple",
+            "type": "String",
+            "length": "36",
+            "defaultValue": "",
+            "messageKey": "km-supervise:kmSuperviseWarn.fdKey",
+            "column": "fd_key",
+            "notNull": "true",
+            "validate": "true",
+            "canSearch": "true",
+            "canRelation": "true",
+            "canDisplay": "true",
+            "readOnly": "false"
+        },
+        "fdFinishTime":         {
+            "propertyType": "simple",
+            "type": "String",
+            "length": "16",
+            "defaultValue": "",
+            "messageKey": "km-supervise:kmSuperviseWarn.fdFinishTime",
+            "column": "fd_finish_time",
+            "notNull": "true",
+            "validate": "true",
+            "canSearch": "true",
+            "canRelation": "true",
+            "canDisplay": "true",
+            "readOnly": "false"
+        },
+        "fdNotifyPeople":         {
+            "propertyType": "simple",
+            "type": "String",
+            "length": "36",
+            "enumType": "km_supervise_warn",
+            "defaultValue": "",
+            "messageKey": "km-supervise:kmSuperviseWarn.fdNotifyPeople",
+            "column": "fd_notify_people",
+            "notNull": "false",
+            "validate": "true",
+            "canSearch": "true",
+            "canRelation": "true",
+            "canDisplay": "true",
+            "readOnly": "false"
+        },
+        "fdNotifyType":         {
+            "propertyType": "simple",
+            "type": "String",
+            "length": "36",
+            "defaultValue": "",
+            "messageKey": "km-supervise:kmSuperviseWarn.fdNotifyType",
+            "column": "fd_notify_type",
+            "notNull": "false",
+            "validate": "true",
+            "canSearch": "true",
+            "canRelation": "true",
+            "canDisplay": "true",
+            "readOnly": "false"
+        },
+        "fdName":         {
+            "propertyType": "simple",
+            "type": "String",
+            "length": "200",
+            "defaultValue": "",
+            "messageKey": "km-supervise:kmSuperviseWarn.fdName",
+            "column": "fd_name",
+            "notNull": "true",
+            "validate": "true",
+            "canSearch": "true",
+            "canRelation": "true",
+            "canDisplay": "true",
+            "readOnly": "false"
+        }
+    }
+}

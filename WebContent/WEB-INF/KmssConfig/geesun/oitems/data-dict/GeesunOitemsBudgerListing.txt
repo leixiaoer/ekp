@@ -1,0 +1,35 @@
+{
+    "global":     {
+        "modelName": "com.landray.kmss.geesun.oitems.model.GeesunOitemsBudgerListing",
+        "messageKey": "geesun-oitems:table.geesunOitemsBudgerListing",
+        "table": "geesun_oitems_budger_list"
+    },
+    "attrs":     {
+        "fdId":         {
+            "propertyType": "id",
+            "generator": {"type": "assigned"}
+        },
+        "fdApplicationNumber":         {
+            "propertyType": "simple",
+            "messageKey": "geesun-oitems:geesunOitemsShoppingTrolley.fdApplicationNumber",
+            "type": "Integer",
+            "column": "fd_application_number",
+            "notNull": "false",
+            "length": "12"
+        },
+        "geesunOitemsBudgerApplication":         {
+            "propertyType": "model",
+            "messageKey": "",
+            "type": "com.landray.kmss.geesun.oitems.model.GeesunOitemsBudgerApplication",
+            "column": "fd_application_id",
+            "notNull": "false"
+        },
+        "geesunOitemsListing":         {
+            "propertyType": "model",
+            "messageKey": "",
+            "type": "com.landray.kmss.geesun.oitems.model.GeesunOitemsListing",
+            "column": "fd_listing_id",
+            "notNull": "false"
+        }
+    }
+}

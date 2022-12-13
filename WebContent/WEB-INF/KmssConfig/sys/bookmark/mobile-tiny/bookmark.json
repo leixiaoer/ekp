@@ -1,0 +1,8 @@
+{
+	"id": "bookmark",
+	"title": "收藏机制",
+	"desc": "收藏机制文件",
+	"jsList": [
+		"/sys/bookmark/mobile/import/js/_BookTabBarButtonMixin.js"
+	]
+}

@@ -1,0 +1,32 @@
+@charset "utf-8";
+
+/*-------------------------------------------- kmSuperviseMain_data.jsp 中的样式提取，修复IE浏览器下导出样式缺陷 #54778 -----------------------------------------------*/
+.pro_barline {
+	width: 113px;
+	height: 7px;
+	background: #e5e4e1;
+	border: 1px solid #d2d1cc;
+	text-align: left;
+	border-radius: 4px;
+}
+
+.pro_barline .complete {
+	height: 7px;
+	background: #00a001;
+	border-radius: 3px;
+}
+
+.pro_barline .uncomplete {
+	height: 7px;
+	background: #ff8b00;
+	border-radius: 3px;
+}
+
+.all>span {
+	font-size: 2em;
+	color: #999;
+}
+
+.all>.gold {
+	color: gold;
+}

@@ -1,0 +1,192 @@
+{
+    "global":     {
+        "modelName": "com.landray.kmss.km.carmng.model.KmCarmngInsuranceInfo",
+        "messageKey": "km-carmng:table.kmCarmngInsuranceInfo",
+        "displayProperty": "fdInsuranceNo",
+        "serviceBean": "kmCarmngInsuranceInfoService",
+        "table": "km_carmng_insurance_info",
+        "url": "/km/carmng/km_carmng_insurance_info/kmCarmngInsuranceInfo.do?method=view&fdId=${fdId}"
+    },
+    "attrs":     {
+        "fdId":         {
+            "propertyType": "id",
+            "generator": {"type": "assigned"}
+        },
+        "fdProductBrand":         {
+            "propertyType": "simple",
+            "messageKey": "km-carmng:kmCarmngInsuranceInfo.fdProductBrand",
+            "type": "String",
+            "column": "fd_product_brand",
+            "notNull": "false",
+            "length": "200"
+        },
+        "fdRegisterTime":         {
+            "propertyType": "simple",
+            "messageKey": "km-carmng:kmCarmngInsuranceInfo.fdRegisterTime",
+            "type": "DateTime",
+            "column": "fd_register_time",
+            "notNull": "false"
+        },
+        "fdInsuranceStartTime":         {
+            "propertyType": "simple",
+            "messageKey": "km-carmng:kmCarmngInsuranceInfo.fdInsuranceStartTime",
+            "type": "DateTime",
+            "column": "fd_insurance_start_time",
+            "notNull": "false"
+        },
+        "fdInsuranceEndTime":         {
+            "propertyType": "simple",
+            "messageKey": "km-carmng:kmCarmngInsuranceInfo.fdInsuranceEndTime",
+            "type": "DateTime",
+            "column": "fd_insurance_end_time",
+            "notNull": "false"
+        },
+        "fdInsurancePrice":         {
+            "propertyType": "simple",
+            "messageKey": "km-carmng:kmCarmngInsuranceInfo.fdInsurancePrice",
+            "type": "Double",
+            "column": "fd_insurance_price",
+            "notNull": "false",
+            "length": "100"
+        },
+        "fdIsDamag":         {
+            "propertyType": "simple",
+            "messageKey": "km-carmng:kmCarmngInsuranceInfo.fdIsDamag",
+            "type": "Integer",
+            "column": "fd_is_damag",
+            "notNull": "false",
+            "length": "1"
+        },
+        "fdIsThirdInsurance":         {
+            "propertyType": "simple",
+            "messageKey": "km-carmng:kmCarmngInsuranceInfo.fdIsThirdInsurance",
+            "type": "Integer",
+            "column": "fd_is_third_insurance",
+            "notNull": "false",
+            "length": "1"
+        },
+        "fdIsRobInsurance":         {
+            "propertyType": "simple",
+            "messageKey": "km-carmng:kmCarmngInsuranceInfo.fdIsRobInsurance",
+            "type": "Integer",
+            "column": "fd_is_rob_insurance",
+            "notNull": "false",
+            "length": "1"
+        },
+        "fdIsGlassInsurance":         {
+            "propertyType": "simple",
+            "messageKey": "km-carmng:kmCarmngInsuranceInfo.fdIsGlassInsurance",
+            "type": "Integer",
+            "column": "fd_is_glass_insurance",
+            "notNull": "false",
+            "length": "1"
+        },
+        "fdIsAbatement":         {
+            "propertyType": "simple",
+            "messageKey": "km-carmng:kmCarmngInsuranceInfo.fdIsAbatement",
+            "type": "Integer",
+            "column": "fd_is_abatement",
+            "notNull": "false",
+            "length": "1"
+        },
+        "fdIsHeadline":         {
+            "propertyType": "simple",
+            "messageKey": "km-carmng:kmCarmngInsuranceInfo.fdIsHeadline",
+            "type": "Integer",
+            "column": "fd_is_headline",
+            "notNull": "false",
+            "length": "1"
+        },
+        "fdIsLiability":         {
+            "propertyType": "simple",
+            "messageKey": "km-carmng:kmCarmngInsuranceInfo.fdIsLiability",
+            "type": "Integer",
+            "column": "fd_is_liability",
+            "notNull": "false",
+            "length": "1"
+        },
+        "fdInsuranceFee":         {
+            "propertyType": "simple",
+            "messageKey": "km-carmng:kmCarmngInsuranceInfo.fdInsuranceFee",
+            "type": "Double",
+            "column": "fd_insurance_fee",
+            "notNull": "false",
+            "length": "12"
+        },
+        "fdInsuranceNo":         {
+            "propertyType": "simple",
+            "messageKey": "km-carmng:kmCarmngInsuranceInfo.fdInsuranceNo",
+            "type": "String",
+            "column": "fd_insurance_no",
+            "notNull": "false",
+            "length": "200"
+        },
+        "fdRemark":         {
+            "propertyType": "simple",
+            "messageKey": "km-carmng:kmCarmngInsuranceInfo.fdRemark",
+            "type": "String",
+            "column": "fd_remark",
+            "notNull": "false",
+            "length": "2000"
+        },
+        "docCreateTime":         {
+            "propertyType": "simple",
+            "messageKey": "km-carmng:kmCarmngInsuranceInfo.docCreateTime",
+            "type": "DateTime",
+            "column": "doc_create_time",
+            "notNull": "false"
+        },
+        "fdNotifyBeforeDay":         {
+            "propertyType": "simple",
+            "messageKey": "km-carmng:kmCarmngInsuranceInfo.notify.before.day",
+            "type": "Integer",
+            "column": "fd_notify_before_day",
+            "notNull": "false",
+            "canSearch": "true",
+            "length": "10"
+        },
+        "fdIsNotify":         {
+            "propertyType": "simple",
+            "messageKey": "km-carmng:kmCarmngInsuranceInfo.fdIsNotify",
+            "type": "Boolean",
+            "column": "fd_is_notify",
+            "length": "1"
+        },
+        "docModifyTime":         {
+            "propertyType": "simple",
+            "messageKey": "km-carmng:kmCarmngInsuranceInfo.docModifyTime",
+            "type": "DateTime",
+            "column": "doc_modify_time"
+        },
+        "docModifier":         {
+            "propertyType": "model",
+            "messageKey": "km-carmng:kmCarmngInsuranceInfo.docModifier",
+            "type": "com.landray.kmss.sys.organization.model.SysOrgElement",
+            "column": "doc_modifier_id"
+        },
+        "docCreator":         {
+            "propertyType": "model",
+            "messageKey": "km-carmng:kmCarmngInsuranceInfo.docCreatorId",
+            "type": "com.landray.kmss.sys.organization.model.SysOrgElement",
+            "column": "doc_creator_id"
+        },
+        "fdVehiclesInfo":         {
+            "propertyType": "model",
+            "messageKey": "km-carmng:kmCarmngInsuranceInfo.fdVehiclesInfoId",
+            "type": "com.landray.kmss.km.carmng.model.KmCarmngInfomation",
+            "column": "fd_vehicles_info_id"
+        },
+        "fdNotifyPersons":         {
+            "propertyType": "list",
+            "messageKey": "km-carmng:kmCarmngInsuranceInfo.fdNotifyPersons",
+            "type": "com.landray.kmss.sys.organization.model.SysOrgElement",
+            "column": "fd_insurance_id",
+            "elementColumn": "fd_notify_person_id",
+            "table": "km_carmng_insurance_notify"
+        }
+    },
+    "attachments": {"attachment":     {
+        "propertyType": "att",
+        "messageKey": "km-carmng:kmCarmngInsuranceInfo.attachment"
+    }}
+}

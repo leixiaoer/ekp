@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<description xmlns="http://www.example.org/description-config" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.example.org/description-config ../../../description.xsd">
+	<module>
+		<module-name>钉钉集成</module-name>
+		<module-path>third/ding</module-path>
+		<baseline>V15.0.4.R.20200410</baseline>
+		<source-md5>8771e32113396e115c36f6e0a19d3206</source-md5>
+		<is-custom>否</is-custom>
+		<serial-num>84</serial-num>
+	</module>
+</description>

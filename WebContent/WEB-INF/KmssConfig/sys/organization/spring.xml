@@ -1,0 +1,1399 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans
+	xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.0.xsd">
+	<bean id="sysOrgAdminValidator"
+		class="com.landray.kmss.sys.organization.intercept.SysOrgAdminValidator">
+		<property name="sysOrgCoreService">
+			<ref local="sysOrgCoreService" />
+		</property>
+	</bean>
+	<bean
+		id="sysOrgGetCurrentUserInfo"
+		class="com.landray.kmss.sys.organization.service.spring.SysOrgGetCurrentUserInfo">
+		<property
+			name="sysOrgPersonService">
+			<ref
+				local="sysOrgPersonService" />
+		</property>
+	</bean>
+
+	<bean
+		id="sysOrgRoleLineTree"
+		class="com.landray.kmss.sys.organization.service.spring.SysOrgRoleLineTree">
+		<property
+			name="sysOrgRoleLineService">
+			<ref
+				local="sysOrgRoleLineService" />
+		</property>
+	</bean>
+	<bean
+		id="sysOrgRoleConfTree"
+		class="com.landray.kmss.sys.organization.service.spring.SysOrgRoleConfTree">
+		<property
+			name="sysOrgRoleConfService">
+			<ref
+				local="sysOrgRoleConfService" />
+		</property>
+		<property
+			name="sysOrgRoleConfCateService">
+			<ref
+				local="sysOrgRoleConfCateService" />
+		</property>
+	</bean>
+	<bean
+		id="sysOrgRoleLineDao"
+		parent="KmssAuthBaseDao"
+		class="com.landray.kmss.sys.organization.dao.hibernate.SysOrgRoleLineDaoImp">
+		<property
+			name="modelName"
+			value="com.landray.kmss.sys.organization.model.SysOrgRoleLine" />
+	</bean>
+	<bean
+		id="sysOrgRoleLineTarget"
+		parent="KmssBaseTarget"
+		class="com.landray.kmss.sys.organization.service.spring.SysOrgRoleLineServiceImp">
+		<property
+			name="baseDao">
+			<ref
+				local="sysOrgRoleLineDao" />
+		</property>
+	</bean>
+	<bean
+		id="sysOrgRoleLineService"
+		parent="KmssBaseService">
+		<property
+			name="target">
+			<ref
+				local="sysOrgRoleLineTarget" />
+		</property>
+		<property
+			name="transactionAttributes">
+			<props>
+				<prop
+					key="*">PROPAGATION_REQUIRED</prop>
+			</props>
+		</property>
+	</bean>
+	<bean
+		id="sysOrgRoleLineOption"
+		class="com.landray.kmss.sys.organization.service.spring.SysOrgRoleLineOption">
+		<property
+			name="sysOrgRoleLineService">
+			<ref
+				local="sysOrgRoleLineService" />
+		</property>
+	</bean>
+	<bean
+		id="sysOrgRoleConfCateDao"
+		parent="KmssBaseDao"
+		class="com.landray.kmss.sys.organization.dao.hibernate.SysOrgRoleConfCateDaoImp">
+		<property
+			name="modelName"
+			value="com.landray.kmss.sys.organization.model.SysOrgRoleConfCate" />
+	</bean>
+	<bean
+		id="sysOrgRoleConfCateTarget"
+		parent="KmssBaseTarget"
+		class="com.landray.kmss.sys.organization.service.spring.SysOrgRoleConfCateServiceImp">
+		<property
+			name="baseDao">
+			<ref
+				local="sysOrgRoleConfCateDao" />
+		</property>
+	</bean>
+	<bean
+		id="sysOrgRoleConfCateService"
+		parent="KmssBaseService">
+		<property
+			name="target">
+			<ref
+				local="sysOrgRoleConfCateTarget" />
+		</property>
+	</bean>
+	<bean
+		id="sysOrgRoleSimulator"
+		class="com.landray.kmss.sys.organization.service.spring.SysOrgRoleSimulator">
+		<property
+			name="sysOrgCoreService">
+			<ref
+				local="sysOrgCoreService" />
+		</property>
+	</bean>
+
+	<bean
+		id="sysOrgRoleConfDao"
+		parent="KmssAuthBaseDao"
+		class="com.landray.kmss.sys.organization.dao.hibernate.SysOrgRoleConfDaoImp">
+		<property
+			name="modelName"
+			value="com.landray.kmss.sys.organization.model.SysOrgRoleConf" />
+	</bean>
+	<bean
+		id="sysOrgRoleConfTarget"
+		parent="KmssBaseTarget"
+		class="com.landray.kmss.sys.organization.service.spring.SysOrgRoleConfServiceImp">
+		<property
+			name="baseDao">
+			<ref
+				local="sysOrgRoleConfDao" />
+		</property>
+		<property
+			name="sysOrgElementService">
+			<ref
+				local="sysOrgElementService" />
+		</property>
+		<property
+			name="sysOrgRoleLineDefaultRoleDao">
+			<ref
+				local="sysOrgRoleLineDefaultRoleDao" />
+		</property>
+	</bean>
+	<bean
+		id="sysOrgRoleConfService"
+		parent="KmssBaseService">
+		<property
+			name="target">
+			<ref
+				local="sysOrgRoleConfTarget" />
+		</property>
+		<property
+			name="transactionAttributes">
+			<props>
+				<prop
+					key="*">PROPAGATION_REQUIRED</prop>
+			</props>
+		</property>
+	</bean>
+
+	<bean
+		id="sysOrgRoleLineDefaultRoleDao"
+		parent="KmssAuthBaseDao"
+		class="com.landray.kmss.sys.organization.dao.hibernate.SysOrgRoleLineDefaultRoleDaoImp">
+		<property
+			name="modelName"
+			value="com.landray.kmss.sys.organization.model.SysOrgRoleLineDefaultRole" />
+	</bean>
+	
+	<bean
+		id="sysOrgRoleLineDefaultRoleTarget"
+		parent="KmssBaseTarget"
+		class="com.landray.kmss.sys.organization.service.spring.SysOrgRoleLineDefaultRoleServiceImp">
+		<property
+			name="baseDao">
+			<ref
+				local="sysOrgRoleLineDefaultRoleDao" />
+		</property>
+	</bean>
+	<bean
+		id="sysOrgRoleLineDefaultRoleService"
+		parent="KmssBaseService">
+		<property
+			name="target">
+			<ref
+				local="sysOrgRoleLineDefaultRoleTarget" />
+		</property>
+	</bean>
+
+	<bean
+		id="sysOrgPersonAddressTypeDao"
+		parent="KmssAuthBaseDao"
+		class="com.landray.kmss.sys.organization.dao.hibernate.SysOrgPersonAddressTypeDaoImp">
+		<property
+			name="modelName"
+			value="com.landray.kmss.sys.organization.model.SysOrgPersonAddressType" />
+	</bean>
+	<bean
+		id="sysOrgPersonAddressTypeTarget"
+		parent="KmssBaseTarget"
+		class="com.landray.kmss.sys.organization.service.spring.SysOrgPersonAddressTypeServiceImp">
+		<property
+			name="baseDao">
+			<ref
+				local="sysOrgPersonAddressTypeDao" />
+		</property>
+	</bean>
+	<bean
+		id="sysOrgPersonAddressTypeService"
+		parent="KmssBaseService">
+		<property
+			name="target">
+			<ref
+				local="sysOrgPersonAddressTypeTarget" />
+		</property>
+	</bean>
+	<bean
+		id="organizationTree"
+		class="com.landray.kmss.sys.organization.service.spring.OrganizationTree">
+		<property
+			name="sysOrgElementService">
+			<ref
+				local="sysOrgElementService" />
+		</property>
+		<property
+			name="sysOrganizationVisibleService">
+			<ref
+				local="sysOrganizationVisibleService" />
+		</property>
+		<property
+			name="roleValidator">
+			<ref 
+				bean="roleValidator" />
+		</property>
+		<property
+			name="sysOrganizationStaffingLevelService">
+			<ref
+				local="sysOrganizationStaffingLevelService" />
+		</property>
+	</bean>
+	<bean
+		id="organizationUserDept"
+		class="com.landray.kmss.sys.organization.service.spring.OrganizationUserDept">
+		<property
+			name="sysOrgElementService">
+			<ref
+				local="sysOrgElementService" />
+		</property>
+	</bean>
+	<bean
+		id="organizationDialogList"
+		class="com.landray.kmss.sys.organization.service.spring.OrgDialogList">
+		<property
+			name="sysOrgElementService">
+			<ref
+				local="sysOrgElementService" />
+		</property>
+		<property
+			name="sysOrganizationVisibleService">
+			<ref
+				local="sysOrganizationVisibleService" />
+		</property>
+		<property
+			name="roleValidator">
+			<ref 
+				bean="roleValidator" />
+		</property>
+		<property
+			name="sysOrganizationStaffingLevelService">
+			<ref
+				local="sysOrganizationStaffingLevelService" />
+		</property>
+	</bean>
+	<bean
+		id="organizationDialogGroupTree"
+		class="com.landray.kmss.sys.organization.service.spring.OrgDialogGroupTree">
+		<property
+			name="sysOrgGroupService">
+			<ref
+				local="sysOrgGroupService" />
+		</property>
+		<property
+			name="sysOrgGroupCateService">
+			<ref
+				local="sysOrgGroupCateService" />
+		</property>
+	</bean>
+	<bean
+		id="organizationDialogGroupList"
+		class="com.landray.kmss.sys.organization.service.spring.OrgDialogGroupList">
+		<property
+			name="sysOrgGroupService">
+			<ref
+				local="sysOrgGroupService" />
+		</property>
+		<property
+			name="sysOrgElementService">
+			<ref
+				local="sysOrgElementService" />
+		</property>
+		<property
+			name="sysOrganizationStaffingLevelService">
+			<ref
+				local="sysOrganizationStaffingLevelService" />
+		</property>
+	</bean>
+	<bean
+		id="organizationDialogRoleList"
+		class="com.landray.kmss.sys.organization.service.spring.OrgDialogRoleList">
+		<property
+			name="sysOrgRoleService">
+			<ref
+				local="sysOrgRoleService" />
+		</property>
+	</bean>
+	<bean
+		id="organizationDialogSearch"
+		class="com.landray.kmss.sys.organization.service.spring.OrgDialogSearch">
+		<property
+			name="sysOrgElementService">
+			<ref
+				local="sysOrgElementService" />
+		</property>
+		<property
+			name="sysOrgRoleService">
+			<ref
+				local="sysOrgRoleService" />
+		</property>
+		<property
+			name="sysOrgGroupService">
+			<ref
+				local="sysOrgGroupService" />
+		</property>
+		<property
+			name="sysOrganizationStaffingLevelService">
+			<ref
+				local="sysOrganizationStaffingLevelService" />
+		</property>
+	</bean>
+	<bean
+		id="organizationDialogMyAddress"
+		class="com.landray.kmss.sys.organization.service.spring.OrgDialogMyAddress">
+		<property
+			name="sysOrgPersonAddressTypeService">
+			<ref
+				local="sysOrgPersonAddressTypeService" />
+		</property>
+		<property
+			name="sysOrganizationStaffingLevelService">
+			<ref
+				local="sysOrganizationStaffingLevelService" />
+		</property>
+	</bean>
+
+	<bean
+		id="sysOrgElementDao"
+		parent="KmssAuthBaseDao"
+		class="com.landray.kmss.sys.organization.dao.hibernate.SysOrgElementDaoImp">
+		<property
+			name="modelName"
+			value="com.landray.kmss.sys.organization.model.SysOrgElement" />
+	</bean>
+	<bean
+		id="sysOrgElementTarget"
+		parent="KmssBaseTarget"
+		class="com.landray.kmss.sys.organization.service.spring.SysOrgElementServiceImp">
+		<property
+			name="baseDao">
+			<ref
+				local="sysOrgElementDao" />
+		</property>
+		<property
+			name="sysOMSCacheService">
+			<ref
+				local="sysOMSCacheService" />
+		</property>
+		<property
+			name="sysLogOrganizationService">
+			<ref
+				bean="sysLogOrganizationService" />
+		</property>
+	</bean>
+	<bean
+		id="sysOrgElementService"
+		parent="KmssBaseService">
+		<property
+			name="target">
+			<ref
+				local="sysOrgElementTarget" />
+		</property>
+	</bean>
+
+	<bean
+		id="sysOrgOrgDao"
+		parent="sysOrgElementDao"
+		class="com.landray.kmss.sys.organization.dao.hibernate.SysOrgOrgDaoImp">
+		<property
+			name="modelName"
+			value="com.landray.kmss.sys.organization.model.SysOrgOrg" />
+	</bean>
+	<bean
+		id="sysOrgOrgTarget"
+		parent="sysOrgElementTarget"
+		class="com.landray.kmss.sys.organization.service.spring.SysOrgOrgServiceImp">
+		<property
+			name="baseDao">
+			<ref
+				local="sysOrgOrgDao" />
+		</property>
+		<property
+			name="sysOrgElementService">
+			<ref
+				local="sysOrgElementService" />
+		</property>
+	</bean>
+	<bean
+		id="sysOrgOrgService"
+		parent="sysOrgElementService">
+		<property
+			name="target">
+			<ref
+				local="sysOrgOrgTarget" />
+		</property>
+	</bean>
+
+	<bean
+		id="sysOrgDeptDao"
+		parent="sysOrgElementDao"
+		class="com.landray.kmss.sys.organization.dao.hibernate.SysOrgDeptDaoImp">
+		<property
+			name="modelName"
+			value="com.landray.kmss.sys.organization.model.SysOrgDept" />
+	</bean>
+	<bean
+		id="sysOrgDeptTarget"
+		parent="sysOrgElementTarget"
+		class="com.landray.kmss.sys.organization.service.spring.SysOrgDeptServiceImp">
+		<property
+			name="baseDao">
+			<ref
+				local="sysOrgDeptDao" />
+		</property>
+		<property
+			name="sysOrgElementService">
+			<ref
+				local="sysOrgElementService" />
+		</property>
+	</bean>
+	<bean
+		id="sysOrgDeptService"
+		parent="sysOrgElementService">
+		<property
+			name="target">
+			<ref
+				local="sysOrgDeptTarget" />
+		</property>
+	</bean>
+
+	<bean
+		id="sysOrgChartTarget"
+		parent="KmssBaseTarget"
+		class="com.landray.kmss.sys.organization.service.spring.SysOrgChartServiceImp">
+		<property
+			name="sysOrgElementService">
+			<ref
+				local="sysOrgElementService" />
+		</property>
+	</bean>
+	<bean
+		id="sysOrgChartService"
+		parent="KmssBaseService">
+		<property
+			name="target">
+			<ref
+				local="sysOrgChartTarget" />
+		</property>
+	</bean>
+	
+	<bean
+		id="sysOrgPostDao"
+		parent="sysOrgElementDao"
+		class="com.landray.kmss.sys.organization.dao.hibernate.SysOrgPostDaoImp">
+		<property
+			name="modelName"
+			value="com.landray.kmss.sys.organization.model.SysOrgPost" />
+	</bean>
+	<bean
+		id="sysOrgPostTarget"
+		parent="sysOrgElementTarget"
+		class="com.landray.kmss.sys.organization.service.spring.SysOrgPostServiceImp">
+		<property
+			name="baseDao">
+			<ref
+				local="sysOrgPostDao" />
+		</property>
+		<property
+			name="sysOrgElementService">
+			<ref
+				local="sysOrgElementService" />
+		</property>
+		<property
+			name="sysOrgPersonService">
+			<ref
+				local="sysOrgPersonService" />
+		</property>		
+	</bean>
+	<bean
+		id="sysOrgPostService"
+		parent="sysOrgElementService">
+		<property
+			name="target">
+			<ref
+				local="sysOrgPostTarget" />
+		</property>
+	</bean>
+
+	<bean
+		id="sysOrgPersonDao"
+		parent="sysOrgElementDao"
+		class="com.landray.kmss.sys.organization.dao.hibernate.SysOrgPersonDaoImp">
+		<property
+			name="modelName"
+			value="com.landray.kmss.sys.organization.model.SysOrgPerson" />
+	</bean>
+	<bean
+		id="sysOrgPersonTarget"
+		parent="sysOrgElementTarget"
+		class="com.landray.kmss.sys.organization.service.spring.SysOrgPersonServiceImp">
+		<property
+			name="baseDao">
+			<ref
+				local="sysOrgPersonDao" />
+		</property>
+		<property
+			name="passwordEncoder">
+			<ref
+				local="passwordEncoder" />
+		</property>
+		<property
+			name="sysOrgElementService">
+			<ref
+				local="sysOrgElementService" />
+		</property>
+		<property
+			name="sysOrgPersonRestrictService">
+			<ref
+				local="sysOrgPersonRestrictService" />
+		</property>
+	</bean>
+	<bean
+		id="sysOrgPersonService"
+		parent="sysOrgElementService">
+		<property
+			name="target">
+			<ref
+				local="sysOrgPersonTarget" />
+		</property>
+	</bean>
+	<bean
+		id="passwordEncoder"
+		class="com.landray.kmss.sys.organization.service.spring.KmssPasswordEncoder" />
+
+	<bean
+		id="sysOrgGroupDao"
+		parent="sysOrgElementDao"
+		class="com.landray.kmss.sys.organization.dao.hibernate.SysOrgGroupDaoImp">
+		<property
+			name="modelName"
+			value="com.landray.kmss.sys.organization.model.SysOrgGroup" />
+	</bean>
+	<bean
+		id="sysOrgGroupTarget"
+		parent="sysOrgElementTarget"
+		class="com.landray.kmss.sys.organization.service.spring.SysOrgGroupServiceImp">
+		<property
+			name="baseDao">
+			<ref
+				local="sysOrgGroupDao" />
+		</property>
+	</bean>
+	<bean
+		id="sysOrgGroupService"
+		parent="sysOrgElementService">
+		<property
+			name="target">
+			<ref
+				local="sysOrgGroupTarget" />
+		</property>
+	</bean>
+
+	<bean
+		id="sysOrgRoleDao"
+		parent="sysOrgElementDao"
+		class="com.landray.kmss.sys.organization.dao.hibernate.SysOrgRoleDaoImp">
+		<property
+			name="modelName"
+			value="com.landray.kmss.sys.organization.model.SysOrgRole" />
+	</bean>
+	<bean
+		id="sysOrgRoleTarget"
+		parent="sysOrgElementTarget"
+		class="com.landray.kmss.sys.organization.service.spring.SysOrgRoleServiceImp">
+		<property
+			name="baseDao">
+			<ref
+				local="sysOrgRoleDao" />
+		</property>
+	</bean>
+	<bean
+		id="sysOrgRoleService"
+		parent="sysOrgElementService">
+		<property
+			name="target">
+			<ref
+				local="sysOrgRoleTarget" />
+		</property>
+	</bean>
+	<bean
+		id="sysOrgPlugin_Self"
+		class="com.landray.kmss.sys.organization.plugin.SysOrgPlugin_Self" />
+	<bean
+		id="sysOrgPlugin_Leader"
+		class="com.landray.kmss.sys.organization.plugin.SysOrgPlugin_Leader" />
+	<bean
+		id="sysOrgPlugin_Group"
+		class="com.landray.kmss.sys.organization.plugin.SysOrgPlugin_Group" >
+		<property name="sysOrgGroupService">
+			<ref local="sysOrgGroupService" />		
+		</property>
+		<property name="sysOrgElementService">
+			<ref local="sysOrgElementService" />		
+		</property>		
+	</bean>			
+	<bean
+		id="sysOrgPlugin_Member"
+		class="com.landray.kmss.sys.organization.plugin.SysOrgPlugin_Member" />		
+	<bean
+		id="sysOrgRolePluginService"
+		class="com.landray.kmss.sys.organization.plugin.SysOrgRolePluginService">
+		<property
+			name="sysOrgRoleLineService">
+			<ref
+				local="sysOrgRoleLineService" />
+		</property>
+	</bean>
+
+	<bean
+		id="sysOrgGroupCateDao"
+		parent="KmssBaseDao"
+		class="com.landray.kmss.sys.organization.dao.hibernate.SysOrgGroupCateDaoImp">
+		<property
+			name="modelName"
+			value="com.landray.kmss.sys.organization.model.SysOrgGroupCate" />
+	</bean>
+	<bean
+		id="sysOrgGroupCateTarget"
+		parent="KmssBaseTarget"
+		class="com.landray.kmss.sys.organization.service.spring.SysOrgGroupCateServiceImp">
+		<property
+			name="baseDao">
+			<ref
+				local="sysOrgGroupCateDao" />
+		</property>
+	</bean>
+	<bean
+		id="sysOrgGroupCateService"
+		parent="KmssBaseService">
+		<property
+			name="target">
+			<ref
+				local="sysOrgGroupCateTarget" />
+		</property>
+	</bean>
+
+	<bean
+		id="sysOrgCoreServiceTarget"
+		class="com.landray.kmss.sys.organization.service.spring.SysOrgCoreServiceImp">
+		<property
+			name="elementDao">
+			<ref
+				local="sysOrgElementDao" />
+		</property>
+		<property
+			name="orgDao">
+			<ref
+				local="sysOrgOrgDao" />
+		</property>
+		<property
+			name="deptDao">
+			<ref
+				local="sysOrgDeptDao" />
+		</property>
+		<property
+			name="postDao">
+			<ref
+				local="sysOrgPostDao" />
+		</property>
+		<property
+			name="personDao">
+			<ref
+				local="sysOrgPersonDao" />
+		</property>
+		<property
+			name="groupDao">
+			<ref
+				local="sysOrgGroupDao" />
+		</property>
+		<property
+			name="roleDao">
+			<ref
+				local="sysOrgRoleDao" />
+		</property>
+		<property
+			name="sysOrganizationStaffingLevelService">
+			<ref
+				local="sysOrganizationStaffingLevelService" />
+		</property>
+	</bean>
+
+	<bean
+		id="sysOrgCoreService"
+		parent="KmssBaseService">
+		<property
+			name="target">
+			<ref
+				local="sysOrgCoreServiceTarget" />
+		</property>
+		<property
+			name="transactionAttributes">
+			<props>
+				<prop
+					key="getAnonymousPerson*">
+					PROPAGATION_REQUIRED
+				</prop>
+				<prop
+					key="getEveryonePerson*">
+					PROPAGATION_REQUIRED
+				</prop>
+				<prop
+					key="*">PROPAGATION_REQUIRED,readOnly
+				</prop>
+			</props>
+		</property>
+	</bean>
+
+	<bean
+		id="sysOMSCacheDao"
+		parent="KmssBaseDao"
+		class="com.landray.kmss.sys.organization.dao.hibernate.SysOMSCacheDaoImp">
+		<property
+			name="modelName"
+			value="com.landray.kmss.sys.organization.model.SysOMSCache" />
+	</bean>
+	<bean
+		id="sysOMSCacheTarget"
+		parent="KmssBaseTarget"
+		class="com.landray.kmss.sys.organization.service.spring.SysOMSCacheServiceImp">
+		<property
+			name="baseDao">
+			<ref
+				local="sysOMSCacheDao" />
+		</property>
+	</bean>
+	<bean
+		id="sysOMSCacheService"
+		parent="KmssBaseService">
+		<property
+			name="target">
+			<ref
+				local="sysOMSCacheTarget" />
+		</property>
+	</bean>
+
+	<bean
+		id="sysOrgPersonToRTXService"
+		class="com.landray.kmss.sys.organization.service.spring.SysOrgPersonToRTXService">
+		<property
+			name="sysOrgElementService">
+			<ref
+				local="sysOrgElementService" />
+		</property>
+		<property
+			name="sysOrgPersonService">
+			<ref
+				local="sysOrgPersonService" />
+		</property>
+	</bean>
+	
+	<bean
+		id="sysSynchroGetOrgWebService"
+		class="com.landray.kmss.sys.organization.webservice.out.SysSynchroGetOrgWebServiceImp">
+		<property
+			name="sysOrgElementService">
+			<ref
+				local="sysOrgElementService" />
+		</property>
+		<property
+			name="sysOrgRoleConfService">
+			<ref
+				local="sysOrgRoleConfService" />
+		</property>
+		<property
+			name="sysOrgRoleLineService">
+			<ref
+				local="sysOrgRoleLineService" />
+		</property>
+		<property
+			name="sysOrgRoleService">
+			<ref
+				local="sysOrgRoleService" />
+		</property>
+		<property
+			name="sysOrgRoleLineDefaultRoleService">
+			<ref
+				local="sysOrgRoleLineDefaultRoleService" />
+		</property>
+		<property
+			name="sysOrgCoreService">
+			<ref
+				local="sysOrgCoreService" />
+		</property>
+		<property
+			name="sysOrgGroupCateService">
+			<ref
+				local="sysOrgGroupCateService" />
+		</property>
+		<property
+			name="sysOrganizationStaffingLevelService">
+			<ref
+				local="sysOrganizationStaffingLevelService" />
+		</property>
+		<property
+			name="sysOrgRoleConfCateService">
+			<ref
+				local="sysOrgRoleConfCateService" />
+		</property>
+	</bean>
+	
+	<bean
+		id="sysSynchroSetOrgWebService"
+		class="com.landray.kmss.sys.organization.webservice.in.SysSynchroSetOrgWebServiceImp">
+		<property
+			name="orgElementService">
+			<ref
+				local="sysOrgElementService" />
+		</property>
+		<property
+			name="orgOrgService">
+			<ref
+				local="sysOrgOrgService" />
+		</property>
+		<property
+			name="orgDeptService">
+			<ref
+				local="sysOrgDeptService" />
+		</property>
+		<property
+			name="orgGroupService">
+			<ref
+				local="sysOrgGroupService" />
+		</property>
+		<property
+			name="orgPostService">
+			<ref
+				local="sysOrgPostService" />
+		</property>
+		<property
+			name="orgPersonService">
+			<ref
+				local="sysOrgPersonService" />
+		</property>
+		<property
+			name="orgCoreService">
+			<ref
+				local="sysOrgCoreService" />
+		</property>
+		<property
+			name="passwordEncoder">
+			<ref
+				local="passwordEncoder" />
+		</property>
+		<property
+			name="sysOrganizationStaffingLevelService">
+			<ref
+				local="sysOrganizationStaffingLevelService" />
+		</property>
+	</bean>
+	
+	
+	<bean
+		id="sysOrgElementBakDao"
+		parent="KmssBaseDao"
+		class="com.landray.kmss.sys.organization.dao.hibernate.SysOrgElementBakDaoImp">
+		<property
+			name="modelName"
+			value="com.landray.kmss.sys.organization.model.SysOrgElementBak" />
+	</bean>
+	<bean
+		id="sysOrgElementBakTarget"
+		parent="KmssBaseTarget"
+		class="com.landray.kmss.sys.organization.service.spring.SysOrgElementBakServiceImp">
+		<property
+			name="baseDao">
+			<ref
+				local="sysOrgElementBakDao" />
+		</property>
+		<property name="orgElementService">
+			<ref bean="sysOrgElementService" />
+		</property>
+		<property name="orgCoreService">
+			<ref bean="sysOrgCoreService" />
+		</property>
+	</bean>
+	<bean
+		id="sysOrgElementBakService"
+		parent="KmssBaseService">
+		<property
+			name="target">
+			<ref
+				local="sysOrgElementBakTarget" />
+		</property>
+	</bean>
+	
+	<bean
+		id="sysOrgRoleConfDataInit"
+		class="com.landray.kmss.sys.organization.service.spring.SysOrgRoleConfDataInit">
+	</bean>
+	
+	<bean
+		id="sysOrgElementDataInit"
+		class="com.landray.kmss.sys.organization.service.spring.SysOrgElementDataInit">
+	</bean>
+	
+	<bean
+		id="sysOrganizationVisibleDao"
+		parent="KmssAuthBaseDao"
+		class="com.landray.kmss.sys.organization.dao.hibernate.SysOrganizationVisibleDaoImp">
+		<property
+			name="modelName"
+			value="com.landray.kmss.sys.organization.model.SysOrganizationVisible" />
+	</bean>
+	<bean
+		id="sysOrganizationVisibleTarget"
+		parent="KmssBaseTarget"
+		class="com.landray.kmss.sys.organization.service.spring.SysOrganizationVisibleServiceImp">
+		<property
+			name="baseDao">
+			<ref
+				local="sysOrganizationVisibleDao" />
+		</property>
+		<property
+			name="sysOrgElementService">
+			<ref
+				local="sysOrgElementService" />
+		</property>
+		<property
+			name="roleValidator">
+			<ref 
+				bean="roleValidator" />
+		</property>
+
+		<property
+			name="sysAuthAreaService">
+			<ref 
+				bean="sysAuthAreaService" />
+		</property>
+
+	</bean>
+	<bean
+		id="sysOrganizationVisibleService"
+		parent="KmssBaseService">
+		<property
+			name="target">
+			<ref
+				local="sysOrganizationVisibleTarget" />
+		</property>
+	</bean>
+	
+	<bean id="authOrgVisibleFilter" class="com.landray.kmss.sys.organization.filter.AuthOrgVisibleFilter" >
+		<property name="sysOrgCoreService">
+			<ref bean="sysOrgCoreService" />
+		</property>
+		<property
+			name="sysOrganizationVisibleService">
+			<ref
+				local="sysOrganizationVisibleService" />
+		</property>
+	</bean>
+	
+	<bean
+		id="sysOrganizationStaffingLevelDao"
+		parent="KmssAuthBaseDao"
+		class="com.landray.kmss.sys.organization.dao.hibernate.SysOrganizationStaffingLevelDaoImp">
+		<property
+			name="modelName"
+			value="com.landray.kmss.sys.organization.model.SysOrganizationStaffingLevel" />
+	</bean>
+	<bean
+		id="sysOrganizationStaffingLevelTarget"
+		parent="KmssBaseTarget"
+		class="com.landray.kmss.sys.organization.service.spring.SysOrganizationStaffingLevelServiceImp">
+		<property
+			name="baseDao">
+			<ref
+				local="sysOrganizationStaffingLevelDao" />
+		</property>
+		<property
+			name="sysOrgPersonService">
+			<ref
+				local="sysOrgPersonService" />
+		</property>
+		<property
+			name="roleValidator">
+			<ref 
+				bean="roleValidator" />
+		</property>
+	</bean>
+	<bean
+		id="sysOrganizationStaffingLevelService"
+		parent="KmssBaseService">
+		<property
+			name="target">
+			<ref
+				local="sysOrganizationStaffingLevelTarget" />
+		</property>
+	</bean>
+	
+	<bean
+		id="sysOrganizationRecentContactDao"
+		parent="KmssAuthBaseDao"
+		class="com.landray.kmss.sys.organization.dao.hibernate.SysOrganizationRecentContactDaoImp">
+		<property
+			name="modelName"
+			value="com.landray.kmss.sys.organization.model.SysOrganizationRecentContact" />
+	</bean>
+	<bean
+		id="sysOrganizationRecentContactTarget"
+		parent="KmssBaseTarget"
+		class="com.landray.kmss.sys.organization.service.spring.SysOrganizationRecentContactServiceImp">
+		<property
+			name="baseDao">
+			<ref
+				local="sysOrganizationRecentContactDao" />
+		</property>
+		<property
+			name="sysOrgElementService">
+			<ref
+				bean="sysOrgElementService" />
+		</property>
+		<property
+			name="sysOrgPersonService">
+			<ref
+				bean="sysOrgPersonService" />
+		</property>
+	</bean>
+	
+	<bean
+		id="sysOrganizationRecentContactService"
+		parent="KmssBaseService">
+		<property
+			name="target">
+			<ref
+				local="sysOrganizationRecentContactTarget" />
+		</property>
+	</bean>
+	
+	
+	<bean id="authOrgNullReaderFilter" class="com.landray.kmss.sys.organization.filter.AuthOrgNullReaderFilter" >
+	</bean>
+	
+	<!-- 矩阵分组维护者 -->
+	<bean id="authOrgMatrixDataCateValidator" class="com.landray.kmss.sys.organization.filter.AuthOrgMatrixDataCateValidator" >
+		<property name="sysOrgMatrixDataCateService">
+			<ref bean="sysOrgMatrixDataCateService"/>
+		</property>
+	</bean>
+	<bean id="authOrgMatrixDataCateFilter" class="com.landray.kmss.sys.organization.filter.AuthOrgMatrixDataCateFilter" >
+		<property name="sysOrgMatrixDataCateService">
+			<ref bean="sysOrgMatrixDataCateService"/>
+		</property>
+	</bean>
+	
+	<bean
+		id="orgDialogRecentContactList"
+		class="com.landray.kmss.sys.organization.service.spring.OrgDialogRecentContactList">
+		<property
+			name="sysOrganizationRecentContactService">
+			<ref
+				local="sysOrganizationRecentContactService" />
+		</property>
+		<property
+			name="sysOrganizationStaffingLevelService">
+			<ref
+				local="sysOrganizationStaffingLevelService" />
+		</property>
+	</bean>
+	
+	<bean id="changePwdReminderJob" class="com.landray.kmss.sys.organization.service.spring.ChangePwdReminderJob">
+		<property name="sysOrgPersonService">
+			<ref local="sysOrgPersonService" />
+		</property>
+		<property name="sysNotifyMainCoreService">
+			<ref bean="sysNotifyMainCoreService" />
+		</property>
+	</bean>	
+	
+	<bean
+		id="sysOrgMessageReceiver"
+		class="com.landray.kmss.sys.organization.service.spring.SysOrgMessageReceiver">
+		<property
+			name="sysOrganizationVisibleService">
+			<ref
+				local="sysOrganizationVisibleService" />
+		</property>
+		<property
+			name="sysOrganizationStaffingLevelService">
+			<ref
+				local="sysOrganizationStaffingLevelService" />
+		</property>
+	</bean>
+	
+	
+	<bean
+		id="sysOrgRetrievePasswordLogDao"
+		parent="KmssBaseDao"
+		class="com.landray.kmss.sys.organization.dao.hibernate.SysOrgRetrievePasswordLogDaoImp">
+		<property
+			name="modelName"
+			value="com.landray.kmss.sys.organization.model.SysOrgRetrievePasswordLog" />
+	</bean>
+	
+	<bean
+		id="sysOrgRetrievePasswordLogTarget"
+		parent="KmssBaseTarget"
+		class="com.landray.kmss.sys.organization.service.spring.SysOrgRetrievePasswordLogServiceImp">
+		<property
+			name="baseDao">
+			<ref
+				local="sysOrgRetrievePasswordLogDao" />
+		</property>
+	</bean>
+	<bean
+		id="sysOrgRetrievePasswordLogService"
+		parent="KmssBaseService">
+		<property
+			name="target">
+			<ref
+				local="sysOrgRetrievePasswordLogTarget" />
+		</property>
+	</bean>
+	
+	<bean
+		id="sysOrgAreaVisibleService"
+		class="com.landray.kmss.sys.organization.service.spring.SysOrgAreaVisibleServiceImp">
+		<property
+			name="sysOrganizationVisibleService">
+			<ref
+				local="sysOrganizationVisibleService" />
+		</property>
+		<property
+			name="sysOrgCoreService">
+			<ref
+				local="sysOrgCoreService" />
+		</property>
+	</bean>
+	<bean
+		id="orgPreDeptPostList"
+		class="com.landray.kmss.sys.organization.service.spring.OrgPreDeptPostList">
+		<property
+			name="sysOrgCoreService">
+			<ref
+				local="sysOrgCoreService" />
+		</property>
+	</bean>
+	
+	<!-- 矩阵分类 -->
+	<bean
+		id="sysOrgMatrixCateDao"
+		parent="KmssAuthBaseDao"
+		class="com.landray.kmss.sys.organization.dao.hibernate.SysOrgMatrixCateDaoImp">
+		<property
+			name="modelName"
+			value="com.landray.kmss.sys.organization.model.SysOrgMatrixCate" />
+	</bean>
+	<bean
+		id="sysOrgMatrixCateTarget"
+		parent="KmssBaseTarget"
+		class="com.landray.kmss.sys.organization.service.spring.SysOrgMatrixCateServiceImp">
+		<property name="baseDao">
+			<ref local="sysOrgMatrixCateDao" />
+		</property>
+	</bean>
+	<bean
+		id="sysOrgMatrixCateService"
+		parent="KmssBaseService">
+		<property name="target">
+			<ref local="sysOrgMatrixCateTarget" />
+		</property>
+	</bean>
+	
+	<!-- 组织矩阵 -->
+	<bean
+		id="sysOrgMatrixDao"
+		parent="KmssAuthBaseDao"
+		class="com.landray.kmss.sys.organization.dao.hibernate.SysOrgMatrixDaoImp">
+		<property
+			name="modelName"
+			value="com.landray.kmss.sys.organization.model.SysOrgMatrix" />
+	</bean>
+	<bean
+		id="sysOrgMatrixTarget"
+		parent="KmssBaseTarget"
+		class="com.landray.kmss.sys.organization.service.spring.SysOrgMatrixServiceImp">
+		<property name="baseDao">
+			<ref local="sysOrgMatrixDao" />
+		</property>
+		<property name="sysOrgMatrixCateService">
+			<ref local="sysOrgMatrixCateService" />
+		</property>
+		<property name="sysOrgElementService">
+			<ref local="sysOrgElementService" />
+		</property>
+		<property name="sysFormMainDataInsystemService">
+			<ref bean="sysFormMainDataInsystemService" />
+		</property>
+		<property name="sysFormMainDataCustomListService">
+			<ref bean="sysFormMainDataCustomListService" />
+		</property>
+		<property name="sysOrgMatrixDataCateService">
+			<ref bean="sysOrgMatrixDataCateService" />
+		</property>
+		<property name="sysOrgMatrixVersionDao">
+			<ref bean="sysOrgMatrixVersionDao" />
+		</property>
+	</bean>
+	
+	<!-- 矩阵版本 -->
+	<bean
+		id="sysOrgMatrixVersionDao"
+		parent="KmssAuthBaseDao"
+		class="com.landray.kmss.sys.organization.dao.hibernate.SysOrgMatrixVersionDaoImp">
+		<property
+			name="modelName"
+			value="com.landray.kmss.sys.organization.model.SysOrgMatrixVersion" />
+	</bean>
+	
+	<!-- 初始化内置矩阵配置信息 -->
+	<bean
+		id="initSysOrgMatrixService"
+		class="com.landray.kmss.sys.organization.service.spring.InitSysOrgMatrixServiceImpl">
+		<property name="sysOrgMatrixService">
+			<ref bean="sysOrgMatrixService" />
+		</property>
+	</bean>
+	
+	
+	
+	<bean
+		id="sysOrgMatrixService"
+		parent="KmssBaseService">
+		<property name="target">
+			<ref local="sysOrgMatrixTarget" />
+		</property>
+	</bean>
+	
+	<!-- 矩阵关系 -->
+	<bean
+		id="sysOrgMatrixRelationDao"
+		parent="KmssAuthBaseDao"
+		class="com.landray.kmss.sys.organization.dao.hibernate.SysOrgMatrixRelationDaoImp">
+		<property
+			name="modelName"
+			value="com.landray.kmss.sys.organization.model.SysOrgMatrixRelation" />
+	</bean>
+	<bean
+		id="sysOrgMatrixRelationTarget"
+		parent="KmssBaseTarget"
+		class="com.landray.kmss.sys.organization.service.spring.SysOrgMatrixRelationServiceImp">
+		<property name="baseDao">
+			<ref local="sysOrgMatrixRelationDao" />
+		</property>
+		<property name="sysOrgMatrixService">
+			<ref local="sysOrgMatrixService" />
+		</property>
+	</bean>
+	<bean
+		id="sysOrgMatrixRelationService"
+		parent="KmssBaseService">
+		<property name="target">
+			<ref local="sysOrgMatrixRelationTarget" />
+		</property>
+	</bean>
+	
+	<!-- 矩阵主数据 -->
+	<bean
+		id="sysOrgMatrixMainDataService"
+		class="com.landray.kmss.sys.organization.service.spring.SysOrgMatrixMainDataService">
+		<property name="sysFormMainDataInsystemService">
+			<ref bean="sysFormMainDataInsystemService" />
+		</property>
+		<property name="sysFormMainDataCustomListService">
+			<ref bean="sysFormMainDataCustomListService" />
+		</property>
+		<property name="sysOrgMatrixService">
+			<ref bean="sysOrgMatrixService" />
+		</property>
+	</bean>
+	
+	<!-- 部门人员关系 -->
+	<bean
+		id="sysOrgDeptPersonRelationDao"
+		parent="KmssAuthBaseDao"
+		class="com.landray.kmss.sys.organization.dao.hibernate.SysOrgDeptPersonRelationDaoImp">
+		<property
+			name="modelName"
+			value="com.landray.kmss.sys.organization.model.SysOrgDeptPersonRelation" />
+	</bean>
+	<bean
+		id="sysOrgDeptPersonRelationTarget"
+		parent="KmssBaseTarget"
+		class="com.landray.kmss.sys.organization.service.spring.SysOrgDeptPersonRelationServiceImp">
+		<property name="baseDao">
+			<ref local="sysOrgDeptPersonRelationDao" />
+		</property>
+	</bean>
+	<bean
+		id="sysOrgDeptPersonRelationService"
+		parent="KmssBaseService">
+		<property name="target">
+			<ref local="sysOrgDeptPersonRelationTarget" />
+		</property>
+	</bean>
+	
+	<bean
+		id="sysOrgPersonRestrictServiceTarget"
+		parent="KmssBaseTarget"
+		class="com.landray.kmss.sys.organization.service.spring.SysOrgPersonRestrictServiceImp">
+		<property name="baseDao">
+			<ref bean="KmssBaseDao" />
+		</property>
+	</bean>
+	<bean
+		id="sysOrgPersonRestrictService"
+		parent="KmssBaseService">
+		<property name="target">
+			<ref local="sysOrgPersonRestrictServiceTarget" />
+		</property>
+		<property name="transactionAttributes">
+			<props>
+				<prop key="refreshPersonRestrict*">
+					PROPAGATION_REQUIRED
+				</prop>
+			</props>
+		</property>
+	</bean>
+	<!-- 矩阵分类分组 -->
+	<bean
+		id="sysOrgMatrixDataCateDao"
+		parent="KmssAuthBaseDao"
+		class="com.landray.kmss.sys.organization.dao.hibernate.SysOrgMatrixDataCateDaoImp">
+		<property
+			name="modelName"
+			value="com.landray.kmss.sys.organization.model.SysOrgMatrixDataCate" />
+	</bean>
+	<bean
+		id="sysOrgMatrixDataCateTarget"
+		parent="KmssBaseTarget"
+		class="com.landray.kmss.sys.organization.service.spring.SysOrgMatrixDataCateServiceImp">
+		<property name="baseDao">
+			<ref local="sysOrgMatrixDataCateDao" />
+		</property>
+	</bean>
+	<bean
+		id="sysOrgMatrixDataCateService"
+		parent="KmssBaseService">
+		<property name="target">
+			<ref local="sysOrgMatrixDataCateTarget" />
+		</property>
+	</bean>
+	
+	<!--矩阵数据初始化导入导出-->
+	<bean
+			id="sysOrgMatrixDataInit"
+			class="com.landray.kmss.sys.organization.service.spring.SysOrgMatrixDataInit">
+		<property name="baseDao">
+			<ref bean="KmssBaseDao" />
+		</property>
+	</bean>
+</beans>
+
